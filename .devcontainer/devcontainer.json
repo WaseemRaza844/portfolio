@@ -1,0 +1,12 @@
+{
+  "name": "Waseem Raza Portfolio",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Portfolio Preview",
+      "onAutoForward": "openPreview"
+    }
+  }
+}

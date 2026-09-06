@@ -13,20 +13,43 @@ This is a lightweight multi-page static portfolio. No build step or framework is
 - `dist/styles.css` — layout, colors, typography, and responsive styling
 - `dist/script.js` — reveal animations and automatic footer year
 
-## Edit locally
+## Preview in GitHub Codespaces (recommended)
 
-1. Open `dist/index.html` in a browser.
-2. Edit collection content in `data.js`, page text in the HTML files, and styling in `styles.css`.
-3. Refresh the browser to review your changes.
-
-To serve it locally with Python:
+From the repository root, run:
 
 ```bash
-cd dist
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000`.
+Open port **8000** from the Codespaces **Ports** tab. This server watches every file inside `dist`, disables caching, and refreshes the preview after you save a change.
+
+Important: edit the files inside `dist/`. This project does not have a separate source/build directory. In particular:
+
+- Edit content in `dist/data.js`.
+- Edit page wording or structure in the `dist/*.html` files.
+- Edit the design in `dist/styles.css`.
+- Edit rendering behavior in `dist/render.js`.
+
+If you uploaded this ZIP into an existing Codespace, run `npm install` once before `npm run dev`. A newly created Codespace will run the installation automatically through `.devcontainer/devcontainer.json`.
+
+## Python fallback
+
+For a dependency-free server that disables caching, run this from the repository root:
+
+```bash
+python3 serve.py
+```
+
+Refresh the browser manually after saving. Prefer this command over the generic `python -m http.server 8000 --directory dist` command.
+
+If you still see an old page, stop any existing server with `Ctrl+C`, start only one preview server, open the URL shown for port 8000 in the Ports tab, and perform one hard refresh (`Ctrl+Shift+R` on Windows/Linux or `Cmd+Shift+R` on macOS).
+
+## Edit locally
+
+1. Edit collection content in `dist/data.js`, page text in the HTML files, and styling in `dist/styles.css`.
+2. Run `npm run dev` or `python3 serve.py` from the repository root.
+3. Open `http://localhost:8000` (or the forwarded Codespaces port).
 
 ## Add or feature content
 
