@@ -9,16 +9,25 @@
   }[c]));
   const tags = (items) => '<div class="tags">' + items.map((x) => '<span>' + esc(x) + '</span>').join("") + "</div>";
 
-  const pdfLink = (url, label) => url
-    ? '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) + ' <span>↗</span></a>'
-    : "";
+  const pdfDocument = (url, label) => {
+    if (!url) return "";
+    const isPdf = /\.pdf(?:$|[?#])/i.test(url);
+    if (!isPdf) {
+      return '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener">Open ' + esc(label) + ' <span>↗</span></a>';
+    }
+    return '<details class="pdf-preview"><summary>Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
+      '<div class="pdf-preview-body"><iframe src="' + esc(url) + '#view=FitH" title="' + esc(label) + ' preview" loading="lazy"></iframe>' +
+      '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener">Open full PDF in a new tab <span>↗</span></a></div></details>';
+  };
   const externalLinks = (links) => {
     const labels = { coursera: "Coursera", linkedin: "LinkedIn", github: "GitHub" };
     return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
       '<a href="' + esc(url) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
     ).join('');
   };
-  const completedCount = (courses) => courses.filter((course) => /^completed/i.test(course.completionDate || course.status || '')).length;
+  const completedCount = (courses) => courses.filter((course) =>
+    /^completed/i.test(course.status || '') || /^completed/i.test(course.completionDate || '')
+  ).length;
 
   function featuredCertificationCard(item) {
     const active = item.status.toLowerCase().includes("progress") ? " active" : "";
@@ -29,10 +38,20 @@
   }
 
   function courseAccordion(course, index) {
-    return '<details class="course-accordion"><summary><span class="course-number">C' + (index + 1) + '</span><span class="course-title"><strong>' + esc(course.title) + '</strong><small>' + esc(course.completionDate) + '</small></span><span class="accordion-icon" aria-hidden="true"></span></summary>' +
+    const status = course.status || (/^completed/i.test(course.completionDate || '') ? 'Completed' : 'In progress');
+    const hasModuleCount = Number.isFinite(course.modulesCompleted) && Number.isFinite(course.modulesTotal);
+    const moduleText = hasModuleCount ? status + ' (' + course.modulesCompleted + '/' + course.modulesTotal + ') modules' : status;
+    const rawDate = String(course.completionDate || '').replace(/^(Target:|Completed:?)\s*/i, '');
+    const dateText = rawDate && !/^(completed|in progress)$/i.test(rawDate)
+      ? (status.toLowerCase().includes('progress') ? 'Target: ' : 'Completed: ') + rawDate
+      : '';
+    return '<details class="course-accordion"><summary><span class="course-number">C' + (index + 1) + '</span><span class="course-title"><strong>' + esc(course.title) + '</strong>' +
+      (course.summary ? '<small class="course-teaser">' + esc(course.summary) + '</small>' : '') + '</span>' +
+      '<span class="course-progress"><strong>' + esc(moduleText) + '</strong>' + (dateText ? '<small>' + esc(dateText) + '</small>' : '') + '</span>' +
+      '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
-      pdfLink(course.certificateUrl, "Open course certificate PDF") + '</div></details>';
+      pdfDocument(course.certificateUrl, "course certificate") + '</div></details>';
   }
 
   function certificationAccordion(item, index) {
@@ -42,7 +61,7 @@
     const rawDate = item.completionDate.replace(/^(Target:|Completed:?)\s*/i, '');
     const dateText = rawDate && !/^completed$/i.test(rawDate) ? (inProgress ? 'Target: ' : 'Completed: ') + rawDate : 'Completion date on credential';
     return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + externalLinks(item.links) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>Completed (' + completed + '/' + total + ') courses</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
-      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfLink(item.certificateUrl, "Open professional certificate PDF") + '</div>' +
+      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfDocument(item.certificateUrl, "professional certificate") + '</div>' +
       '<div class="course-section"><div class="course-heading"><p class="field-label">Courses included</p><span>Select a course to see details</span></div>' + item.courses.map(courseAccordion).join("") + '</div></div></details>';
   }
   function projectCard(item) {

@@ -12,6 +12,7 @@ This is a lightweight multi-page static portfolio. No build step or framework is
 - `dist/render.js` — reusable card rendering for the landing and archive pages
 - `dist/styles.css` — layout, colors, typography, and responsive styling
 - `dist/script.js` — reveal animations and automatic footer year
+- `COURSE_AND_PDF_UPGRADE.md` — module-progress, PDF-preview, and GitHub Pages instructions
 
 ## Preview in GitHub Codespaces (recommended)
 
@@ -110,5 +111,11 @@ Example:
 Place downloaded Coursera PDFs in `dist/certificates/`. The `certificateUrl` may also contain a public Coursera credential URL instead of a local PDF path.
 
 Project records support guided/portfolio category, date, summary, and skills. Publication records support year, venue, summary, topics, and an optional external URL.
+
+Course records additionally support `status`, `modulesCompleted`, `modulesTotal`, and `summary`. These fields populate the richer closed course row. Local PDF files receive an inline preview automatically.
+
+## Publish on GitHub Pages
+
+This package includes `.github/workflows/deploy-pages.yml`, which publishes `dist/` whenever you push to `main`. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**. See `COURSE_AND_PDF_UPGRADE.md` for the complete workflow.
 
 The `.openai/hosting.json` file links this source project to its ChatGPT Site. Keep it if you want future Sites deployments to update the same website.

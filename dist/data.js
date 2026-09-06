@@ -37,6 +37,119 @@ window.PORTFOLIO_DATA = {
       featured: true
     },
     {
+    domain: "genai",
+    title: "AWS Generative AI and AI Agents with Amazon Bedrock",
+    issuer: "AWS / Coursera",
+
+    status: "Completed",
+    completionDate: "August 2026",
+
+    summary:
+      "Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications and intelligent agents with Amazon Bedrock.",
+
+    takeaway:
+      "Build and deploy generative AI applications using foundation models, knowledge bases, LangChain, Amazon Q Developer, and Amazon Bedrock agent capabilities.",
+
+    skills: [
+      "Amazon Bedrock",
+      "Generative AI",
+      "AI Agents",
+      "Foundation Models",
+      "Knowledge Bases",
+      "Retrieval-Augmented Generation",
+      "LangChain",
+      "Amazon Q Developer",
+      "Model Customization",
+      "Prompt Engineering",
+      "Natural Language Processing",
+      "Text Generation",
+      "Summarization",
+      "Generative AI Application Development"
+    ],
+
+    certificateUrl:
+      "./certificates/genai/aws-bedrock/aws-generative-ai-agents-amazon-bedrock.pdf",
+
+    links: {
+      coursera:
+        "https://coursera.org/verify/professional-cert/XMNOUZNOW9M0",
+      linkedin: "",
+      github: ""
+    },
+
+    courses: [
+          {
+            title: "Getting Started with AWS Generative AI for Developers",
+
+            status: "Completed",
+            modulesCompleted: 2,
+            modulesTotal: 2,
+            completionDate: "August 2026",
+
+            summary:
+              "Foundation course covering generative AI concepts, language models, prompt engineering, and AWS services for developers.",
+
+            takeaway:
+              "Established the foundations needed to design and evaluate generative AI applications on AWS.",
+
+            skills: [
+              "AWS Generative AI",
+              "Foundation Models",
+              "Large Language Models",
+              "Prompt Engineering",
+              "Natural Language Processing"
+            ],
+
+            certificateUrl:
+              "./certificates/genai/aws-bedrock/c1-getting-started-aws-generative-ai.pdf"
+          },
+
+      {
+        title: "Generative AI Applications with Amazon Bedrock",
+        completionDate: "Completed",
+
+        takeaway:
+          "Developed generative AI applications with Amazon Bedrock using foundation models, knowledge bases, LangChain, and application-oriented architecture patterns.",
+
+        skills: [
+          "Amazon Bedrock",
+          "Generative AI Applications",
+          "Knowledge Bases",
+          "LangChain",
+          "Retrieval-Augmented Generation",
+          "Text Generation",
+          "Summarization"
+        ],
+
+        certificateUrl:
+          "./certificates/genai/aws-bedrock/c2-generative-ai-applications-bedrock.pdf"
+      },
+
+      {
+        title: "Amazon Bedrock Customization, Optimization & Automation",
+        completionDate: "Completed",
+
+        takeaway:
+          "Applied advanced Amazon Bedrock capabilities for model customization, application optimization, workflow automation, and intelligent-agent development.",
+
+        skills: [
+          "Amazon Bedrock",
+          "AI Agents",
+          "Model Customization",
+          "Generative AI Optimization",
+          "Workflow Automation",
+          "Amazon Q Developer",
+          "Agentic AI"
+        ],
+
+        certificateUrl:
+          "./certificates/genai/aws-bedrock/c3-bedrock-customization-optimization-automation.pdf"
+      }
+    ],
+
+    featured: true
+  },
+    {
       domain: "genai",
       title: "IBM Generative AI Engineering Professional Certificate",
       issuer: "IBM / Coursera",
