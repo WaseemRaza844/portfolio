@@ -119,6 +119,16 @@
   if (publicationStats) publicationStats.innerHTML = '<span><strong>' + visiblePublications.length + '</strong> selected records</span><span><strong>2026–2020</strong> current range</span>';
   applySiteSettings();
   if (profileFilter && profileLabels[profileFilter]) {
+    const variantHome = profileFilter === 'genai' ? './genai/' : profileFilter === 'faculty' ? './faculty/' : './index.html';
+    const brand = document.querySelector('.site-header .brand');
+    if (brand) brand.setAttribute('href', variantHome);
+    document.querySelectorAll('.site-header nav a, footer a').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href === './index.html') link.setAttribute('href', variantHome);
+      if (['./learning.html', './projects.html', './publications.html'].includes(href)) {
+        link.setAttribute('href', href + '?profile=' + encodeURIComponent(profileFilter));
+      }
+    });
     const hero = document.querySelector('.page-hero');
     const cleanPath = window.location.pathname.split('/').pop() || 'index.html';
     if (hero) hero.insertAdjacentHTML('beforeend', '<div class="filter-note">Filtered for <strong>' + esc(profileLabels[profileFilter]) + '</strong><a href="' + esc(cleanPath) + '">Show comprehensive archive</a></div>');

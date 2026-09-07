@@ -19,7 +19,7 @@ window.PROFILE_DATA = {
       github: "https://github.com/WaseemRaza844"
     },
     education: [
-      { degree: "PhD, Electrical and Computer Engineering", school: "University of Oklahoma", period: "2019–2025" },
+      { degree: "PhD, Electrical and Computer Engineering", school: "University of Oklahoma", period: "2026" },
       { degree: "MSc, Telecommunication Engineering", school: "UET Taxila", period: "2014–2016" },
       { degree: "BSc, Telecommunication Engineering", school: "UET Taxila", period: "2010–2014" }
     ],
@@ -75,7 +75,8 @@ window.PROFILE_DATA = {
     genai: {
       label: "GenAI & Agentic AI",
       eyebrow: "GENERATIVE AI · AGENTIC SYSTEMS · APPLIED ML",
-      title: "Building grounded AI systems that reason, retrieve, and act.",
+      professionalTitle: "Machine Learning Engineer · Generative AI & Agentic Systems",
+      motto: "Building grounded AI systems that reason, retrieve, and act.",
       intro: "I am Waseem Raza, PhD, a machine-learning engineer expanding production-oriented expertise in Generative AI and agentic systems. My work combines retrieval, tool use, orchestration, evaluation, cloud ML, and system-design judgment with experience delivering data-driven solutions in operational environments.",
       designations: ["Machine Learning Engineer", "GenAI Application Builder", "Agentic AI Practitioner", "Applied ML Engineer"],
       proof: [
@@ -98,7 +99,8 @@ window.PROFILE_DATA = {
     faculty: {
       label: "Faculty & Academic",
       eyebrow: "AI-ENABLED SYSTEMS · WIRELESS NETWORKS · WEARABLE INTELLIGENCE",
-      title: "Research and teaching at the intersection of AI and connected systems.",
+      professionalTitle: "Researcher & Engineering Educator · AI, Wireless Systems & Wearable Intelligence",
+      motto: "Research and teaching at the intersection of AI and connected systems.",
       intro: "I am Waseem Raza, PhD, an engineer, researcher, and educator whose work spans AI-enabled wireless networks, resilient automation, propagation modeling, optimization, and wearable intelligence. My academic approach connects rigorous modeling with experimental validation and industry-relevant systems.",
       designations: ["Researcher", "Engineering Educator", "AI for Wireless Specialist", "Applied ML Scientist"],
       proof: [

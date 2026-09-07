@@ -16,7 +16,9 @@
   document.querySelector('meta[name="description"]')?.setAttribute('content', variant.intro);
   document.getElementById('variant-label').textContent = variant.label;
   document.getElementById('variant-eyebrow').textContent = variant.eyebrow;
-  document.getElementById('variant-title').textContent = variant.title;
+  document.getElementById('variant-name').textContent = shared.name;
+  document.getElementById('variant-professional-title').textContent = variant.professionalTitle;
+  document.getElementById('variant-motto').textContent = variant.motto;
   document.getElementById('variant-intro').textContent = variant.intro;
   document.getElementById('variant-image').src = shared.image;
   document.getElementById('variant-image').alt = "Temporary technology workspace visual for " + shared.shortName + "'s portfolio";
