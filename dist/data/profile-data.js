@@ -90,7 +90,7 @@ window.PROFILE_DATA = {
         ["LLM Applications", "Prompt engineering, structured generation, summarization, extraction, evaluation, and responsible AI."],
         ["Production Foundation", "Python, APIs, Azure, AWS Bedrock, Docker, CI/CD, data engineering, and system design."]
       ],
-      certificationIds: ["aws-bedrock-professional", "ibm-genai-engineering", "genai-fundamentals", "system-design-masterclass"],
+      certificationIds: ["ibm-rag-agentic-ai", "aws-bedrock-professional", "ibm-genai-engineering", "genai-fundamentals", "system-design-masterclass"],
       projectIds: ["agentic-ai-rag", "meeting-minutes-llm", "unstructured-document-extraction", "system-design-portfolio", "lakehouse-pipeline"],
       publicationIds: ["resilient-propagation-2024", "medication-adherence-2026"],
       closingTitle: "Interested in reliable GenAI and agentic systems?",

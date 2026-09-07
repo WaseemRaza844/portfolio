@@ -9,7 +9,7 @@
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   }[c]));
-  const byIds = (items, ids) => ids.map((id) => items.find((item) => item.id === id)).filter(Boolean);
+  const byIds = (items, ids) =>  ids.map((id) => items.find((item) => item.id === id && item.published !== false)).filter(Boolean);
   const tags = (items) => '<div class="tags">' + items.map((item) => '<span>' + esc(item) + '</span>').join('') + '</div>';
 
   document.title = variant.label + " | " + shared.name;

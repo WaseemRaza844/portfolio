@@ -5,7 +5,7 @@
   const learningSettings = settings.learning || {};
   const profileFilter = new URLSearchParams(window.location.search).get('profile');
   const profileLabels = { generic: 'ML & Wireless', genai: 'GenAI & Agentic AI', faculty: 'Faculty & Academic', healthcare: 'Healthcare AI', finance: 'Finance AI' };
-  const visibleForProfile = (item) => !profileFilter || (item.profiles || []).includes(profileFilter);
+  const visibleForProfile = (item) =>  item.published !== false &&  (!profileFilter || (item.profiles || []).includes(profileFilter));
 
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -58,13 +58,14 @@
   }
 
   function certificationAccordion(item, index) {
-    const completed = completedCount(item.courses);
-    const total = item.courses.length;
+    const completed = item.reportedProgress?.completed ?? completedCount(item.courses);
+    const total = item.reportedProgress?.total ?? item.courses.length;
     const inProgress = item.status.toLowerCase().includes('progress');
     const rawDate = item.completionDate.replace(/^(Target:|Completed:?)\s*/i, '');
     const dateText = rawDate && !/^completed$/i.test(rawDate) ? (inProgress ? 'Target: ' : 'Completed: ') + rawDate : 'Completion date on credential';
-    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + externalLinks(item.links) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>Completed (' + completed + '/' + total + ') courses</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
-      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfDocument(item.certificateUrl, "professional certificate") + '</div>' +
+    const progressLabel = inProgress ? 'In progress (' + completed + '/' + total + ') courses' : 'Completed (' + completed + '/' + total + ') courses';
+    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + externalLinks(item.links) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + esc(progressLabel) + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
+      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.curriculumNote ? '<div><p class="field-label">Curriculum version</p><p>' + esc(item.curriculumNote) + '</p></div>' : '') + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfDocument(item.certificateUrl, "professional certificate") + '</div>' +
       '<div class="course-section"><div class="course-heading"><p class="field-label">Courses included</p><span>Select a course to see details</span></div>' + item.courses.map(courseAccordion).join("") + '</div></div></details>';
   }
   function projectCard(item) {
