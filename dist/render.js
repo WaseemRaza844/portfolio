@@ -3,6 +3,9 @@
   if (!data) return;
   const settings = data.settings || {};
   const learningSettings = settings.learning || {};
+  const profileFilter = new URLSearchParams(window.location.search).get('profile');
+  const profileLabels = { generic: 'ML & Wireless', genai: 'GenAI & Agentic AI', faculty: 'Faculty & Academic', healthcare: 'Healthcare AI', finance: 'Finance AI' };
+  const visibleForProfile = (item) => !profileFilter || (item.profiles || []).includes(profileFilter);
 
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -46,7 +49,7 @@
       ? (status.toLowerCase().includes('progress') ? 'Target: ' : 'Completed: ') + rawDate
       : '';
     return '<details class="course-accordion"><summary><span class="course-number">C' + (index + 1) + '</span><span class="course-title"><strong>' + esc(course.title) + '</strong>' +
-      (course.summary ? '<small class="course-teaser">' + esc(course.summary) + '</small>' : '') + '</span>' +
+      ((course.summary || course.takeaway) ? '<small class="course-teaser">' + esc(course.summary || course.takeaway) + '</small>' : '') + '</span>' +
       '<span class="course-progress"><strong>' + esc(moduleText) + '</strong>' + (dateText ? '<small>' + esc(dateText) + '</small>' : '') + '</span>' +
       '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
@@ -74,7 +77,8 @@
   function mount(id, items, render, featured) {
     const el = document.getElementById(id);
     if (!el) return;
-    const selected = featured ? items.filter((x) => x.featured) : items;
+    const visible = items.filter(visibleForProfile);
+    const selected = featured ? visible.filter((x) => x.featured) : visible;
     el.innerHTML = selected.map(render).join("");
   }
   function domainAreaSection(area, items) {
@@ -84,15 +88,16 @@
     const el = document.getElementById('all-certifications');
     if (!el) return;
     const areas = data.domainAreas || [];
+    const filteredCertifications = data.certifications.filter(visibleForProfile);
     el.innerHTML = areas.map((area) => {
-      const items = data.certifications.filter((item) => item.domain === area.id);
+      const items = filteredCertifications.filter((item) => item.domain === area.id);
       return items.length || learningSettings.showEmptyPaths ? domainAreaSection(area, items) : '';
     }).join('');
     const stats = document.getElementById('learning-stats');
     if (stats) {
-      const visibleAreas = areas.filter((area) => data.certifications.some((item) => item.domain === area.id)).length;
-      const inProgress = data.certifications.filter((item) => item.status.toLowerCase().includes('progress')).length;
-      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domain areas</span><span><strong>' + data.certifications.length + '</strong> certifications</span><span><strong>' + inProgress + '</strong> in progress</span>';
+      const visibleAreas = areas.filter((area) => filteredCertifications.some((item) => item.domain === area.id)).length;
+      const inProgress = filteredCertifications.filter((item) => item.status.toLowerCase().includes('progress')).length;
+      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domain areas</span><span><strong>' + filteredCertifications.length + '</strong> certifications</span><span><strong>' + inProgress + '</strong> in progress</span>';
     }
   }
   function applySiteSettings() {
@@ -106,5 +111,16 @@
   mount("all-projects", data.projects, projectCard, false);
   mount("featured-publications", data.publications, publicationCard, true);
   mount("all-publications", data.publications, publicationCard, false);
+  const visibleProjects = data.projects.filter(visibleForProfile);
+  const projectStats = document.getElementById('project-stats');
+  if (projectStats) projectStats.innerHTML = '<span><strong>' + visibleProjects.length + '</strong> projects</span><span><strong>' + visibleProjects.filter((x) => /guided/i.test(x.category)).length + '</strong> guided</span><span><strong>' + visibleProjects.filter((x) => /research/i.test(x.category)).length + '</strong> research</span>';
+  const visiblePublications = data.publications.filter(visibleForProfile);
+  const publicationStats = document.getElementById('publication-stats');
+  if (publicationStats) publicationStats.innerHTML = '<span><strong>' + visiblePublications.length + '</strong> selected records</span><span><strong>2026–2020</strong> current range</span>';
   applySiteSettings();
+  if (profileFilter && profileLabels[profileFilter]) {
+    const hero = document.querySelector('.page-hero');
+    const cleanPath = window.location.pathname.split('/').pop() || 'index.html';
+    if (hero) hero.insertAdjacentHTML('beforeend', '<div class="filter-note">Filtered for <strong>' + esc(profileLabels[profileFilter]) + '</strong><a href="' + esc(cleanPath) + '">Show comprehensive archive</a></div>');
+  }
 }());

@@ -13,6 +13,13 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-s
 .site-header nav a:hover,.nav-cta:hover{color:var(--cyan)}
 .site-header nav a.current{color:var(--cyan)}
 .nav-cta{border:1px solid var(--line);padding:9px 14px;color:var(--ink)}
+.profile-menu{position:relative}
+.profile-menu>summary{list-style:none;cursor:pointer;border:1px solid var(--line);padding:9px 14px;border-radius:8px;background:#fff;color:var(--ink);font-size:14px}
+.profile-menu>summary::-webkit-details-marker{display:none}
+.profile-menu>summary:after{content:"⌄";margin-left:8px;color:var(--blue)}
+.profile-menu>div{position:absolute;right:0;top:calc(100% + 9px);min-width:220px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 45px rgba(30,64,104,.16);display:grid;z-index:12}
+.profile-menu a{padding:9px 11px;border-radius:7px;color:var(--muted);text-decoration:none;font-size:13px}
+.profile-menu a:hover,.profile-menu a.current{background:#edf4ff;color:var(--blue)}
 main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24px}
 .hero{min-height:680px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:72px;padding:88px 0 90px;position:relative}
 .hero:before{content:"";position:absolute;width:520px;height:520px;left:-250px;top:30px;background:radial-gradient(circle,rgba(66,232,219,.09),transparent 66%);pointer-events:none}
@@ -21,6 +28,8 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .hero h1{font:600 clamp(48px,6.3vw,82px)/1.01 "Space Grotesk";letter-spacing:-.055em;margin:26px 0}
 .hero h1 em{font-style:normal;color:var(--cyan)}
 .lede{font-size:19px;color:var(--muted);max-width:680px}
+.designation-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.designation-tags span{padding:7px 10px;border:1px solid rgba(37,99,235,.18);border-radius:999px;background:#fff;color:#40566e;font-size:12px}
 .hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:13px 19px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--line);transition:.2s}
 .button.primary{background:var(--cyan);color:#041416;border-color:var(--cyan)}
@@ -28,6 +37,9 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .button.ghost{color:var(--ink)}
 .button.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
 .signal-card{background:linear-gradient(160deg,rgba(16,36,49,.9),rgba(8,21,30,.9));border:1px solid var(--line);padding:18px;box-shadow:0 24px 70px rgba(0,0,0,.34)}
+.profile-visual{margin:0;position:relative;border:1px solid rgba(37,99,235,.18);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 28px 70px rgba(30,64,104,.16)}
+.profile-visual img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.profile-visual figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:8px 10px;border-radius:8px;background:rgba(8,24,44,.78);backdrop-filter:blur(8px);color:#eaf2ff;font-size:11px;text-align:center}
 .card-top,.card-bottom{display:flex;justify-content:space-between;color:#6f929a;font:500 10px "Space Grotesk";letter-spacing:.12em}
 .live{color:var(--cyan)}
 .radar{height:330px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(rgba(72,171,180,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(72,171,180,.07) 1px,transparent 1px);background-size:30px 30px;margin:18px 0}
@@ -49,6 +61,13 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .proof-kicker{font:500 10px "Space Grotesk";color:var(--cyan);letter-spacing:.15em}
 .proof strong{font:600 17px "Space Grotesk";margin:9px 0 3px}
 .proof small{font-size:13px;color:var(--muted)}
+.profile-paths{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;padding:34px 0;border-bottom:1px solid var(--line)}
+.profile-paths>div{padding-right:20px}
+.profile-paths h2{font:600 24px/1.25 "Space Grotesk";margin:9px 0 0}
+.profile-paths>a{display:grid;align-content:center;gap:6px;padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none;transition:.2s}
+.profile-paths>a:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 12px 30px rgba(30,64,104,.09)}
+.profile-paths a strong{font:600 16px "Space Grotesk"}
+.profile-paths a span{color:var(--muted);font-size:12px}
 .section{padding:120px 0}
 .section-head{max-width:710px;margin-bottom:54px}
 .section-head h2,.closing h2{font:600 clamp(36px,5vw,58px)/1.08 "Space Grotesk";letter-spacing:-.04em;margin:18px 0}
@@ -76,6 +95,9 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .page-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
 .page-stats span{padding:10px 14px;border:1px solid var(--line);color:var(--muted);font-size:13px}
 .page-stats strong{color:var(--cyan);margin-right:5px}
+.filter-note{display:flex;align-items:center;gap:10px;flex-wrap:wrap;width:max-content;max-width:100%;margin-top:18px;padding:9px 12px;border:1px solid rgba(37,99,235,.2);border-radius:8px;background:#fff;color:var(--muted);font-size:13px}
+.filter-note strong{color:var(--blue)}
+.filter-note a{margin-left:8px;color:var(--blue);text-decoration:none}
 .subpage-section{padding-top:72px}
 .detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .detail-grid.featured-grid{grid-template-columns:repeat(3,1fr)}
@@ -204,14 +226,32 @@ footer div{display:flex;gap:22px}
 footer a{color:#91abb1;text-decoration:none}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+.profile-hero{min-height:660px;display:grid;grid-template-columns:minmax(0,1.28fr) minmax(300px,.72fr);align-items:center;gap:70px;padding:80px 0 88px}
+.profile-copy h1{font:600 clamp(46px,6vw,76px)/1.02 "Space Grotesk";letter-spacing:-.052em;margin:14px 0 24px}
+.profile-label{display:inline-block;margin:18px 0 0;padding:6px 9px;border-radius:6px;background:#eaf3ff;color:var(--blue);font:600 11px "Space Grotesk";letter-spacing:.1em;text-transform:uppercase}
+.variant-page .profile-visual{max-width:410px;justify-self:end}
+.variant-page .research-grid{grid-template-columns:repeat(2,1fr)}
+.variant-page .detail-grid{grid-template-columns:repeat(2,1fr)}
+.variant-page .project-grid{grid-template-columns:repeat(3,1fr)}
+.education-section{border-top:1px solid var(--line)}
+.education-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.education-grid article{padding:28px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(30,64,104,.05)}
+.education-grid article>span{font:600 11px "Space Grotesk";letter-spacing:.1em;color:var(--blue)}
+.education-grid h3{font:600 19px/1.35 "Space Grotesk";margin:18px 0 8px}
+.education-grid p{color:var(--muted);margin:0}
 
 @media(max-width:900px){.site-header nav{display:none}
 .hero{grid-template-columns:1fr;padding-top:70px}
+.profile-hero{grid-template-columns:1fr;gap:42px;padding-top:65px}
+.variant-page .profile-visual{justify-self:start;max-width:430px}
+.profile-paths{grid-template-columns:1fr 1fr}
+.profile-paths>div{grid-column:1/-1}
 .signal-card{max-width:520px}
 .proof{grid-template-columns:1fr}
 .proof>div{border-right:0;border-bottom:1px solid var(--line)}
 .proof>div:last-child{border-bottom:0}
 .learning-grid,.project-grid,.research-grid,.research-grid.compact{grid-template-columns:1fr}
+.variant-page .research-grid,.variant-page .detail-grid,.variant-page .project-grid,.education-grid{grid-template-columns:1fr}
 .detail-grid,.detail-grid.featured-grid{grid-template-columns:1fr}
 .certification-content{grid-template-columns:1fr}
 .section-head.row{display:block}
@@ -224,6 +264,11 @@ footer a{color:#91abb1;text-decoration:none}
 .brand strong{display:none}
 .hero{min-height:auto;padding:62px 0 70px;gap:45px}
 .hero h1{font-size:49px}
+.profile-copy h1{font-size:46px}
+.profile-menu>summary{padding:8px 10px;font-size:12px}
+.profile-menu>div{right:0;min-width:205px}
+.profile-paths{grid-template-columns:1fr}
+.profile-paths>div{grid-column:auto}
 .lede{font-size:17px}
 .radar{height:270px}
 .section{padding:82px 0}

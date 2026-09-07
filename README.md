@@ -13,6 +13,7 @@ This is a lightweight multi-page static portfolio. No build step or framework is
 - `dist/styles.css` — layout, colors, typography, and responsive styling
 - `dist/script.js` — reveal animations and automatic footer year
 - `COURSE_AND_PDF_UPGRADE.md` — module-progress, PDF-preview, and GitHub Pages instructions
+- `VARIANT_EDITING_GUIDE.md` — profile tagging, filtered archives, and future variant instructions
 
 ## Preview in GitHub Codespaces (recommended)
 
@@ -117,5 +118,13 @@ Course records additionally support `status`, `modulesCompleted`, `modulesTotal`
 ## Publish on GitHub Pages
 
 This package includes `.github/workflows/deploy-pages.yml`, which publishes `dist/` whenever you push to `main`. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**. See `COURSE_AND_PDF_UPGRADE.md` for the complete workflow.
+
+## Focused profiles
+
+- `/` — comprehensive Machine Learning and Wireless AI portfolio
+- `/genai/` — Generative AI and Agentic AI portfolio
+- `/faculty/` — Faculty and academic portfolio
+
+Shared records remain in `dist/data.js`; shared identity, education, experience, and profile-specific selections live in `dist/profile-data.js`.
 
 The `.openai/hosting.json` file links this source project to its ChatGPT Site. Keep it if you want future Sites deployments to update the same website.
