@@ -1,0 +1,36 @@
+% Style based on the supplied Waseem_Generic_AI_ML_GenAI_AgenticAI.tex.
+% Python replaces template tokens. Edit layout here, content in JSON/portfolio JS.
+\documentclass[@@SIZE@@pt,@@PAPER@@paper]{extarticle}
+\usepackage[margin=@@MARGIN@@in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx,array,parskip,ragged2e,needspace}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\definecolor{accent}{HTML}{@@ACCENT@@}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{0.5pt}\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{3pt}{2pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.8pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\role}[4]{%
+  \Needspace{4\baselineskip}\textbf{#1}\hfill\textbf{#2}\\[-1pt]
+  \textit{#3}\hfill\textit{#4}\par}
+\newcommand{\entry}[2]{\Needspace{4\baselineskip}\textbf{#1}\hfill\textit{#2}\par}
+\newcommand{\skillrow}[2]{\textbf{#1:} & #2\\}
+\hypersetup{pdftitle={@@TITLE@@},pdfauthor={@@NAME@@}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries @@NAME@@}\\[2pt]
+{\large\bfseries @@HEADLINE@@}\\[1pt]
+{\small @@TAGLINE@@}\\[3pt]
+{\small @@CONTACTS@@}
+\end{center}
+\vspace{-5pt}
+@@BODY@@
+\end{document}

@@ -1,0 +1,25 @@
+{
+  "identity": {
+    "email": "waseemraza844@gmail.com",
+    "phone": "732-803-9703",
+    "portfolioUrl": ""
+  },
+  "settings": {
+    "renderer": "latex",
+    "latexFontSize": 9,
+    "explicitPageBreaks": false,
+    "paper": "LETTER",
+    "fontSize": 10.3,
+    "leading": 14,
+    "accent": "#155B8A",
+    "marginInches": 0.55
+  },
+  "experienceOverrides": {},
+  "projectOverrides": {},
+  "certificationOverrides": {},
+  "publicationOverrides": {},
+  "additionalExperience": [],
+  "additionalProjects": [],
+  "additionalCertifications": [],
+  "additionalPublications": []
+}

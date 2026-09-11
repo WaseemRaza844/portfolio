@@ -1,9 +1,9 @@
-:root{--bg:#071018;--panel:#0c1924;--panel2:#102431;--ink:#ecf8f8;--muted:#94aeb5;--cyan:#42e8db;--blue:#6ba7ff;--line:rgba(134,207,216,.16);--max:1180px}
+:root{--bg:#f4f7fb;--panel:#ffffff;--panel2:#edf3fb;--ink:#10243e;--muted:#5f7085;--cyan:#0f8f9b;--blue:#2563eb;--line:rgba(18,48,78,.14);--max:1180px}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
-.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:9;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.018;z-index:9;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}
 .site-header{position:sticky;top:0;z-index:8;max-width:var(--max);margin:auto;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(7,16,24,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none}
 .brand>span{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--cyan);font-family:"Space Grotesk";font-size:13px;color:var(--cyan)}
@@ -13,6 +13,13 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-s
 .site-header nav a:hover,.nav-cta:hover{color:var(--cyan)}
 .site-header nav a.current{color:var(--cyan)}
 .nav-cta{border:1px solid var(--line);padding:9px 14px;color:var(--ink)}
+.profile-menu{position:relative}
+.profile-menu>summary{list-style:none;cursor:pointer;border:1px solid var(--line);padding:9px 14px;border-radius:8px;background:#fff;color:var(--ink);font-size:14px}
+.profile-menu>summary::-webkit-details-marker{display:none}
+.profile-menu>summary:after{content:"⌄";margin-left:8px;color:var(--blue)}
+.profile-menu>div{position:absolute;right:0;top:calc(100% + 9px);min-width:220px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 45px rgba(30,64,104,.16);display:grid;z-index:12}
+.profile-menu a{padding:9px 11px;border-radius:7px;color:var(--muted);text-decoration:none;font-size:13px}
+.profile-menu a:hover,.profile-menu a.current{background:#edf4ff;color:var(--blue)}
 main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24px}
 .hero{min-height:680px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:72px;padding:88px 0 90px;position:relative}
 .hero:before{content:"";position:absolute;width:520px;height:520px;left:-250px;top:30px;background:radial-gradient(circle,rgba(66,232,219,.09),transparent 66%);pointer-events:none}
@@ -20,7 +27,12 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(66,232,219,.1);margin-right:11px}
 .hero h1{font:600 clamp(48px,6.3vw,82px)/1.01 "Space Grotesk";letter-spacing:-.055em;margin:26px 0}
 .hero h1 em{font-style:normal;color:var(--cyan)}
+.hero-name{margin-bottom:12px!important}
+.hero-title{margin:0;color:var(--ink);font:600 clamp(19px,2vw,25px)/1.35 "Space Grotesk";letter-spacing:-.015em;max-width:760px}
+.hero-motto{margin:18px 0 0;padding-left:15px;border-left:3px solid var(--blue);color:var(--blue);font:500 16px/1.55 "Space Grotesk";max-width:690px}
 .lede{font-size:19px;color:var(--muted);max-width:680px}
+.designation-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.designation-tags span{padding:7px 10px;border:1px solid rgba(37,99,235,.18);border-radius:999px;background:#fff;color:#40566e;font-size:12px}
 .hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:13px 19px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--line);transition:.2s}
 .button.primary{background:var(--cyan);color:#041416;border-color:var(--cyan)}
@@ -28,6 +40,9 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .button.ghost{color:var(--ink)}
 .button.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
 .signal-card{background:linear-gradient(160deg,rgba(16,36,49,.9),rgba(8,21,30,.9));border:1px solid var(--line);padding:18px;box-shadow:0 24px 70px rgba(0,0,0,.34)}
+.profile-visual{margin:0;position:relative;border:1px solid rgba(37,99,235,.18);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 28px 70px rgba(30,64,104,.16)}
+.profile-visual img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.profile-visual figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:8px 10px;border-radius:8px;background:rgba(8,24,44,.78);backdrop-filter:blur(8px);color:#eaf2ff;font-size:11px;text-align:center}
 .card-top,.card-bottom{display:flex;justify-content:space-between;color:#6f929a;font:500 10px "Space Grotesk";letter-spacing:.12em}
 .live{color:var(--cyan)}
 .radar{height:330px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(rgba(72,171,180,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(72,171,180,.07) 1px,transparent 1px);background-size:30px 30px;margin:18px 0}
@@ -49,6 +64,13 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .proof-kicker{font:500 10px "Space Grotesk";color:var(--cyan);letter-spacing:.15em}
 .proof strong{font:600 17px "Space Grotesk";margin:9px 0 3px}
 .proof small{font-size:13px;color:var(--muted)}
+.profile-paths{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;padding:34px 0;border-bottom:1px solid var(--line)}
+.profile-paths>div{padding-right:20px}
+.profile-paths h2{font:600 24px/1.25 "Space Grotesk";margin:9px 0 0}
+.profile-paths>a{display:grid;align-content:center;gap:6px;padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none;transition:.2s}
+.profile-paths>a:hover{border-color:rgba(37,99,235,.4);transform:translateY(-2px);box-shadow:0 12px 30px rgba(30,64,104,.09)}
+.profile-paths a strong{font:600 16px "Space Grotesk"}
+.profile-paths a span{color:var(--muted);font-size:12px}
 .section{padding:120px 0}
 .section-head{max-width:710px;margin-bottom:54px}
 .section-head h2,.closing h2{font:600 clamp(36px,5vw,58px)/1.08 "Space Grotesk";letter-spacing:-.04em;margin:18px 0}
@@ -76,6 +98,9 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .page-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
 .page-stats span{padding:10px 14px;border:1px solid var(--line);color:var(--muted);font-size:13px}
 .page-stats strong{color:var(--cyan);margin-right:5px}
+.filter-note{display:flex;align-items:center;gap:10px;flex-wrap:wrap;width:max-content;max-width:100%;margin-top:18px;padding:9px 12px;border:1px solid rgba(37,99,235,.2);border-radius:8px;background:#fff;color:var(--muted);font-size:13px}
+.filter-note strong{color:var(--blue)}
+.filter-note a{margin-left:8px;color:var(--blue);text-decoration:none}
 .subpage-section{padding-top:72px}
 .detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .detail-grid.featured-grid{grid-template-columns:repeat(3,1fr)}
@@ -85,11 +110,73 @@ main,footer{max-width:var(--max);margin:auto;padding-left:24px;padding-right:24p
 .detail-type,.pub-venue{font:600 11px "Space Grotesk";color:var(--cyan);letter-spacing:.1em;text-transform:uppercase}
 .detail-card h3{font:600 24px/1.25 "Space Grotesk";margin:18px 0 12px}
 .detail-card>p:not(.detail-type){color:var(--muted)}
+.detail-card .text-link{display:inline-block;color:var(--cyan);text-decoration:none;font-size:13px;margin-top:25px}
 .detail-block{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
 .detail-block strong{font:600 12px "Space Grotesk";color:#c8dcdf;letter-spacing:.08em;text-transform:uppercase}
 .detail-block ul{margin:12px 0 0;padding-left:19px;color:var(--muted);font-size:14px}
 .detail-block li+li{margin-top:5px}
 .project-kind{font:600 10px "Space Grotesk";letter-spacing:.1em;color:#a5bbc0;border:1px solid var(--line);padding:5px 7px}
+.accordion-list{display:grid;gap:14px}
+.domain-areas{display:grid;gap:82px}
+.domain-area{scroll-margin-top:110px;position:relative}
+.domain-area+.domain-area:before{content:"";position:absolute;left:0;right:0;top:-42px;height:1px;background:linear-gradient(90deg,rgba(37,99,235,.45),var(--line) 36%,transparent)}
+.domain-area-head{display:flex;align-items:end;justify-content:space-between;gap:32px;padding-bottom:22px;margin-bottom:18px;border-bottom:2px solid rgba(37,99,235,.15)}
+.domain-area-head>div{max-width:720px}
+.domain-area-head h2{font:600 clamp(28px,4vw,42px)/1.15 "Space Grotesk";letter-spacing:-.03em;margin:10px 0 7px}
+.domain-area-head p:last-child{color:var(--muted);margin:0}
+.domain-area-head>span{white-space:nowrap;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:12px}
+.hide-takeaways .takeaway-field{display:none}
+.certification-accordion,.course-accordion{border:1px solid var(--line);background:rgba(12,25,36,.72)}
+.certification-accordion[open]{border-color:rgba(66,232,219,.34);background:linear-gradient(145deg,rgba(15,42,52,.76),rgba(9,24,34,.86))}
+.certification-accordion>summary,.course-accordion>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.certification-accordion>summary::-webkit-details-marker,.course-accordion>summary::-webkit-details-marker{display:none}
+.certification-accordion>summary{padding:28px 30px;display:grid;grid-template-columns:38px minmax(0,1fr) 210px;align-items:start}
+.cert-number{width:32px;height:32px;display:grid;place-items:center;border-radius:9px;background:var(--blue);color:#fff;font:700 13px "Space Grotesk"}
+.cert-summary-main{min-width:0}
+.cert-summary-main h2{font:600 25px/1.3 "Space Grotesk";margin:7px 0 8px}
+.cert-teaser{max-width:760px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.cert-summary-side{display:grid;grid-template-columns:1fr 34px;gap:12px 14px;justify-items:end;align-items:start}
+.credential-links{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.credential-links a{padding:4px 7px;border:1px solid rgba(37,99,235,.2);border-radius:6px;color:var(--blue);background:#fff;text-decoration:none;font-size:11px}
+.cert-progress{grid-column:1/-1;display:grid;text-align:right;line-height:1.35}
+.cert-progress strong{font:600 12px "Space Grotesk";color:#304a66}
+.cert-progress span{font-size:12px;color:var(--muted);margin-top:4px}
+.summary-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.course-count{font:500 11px "Space Grotesk";color:#9db7bc}
+.accordion-icon{flex:0 0 34px;width:34px;height:34px;border:1px solid var(--line);position:relative}
+.accordion-icon:before,.accordion-icon:after{content:"";position:absolute;background:var(--cyan);left:9px;right:9px;top:16px;height:1px}
+.accordion-icon:after{transform:rotate(90deg);transition:transform .2s ease}
+details[open]>summary .accordion-icon:after{transform:rotate(0)}
+.certification-content{border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;padding:30px}
+.cert-overview{display:grid;align-content:start;gap:25px}
+.cert-overview>div+div{border-top:1px solid var(--line);padding-top:19px}
+.cert-overview p:not(.field-label),.course-content p:not(.field-label){color:var(--muted);margin:7px 0 0}
+.field-label{font:600 11px "Space Grotesk";letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin:0}
+.course-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:12px}
+.course-heading>span{font-size:12px;color:var(--muted)}
+.course-accordion{background:rgba(5,16,24,.55)}
+.course-accordion+.course-accordion{margin-top:8px}
+.course-accordion>summary{padding:17px 18px;display:grid;grid-template-columns:36px minmax(0,1fr) 175px 27px;gap:14px;align-items:start}
+.course-number{width:31px;height:31px;display:grid;place-items:center;border-radius:8px;background:#e8f1ff;color:var(--blue);font:700 11px "Space Grotesk"}
+.course-title{display:grid;gap:5px;min-width:0}
+.course-accordion summary strong{font:600 15px/1.4 "Space Grotesk"}
+.course-accordion summary small{color:var(--muted);font-size:12px}
+.course-teaser{line-height:1.45;max-width:590px}
+.course-progress{display:grid;gap:4px;text-align:right;justify-items:end}
+.course-progress strong{font:600 12px/1.35 "Space Grotesk";color:#304a66}
+.course-progress small{font-size:12px;color:var(--muted)}
+.course-accordion .accordion-icon{width:27px;height:27px;flex-basis:27px}
+.course-accordion .accordion-icon:before,.course-accordion .accordion-icon:after{left:7px;right:7px;top:12px}
+.course-content{border-top:1px solid var(--line);padding:18px;display:grid;gap:18px}
+.pdf-link{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;width:max-content;max-width:100%;padding:10px 13px;border:1px solid rgba(66,232,219,.35);color:var(--cyan);text-decoration:none;font-size:13px}
+.pdf-link:hover{background:rgba(66,232,219,.08)}
+.pdf-preview{border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.6);overflow:hidden}
+.pdf-preview>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 13px;color:var(--blue);font:600 13px "Space Grotesk"}
+.pdf-preview>summary::-webkit-details-marker{display:none}
+.preview-chevron{transition:transform .2s ease;font-size:18px;line-height:1}
+.pdf-preview[open] .preview-chevron{transform:rotate(180deg)}
+.pdf-preview-body{display:grid;gap:12px;padding:0 12px 12px;border-top:1px solid var(--line)}
+.pdf-preview iframe{display:block;width:100%;height:500px;border:0;background:#fff;margin-top:12px}
 .profile-link{margin-top:36px}
 .projects,.research-legacy{border-top:1px solid var(--line)}
 .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -142,24 +229,51 @@ footer div{display:flex;gap:22px}
 footer a{color:#91abb1;text-decoration:none}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+.profile-hero{min-height:660px;display:grid;grid-template-columns:minmax(0,1.28fr) minmax(300px,.72fr);align-items:center;gap:70px;padding:80px 0 88px}
+.profile-copy h1{font:600 clamp(46px,6vw,76px)/1.02 "Space Grotesk";letter-spacing:-.052em;margin:14px 0 24px}
+.profile-label{display:inline-block;margin:18px 0 0;padding:6px 9px;border-radius:6px;background:#eaf3ff;color:var(--blue);font:600 11px "Space Grotesk";letter-spacing:.1em;text-transform:uppercase}
+.variant-page .profile-visual{max-width:410px;justify-self:end}
+.variant-page .research-grid{grid-template-columns:repeat(2,1fr)}
+.variant-page .detail-grid{grid-template-columns:repeat(2,1fr)}
+.variant-page .project-grid{grid-template-columns:repeat(3,1fr)}
+.education-section{border-top:1px solid var(--line)}
+.education-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.education-grid article{padding:28px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(30,64,104,.05)}
+.education-grid article>span{font:600 11px "Space Grotesk";letter-spacing:.1em;color:var(--blue)}
+.education-grid h3{font:600 19px/1.35 "Space Grotesk";margin:18px 0 8px}
+.education-grid p{color:var(--muted);margin:0}
 
 @media(max-width:900px){.site-header nav{display:none}
 .hero{grid-template-columns:1fr;padding-top:70px}
+.profile-hero{grid-template-columns:1fr;gap:42px;padding-top:65px}
+.variant-page .profile-visual{justify-self:start;max-width:430px}
+.profile-paths{grid-template-columns:1fr 1fr}
+.profile-paths>div{grid-column:1/-1}
 .signal-card{max-width:520px}
 .proof{grid-template-columns:1fr}
 .proof>div{border-right:0;border-bottom:1px solid var(--line)}
 .proof>div:last-child{border-bottom:0}
 .learning-grid,.project-grid,.research-grid,.research-grid.compact{grid-template-columns:1fr}
+.variant-page .research-grid,.variant-page .detail-grid,.variant-page .project-grid,.education-grid{grid-template-columns:1fr}
 .detail-grid,.detail-grid.featured-grid{grid-template-columns:1fr}
+.certification-content{grid-template-columns:1fr}
 .section-head.row{display:block}
 .timeline-item{grid-template-columns:1fr;gap:4px}
 .closing{padding:44px 30px}
+.certification-accordion>summary{grid-template-columns:34px minmax(0,1fr) 185px}
 }
 
 @media(max-width:600px){.site-header{height:70px}
 .brand strong{display:none}
 .hero{min-height:auto;padding:62px 0 70px;gap:45px}
 .hero h1{font-size:49px}
+.hero-title{font-size:19px}
+.hero-motto{font-size:15px}
+.profile-copy h1{font-size:46px}
+.profile-menu>summary{padding:8px 10px;font-size:12px}
+.profile-menu>div{right:0;min-width:205px}
+.profile-paths{grid-template-columns:1fr}
+.profile-paths>div{grid-column:auto}
 .lede{font-size:17px}
 .radar{height:270px}
 .section{padding:82px 0}
@@ -168,15 +282,102 @@ footer a{color:#91abb1;text-decoration:none}
 .learning-feature{padding:28px}
 .credential{grid-template-columns:1fr}
 .credential-state{width:max-content}
+.certification-accordion>summary{padding:23px 20px}
+.certification-content{padding:22px 20px}
+.course-heading{align-items:flex-start;flex-direction:column;gap:4px}
 .pub{grid-template-columns:52px 1fr;gap:12px}
 .pub .arrow{display:none}
 .timeline-item{padding-left:28px}
 .closing{margin:40px 0 70px}
 .closing h2{font-size:39px}
 footer{height:auto;padding-top:28px;padding-bottom:28px;align-items:flex-start;gap:16px;flex-direction:column}
+.domain-area-head{display:grid;gap:14px;align-items:start}
+.domain-area-head>span{width:max-content}
+.certification-accordion>summary{grid-template-columns:32px 1fr;gap:14px}
+.cert-summary-side{grid-column:2;grid-template-columns:1fr 32px;width:100%;justify-items:start}
+.credential-links,.cert-progress{justify-content:flex-start;text-align:left}
+.cert-progress{text-align:left}
+.course-accordion>summary{grid-template-columns:32px minmax(0,1fr) 27px}
+.course-progress{grid-column:2;text-align:left;justify-items:start}
+.course-accordion .accordion-icon{grid-column:3;grid-row:1}
+.pdf-preview iframe{height:400px}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 .reveal{opacity:1;transform:none;transition:none}
 .button,.research-card,.pub{transition:none}
 }
+
+/* Executive Tech theme */
+body{background:linear-gradient(180deg,#f8faff 0,#f4f7fb 34%,#edf3fa 100%)}
+.site-header{background:rgba(255,255,255,.88);box-shadow:0 1px 0 rgba(18,48,78,.05)}
+.brand>span{background:#eaf4ff;border-color:rgba(37,99,235,.28);color:var(--blue);border-radius:10px}
+.site-header nav a:hover,.nav-cta:hover,.site-header nav a.current{color:var(--blue)}
+.nav-cta{background:#fff;border-radius:8px;box-shadow:0 4px 18px rgba(37,99,235,.07)}
+.hero:before{background:radial-gradient(circle,rgba(37,99,235,.11),transparent 66%)}
+.eyebrow,.proof-kicker,.learning-status,.detail-type,.pub-venue,.field-label,.project-year,.year,.date{color:var(--blue)}
+.pulse{background:#18a5ad;box-shadow:0 0 0 5px rgba(24,165,173,.12)}
+.hero h1 em{color:var(--blue)}
+.button{border-radius:9px}
+.button.primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 9px 24px rgba(37,99,235,.2)}
+.button.primary:hover{background:#174fc5}
+.button.ghost{background:#fff}
+.button.ghost:hover{border-color:var(--blue);color:var(--blue)}
+.signal-card{background:linear-gradient(155deg,#fff,#edf5ff);border-color:rgba(37,99,235,.18);border-radius:20px;box-shadow:0 30px 70px rgba(30,64,104,.16)}
+.card-top,.card-bottom{color:#667c94}
+.live{color:#0b8b70}
+.radar{background:linear-gradient(rgba(37,99,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.07) 1px,transparent 1px);background-size:30px 30px;border-radius:14px}
+.orbit{border-color:rgba(37,99,235,.23)}
+.core{background:var(--blue);color:#fff;box-shadow:0 0 35px rgba(37,99,235,.26)}
+.beam{background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+.proof{background:rgba(255,255,255,.48)}
+.learning-feature{border-color:rgba(37,99,235,.2);background:linear-gradient(145deg,#fff,#eaf3ff);border-radius:16px;box-shadow:0 18px 50px rgba(30,64,104,.09)}
+.course-type,.learning-feature small{color:#6c7f94}
+.progress{background:#dce6f1;border-radius:5px;overflow:hidden}
+.progress span{background:linear-gradient(90deg,var(--blue),#12a5ae)}
+.credential,.detail-card,.project-card,.research-card{background:rgba(255,255,255,.92);border-radius:14px;box-shadow:0 10px 30px rgba(30,64,104,.06)}
+.credential-state{color:#63758a;background:#f7f9fc;border-radius:999px}
+.credential-state.active{color:#087762;border-color:rgba(8,119,98,.24);background:#ebfaf5}
+.course-strip span,.tags span{background:#f2f6fb;color:#51667d;border-radius:6px}
+.page-hero{position:relative}
+.page-hero:after{content:"";position:absolute;inset:auto -20vw 0;height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,.26),transparent)}
+.page-stats span{background:#fff;border-radius:8px}
+.page-stats strong{color:var(--blue)}
+.detail-card .text-link,.section-head.row>a{color:var(--blue)}
+.detail-block strong{color:#304a66}
+.certification-accordion,.course-accordion{background:rgba(255,255,255,.94);border-radius:14px;box-shadow:0 10px 30px rgba(30,64,104,.055);overflow:hidden}
+.certification-accordion[open]{border-color:rgba(37,99,235,.27);background:linear-gradient(145deg,#fff,#f2f7ff)}
+.course-accordion{background:#f8fafe;box-shadow:none;border-radius:10px}
+.accordion-icon{border-color:rgba(37,99,235,.2);border-radius:8px;background:#edf4ff}
+.accordion-icon:before,.accordion-icon:after{background:var(--blue)}
+.course-count{color:#62768c}
+.pdf-link{border-color:rgba(37,99,235,.28);color:var(--blue);background:#fff;border-radius:8px}
+.pdf-link:hover{background:#edf4ff}
+.project-card.featured,.research-card.featured{background:linear-gradient(145deg,#fff,#eaf3ff);border-color:rgba(37,99,235,.2)}
+.research-card:hover{border-color:rgba(37,99,235,.38);box-shadow:0 18px 40px rgba(30,64,104,.11)}
+.num,.arrow{color:#7c91a7}
+.icon{color:var(--blue)}
+.pub:hover{background:rgba(37,99,235,.045)}
+.timeline-item{border-left-color:rgba(37,99,235,.24)}
+.dot{border-color:var(--blue);background:#fff}
+.timeline-item h3 span{color:#64788e}
+.closing{border-color:rgba(62,166,255,.3);background:linear-gradient(135deg,#102945,#0d2038);box-shadow:0 26px 70px rgba(15,39,68,.18);border-radius:20px;color:#f4f8ff}
+.closing:after{border-color:rgba(89,183,255,.2);box-shadow:0 0 0 50px rgba(89,183,255,.04),0 0 0 100px rgba(89,183,255,.025)}
+.closing .eyebrow{color:#74d9e1}
+.closing>p{color:#b8c9da}
+footer,footer a{color:#60758c}
+
+html[data-font="modern"] body{font-family:"DM Sans",sans-serif}
+html[data-font="modern"] h1,html[data-font="modern"] h2,html[data-font="modern"] h3,html[data-font="modern"] .brand strong{font-family:"DM Sans",sans-serif}
+html[data-font="classic"] body{font-family:"DM Sans",sans-serif}
+html[data-font="classic"] h1,html[data-font="classic"] h2,html[data-font="classic"] h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+html[data-font-size="small"]{font-size:15px}
+html[data-font-size="medium"]{font-size:16px}
+html[data-font-size="large"]{font-size:18px}
+html[data-font-size="small"] .page-hero>p:last-of-type,html[data-font-size="small"] .domain-area-head p:last-child,html[data-font-size="small"] .cert-overview p:not(.field-label),html[data-font-size="small"] .course-content p:not(.field-label){font-size:14px}
+html[data-font-size="small"] .cert-summary-main h2{font-size:22px}
+html[data-font-size="small"] .course-accordion summary strong{font-size:14px}
+html[data-font-size="large"] .page-hero>p:last-of-type,html[data-font-size="large"] .domain-area-head p:last-child,html[data-font-size="large"] .cert-overview p:not(.field-label),html[data-font-size="large"] .course-content p:not(.field-label){font-size:18px}
+html[data-font-size="large"] .cert-summary-main h2{font-size:29px}
+html[data-font-size="large"] .course-accordion summary strong{font-size:17px}
+html[data-font-size="large"] .field-label{font-size:12px}

@@ -1,0 +1,91 @@
+{
+  "genai": {
+    "label": "Generative & Agentic AI",
+    "pageBreakBefore": ["projects"],
+    "tagline": "LLM Applications | RAG | Agent Orchestration | Cloud Data Pipelines",
+    "headline": "Machine Learning Engineer | Generative & Agentic AI",
+    "summary": "Machine learning engineer with experience in operational telecommunications and scientific-data workflows. Developing GenAI capabilities through LLM-assisted analysis, retrieval, tool use, and orchestration, supported by professional learning in Amazon Bedrock and IBM RAG and Agentic AI. Combines applied ML, cloud data pipelines, and system-design practice.",
+    "skills": {
+      "GenAI & agentic AI - practice and coursework": "RAG, embeddings, vector databases, prompt engineering, LangGraph, CrewAI, AutoGen, Amazon Bedrock",
+      "Engineering": "Python, APIs, Azure Databricks, Azure Functions, Synapse Analytics, data pipelines",
+      "Systems": "ML workflows, operational diagnostics, automation, system design"
+    },
+    "experienceIds": ["att-current", "impac", "industry-research", "ou-research"],
+    "experienceText": "genai",
+    "projectIds": ["agentic-ai-rag", "meeting-minutes-llm", "unstructured-document-extraction", "lakehouse-pipeline", "system-design-portfolio"],
+    "certificationIds": ["aws-bedrock-professional", "ibm-genai-engineering", "ibm-rag-agentic-ai", "genai-fundamentals"],
+    "publicationIds": [],
+    "pages": [
+      ["summary", "skills", "experience", "education"],
+      ["projects", "certifications"]
+    ],
+    "maxPages": 2
+  },
+  "aiml": {
+    "label": "AI / ML & Data Science",
+    "pageBreakBefore": ["projects"],
+    "tagline": "Applied Machine Learning | Data Science | Model Evaluation | Intelligent Automation",
+    "headline": "Machine Learning Engineer | Applied AI & Data Science",
+    "summary": "Machine learning engineer applying data-driven methods to network operations, scientific datasets, and intelligent automation. Experience spans root-cause diagnostics, analytical workflows, cloud ML pipelines, and wireless-network research. Project work includes financial modeling, computer vision, and wearable time-series learning.",
+    "skills": {
+      "Machine learning": "Predictive modeling, statistical modeling, transfer learning, model evaluation, deep learning",
+      "Data & engineering": "Python, Azure Databricks, Spark, data preparation, cloud ML pipelines",
+      "Applications": "Network diagnostics, time-series analysis, financial ML, computer vision, wearable sensing"
+    },
+    "experienceIds": ["att-current", "impac", "industry-research", "ou-research"],
+    "experienceText": "generic",
+    "projectIds": ["financial-ml", "wearable-intelligence", "cloud-computer-vision", "lakehouse-pipeline"],
+    "certificationIds": ["stanford-machine-learning", "google-cloud-data-analytics", "ibm-genai-engineering", "deep-learning-healthcare", "ml-reinforcement-learning-finance"],
+    "publicationIds": ["resilient-propagation-2024"],
+    "pages": [
+      ["summary", "skills", "experience", "education"],
+      ["projects", "certifications", "publications"]
+    ],
+    "maxPages": 2
+  },
+  "wireless": {
+    "label": "Wireless Networks",
+    "pageBreakBefore": ["projects"],
+    "tagline": "5G and NTN | Network Intelligence | RAN Optimization | Applied Machine Learning",
+    "headline": "Wireless Networks & Machine Learning Engineer",
+    "summary": "Engineer with industry and academic experience in wireless-network intelligence, cellular-system analysis, and applied machine learning. Work spans 5G/NTN, mobility, propagation modeling, outage management, and RAN optimization. Connects network measurements, simulation, and experimental platforms with data-driven methods for reliable operation.",
+    "skills": {
+      "Wireless systems": "5G, NTN, cellular networks, mobility, RAN, propagation modeling",
+      "Network intelligence": "Outage management, optimization, transfer learning, statistical modeling",
+      "Research & engineering": "Python, 3GPP-based simulation, network measurement, experiment design, digital twins"
+    },
+    "experienceIds": ["att-current", "impac", "industry-research", "ou-research"],
+    "experienceText": "generic",
+    "projectIds": ["syntheticnet", "turboran"],
+    "certificationIds": ["stanford-machine-learning", "ibm-devops"],
+    "publicationIds": ["multiparameter-reliability-2025", "resilient-propagation-2024", "outage-management-2024", "lunarcomm-2022", "positioning-ran-2022"],
+    "pages": [
+      ["summary", "skills", "experience", "education"],
+      ["projects", "publications", "certifications"]
+    ],
+    "maxPages": 2
+  },
+  "generic": {
+    "label": "Comprehensive CV",
+    "tagline": "Applied AI | Generative AI | Wireless Networks | Research and Engineering",
+    "headline": "Machine Learning Engineer | AI, Wireless Systems & Research",
+    "summary": "Engineer and researcher working across applied machine learning, wireless networks, scientific-data workflows, and intelligent automation. Experience includes operational telecommunications, cloud analytics, industry research, and academic teaching. Ongoing professional development covers generative AI, agentic systems, software engineering, and system design.",
+    "skills": {
+      "Applied AI": "Machine learning, deep learning, transfer learning, statistical modeling, model evaluation",
+      "GenAI learning & projects": "RAG, agent orchestration, LLM applications, Amazon Bedrock",
+      "Systems & domains": "Python, Azure, Databricks, wireless networks, digital twins, wearable intelligence"
+    },
+    "experienceIds": "all",
+    "experienceText": "generic",
+    "projectIds": "all",
+    "certificationIds": "all",
+    "publicationIds": "all",
+    "pages": [
+      ["summary", "experience", "education"],
+      ["skills", "projects"],
+      ["certifications"],
+      ["publications"]
+    ],
+    "maxPages": 5
+  }
+}

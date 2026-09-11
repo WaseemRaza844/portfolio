@@ -1,0 +1,13 @@
+{
+  "name": "waseem-raza-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Waseem Raza's multi-page professional portfolio",
+  "scripts": {
+    "dev": "live-server dist --port=8000 --host=0.0.0.0 --no-browser --no-cache --watch=dist",
+    "preview": "python3 serve.py"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

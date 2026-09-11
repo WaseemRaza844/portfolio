@@ -1,0 +1,21 @@
+{
+  "name": "Waseem Raza Portfolio",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  "postCreateCommand": "npm install && bash resume/setup.sh",
+  "forwardPorts": [8000, 8001],
+  "portsAttributes": {
+    "8000": {
+      "label": "Portfolio Preview",
+      "onAutoForward": "openPreview"
+    },
+    "8001": {
+      "label": "Resume PDF Preview",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
