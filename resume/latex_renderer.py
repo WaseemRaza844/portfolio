@@ -87,24 +87,138 @@ def build_pdf(key, variant, data, settings, output):
                         body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
             elif name == 'certifications':
                 section('Certifications and Continuing Education')
-                for row in selected[name]:
+
+                for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
-                    meta = ' | '.join(filter(None, [row.get('status'), count, date_label(row.get('completionDate'))]))
-                    body.append(r'\entry{' + tex(row['title']) + '}{' + tex(row['issuer']) + '}')
-                    body.append(r'{\small ' + tex(meta) + r'\par}')
-                    if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
-                        body.append(r'{\small Original eight-course credential.\par}')
-                    description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
+                    date = date_label(row.get('completionDate'))
+
+                    # One progress statement instead of status plus count.
+                    # Example: "13/16 courses" -> "Completed (13/16) courses"
+                    if count:
+                        ratio = count.removesuffix(' courses').strip()
+                        completion_text = f'Completed ({ratio}) courses'
+                    elif row.get('status') == 'Completed':
+                        completion_text = 'Completed'
+                    else:
+                        completion_text = ''
+
+                    # Make the issuer text the Coursera link.
+                    issuer = row.get('issuer', '')
+                    coursera_url = row.get('links', {}).get('coursera')
+
+                    if web_url(coursera_url):
+                        issuer_text = (
+                            r'\textcolor{blue}{\underline{'
+                            + link(issuer or 'Coursera', coursera_url)
+                            + '}}'
+                        )
+                    else:
+                        issuer_text = tex(issuer)
+
+                    header_parts = [
+                        value
+                        for value in [
+                            issuer_text,
+                            tex(completion_text),
+                            tex(date),
+                        ]
+                        if value
+                    ]
+
+                    # Keep only the certificate link here.
+                    # The Coursera link is already attached to the issuer.
+                    for label, url in certificate_links(row, identity):
+                        if label not in ('Certificate', 'Certificate PDF'):
+                            continue
+
+                        header_parts.append(
+                            r'\textcolor{blue}{\underline{'
+                            + link('Certificate', url)
+                            + '}}'
+                        )
+
+                    body.append(r'\Needspace{6\baselineskip}')
+
+                    header = (
+                        r'\noindent\textbf{'
+                        + tex(f"{number}. {row['title']}")
+                        + '}'
+                    )
+
+                    if header_parts:
+                        header += (
+                            r' {\small --- '
+                            + r' \textbar{} '.join(header_parts)
+                            + '}'
+                        )
+
+                    body.append(header + r'\par')
+
+                    # Preserve the original awarded curriculum information.
+                    if (
+                        row['id'] == 'ibm-rag-agentic-ai'
+                        and count == '8/8 courses'
+                    ):
+                        body.append(
+                            r'{\small Original eight-course credential.\par}'
+                        )
+
+                    # Resume-specific description takes precedence.
+                    description = (
+                        row.get('resumeSummary')
+                        or row.get('summary')
+                        or row.get('overview')
+                    )
+
                     if description:
-                        body.append(r'\textit{Focus:} ' + tex(description) + r'\par')
-                    links = certificate_links(row, identity)
-                    if links:
-                        body.append(r'{\small ' + r' \quad '.join(link(label, url) for label, url in links) + r'\par}')
+                        body.append(
+                            r'\textbf{Focus:} '
+                            + tex(description)
+                            + r'\par'
+                        )
+
+                    # Prefer a curated resume list; otherwise use source skills.
+                    skills = row.get(
+                        'resumeSkills',
+                        row.get('skills', [])
+                    )
+
+                    if skills:
+                        skills_text = (
+                            ', '.join(skills)
+                            if isinstance(skills, list)
+                            else str(skills)
+                        )
+
+                        body.append(
+                            r'{\small\textbf{Tools \& Skills:} '
+                            + tex(skills_text)
+                            + r'\par}'
+                        )
+
+                    # Optional course-level details.
                     if variant.get('includeCourseDetails'):
                         for course in row.get('courses', []):
-                            status = course.get('status') or ('Completed' if str(course.get('completionDate', '')).startswith('Completed') else 'Status not supplied')
-                            body.append(r'{\small ' + link(course['title'], course.get('courseraUrl')) + ' -- ' + tex(status) + r'\par}')
-                    body.append(r'\vspace{2pt}')
+                            course_status = course.get('status') or (
+                                'Completed'
+                                if str(
+                                    course.get('completionDate', '')
+                                ).startswith('Completed')
+                                else 'Status not supplied'
+                            )
+
+                            body.append(
+                                r'{\small '
+                                + link(
+                                    course['title'],
+                                    course.get('courseraUrl')
+                                )
+                                + ' -- '
+                                + tex(course_status)
+                                + r'\par}'
+                            )
+
+                    body.append(r'\vspace{4pt}')
             elif name == 'publications':
                 section('Publications' if key == 'generic' else 'Selected Publications')
                 for row in selected[name]:
