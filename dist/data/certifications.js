@@ -38,21 +38,14 @@
         "title": "Design Instagram Newsfeed",
         "completionDate": "Completed",
         "takeaway": "Designed feed generation, fan-out, storage, caching, and availability paths.",
-        "skills": [
-          "Feed Design",
-          "Caching",
-          "Fan-out"
-        ],
+        "skills": [          "Feed Design",         "Caching",          "Fan-out"        ],
         "certificateUrl": ""
       },
       {
         "title": "System Architecture Assessments",
         "completionDate": "In progress",
         "takeaway": "Practice comparing architectural choices against scale, reliability, latency, and consistency requirements.",
-        "skills": [
-          "Architecture Tradeoffs",
-          "Reliability"
-        ],
+        "skills": [          "Architecture Tradeoffs",          "Reliability"        ],
         "certificateUrl": ""
       }
     ],
@@ -68,11 +61,15 @@
       "genai",
       "faculty"
     ],
+    reportedProgress: {
+    completed: 3,
+    total: 3
+    },
     "domain": "genai",
     "title": "AWS Generative AI and AI Agents with Amazon Bedrock",
-    "issuer": "AWS / Coursera",
+    "issuer": "AWS/Coursera",
     "status": "Completed",
-    "completionDate": "August 2026",
+    "completionDate": "08/2026",
     "summary": "Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications and intelligent agents with Amazon Bedrock.",
     "takeaway": "Build and deploy generative AI applications using foundation models, knowledge bases, LangChain, Amazon Q Developer, and Amazon Bedrock agent capabilities.",
     "skills": [
@@ -103,7 +100,7 @@
         "status": "Completed",
         "modulesCompleted": 2,
         "modulesTotal": 2,
-        "completionDate": "August 2026",
+        "completionDate": "08/2026",
         "summary": "Foundation course covering generative AI concepts, language models, prompt engineering, and AWS services for developers.",
         "takeaway": "Established the foundations needed to design and evaluate generative AI applications on AWS.",
         "skills": [

@@ -152,11 +152,11 @@ def certificate_links(row, identity):
         relative = credential.removeprefix('./')
         local = (ROOT / 'dist' / relative).resolve()
         if local.is_relative_to((ROOT / 'dist').resolve()) and local.is_file():
-            links.append(('Certificate PDF', urljoin(identity['portfolioUrl'].rstrip('/') + '/', relative)))
+            links.append(('Certificate', urljoin(identity['portfolioUrl'].rstrip('/') + '/', relative)))
     coursera = row.get('links', {}).get('coursera')
     if web_url(coursera) and coursera != credential:
         is_award = any(part in coursera for part in ('/verify/', '/accomplishments/'))
-        links.append(('Verify credential' if is_award else 'Program', coursera))
+        links.append(('Credential' if is_award else 'Program', coursera))
     return links
 
 
