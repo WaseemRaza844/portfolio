@@ -1,0 +1,176 @@
+{
+  "variants": {
+    "genai": {
+      "skills": {
+        "Generative & Agentic AI": "LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking, embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation",
+        "Microsoft AI Ecosystem": "Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models and agents, Azure Content Understanding, Semantic Kernel, and responsible AI concepts",
+        "LLM Frameworks & Models": "Hugging Face Transformers, LangChain, LangGraph, OpenAI APIs, transformer architectures, fine-tuning concepts, NLP foundation models, prompt templates, structured outputs, and LLM evaluation",
+        "Data & AI Platforms": "Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Functions, Azure Blob Storage, Azure Data Lake, Google BigQuery, and cloud analytics workflows",
+        "Data Engineering": "ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature engineering, data-quality assessment, and structured and unstructured data workflows",
+        "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection, classification, regression, time-series forecasting, cross-validation, and model evaluation",
+        "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell scripting, model deployment, reproducible workflows, and cloud-native application development",
+        "Programming & Analytics": "Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and exploratory data analysis"
+      },
+      "leadership": {
+        "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+        "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+        "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+        "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+        "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+        "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+      },
+      "maxPages": 3,
+      "summary": "AI/ML and Generative AI Engineer with a PhD in Electrical and Computer Engineering and 7+ years of experience developing data-driven systems across enterprise, industry, and research environments. Experience includes LLM-enabled analytics, AI-ready data pipelines, domain-adaptive machine learning, and scalable cloud solutions using Python, SQL, Azure Databricks, Apache Spark, and Azure services. At AT&T, lead development and operational integration of AI solutions for critical service-assurance workflows, improving automated diagnostic accuracy from 20% to 80%. Combine model evaluation, data quality, ETL, and cross-functional delivery to translate technical requirements into production-oriented AI capabilities.",
+      "latexFontSize": 10
+    },
+    "aiml": {
+      "skills": {
+        "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection, classification, regression, time-series forecasting, cross-validation, and model evaluation",
+        "Data Engineering": "ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature engineering, data-quality assessment, and structured and unstructured data workflows",
+        "Data & AI Platforms": "Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Functions, Azure Blob Storage, Azure Data Lake, Google BigQuery, and cloud analytics workflows",
+        "Programming & Analytics": "Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and exploratory data analysis",
+        "Generative & Agentic AI": "LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking, embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation",
+        "LLM Frameworks & Models": "Hugging Face Transformers, LangChain, LangGraph, OpenAI APIs, transformer architectures, fine-tuning concepts, NLP foundation models, prompt templates, structured outputs, and LLM evaluation",
+        "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell scripting, model deployment, reproducible workflows, and cloud-native application development",
+        "Microsoft AI Ecosystem": "Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models and agents, Azure Content Understanding, Semantic Kernel, and responsible AI concepts"
+      },
+      "leadership": {
+        "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+        "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+        "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+        "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+        "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+        "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+      },
+      "maxPages": 3,
+      "summary": "Machine Learning Engineer and Data Scientist with a PhD in Electrical and Computer Engineering and 7+ years of experience developing data-driven systems across enterprise, industry, and research environments. Experience includes LLM-enabled analytics, AI-ready data pipelines, domain-adaptive machine learning, and scalable cloud solutions using Python, SQL, Azure Databricks, Apache Spark, and Azure services. At AT&T, lead development and operational integration of AI solutions for critical service-assurance workflows, improving automated diagnostic accuracy from 20% to 80%. Combine model evaluation, data quality, ETL, and cross-functional delivery to translate technical requirements into production-oriented AI capabilities.",
+      "latexFontSize": 10
+    },
+    "wireless": {
+      "skills": {
+        "Wireless Systems": "LTE/5G-NR, NR-NTN, cell selection, user timing in 5G standalone networks, RAN optimization, mobility, propagation modeling, and service assurance",
+        "Wireless AI & Optimization": "Transfer learning, domain adaptation, adversarial learning, autoencoder-based CSI compression, GAN-based data generation, reinforcement learning, self-healing, and outage management",
+        "Simulation & Experimentation": "Python simulation platforms, 3GPP-compliant network simulation, AI-enabled 5G testbeds, diagnostic logs, measurement analysis, robustness testing, and systematic experimentation",
+        "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection, classification, regression, time-series forecasting, cross-validation, and model evaluation",
+        "Data Engineering": "ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature engineering, data-quality assessment, and structured and unstructured data workflows",
+        "Programming & Analytics": "Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and exploratory data analysis",
+        "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell scripting, model deployment, reproducible workflows, and cloud-native application development"
+      },
+      "leadership": {
+        "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+        "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+        "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+        "Continuous learning": "Extend expertise in machine learning, software engineering, and system design through coursework, implementation, and experimental wireless-network projects.",
+        "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+        "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+      },
+      "maxPages": 3,
+      "summary": "Wireless networks and machine learning engineer with a PhD in Electrical and Computer Engineering and 7+ years of industry and research experience. Work spans 5G/NTN, network diagnostics, domain-adaptive modeling, CSI compression, propagation simulation, and resilient network optimization. At AT&T, lead AI-driven E911 service-assurance development, improving automated diagnostic accuracy from 20% to 80%. Earlier roles at AT&T Labs, Futurewei, and the University of Oklahoma connect large-scale data analysis, experimental validation, and machine learning with practical wireless-system problems.",
+      "latexFontSize": 10
+    },
+    "generic": {
+      "skills": {
+        "Generative & Agentic AI": "LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking, embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation",
+        "Microsoft AI Ecosystem": "Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models and agents, Azure Content Understanding, Semantic Kernel, and responsible AI concepts",
+        "LLM Frameworks & Models": "Hugging Face Transformers, LangChain, LangGraph, OpenAI APIs, transformer architectures, fine-tuning concepts, NLP foundation models, prompt templates, structured outputs, and LLM evaluation",
+        "Data & AI Platforms": "Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Functions, Azure Blob Storage, Azure Data Lake, Google BigQuery, and cloud analytics workflows",
+        "Data Engineering": "ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature engineering, data-quality assessment, and structured and unstructured data workflows",
+        "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection, classification, regression, time-series forecasting, cross-validation, and model evaluation",
+        "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell scripting, model deployment, reproducible workflows, and cloud-native application development",
+        "Programming & Analytics": "Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and exploratory data analysis",
+        "Wireless Systems": "LTE/5G-NR, NR-NTN, cell selection, user timing in 5G standalone networks, RAN optimization, mobility, propagation modeling, and service assurance",
+        "Wireless AI & Optimization": "Transfer learning, domain adaptation, adversarial learning, autoencoder-based CSI compression, GAN-based data generation, reinforcement learning, self-healing, and outage management",
+        "Simulation & Experimentation": "Python simulation platforms, 3GPP-compliant network simulation, AI-enabled 5G testbeds, diagnostic logs, measurement analysis, robustness testing, and systematic experimentation"
+      },
+      "leadership": {
+        "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+        "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+        "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+        "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+        "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+        "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+      },
+      "maxPages": 4,
+      "summary": "AI/ML and Generative AI Engineer with a PhD in Electrical and Computer Engineering and 7+ years of experience developing data-driven systems across enterprise, industry, and research environments. Experience includes LLM-enabled analytics, AI-ready data pipelines, domain-adaptive machine learning, and scalable cloud solutions using Python, SQL, Azure Databricks, Apache Spark, and Azure services. At AT&T, lead development and operational integration of AI solutions for critical service-assurance workflows, improving automated diagnostic accuracy from 20% to 80%. Combine model evaluation, data quality, ETL, and cross-functional delivery to translate technical requirements into production-oriented AI capabilities. Research experience spans wireless-network intelligence, simulation, transfer learning, and experimental platforms, alongside teaching and mentorship.",
+      "latexFontSize": 9
+    }
+  },
+  "experienceOverrides": {
+    "att-current": {
+      "period": "Feb. 2025\u2013Present",
+      "organization": "AT&T, contractor via Innovatix Inc.",
+      "location": "Bedminster, NJ",
+      "bullets": [
+        "Own end-to-end development, testing, and operational integration of an AI-driven diagnostic system for critical E911 service-assurance workflows, improving automated root-cause classification accuracy from 20% to 80%.",
+        "Designed domain-adaptive neural models and reusable data-processing workflows that generalize across heterogeneous operational domains and reduce performance degradation caused by distribution shifts.",
+        "Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to support GenAI-assisted diagnostics for VoNR and 5G service assurance.",
+        "Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and support reliable deployment in high-impact operational environments.",
+        "Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated AI workflows and production-oriented data assets."
+      ]
+    },
+    "impac": {
+      "period": "Sep. 2024\u2013Dec. 2024",
+      "location": "Weatherford, OK",
+      "bullets": [
+        "Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.",
+        "Developed scalable ingestion, cleansing, transformation, and validation workflows using Python, Azure Databricks, Azure Functions, and Synapse Analytics.",
+        "Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.",
+        "Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.",
+        "Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable analytical outputs."
+      ]
+    },
+    "ou-research": {
+      "period": "Sep. 2019\u2013Sep. 2024",
+      "organization": "AI4Networks, University of Oklahoma",
+      "location": "Tulsa, OK",
+      "bullets": [
+        "Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant network simulator and an AI-enabled 5G testbed.",
+        "Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-domain modeling.",
+        "Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled samples; led 100+ experiments from problem formulation through validation.",
+        "Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.",
+        "Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation, experimental design, and technical writing."
+      ]
+    },
+    "industry-research": {
+      "resumePublished": false
+    }
+  },
+  "additionalExperience": [
+    {
+      "id": "att-labs-2024",
+      "role": "Advanced-Degrees Intern",
+      "organization": "AT&T Labs",
+      "period": "Jun. 2024\u2013Aug. 2024",
+      "location": "Austin, TX",
+      "bullets": [
+        "Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.",
+        "Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and validation.",
+        "Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting next-generation wireless systems."
+      ]
+    },
+    {
+      "id": "futurewei-2022",
+      "role": "Advanced Wireless Technology Development Intern",
+      "organization": "Futurewei Technologies",
+      "period": "Sep. 2022\u2013Jan. 2023",
+      "location": "Schaumburg, IL",
+      "bullets": [
+        "Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation on large wireless datasets.",
+        "Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.",
+        "Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation communication systems."
+      ]
+    },
+    {
+      "id": "att-labs-2022",
+      "role": "Advanced-Degrees Intern",
+      "organization": "AT&T Labs",
+      "period": "Jun. 2022\u2013Aug. 2022",
+      "location": "Bedminster, NJ",
+      "bullets": [
+        "Designed ML and statistical methods for analyzing users' timing in 5G standalone networks, improving analytical precision by 20%.",
+        "Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.",
+        "Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization."
+      ]
+    }
+  ]
+}
