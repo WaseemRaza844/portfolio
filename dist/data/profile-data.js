@@ -19,9 +19,9 @@ window.PROFILE_DATA = {
       github: "https://github.com/WaseemRaza844"
     },
     education: [
-      { degree: "PhD, Electrical and Computer Engineering", school: "University of Oklahoma", period: "2026" },
-      { degree: "MSc, Telecommunication Engineering", school: "UET Taxila", period: "2014–2016" },
-      { degree: "BSc, Telecommunication Engineering", school: "UET Taxila", period: "2010–2014" }
+      { degree: "PhD, Electrical and Computer Engineering", school: "University of Oklahoma", period: "09/2025-07/2025" },
+      { degree: "MSc, Telecommunication Engineering",       school: "UET Taxila",             period: "08/2014–08/2016" },
+      { degree: "BSc, Telecommunication Engineering",       school: "UET Taxila",             period: "11/2010–06/2014" }
     ],
     experience: [
       {
