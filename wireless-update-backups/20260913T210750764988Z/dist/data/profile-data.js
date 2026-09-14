@@ -122,16 +122,3 @@ window.PROFILE_DATA = {
     }
   }
 };
-
-// WIRELESS_CERTIFICATES_V1: add to existing relevant homepage selections only.
-(function () {
-  const ids = ["ai-for-telecommunications", "4g-network-fundamentals", "business-considerations-5g-edge-iot-ai"];
-  for (const key of ["generic", "wireless", "faculty"]) {
-    const variant = window.PROFILE_DATA?.variants?.[key];
-    if (variant && Array.isArray(variant.certificationIds)) {
-      for (const id of ids) {
-        if (!variant.certificationIds.includes(id)) variant.certificationIds.push(id);
-      }
-    }
-  }
-})();

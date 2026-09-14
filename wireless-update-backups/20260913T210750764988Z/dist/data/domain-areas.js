@@ -11,12 +11,6 @@ window.PORTFOLIO_DATA.domainAreas = [
     "description": "Traditional machine learning, data analytics, data engineering platforms, and model development, testing and evaluation."
   },
   {
-    "id": "wireless",
-    "title": "Wireless Communications & Networks",
-    "description": "Radio systems, cellular networks, signal processing, and communication technologies."
-  },
-
-  {
     "id": "cloud-devops",
     "title": "Cloud, DevOps & Software Engineering",
     "description": "Cloud platforms, software development, DevOps practices, cloud security, and cloud-based data analytics."
@@ -25,6 +19,11 @@ window.PORTFOLIO_DATA.domainAreas = [
     "id": "system-design",
     "title": "System Design & Software Architecture",
     "description": "Scalable services, distributed systems, architecture tradeoffs, and reliability."
+  },
+  {
+    "id": "wireless",
+    "title": "Wireless Communications & Networks",
+    "description": "Radio systems, cellular networks, signal processing, and communication technologies."
   },
   {
     "id": "cybersecurity",
@@ -43,12 +42,3 @@ window.PORTFOLIO_DATA.domainAreas = [
   }
 
 ];
-
-// WIRELESS_CERTIFICATES_V1: reuse an existing domain; otherwise append it.
-if (!window.PORTFOLIO_DATA.domainAreas.some(area => area.id === "wireless")) {
-  window.PORTFOLIO_DATA.domainAreas.push({
-    id: "wireless",
-    title: "Wireless Networks & Telecommunications",
-    description: "Cellular networks, AI for telecommunications, and 5G applications."
-  });
-}
