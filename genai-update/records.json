@@ -1,0 +1,494 @@
+{
+  "replacements": {
+    "CERT_05_genaiFundamentals": [
+      "CERT_GENAI_04_FUNDAMENTALS",
+      {
+        "id": "genai-fundamentals",
+        "profiles": [
+          "genai",
+          "faculty",
+          "generic"
+        ],
+        "domain": "genai",
+        "title": "Generative AI Fundamentals Specialization",
+        "issuer": "IBM / Coursera",
+        "status": "Completed",
+        "completionDate": "July 2026",
+        "summary": "Five-course foundation in generative AI, prompt engineering, LLMs, and practical enterprise applications.",
+        "takeaway": "Understand how generative models work, where they create value, and how to apply them responsibly.",
+        "skills": [
+          "Generative AI",
+          "Prompt Engineering",
+          "Foundation Models",
+          "Responsible AI",
+          "IBM watsonx",
+          "Hugging Face",
+          "Business Applications"
+        ],
+        "certificateUrl": "./certificates/genai/ibm-genai-fundamentals/ibm-genai-fundamentals.pdf",
+        "links": {
+          "coursera": "https://coursera.org/verify/specialization/IPQKDOHF3IV2",
+          "linkedin": "",
+          "github": ""
+        },
+        "courses": [
+          {
+            "title": "Generative AI: Introduction and Applications",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Explore generative AI capabilities, tools, and applications across different modalities.",
+            "takeaway": "Explore generative AI capabilities, tools, and applications across different modalities.",
+            "skills": [
+              "Generative AI",
+              "AI Applications",
+              "Foundation Models"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Generative AI: Prompt Engineering Basics",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Develop prompts that communicate task goals and context clearly.",
+            "takeaway": "Develop prompts that communicate task goals and context clearly.",
+            "skills": [
+              "Prompt Engineering",
+              "Prompt Iteration",
+              "Context Design"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Generative AI: Foundation Models and Platforms",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Explore foundation models and platforms including IBM watsonx and Hugging Face.",
+            "takeaway": "Explore foundation models and platforms including IBM watsonx and Hugging Face.",
+            "skills": [
+              "Foundation Models",
+              "IBM watsonx",
+              "Hugging Face"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Generative AI: Impact, Considerations, and Ethical Issues",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Examine the implications and ethical considerations of generative AI adoption.",
+            "takeaway": "Examine the implications and ethical considerations of generative AI adoption.",
+            "skills": [
+              "Responsible AI",
+              "AI Ethics",
+              "Risk Awareness"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Generative AI: Business Transformation and Career Growth",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Explore business applications and career opportunities associated with generative AI.",
+            "takeaway": "Explore business applications and career opportunities associated with generative AI.",
+            "skills": [
+              "Business Transformation",
+              "AI Use Cases",
+              "Career Development"
+            ],
+            "certificateUrl": ""
+          }
+        ],
+        "featured": true,
+        "reportedProgress": {
+          "completed": 5,
+          "total": 5
+        },
+        "published": true
+      }
+    ],
+    "CERT_10_ibmRagAndAgenticAi": [
+      "CERT_GENAI_03_IBM_RAG_AGENTIC_AI",
+      {
+        "id": "ibm-rag-agentic-ai",
+        "profiles": [
+          "generic",
+          "genai",
+          "faculty"
+        ],
+        "domain": "genai",
+        "title": "IBM RAG and Agentic AI Professional Certificate",
+        "issuer": "IBM / Coursera",
+        "status": "Completed",
+        "completionDate": "February 2026",
+        "reportedProgress": {
+          "completed": 8,
+          "total": 8
+        },
+        "summary": "Completed eight-course professional certificate covering retrieval-augmented generation, vector databases, multimodal applications, and agentic AI workflows.",
+        "curriculumNote": "This record documents the original eight-course curriculum listed on the certificate awarded February 14, 2026.",
+        "takeaway": "Designed context-aware generative AI systems by combining retrieval pipelines, vector databases, multimodal models, tool calling, agent memory, conditional workflows, and multi-agent orchestration.",
+        "skills": [
+          "Retrieval-Augmented Generation",
+          "Agentic AI",
+          "LangChain",
+          "LangGraph",
+          "Vector Databases",
+          "ChromaDB",
+          "FAISS",
+          "LlamaIndex",
+          "Multimodal AI",
+          "Tool Calling",
+          "Prompt Engineering",
+          "CrewAI",
+          "AutoGen / AG2",
+          "BeeAI",
+          "Gradio",
+          "Python",
+          "Flask"
+        ],
+        "certificateUrl": "./certificates/genai/ibm-rag-agentic-ai/ibm-rag-agentic-ai-professional-certificate.pdf",
+        "links": {
+          "coursera": "https://coursera.org/verify/professional-cert/0CB713GHZC1B",
+          "linkedin": "",
+          "github": ""
+        },
+        "courses": [
+          {
+            "title": "Develop Generative AI Applications: Get Started",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Develops modular generative AI applications using prompt engineering, LangChain templates, chains, agents, structured outputs, Flask, and model evaluation.",
+            "takeaway": "Built flexible LLM applications by combining reusable LangChain components with structured prompting, model selection, and a Flask interface.",
+            "skills": [
+              "Prompt Engineering",
+              "LangChain",
+              "LLM Applications",
+              "Model Evaluation",
+              "JSON",
+              "Flask"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Build RAG Applications: Get Started",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Introduces practical RAG application development with document processing, embeddings, vector stores, LangChain, LlamaIndex, Python, and Gradio.",
+            "takeaway": "Connected external knowledge with LLM generation through an end-to-end retrieval pipeline and interactive application interface.",
+            "skills": [
+              "RAG",
+              "Embeddings",
+              "Vector Databases",
+              "LangChain",
+              "LlamaIndex",
+              "Gradio"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Vector Databases for RAG: An Introduction",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Covers vector representations, similarity search, ChromaDB collections, database operations, recommendation workflows, and internal RAG mechanisms.",
+            "takeaway": "Applied embeddings and similarity search to store, retrieve, and rank semantically relevant information for grounded generation.",
+            "skills": [
+              "Vector Databases",
+              "ChromaDB",
+              "Embeddings",
+              "Similarity Search",
+              "Database Management",
+              "RAG"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Advanced RAG with Vector Databases and Retrievers",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Builds advanced retrieval pipelines using FAISS, ChromaDB, HNSW indexing, LangChain, LlamaIndex retrievers, and Gradio interfaces.",
+            "takeaway": "Improved retrieval quality by combining suitable vector indexes, advanced retrievers, orchestration components, and application-level evaluation.",
+            "skills": [
+              "Advanced RAG",
+              "FAISS",
+              "ChromaDB",
+              "HNSW",
+              "LlamaIndex",
+              "LangChain",
+              "Performance Tuning"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Build Multimodal Generative AI Applications",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Develops applications that combine text, speech, image, and video using IBM Granite, Meta Llama, Whisper, DALL-E, Sora, Hugging Face, Flask, and Gradio.",
+            "takeaway": "Integrated multiple data modalities and foundation models into coherent, user-facing generative AI workflows.",
+            "skills": [
+              "Multimodal AI",
+              "IBM Granite",
+              "Meta Llama",
+              "OpenAI Whisper",
+              "DALL-E",
+              "Hugging Face",
+              "Gradio"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Fundamentals of Building AI Agents",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Introduces autonomous agents, reasoning, tool calling, chaining, data-analysis agents, visualization, database queries, and agent-focused prompt engineering.",
+            "takeaway": "Built agents that select and use tools within structured workflows to complete analytical and application tasks.",
+            "skills": [
+              "AI Agents",
+              "LangChain",
+              "Tool Calling",
+              "Agentic Workflows",
+              "Data Analysis",
+              "Data Visualization"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Agentic AI with LangChain and LangGraph",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Builds stateful agentic systems with memory, conditional routing, iteration, Reflection, Reflexion, ReAct, collaborative agents, and Agentic RAG.",
+            "takeaway": "Designed stateful and self-improving agent workflows that route tasks, retain context, invoke retrieval, and coordinate reasoning steps.",
+            "skills": [
+              "LangGraph",
+              "LangChain",
+              "Agentic RAG",
+              "ReAct",
+              "Reflection",
+              "Memory",
+              "Conditional Routing"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Compares agentic frameworks and implements structured multi-agent workflows using LangGraph, CrewAI, AG2/AutoGen, BeeAI, custom tools, and conversation-driven coordination.",
+            "takeaway": "Selected and combined agent frameworks according to workflow state, collaboration, tool integration, and orchestration requirements.",
+            "skills": [
+              "Multi-Agent Systems",
+              "LangGraph",
+              "CrewAI",
+              "AutoGen / AG2",
+              "BeeAI",
+              "Tool Calling",
+              "Agent Orchestration"
+            ],
+            "certificateUrl": ""
+          }
+        ],
+        "featured": true,
+        "published": true
+      }
+    ]
+  },
+  "additions": [
+    [
+      "CERT_GENAI_05_BUILDING_AI_AGENTS",
+      {
+        "id": "ibm-building-ai-agents",
+        "profiles": [
+          "generic",
+          "genai"
+        ],
+        "domain": "genai",
+        "published": true,
+        "featured": true,
+        "title": "Building AI Agents and Agentic Workflows Specialization",
+        "issuer": "IBM / Coursera",
+        "status": "Completed",
+        "completionDate": "February 2026",
+        "reportedProgress": {
+          "completed": 3,
+          "total": 3
+        },
+        "summary": "Design agentic workflows with memory, conditional logic, tool use, and multi-agent orchestration using LangGraph, CrewAI, AutoGen, and BeeAI.",
+        "takeaway": "Design agentic workflows with memory, conditional logic, tool use, and multi-agent orchestration using LangGraph, CrewAI, AutoGen, and BeeAI.",
+        "skills": [
+          "Agentic AI",
+          "LangGraph",
+          "LangChain",
+          "CrewAI",
+          "AutoGen / AG2",
+          "BeeAI",
+          "Agent Memory",
+          "Tool Calling",
+          "Multi-Agent Orchestration"
+        ],
+        "certificateUrl": "./certificates/genai/ibm-building-ai-agents/ibm-building-ai-agents.pdf",
+        "links": {
+          "coursera": "https://coursera.org/verify/specialization/CEVQP0RYI532",
+          "linkedin": "",
+          "github": ""
+        },
+        "courses": [
+          {
+            "title": "Fundamentals of Building AI Agents",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Introduces autonomous agents, reasoning, tool calling, chaining, data-analysis agents, visualization, database queries, and agent-focused prompt engineering.",
+            "takeaway": "Built agents that select and use tools within structured workflows to complete analytical and application tasks.",
+            "skills": [
+              "AI Agents",
+              "LangChain",
+              "Tool Calling",
+              "Agentic Workflows",
+              "Data Analysis",
+              "Data Visualization"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Agentic AI with LangChain and LangGraph",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Builds stateful agentic systems with memory, conditional routing, iteration, Reflection, Reflexion, ReAct, collaborative agents, and Agentic RAG.",
+            "takeaway": "Designed stateful and self-improving agent workflows that route tasks, retain context, invoke retrieval, and coordinate reasoning steps.",
+            "skills": [
+              "LangGraph",
+              "LangChain",
+              "Agentic RAG",
+              "ReAct",
+              "Reflection",
+              "Memory",
+              "Conditional Routing"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Compares agentic frameworks and implements structured multi-agent workflows using LangGraph, CrewAI, AG2/AutoGen, BeeAI, custom tools, and conversation-driven coordination.",
+            "takeaway": "Selected and combined agent frameworks according to workflow state, collaboration, tool integration, and orchestration requirements.",
+            "skills": [
+              "Multi-Agent Systems",
+              "LangGraph",
+              "CrewAI",
+              "AutoGen / AG2",
+              "BeeAI",
+              "Tool Calling",
+              "Agent Orchestration"
+            ],
+            "certificateUrl": ""
+          }
+        ]
+      }
+    ],
+    [
+      "CERT_GENAI_06_RAG_APPLICATIONS",
+      {
+        "id": "ibm-rag-generative-ai-applications",
+        "profiles": [
+          "generic",
+          "genai"
+        ],
+        "domain": "genai",
+        "published": true,
+        "featured": true,
+        "title": "RAG for Generative AI Applications Specialization",
+        "issuer": "IBM / Coursera",
+        "status": "Completed",
+        "completionDate": "March 2026",
+        "reportedProgress": {
+          "completed": 4,
+          "total": 4
+        },
+        "summary": "Build retrieval-augmented applications using LangChain, LlamaIndex, FAISS, and ChromaDB to connect language models with relevant external information.",
+        "takeaway": "Build retrieval-augmented applications using LangChain, LlamaIndex, FAISS, and ChromaDB to connect language models with relevant external information.",
+        "skills": [
+          "Retrieval-Augmented Generation",
+          "LangChain",
+          "LlamaIndex",
+          "Vector Databases",
+          "FAISS",
+          "ChromaDB",
+          "Semantic Retrieval",
+          "LLM Applications"
+        ],
+        "certificateUrl": "./certificates/genai/ibm-rag-applications/ibm-rag-applications.pdf",
+        "links": {
+          "coursera": "https://coursera.org/verify/specialization/I7IDRI3160WV",
+          "linkedin": "",
+          "github": ""
+        },
+        "courses": [
+          {
+            "title": "Develop Generative AI Applications: Get Started",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Develops modular generative AI applications using prompt engineering, LangChain templates, chains, agents, structured outputs, Flask, and model evaluation.",
+            "takeaway": "Built flexible LLM applications by combining reusable LangChain components with structured prompting, model selection, and a Flask interface.",
+            "skills": [
+              "Prompt Engineering",
+              "LangChain",
+              "LLM Applications",
+              "Model Evaluation",
+              "JSON",
+              "Flask"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Build RAG Applications: Get Started",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Introduces practical RAG application development with document processing, embeddings, vector stores, LangChain, LlamaIndex, Python, and Gradio.",
+            "takeaway": "Connected external knowledge with LLM generation through an end-to-end retrieval pipeline and interactive application interface.",
+            "skills": [
+              "RAG",
+              "Embeddings",
+              "Vector Databases",
+              "LangChain",
+              "LlamaIndex",
+              "Gradio"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Vector Databases for RAG: An Introduction",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Covers vector representations, similarity search, ChromaDB collections, database operations, recommendation workflows, and internal RAG mechanisms.",
+            "takeaway": "Applied embeddings and similarity search to store, retrieve, and rank semantically relevant information for grounded generation.",
+            "skills": [
+              "Vector Databases",
+              "ChromaDB",
+              "Embeddings",
+              "Similarity Search",
+              "Database Management",
+              "RAG"
+            ],
+            "certificateUrl": ""
+          },
+          {
+            "title": "Advanced RAG with Vector Databases and Retrievers",
+            "status": "Completed",
+            "completionDate": "Completed",
+            "summary": "Builds advanced retrieval pipelines using FAISS, ChromaDB, HNSW indexing, LangChain, LlamaIndex retrievers, and Gradio interfaces.",
+            "takeaway": "Improved retrieval quality by combining suitable vector indexes, advanced retrievers, orchestration components, and application-level evaluation.",
+            "skills": [
+              "Advanced RAG",
+              "FAISS",
+              "ChromaDB",
+              "HNSW",
+              "LlamaIndex",
+              "LangChain",
+              "Performance Tuning"
+            ],
+            "certificateUrl": ""
+          }
+        ]
+      }
+    ]
+  ]
+}
