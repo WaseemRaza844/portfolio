@@ -1,6 +1,6 @@
 /* Domain headings and descriptions used on the Learning page. */
-window.PORTFOLIO_DATA.domainAreas = [
-  {
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+window.PORTFOLIO_DATA.domainAreas = [  {
     "id": "genai",
     "title": "Generative & Agentic AI",
     "description": "LLM applications, retrieval, orchestration, agents, evaluation, and responsible AI."

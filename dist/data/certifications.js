@@ -6,6 +6,7 @@
   - In Outline, disable Show Properties and keep Show Variables enabled.
   - Fold or unfold each // #region block from the editor gutter.
 */
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
 (function registerCertifications() {
   // #region 01 — System Design Masterclass
   const CERT_01_systemDesignMasterclass = {
@@ -1542,7 +1543,7 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
 [
   CERT_02_awsBedrockProfessional,
   CERT_03_ibmGenaiEngineering,
-  CERT_10_ibmRagAgenticAi,
+  // CERT_10_ibmRagAgenticAi,
   CERT_05_genaiFundamentals
 ].forEach((certification) => {
   certification.profiles = ["generic", "genai"];
@@ -1556,7 +1557,7 @@ window.PORTFOLIO_DATA.certifications = [
   // Priority 1: GenAI
   CERT_02_awsBedrockProfessional,
   CERT_03_ibmGenaiEngineering,
-  CERT_10_ibmRagAgenticAi,
+  // CERT_10_ibmRagAgenticAi,
   CERT_05_genaiFundamentals,
 
   // Priority 2: AI/ML and Data Science
