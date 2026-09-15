@@ -1,6 +1,6 @@
 /* Domain headings and descriptions used on the Learning page. */
-window.PORTFOLIO_DATA.domainAreas = [
-  {
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+window.PORTFOLIO_DATA.domainAreas = [  {
     "id": "genai",
     "title": "Generative & Agentic AI",
     "description": "LLM applications, retrieval, orchestration, agents, evaluation, and responsible AI."
@@ -43,3 +43,12 @@ window.PORTFOLIO_DATA.domainAreas = [
   }
 
 ];
+
+// WIRELESS_CERTIFICATES_V1: reuse an existing domain; otherwise append it.
+if (!window.PORTFOLIO_DATA.domainAreas.some(area => area.id === "wireless")) {
+  window.PORTFOLIO_DATA.domainAreas.push({
+    id: "wireless",
+    title: "Wireless Networks & Telecommunications",
+    description: "Cellular networks, AI for telecommunications, and 5G applications."
+  });
+}

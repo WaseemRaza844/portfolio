@@ -1,6 +1,10 @@
 (function () {
-  const data = window.PORTFOLIO_DATA;
-  if (!data) return;
+ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+const data = window.PORTFOLIO_DATA;
+if (!data || !data.certifications) {
+  console.warn("PORTFOLIO_DATA.certifications is not loaded yet.");
+  return;
+}
   const settings = data.settings || {};
   const learningSettings = settings.learning || {};
   const profileFilter = new URLSearchParams(window.location.search).get('profile');
