@@ -43,3 +43,12 @@ window.PORTFOLIO_DATA.domainAreas = [
   }
 
 ];
+
+// WIRELESS_CERTIFICATES_V1: reuse an existing domain; otherwise append it.
+if (!window.PORTFOLIO_DATA.domainAreas.some(area => area.id === "wireless")) {
+  window.PORTFOLIO_DATA.domainAreas.push({
+    id: "wireless",
+    title: "Wireless Networks & Telecommunications",
+    description: "Cellular networks, AI for telecommunications, and 5G applications."
+  });
+}
