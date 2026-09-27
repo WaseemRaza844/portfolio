@@ -121,10 +121,11 @@ This package includes `.github/workflows/deploy-pages.yml`, which publishes `dis
 
 ## Focused profiles
 
-- `/` — comprehensive Machine Learning and Wireless AI portfolio
+- `/` — Generic / Comprehensive portfolio
 - `/genai/` — Generative AI and Agentic AI portfolio
-- `/faculty/` — Faculty and academic portfolio
+- `/aiml/` — AI/ML and Data Science portfolio
+- `/faculty/` — Faculty and Academic portfolio
 
-Shared records remain in `dist/data.js`; shared identity, education, experience, and profile-specific selections live in `dist/profile-data.js`.
+Shared records live under `dist/data/`: identity, education, experience, and profile-specific selections are in `dist/data/profile-data.js`, with certifications, projects, publications, domains, and site configuration in their corresponding data files.
 
 The `.openai/hosting.json` file links this source project to its ChatGPT Site. Keep it if you want future Sites deployments to update the same website.
