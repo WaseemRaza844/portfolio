@@ -4,7 +4,7 @@
   const settings = data.settings || {};
   const learningSettings = settings.learning || {};
   const profileFilter = new URLSearchParams(window.location.search).get('profile');
-  const profileLabels = { generic: 'ML & Wireless', genai: 'GenAI & Agentic AI', faculty: 'Faculty & Academic', healthcare: 'Healthcare AI', finance: 'Finance AI' };
+  const profileLabels = { generic: 'Generic / Comprehensive', genai: 'GenAI & Agentic AI', aiml: 'AI/ML & Data Science', faculty: 'Faculty & Academic' };
   const visibleForProfile = (item) =>  item.published !== false &&  (!profileFilter || (item.profiles || []).includes(profileFilter));
 
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({
@@ -120,7 +120,7 @@
   if (publicationStats) publicationStats.innerHTML = '<span><strong>' + visiblePublications.length + '</strong> selected records</span><span><strong>2026–2020</strong> current range</span>';
   applySiteSettings();
   if (profileFilter && profileLabels[profileFilter]) {
-    const variantHome = profileFilter === 'genai' ? './genai/' : profileFilter === 'faculty' ? './faculty/' : './index.html';
+    const variantHome = ({ genai: './genai/', aiml: './aiml/', faculty: './faculty/' })[profileFilter] || './index.html';
     const brand = document.querySelector('.site-header .brand');
     if (brand) brand.setAttribute('href', variantHome);
     document.querySelectorAll('.site-header nav a, footer a').forEach((link) => {
