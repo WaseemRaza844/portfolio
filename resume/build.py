@@ -35,17 +35,28 @@ COLLECTIONS = ('experience', 'projects', 'certifications', 'publications')
 
 
 def clean(value):
-    """Normalize punctuation without interpreting source text as PDF markup."""
+    """Normalize Unicode punctuation and repair common UTF-8/CP1252 mojibake."""
     text = str(value or '')
+    # Repair strings such as "â€“" and "Â·" when UTF-8 bytes were decoded as CP1252.
+    for _ in range(2):
+        if not any(marker in text for marker in ('â', 'Â', 'Ã')):
+            break
+        try:
+            repaired = text.encode('cp1252').decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if repaired == text:
+            break
+        text = repaired
     replacements = {
         '\u2011': '-', '\u2013': '-', '\u2014': '-',
         '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
-        '\u00a0': ' ', '\u00b7': ' | ',
-        'â€“': '-', 'â€”': '-', 'â€‘': '-', 'â€™': "'", 'â€œ': '"', 'â€�': '"',
-        'Â·': ' | ', 'Â ': ' ', 'Â': ''
+        '\u00a0': ' ', '\u00b7': ' | '
     }
     for before, after in replacements.items():
         text = text.replace(before, after)
+    text = re.sub(r'[ \t]*\|[ \t]*', ' | ', text)
+    text = re.sub(r'[ \t]{2,}', ' ', text)
     return text
 
 
