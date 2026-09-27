@@ -9,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 
 
 def tex(value):
-    # Escape portfolio text, never treat it as executable TeX.
+    """Repair common mojibake, normalize punctuation, and escape text for LaTeX."""
     value = str(value or '')
     for _ in range(2):
         if not any(marker in value for marker in ('â', 'Â', 'Ã')):
@@ -21,17 +21,34 @@ def tex(value):
         if repaired == value:
             break
         value = repaired
+
     replacements = {
         '\u2011': '-', '\u2013': '-', '\u2014': '-',
         '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
         '\u00a0': ' ', '\u00b7': ' | '
     }
-    for a, b in replacements.items():
-        value = value.replace(a, b)
+    for before, after in replacements.items():
+        value = value.replace(before, after)
+
     value = re.sub(r'[ \t]*\|[ \t]*', ' | ', value)
     value = re.sub(r'[ \t]{2,}', ' ', value)
-    escapes = {'\\': r'\textbackslash{}', '&': r'\&', '%': r'\%', '
 
+    escapes = {
+        '\\': r'\textbackslash{}',
+        '&': r'\&',
+        '%': r'\%',
+        '$': r'\$',
+        '#': r'\#',
+        '_': r'\_',
+        '{': r'\{',
+        '}': r'\}',
+        '~': r'\textasciitilde{}',
+        '^': r'\textasciicircum{}',
+        '|': r'\textbar{}',
+        '<': r'\textless{}',
+        '>': r'\textgreater{}'
+    }
+    return ''.join(escapes.get(char, char) for char in value)
 
 def build_pdf(key, variant, data, settings, output):
     from build import select, date_label, progress, certificate_links, web_url
