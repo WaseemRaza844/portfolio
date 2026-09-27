@@ -11,9 +11,14 @@ HERE = Path(__file__).resolve().parent
 def tex(value):
     # Escape portfolio text, never treat it as executable TeX.
     value = str(value or '')
-    for a, b in {'\u2011': '-', '\u2013': '--', '\u2014': '---',
-                 '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
-                 '\u00a0': ' '}.items():
+    replacements = {
+        '\u2011': '-', '\u2013': '-', '\u2014': '-',
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u00a0': ' ', '\u00b7': ' | ',
+        'â€“': '-', 'â€”': '-', 'â€‘': '-', 'â€™': "'", 'â€œ': '"', 'â€�': '"',
+        'Â·': ' | ', 'Â ': ' ', 'Â': ''
+    }
+    for a, b in replacements.items():
         value = value.replace(a, b)
     escapes = {'\\': r'\textbackslash{}', '&': r'\&', '%': r'\%', '$': r'\$',
                '#': r'\#', '_': r'\_', '{': r'\{', '}': r'\}',
@@ -39,7 +44,7 @@ def build_pdf(key, variant, data, settings, output):
     body = []
 
     def section(title):
-        body.append(r'\Needspace{8\baselineskip}')
+        body.append(r'\Needspace{3\baselineskip}')
         body.append(r'\section{' + tex(title) + '}')
 
     def bullets(items):
@@ -59,10 +64,8 @@ def build_pdf(key, variant, data, settings, output):
                 body.append(tex(variant['summary']))
             elif name == 'skills':
                 section('Technical Expertise, Leadership, and Professional Strengths')
-                body.append(r'{\small\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.52in}X@{}}')
                 for label, value in variant['skills'].items():
-                    body.append(r'\skillrow{' + tex(label) + '}{' + tex(value) + '}')
-                body.append(r'\end{tabularx}}')
+                    body.append(r'\Needspace{2\baselineskip}\noindent{\small\textbf{' + tex(label) + ':} ' + tex(value) + r'}\par')
                 strengths = variant.get('leadership', {})
                 if strengths:
                     body.append(r'\Needspace{4\baselineskip}\textbf{Leadership and Professional Strengths}\par')
@@ -104,7 +107,7 @@ def build_pdf(key, variant, data, settings, output):
                     for label, url in certificate_links(row, identity):
                         if label in ('Certificate', 'Certificate PDF'):
                             parts.append(r'\textcolor{blue}{\underline{' + link('Certificate', url) + '}}')
-                    body.append(r'\Needspace{6\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
+                    body.append(r'\Needspace{3\baselineskip}\noindent\textbf{') + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
                     description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
