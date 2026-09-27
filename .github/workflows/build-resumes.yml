@@ -2,12 +2,7 @@ name: Build resume PDFs
 
 on:
   push:
-    branches: [main]
-    paths:
-      - 'resume/**'
-      - 'dist/data/**'
-      - '.github/workflows/build-resumes.yml'
-  pull_request:
+    branches: [main, develop]
     paths:
       - 'resume/**'
       - 'dist/data/**'
