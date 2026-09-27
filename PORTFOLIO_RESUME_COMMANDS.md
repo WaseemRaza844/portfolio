@@ -68,7 +68,7 @@ resume/.venv/bin/python resume/build.py --all
 ```bash
 resume/.venv/bin/python resume/build.py --variant genai
 resume/.venv/bin/python resume/build.py --variant aiml
-resume/.venv/bin/python resume/build.py --variant wireless
+resume/.venv/bin/python resume/build.py --variant faculty
 resume/.venv/bin/python resume/build.py --variant generic
 ```
 
@@ -82,7 +82,7 @@ resume/.venv/bin/python resume/build.py --list
 | --- | --- |
 | GenAI | `resume/output/Waseem_Raza_GENAI.pdf` |
 | AI/ML | `resume/output/Waseem_Raza_AIML.pdf` |
-| Wireless | `resume/output/Waseem_Raza_WIRELESS.pdf` |
+| Faculty & Academic | `resume/output/Waseem_Raza_FACULTY.pdf` |
 | Generic | `resume/output/Waseem_Raza_GENERIC.pdf` |
 
 The output folder also contains editable generated `.tex` files, extracted text,
@@ -119,7 +119,7 @@ print links; they do not start a server. The corresponding server and forwarded
 port must already be running. The Ports panel's copied address is authoritative
 if your environment uses a different forwarding address.
 
-For another PDF, change `GENAI` to `AIML`, `WIRELESS`, or `GENERIC` in the filename.
+For another PDF, change `GENAI` to `AIML`, `FACULTY`, or `GENERIC` in the filename.
 To download a PDF, use the browser PDF viewer's download button or right-click
 the generated file in Codespaces Explorer and select **Download**.
 
@@ -148,13 +148,13 @@ Append these paths to the forwarded website address:
 | --- | --- |
 | Generic home | `/index.html` |
 | GenAI home | `/genai/` |
-| Faculty home, if retained | `/faculty/` |
+| AI/ML & Data Science home | `/aiml/` |
+| Faculty & Academic home | `/faculty/` |
 | GenAI learning | `/learning.html?profile=genai` |
 | GenAI projects | `/projects.html?profile=genai` |
 
 Website routes depend on the files and profiles in your current site. Having an
-`aiml` or `wireless` **resume** variant does not automatically create that website
-route. Use the website's navigation for any newer variants you have added.
+The four active profiles are `generic`, `genai`, `aiml`, and `faculty`, with matching resume variants and website homepages.
 
 ## 6. Where to edit
 
