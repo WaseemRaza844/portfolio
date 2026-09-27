@@ -53,7 +53,7 @@ Other IDs: `aiml`, `faculty`, `generic`. `--list` lists available variants.
 ## Outputs and layout
 
 `resume/output/` contains four PDFs, matching standalone `.tex` files, extracted
-text, compiler logs and `build-report.json`. Focused variants are two pages each;
+text, compiler logs and `build-report.json`. Focused variants have a three-page budget;
 the comprehensive CV is three. Content edits may change these counts. Generated
 output and virtual environments are gitignored. Generated `.tex` files are
 overwritten: edit the template/JSON for persistent changes, or copy a generated
