@@ -37,9 +37,14 @@ COLLECTIONS = ('experience', 'projects', 'certifications', 'publications')
 def clean(value):
     """Normalize punctuation without interpreting source text as PDF markup."""
     text = str(value or '')
-    for before, after in {'\u2011': '-', '\u2013': '-', '\u2014': '-',
-                          '\u2018': "'", '\u2019': "'", '\u201c': '"',
-                          '\u201d': '"', '\u00a0': ' '}.items():
+    replacements = {
+        '\u2011': '-', '\u2013': '-', '\u2014': '-',
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u00a0': ' ', '\u00b7': ' | ',
+        'â€“': '-', 'â€”': '-', 'â€‘': '-', 'â€™': "'", 'â€œ': '"', 'â€�': '"',
+        'Â·': ' | ', 'Â ': ' ', 'Â': ''
+    }
+    for before, after in replacements.items():
         text = text.replace(before, after)
     return text
 
@@ -99,8 +104,9 @@ def merge_source(source, config):
         rows = []
         for row in original:
             result = {**row, **overrides.get(row['id'], {})}
-            # A source-hidden record stays hidden even if accidentally overridden.
-            if row.get('published') is False:
+            # Website visibility and resume visibility are separate. A source-hidden
+            # record may be explicitly opted into a resume with resumePublished=true.
+            if row.get('published') is False and result.get('resumePublished') is not True:
                 result['published'] = False
             rows.append(result)
         rows.extend(config.get('additional' + names[name], []))
@@ -115,7 +121,11 @@ def merge_source(source, config):
 
 
 def eligible(row):
-    return row.get('published') is not False and row.get('resumePublished') is not False
+    if row.get('resumePublished') is True:
+        return True
+    if row.get('resumePublished') is False:
+        return False
+    return row.get('published') is not False
 
 
 def select(rows, ids):
@@ -382,6 +392,21 @@ def build_pdf(key, variant, data, settings, output):
     return result
 
 
+def remove_stale_generated(output, active_keys):
+    """Remove generated resume artifacts for variants no longer configured."""
+    expected = {'Waseem_Raza_' + key.upper() for key in active_keys}
+    if not output.exists():
+        return
+    for path in output.iterdir():
+        if path.suffix.lower() in {'.pdf', '.tex', '.aux', '.log', '.out'} and path.stem.startswith('Waseem_Raza_'):
+            if path.stem not in expected:
+                path.unlink(missing_ok=True)
+        elif path.suffix.lower() == '.txt' and path.stem not in active_keys:
+            # Extracted text files are named by variant key.
+            if path.stem not in {'build-report'}:
+                path.unlink(missing_ok=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--all', action='store_true', help='Build all configured variants.')
@@ -401,6 +426,8 @@ def main():
     keys = list(variants) if args.all else [args.variant or 'genai']
     if any(key not in variants for key in keys):
         parser.error('Unknown variant; use --list.')
+    if args.all:
+        remove_stale_generated(args.output, variants.keys())
     config = read_json(HERE / 'content.json')
     data = merge_source(read_source(args.source_json), config)
     notes = audit(data)
