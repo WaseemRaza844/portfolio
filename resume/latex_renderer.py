@@ -107,7 +107,7 @@ def build_pdf(key, variant, data, settings, output):
                     for label, url in certificate_links(row, identity):
                         if label in ('Certificate', 'Certificate PDF'):
                             parts.append(r'\textcolor{blue}{\underline{' + link('Certificate', url) + '}}')
-                    body.append(r'\Needspace{3\baselineskip}\noindent\textbf{') + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
+                    body.append(r'\Needspace{3\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
                     description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
