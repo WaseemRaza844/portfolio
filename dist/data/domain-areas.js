@@ -8,23 +8,23 @@ window.PORTFOLIO_DATA.domainAreas = [  {
   {
     "id": "ml-data",
     "title": "AIML: Data Science & Analytics",
-    "description": "Traditional machine learning, analytics, data platforms, and model evaluation."
-  },
-  {
-    "id": "system-design",
-    "title": "System Design & Software Architecture",
-    "description": "Scalable services, distributed systems, architecture tradeoffs, and reliability."
-  },
-
-  {
-    "id": "cloud-devops",
-    "title": "DevOps & Software Engineering",
-    "description": "Cloud-native development, containers, automation, deployment, and operations."
+    "description": "Traditional machine learning, data analytics, data engineering platforms, and model development, testing and evaluation."
   },
   {
     "id": "wireless",
     "title": "Wireless Communications & Networks",
     "description": "Radio systems, cellular networks, signal processing, and communication technologies."
+  },
+
+  {
+    "id": "cloud-devops",
+    "title": "Cloud, DevOps & Software Engineering",
+    "description": "Cloud platforms, software development, DevOps practices, cloud security, and cloud-based data analytics."
+  },
+    {
+    "id": "system-design",
+    "title": "System Design & Software Architecture",
+    "description": "Scalable services, distributed systems, architecture tradeoffs, and reliability."
   },
   {
     "id": "cybersecurity",

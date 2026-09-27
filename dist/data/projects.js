@@ -39,10 +39,7 @@ window.PORTFOLIO_DATA.projects = [
   },
   {
     "id": "financial-ml",
-    "profiles": [
-      "generic",
-      "finance"
-    ],
+    "profiles": ["generic", "finance", "aiml"],
     "title": "Financial ML and Forecasting",
     "category": "Portfolio Project",
     "date": "2024–2025",
@@ -57,9 +54,7 @@ window.PORTFOLIO_DATA.projects = [
   },
   {
     "id": "cloud-computer-vision",
-    "profiles": [
-      "generic"
-    ],
+    "profiles": ["generic", "aiml"],
     "title": "Cloud Computer Vision",
     "category": "Guided Project",
     "date": "2025",
@@ -74,10 +69,7 @@ window.PORTFOLIO_DATA.projects = [
   },
   {
     "id": "lakehouse-pipeline",
-    "profiles": [
-      "generic",
-      "genai"
-    ],
+    "profiles": ["generic", "genai", "aiml"],
     "title": "AI-Ready Lakehouse Pipeline",
     "category": "Portfolio Project",
     "date": "2024",
@@ -164,10 +156,7 @@ window.PORTFOLIO_DATA.projects = [
   },
   {
     "id": "wearable-intelligence",
-    "profiles": [
-      "faculty",
-      "healthcare"
-    ],
+    "profiles": ["faculty", "healthcare", "aiml"],
     "title": "Wearable Intelligence for Health Monitoring",
     "category": "Research Project",
     "date": "2024–2026",

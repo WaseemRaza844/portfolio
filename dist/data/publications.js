@@ -2,11 +2,7 @@
 window.PORTFOLIO_DATA.publications = [
   {
     "id": "medication-adherence-2026",
-    "profiles": [
-      "generic",
-      "faculty",
-      "healthcare"
-    ],
+    "profiles": ["generic", "faculty", "healthcare", "aiml"],
     "year": "2026",
     "title": "Real-World Medication Adherence Monitoring Using Hybrid Neural Networks and Smartwatches",
     "venue": "HealthINF · Accepted",
@@ -38,11 +34,7 @@ window.PORTFOLIO_DATA.publications = [
   },
   {
     "id": "resilient-propagation-2024",
-    "profiles": [
-      "generic",
-      "faculty",
-      "wireless"
-    ],
+    "profiles": ["generic", "faculty", "wireless", "aiml"],
     "year": "2024",
     "title": "An AI-Driven Framework for Enhancing Resilience in Propagation Models to Enable Digital Twin",
     "venue": "IEEE PIMRC",
@@ -56,11 +48,7 @@ window.PORTFOLIO_DATA.publications = [
   },
   {
     "id": "outage-management-2024",
-    "profiles": [
-      "generic",
-      "faculty",
-      "wireless"
-    ],
+    "profiles": ["generic", "faculty", "wireless", "aiml"],
     "year": "2024",
     "title": "Data-Driven Intelligent Outage Management for High Shadowing Environments in 5G&B Networks",
     "venue": "IEEE SmartNets",
