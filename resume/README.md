@@ -6,7 +6,7 @@ blue section headings with rules, compact bullets, right-aligned dates, 9 pt tex
 Letter paper and 0.55 inch margins. Contact links use words instead of Font Awesome
 icons. No running header or page numbers, as in the reference.
 
-The four variants keep their portfolio-derived content. Additional achievement
+The four variants—Generic, GenAI & Agentic AI, AI/ML & Data Science, and Faculty & Academic—keep their portfolio-derived content. Additional achievement
 bullets and metrics in the reference resumes were not imported automatically.
 Only email and phone were copied into contact settings. The website is unchanged.
 
@@ -48,7 +48,7 @@ Your website can run separately using `npm run dev` on port 8000.
 | `dist/data/publications.js` | Publications |
 
 Build one variant with `resume/.venv/bin/python resume/build.py --variant genai`.
-Other IDs: `aiml`, `wireless`, `generic`. `--list` lists available variants.
+Other IDs: `aiml`, `faculty`, `generic`. `--list` lists available variants.
 
 ## Outputs and layout
 
