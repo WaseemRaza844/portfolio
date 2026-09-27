@@ -7,15 +7,19 @@
     }
   },
   "postCreateCommand": "npm install && bash resume/setup.sh",
-  "forwardPorts": [8000, 8001],
+  "forwardPorts": [
+    8000,
+    8001
+  ],
   "portsAttributes": {
     "8000": {
       "label": "Portfolio Preview",
-      "onAutoForward": "openPreview"
+      "onAutoForward": "openBrowser"
     },
     "8001": {
       "label": "Resume PDF Preview",
       "onAutoForward": "openBrowser"
     }
-  }
+  },
+  "postStartCommand": "bash .devcontainer/start-portfolio.sh"
 }
