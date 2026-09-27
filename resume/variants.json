@@ -1,5 +1,69 @@
 {
   "generic": {
+    "label": "Generic 3-Page Resume",
+    "tagline": "Applied AI | Generative & Agentic AI | Data Science | Wireless Networks",
+    "headline": "Machine Learning Engineer | AI/ML, GenAI & Wireless Systems",
+    "summary": "Machine Learning Engineer with a PhD in Electrical and Computer Engineering and experience spanning applied AI, Generative AI, data science, wireless-network intelligence, and production-oriented engineering. Work includes diagnostic machine learning, domain adaptation, AI-ready data pipelines, model evaluation, cloud analytics, intelligent automation, and research in resilient wireless systems. Combines industry delivery at AT&T and Impac Exploration Services with research experience at AT&T Labs, Futurewei, and the University of Oklahoma.",
+    "skills": {
+      "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, classification, regression, anomaly detection, transfer learning, domain adaptation, time-series modeling, cross-validation, and model evaluation",
+      "Generative & Agentic AI": "RAG, embeddings, vector retrieval, prompt engineering, structured extraction, tool-using agents, LangChain, LangGraph, agent orchestration, and grounded response generation",
+      "Data Engineering & Analytics": "Python, SQL, Pandas, NumPy, ETL/ELT, feature engineering, data validation, Azure Databricks, Apache Spark, PySpark, and cloud analytics workflows",
+      "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, model deployment, and reproducible workflows",
+      "Wireless Systems": "LTE/4G, 5G-NR, NR-NTN, mobility, RAN optimization, propagation modeling, network measurements, and service assurance",
+      "Wireless AI & Reliability": "Network intelligence, outage management, transfer learning, adversarial learning, generative augmentation, self-healing, and resilient automation"
+    },
+    "experienceIds": [
+      "att-current",
+      "impac",
+      "att-labs-2024",
+      "futurewei-2022",
+      "att-labs-2022",
+      "ou-research"
+    ],
+    "experienceText": "generic",
+    "projectIds": [
+      "agentic-ai-rag",
+      "lakehouse-pipeline",
+      "syntheticnet",
+      "wearable-intelligence",
+      "system-design-portfolio"
+    ],
+    "certificationIds": [
+      "aws-bedrock-professional",
+      "ibm-rag-agentic-ai",
+      "stanford-machine-learning",
+      "google-cloud-data-analytics",
+      "ai-for-telecommunications",
+      "4g-network-fundamentals"
+    ],
+    "publicationIds": [
+      "medication-adherence-2026",
+      "resilient-propagation-2024",
+      "multiparameter-reliability-2025"
+    ],
+    "pages": [
+      [
+        "summary",
+        "skills",
+        "experience",
+        "education",
+        "projects",
+        "certifications",
+        "publications"
+      ]
+    ],
+    "maxPages": 3,
+    "leadership": {
+      "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+      "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+      "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+      "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+      "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+      "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+    },
+    "latexFontSize": 9
+  },
+  "comprehensive": {
     "label": "Comprehensive CV",
     "tagline": "Applied AI | Generative AI | Wireless Networks | Research and Engineering",
     "headline": "Machine Learning Engineer | AI, Wireless Systems & Research",
@@ -33,21 +97,15 @@
     "pages": [
       [
         "summary",
-        "experience",
-        "education"
-      ],
-      [
         "skills",
-        "projects"
-      ],
-      [
-        "certifications"
-      ],
-      [
+        "experience",
+        "education",
+        "projects",
+        "certifications",
         "publications"
       ]
     ],
-    "maxPages": 4,
+    "maxPages": 6,
     "leadership": {
       "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
       "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
@@ -101,9 +159,7 @@
         "summary",
         "skills",
         "experience",
-        "education"
-      ],
-      [
+        "education",
         "projects",
         "certifications"
       ]
@@ -117,7 +173,7 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 10
+    "latexFontSize": 9
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -164,9 +220,7 @@
         "summary",
         "skills",
         "experience",
-        "education"
-      ],
-      [
+        "education",
         "projects",
         "certifications",
         "publications"
@@ -181,7 +235,172 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 10
+    "latexFontSize": 9
+  },
+  "wireless": {
+    "label": "AI/ML for Wireless Networks",
+    "tagline": "Wireless AI | 5G/6G | RAN Intelligence | Network Automation",
+    "headline": "Machine Learning Engineer | AI/ML for Wireless & 5G/6G Systems",
+    "summary": "Machine Learning Engineer and wireless-systems researcher with a PhD in Electrical and Computer Engineering and experience applying AI/ML to cellular-network diagnostics, propagation modeling, mobility, network resilience, and next-generation wireless systems. Industry and research work spans AT&T, AT&T Labs, Futurewei, and AI4Networks, with emphasis on reliable learning under domain shift, 5G/NR-NTN analysis, RAN optimization, outage management, digital-twin modeling, and intelligent network operations.",
+    "skills": {
+      "AI/ML for Wireless": "Transfer learning, domain adaptation, adversarial learning, generative modeling, reinforcement learning, anomaly detection, classification, and robust model evaluation",
+      "Wireless Systems": "LTE/4G, 5G-NR, NR-NTN, mobility, RAN, propagation, cell selection, user timing, network measurements, and service assurance",
+      "Network Intelligence": "Root-cause analysis, outage detection and compensation, self-healing, optimization, resilience, and intelligent automation",
+      "Simulation & Digital Twins": "3GPP-compliant simulation, propagation modeling, synthetic data generation, digital twins, large-scale experimentation, and robustness testing",
+      "Programming & Data": "Python, SQL, PyTorch, TensorFlow, scikit-learn, XGBoost, Pandas, NumPy, visualization, and statistical analysis",
+      "Engineering & MLOps": "Git, Docker, CI/CD, reproducible experimentation, APIs, cloud analytics, model validation, and production-oriented workflows"
+    },
+    "experienceIds": [
+      "att-current",
+      "att-labs-2024",
+      "futurewei-2022",
+      "att-labs-2022",
+      "ou-research"
+    ],
+    "experienceText": "generic",
+    "projectIds": [
+      "syntheticnet",
+      "turboran"
+    ],
+    "certificationIds": [
+      "ai-for-telecommunications",
+      "4g-network-fundamentals",
+      "business-considerations-5g-edge-iot-ai",
+      "stanford-machine-learning"
+    ],
+    "publicationIds": [
+      "multiparameter-reliability-2025",
+      "resilient-propagation-2024",
+      "outage-management-2024",
+      "lunarcomm-2022",
+      "positioning-ran-2022"
+    ],
+    "pages": [
+      [
+        "summary",
+        "skills",
+        "experience",
+        "education",
+        "projects",
+        "certifications",
+        "publications"
+      ]
+    ],
+    "maxPages": 3,
+    "leadership": {
+      "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+      "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+      "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+      "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+      "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+      "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+    },
+    "latexFontSize": 9
+  },
+  "healthcare": {
+    "label": "Healthcare AI & Wearable Intelligence",
+    "tagline": "Healthcare AI | Wearable Sensing | Deep Learning | Reliable ML",
+    "headline": "Machine Learning Engineer | Healthcare AI & Wearable Intelligence",
+    "summary": "Machine Learning Engineer and researcher with a PhD in Electrical and Computer Engineering and experience applying deep learning, time-series modeling, and reliable AI to wearable sensing and real-world health-monitoring problems. Research includes continuous medication-taking recognition from wrist-worn inertial sensors, personalization, domain adaptation, model evaluation, and cross-user robustness, complemented by broader production ML and cloud-data engineering experience.",
+    "skills": {
+      "Healthcare AI & Wearables": "Wearable sensing, medication-adherence monitoring, activity recognition, smartwatch IMU data, human-centered sensing, and health-data applications",
+      "Deep Learning": "CNNs, LSTMs, attention, transfer learning, domain adaptation, representation learning, classification, and sequence modeling",
+      "Time-Series & Sensor ML": "Windowing, segmentation, feature engineering, temporal modeling, cross-user evaluation, personalization, and continuous-event detection",
+      "Reliable & Personalized ML": "Distribution shift, few-shot adaptation, fairness-aware evaluation, robustness analysis, LOSO validation, and error analysis",
+      "Data & Engineering": "Python, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, cloud analytics, data pipelines, APIs, and reproducible experimentation",
+      "Research & Evaluation": "Experimental design, statistical analysis, sensitivity/specificity, precision/recall/F1, cross-validation, visualization, and technical communication"
+    },
+    "experienceIds": [
+      "att-current",
+      "impac",
+      "ou-research"
+    ],
+    "experienceText": "generic",
+    "projectIds": [
+      "wearable-intelligence",
+      "cloud-computer-vision"
+    ],
+    "certificationIds": [
+      "deep-learning-healthcare",
+      "stanford-machine-learning",
+      "google-cloud-data-analytics",
+      "ibm-genai-engineering"
+    ],
+    "publicationIds": [
+      "medication-adherence-2026"
+    ],
+    "pages": [
+      [
+        "summary",
+        "skills",
+        "experience",
+        "education",
+        "projects",
+        "certifications",
+        "publications"
+      ]
+    ],
+    "maxPages": 3,
+    "leadership": {
+      "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+      "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+      "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+      "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+      "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+      "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+    },
+    "latexFontSize": 9
+  },
+  "finance": {
+    "label": "Financial AI/ML & Data Science",
+    "tagline": "Financial ML | Forecasting | Risk Analytics | Data Engineering",
+    "headline": "Machine Learning Engineer | Financial AI/ML & Data Science",
+    "summary": "Machine Learning Engineer and Data Scientist with a PhD in Electrical and Computer Engineering, production ML experience, and finance-focused portfolio work in credit-risk modeling, loan-default prediction, time-series forecasting, and reinforcement-learning study. Brings strong foundations in statistical learning, model evaluation, cloud data engineering, and reproducible analytics while developing deeper specialization in machine learning for financial prediction, portfolio management, trading, and risk.",
+    "skills": {
+      "Financial Machine Learning": "Credit-risk modeling, loan-default prediction, supervised learning, predictive modeling, reinforcement-learning concepts, portfolio and trading applications",
+      "Time Series & Statistics": "Forecasting, statistical modeling, feature engineering, regression, classification, model diagnostics, validation, and uncertainty-aware analysis",
+      "Data Science & Analytics": "Python, SQL, Pandas, NumPy, SciPy, Statsmodels, exploratory analysis, visualization, and data-quality assessment",
+      "Machine Learning": "scikit-learn, XGBoost, TensorFlow, PyTorch, cross-validation, hyperparameter tuning, anomaly detection, and model evaluation",
+      "Data Engineering & Cloud": "ETL/ELT, Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Synapse Analytics, BigQuery, and AI-ready datasets",
+      "MLOps & Engineering": "Git, Docker, CI/CD, APIs, testing, reproducible workflows, model deployment, and production-oriented engineering"
+    },
+    "experienceIds": [
+      "att-current",
+      "impac",
+      "ou-research"
+    ],
+    "experienceText": "generic",
+    "projectIds": [
+      "financial-ml",
+      "lakehouse-pipeline",
+      "system-design-portfolio"
+    ],
+    "certificationIds": [
+      "ml-reinforcement-learning-finance",
+      "stanford-machine-learning",
+      "google-cloud-data-analytics"
+    ],
+    "publicationIds": [],
+    "pages": [
+      [
+        "summary",
+        "skills",
+        "experience",
+        "education",
+        "projects",
+        "certifications"
+      ]
+    ],
+    "maxPages": 3,
+    "leadership": {
+      "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
+      "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
+      "Cross-functional collaboration": "Work with software engineers, network specialists, researchers, geologists, and public-safety stakeholders to translate domain requirements into practical data and AI solutions.",
+      "Continuous learning": "Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms through hands-on projects and professional coursework.",
+      "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
+      "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
+    },
+    "latexFontSize": 9
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -230,11 +449,9 @@
         "summary",
         "skills",
         "experience",
-        "education"
-      ],
-      [
-        "projects",
+        "education",
         "publications",
+        "projects",
         "certifications"
       ]
     ],
@@ -247,6 +464,6 @@
       "Persistence and rigor": "Approach difficult research problems through systematic experimentation, careful validation, iterative refinement, and attention to reproducibility.",
       "Continuous development": "Extend teaching and research capability through ongoing study in generative AI, agentic systems, cloud engineering, and emerging wireless technologies."
     },
-    "latexFontSize": 10
+    "latexFontSize": 9
   }
 }
