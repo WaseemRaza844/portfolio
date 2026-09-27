@@ -71,6 +71,64 @@
   function projectCard(item) {
     return '<article class="project-card reveal visible"><div class="detail-card-top"><p class="project-year">' + esc(item.date) + '</p><span class="project-kind">' + esc(item.category) + '</span></div><h3>' + esc(item.title) + '</h3><p>' + esc(item.summary) + '</p>' + tags(item.skills) + '</article>';
   }
+
+  function projectLinkList(links) {
+    const labels = { github: 'GitHub', demo: 'Live demo', coursera: 'Coursera', paper: 'Publication', project: 'Project link' };
+    return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
+      '<a href="' + esc(url) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
+    ).join('');
+  }
+
+  function projectAccordion(item, index) {
+    const projectLinks = projectLinkList(item.links);
+    const relatedCertifications = (item.relatedCertificationIds || [])
+      .map((id) => data.certifications.find((cert) => cert.id === id))
+      .filter(Boolean);
+    const credentialBlock = item.certificateUrl
+      ? '<div><p class="field-label">Project certificate / credential</p>' + pdfDocument(item.certificateUrl, 'project certificate') + '</div>'
+      : relatedCertifications.length
+        ? '<div><p class="field-label">Related learning credentials</p><div class="project-related-credentials">' + relatedCertifications.map((cert) => '<span>' + esc(cert.title) + '</span>').join('') + '</div></div>'
+        : '<div><p class="field-label">Certificate / credential</p><p>No separate project certificate is currently recorded for this project.</p></div>';
+
+    return '<details class="project-accordion reveal visible"><summary>' +
+      '<span class="project-number">' + String(index + 1).padStart(2, '0') + '</span>' +
+      '<div class="project-summary-main"><p class="detail-type">' + esc(item.category) + '</p><h2>' + esc(item.title) + '</h2>' +
+      (item.skills?.length ? tags(item.skills) : '') + '</div>' +
+      '<div class="project-summary-side"><div class="project-links">' + projectLinks + '</div><span class="accordion-icon" aria-hidden="true"></span>' +
+      '<div class="project-status"><strong>' + esc(item.status || 'Project') + '</strong><span>' + esc(item.date || '') + '</span></div></div>' +
+      '</summary><div class="project-accordion-content">' +
+      '<div class="project-overview"><div><p class="field-label">Project overview</p><p>' + esc(item.summary) + '</p></div>' +
+      '<div><p class="field-label">Project type</p><p>' + esc(item.category) + '</p></div>' +
+      '<div><p class="field-label">Status & timeline</p><p>' + esc(item.status || '') + (item.date ? ' · ' + esc(item.date) : '') + '</p></div></div>' +
+      '<div class="project-evidence"><div><p class="field-label">Important skills & tools</p>' + tags(item.skills || []) + '</div>' +
+      (projectLinks ? '<div><p class="field-label">Relevant links</p><div class="project-links expanded">' + projectLinks + '</div></div>' : '') +
+      credentialBlock + '</div></div></details>';
+  }
+
+  function projectGroupSection(group, items) {
+    return '<section class="project-group" data-project-group="' + esc(group.id) + '">' +
+      '<div class="project-group-head"><div><p class="eyebrow">PROJECT GROUP</p><h2>' + esc(group.title) + '</h2><p>' + esc(group.description) + '</p></div>' +
+      '<span>' + items.length + ' project' + (items.length === 1 ? '' : 's') + '</span></div>' +
+      '<div class="project-accordion-list">' + items.map(projectAccordion).join('') + '</div></section>';
+  }
+
+  function mountProjectGroups() {
+    const el = document.getElementById('all-projects');
+    if (!el) return;
+    const visibleProjects = data.projects.filter(visibleForProfile);
+    const groups = data.projectGroups || [];
+    el.innerHTML = groups.map((group) => {
+      const items = visibleProjects.filter((item) => item.group === group.id);
+      return items.length ? projectGroupSection(group, items) : '';
+    }).join('');
+
+    const stats = document.getElementById('project-stats');
+    if (stats) {
+      const visibleGroups = groups.filter((group) => visibleProjects.some((item) => item.group === group.id)).length;
+      const active = visibleProjects.filter((item) => /progress|active/i.test(item.status || '')).length;
+      stats.innerHTML = '<span><strong>' + visibleProjects.length + '</strong> projects</span><span><strong>' + visibleGroups + '</strong> project groups</span><span><strong>' + active + '</strong> active / in progress</span>';
+    }
+  }
   function publicationCard(item) {
     const body = '<span class="year">' + esc(item.year) + '</span><div><p class="pub-venue">' + esc(item.venue) + '</p><h3>' + esc(item.title) + '</h3><p>' + esc(item.summary) + '</p>' + tags(item.topics) + '</div><span class="arrow">' + (item.url ? "↗" : "") + '</span>';
     return item.url ? '<a class="pub reveal visible" href="' + esc(item.url) + '" target="_blank" rel="noopener">' + body + '</a>' : '<article class="pub reveal visible">' + body + '</article>';
@@ -109,12 +167,9 @@
   mount("featured-certifications", data.certifications, featuredCertificationCard, true);
   mountDomainAreas();
   mount("featured-projects", data.projects, projectCard, true);
-  mount("all-projects", data.projects, projectCard, false);
+  mountProjectGroups();
   mount("featured-publications", data.publications, publicationCard, true);
   mount("all-publications", data.publications, publicationCard, false);
-  const visibleProjects = data.projects.filter(visibleForProfile);
-  const projectStats = document.getElementById('project-stats');
-  if (projectStats) projectStats.innerHTML = '<span><strong>' + visibleProjects.length + '</strong> projects</span><span><strong>' + visibleProjects.filter((x) => /guided/i.test(x.category)).length + '</strong> guided</span><span><strong>' + visibleProjects.filter((x) => /research/i.test(x.category)).length + '</strong> research</span>';
   const visiblePublications = data.publications.filter(visibleForProfile);
   const publicationStats = document.getElementById('publication-stats');
   if (publicationStats) publicationStats.innerHTML = '<span><strong>' + visiblePublications.length + '</strong> selected records</span><span><strong>2026–2020</strong> current range</span>';
