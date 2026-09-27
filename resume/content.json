@@ -55,7 +55,11 @@
     }
   },
   "projectOverrides": {},
-  "certificationOverrides": {},
+  "certificationOverrides": {
+    "ml-reinforcement-learning-finance": {
+      "resumePublished": true
+    }
+  },
   "publicationOverrides": {},
   "additionalExperience": [
     {
