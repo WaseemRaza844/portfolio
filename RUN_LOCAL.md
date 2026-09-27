@@ -60,8 +60,12 @@ Build one variant:
 
 ```bash
 resume/.venv/bin/python resume/build.py --variant generic
+resume/.venv/bin/python resume/build.py --variant comprehensive
 resume/.venv/bin/python resume/build.py --variant genai
 resume/.venv/bin/python resume/build.py --variant aiml
+resume/.venv/bin/python resume/build.py --variant wireless
+resume/.venv/bin/python resume/build.py --variant healthcare
+resume/.venv/bin/python resume/build.py --variant finance
 resume/.venv/bin/python resume/build.py --variant faculty
 ```
 
