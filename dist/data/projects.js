@@ -1,4 +1,24 @@
 /* Guided, portfolio, professional, and research projects. */
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+
+window.PORTFOLIO_DATA.projectGroups = [
+  {
+    "id": "academic-research",
+    "title": "Academic & Research Projects",
+    "description": "Doctoral, university, and experimental research spanning wireless networks, resilient AI, simulation platforms, and wearable intelligence."
+  },
+  {
+    "id": "guided",
+    "title": "Basic Guided Projects",
+    "description": "Focused implementation exercises used to strengthen practical skills with AI/ML tools, cloud services, LLM workflows, and applied engineering."
+  },
+  {
+    "id": "coursera-portfolio",
+    "title": "Coursera & Portfolio Projects",
+    "description": "Course-connected and self-directed portfolio work demonstrating system design, Agentic AI, data engineering, machine learning, and end-to-end implementation."
+  }
+];
+
 window.PORTFOLIO_DATA.projects = [
   {
     "id": "system-design-portfolio",
@@ -16,7 +36,9 @@ window.PORTFOLIO_DATA.projects = [
       "Distributed Systems",
       "Scalability"
     ],
-    "featured": true
+    "featured": true,
+    "group": "coursera-portfolio",
+    "status": "In progress"
   },
   {
     "id": "agentic-ai-rag",
@@ -35,11 +57,17 @@ window.PORTFOLIO_DATA.projects = [
       "RAG",
       "Vector Databases"
     ],
-    "featured": true
+    "featured": true,
+    "group": "coursera-portfolio",
+    "status": "In progress"
   },
   {
     "id": "financial-ml",
-    "profiles": ["generic", "finance", "aiml"],
+    "profiles": [
+      "generic",
+      "finance",
+      "aiml"
+    ],
     "title": "Financial ML and Forecasting",
     "category": "Portfolio Project",
     "date": "2024–2025",
@@ -50,11 +78,16 @@ window.PORTFOLIO_DATA.projects = [
       "Time Series",
       "Model Evaluation"
     ],
-    "featured": false
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed"
   },
   {
     "id": "cloud-computer-vision",
-    "profiles": ["generic", "aiml"],
+    "profiles": [
+      "generic",
+      "aiml"
+    ],
     "title": "Cloud Computer Vision",
     "category": "Guided Project",
     "date": "2025",
@@ -65,11 +98,17 @@ window.PORTFOLIO_DATA.projects = [
       "Google Cloud AutoML",
       "Python"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "lakehouse-pipeline",
-    "profiles": ["generic", "genai", "aiml"],
+    "profiles": [
+      "generic",
+      "genai",
+      "aiml"
+    ],
     "title": "AI-Ready Lakehouse Pipeline",
     "category": "Portfolio Project",
     "date": "2024",
@@ -80,7 +119,9 @@ window.PORTFOLIO_DATA.projects = [
       "Spark",
       "Data Engineering"
     ],
-    "featured": false
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed"
   },
   {
     "id": "meeting-minutes-llm",
@@ -97,7 +138,9 @@ window.PORTFOLIO_DATA.projects = [
       "LLM Summarization",
       "Workflow Automation"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "unstructured-document-extraction",
@@ -114,7 +157,9 @@ window.PORTFOLIO_DATA.projects = [
       "Named Entity Recognition",
       "Data Integration"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "syntheticnet",
@@ -133,7 +178,9 @@ window.PORTFOLIO_DATA.projects = [
       "Simulation",
       "Wireless Networks"
     ],
-    "featured": true
+    "featured": true,
+    "group": "academic-research",
+    "status": "Research completed"
   },
   {
     "id": "turboran",
@@ -152,11 +199,17 @@ window.PORTFOLIO_DATA.projects = [
       "Experiment Design",
       "Network Measurement"
     ],
-    "featured": false
+    "featured": false,
+    "group": "academic-research",
+    "status": "Research completed"
   },
   {
     "id": "wearable-intelligence",
-    "profiles": ["faculty", "healthcare", "aiml"],
+    "profiles": [
+      "faculty",
+      "healthcare",
+      "aiml"
+    ],
     "title": "Wearable Intelligence for Health Monitoring",
     "category": "Research Project",
     "date": "2024–2026",
@@ -167,6 +220,8 @@ window.PORTFOLIO_DATA.projects = [
       "Deep Learning",
       "Smartwatch Sensing"
     ],
-    "featured": false
+    "featured": false,
+    "group": "academic-research",
+    "status": "Active research"
   }
 ];
