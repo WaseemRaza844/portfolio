@@ -44,7 +44,7 @@ def build_pdf(key, variant, data, settings, output):
 
     def bullets(items):
         if items:
-            body.extend([r'\begin{itemize}\interlinepenalty=10000', *[r'\item ' + tex(x) for x in items], r'\end{itemize}'])
+            body.extend([r'\begin{itemize}', *[r'\item ' + tex(x) for x in items], r'\end{itemize}'])
 
     for page_index, sections in enumerate(variant['pages']):
         if page_index and settings.get('explicitPageBreaks', False):
@@ -58,18 +58,11 @@ def build_pdf(key, variant, data, settings, output):
                 section('Professional Summary')
                 body.append(tex(variant['summary']))
             elif name == 'skills':
-                section('Technical Expertise, Leadership, and Professional Strengths')
+                section('Technical Expertise')
                 body.append(r'{\small\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.52in}X@{}}')
                 for label, value in variant['skills'].items():
                     body.append(r'\skillrow{' + tex(label) + '}{' + tex(value) + '}')
                 body.append(r'\end{tabularx}}')
-                strengths = variant.get('leadership', {})
-                if strengths:
-                    body.append(r'\Needspace{4\baselineskip}\textbf{Leadership and Professional Strengths}\par')
-                    body.append(r'\begin{itemize}')
-                    for label, value in strengths.items():
-                        body.append(r'\item \textbf{' + tex(label) + ':} ' + tex(value))
-                    body.append(r'\end{itemize}')
             elif name == 'experience':
                 section('Professional Experience')
                 for row in selected[name]:
@@ -94,30 +87,138 @@ def build_pdf(key, variant, data, settings, output):
                         body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
             elif name == 'certifications':
                 section('Certifications and Continuing Education')
+
                 for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
-                    completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
+                    date = date_label(row.get('completionDate'))
+
+                    # One progress statement instead of status plus count.
+                    # Example: "13/16 courses" -> "Completed (13/16) courses"
+                    if count:
+                        ratio = count.removesuffix(' courses').strip()
+                        completion_text = f'Completed ({ratio}) courses'
+                    elif row.get('status') == 'Completed':
+                        completion_text = 'Completed'
+                    else:
+                        completion_text = ''
+
+                    # Make the issuer text the Coursera link.
                     issuer = row.get('issuer', '')
-                    coursera = row.get('links', {}).get('coursera')
-                    issuer_text = r'\textcolor{blue}{\underline{' + link(issuer or 'Coursera', coursera) + '}}' if web_url(coursera) else tex(issuer)
-                    parts = [s for s in [issuer_text, tex(completion), tex(date_label(row.get('completionDate')))] if s]
+                    coursera_url = row.get('links', {}).get('coursera')
+
+                    if web_url(coursera_url):
+                        issuer_text = (
+                            r'\textcolor{blue}{\underline{'
+                            + link(issuer or 'Coursera', coursera_url)
+                            + '}}'
+                        )
+                    else:
+                        issuer_text = tex(issuer)
+
+                    header_parts = [
+                        value
+                        for value in [
+                            issuer_text,
+                            tex(completion_text),
+                            tex(date),
+                        ]
+                        if value
+                    ]
+
+                    # Keep only the certificate link here.
+                    # The Coursera link is already attached to the issuer.
                     for label, url in certificate_links(row, identity):
-                        if label in ('Certificate', 'Certificate PDF'):
-                            parts.append(r'\textcolor{blue}{\underline{' + link('Certificate', url) + '}}')
-                    body.append(r'\Needspace{6\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
-                    if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
-                        body.append(r'{\small Original eight-course credential.\par}')
-                    description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
+                        if label not in ('Certificate', 'Certificate PDF'):
+                            continue
+
+                        header_parts.append(
+                            r'\textcolor{blue}{\underline{'
+                            + link('Certificate', url)
+                            + '}}'
+                        )
+
+                    body.append(r'\Needspace{6\baselineskip}')
+
+                    header = (
+                        r'\noindent\textbf{'
+                        + tex(f"{number}. {row['title']}")
+                        + '}'
+                    )
+
+                    if header_parts:
+                        header += (
+                            r' {\small --- '
+                            + r' \textbar{} '.join(header_parts)
+                            + '}'
+                        )
+
+                    body.append(header + r'\par')
+
+                    # Preserve the original awarded curriculum information.
+                    if (
+                        row['id'] == 'ibm-rag-agentic-ai'
+                        and count == '8/8 courses'
+                    ):
+                        body.append(
+                            r'{\small Original eight-course credential.\par}'
+                        )
+
+                    # Resume-specific description takes precedence.
+                    description = (
+                        row.get('resumeSummary')
+                        or row.get('summary')
+                        or row.get('overview')
+                    )
+
                     if description:
-                        body.append(r'\textbf{Focus:} ' + tex(description) + r'\par')
-                    skills = row.get('resumeSkills', row.get('skills', []))
+                        body.append(
+                            r'\textbf{Focus:} '
+                            + tex(description)
+                            + r'\par'
+                        )
+
+                    # Prefer a curated resume list; otherwise use source skills.
+                    skills = row.get(
+                        'resumeSkills',
+                        row.get('skills', [])
+                    )
+
                     if skills:
-                        body.append(r'{\small\textbf{Tools \& Skills:} ' + tex(', '.join(skills) if isinstance(skills, list) else skills) + r'\par}')
+                        skills_text = (
+                            ', '.join(skills)
+                            if isinstance(skills, list)
+                            else str(skills)
+                        )
+
+                        body.append(
+                            r'{\small\textbf{Tools \& Skills:} '
+                            + tex(skills_text)
+                            + r'\par}'
+                        )
+
+                    # Optional course-level details.
                     if variant.get('includeCourseDetails'):
                         for course in row.get('courses', []):
-                            status = course.get('status') or ('Completed' if str(course.get('completionDate', '')).startswith('Completed') else 'Status not supplied')
-                            body.append(r'{\small ' + link(course['title'], course.get('courseraUrl')) + ' -- ' + tex(status) + r'\par}')
-                    body.append(r'\vspace{2pt}')
+                            course_status = course.get('status') or (
+                                'Completed'
+                                if str(
+                                    course.get('completionDate', '')
+                                ).startswith('Completed')
+                                else 'Status not supplied'
+                            )
+
+                            body.append(
+                                r'{\small '
+                                + link(
+                                    course['title'],
+                                    course.get('courseraUrl')
+                                )
+                                + ' -- '
+                                + tex(course_status)
+                                + r'\par}'
+                            )
+
+                    body.append(r'\vspace{4pt}')
             elif name == 'publications':
                 section('Publications' if key == 'generic' else 'Selected Publications')
                 for row in selected[name]:
@@ -139,7 +240,7 @@ def build_pdf(key, variant, data, settings, output):
             contacts.append(link(label, url))
     if web_url(identity.get('portfolioUrl')):
         contacts.append(link('Portfolio', identity['portfolioUrl']))
-    size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
+    size = int(settings.get('latexFontSize', 9))
     if size not in (8, 9, 10, 11, 12):
         raise ValueError('latexFontSize must be 8, 9, 10, 11 or 12.')
     accent = settings.get('accent', '#155B8A').lstrip('#')
