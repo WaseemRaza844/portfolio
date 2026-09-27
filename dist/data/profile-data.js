@@ -29,7 +29,7 @@ window.PROFILE_DATA = {
         period: "2025–Present",
         role: "Machine Learning Engineer",
         organization: "AT&T · Contractor via Innovatix",
-        profiles: ["generic", "genai", "faculty"],
+        profiles: ["generic", "genai", "aiml", "faculty"],
         generic: "Developing applied ML systems for critical network operations, including root-cause diagnostics, intelligent prioritization, workflow automation, and reliable decision support.",
         genai: "Developing ML and early GenAI capabilities for network diagnostics and operational decision support, connecting unstructured operational data with reliable automation workflows.",
         faculty: "Translating machine-learning research into operational telecommunications systems, with emphasis on reliability, domain adaptation, and responsible decision support."
@@ -39,7 +39,7 @@ window.PROFILE_DATA = {
         period: "2024",
         role: "Data Scientist and AI/ML Engineer",
         organization: "Impac Exploration Services",
-        profiles: ["generic", "genai"],
+        profiles: ["generic", "genai", "aiml"],
         generic: "Built LLM-assisted analytical workflows, cloud ML pipelines, and automated data preparation for large-scale geochemical datasets.",
         genai: "Applied LLM-based pipelines to unstructured scientific data and integrated the resulting workflows with Azure Databricks, Functions, and Synapse Analytics."
       },
@@ -48,7 +48,7 @@ window.PROFILE_DATA = {
         period: "2022–2024",
         role: "Advanced-Degree Research Intern",
         organization: "AT&T Labs · Futurewei",
-        profiles: ["generic", "faculty"],
+        profiles: ["generic", "aiml", "faculty"],
         generic: "Worked on 5G/NTN analysis, network intelligence, mobility, statistical modeling, and transfer learning for wireless systems.",
         faculty: "Conducted industry research on 5G/NTN systems, network measurements, statistical analysis, and transfer learning for CSI compression and emerging wireless technologies."
       },
@@ -57,7 +57,7 @@ window.PROFILE_DATA = {
         period: "2019–2025",
         role: "Graduate Research Assistant",
         organization: "AI4Networks · University of Oklahoma",
-        profiles: ["generic", "faculty"],
+        profiles: ["generic", "aiml", "faculty"],
         generic: "Designed data-driven methods for wireless-network modeling, outage management, RAN optimization, and resilient automation.",
         faculty: "Led research in AI-enabled wireless networks, propagation modeling, network resilience, digital twins, optimization, and wearable sensing while contributing to experimental platforms and student research."
       },
@@ -96,6 +96,30 @@ window.PROFILE_DATA = {
       closingTitle: "Interested in reliable GenAI and agentic systems?",
       closingText: "I welcome conversations about applied Generative AI, retrieval, agents, evaluation, intelligent automation, and ML engineering roles where systems must perform reliably in the real world."
     },
+    aiml: {
+      label: "AI/ML & Data Science",
+      eyebrow: "APPLIED MACHINE LEARNING · DATA SCIENCE · RELIABLE AI",
+      professionalTitle: "Machine Learning Engineer · Applied AI & Data Science",
+      motto: "Turning complex data into reliable models, measurable decisions, and useful systems.",
+      intro: "I am Waseem Raza, PhD, a machine-learning engineer and researcher working across applied AI, data science, and production-oriented analytics. My experience spans classification, domain adaptation, time-series modeling, cloud data workflows, model evaluation, and intelligent automation across telecommunications, scientific data, and research environments.",
+      designations: ["Machine Learning Engineer", "Applied AI Engineer", "Data Scientist", "AI/ML Researcher"],
+      proof: [
+        ["CURRENT ROLE", "Machine Learning Engineer", "AT&T · Applied ML for network operations"],
+        ["CURRENT FOCUS", "Applied ML · Data · Evaluation", "Reliable models, diagnostics, and decision-support workflows"],
+        ["ENGINEERING BASE", "Python · Cloud · MLOps", "From data preparation and experimentation to deployable systems"]
+      ],
+      skills: [
+        ["Applied Machine Learning", "Classification, regression, anomaly detection, deep learning, transfer learning, and model evaluation."],
+        ["Data Science & Analytics", "Data preparation, feature engineering, exploratory analysis, time-series modeling, validation, and visualization."],
+        ["Reliable ML Systems", "Domain adaptation, robustness, error analysis, distribution shift, reproducibility, and performance assessment."],
+        ["Engineering & MLOps", "Python, SQL, Azure, Databricks, APIs, Docker, CI/CD, data pipelines, and production-oriented ML workflows."]
+      ],
+      certificationIds: ["stanford-machine-learning", "google-cloud-data-analytics", "ibm-genai-engineering", "aws-bedrock-professional"],
+      projectIds: ["financial-ml", "cloud-computer-vision", "lakehouse-pipeline", "wearable-intelligence"],
+      publicationIds: ["resilient-propagation-2024", "medication-adherence-2026", "outage-management-2024"],
+      closingTitle: "Interested in applied AI that performs reliably in real environments?",
+      closingText: "I welcome conversations about machine learning, data science, reliable AI, model evaluation, intelligent automation, and ML engineering roles that connect rigorous analysis with practical systems."
+    },
     faculty: {
       label: "Faculty & Academic",
       eyebrow: "AI-ENABLED SYSTEMS · WIRELESS NETWORKS · WEARABLE INTELLIGENCE",
@@ -126,7 +150,7 @@ window.PROFILE_DATA = {
 // WIRELESS_CERTIFICATES_V1: add to existing relevant homepage selections only.
 (function () {
   const ids = ["ai-for-telecommunications", "4g-network-fundamentals", "business-considerations-5g-edge-iot-ai"];
-  for (const key of ["generic", "wireless", "faculty"]) {
+  for (const key of ["faculty"]) {
     const variant = window.PROFILE_DATA?.variants?.[key];
     if (variant && Array.isArray(variant.certificationIds)) {
       for (const id of ids) {
