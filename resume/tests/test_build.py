@@ -39,6 +39,14 @@ class SelectionTests(unittest.TestCase):
             self.assertEqual(module.date_label(value), '')
         self.assertEqual(module.date_label('February 2026'), 'February 2026')
 
+    def test_resume_only_visibility_can_override_website_hidden(self):
+        self.assertTrue(module.eligible({'id': 'finance', 'published': False, 'resumePublished': True}))
+        self.assertFalse(module.eligible({'id': 'hidden', 'published': False}))
+        self.assertFalse(module.eligible({'id': 'resume-hidden', 'published': True, 'resumePublished': False}))
+
+    def test_mojibake_punctuation_is_normalized(self):
+        self.assertEqual(module.clean('AT&T Â· 2025â€“Present'), 'AT&T | 2025-Present')
+
 
 if __name__ == '__main__':
     unittest.main()
