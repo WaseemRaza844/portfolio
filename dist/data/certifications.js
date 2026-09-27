@@ -6,11 +6,7 @@
   - In Outline, disable Show Properties and keep Show Variables enabled.
   - Fold or unfold each // #region block from the editor gutter.
 */
-<<<<<<< HEAD
-window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
-=======
 
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 (function registerCertifications() {
   // #region 01 — System Design Masterclass
   const CERT_01_systemDesignMasterclass = {
@@ -489,77 +485,14 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
   // #endregion Machine Learning
 
   // #region Machine Learning and Reinforcement Learning in Finance
- const CERT_ML_FINANCE = {
-  id: "ml-reinforcement-learning-finance",
-  published: true,
-  profiles: ["finance", "aiml"],
-  domain: "ml-data",
+  const CERT_ML_FINANCE = {
+    id: "ml-reinforcement-learning-finance",
+    published: false,
 
-<<<<<<< HEAD
-  title:
-    "Machine Learning and Reinforcement Learning in Finance Specialization",
-  issuer: "New York University / Coursera",
-=======
     profiles: ["finance"],
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-  status: "In progress",
-  completionDate: "Target date to be updated",
+    domain: "ml-data",
 
-<<<<<<< HEAD
-  // Calculated from course statuses to avoid stale manual totals.
-  get reportedProgress() {
-    return {
-      completed: this.courses.filter(
-        (course) => course.status === "Completed"
-      ).length,
-      total: this.courses.length
-    };
-  },
-
-  summary:
-    "Machine learning for financial prediction, portfolio decisions, and trading.",
-
-  takeaway:
-    "Connect financial questions with suitable learning methods.",
-
-  skills: [
-    "Machine Learning",
-    "Reinforcement Learning",
-    "Financial Modeling",
-    "Python"
-  ],
-
-  certificateUrl: "",
-
-  links: {
-    coursera:
-      "https://www.coursera.org/specializations/machine-learning-reinforcement-finance",
-    linkedin: "",
-    github: ""
-  },
-
-  courses: [
-    {
-      title: "Guided Tour of Machine Learning in Finance",
-      status: "In progress",
-      completionDate: "",
-      progressPercent: 44,
-
-      summary:
-        "Introduces financial prediction through supervised learning.",
-
-      takeaway:
-        "Frame financial questions as prediction tasks.",
-
-      skills: [
-        "Regression",
-        "Classification",
-        "Model Evaluation"
-      ],
-
-      certificateUrl: ""
-=======
     title:
       "Machine Learning and Reinforcement Learning in Finance Specialization",
     issuer: "New York University / Coursera",
@@ -568,30 +501,16 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
     reportedProgress: {
       completed: 0,
       total: 4,
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
     },
 
-    {
-      title: "Fundamentals of Machine Learning in Finance",
-      status: "In progress",
-      completionDate: "",
-      progressPercent: 24,
+    completionDate: "Target date to be updated",
 
-      summary:
-        "Explores learning algorithms and portfolio strategies.",
+    summary:
+      "An applied machine-learning specialization focused on financial prediction, portfolio management, trading, risk modeling, market dynamics, and reinforcement-learning methods for finance.",
 
-      takeaway:
-        "Compare methods for financial datasets.",
+    takeaway:
+      "Select, implement, and evaluate machine-learning and reinforcement-learning methods for practical financial problems involving trading, portfolio optimization, market modeling, derivatives, and risk.",
 
-<<<<<<< HEAD
-      skills: [
-        "Unsupervised Learning",
-        "Dimensionality Reduction",
-        "Portfolio Management"
-      ],
-
-      certificateUrl: ""
-=======
     skills: [
       "Machine Learning for Finance",
       "Reinforcement Learning",
@@ -617,46 +536,26 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
         "https://www.coursera.org/specializations/machine-learning-reinforcement-finance",
       linkedin: "",
       github: "",
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
     },
 
-    {
-      title: "Reinforcement Learning in Finance",
-      status: "In progress",
-      completionDate: "",
-      progressPercent: 16,
+    courses: [
+      {
+        title: "Guided Tour of Machine Learning in Finance",
+        status: "In progress",
+        completionDate: "Target date to be updated",
 
-<<<<<<< HEAD
-      summary:
-        "Studies sequential financial decisions and option valuation.",
-=======
         /*
          * Informational field retained in the data.
          * Your current renderer does not display percentages.
          */
         progressPercent: 44,
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-      takeaway:
-        "Formulate trading as sequential optimization.",
+        summary:
+          "Introduces the machine-learning landscape through financial applications, including supervised learning, bank-failure prediction, model selection, and performance evaluation.",
 
-      skills: [
-        "Q-Learning",
-        "Option Pricing",
-        "Risk Modeling"
-      ],
+        takeaway:
+          "Frame financial problems as machine-learning tasks and select suitable supervised, unsupervised, or reinforcement-learning methods.",
 
-<<<<<<< HEAD
-      certificateUrl: ""
-    },
-
-    {
-      title:
-        "Overview of Advanced Methods of Reinforcement Learning in Finance",
-      status: "Not started",
-      completionDate: "",
-      progressPercent: 0,
-=======
         skills: [
           "Machine Learning",
           "Financial Analytics",
@@ -672,28 +571,19 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
 
         certificateUrl: "",
       },
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-      summary:
-        "Examines market impact and advanced trading applications.",
+      {
+        title: "Fundamentals of Machine Learning in Finance",
+        status: "In progress",
+        completionDate: "Target date to be updated",
+        progressPercent: 24,
 
-      takeaway:
-        "Assess reinforcement learning under market feedback.",
+        summary:
+          "Examines supervised, unsupervised, and reinforcement-learning algorithms for financial problems, including portfolio analysis and trading-strategy development.",
 
-      skills: [
-        "Inverse Reinforcement Learning",
-        "Market Dynamics",
-        "Credit Risk"
-      ],
+        takeaway:
+          "Implement and evaluate machine-learning methods for financial datasets, portfolio construction, and trading applications.",
 
-<<<<<<< HEAD
-      certificateUrl: ""
-    }
-  ],
-
-  featured: false
-};
-=======
         skills: [
           "Machine Learning",
           "Portfolio Management",
@@ -768,124 +658,37 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
 
     featured: false,
   };
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
   // #endregion Machine Learning and Reinforcement Learning in Finance
 
   // #region Deep Learning for Healthcare
-// #region Deep Learning for Healthcare
-const CERT_DEEP_LEARNING_HEALTHCARE = {
-  id: "deep-learning-healthcare",
+  const CERT_DEEP_LEARNING_HEALTHCARE = {
+    id: "deep-learning-healthcare",
+    published: true,
 
-<<<<<<< HEAD
-  // Hidden draft until you confirm the completion fields.
-  published: false,
-=======
     profiles: ["healthcare", "faculty"],
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-  profiles: ["healthcare", "aiml"],
-  domain: "ml-data",
+    domain: "ml-data",
 
-  title: "Deep Learning for Healthcare Specialization",
-  issuer: "University of Illinois Urbana-Champaign / Coursera",
+    title: "Deep Learning for Healthcare Specialization",
+    issuer: "University of Illinois Urbana-Champaign / Coursera",
+    status: "In progress",
 
-<<<<<<< HEAD
-  // Provisional: change to "Completed" if all three are complete.
-  status: "In progress",
-  completionDate: "Target date to be updated",
-
-  get reportedProgress() {
-    return {
-      completed: this.courses.filter(
-        (course) => course.status === "Completed"
-      ).length,
-      total: this.courses.length
-    };
-  },
-
-  summary:
-    "A three-course specialization covering health-data processing, machine learning, and neural-network methods for medical and healthcare applications.",
-
-  takeaway:
-    "Select and evaluate deep-learning approaches for healthcare data, connecting foundational analysis with practical neural and generative models.",
-
-  skills: [
-    "Deep Learning",
-    "Healthcare AI",
-    "Health Data Processing",
-    "Health Informatics",
-    "Model Evaluation",
-    "Convolutional Neural Networks",
-    "Recurrent Neural Networks",
-    "Autoencoders",
-    "Generative Models",
-    "Medical Image Analysis",
-    "PyTorch",
-    "Jupyter Notebooks"
-  ],
-
-  certificateUrl: "",
-
-  links: {
-    coursera:
-      "https://www.coursera.org/specializations/deep-learning-healthcare",
-    linkedin: "",
-    github: ""
-  },
-
-  courses: [
-    {
-      title: "Health Data Science Foundation",
-
-      // Provisional status: replace with your actual status.
-      status: "In progress",
-      completionDate: "",
-
-      // null means unknown; no module ratio is displayed.
-      modulesCompleted: null,
-      modulesTotal: 4,
-
-      summary:
-        "Introduces healthcare-data processing and foundational machine-learning methods for medical applications.",
-
-      takeaway:
-        "Prepare healthcare data and evaluate supervised and unsupervised learning approaches for medical problems.",
-
-      skills: [
-        "Health Data Processing",
-        "Machine Learning",
-        "Model Evaluation",
-        "Supervised Learning",
-        "Unsupervised Learning",
-        "Health Informatics",
-        "Artificial Neural Networks"
-      ],
-
-      certificateUrl: ""
-=======
     /*
      * Update these two numbers after confirming completion.
      */
     reportedProgress: {
       completed: 0,
       total: 3,
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
     },
 
-    {
-      title: "Deep Learning Methods for Healthcare",
+    completionDate: "Target date to be updated",
 
-      // Provisional status: replace with your actual status.
-      status: "In progress",
-      completionDate: "",
+    summary:
+      "An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning solutions for real-world medical and healthcare applications.",
 
-      modulesCompleted: null,
-      modulesTotal: 4,
+    takeaway:
+      "Design, train, evaluate, and apply deep-learning models to healthcare data through programming assignments, practical experiments, and application-focused projects.",
 
-<<<<<<< HEAD
-      summary:
-        "Applies neural networks to healthcare data through programming laboratories and an application-focused project.",
-=======
     skills: [
       "Deep Learning",
       "Healthcare AI",
@@ -904,61 +707,31 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
       "PyTorch",
       "Jupyter Notebooks",
     ],
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-      takeaway:
-        "Develop and assess neural models for healthcare applications using appropriate representations and architectures.",
+    certificateUrl: "",
 
-<<<<<<< HEAD
-      skills: [
-        "Deep Learning",
-        "Convolutional Neural Networks",
-        "Recurrent Neural Networks",
-        "Autoencoders",
-        "Embeddings",
-        "Image Analysis",
-        "Dimensionality Reduction",
-        "Model Deployment"
-      ],
-
-      certificateUrl: ""
-=======
     links: {
       coursera:
         "https://www.coursera.org/specializations/deep-learning-healthcare",
       linkedin: "",
       github: "",
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
     },
 
-    {
-      title: "Advanced Deep Learning Methods for Healthcare",
+    courses: [
+      {
+        title: "Health Data Science Foundation",
+        status: "In progress",
+        completionDate: "Target date to be updated",
 
-      // Provisional status: replace with your actual status.
-      status: "In progress",
-      completionDate: "",
+        modulesCompleted: 0,
+        modulesTotal: 4,
 
-      modulesCompleted: null,
-      modulesTotal: 4,
+        summary:
+          "Introduces health-data processing and foundational supervised and unsupervised machine-learning methods for healthcare applications.",
 
-      summary:
-        "Explores advanced healthcare modeling through generative methods, graph concepts, network analysis, and data synthesis.",
+        takeaway:
+          "Prepare and analyze healthcare data and evaluate foundational machine-learning approaches for medical problems.",
 
-<<<<<<< HEAD
-      takeaway:
-        "Evaluate advanced modeling approaches for healthcare prediction, relational data, and synthetic-data generation.",
-
-      skills: [
-        "Deep Learning",
-        "Generative Models",
-        "Graph Theory",
-        "Network Analysis",
-        "Data Synthesis",
-        "Autoencoders",
-        "Predictive Modeling",
-        "Health Informatics"
-      ],
-=======
         skills: [
           "Health Data Processing",
           "Health Informatics",
@@ -972,17 +745,12 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
 
         certificateUrl: "",
       },
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 
-      certificateUrl: ""
-    }
-  ],
+      {
+        title: "Deep Learning Methods for Healthcare",
+        status: "In progress",
+        completionDate: "Target date to be updated",
 
-<<<<<<< HEAD
-  featured: false
-};
-// #endregion
-=======
         modulesCompleted: 0,
         modulesTotal: 4,
 
@@ -1040,7 +808,6 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
 
     featured: false,
   };
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
   // #endregion Deep Learning for Healthcare
 
   // #region 07 — Google Cloud Data Analytics Professional Certificate
@@ -2120,51 +1887,6 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
         certificateUrl: "",
       },
     ],
-<<<<<<< HEAD
-    "featured": true
-    
-  };
-  
-  // #endregion IBM RAG and Agentic AI Professional Certificate
-// Mandatory GenAI certifications: shared configuration.
-[
-  CERT_02_awsBedrockProfessional,
-  CERT_03_ibmGenaiEngineering,
-  // CERT_10_ibmRagAgenticAi,
-  CERT_05_genaiFundamentals
-].forEach((certification) => {
-  certification.profiles = ["generic", "genai"];
-  certification.published = true;
-  certification.featured = true;
-});
-
-// Registration order.
-// Preserve any additional certification constants you have added.
-window.PORTFOLIO_DATA.certifications = [
-  // Priority 1: GenAI
-  CERT_02_awsBedrockProfessional,
-  CERT_03_ibmGenaiEngineering,
-  // CERT_10_ibmRagAgenticAi,
-  CERT_05_genaiFundamentals,
-
-  // Priority 2: AI/ML and Data Science
-  CERT_06_stanfordMachineLearning,
-  CERT_07_googleCloudDataAnalytics,
-  CERT_ML_FINANCE,
-  CERT_DEEP_LEARNING_HEALTHCARE,
-
-  // Add your existing Wireless certification constants here.
-
-  // Supporting engineering and professional learning
-  CERT_01_systemDesignMasterclass,
-  CERT_04_ibmDevops,
-  CERT_08_googleCloudCybersecurity,
-  CERT_09_ibmAiProductManager
-];
-  
-
-}());
-=======
     featured: true,
     published: true,
   };
@@ -2496,7 +2218,6 @@ window.PORTFOLIO_DATA.certifications = [
   ];
 })();
 
->>>>>>> d406230 (Addition of new certifications pdfs and updated in the data.)
 // WIRELESS_CERTIFICATES_V1
 (function registerWirelessCertifications() {
 
