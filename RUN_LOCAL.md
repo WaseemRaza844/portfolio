@@ -135,6 +135,37 @@ Windows PowerShell:
 | Resume layout | `resume/template.tex` |
 | Resume rendering logic | `resume/latex_renderer.py` |
 
+## 9. Codespaces port troubleshooting
+
+The repository explicitly forwards ports **8000** (website) and **8001** (resume PDFs).
+After a change to `.devcontainer/devcontainer.json`, simply pulling the repository does **not** re-apply container settings to an already-running Codespace.
+
+If a forwarded `*.app.github.dev` URL returns **HTTP 404**, do this:
+
+1. In the Command Palette, run **Codespaces: Rebuild Container**.
+2. Wait for the container to finish rebuilding. The repository's `postStartCommand` now starts the portfolio server automatically.
+3. Open the **Ports** panel and use **Open in Browser** for port **8000**.
+4. Confirm the server inside the Codespace with:
+
+```bash
+curl -I http://127.0.0.1:8000/
+```
+
+A successful local response means the website server is healthy. If the forwarded browser URL still fails, remove the existing port entry from the Ports panel, add **8000** again, and reopen it from that panel.
+
+Server log:
+
+```bash
+tail -n 50 /tmp/waseem-portfolio-8000.log
+```
+
+To restart the automatically started website server:
+
+```bash
+pkill -f "live-server dist" || true
+bash .devcontainer/start-portfolio.sh
+```
+
 ## 8. Normal branch flow
 
 ```text
