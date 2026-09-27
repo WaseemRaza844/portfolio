@@ -451,7 +451,7 @@ window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
   // #region 06 — Machine Learning
   const CERT_06_stanfordMachineLearning = {
     id: "stanford-machine-learning",
-    profiles: ["generic", "faculty"],
+    profiles: ["generic", "faculty", "aiml"],
     domain: "ml-data",
     title: "Machine Learning",
     issuer: "Stanford University / Coursera",
@@ -1046,7 +1046,7 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
   // #region 07 — Google Cloud Data Analytics Professional Certificate
   const CERT_07_googleCloudDataAnalytics = {
     id: "google-cloud-data-analytics",
-    profiles: ["generic"],
+    profiles: ["generic", "aiml"],
     domain: "cloud-devops",
     title: "Google Cloud Data Analytics Professional Certificate",
     issuer: "Google Cloud / Coursera",
@@ -1452,7 +1452,7 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
   // #region 02 — AWS Generative AI and AI Agents with Amazon Bedrock
   const CERT_GENAI_01_AWS_BEDROCK = {
     id: "aws-bedrock-professional",
-    profiles: ["generic", "genai", "faculty"],
+    profiles: ["generic", "genai", "faculty", "aiml"],
     reportedProgress: {
       completed: 3,
       total: 3,
@@ -1551,7 +1551,7 @@ const CERT_DEEP_LEARNING_HEALTHCARE = {
   // #region 03 — IBM Generative AI Engineering Professional Certificate
   const CERT_GENAI_02_IBM_GENAI_ENGINEERING = {
     id: "ibm-genai-engineering",
-    profiles: ["generic", "genai", "faculty"],
+    profiles: ["generic", "genai", "faculty", "aiml"],
     domain: "genai",
     title: "IBM Generative AI Engineering Professional Certificate",
     issuer: "IBM / Coursera",
