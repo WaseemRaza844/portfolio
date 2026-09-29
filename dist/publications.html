@@ -4,7 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Peer-reviewed research by Dr. Waseem Raza spanning 5G/6G cellular automation, resilient wireless networks, propagation-model digital twins, radio access intelligence, and wearable AI healthcare monitoring.">
+        <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+<meta name="description" content="Peer-reviewed research by Dr. Waseem Raza spanning 5G/6G cellular automation, resilient wireless networks, propagation-model digital twins, radio access intelligence, and wearable AI healthcare monitoring.">
     <title>Peer-Reviewed Publications &amp; Research Archive | Dr. Waseem Raza, PhD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +43,7 @@
                 <a href="./faculty/">Faculty &amp; Academic</a>
             </div>
         </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
     </header>
     <main id="top">
         <section class="page-hero publications-hero" aria-labelledby="publications-page-title">
