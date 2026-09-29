@@ -108,7 +108,7 @@ def build_pdf(key, variant, data, settings, output):
             elif name == 'education':
                 section('Education')
                 for row in identity['education']:
-                    body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(row['period']) + '}')
+                    body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(date_label(row.get('period'))) + '}')
                     body.append(tex(row['school']) + r'\par')
             elif name == 'projects':
                 section('Projects' if key == 'generic' else 'Selected Projects')
