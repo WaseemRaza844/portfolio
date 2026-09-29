@@ -154,9 +154,6 @@ def build_pdf(key, variant, data, settings, output):
             else:
                 raise ValueError('Unknown section: ' + name)
 
-    def icon(name):
-        return r'\faIcon{' + name + r'}'
-
     emails = identity.get('emails') or [identity.get('email'), identity.get('secondaryEmail')]
     emails = [str(email).strip() for email in emails if str(email or '').strip()]
     phone = str(identity.get('phone') or '').strip()
@@ -164,31 +161,26 @@ def build_pdf(key, variant, data, settings, output):
 
     primary_contacts = []
     if identity.get('location'):
-        primary_contacts.append(icon('map-marker-alt') + r'\enspace ' + tex(identity['location']))
+        primary_contacts.append(tex(identity['location']))
     if phone:
-        primary_contacts.append(icon('phone') + r'\enspace ' + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+        primary_contacts.append(r'\ding{37}\enspace ' + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
     if emails:
         email_links = [r'\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
-        primary_contacts.append(icon('envelope') + r'\enspace ' + r' \textbar{} '.join(email_links))
+        primary_contacts.append(r'\ding{41}\enspace ' + r' \textbar{} '.join(email_links))
 
     social_contacts = []
-    social_specs = [
-        ('linkedin', 'LinkedIn', 'linkedin'),
-        ('github', 'GitHub', 'github'),
-        ('graduation-cap', 'Google Scholar', 'scholar')
-    ]
-    for icon_name, label, field in social_specs:
+    for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Google Scholar', 'scholar')]:
         url = identity.get('links', {}).get(field)
         if web_url(url):
-            social_contacts.append(icon(icon_name) + r'\enspace ' + link(label, url))
+            social_contacts.append(link(label, url))
     if web_url(identity.get('portfolioUrl')):
-        social_contacts.append(icon('globe') + r'\enspace ' + link('Portfolio', identity['portfolioUrl']))
+        social_contacts.append(link('Portfolio', identity['portfolioUrl']))
 
     contact_lines = []
     if primary_contacts:
         contact_lines.append(r' \quad '.join(primary_contacts))
     if social_contacts:
-        contact_lines.append(r' \quad '.join(social_contacts))
+        contact_lines.append(r' \textbar{} '.join(social_contacts))
     contacts = r'\\[1pt]'.join(contact_lines)
 
     size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
