@@ -168,8 +168,9 @@
     const encodedBibtex = encodeURIComponent(bibtex);
 
     return '<article class="pub publication-item reveal visible" itemscope itemtype="https://schema.org/ScholarlyArticle">' +
-      '<time class="year" itemprop="datePublished" datetime="' + esc(item.year) + '">' + esc(item.year) + '</time>' +
-      '<div class="publication-copy"><span class="badge publication-badge" itemprop="isPartOf">' + esc(venueBadge) + '</span>' +
+      '<div class="publication-copy"><div class="publication-meta">' +
+      '<time class="year publication-year" itemprop="datePublished" datetime="' + esc(item.year) + '">' + esc(item.year) + '</time>' +
+      '<span class="badge publication-badge" itemprop="isPartOf">' + esc(venueBadge) + '</span></div>' +
       '<h3 itemprop="headline">' + esc(item.title) + '</h3><p itemprop="description">' + esc(item.summary) + '</p>' +
       (item.topics?.length ? tags(item.topics) : '') +
       '<div class="publication-actions"><a href="' + esc(paperUrl) + '" target="_blank" rel="noopener noreferrer" itemprop="url">' + esc(paperLabel) + '</a>' +
