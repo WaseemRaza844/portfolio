@@ -54,7 +54,10 @@
       '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
-      (course.links?.coursera ? '<div class="credential-links course-credential-links">' + externalLinks({ coursera: course.links.coursera }) + '</div>' : '') +
+      ((course.links?.coursera || course.links?.github) ? '<div class="credential-links course-credential-links">' +
+        (course.links?.coursera ? externalLinks({ coursera: course.links.coursera }) : '') +
+        (course.links?.github ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View GitHub Repo ↗</a>' : '') +
+        '</div>' : '') +
       pdfDocument(course.certificateUrl, "course certificate") + '</div></details>';
   }
 
