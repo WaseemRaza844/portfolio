@@ -18,7 +18,7 @@
     if (!isPdf) {
       return '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open ' + esc(label) + ' <span>↗</span></a>';
     }
-    return '<details class="pdf-preview"><summary>Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
+    return '<details class="pdf-preview"><summary class="preview-btn">Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
       '<div class="pdf-preview-body"><iframe src="' + esc(url) + '#view=FitH" title="' + esc(label) + ' preview" loading="lazy"></iframe>' +
       '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open full PDF in a new tab <span>↗</span></a></div></details>';
   };
@@ -54,6 +54,7 @@
       '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
+      (course.links?.coursera ? '<div class="credential-links course-credential-links">' + externalLinks({ coursera: course.links.coursera }) + '</div>' : '') +
       pdfDocument(course.certificateUrl, "course certificate") + '</div></details>';
   }
 
