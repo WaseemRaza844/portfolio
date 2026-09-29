@@ -16,16 +16,16 @@
     if (!url) return "";
     const isPdf = /\.pdf(?:$|[?#])/i.test(url);
     if (!isPdf) {
-      return '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener">Open ' + esc(label) + ' <span>↗</span></a>';
+      return '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open ' + esc(label) + ' <span>↗</span></a>';
     }
     return '<details class="pdf-preview"><summary>Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
       '<div class="pdf-preview-body"><iframe src="' + esc(url) + '#view=FitH" title="' + esc(label) + ' preview" loading="lazy"></iframe>' +
-      '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener">Open full PDF in a new tab <span>↗</span></a></div></details>';
+      '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open full PDF in a new tab <span>↗</span></a></div></details>';
   };
   const externalLinks = (links) => {
     const labels = { coursera: "Coursera", linkedin: "LinkedIn", github: "GitHub" };
     return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
-      '<a href="' + esc(url) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
+      '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
     ).join('');
   };
   const completedCount = (courses) => courses.filter((course) =>
@@ -69,13 +69,32 @@
       '<div class="course-section"><div class="course-heading"><p class="field-label">Courses included</p><span>Select a course to see details</span></div>' + item.courses.map(courseAccordion).join("") + '</div></div></details>';
   }
   function projectCard(item) {
-    return '<article class="project-card reveal visible"><div class="detail-card-top"><p class="project-year">' + esc(item.date) + '</p><span class="project-kind">' + esc(item.category) + '</span></div><h3>' + esc(item.title) + '</h3><p>' + esc(item.summary) + '</p>' + tags(item.skills) + '</article>';
+    const home = item.home || {};
+    const problem = home.problem || item.summary || "";
+    const implementation = home.implementation || "";
+    const architectureUrl = home.architectureUrl || item.links?.github || "";
+    const caseStudyUrl = home.caseStudyUrl || ("./projects.html#" + encodeURIComponent(item.id || ""));
+    const architectureLink = architectureUrl
+      ? '<a class="project-action primary-action" href="' + esc(architectureUrl) + '"' +
+        (/^https?:\/\//i.test(architectureUrl) ? ' target="_blank" rel="noopener noreferrer"' : '') +
+        '>View Architecture / Code <span>↗</span></a>'
+      : "";
+    const caseStudyLink = '<a class="project-action" href="' + esc(caseStudyUrl) + '">Case Study <span>↗</span></a>';
+
+    return '<article class="project-card engineering-card reveal visible">' +
+      '<header class="engineering-card-head"><span class="project-kind">' + esc(home.badge || item.category) + '</span><span class="project-year">' + esc(item.date) + '</span></header>' +
+      '<h3>' + esc(item.title) + '</h3>' +
+      '<div class="engineering-card-copy"><p><strong>Problem.</strong> ' + esc(problem) + '</p>' +
+      (implementation ? '<p><strong>Implementation.</strong> ' + esc(implementation) + '</p>' : '') + '</div>' +
+      (item.skills?.length ? tags(item.skills) : '') +
+      '<footer class="project-actions">' + architectureLink + caseStudyLink + '</footer>' +
+      '</article>';
   }
 
   function projectLinkList(links) {
     const labels = { github: 'GitHub', demo: 'Live demo', coursera: 'Coursera', paper: 'Publication', project: 'Project link' };
     return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
-      '<a href="' + esc(url) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
+      '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
     ).join('');
   }
 
@@ -90,7 +109,7 @@
         ? '<div><p class="field-label">Related learning credentials</p><div class="project-related-credentials">' + relatedCertifications.map((cert) => '<span>' + esc(cert.title) + '</span>').join('') + '</div></div>'
         : '<div><p class="field-label">Certificate / credential</p><p>No separate project certificate is currently recorded for this project.</p></div>';
 
-    return '<details class="project-accordion reveal visible"><summary>' +
+    return '<details class="project-accordion reveal visible" id="' + esc(item.id || '') + '"><summary>' +
       '<span class="project-number">' + String(index + 1).padStart(2, '0') + '</span>' +
       '<div class="project-summary-main"><p class="detail-type">' + esc(item.category) + '</p><h2>' + esc(item.title) + '</h2>' +
       (item.skills?.length ? tags(item.skills) : '') + '</div>' +
@@ -130,14 +149,39 @@
     }
   }
   function publicationCard(item) {
-    const body = '<span class="year">' + esc(item.year) + '</span><div><p class="pub-venue">' + esc(item.venue) + '</p><h3>' + esc(item.title) + '</h3><p>' + esc(item.summary) + '</p>' + tags(item.topics) + '</div><span class="arrow">' + (item.url ? "↗" : "") + '</span>';
-    return item.url ? '<a class="pub reveal visible" href="' + esc(item.url) + '" target="_blank" rel="noopener">' + body + '</a>' : '<article class="pub reveal visible">' + body + '</article>';
+    const venueBadge = item.badge || item.venue || "Publication";
+    const paperUrl = item.url || ("https://scholar.google.com/scholar?q=" + encodeURIComponent(item.title || ""));
+    const paperLabel = item.url ? "Paper / DOI ↗" : "Find paper ↗";
+    const isProceedings = /PIMRC|HEALTHINF|WCNC|SmartNets|conference/i.test(item.venue || "");
+    const bibType = isProceedings ? "inproceedings" : "article";
+    const venueField = isProceedings ? "booktitle" : "journal";
+    const bibKey = (item.id || "publication").replace(/[^a-zA-Z0-9_-]/g, "");
+    const bibtex = "@" + bibType + "{" + bibKey + ",\n" +
+      "  title={" + (item.title || "").replace(/[{}]/g, "") + "},\n" +
+      "  " + venueField + "={" + (item.venue || "").replace(/[{}]/g, "") + "},\n" +
+      "  year={" + (item.year || "").replace(/[{}]/g, "") + "}\n}";
+    const encodedBibtex = encodeURIComponent(bibtex);
+
+    return '<article class="pub publication-item reveal visible" itemscope itemtype="https://schema.org/ScholarlyArticle">' +
+      '<time class="year" itemprop="datePublished" datetime="' + esc(item.year) + '">' + esc(item.year) + '</time>' +
+      '<div class="publication-copy"><span class="badge publication-badge" itemprop="isPartOf">' + esc(venueBadge) + '</span>' +
+      '<h3 itemprop="headline">' + esc(item.title) + '</h3><p itemprop="description">' + esc(item.summary) + '</p>' +
+      (item.topics?.length ? tags(item.topics) : '') +
+      '<div class="publication-actions"><a href="' + esc(paperUrl) + '" target="_blank" rel="noopener noreferrer" itemprop="url">' + esc(paperLabel) + '</a>' +
+      '<button type="button" data-bibtex="' + esc(encodedBibtex) + '" onclick="navigator.clipboard.writeText(decodeURIComponent(this.dataset.bibtex)); this.textContent=\'Copied\'; setTimeout(() => { this.textContent=\'BibTeX\'; }, 1200);">BibTeX</button></div></div>' +
+      '</article>';
   }
   function mount(id, items, render, featured) {
     const el = document.getElementById(id);
     if (!el) return;
     const visible = items.filter(visibleForProfile);
-    const selected = featured ? visible.filter((x) => x.featured) : visible;
+    const requestedIds = String(el.dataset.featuredIds || "")
+      .split(",")
+      .map((id) => id.trim())
+      .filter(Boolean);
+    const selected = requestedIds.length
+      ? requestedIds.map((id) => visible.find((item) => item.id === id)).filter(Boolean)
+      : (featured ? visible.filter((x) => x.featured) : visible);
     el.innerHTML = selected.map(render).join("");
   }
   function domainAreaSection(area, items) {
