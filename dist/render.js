@@ -87,7 +87,7 @@
       '<div class="engineering-card-copy"><p><strong>Problem.</strong> ' + esc(problem) + '</p>' +
       (implementation ? '<p><strong>Implementation.</strong> ' + esc(implementation) + '</p>' : '') + '</div>' +
       (item.skills?.length ? tags(item.skills) : '') +
-      '<footer class="project-actions">' + architectureLink + caseStudyLink + '</footer>' +
+      '<div class="project-actions">' + architectureLink + caseStudyLink + '</div>' +
       '</article>';
   }
 
@@ -168,7 +168,7 @@
       '<h3 itemprop="headline">' + esc(item.title) + '</h3><p itemprop="description">' + esc(item.summary) + '</p>' +
       (item.topics?.length ? tags(item.topics) : '') +
       '<div class="publication-actions"><a href="' + esc(paperUrl) + '" target="_blank" rel="noopener noreferrer" itemprop="url">' + esc(paperLabel) + '</a>' +
-      '<button type="button" data-bibtex="' + esc(encodedBibtex) + '" onclick="navigator.clipboard.writeText(decodeURIComponent(this.dataset.bibtex)); this.textContent=\'Copied\'; setTimeout(() => { this.textContent=\'BibTeX\'; }, 1200);">BibTeX</button></div></div>' +
+      '<button type="button" aria-label="Copy BibTeX for ' + esc(item.title) + '" data-bibtex="' + esc(encodedBibtex) + '" onclick="navigator.clipboard.writeText(decodeURIComponent(this.dataset.bibtex)); this.textContent=\'Copied\'; setTimeout(() => { this.textContent=\'BibTeX\'; }, 1200);">BibTeX</button></div></div>' +
       '</article>';
   }
   function mount(id, items, render, featured) {
