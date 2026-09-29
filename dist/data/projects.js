@@ -200,7 +200,17 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": true,
     "group": "academic-research",
-    "status": "Research completed"
+    "status": "Research completed",
+    "resourceLinks": [
+      {
+        "label": "Peer-Reviewed Article (Computer Communications 2025)",
+        "url": "https://doi.org/10.1016/j.comcom.2025.108129"
+      },
+      {
+        "label": "View on Google Scholar",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=d58Drr0AAAAJ&citation_for_view=d58Drr0AAAAJ:g5m5HwL7SMYC"
+      }
+    ]
   },
   {
     "id": "turboran",
@@ -221,7 +231,17 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": false,
     "group": "academic-research",
-    "status": "Research completed"
+    "status": "Research completed",
+    "resourceLinks": [
+      {
+        "label": "Proactive Reliability Paper (Sensors 2025)",
+        "url": "https://doi.org/10.3390/s25030807"
+      },
+      {
+        "label": "Inter-Frequency Self-Optimization (IEEE TCCN)",
+        "url": "https://doi.org/10.1109/TCCN.2022.3152510"
+      }
+    ]
   },
   {
     "id": "wearable-intelligence",
@@ -242,6 +262,44 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": false,
     "group": "academic-research",
-    "status": "Active research"
+    "status": "Active research",
+    "resourceLinks": [
+      {
+        "label": "HEALTHINF 2026 Paper",
+        "url": "https://orcid.org/0000-0002-5544-2637"
+      }
+    ]
+  },
+  {
+    "id": "propagation-digital-twins",
+    "profiles": [
+      "generic",
+      "faculty",
+      "wireless"
+    ],
+    "title": "Propagation Models & Digital Twins",
+    "category": "Research Project",
+    "date": "2024",
+    "summary": "Research on robust, data-driven radio-propagation modeling for wireless digital twins, including domain-informed generative learning and resilience under distribution shift.",
+    "skills": [
+      "Propagation Modeling",
+      "Digital Twins",
+      "GANs",
+      "Domain Adaptation",
+      "Wireless AI"
+    ],
+    "featured": false,
+    "group": "academic-research",
+    "status": "Research completed",
+    "resourceLinks": [
+      {
+        "label": "IEEE PIMRC Digital Twin Paper",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=d58Drr0AAAAJ&citation_for_view=d58Drr0AAAAJ:B3FOqHG5BCQC"
+      },
+      {
+        "label": "Domain-Informed GANs (IEEE VTC)",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=d58Drr0AAAAJ&citation_for_view=d58Drr0AAAAJ:b0M2c_1WBrUC"
+      }
+    ]
   }
 ];
