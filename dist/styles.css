@@ -3004,3 +3004,42 @@ html[data-theme="light"] body.learning-dark .course-accordion{
     transform:none;
   }
 }
+
+/* Final theme harmonization for high-specificity legacy surfaces. */
+html[data-theme] body .proof{
+  background:var(--bg-card-soft);
+}
+html[data-theme] body .seo-pill{
+  border-color:var(--border-card);
+  background:var(--bg-card-soft);
+  color:var(--text-secondary);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.02),0 6px 18px rgba(2,8,23,.12);
+}
+html[data-theme] body .seo-pill:hover,
+html[data-theme] body .seo-pill:focus-visible{
+  border-color:var(--accent-cyan);
+  color:var(--text-primary);
+}
+html[data-theme="light"] body.landing-dark .proof strong,
+html[data-theme="light"] body.landing-dark .engineering-card-copy strong,
+html[data-theme="light"] body.landing-dark .experience-points strong{
+  color:var(--text-primary);
+}
+html[data-theme] body.variant-page .pub{
+  border:1px solid var(--border-card);
+  border-radius:14px;
+  background:var(--bg-card-soft);
+  box-shadow:0 10px 28px rgba(2,8,23,.12);
+}
+html[data-theme] body.variant-page .pub + .pub{
+  margin-top:12px;
+}
+html[data-theme] body.variant-page .pub:hover{
+  background:rgba(56,189,248,.06);
+  padding-left:18px;
+}
+html[data-theme="light"] body.variant-page .pub{
+  background:#ffffff;
+  box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+
