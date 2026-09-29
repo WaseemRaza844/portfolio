@@ -76,11 +76,34 @@ def anchor(label, url):
 
 
 def date_label(value):
+    """Return ATS-friendly numeric month/year dates when month names are supplied."""
     text = clean(value).strip()
     if not text or re.search(r'update|to be|to confirm|on credential', text, re.I):
         return ''
     if text.lower() in ('completed', 'in progress', 'earlier', 'not started'):
         return ''
+
+    months = {
+        'jan': '01', 'january': '01', 'feb': '02', 'february': '02',
+        'mar': '03', 'march': '03', 'apr': '04', 'april': '04',
+        'may': '05', 'jun': '06', 'june': '06', 'jul': '07', 'july': '07',
+        'aug': '08', 'august': '08', 'sep': '09', 'sept': '09', 'september': '09',
+        'oct': '10', 'october': '10', 'nov': '11', 'november': '11',
+        'dec': '12', 'december': '12'
+    }
+
+    def numeric(match):
+        month = months[match.group(1).lower().rstrip('.')]
+        return month + '/' + match.group(2)
+
+    text = re.sub(
+        r'\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})\b',
+        numeric,
+        text,
+        flags=re.I
+    )
+    text = re.sub(r'\s*[-–—]{1,2}\s*', ' - ', text)
+    text = re.sub(r'\s{2,}', ' ', text).strip()
     return text
 
 
