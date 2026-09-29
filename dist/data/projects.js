@@ -30,6 +30,13 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Guided Project",
     "date": "2026 · In progress",
     "summary": "Documented architecture studies that translate product requirements into scalable services, data models, APIs, caching strategies, and reliability tradeoffs.",
+    "home": {
+      "badge": "Architecture / System Design",
+      "problem": "Translate ambiguous product requirements into architectures that remain scalable, reliable, and explainable under realistic traffic and data constraints.",
+      "implementation": "Documented case studies cover service boundaries, APIs, storage models, caching, consistency, capacity assumptions, and availability tradeoffs across distributed-system designs.",
+      "architectureUrl": "https://github.com/WaseemRaza844/system-design-masterclass",
+      "caseStudyUrl": "./projects.html#system-design-portfolio"
+    },
     "skills": [
       "System Design",
       "APIs",
@@ -50,6 +57,13 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Portfolio Project",
     "date": "2026 · In progress",
     "summary": "Practical experiments with retrieval, tool-using agents, orchestration, memory, evaluation, and multi-agent workflows.",
+    "home": {
+      "badge": "GenAI / Agentic Systems",
+      "problem": "Build grounded AI workflows that can retrieve context, use tools, maintain state, and complete multi-step tasks without relying on a single unconstrained model call.",
+      "implementation": "Hands-on implementations explore RAG, vector retrieval, LangGraph-style orchestration, tool-using agents, memory, evaluation, and multi-agent workflow patterns.",
+      "architectureUrl": "https://github.com/WaseemRaza844/agentic-ai-projects-by-was",
+      "caseStudyUrl": "./projects.html#agentic-ai-rag"
+    },
     "skills": [
       "LangGraph",
       "CrewAI",
@@ -172,6 +186,12 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Research Project",
     "date": "2020–2024",
     "summary": "Python-based simulation environment for realistic mobility, propagation, and data-driven experimentation in cellular networks.",
+    "home": {
+      "badge": "Research / Simulation",
+      "problem": "Wireless-AI research requires repeatable network data that preserves realistic mobility, propagation, and cellular-system behavior when measured data is sparse or costly.",
+      "implementation": "A Python-based, 3GPP-aligned simulation environment supports controlled data generation and large-scale experimentation for propagation, optimization, digital-twin, and resilience studies.",
+      "caseStudyUrl": "./projects.html#syntheticnet"
+    },
     "skills": [
       "Python",
       "3GPP",
