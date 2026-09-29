@@ -1,14 +1,16 @@
-Dr Waseem Raza, PhD
+Waseem Raza, PhD
 Machine Learning Engineer | AI/ML for Wireless & 5G/6G Systems
 Wireless AI | 5G/6G | RAN Intelligence | Network Automation
-New Jersey, United States 732-803-9703 waseemraza844@gmail.com LinkedIn GitHub Scholar Portfolio
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
 Professional Summary
-Machine Learning Engineer and wireless-systems researcher with a PhD in Electrical and Computer Engineering and experience
-applying AI/ML to cellular-network diagnostics, propagation modeling, mobility, network resilience, and next-generation wireless
-systems. Industry and research work spans AT&T, AT&T Labs, Futurewei, and AI4Networks, with emphasis on reliable learning
-under domain shift, 5G/NR-NTN analysis, RAN optimization, outage management, digital-twin modeling, and intelligent network
-operations.
-Technical Expertise, Leadership, and Professional Strengths
+AI/ML Engineer for Wireless Networks with a PhD in Electrical and Computer Engineering and 7+ years of combined industry and
+research experience in 5G/6G systems, network intelligence, propagation modeling, mobility, RAN optimization, anomaly detection,
+and resilient automation. Apply deep learning, transfer learning, domain adaptation, generative modeling, reinforcement learning, and
+statistical methods to network-assurance, NR-NTN, CSI compression, digital-twin, outage-management, and self-healing problems.
+Experienced with Python, PyTorch, TensorFlow, scikit-learn, SQL, large-scale network measurements, 3GPP-compliant simulation,
+and production-oriented ML validation.
+Technical Skills
 AI/ML for Wireless: Transfer learning, domain adaptation, adversarial learning, generative modeling, reinforcement learning, anomaly detection,
 classification, and robust model evaluation
 Wireless Systems: LTE/4G, 5G-NR, NR-NTN, mobility, RAN, propagation, cell selection, user timing, network measurements, and service
@@ -33,38 +35,36 @@ mentation and delivery.
 • Adaptability and problem solving: Combine critical thinking, systematic experimentation, and data-driven analysis to address
 unfamiliar technologies and complex operational problems.
 Professional Experience
-Machine Learning Engineer F eb. 2025-Present
+Machine Learning Engineer 02/2025 - Present
 AT&T, contractor via Innovatix Inc. Bedminster, NJ
-• Own end-to-enddevelopment, testing, and operational integration of anAI-driven diagnostic systemfor critical E911service-assurance
-workflows, improving automated root-cause classification accuracy from 20% to 80%.
-• Designed domain-adaptive neural models and reusable data-processing workflows that generalize across heterogeneous operational
-domains and reduce performance degradation caused by distribution shifts.
-• Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to
-support GenAI-assisted diagnostics for VoNR and 5G service assurance.
-• Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and
-support reliable deployment in high-impact operational environments.
-• Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated
-AI workflows and production-oriented data assets.
-Advanced-Degrees Intern Jun. 2024-Aug. 2024
+• Lead AI/ML development for E911 and network-assurance diagnostics, applying NLP, domain adaptation, and root-cause
+classification to operational telecom workflows.
+• Develop multimodal diagnostic models using work-order text, location information, network context, and operational signals for
+VoNR and 5G service assurance.
+• Design cross-domain validation and distribution-shift evaluation workflows to improve reliability of ML models across heterogeneous
+network environments.
+• Collaborate with network engineers, software teams, and public-safety stakeholders on AI-enabled automation for critical telecom-
+munications operations.
+Advanced-Degrees Intern 06/2024 - 08/2024
 AT&T Labs Austin, TX
 • Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.
 • Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and
 validation.
 • Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting
 next-generation wireless systems.
-Advanced Wireless T echnology Development Intern Sep. 2022-Jan. 2023
+Advanced Wireless T echnology Development Intern 09/2022 - 01/2023
 Futurewei Technologies Schaumburg, IL
 • Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation
 on large wireless datasets.
 • Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.
 • Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation
 communication systems.
-Advanced-Degrees Intern Jun. 2022-Aug. 2022
+Advanced-Degrees Intern 06/2022 - 08/2022
 AT&T Labs Bedminster, NJ
 • Designed ML and statistical methods for analyzing users’ timing in 5G standalone networks, improving analytical precision by 20%.
 • Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.
 • Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization.
-Graduate Research Assistant Sep. 2019-Sep. 2024
+Graduate Research Assistant 09/2019 - 07/2025
 AI4Networks, University of Oklahoma Tulsa, OK
 • Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
 network simulator and an AI-enabled 5G testbed.
@@ -76,11 +76,11 @@ samples; led 100+ experiments from problem formulation through validation.
 • Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
 experimental design, and technical writing.
 Education
-PhD, Electrical and Computer Engineering 09/2019-07/2025
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
 University of Oklahoma, Norman, Oklahoma, USA
-MSc, T elecommunication Engineering 08/2014-08/2016
+MSc, T elecommunication Engineering 08/2014 - 08/2016
 University of Engineering and Technology, Taxila, Pakistan
-BSc, T elecommunication Engineering 11/2010-06/2014
+BSc, T elecommunication Engineering 11/2010 - 06/2014
 University of Engineering and Technology, Taxila, Pakistan
 Selected Projects
 SyntheticNET: 3GPP-Compliant Network Simulation 2020-2024
@@ -91,16 +91,15 @@ T urboRAN Experimental Platform 2020-2024
 Research Infrastructure
 • Multi-band, multi-tier experimental platform supporting evaluation of emerging AI-enabled radio-access-network solutions.
 Tools & methods: 5G Testbeds, RAN, Experiment Design, Network Measurement
-Certifications and Continuing Education
-1. AI for T elecommunications Specialization — AI CERTs / Coursera| Completed (3/3) courses | June 2026 | Certificate
+Certifications
+1. AI for T elecommunications Specialization — AI CERTs / Coursera| Completed (3/3) courses | 06/2026 | Certificate
 F ocus:Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer
 experience.
 T ools & Skills: AI for Telecommunications, Network Optimization, Cybersecurity, Customer Experience, Internet of Things, Python, TensorFlow
-2. 4G Network F undamentals — Institut Mines-Télécom / Coursera| Completed (1/1) courses | August 2026 | Certificate
+2. 4G Network F undamentals — Institut Mines-Télécom / Coursera| Completed (1/1) courses | 08/2026 | Certificate
 F ocus:Foundational study of fourth-generation cellular networks.
 T ools & Skills: 4G Networks, Cellular Networks, Telecommunications
-3. Business Considerations for 5G with Edge, IoT, and AI — EDUCBA / Coursera| Completed (1/1) courses | February 2026 |
-Certificate
+3. Business Considerations for 5G with Edge, IoT, and AI — EDUCBA / Coursera| Completed (1/1) courses | 02/2026 |Certificate
 F ocus:Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.
 T ools & Skills: 5G, Edge Computing, Internet of Things, Artificial Intelligence, Business Analysis
 4. Machine Learning — Stanford University / Coursera | Completed

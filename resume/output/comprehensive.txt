@@ -1,16 +1,16 @@
-Dr Waseem Raza, PhD
+Waseem Raza, PhD
 Machine Learning Engineer | AI, Wireless Systems & Research
 Applied AI | Generative AI | Wireless Networks | Research and Engineering
-New Jersey, United States 732-803-9703 waseemraza844@gmail.com LinkedIn GitHub Scholar Portfolio
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
 Professional Summary
-AI/ML and Generative AI Engineer with a PhD in Electrical and Computer Engineering and 7+ years of experience developing
-data-driven systems across enterprise, industry, and research environments. Experience includes LLM-enabled analytics, AI-ready
-data pipelines, domain-adaptive machine learning, and scalable cloud solutions using Python, SQL, Azure Databricks, Apache Spark,
-and Azure services. At AT&T, lead development and operational integration of AI solutions for critical service-assurance workflows,
-improving automated diagnostic accuracy from 20% to 80%. Combine model evaluation, data quality, ETL, and cross-functional
-delivery to translate technical requirements into production-oriented AI capabilities. Research experience spans wireless-network
-intelligence, simulation, transfer learning, and experimental platforms, alongside teaching and mentorship.
-Technical Expertise, Leadership, and Professional Strengths
+AI/ML and Generative AI Engineer with a PhD in Electrical and Computer Engineering and 7+ years of combined industry,
+research, and engineering experience across enterprise AI, data science, wireless systems, and applied research. Experience spans
+LLM-enabled analytics, retrieval-augmented generation (RAG), domain-adaptive machine learning, predictive modeling, time-series
+analysis, ETL/ELT, Azure Databricks, Apache Spark, MLOps, 5G/6G network intelligence, and experimental research. At AT&T,
+lead development and operational integration of AI solutions for critical service-assurance workflows, combining model validation, data
+quality, cross-domain evaluation, and stakeholder-driven delivery.
+Technical Skills
 Generative & Agentic AI: LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking,
 embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation
 Microsoft AI Ecosystem: Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models
@@ -47,7 +47,7 @@ mentation and delivery.
 • Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
 unfamiliar technologies and complex operational problems.
 Professional Experience
-Machine Learning Engineer Feb. 2025-Present
+Machine Learning Engineer 02/2025 - Present
 AT&T, contractor via Innovatix Inc. Bedminster, NJ
 • Own end-to-enddevelopment, testing, and operational integration of anAI-driven diagnostic systemfor critical E911service-assurance
 workflows, improving automated root-cause classification accuracy from 20% to 80%.
@@ -59,7 +59,7 @@ support GenAI-assisted diagnostics for VoNR and 5G service assurance.
 support reliable deployment in high-impact operational environments.
 • Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated
 AI workflows and production-oriented data assets.
-Data Scientist and AI/ML Engineer Sep. 2024-Dec. 2024
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
 Impac Exploration Services Weatherford, OK
 • Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.
 • Developed scalable ingestion, cleansing, transformation, and validation workflows using Python, Azure Databricks, Azure Functions,
@@ -68,26 +68,26 @@ and Synapse Analytics.
 • Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.
 • Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable
 analytical outputs.
-Advanced-Degrees Intern Jun. 2024-Aug. 2024
+Advanced-Degrees Intern 06/2024 - 08/2024
 AT&T Labs Austin, TX
 • Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.
 • Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and
 validation.
 • Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting
 next-generation wireless systems.
-Advanced Wireless Technology Development Intern Sep. 2022-Jan. 2023
+Advanced Wireless Technology Development Intern 09/2022 - 01/2023
 Futurewei Technologies Schaumburg, IL
 • Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation
 on large wireless datasets.
 • Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.
 • Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation
 communication systems.
-Advanced-Degrees Intern Jun. 2022-Aug. 2022
+Advanced-Degrees Intern 06/2022 - 08/2022
 AT&T Labs Bedminster, NJ
 • Designed ML and statistical methods for analyzing users’ timing in 5G standalone networks, improving analytical precision by 20%.
 • Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.
 • Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization.
-Graduate Research Assistant Sep. 2019-Sep. 2024
+Graduate Research Assistant 09/2019 - 07/2025
 AI4Networks, University of Oklahoma Tulsa, OK
 • Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
 network simulator and an AI-enabled 5G testbed.
@@ -102,11 +102,11 @@ Lecturer
 Engineering and Technology Programs
 • Taught and mentored undergraduate engineering students in communications, programming, and foundational engineering subjects.
 Education
-PhD, Electrical and Computer Engineering 09/2019-07/2025
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
 University of Oklahoma, Norman, Oklahoma, USA
-MSc, Telecommunication Engineering 08/2014-08/2016
+MSc, Telecommunication Engineering 08/2014 - 08/2016
 University of Engineering and Technology, Taxila, Pakistan
-BSc, Telecommunication Engineering 11/2010-06/2014
+BSc, Telecommunication Engineering 11/2010 - 06/2014
 University of Engineering and Technology, Taxila, Pakistan
 Selected Projects
 System Design Case-Study Portfolio 2026 | In progress
@@ -151,7 +151,7 @@ Wearable Intelligence for Health Monitoring 2024-2026
 Research Project
 • Deep-learning methods for continuous recognition of medication and dietary activities from wrist-worn inertial sensors.
 Tools & methods: Wearable AI, Time Series, Deep Learning, Smartwatch Sensing
-Certifications and Continuing Education
+Certifications
 1. AWS Generative AI and AI Agents with Amazon Bedrock— AWS/Coursera| Completed (3/3) courses | 08/2026 |Certificate
 Focus: Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications
 and intelligent agents with Amazon Bedrock.
@@ -164,21 +164,20 @@ machine learning, deep learning, NLP, transformer architectures, LLM fine-tuning
 T ools & Skills: Generative AI Engineering, Large Language Models, Transformer Architectures, Prompt Engineering, RAG, LangChain, AI
 Agents, Hugging Face, PyTorch, Keras, Scikit-learn, Python, Flask, Gradio, PEFT, LoRA, QLoRA, RLHF, DPO, PPO, NLP, Machine Learning,
 Deep Learning, Vector Databases
-3. IBM RAG and Agentic AI Professional Certificate— IBM / Coursera| Completed (8/8) courses | February 2026 | Certificate
+3. IBM RAG and Agentic AI Professional Certificate— IBM / Coursera| Completed (8/8) courses | 02/2026 | Certificate
 Original eight-course credential.
 Focus: Completed eight-course professional certificate covering retrieval-augmented generation, vector databases, multimodal
 applications, and agentic AI workflows.
 T ools & Skills: Retrieval-Augmented Generation, Agentic AI, LangChain, LangGraph, Vector Databases, ChromaDB, FAISS, LlamaIndex,
 Multimodal AI, Tool Calling, Prompt Engineering, CrewAI, AutoGen / AG2, BeeAI, Gradio, Python, Flask
-4. Generative AI Fundamentals Specialization— IBM / Coursera| Completed (5/5) courses | July 2026 | Certificate
+4. Generative AI Fundamentals Specialization— IBM / Coursera| Completed (5/5) courses | 07/2026 | Certificate
 Focus: Five-course foundation in generative AI, prompt engineering, LLMs, and practical enterprise applications.
 T ools & Skills: Generative AI, Prompt Engineering, Foundation Models, Responsible AI, IBM watsonx, Hugging Face, Business Applications
-5. Building AI Agents and Agentic Workflows Specialization— IBM / Coursera| Completed (3/3) courses | February 2026 |
-Certificate
+5. Building AI Agents and Agentic Workflows Specialization— IBM / Coursera| Completed (3/3) courses | 02/2026 |Certificate
 Focus: Design agentic workflows with memory, conditional logic, tool use, and multi-agent orchestration using LangGraph, CrewAI,
 AutoGen, and BeeAI.
 T ools & Skills: Agentic AI, LangGraph, LangChain, CrewAI, AutoGen / AG2, BeeAI, Agent Memory, Tool Calling, Multi-Agent Orchestration
-6. RAG for Generative AI Applications Specialization— IBM / Coursera| Completed (4/4) courses | March 2026 | Certificate
+6. RAG for Generative AI Applications Specialization— IBM / Coursera| Completed (4/4) courses | 03/2026 | Certificate
 Focus: Build retrieval-augmented applications using LangChain, LlamaIndex, FAISS, and ChromaDB to connect language models
 with relevant external information.
 T ools & Skills: Retrieval-Augmented Generation, LangChain, LlamaIndex, Vector Databases, FAISS, ChromaDB, Semantic Retrieval, LLM
@@ -213,20 +212,20 @@ Predictive Modeling, Model Evaluation, PyTorch, Jupyter Notebooks
 12. Google Cloud Data Analytics Professional Certificate— Google Cloud / Coursera | Completed
 Focus: Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.
 T ools & Skills: SQL, BigQuery, Data Analytics, Visualization
-13. Google Cloud Cybersecurity Professional Certificate— Google Cloud / Coursera | Completed (5/5) courses | June 2026 |
+13. Google Cloud Cybersecurity Professional Certificate— Google Cloud / Coursera | Completed (5/5) courses | 06/2026 |
 Certificate
 Focus: Cloud-security training covering risk management, threat prevention, detection, incident response, and recovery in Google
 Cloud environments.
 T ools & Skills: Google Cloud Security, Identity and Access Management, Threat Detection, Incident Response, Risk Management, Security
 Command Center, Cloud Logging, Vulnerability Management, Security Governance, Data Protection
-14. AI for Telecommunications Specialization— AI CERTs / Coursera| Completed (3/3) courses | June 2026 | Certificate
+14. AI for Telecommunications Specialization— AI CERTs / Coursera| Completed (3/3) courses | 06/2026 | Certificate
 Focus: Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer
 experience.
 T ools & Skills: AI for Telecommunications, Network Optimization, Cybersecurity, Customer Experience, Internet of Things, Python, TensorFlow
-15. 4G Network Fundamentals— Institut Mines-Télécom / Coursera| Completed (1/1) courses | August 2026 | Certificate
+15. 4G Network Fundamentals— Institut Mines-Télécom / Coursera| Completed (1/1) courses | 08/2026 | Certificate
 Focus: Foundational study of fourth-generation cellular networks.
 T ools & Skills: 4G Networks, Cellular Networks, Telecommunications
-16. Business Considerations for 5G with Edge, IoT, and AI— EDUCBA / Coursera| Completed (1/1) courses | February 2026 |
+16. Business Considerations for 5G with Edge, IoT, and AI— EDUCBA / Coursera| Completed (1/1) courses | 02/2026 |
 Certificate
 Focus: Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.
 T ools & Skills: 5G, Edge Computing, Internet of Things, Artificial Intelligence, Business Analysis

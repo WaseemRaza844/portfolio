@@ -1,13 +1,15 @@
-Dr Waseem Raza, PhD
+Waseem Raza, PhD
 Machine Learning Engineer | Healthcare AI & Wearable Intelligence
 Healthcare AI | Wearable Sensing | Deep Learning | Reliable ML
-New Jersey, United States 732-803-9703 waseemraza844@gmail.com LinkedIn GitHub Scholar Portfolio
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
 Professional Summary
-Machine Learning Engineer and researcher with a PhD in Electrical and Computer Engineering and experience applying deep learning,
-time-series modeling, and reliable AI to wearable sensing and real-world health-monitoring problems. Research includes continuous
-medication-taking recognition from wrist-worn inertial sensors, personalization, domain adaptation, model evaluation, and cross-user
-robustness, complemented by broader production ML and cloud-data engineering experience.
-Technical Expertise, Leadership, and Professional Strengths
+Machine Learning Engineer and healthcare-AI researcher with a PhD in Electrical and Computer Engineering and experience applying
+deep learning, time-series modeling, wearable sensing, and reliable ML to real-world health-monitoring problems. Expertise includes
+Python, PyTorch, TensorFlow, scikit-learn, CNNs, LSTMs, attention, activity recognition, smartwatch IMU analytics, medication-
+taking detection, personalization, domain adaptation, few-shot learning, cross-user validation, and model evaluation. Complementary
+industry experience includes production ML, cloud data pipelines, data-quality validation, and multimodal analytics.
+Technical Skills
 Healthcare AI & W earables: Wearable sensing, medication-adherence monitoring, activity recognition, smartwatch IMU data, human-centered
 sensing, and health-data applications
 Deep Learning: CNNs, LSTMs, attention, transfer learning, domain adaptation, representation learning, classification, and sequence modeling
@@ -33,28 +35,23 @@ mentation and delivery.
 • Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
 unfamiliar technologies and complex operational problems.
 Professional Experience
-Machine Learning Engineer Feb. 2025-Present
+Machine Learning Engineer 02/2025 - Present
 AT&T, contractor via Innovatix Inc. Bedminster, NJ
-• Own end-to-enddevelopment, testing, and operational integration of anAI-driven diagnostic systemfor critical E911service-assurance
-workflows, improving automated root-cause classification accuracy from 20% to 80%.
-• Designed domain-adaptive neural models and reusable data-processing workflows that generalize across heterogeneous operational
-domains and reduce performance degradation caused by distribution shifts.
-• Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to
-support GenAI-assisted diagnostics for VoNR and 5G service assurance.
-• Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and
-support reliable deployment in high-impact operational environments.
-• Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated
-AI workflows and production-oriented data assets.
-Data Scientist and AI/ML Engineer Sep. 2024-Dec. 2024
+• Lead end-to-end development and validation of production machine-learning workflows for high-impact operational decision support,
+including data preparation, model evaluation, error analysis, and reliability testing.
+• Design domain-adaptive neural models and reusable preprocessing pipelines to improve model generalization under heterogeneous
+data distributions.
+• Develop multimodal AI workflows that combine structured and unstructured operational data, providing transferable experience for
+complex real-world data environments.
+• Partner with cross-functional stakeholders to translate domain requirements into validated ML workflows and production-oriented
+data assets.
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
 Impac Exploration Services Weatherford, OK
-• Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.
-• Developed scalable ingestion, cleansing, transformation, and validation workflows using Python, Azure Databricks, Azure Functions,
-and Synapse Analytics.
-• Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.
-• Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.
-• Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable
-analytical outputs.
-Graduate Research Assistant Sep. 2019-Sep. 2024
+• Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large
+domain datasets.
+• Built reusable ingestion, cleansing, transformation, and validation workflows for machine-learning and LLM-assisted analytics.
+• Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs.
+Graduate Research Assistant 09/2019 - 07/2025
 AI4Networks, University of Oklahoma Tulsa, OK
 • Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
 network simulator and an AI-enabled 5G testbed.
@@ -66,11 +63,11 @@ samples; led 100+ experiments from problem formulation through validation.
 • Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
 experimental design, and technical writing.
 Education
-PhD, Electrical and Computer Engineering 09/2019-07/2025
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
 University of Oklahoma, Norman, Oklahoma, USA
-MSc, Telecommunication Engineering 08/2014-08/2016
+MSc, Telecommunication Engineering 08/2014 - 08/2016
 University of Engineering and Technology, Taxila, Pakistan
-BSc, Telecommunication Engineering 11/2010-06/2014
+BSc, Telecommunication Engineering 11/2010 - 06/2014
 University of Engineering and Technology, Taxila, Pakistan
 Selected Projects
 Wearable Intelligence for Health Monitoring 2024-2026
@@ -81,7 +78,7 @@ Cloud Computer Vision 2025
 Guided Project
 • Real-time object detection, vehicle counting, and image-classification workflows using cloud-native AI services.
 Tools & methods: Computer Vision, Streaming, Google Cloud AutoML, Python
-Certifications and Continuing Education
+Certifications
 1. Deep Learning for Healthcare Specialization— University of Illinois Urbana-Champaign / Coursera| Completed (0/3) courses
 Focus: An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning
 solutions for real-world medical and healthcare applications.

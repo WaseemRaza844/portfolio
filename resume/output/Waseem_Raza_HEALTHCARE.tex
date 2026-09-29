@@ -3,9 +3,12 @@
 \documentclass[9pt,letterpaper]{extarticle}
 \usepackage[margin=0.55in]{geometry}
 \usepackage[T1]{fontenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\usepackage{pifont}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -23,20 +26,20 @@
   \textit{#3}\hfill\textit{#4}\par}
 \newcommand{\entry}[2]{\Needspace{4\baselineskip}\textbf{#1}\hfill\textit{#2}\par}
 \newcommand{\skillrow}[2]{\textbf{#1:} & #2\\}
-\hypersetup{pdftitle={Dr Waseem Raza, PhD - Healthcare AI \& Wearable Intelligence},pdfauthor={Dr Waseem Raza, PhD}}
+\hypersetup{pdftitle={Waseem Raza, PhD - Healthcare AI \& Wearable Intelligence},pdfauthor={Waseem Raza, PhD}}
 \begin{document}
 \begin{center}
-{\LARGE\bfseries Dr Waseem Raza, PhD}\\[2pt]
+{\LARGE\bfseries Waseem Raza, PhD}\\[2pt]
 {\large\bfseries Machine Learning Engineer \textbar{} Healthcare AI \& Wearable Intelligence}\\[1pt]
 {\small Healthcare AI \textbar{} Wearable Sensing \textbar{} Deep Learning \textbar{} Reliable ML}\\[3pt]
-{\small New Jersey, United States \quad 732-803-9703 \quad \href{mailto:waseemraza844@gmail.com}{waseemraza844@gmail.com} \quad \href{https://www.linkedin.com/in/waseem-raza-phd-9a737858/}{LinkedIn} \quad \href{https://github.com/WaseemRaza844}{GitHub} \quad \href{https://scholar.google.com/citations?user=d58Drr0AAAAJ\&hl=en}{Scholar} \quad \href{https://waseemraza844.github.io/portfolio/}{Portfolio}}
+{\footnotesize New Jersey, United States \quad \ding{37}\enspace \href{tel:+17328039703}{+1 732-803-9703} \quad \ding{41}\enspace \href{mailto:waseem.placements@gmail.com}{waseem.placements@gmail.com} \textbar{} \href{mailto:waseemraza844@gmail.com}{waseemraza844@gmail.com}\\[1pt]\href{https://www.linkedin.com/in/waseem-raza-phd-9a737858/}{LinkedIn} \textbar{} \href{https://github.com/WaseemRaza844}{GitHub} \textbar{} \href{https://scholar.google.com/citations?user=d58Drr0AAAAJ\&hl=en}{Google Scholar} \textbar{} \href{https://waseemraza844.github.io/portfolio/}{Portfolio}}
 \end{center}
 \vspace{-5pt}
 \Needspace{3\baselineskip}
 \section{Professional Summary}
-Machine Learning Engineer and researcher with a PhD in Electrical and Computer Engineering and experience applying deep learning, time-series modeling, and reliable AI to wearable sensing and real-world health-monitoring problems. Research includes continuous medication-taking recognition from wrist-worn inertial sensors, personalization, domain adaptation, model evaluation, and cross-user robustness, complemented by broader production ML and cloud-data engineering experience.
+Machine Learning Engineer and healthcare-AI researcher with a PhD in Electrical and Computer Engineering and experience applying deep learning, time-series modeling, wearable sensing, and reliable ML to real-world health-monitoring problems. Expertise includes Python, PyTorch, TensorFlow, scikit-learn, CNNs, LSTMs, attention, activity recognition, smartwatch IMU analytics, medication-taking detection, personalization, domain adaptation, few-shot learning, cross-user validation, and model evaluation. Complementary industry experience includes production ML, cloud data pipelines, data-quality validation, and multimodal analytics.
 \Needspace{3\baselineskip}
-\section{Technical Expertise, Leadership, and Professional Strengths}
+\section{Technical Skills}
 \Needspace{2\baselineskip}\noindent{\small\textbf{Healthcare AI \& Wearables:} Wearable sensing, medication-adherence monitoring, activity recognition, smartwatch IMU data, human-centered sensing, and health-data applications}\par
 \Needspace{2\baselineskip}\noindent{\small\textbf{Deep Learning:} CNNs, LSTMs, attention, transfer learning, domain adaptation, representation learning, classification, and sequence modeling}\par
 \Needspace{2\baselineskip}\noindent{\small\textbf{Time-Series \& Sensor ML:} Windowing, segmentation, feature engineering, temporal modeling, cross-user evaluation, personalization, and continuous-event detection}\par
@@ -54,23 +57,20 @@ Machine Learning Engineer and researcher with a PhD in Electrical and Computer E
 \end{itemize}
 \Needspace{3\baselineskip}
 \section{Professional Experience}
-\role{Machine Learning Engineer}{Feb. 2025-Present}{AT\&T, contractor via Innovatix Inc.}{Bedminster, NJ}
+\role{Machine Learning Engineer}{02/2025 - Present}{AT\&T, contractor via Innovatix Inc.}{Bedminster, NJ}
 \begin{itemize}\interlinepenalty=10000
-\item Own end-to-end development, testing, and operational integration of an AI-driven diagnostic system for critical E911 service-assurance workflows, improving automated root-cause classification accuracy from 20\% to 80\%.
-\item Designed domain-adaptive neural models and reusable data-processing workflows that generalize across heterogeneous operational domains and reduce performance degradation caused by distribution shifts.
-\item Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to support GenAI-assisted diagnostics for VoNR and 5G service assurance.
-\item Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and support reliable deployment in high-impact operational environments.
-\item Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated AI workflows and production-oriented data assets.
+\item Lead end-to-end development and validation of production machine-learning workflows for high-impact operational decision support, including data preparation, model evaluation, error analysis, and reliability testing.
+\item Design domain-adaptive neural models and reusable preprocessing pipelines to improve model generalization under heterogeneous data distributions.
+\item Develop multimodal AI workflows that combine structured and unstructured operational data, providing transferable experience for complex real-world data environments.
+\item Partner with cross-functional stakeholders to translate domain requirements into validated ML workflows and production-oriented data assets.
 \end{itemize}
-\role{Data Scientist and AI/ML Engineer}{Sep. 2024-Dec. 2024}{Impac Exploration Services}{Weatherford, OK}
+\role{Data Scientist and AI/ML Engineer}{09/2024 - 12/2024}{Impac Exploration Services}{Weatherford, OK}
 \begin{itemize}\interlinepenalty=10000
-\item Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.
-\item Developed scalable ingestion, cleansing, transformation, and validation workflows using Python, Azure Databricks, Azure Functions, and Synapse Analytics.
-\item Automated ETL processing for large exploration datasets, reducing data-preparation time by 40\% and improving reproducibility.
-\item Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20\%.
-\item Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable analytical outputs.
+\item Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large domain datasets.
+\item Built reusable ingestion, cleansing, transformation, and validation workflows for machine-learning and LLM-assisted analytics.
+\item Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs.
 \end{itemize}
-\role{Graduate Research Assistant}{Sep. 2019-Sep. 2024}{AI4Networks, University of Oklahoma}{Tulsa, OK}
+\role{Graduate Research Assistant}{09/2019 - 07/2025}{AI4Networks, University of Oklahoma}{Tulsa, OK}
 \begin{itemize}\interlinepenalty=10000
 \item Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant network simulator and an AI-enabled 5G testbed.
 \item Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-domain modeling.
@@ -80,11 +80,11 @@ Machine Learning Engineer and researcher with a PhD in Electrical and Computer E
 \end{itemize}
 \Needspace{3\baselineskip}
 \section{Education}
-\entry{PhD, Electrical and Computer Engineering}{09/2019-07/2025}
+\entry{PhD, Electrical and Computer Engineering}{09/2019 - 07/2025}
 University of Oklahoma, Norman, Oklahoma, USA\par
-\entry{MSc, Telecommunication Engineering}{08/2014-08/2016}
+\entry{MSc, Telecommunication Engineering}{08/2014 - 08/2016}
 University of Engineering and Technology, Taxila, Pakistan\par
-\entry{BSc, Telecommunication Engineering}{11/2010-06/2014}
+\entry{BSc, Telecommunication Engineering}{11/2010 - 06/2014}
 University of Engineering and Technology, Taxila, Pakistan\par
 \Needspace{3\baselineskip}
 \section{Selected Projects}
@@ -101,7 +101,7 @@ University of Engineering and Technology, Taxila, Pakistan\par
 \end{itemize}
 {\small\textit{Tools \& methods:} Computer Vision, Streaming, Google Cloud AutoML, Python\par}
 \Needspace{3\baselineskip}
-\section{Certifications and Continuing Education}
+\section{Certifications}
 \Needspace{3\baselineskip}\noindent\textbf{1. Deep Learning for Healthcare Specialization} {\small --- \textcolor{blue}{\underline{\href{https://www.coursera.org/specializations/deep-learning-healthcare}{University of Illinois Urbana-Champaign / Coursera}}} \textbar{} Completed (0/3) courses}\par
 \textbf{Focus:} An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning solutions for real-world medical and healthcare applications.\par
 {\small\textbf{Tools \& Skills:} Deep Learning, Healthcare AI, Health Informatics, Health Data Processing, Artificial Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Autoencoders, Generative Models, Medical Image Analysis, Supervised Learning, Unsupervised Learning, Predictive Modeling, Model Evaluation, PyTorch, Jupyter Notebooks\par}
@@ -121,5 +121,5 @@ University of Engineering and Technology, Taxila, Pakistan\par
 \Needspace{3\baselineskip}
 \section{Selected Publications}
 \entry{Real-World Medication Adherence Monitoring Using Hybrid Neural Networks and Smartwatches}{2026}
-\textit{HealthINF  \textbar{}  Accepted}\par
+\textit{HealthINF \textbar{} Accepted}\par
 \end{document}

@@ -1,14 +1,16 @@
-Dr Waseem Raza, PhD
+Waseem Raza, PhD
 Machine Learning Engineer | AI/ML, GenAI & Wireless Systems
 Applied AI | Generative & Agentic AI | Data Science | Wireless Networks
-New Jersey, United States 732-803-9703 waseemraza844@gmail.com LinkedIn GitHub Scholar Portfolio
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
 Professional Summary
-Machine Learning Engineer with a PhD in Electrical and Computer Engineering and experience spanning applied AI, Generative
-AI, data science, wireless-network intelligence, and production-oriented engineering. Work includes diagnostic machine learning,
-domain adaptation, AI-ready data pipelines, model evaluation, cloud analytics, intelligent automation, and research in resilient wireless
-systems. Combines industry delivery at AT&T and Impac Exploration Services with research experience at AT&T Labs, Futurewei,
-and the University of Oklahoma.
-Technical Expertise, Leadership, and Professional Strengths
+Machine Learning Engineer and Data Scientist with a PhD in Electrical and Computer Engineering and 7+ years of combined
+industry, research, and engineering experience developing end-to-end AI/ML systems. Expertise includes Python, SQL, PyTorch,
+TensorFlow, scikit-learn, XGBoost, Generative AI, retrieval-augmented generation (RAG), domain adaptation, time-series modeling,
+data engineering, Azure Databricks, Apache Spark, MLOps, and wireless-network intelligence. Experienced in translating ambiguous
+technical requirements into validated machine-learning workflows, production-oriented data pipelines, and measurable decision-support
+systems.
+Technical Skills
 Machine Learning: PyTorch, TensorFlow, scikit-learn, XGBoost, classification, regression, anomaly detection, transfer learning, domain
 adaptation, time-series modeling, cross-validation, and model evaluation
 Generative & Agentic AI: RAG, embeddings, vector retrieval, prompt engineering, structured extraction, tool-using agents, LangChain,
@@ -35,7 +37,7 @@ mentation and delivery.
 • Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
 unfamiliar technologies and complex operational problems.
 Professional Experience
-Machine Learning Engineer Feb. 2025-Present
+Machine Learning Engineer 02/2025 - Present
 AT&T, contractor via Innovatix Inc. Bedminster, NJ
 • Own end-to-enddevelopment, testing, and operational integration of anAI-driven diagnostic systemfor critical E911service-assurance
 workflows, improving automated root-cause classification accuracy from 20% to 80%.
@@ -47,7 +49,7 @@ support GenAI-assisted diagnostics for VoNR and 5G service assurance.
 support reliable deployment in high-impact operational environments.
 • Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated
 AI workflows and production-oriented data assets.
-Data Scientist and AI/ML Engineer Sep. 2024-Dec. 2024
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
 Impac Exploration Services Weatherford, OK
 • Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.
 • Developed scalable ingestion, cleansing, transformation, and validation workflows using Python, Azure Databricks, Azure Functions,
@@ -56,26 +58,26 @@ and Synapse Analytics.
 • Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.
 • Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable
 analytical outputs.
-Advanced-Degrees Intern Jun. 2024-Aug. 2024
+Advanced-Degrees Intern 06/2024 - 08/2024
 AT&T Labs Austin, TX
 • Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.
 • Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and
 validation.
 • Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting
 next-generation wireless systems.
-Advanced Wireless Technology Development Intern Sep. 2022-Jan. 2023
+Advanced Wireless Technology Development Intern 09/2022 - 01/2023
 Futurewei Technologies Schaumburg, IL
 • Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation
 on large wireless datasets.
 • Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.
 • Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation
 communication systems.
-Advanced-Degrees Intern Jun. 2022-Aug. 2022
+Advanced-Degrees Intern 06/2022 - 08/2022
 AT&T Labs Bedminster, NJ
 • Designed ML and statistical methods for analyzing users’ timing in 5G standalone networks, improving analytical precision by 20%.
 • Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.
 • Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization.
-Graduate Research Assistant Sep. 2019-Sep. 2024
+Graduate Research Assistant 09/2019 - 07/2025
 AI4Networks, University of Oklahoma Tulsa, OK
 • Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
 network simulator and an AI-enabled 5G testbed.
@@ -87,11 +89,11 @@ samples; led 100+ experiments from problem formulation through validation.
 • Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
 experimental design, and technical writing.
 Education
-PhD, Electrical and Computer Engineering 09/2019-07/2025
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
 University of Oklahoma, Norman, Oklahoma, USA
-MSc, Telecommunication Engineering 08/2014-08/2016
+MSc, Telecommunication Engineering 08/2014 - 08/2016
 University of Engineering and Technology, Taxila, Pakistan
-BSc, Telecommunication Engineering 11/2010-06/2014
+BSc, Telecommunication Engineering 11/2010 - 06/2014
 University of Engineering and Technology, Taxila, Pakistan
 Projects
 Agentic AI and RAG Applications 2026 | In progress
@@ -115,14 +117,14 @@ Guided Project
 • Documented architecture studies that translate product requirements into scalable services, data models, APIs, caching strategies,
 and reliability tradeoffs.
 Tools & methods: System Design, APIs, Distributed Systems, Scalability
-Certifications and Continuing Education
+Certifications
 1. AWS Generative AI and AI Agents with Amazon Bedrock— AWS/Coursera| Completed (3/3) courses | 08/2026 |Certificate
 Focus: Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications
 and intelligent agents with Amazon Bedrock.
 T ools & Skills: Amazon Bedrock, Generative AI, AI Agents, Foundation Models, Knowledge Bases, Retrieval-Augmented Generation, LangChain,
 Amazon Q Developer, Model Customization, Prompt Engineering, Natural Language Processing, Text Generation, Summarization, Generative AI
 Application Development
-2. IBM RAG and Agentic AI Professional Certificate— IBM / Coursera| Completed (8/8) courses | February 2026 | Certificate
+2. IBM RAG and Agentic AI Professional Certificate— IBM / Coursera| Completed (8/8) courses | 02/2026 | Certificate
 Original eight-course credential.
 Focus: Completed eight-course professional certificate covering retrieval-augmented generation, vector databases, multimodal
 applications, and agentic AI workflows.
@@ -134,11 +136,11 @@ T ools & Skills: Supervised Learning, Unsupervised Learning, Model Evaluation, O
 4. Google Cloud Data Analytics Professional Certificate— Google Cloud / Coursera | Completed
 Focus: Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.
 T ools & Skills: SQL, BigQuery, Data Analytics, Visualization
-5. AI for Telecommunications Specialization— AI CERTs / Coursera| Completed (3/3) courses | June 2026 | Certificate
+5. AI for Telecommunications Specialization— AI CERTs / Coursera| Completed (3/3) courses | 06/2026 | Certificate
 Focus: Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer
 experience.
 T ools & Skills: AI for Telecommunications, Network Optimization, Cybersecurity, Customer Experience, Internet of Things, Python, TensorFlow
-6. 4G Network Fundamentals— Institut Mines-Télécom / Coursera| Completed (1/1) courses | August 2026 | Certificate
+6. 4G Network Fundamentals— Institut Mines-Télécom / Coursera| Completed (1/1) courses | 08/2026 | Certificate
 Focus: Foundational study of fourth-generation cellular networks.
 T ools & Skills: 4G Networks, Cellular Networks, Telecommunications
 Publications
