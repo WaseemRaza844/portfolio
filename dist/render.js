@@ -116,6 +116,7 @@
       '<div class="project-status"><strong>' + esc(item.status || 'Project') + '</strong><span>' + esc(item.date || '') + '</span></div></div>' +
       '</summary><div class="project-accordion-content">' +
       '<div class="project-overview"><div><p class="field-label">Project overview</p><p>' + esc(item.summary) + '</p></div>' +
+      (item.architecture ? '<div><p class="field-label">Architecture overview</p><p>' + esc(item.architecture) + '</p></div>' : '') +
       '<div><p class="field-label">Project type</p><p>' + esc(item.category) + '</p></div>' +
       '<div><p class="field-label">Status & timeline</p><p>' + esc(item.status || '') + (item.date ? ' · ' + esc(item.date) : '') + '</p></div></div>' +
       '<div class="project-evidence"><div><p class="field-label">Important skills & tools</p>' + tags(item.skills || []) + '</div>' +
