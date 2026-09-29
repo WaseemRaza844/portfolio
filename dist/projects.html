@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
-        content="Grouped academic, guided, Coursera, and portfolio projects by Waseem Raza across AI, machine learning, wireless systems, cloud, and system design.">
-    <title>Projects | Waseem Raza</title>
+        content="Engineering and research projects by Dr. Waseem Raza spanning 3GPP cellular simulation, production machine learning, Agentic RAG systems, wireless digital twins, resilient automation, and MLOps.">
+    <title>Engineering &amp; Research Projects | Dr. Waseem Raza, PhD | Wireless AI &amp; MLOps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,34 +15,76 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body>
+<body class="landing-dark projects-dark">
     <div class="noise" aria-hidden="true"></div>
-    <header class="site-header"><a class="brand" href="./index.html"><span>WR</span><strong>Waseem Raza</strong></a>
-        <nav aria-label="Main navigation">
+    <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Waseem Raza portfolio home"><span>WR</span><strong>Waseem Raza</strong></a>
+        <nav aria-label="Primary navigation">
             <a href="./index.html">Home</a>
-            <a class="current" href="./projects.html">Projects</a>
+            <a class="current" aria-current="page" href="./projects.html">Projects</a>
             <a href="./publications.html">Publications</a>
-            <a href="./learning.html">Self Learning</a></nav>
-        <details class="profile-menu">
-      <summary>Profiles</summary>
-      <div><a href="./index.html">Generic / Comprehensive</a><a href="./genai/">GenAI &amp; Agentic AI</a><a href="./aiml/">AI/ML &amp; Data Science</a><a href="./faculty/">Faculty &amp; Academic</a></div>
-    </details>
+            <a href="./learning.html">Learning</a>
+        </nav>
+        <details class="profile-menu" aria-label="Portfolio profile selector">
+            <summary aria-label="Select a portfolio profile">Profiles</summary>
+            <div>
+                <a href="./index.html">Generic / Comprehensive</a>
+                <a href="./genai/">GenAI &amp; Agentic AI</a>
+                <a href="./aiml/">AI/ML &amp; Data Science</a>
+                <a href="./faculty/">Faculty &amp; Academic</a>
+            </div>
+        </details>
     </header>
-    <main>
-        <section class="page-hero">
-            <p class="eyebrow">PROJECT PORTFOLIO</p>
-            <h1>Projects organized by how I research, learn, and build.</h1>
-            <p>Explore academic and research work, focused guided implementations, and Coursera or self-directed portfolio projects. Expand any project to review its scope, skills, status, links, and related credentials.</p>
+    <main id="top">
+        <section class="page-hero projects-hero" aria-labelledby="projects-page-title">
+            <span class="section-badge">⚡ Engineering · Research · Applied AI</span>
+            <h1 id="projects-page-title">Engineering &amp; Research Projects</h1>
+            <p>Enterprise-grade project work spanning 3GPP cellular simulation, production ML and MLOps, Agentic RAG systems, wireless digital twins, resilient automation, and applied AI research.</p>
             <div class="page-stats" id="project-stats"></div>
         </section>
         <section class="section subpage-section">
             <div id="all-projects" class="project-groups"></div>
         </section>
     </main>
-    <footer>
-        <p>© <span id="year"></span> Waseem Raza, PhD</p>
-        <div><a href="./index.html">Home</a><a href="./learning.html">Learning</a><a
-                href="./publications.html">Publications</a></div>
+    <footer class="enterprise-footer" aria-label="Portfolio footer">
+        <div class="enterprise-footer-grid">
+            <section class="enterprise-footer-brand" aria-labelledby="projects-footer-brand-title">
+                <h2 id="projects-footer-brand-title">Dr. Waseem Raza, PhD</h2>
+                <span class="footer-status-badge">🟢 Open to Roles &amp; Advisory</span>
+                <p>Machine Learning Engineer building production ML for AT&amp;T 5G and E911 operations. Research spans wireless AI, digital twins, resilient automation, and intelligent connected systems.</p>
+            </section>
+
+            <nav class="enterprise-footer-column" aria-label="Explore portfolio">
+                <h3>Explore</h3>
+                <a href="./index.html">Home</a>
+                <a href="./projects.html" aria-current="page">Projects</a>
+                <a href="./index.html#experience">Experience</a>
+                <a href="./index.html#research">Research</a>
+                <a href="./publications.html">Publications</a>
+                <a href="./learning.html">Continuous Learning</a>
+            </nav>
+
+            <nav class="enterprise-footer-column" aria-label="Specialized portfolio profiles">
+                <h3>Specialized Profiles</h3>
+                <a href="./index.html">Core Overview</a>
+                <a href="./genai/">GenAI &amp; Agentic AI</a>
+                <a href="./aiml/">AI/ML &amp; Data Science</a>
+                <a href="./faculty/">Faculty &amp; Academic</a>
+            </nav>
+
+            <nav class="enterprise-footer-column" aria-label="Connect and verify">
+                <h3>Connect &amp; Verify</h3>
+                <a href="https://www.linkedin.com/in/waseem-raza-phd-9a737858/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="https://scholar.google.com/citations?user=d58Drr0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+                <a href="https://orcid.org/0000-0002-5544-2637" target="_blank" rel="noopener noreferrer">ORCID <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/WaseemRaza844" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+
+        <div class="enterprise-footer-bottom">
+            <p>© 2026 Waseem Raza, PhD</p>
+            <a href="#top">Back to Top <span aria-hidden="true">↑</span></a>
+        </div>
     </footer>
     <script src="./data/site-config.js"></script>
     <script src="./data/domain-areas.js"></script>
