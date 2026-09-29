@@ -4,7 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description"
+        <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+<meta name="description"
         content="Engineering and research projects by Dr. Waseem Raza spanning 3GPP cellular simulation, production machine learning, Agentic RAG systems, wireless digital twins, resilient automation, and MLOps.">
     <title>Engineering &amp; Research Projects | Dr. Waseem Raza, PhD | Wireless AI &amp; MLOps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +44,7 @@
                 <a href="./faculty/">Faculty &amp; Academic</a>
             </div>
         </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
     </header>
     <main id="top">
         <section class="page-hero projects-hero" aria-labelledby="projects-page-title">
