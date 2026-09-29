@@ -2474,3 +2474,533 @@ body:not(.landing-dark) .enterprise-footer-bottom{
     transition:none;
   }
 }
+
+
+/* GLOBAL_MIDNIGHT_THEME_AND_TOGGLE_2026 */
+:root,
+html[data-theme="dark"]{
+  --bg-primary:#080e1a;
+  --bg-card:#0f172a;
+  --bg-card-soft:rgba(15,23,42,.82);
+  --text-primary:#f8fafc;
+  --text-secondary:#94a3b8;
+  --border-card:rgba(56,189,248,.12);
+  --accent-cyan:#38bdf8;
+  --accent-blue:#3b82f6;
+  --accent-hover:#67e8f9;
+  --bg:var(--bg-primary);
+  --panel:var(--bg-card);
+  --panel2:var(--bg-card-soft);
+  --ink:var(--text-primary);
+  --muted:var(--text-secondary);
+  --cyan:var(--accent-cyan);
+  --blue:var(--accent-blue);
+  --accent-color:var(--accent-cyan);
+  --line:var(--border-card);
+  color-scheme:dark;
+}
+
+html[data-theme="light"]{
+  --bg-primary:#f8fafc;
+  --bg-card:#ffffff;
+  --bg-card-soft:rgba(255,255,255,.92);
+  --text-primary:#0f172a;
+  --text-secondary:#475569;
+  --border-card:rgba(203,213,225,.8);
+  --accent-cyan:#0284c7;
+  --accent-blue:#2563eb;
+  --accent-hover:#0369a1;
+  --bg:var(--bg-primary);
+  --panel:var(--bg-card);
+  --panel2:var(--bg-card-soft);
+  --ink:var(--text-primary);
+  --muted:var(--text-secondary);
+  --cyan:var(--accent-cyan);
+  --blue:var(--accent-blue);
+  --accent-color:var(--accent-cyan);
+  --line:var(--border-card);
+  color-scheme:light;
+}
+
+html[data-theme] body,
+html[data-theme] body.landing-dark,
+html[data-theme] body.variant-page{
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(59,130,246,.12),transparent 60%),
+    radial-gradient(ellipse at 88% 14%,rgba(56,189,248,.065),transparent 54%),
+    var(--bg-primary);
+  color:var(--text-primary);
+  transition:background-color .22s ease,color .22s ease;
+}
+
+html[data-theme="light"] body,
+html[data-theme="light"] body.landing-dark,
+html[data-theme="light"] body.variant-page{
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(59,130,246,.08),transparent 60%),
+    radial-gradient(ellipse at 88% 14%,rgba(2,132,199,.045),transparent 54%),
+    var(--bg-primary);
+}
+
+/* Shared global header and compact theme control. */
+html[data-theme] .site-header{
+  justify-content:flex-start;
+  gap:0;
+  background:rgba(8,14,26,.86);
+  border-bottom:1px solid var(--border-card);
+  box-shadow:0 1px 0 rgba(56,189,248,.035);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+html[data-theme] .site-header nav{
+  margin-left:auto;
+}
+html[data-theme] .profile-menu{
+  margin-left:18px;
+}
+html[data-theme] .theme-toggle{
+  flex:0 0 38px;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  margin-left:8px;
+  padding:0;
+  border:1px solid var(--border-card);
+  border-radius:9px;
+  background:var(--bg-card-soft);
+  color:var(--text-primary);
+  font:500 16px/1 "DM Sans",sans-serif;
+  cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+  transition:border-color .2s ease,background-color .2s ease,transform .2s ease;
+}
+html[data-theme] .theme-toggle:hover{
+  transform:translateY(-1px);
+  border-color:rgba(56,189,248,.42);
+  background:rgba(56,189,248,.08);
+}
+html[data-theme] .theme-toggle:focus-visible{
+  outline:3px solid rgba(56,189,248,.28);
+  outline-offset:3px;
+}
+html[data-theme] .brand,
+html[data-theme] .brand strong{
+  color:var(--text-primary);
+}
+html[data-theme] .brand>span{
+  border-color:rgba(56,189,248,.34);
+  background:rgba(56,189,248,.08);
+  color:var(--accent-cyan);
+}
+html[data-theme] .site-header nav a,
+html[data-theme] .nav-cta{
+  color:var(--text-secondary);
+}
+html[data-theme] .site-header nav a:hover,
+html[data-theme] .site-header nav a.current,
+html[data-theme] .nav-cta:hover{
+  color:var(--accent-cyan);
+}
+html[data-theme] .profile-menu>summary{
+  border-color:var(--border-card);
+  background:var(--bg-card-soft);
+  color:var(--text-primary);
+}
+html[data-theme] .profile-menu>summary::after{
+  color:var(--accent-cyan);
+}
+html[data-theme] .profile-menu>div{
+  border-color:var(--border-card);
+  background:var(--bg-card);
+  box-shadow:0 18px 45px rgba(2,8,23,.34);
+}
+html[data-theme] .profile-menu a{
+  color:var(--text-secondary);
+}
+html[data-theme] .profile-menu a:hover,
+html[data-theme] .profile-menu a.current{
+  background:rgba(56,189,248,.08);
+  color:var(--accent-cyan);
+}
+
+html[data-theme="light"] .site-header{
+  background:rgba(248,250,252,.9);
+  box-shadow:0 1px 0 rgba(15,23,42,.05);
+}
+html[data-theme="light"] .theme-toggle{
+  box-shadow:0 3px 12px rgba(15,23,42,.06);
+}
+html[data-theme="light"] .profile-menu>div{
+  box-shadow:0 18px 45px rgba(15,23,42,.12);
+}
+
+/* Typography and accents inherit the same palette across main and variants. */
+html[data-theme] body h1,
+html[data-theme] body h2,
+html[data-theme] body h3,
+html[data-theme] body strong{
+  color:var(--text-primary);
+}
+html[data-theme] body p,
+html[data-theme] body li,
+html[data-theme] body small{
+  color:var(--text-secondary);
+}
+html[data-theme] body .eyebrow,
+html[data-theme] body .section-badge,
+html[data-theme] body .proof-kicker,
+html[data-theme] body .field-label,
+html[data-theme] body .detail-type,
+html[data-theme] body .pub-venue,
+html[data-theme] body .project-year,
+html[data-theme] body .year,
+html[data-theme] body .date{
+  color:var(--accent-cyan);
+}
+html[data-theme] body .hero-title{
+  color:var(--text-primary);
+}
+html[data-theme] body .hero-motto{
+  border-left-color:var(--accent-blue);
+  color:var(--text-secondary);
+}
+html[data-theme] body .profile-label{
+  border:1px solid rgba(56,189,248,.18);
+  background:rgba(56,189,248,.09);
+  color:var(--accent-cyan);
+}
+
+/* Unified card and content surfaces, including all three profile variants. */
+html[data-theme] body .profile-paths>a,
+html[data-theme] body .research-card,
+html[data-theme] body .project-card,
+html[data-theme] body .detail-card,
+html[data-theme] body .education-grid article,
+html[data-theme] body .approach-grid article,
+html[data-theme] body .learning-feature,
+html[data-theme] body .credential,
+html[data-theme] body .certification-accordion,
+html[data-theme] body .course-accordion,
+html[data-theme] body .project-accordion,
+html[data-theme] body .publication-item{
+  border-color:var(--border-card);
+  background:var(--bg-card-soft);
+  color:var(--text-primary);
+  box-shadow:0 12px 32px rgba(2,8,23,.16);
+}
+html[data-theme] body #featured-publications .publication-item{
+  border-color:var(--border-card);
+  background:var(--bg-card);
+}
+html[data-theme] body .profile-paths>a.current-profile,
+html[data-theme] body .project-card.featured,
+html[data-theme] body .research-card.featured,
+html[data-theme] body .certification-accordion[open],
+html[data-theme] body .project-accordion[open]{
+  border-color:rgba(56,189,248,.3);
+  background:linear-gradient(145deg,var(--bg-card),rgba(30,64,175,.10));
+}
+html[data-theme] body .profile-paths>a:hover,
+html[data-theme] body .research-card:hover,
+html[data-theme] body .project-card:hover,
+html[data-theme] body .detail-card:hover{
+  border-color:rgba(56,189,248,.36);
+}
+html[data-theme] body .profile-paths a span,
+html[data-theme] body .research-card p,
+html[data-theme] body .project-card p,
+html[data-theme] body .detail-card>p:not(.detail-type),
+html[data-theme] body .education-grid p,
+html[data-theme] body .approach-grid p{
+  color:var(--text-secondary);
+}
+html[data-theme] body .profile-paths>a.current-profile strong,
+html[data-theme] body .profile-paths>a small{
+  color:var(--accent-cyan);
+}
+html[data-theme] body .designation-tags span,
+html[data-theme] body .tags span,
+html[data-theme] body .course-strip span,
+html[data-theme] body .project-related-credentials span{
+  border-color:var(--border-card);
+  background:rgba(56,189,248,.06);
+  color:var(--text-secondary);
+}
+html[data-theme] body .engineering-card .project-kind,
+html[data-theme] body .publication-badge,
+html[data-theme] body .publication-year{
+  border-color:rgba(56,189,248,.2);
+  background:rgba(56,189,248,.08);
+  color:var(--accent-cyan);
+}
+
+/* Proof, timeline, publications, and generated variant sections. */
+html[data-theme] body .proof{
+  border-top-color:var(--border-card);
+  border-bottom-color:var(--border-card);
+}
+html[data-theme] body .proof>div{
+  border-right-color:var(--border-card);
+}
+html[data-theme] body .timeline-item{
+  border-left-color:rgba(56,189,248,.24);
+}
+html[data-theme] body .dot{
+  border-color:var(--accent-cyan);
+  background:var(--bg-primary);
+}
+html[data-theme] body .timeline-item h3 span{
+  color:var(--text-secondary);
+}
+html[data-theme] body .pub-list{
+  border-top-color:var(--border-card);
+}
+html[data-theme] body .pub{
+  border-bottom-color:var(--border-card);
+  color:var(--text-primary);
+}
+html[data-theme] body .pub:hover{
+  background:rgba(56,189,248,.045);
+}
+html[data-theme] body .publication-item h3,
+html[data-theme] body #featured-publications .publication-item h3{
+  color:var(--text-primary);
+}
+html[data-theme] body .publication-item p,
+html[data-theme] body #featured-publications .publication-item p{
+  color:var(--text-secondary);
+}
+html[data-theme] body .publication-actions a,
+html[data-theme] body .publication-actions button,
+html[data-theme] body .project-action{
+  border-color:rgba(56,189,248,.24);
+  background:var(--bg-card);
+  color:var(--accent-cyan);
+}
+html[data-theme] body .project-action.primary-action,
+html[data-theme] body .button.primary{
+  border-color:var(--accent-blue);
+  background:var(--accent-blue);
+  color:#ffffff;
+}
+html[data-theme] body .publication-actions a:hover,
+html[data-theme] body .publication-actions button:hover,
+html[data-theme] body .project-action:hover{
+  border-color:rgba(56,189,248,.5);
+  background:rgba(56,189,248,.08);
+  color:var(--accent-cyan);
+}
+
+/* Shared controls and buttons. */
+html[data-theme] body .button.ghost,
+html[data-theme] body .nav-cta{
+  border-color:var(--border-card);
+  background:var(--bg-card-soft);
+  color:var(--text-primary);
+}
+html[data-theme] body .button.ghost:hover{
+  border-color:rgba(56,189,248,.46);
+  color:var(--accent-cyan);
+}
+html[data-theme] body .section-head.row>a,
+html[data-theme] body .detail-card .text-link,
+html[data-theme] body .enterprise-footer-bottom a{
+  color:var(--accent-cyan);
+}
+
+/* Learning and project accordions use the same blue-slate surfaces. */
+html[data-theme] body .certification-content,
+html[data-theme] body .course-content,
+html[data-theme] body .project-accordion-content{
+  border-top-color:var(--border-card);
+  background:transparent;
+}
+html[data-theme] body .cert-overview>div+div,
+html[data-theme] body .project-overview>div+div,
+html[data-theme] body .project-evidence>div+div{
+  border-top-color:var(--border-card);
+}
+html[data-theme] body .credential-links a,
+html[data-theme] body .project-links a,
+html[data-theme] body .pdf-link{
+  border-color:rgba(56,189,248,.24);
+  background:rgba(56,189,248,.06);
+  color:var(--accent-cyan);
+}
+html[data-theme] body .pdf-preview{
+  border-color:var(--border-card);
+  background:rgba(15,23,42,.52);
+}
+html[data-theme="light"] body .pdf-preview{
+  background:#f8fafc;
+}
+html[data-theme] body .pdf-preview>summary,
+html[data-theme] body .preview-btn{
+  color:var(--accent-cyan);
+}
+
+/* Footer inherits active theme cleanly. */
+html[data-theme] body .enterprise-footer{
+  color:var(--text-secondary);
+  background:transparent;
+}
+html[data-theme] body .enterprise-footer-column h3{
+  color:var(--text-primary);
+}
+html[data-theme] body .enterprise-footer-column a{
+  color:var(--text-secondary);
+}
+html[data-theme] body .enterprise-footer-column a:hover{
+  color:var(--accent-cyan);
+}
+html[data-theme] body .enterprise-footer-bottom{
+  border-top-color:var(--border-card);
+}
+html[data-theme] body .enterprise-footer-bottom p{
+  color:var(--text-secondary);
+}
+html[data-theme] body>footer:not(.enterprise-footer){
+  border-top-color:var(--border-card);
+  color:var(--text-secondary);
+}
+html[data-theme] body>footer:not(.enterprise-footer) a{
+  color:var(--text-secondary);
+}
+html[data-theme] body>footer:not(.enterprise-footer) a:hover{
+  color:var(--accent-cyan);
+}
+
+/* Light mode: crisp white cards and darker accessible copy. */
+html[data-theme="light"] body .profile-paths>a,
+html[data-theme="light"] body .research-card,
+html[data-theme="light"] body .project-card,
+html[data-theme="light"] body .detail-card,
+html[data-theme="light"] body .education-grid article,
+html[data-theme="light"] body .approach-grid article,
+html[data-theme="light"] body .learning-feature,
+html[data-theme="light"] body .credential,
+html[data-theme="light"] body .certification-accordion,
+html[data-theme="light"] body .course-accordion,
+html[data-theme="light"] body .project-accordion,
+html[data-theme="light"] body .publication-item,
+html[data-theme="light"] body #featured-publications .publication-item{
+  background:#ffffff;
+  box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+html[data-theme="light"] body .profile-paths>a.current-profile,
+html[data-theme="light"] body .project-card.featured,
+html[data-theme="light"] body .research-card.featured,
+html[data-theme="light"] body .certification-accordion[open],
+html[data-theme="light"] body .project-accordion[open]{
+  background:linear-gradient(145deg,#ffffff,#eff6ff);
+}
+html[data-theme="light"] body .pdf-preview{
+  border-color:var(--border-card);
+}
+html[data-theme="light"] body .dot{
+  background:#ffffff;
+}
+html[data-theme="light"] body .closing{
+  border-color:rgba(59,130,246,.18);
+  background:linear-gradient(135deg,#eff6ff,#f8fafc);
+  box-shadow:0 18px 44px rgba(15,23,42,.07);
+}
+html[data-theme="light"] body .closing h2{
+  color:#0f172a;
+}
+html[data-theme="light"] body .closing p{
+  color:#475569;
+}
+html[data-theme="light"] body .closing .eyebrow{
+  color:#0284c7;
+}
+
+/* Dark mode closing panel and profile visuals. */
+html[data-theme="dark"] body .closing{
+  border-color:rgba(56,189,248,.18);
+  background:linear-gradient(135deg,#0b1830,#0a1222);
+  box-shadow:0 22px 60px rgba(2,8,23,.28);
+}
+html[data-theme] body .profile-visual{
+  border-color:var(--border-card);
+  background:var(--bg-card);
+  box-shadow:0 28px 70px rgba(2,8,23,.22);
+}
+
+/* Variant pages explicitly inherit the same global visual system. */
+html[data-theme] body.variant-page .profile-hero,
+html[data-theme] body.variant-page .section{
+  color:var(--text-primary);
+}
+html[data-theme] body.variant-page .research-grid,
+html[data-theme] body.variant-page .detail-grid,
+html[data-theme] body.variant-page .project-grid,
+html[data-theme] body.variant-page .pub-list{
+  color:var(--text-primary);
+}
+html[data-theme] body.variant-page .section-head h2,
+html[data-theme] body.variant-page .profile-copy h1{
+  color:var(--text-primary);
+}
+html[data-theme] body.variant-page .profile-copy .lede,
+html[data-theme] body.variant-page .profile-copy .hero-motto{
+  color:var(--text-secondary);
+}
+
+/* Archive-specific hardcoded colors yield to theme variables. */
+html[data-theme] body.projects-dark .project-group-head h2,
+html[data-theme] body.publications-dark .publications-hero h1,
+html[data-theme] body.learning-dark .page-hero h1,
+html[data-theme] body.projects-dark .project-summary-main h2,
+html[data-theme] body.publications-dark .publication-item h3,
+html[data-theme] body.learning-dark .cert-summary-main h2{
+  color:var(--text-primary);
+}
+html[data-theme] body.projects-dark .project-group-head p,
+html[data-theme] body.publications-dark .publications-hero>p,
+html[data-theme] body.learning-dark .page-hero>p,
+html[data-theme] body.projects-dark .project-overview p:not(.field-label),
+html[data-theme] body.projects-dark .project-evidence p:not(.field-label),
+html[data-theme] body.publications-dark .publication-item p,
+html[data-theme] body.learning-dark .cert-teaser{
+  color:var(--text-secondary);
+}
+html[data-theme] body.projects-dark .project-accordion,
+html[data-theme] body.publications-dark .publication-item,
+html[data-theme] body.learning-dark .certification-accordion,
+html[data-theme] body.learning-dark .course-accordion{
+  border-color:var(--border-card);
+  background:var(--bg-card-soft);
+}
+html[data-theme="light"] body.projects-dark .project-accordion,
+html[data-theme="light"] body.publications-dark .publication-item,
+html[data-theme="light"] body.learning-dark .certification-accordion,
+html[data-theme="light"] body.learning-dark .course-accordion{
+  background:#ffffff;
+}
+
+/* Responsive header: keep Profiles and theme control adjacent when nav collapses. */
+@media(max-width:900px){
+  html[data-theme] .site-header nav{display:none}
+  html[data-theme] .profile-menu{margin-left:auto}
+}
+@media(max-width:600px){
+  html[data-theme] .profile-menu{margin-left:auto}
+  html[data-theme] .theme-toggle{
+    width:36px;
+    height:36px;
+    flex-basis:36px;
+    margin-left:6px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html[data-theme] body,
+  html[data-theme] .theme-toggle{
+    transition:none;
+  }
+  html[data-theme] .theme-toggle:hover{
+    transform:none;
+  }
+}
