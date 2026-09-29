@@ -67,7 +67,7 @@ def build_pdf(key, variant, data, settings, output):
     body = []
 
     def section(title):
-        body.append(r'\Needspace{8\baselineskip}')
+        body.append(r'\Needspace{3\baselineskip}')
         body.append(r'\section{' + tex(title) + '}')
 
     def bullets(items):
