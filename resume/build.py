@@ -35,12 +35,28 @@ COLLECTIONS = ('experience', 'projects', 'certifications', 'publications')
 
 
 def clean(value):
-    """Normalize punctuation without interpreting source text as PDF markup."""
+    """Normalize Unicode punctuation and repair common UTF-8/CP1252 mojibake."""
     text = str(value or '')
-    for before, after in {'\u2011': '-', '\u2013': '-', '\u2014': '-',
-                          '\u2018': "'", '\u2019': "'", '\u201c': '"',
-                          '\u201d': '"', '\u00a0': ' '}.items():
+    # Repair strings such as "â€“" and "Â·" when UTF-8 bytes were decoded as CP1252.
+    for _ in range(2):
+        if not any(marker in text for marker in ('â', 'Â', 'Ã')):
+            break
+        try:
+            repaired = text.encode('cp1252').decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if repaired == text:
+            break
+        text = repaired
+    replacements = {
+        '\u2011': '-', '\u2013': '-', '\u2014': '-',
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u00a0': ' ', '\u00b7': ' | '
+    }
+    for before, after in replacements.items():
         text = text.replace(before, after)
+    text = re.sub(r'[ \t]*\|[ \t]*', ' | ', text)
+    text = re.sub(r'[ \t]{2,}', ' ', text)
     return text
 
 
@@ -60,11 +76,34 @@ def anchor(label, url):
 
 
 def date_label(value):
+    """Return ATS-friendly numeric month/year dates when month names are supplied."""
     text = clean(value).strip()
     if not text or re.search(r'update|to be|to confirm|on credential', text, re.I):
         return ''
     if text.lower() in ('completed', 'in progress', 'earlier', 'not started'):
         return ''
+
+    months = {
+        'jan': '01', 'january': '01', 'feb': '02', 'february': '02',
+        'mar': '03', 'march': '03', 'apr': '04', 'april': '04',
+        'may': '05', 'jun': '06', 'june': '06', 'jul': '07', 'july': '07',
+        'aug': '08', 'august': '08', 'sep': '09', 'sept': '09', 'september': '09',
+        'oct': '10', 'october': '10', 'nov': '11', 'november': '11',
+        'dec': '12', 'december': '12'
+    }
+
+    def numeric(match):
+        month = months[match.group(1).lower().rstrip('.')]
+        return month + '/' + match.group(2)
+
+    text = re.sub(
+        r'\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+(\d{4})\b',
+        numeric,
+        text,
+        flags=re.I
+    )
+    text = re.sub(r'\s*[-–—]{1,2}\s*', ' - ', text)
+    text = re.sub(r'\s{2,}', ' ', text).strip()
     return text
 
 
@@ -99,8 +138,9 @@ def merge_source(source, config):
         rows = []
         for row in original:
             result = {**row, **overrides.get(row['id'], {})}
-            # A source-hidden record stays hidden even if accidentally overridden.
-            if row.get('published') is False:
+            # Website visibility and resume visibility are separate. A source-hidden
+            # record may be explicitly opted into a resume with resumePublished=true.
+            if row.get('published') is False and result.get('resumePublished') is not True:
                 result['published'] = False
             rows.append(result)
         rows.extend(config.get('additional' + names[name], []))
@@ -115,7 +155,11 @@ def merge_source(source, config):
 
 
 def eligible(row):
-    return row.get('published') is not False and row.get('resumePublished') is not False
+    if row.get('resumePublished') is True:
+        return True
+    if row.get('resumePublished') is False:
+        return False
+    return row.get('published') is not False
 
 
 def select(rows, ids):
@@ -382,6 +426,21 @@ def build_pdf(key, variant, data, settings, output):
     return result
 
 
+def remove_stale_generated(output, active_keys):
+    """Remove generated resume artifacts for variants no longer configured."""
+    expected = {'Waseem_Raza_' + key.upper() for key in active_keys}
+    if not output.exists():
+        return
+    for path in output.iterdir():
+        if path.suffix.lower() in {'.pdf', '.tex', '.aux', '.log', '.out'} and path.stem.startswith('Waseem_Raza_'):
+            if path.stem not in expected:
+                path.unlink(missing_ok=True)
+        elif path.suffix.lower() == '.txt' and path.stem not in active_keys:
+            # Extracted text files are named by variant key.
+            if path.stem not in {'build-report'}:
+                path.unlink(missing_ok=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--all', action='store_true', help='Build all configured variants.')
@@ -401,6 +460,8 @@ def main():
     keys = list(variants) if args.all else [args.variant or 'genai']
     if any(key not in variants for key in keys):
         parser.error('Unknown variant; use --list.')
+    if args.all:
+        remove_stale_generated(args.output, variants.keys())
     config = read_json(HERE / 'content.json')
     data = merge_source(read_source(args.source_json), config)
     notes = audit(data)

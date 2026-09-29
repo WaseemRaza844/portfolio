@@ -1,4 +1,24 @@
 /* Guided, portfolio, professional, and research projects. */
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+
+window.PORTFOLIO_DATA.projectGroups = [
+  {
+    "id": "academic-research",
+    "title": "Academic & Research Projects",
+    "description": "Doctoral, university, and experimental research spanning wireless networks, resilient AI, simulation platforms, and wearable intelligence."
+  },
+  {
+    "id": "guided",
+    "title": "Basic Guided Projects",
+    "description": "Focused implementation exercises used to strengthen practical skills with AI/ML tools, cloud services, LLM workflows, and applied engineering."
+  },
+  {
+    "id": "coursera-portfolio",
+    "title": "Coursera & Portfolio Projects",
+    "description": "Course-connected and self-directed portfolio work demonstrating system design, Agentic AI, data engineering, machine learning, and end-to-end implementation."
+  }
+];
+
 window.PORTFOLIO_DATA.projects = [
   {
     "id": "system-design-portfolio",
@@ -10,13 +30,22 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Guided Project",
     "date": "2026 · In progress",
     "summary": "Documented architecture studies that translate product requirements into scalable services, data models, APIs, caching strategies, and reliability tradeoffs.",
+    "home": {
+      "badge": "Architecture / System Design",
+      "problem": "Translate ambiguous product requirements into architectures that remain scalable, reliable, and explainable under realistic traffic and data constraints.",
+      "implementation": "Documented case studies cover service boundaries, APIs, storage models, caching, consistency, capacity assumptions, and availability tradeoffs across distributed-system designs.",
+      "architectureUrl": "https://github.com/WaseemRaza844/system-design-masterclass",
+      "caseStudyUrl": "./projects.html#system-design-portfolio"
+    },
     "skills": [
       "System Design",
       "APIs",
       "Distributed Systems",
       "Scalability"
     ],
-    "featured": true
+    "featured": true,
+    "group": "coursera-portfolio",
+    "status": "In progress"
   },
   {
     "id": "agentic-ai-rag",
@@ -28,6 +57,13 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Portfolio Project",
     "date": "2026 · In progress",
     "summary": "Practical experiments with retrieval, tool-using agents, orchestration, memory, evaluation, and multi-agent workflows.",
+    "home": {
+      "badge": "GenAI / Agentic Systems",
+      "problem": "Build grounded AI workflows that can retrieve context, use tools, maintain state, and complete multi-step tasks without relying on a single unconstrained model call.",
+      "implementation": "Hands-on implementations explore RAG, vector retrieval, LangGraph-style orchestration, tool-using agents, memory, evaluation, and multi-agent workflow patterns.",
+      "architectureUrl": "https://github.com/WaseemRaza844/agentic-ai-projects-by-was",
+      "caseStudyUrl": "./projects.html#agentic-ai-rag"
+    },
     "skills": [
       "LangGraph",
       "CrewAI",
@@ -35,11 +71,17 @@ window.PORTFOLIO_DATA.projects = [
       "RAG",
       "Vector Databases"
     ],
-    "featured": true
+    "featured": true,
+    "group": "coursera-portfolio",
+    "status": "In progress"
   },
   {
     "id": "financial-ml",
-    "profiles": ["generic", "finance", "aiml"],
+    "profiles": [
+      "generic",
+      "finance",
+      "aiml"
+    ],
     "title": "Financial ML and Forecasting",
     "category": "Portfolio Project",
     "date": "2024–2025",
@@ -50,11 +92,16 @@ window.PORTFOLIO_DATA.projects = [
       "Time Series",
       "Model Evaluation"
     ],
-    "featured": false
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed"
   },
   {
     "id": "cloud-computer-vision",
-    "profiles": ["generic", "aiml"],
+    "profiles": [
+      "generic",
+      "aiml"
+    ],
     "title": "Cloud Computer Vision",
     "category": "Guided Project",
     "date": "2025",
@@ -65,11 +112,17 @@ window.PORTFOLIO_DATA.projects = [
       "Google Cloud AutoML",
       "Python"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "lakehouse-pipeline",
-    "profiles": ["generic", "genai", "aiml"],
+    "profiles": [
+      "generic",
+      "genai",
+      "aiml"
+    ],
     "title": "AI-Ready Lakehouse Pipeline",
     "category": "Portfolio Project",
     "date": "2024",
@@ -80,7 +133,9 @@ window.PORTFOLIO_DATA.projects = [
       "Spark",
       "Data Engineering"
     ],
-    "featured": false
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed"
   },
   {
     "id": "meeting-minutes-llm",
@@ -97,7 +152,9 @@ window.PORTFOLIO_DATA.projects = [
       "LLM Summarization",
       "Workflow Automation"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "unstructured-document-extraction",
@@ -114,7 +171,9 @@ window.PORTFOLIO_DATA.projects = [
       "Named Entity Recognition",
       "Data Integration"
     ],
-    "featured": false
+    "featured": false,
+    "group": "guided",
+    "status": "Completed"
   },
   {
     "id": "syntheticnet",
@@ -127,13 +186,21 @@ window.PORTFOLIO_DATA.projects = [
     "category": "Research Project",
     "date": "2020–2024",
     "summary": "Python-based simulation environment for realistic mobility, propagation, and data-driven experimentation in cellular networks.",
+    "home": {
+      "badge": "Research / Simulation",
+      "problem": "Wireless-AI research requires repeatable network data that preserves realistic mobility, propagation, and cellular-system behavior when measured data is sparse or costly.",
+      "implementation": "A Python-based, 3GPP-aligned simulation environment supports controlled data generation and large-scale experimentation for propagation, optimization, digital-twin, and resilience studies.",
+      "caseStudyUrl": "./projects.html#syntheticnet"
+    },
     "skills": [
       "Python",
       "3GPP",
       "Simulation",
       "Wireless Networks"
     ],
-    "featured": true
+    "featured": true,
+    "group": "academic-research",
+    "status": "Research completed"
   },
   {
     "id": "turboran",
@@ -152,11 +219,17 @@ window.PORTFOLIO_DATA.projects = [
       "Experiment Design",
       "Network Measurement"
     ],
-    "featured": false
+    "featured": false,
+    "group": "academic-research",
+    "status": "Research completed"
   },
   {
     "id": "wearable-intelligence",
-    "profiles": ["faculty", "healthcare", "aiml"],
+    "profiles": [
+      "faculty",
+      "healthcare",
+      "aiml"
+    ],
     "title": "Wearable Intelligence for Health Monitoring",
     "category": "Research Project",
     "date": "2024–2026",
@@ -167,6 +240,8 @@ window.PORTFOLIO_DATA.projects = [
       "Deep Learning",
       "Smartwatch Sensing"
     ],
-    "featured": false
+    "featured": false,
+    "group": "academic-research",
+    "status": "Active research"
   }
 ];

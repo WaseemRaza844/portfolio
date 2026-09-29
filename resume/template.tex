@@ -3,9 +3,12 @@
 \documentclass[@@SIZE@@pt,@@PAPER@@paper]{extarticle}
 \usepackage[margin=@@MARGIN@@in]{geometry}
 \usepackage[T1]{fontenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\usepackage{pifont}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -29,7 +32,7 @@
 {\LARGE\bfseries @@NAME@@}\\[2pt]
 {\large\bfseries @@HEADLINE@@}\\[1pt]
 {\small @@TAGLINE@@}\\[3pt]
-{\small @@CONTACTS@@}
+{\footnotesize @@CONTACTS@@}
 \end{center}
 \vspace{-5pt}
 @@BODY@@

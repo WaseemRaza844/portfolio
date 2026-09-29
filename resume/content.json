@@ -1,8 +1,16 @@
 {
   "identity": {
-    "email": "waseemraza844@gmail.com",
-    "phone": "732-803-9703",
-    "portfolioUrl": "https://waseemraza844.github.io/portfolio/"
+    "email": "waseem.placements@gmail.com",
+    "phone": "+1 732-803-9703",
+    "portfolioUrl": "https://waseemraza844.github.io/portfolio/",
+    "name": "Waseem Raza, PhD",
+    "shortName": "Waseem Raza",
+    "secondaryEmail": "waseemraza844@gmail.com",
+    "emails": [
+      "waseem.placements@gmail.com",
+      "waseemraza844@gmail.com"
+    ],
+    "location": "New Jersey, United States"
   },
   "settings": {
     "renderer": "latex",
@@ -16,7 +24,7 @@
   },
   "experienceOverrides": {
     "att-current": {
-      "period": "Feb. 2025–Present",
+      "period": "02/2025 - Present",
       "organization": "AT&T, contractor via Innovatix Inc.",
       "location": "Bedminster, NJ",
       "bullets": [
@@ -25,10 +33,47 @@
         "Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to support GenAI-assisted diagnostics for VoNR and 5G service assurance.",
         "Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and support reliable deployment in high-impact operational environments.",
         "Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated AI workflows and production-oriented data assets."
-      ]
+      ],
+      "bulletsByVariant": {
+        "genai": [
+          "Lead end-to-end development and validation of AI-driven E911 diagnostic workflows, combining NLP, domain-adaptive machine learning, and production-oriented data pipelines for critical service assurance.",
+          "Develop multimodal GenAI-assisted diagnostic prototypes that combine work-order text, location information, network context, and operational signals for VoNR and 5G service-assurance use cases.",
+          "Design reusable model-validation, error-analysis, and failure-mode assessment workflows to compare performance across heterogeneous operational domains and distribution shifts.",
+          "Partner with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated AI workflows and deployable data assets."
+        ],
+        "aiml": [
+          "Own end-to-end development, testing, and operational integration of machine-learning diagnostics for critical E911 service-assurance workflows, improving automated root-cause classification accuracy from 20% to 80%.",
+          "Design domain-adaptive neural models and reusable preprocessing pipelines that improve generalization across heterogeneous operational domains and distribution shifts.",
+          "Build model-validation, cross-domain evaluation, error-analysis, and failure-mode assessment procedures to support reliable production deployment.",
+          "Translate network and public-safety requirements into measurable ML objectives, validated data assets, and production-oriented decision-support workflows."
+        ],
+        "wireless": [
+          "Lead AI/ML development for E911 and network-assurance diagnostics, applying NLP, domain adaptation, and root-cause classification to operational telecom workflows.",
+          "Develop multimodal diagnostic models using work-order text, location information, network context, and operational signals for VoNR and 5G service assurance.",
+          "Design cross-domain validation and distribution-shift evaluation workflows to improve reliability of ML models across heterogeneous network environments.",
+          "Collaborate with network engineers, software teams, and public-safety stakeholders on AI-enabled automation for critical telecommunications operations."
+        ],
+        "healthcare": [
+          "Lead end-to-end development and validation of production machine-learning workflows for high-impact operational decision support, including data preparation, model evaluation, error analysis, and reliability testing.",
+          "Design domain-adaptive neural models and reusable preprocessing pipelines to improve model generalization under heterogeneous data distributions.",
+          "Develop multimodal AI workflows that combine structured and unstructured operational data, providing transferable experience for complex real-world data environments.",
+          "Partner with cross-functional stakeholders to translate domain requirements into validated ML workflows and production-oriented data assets."
+        ],
+        "finance": [
+          "Lead end-to-end development, validation, and operational integration of machine-learning diagnostics, including data preparation, classification, model evaluation, and error analysis.",
+          "Design domain-adaptive neural models and reusable data-processing pipelines that improve robustness across heterogeneous operational datasets and distribution shifts.",
+          "Build cross-domain validation, data-quality, and failure-mode assessment workflows to support reliable predictive analytics and decision-support systems.",
+          "Translate complex operational requirements into measurable ML objectives, validated datasets, and production-oriented analytical workflows."
+        ],
+        "faculty": [
+          "Translate machine-learning research into operational telecommunications systems, emphasizing domain adaptation, reliability, model validation, and responsible decision support.",
+          "Develop reusable cross-domain evaluation and error-analysis methods for AI systems operating under distribution shift and heterogeneous operational conditions.",
+          "Collaborate across engineering, software, and public-safety teams to connect research methods with real-world network-assurance requirements."
+        ]
+      }
     },
     "impac": {
-      "period": "Sep. 2024–Dec. 2024",
+      "period": "09/2024 - 12/2024",
       "location": "Weatherford, OK",
       "bullets": [
         "Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data.",
@@ -36,10 +81,35 @@
         "Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.",
         "Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.",
         "Collaborated with geologists to convert domain requirements and technical information into AI-ready datasets and actionable analytical outputs."
-      ]
+      ],
+      "bulletsByVariant": {
+        "genai": [
+          "Built an LLM-enabled analytical pipeline for extracting and interpreting information from geochemical well data using Python and Azure-based data services.",
+          "Developed scalable ingestion, cleansing, transformation, and validation workflows using Azure Databricks, Azure Functions, and Synapse Analytics.",
+          "Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.",
+          "Collaborated with geologists to translate domain requirements into AI-ready datasets and structured analytical outputs."
+        ],
+        "aiml": [
+          "Built machine-learning and LLM-assisted analytical workflows for large geochemical datasets using Python and Azure cloud services.",
+          "Developed scalable ingestion, cleansing, feature-preparation, transformation, and validation workflows using Azure Databricks, Azure Functions, and Synapse Analytics.",
+          "Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.",
+          "Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%."
+        ],
+        "finance": [
+          "Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large structured datasets.",
+          "Automated ingestion, cleansing, transformation, and validation workflows, reducing data-preparation time by 40% and improving reproducibility.",
+          "Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.",
+          "Translated domain requirements into AI-ready datasets and reproducible analytical workflows for data-driven decision support."
+        ],
+        "healthcare": [
+          "Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large domain datasets.",
+          "Built reusable ingestion, cleansing, transformation, and validation workflows for machine-learning and LLM-assisted analytics.",
+          "Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs."
+        ]
+      }
     },
     "ou-research": {
-      "period": "Sep. 2019–Sep. 2024",
+      "period": "09/2019 - 07/2025",
       "organization": "AI4Networks, University of Oklahoma",
       "location": "Tulsa, OK",
       "bullets": [
@@ -55,14 +125,18 @@
     }
   },
   "projectOverrides": {},
-  "certificationOverrides": {},
+  "certificationOverrides": {
+    "ml-reinforcement-learning-finance": {
+      "resumePublished": true
+    }
+  },
   "publicationOverrides": {},
   "additionalExperience": [
     {
       "id": "att-labs-2024",
       "role": "Advanced-Degrees Intern",
       "organization": "AT&T Labs",
-      "period": "Jun. 2024–Aug. 2024",
+      "period": "06/2024 - 08/2024",
       "location": "Austin, TX",
       "bullets": [
         "Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.",
@@ -74,7 +148,7 @@
       "id": "futurewei-2022",
       "role": "Advanced Wireless Technology Development Intern",
       "organization": "Futurewei Technologies",
-      "period": "Sep. 2022–Jan. 2023",
+      "period": "09/2022 - 01/2023",
       "location": "Schaumburg, IL",
       "bullets": [
         "Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation on large wireless datasets.",
@@ -86,7 +160,7 @@
       "id": "att-labs-2022",
       "role": "Advanced-Degrees Intern",
       "organization": "AT&T Labs",
-      "period": "Jun. 2022–Aug. 2022",
+      "period": "06/2022 - 08/2022",
       "location": "Bedminster, NJ",
       "bullets": [
         "Designed ML and statistical methods for analyzing users' timing in 5G standalone networks, improving analytical precision by 20%.",

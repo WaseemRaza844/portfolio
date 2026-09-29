@@ -9,18 +9,46 @@ HERE = Path(__file__).resolve().parent
 
 
 def tex(value):
-    # Escape portfolio text, never treat it as executable TeX.
+    """Repair common mojibake, normalize punctuation, and escape text for LaTeX."""
     value = str(value or '')
-    for a, b in {'\u2011': '-', '\u2013': '--', '\u2014': '---',
-                 '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
-                 '\u00a0': ' '}.items():
-        value = value.replace(a, b)
-    escapes = {'\\': r'\textbackslash{}', '&': r'\&', '%': r'\%', '$': r'\$',
-               '#': r'\#', '_': r'\_', '{': r'\{', '}': r'\}',
-               '~': r'\textasciitilde{}', '^': r'\textasciicircum{}',
-               '|': r'\textbar{}', '<': r'\textless{}', '>': r'\textgreater{}'}
-    return ''.join(escapes.get(c, c) for c in value)
+    for _ in range(2):
+        if not any(marker in value for marker in ('â', 'Â', 'Ã')):
+            break
+        try:
+            repaired = value.encode('cp1252').decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if repaired == value:
+            break
+        value = repaired
 
+    replacements = {
+        '\u2011': '-', '\u2013': '-', '\u2014': '-',
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u00a0': ' ', '\u00b7': ' | '
+    }
+    for before, after in replacements.items():
+        value = value.replace(before, after)
+
+    value = re.sub(r'[ \t]*\|[ \t]*', ' | ', value)
+    value = re.sub(r'[ \t]{2,}', ' ', value)
+
+    escapes = {
+        '\\': r'\textbackslash{}',
+        '&': r'\&',
+        '%': r'\%',
+        '$': r'\$',
+        '#': r'\#',
+        '_': r'\_',
+        '{': r'\{',
+        '}': r'\}',
+        '~': r'\textasciitilde{}',
+        '^': r'\textasciicircum{}',
+        '|': r'\textbar{}',
+        '<': r'\textless{}',
+        '>': r'\textgreater{}'
+    }
+    return ''.join(escapes.get(char, char) for char in value)
 
 def build_pdf(key, variant, data, settings, output):
     from build import select, date_label, progress, certificate_links, web_url
@@ -39,7 +67,7 @@ def build_pdf(key, variant, data, settings, output):
     body = []
 
     def section(title):
-        body.append(r'\Needspace{8\baselineskip}')
+        body.append(r'\Needspace{3\baselineskip}')
         body.append(r'\section{' + tex(title) + '}')
 
     def bullets(items):
@@ -58,11 +86,9 @@ def build_pdf(key, variant, data, settings, output):
                 section('Professional Summary')
                 body.append(tex(variant['summary']))
             elif name == 'skills':
-                section('Technical Expertise, Leadership, and Professional Strengths')
-                body.append(r'{\small\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.52in}X@{}}')
+                section('Technical Skills')
                 for label, value in variant['skills'].items():
-                    body.append(r'\skillrow{' + tex(label) + '}{' + tex(value) + '}')
-                body.append(r'\end{tabularx}}')
+                    body.append(r'\Needspace{2\baselineskip}\noindent{\small\textbf{' + tex(label) + ':} ' + tex(value) + r'}\par')
                 strengths = variant.get('leadership', {})
                 if strengths:
                     body.append(r'\Needspace{4\baselineskip}\textbf{Leadership and Professional Strengths}\par')
@@ -82,7 +108,7 @@ def build_pdf(key, variant, data, settings, output):
             elif name == 'education':
                 section('Education')
                 for row in identity['education']:
-                    body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(row['period']) + '}')
+                    body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(date_label(row.get('period'))) + '}')
                     body.append(tex(row['school']) + r'\par')
             elif name == 'projects':
                 section('Projects' if key == 'generic' else 'Selected Projects')
@@ -93,7 +119,7 @@ def build_pdf(key, variant, data, settings, output):
                     if row.get('skills'):
                         body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
             elif name == 'certifications':
-                section('Certifications and Continuing Education')
+                section('Certifications')
                 for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
@@ -104,7 +130,7 @@ def build_pdf(key, variant, data, settings, output):
                     for label, url in certificate_links(row, identity):
                         if label in ('Certificate', 'Certificate PDF'):
                             parts.append(r'\textcolor{blue}{\underline{' + link('Certificate', url) + '}}')
-                    body.append(r'\Needspace{6\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
+                    body.append(r'\Needspace{3\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
                     description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
@@ -128,17 +154,35 @@ def build_pdf(key, variant, data, settings, output):
             else:
                 raise ValueError('Unknown section: ' + name)
 
-    contacts = [tex(identity.get('location', ''))]
-    if identity.get('phone'):
-        contacts.append(tex(identity['phone']))
-    if identity.get('email'):
-        contacts.append(r'\href{mailto:' + tex(identity['email']) + '}{' + tex(identity['email']) + '}')
-    for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Scholar', 'scholar')]:
+    emails = identity.get('emails') or [identity.get('email'), identity.get('secondaryEmail')]
+    emails = [str(email).strip() for email in emails if str(email or '').strip()]
+    phone = str(identity.get('phone') or '').strip()
+    phone_href = re.sub(r'[^+0-9]', '', phone)
+
+    primary_contacts = []
+    if identity.get('location'):
+        primary_contacts.append(tex(identity['location']))
+    if phone:
+        primary_contacts.append(r'\ding{37}\enspace ' + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+    if emails:
+        email_links = [r'\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
+        primary_contacts.append(r'\ding{41}\enspace ' + r' \textbar{} '.join(email_links))
+
+    social_contacts = []
+    for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Google Scholar', 'scholar')]:
         url = identity.get('links', {}).get(field)
         if web_url(url):
-            contacts.append(link(label, url))
+            social_contacts.append(link(label, url))
     if web_url(identity.get('portfolioUrl')):
-        contacts.append(link('Portfolio', identity['portfolioUrl']))
+        social_contacts.append(link('Portfolio', identity['portfolioUrl']))
+
+    contact_lines = []
+    if primary_contacts:
+        contact_lines.append(r' \quad '.join(primary_contacts))
+    if social_contacts:
+        contact_lines.append(r' \textbar{} '.join(social_contacts))
+    contacts = r'\\[1pt]'.join(contact_lines)
+
     size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
     if size not in (8, 9, 10, 11, 12):
         raise ValueError('latexFontSize must be 8, 9, 10, 11 or 12.')
@@ -152,7 +196,7 @@ def build_pdf(key, variant, data, settings, output):
                   MARGIN=str(margin), ACCENT=accent, NAME=tex(identity['name']),
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
-                  CONTACTS=r' \quad '.join(filter(None, contacts)), BODY='\n'.join(body))
+                  CONTACTS=contacts, BODY='\n'.join(body))
     template = (HERE / 'template.tex').read_text()
     source = re.sub(r'@@([A-Z]+)@@', lambda m: values[m[1]], template)
     output.mkdir(parents=True, exist_ok=True)

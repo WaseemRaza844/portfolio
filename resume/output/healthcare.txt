@@ -1,0 +1,102 @@
+Waseem Raza, PhD
+Machine Learning Engineer | Healthcare AI & Wearable Intelligence
+Healthcare AI | Wearable Sensing | Deep Learning | Reliable ML
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
+Professional Summary
+Machine Learning Engineer and healthcare-AI researcher with a PhD in Electrical and Computer Engineering and experience applying
+deep learning, time-series modeling, wearable sensing, and reliable ML to real-world health-monitoring problems. Expertise includes
+Python, PyTorch, TensorFlow, scikit-learn, CNNs, LSTMs, attention, activity recognition, smartwatch IMU analytics, medication-
+taking detection, personalization, domain adaptation, few-shot learning, cross-user validation, and model evaluation. Complementary
+industry experience includes production ML, cloud data pipelines, data-quality validation, and multimodal analytics.
+Technical Skills
+Healthcare AI & W earables: Wearable sensing, medication-adherence monitoring, activity recognition, smartwatch IMU data, human-centered
+sensing, and health-data applications
+Deep Learning: CNNs, LSTMs, attention, transfer learning, domain adaptation, representation learning, classification, and sequence modeling
+Time-Series & Sensor ML: Windowing, segmentation, feature engineering, temporal modeling, cross-user evaluation, personalization, and
+continuous-event detection
+Reliable & Personalized ML: Distribution shift, few-shot adaptation, fairness-aware evaluation, robustness analysis, LOSO validation, and
+error analysis
+Data & Engineering: Python, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, cloud analytics, data pipelines, APIs, and reproducible
+experimentation
+Research & Evaluation: Experimental design, statistical analysis, sensitivity/specificity, precision/recall/F1, cross-validation, visualization, and
+technical communication
+Leadership and Professional Strengths
+• Ownership and accountability:Lead AI/ML initiatives through requirements analysis, data preparation, model development,
+validation, stakeholder review, and deployment planning.
+• Technical leadership:Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings
+to guide projects from ambiguous requirements to measurable outcomes.
+• Cross-functional collaboration: Work with software engineers, network specialists, researchers, geologists, and public-safety
+stakeholders to translate domain requirements into practical data and AI solutions.
+• Continuous learning:Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms
+through hands-on projects and professional coursework.
+• Reliability and commitment:Maintain reproducible workflows, careful validation, and attention to detail throughout experi-
+mentation and delivery.
+• Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
+unfamiliar technologies and complex operational problems.
+Professional Experience
+Machine Learning Engineer 02/2025 - Present
+AT&T, contractor via Innovatix Inc. Bedminster, NJ
+• Lead end-to-end development and validation of production machine-learning workflows for high-impact operational decision support,
+including data preparation, model evaluation, error analysis, and reliability testing.
+• Design domain-adaptive neural models and reusable preprocessing pipelines to improve model generalization under heterogeneous
+data distributions.
+• Develop multimodal AI workflows that combine structured and unstructured operational data, providing transferable experience for
+complex real-world data environments.
+• Partner with cross-functional stakeholders to translate domain requirements into validated ML workflows and production-oriented
+data assets.
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
+Impac Exploration Services Weatherford, OK
+• Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large
+domain datasets.
+• Built reusable ingestion, cleansing, transformation, and validation workflows for machine-learning and LLM-assisted analytics.
+• Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs.
+Graduate Research Assistant 09/2019 - 07/2025
+AI4Networks, University of Oklahoma Tulsa, OK
+• Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
+network simulator and an AI-enabled 5G testbed.
+• Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-
+domain modeling.
+• Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled
+samples; led 100+ experiments from problem formulation through validation.
+• Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.
+• Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
+experimental design, and technical writing.
+Education
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
+University of Oklahoma, Norman, Oklahoma, USA
+MSc, Telecommunication Engineering 08/2014 - 08/2016
+University of Engineering and Technology, Taxila, Pakistan
+BSc, Telecommunication Engineering 11/2010 - 06/2014
+University of Engineering and Technology, Taxila, Pakistan
+Selected Projects
+Wearable Intelligence for Health Monitoring 2024-2026
+Research Project
+• Deep-learning methods for continuous recognition of medication and dietary activities from wrist-worn inertial sensors.
+Tools & methods: Wearable AI, Time Series, Deep Learning, Smartwatch Sensing
+Cloud Computer Vision 2025
+Guided Project
+• Real-time object detection, vehicle counting, and image-classification workflows using cloud-native AI services.
+Tools & methods: Computer Vision, Streaming, Google Cloud AutoML, Python
+Certifications
+1. Deep Learning for Healthcare Specialization— University of Illinois Urbana-Champaign / Coursera| Completed (0/3) courses
+Focus: An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning
+solutions for real-world medical and healthcare applications.
+T ools & Skills: Deep Learning, Healthcare AI, Health Informatics, Health Data Processing, Artificial Neural Networks, Convolutional Neural
+Networks, Recurrent Neural Networks, Autoencoders, Generative Models, Medical Image Analysis, Supervised Learning, Unsupervised Learning,
+Predictive Modeling, Model Evaluation, PyTorch, Jupyter Notebooks
+2. Machine Learning— Stanford University / Coursera | Completed
+Focus: Core supervised and unsupervised learning, model evaluation, optimization, and practical ML system development.
+T ools & Skills: Supervised Learning, Unsupervised Learning, Model Evaluation, Optimization
+3. Google Cloud Data Analytics Professional Certificate— Google Cloud / Coursera | Completed
+Focus: Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.
+T ools & Skills: SQL, BigQuery, Data Analytics, Visualization
+4. IBM Generative AI Engineering Professional Certificate— IBM / Coursera | Completed (13/16) courses
+Focus: Sixteen-course professional certificate developing job-ready skills across AI foundations, Python application development,
+machine learning, deep learning, NLP, transformer architectures, LLM fine-tuning, RAG, LangChain, and AI agents.
+T ools & Skills: Generative AI Engineering, Large Language Models, Transformer Architectures, Prompt Engineering, RAG, LangChain, AI
+Agents, Hugging Face, PyTorch, Keras, Scikit-learn, Python, Flask, Gradio, PEFT, LoRA, QLoRA, RLHF, DPO, PPO, NLP, Machine Learning,
+Deep Learning, Vector Databases
+Selected Publications
+Real-World Medication Adherence Monitoring Using Hybrid Neural Networks and Smartwatches 2026
+HealthINF | Accepted

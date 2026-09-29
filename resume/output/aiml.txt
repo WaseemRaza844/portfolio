@@ -1,0 +1,142 @@
+Waseem Raza, PhD
+Machine Learning Engineer | Applied AI & Data Science
+Applied Machine Learning | Data Science | Model Evaluation | Intelligent Automation
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
+Professional Summary
+Machine Learning Engineer and Data Scientist with a PhD in Electrical and Computer Engineering and 7+ years of combined industry
+and research experience developing predictive models, reliable ML workflows, and scalable analytics systems. Skilled in Python, SQL,
+PyTorch, TensorFlow, scikit-learn, XGBoost, classification, regression, anomaly detection, time-series forecasting, domain adaptation,
+feature engineering, cross-validation, data quality, Azure Databricks, Apache Spark, MLOps, and model evaluation. Experienced in
+converting complex operational data into validated decision-support systems.
+Technical Skills
+Machine Learning: PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection,
+classification, regression, time-series forecasting, cross-validation, and model evaluation
+Data Engineering: ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature
+engineering, data-quality assessment, and structured and unstructured data workflows
+Data & AI Platforms: Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Functions, Azure Blob
+Storage, Azure Data Lake, Google BigQuery, and cloud analytics workflows
+Programming & Analytics: Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and
+exploratory data analysis
+Generative & Agentic AI: LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking,
+embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation
+LLM F rameworks & Models: Hugging Face Transformers, LangChain, LangGraph, OpenAI APIs, transformer architectures, fine-tuning
+concepts, NLP foundation models, prompt templates, structured outputs, and LLM evaluation
+MLOps & Software Engineering: Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell
+scripting, model deployment, reproducible workflows, and cloud-native application development
+Microsoft AI Ecosystem: Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models
+and agents, Azure Content Understanding, Semantic Kernel, and responsible AI concepts
+Leadership and Professional Strengths
+• Ownership and accountability:Lead AI/ML initiatives through requirements analysis, data preparation, model development,
+validation, stakeholder review, and deployment planning.
+• Technical leadership:Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings
+to guide projects from ambiguous requirements to measurable outcomes.
+• Cross-functional collaboration: Work with software engineers, network specialists, researchers, geologists, and public-safety
+stakeholders to translate domain requirements into practical data and AI solutions.
+• Continuous learning:Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms
+through hands-on projects and professional coursework.
+• Reliability and commitment:Maintain reproducible workflows, careful validation, and attention to detail throughout experi-
+mentation and delivery.
+• Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
+unfamiliar technologies and complex operational problems.
+Professional Experience
+Machine Learning Engineer 02/2025 - Present
+AT&T, contractor via Innovatix Inc. Bedminster, NJ
+• Own end-to-end development, testing, and operational integration of machine-learning diagnostics for critical E911 service-assurance
+workflows, improving automated root-cause classification accuracy from 20% to 80%.
+• Design domain-adaptive neural models and reusable preprocessing pipelines that improve generalization across heterogeneous
+operational domains and distribution shifts.
+• Build model-validation, cross-domain evaluation, error-analysis, and failure-mode assessment procedures to support reliable
+production deployment.
+• Translate network and public-safety requirements into measurable ML objectives, validated data assets, and production-oriented
+decision-support workflows.
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
+Impac Exploration Services Weatherford, OK
+• Built machine-learning and LLM-assisted analytical workflows for large geochemical datasets using Python and Azure cloud services.
+• Developed scalable ingestion, cleansing, feature-preparation, transformation, and validation workflows using Azure Databricks,
+Azure Functions, and Synapse Analytics.
+• Automated ETL processing for large exploration datasets, reducing data-preparation time by 40% and improving reproducibility.
+• Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.
+Advanced-Degrees Intern 06/2024 - 08/2024
+AT&T Labs Austin, TX
+• Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.
+• Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and
+validation.
+• Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting
+next-generation wireless systems.
+Advanced Wireless Technology Development Intern 09/2022 - 01/2023
+Futurewei Technologies Schaumburg, IL
+• Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation
+on large wireless datasets.
+• Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.
+• Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation
+communication systems.
+Advanced-Degrees Intern 06/2022 - 08/2022
+AT&T Labs Bedminster, NJ
+• Designed ML and statistical methods for analyzing users’ timing in 5G standalone networks, improving analytical precision by 20%.
+• Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.
+• Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization.
+Graduate Research Assistant 09/2019 - 07/2025
+AI4Networks, University of Oklahoma Tulsa, OK
+• Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
+network simulator and an AI-enabled 5G testbed.
+• Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-
+domain modeling.
+• Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled
+samples; led 100+ experiments from problem formulation through validation.
+• Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.
+• Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
+experimental design, and technical writing.
+Education
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
+University of Oklahoma, Norman, Oklahoma, USA
+MSc, Telecommunication Engineering 08/2014 - 08/2016
+University of Engineering and Technology, Taxila, Pakistan
+BSc, Telecommunication Engineering 11/2010 - 06/2014
+University of Engineering and Technology, Taxila, Pakistan
+Selected Projects
+Financial ML and Forecasting 2024-2025
+Portfolio Project
+• Credit-risk and loan-default modeling alongside time-series forecasting workflows for financial data.
+Tools & methods: Python, Machine Learning, Time Series, Model Evaluation
+Wearable Intelligence for Health Monitoring 2024-2026
+Research Project
+• Deep-learning methods for continuous recognition of medication and dietary activities from wrist-worn inertial sensors.
+Tools & methods: Wearable AI, Time Series, Deep Learning, Smartwatch Sensing
+Cloud Computer Vision 2025
+Guided Project
+• Real-time object detection, vehicle counting, and image-classification workflows using cloud-native AI services.
+Tools & methods: Computer Vision, Streaming, Google Cloud AutoML, Python
+AI-Ready Lakehouse Pipeline 2024
+Portfolio Project
+• An Azure Databricks data pipeline designed for analytics and downstream machine-learning workloads.
+Tools & methods: Azure, Databricks, Spark, Data Engineering
+Certifications
+1. Machine Learning— Stanford University / Coursera | Completed
+Focus: Core supervised and unsupervised learning, model evaluation, optimization, and practical ML system development.
+T ools & Skills: Supervised Learning, Unsupervised Learning, Model Evaluation, Optimization
+2. Google Cloud Data Analytics Professional Certificate— Google Cloud / Coursera | Completed
+Focus: Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.
+T ools & Skills: SQL, BigQuery, Data Analytics, Visualization
+3. IBM Generative AI Engineering Professional Certificate— IBM / Coursera | Completed (13/16) courses
+Focus: Sixteen-course professional certificate developing job-ready skills across AI foundations, Python application development,
+machine learning, deep learning, NLP, transformer architectures, LLM fine-tuning, RAG, LangChain, and AI agents.
+T ools & Skills: Generative AI Engineering, Large Language Models, Transformer Architectures, Prompt Engineering, RAG, LangChain, AI
+Agents, Hugging Face, PyTorch, Keras, Scikit-learn, Python, Flask, Gradio, PEFT, LoRA, QLoRA, RLHF, DPO, PPO, NLP, Machine Learning,
+Deep Learning, Vector Databases
+4. Deep Learning for Healthcare Specialization— University of Illinois Urbana-Champaign / Coursera| Completed (0/3) courses
+Focus: An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning
+solutions for real-world medical and healthcare applications.
+T ools & Skills: Deep Learning, Healthcare AI, Health Informatics, Health Data Processing, Artificial Neural Networks, Convolutional Neural
+Networks, Recurrent Neural Networks, Autoencoders, Generative Models, Medical Image Analysis, Supervised Learning, Unsupervised Learning,
+Predictive Modeling, Model Evaluation, PyTorch, Jupyter Notebooks
+5. Machine Learning and Reinforcement Learning in Finance Specialization— New York University / Coursera| Completed
+(0/4) courses
+Focus: An applied machine-learning specialization focused on financial prediction, portfolio management, trading, risk modeling,
+market dynamics, and reinforcement-learning methods for finance.
+T ools & Skills: Machine Learning for Finance, Reinforcement Learning, Financial Modeling, Portfolio Management, Financial Trading, Risk
+Modeling, Predictive Modeling, Supervised Learning, Unsupervised Learning, Statistical Machine Learning, Market Dynamics, Derivatives,
+TensorFlow, Scikit-learn, Python
+Selected Publications
+An AI-Driven Framework for Enhancing Resilience in Propagation Models to Enable Digital Twin 2024
+IEEE PIMRC

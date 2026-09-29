@@ -6,6 +6,7 @@ window.PORTFOLIO_DATA.publications = [
     "year": "2026",
     "title": "Real-World Medication Adherence Monitoring Using Hybrid Neural Networks and Smartwatches",
     "venue": "HealthINF · Accepted",
+    "badge": "HEALTHINF 2026",
     "summary": "Wearable AI for continuous, real-world medication-intake monitoring.",
     "topics": [
       "Wearable AI",
@@ -22,8 +23,10 @@ window.PORTFOLIO_DATA.publications = [
       "wireless"
     ],
     "year": "2025",
-    "title": "On Multi-Parameter Optimization and Proactive Reliability in Cellular Networks",
-    "venue": "Journal article",
+    "title": "On Multi-Parameter Optimization and Proactive Reliability in 5G and Beyond Cellular Networks",
+    "venue": "Sensors 2025",
+    "badge": "Sensors 2025",
+    "url": "https://doi.org/10.3390/s25247651",
     "summary": "Data-driven optimization and proactive reliability for future cellular-network operation.",
     "topics": [
       "Optimization",
@@ -38,6 +41,8 @@ window.PORTFOLIO_DATA.publications = [
     "year": "2024",
     "title": "An AI-Driven Framework for Enhancing Resilience in Propagation Models to Enable Digital Twin",
     "venue": "IEEE PIMRC",
+    "badge": "IEEE PIMRC 2024",
+    "url": "https://doi.org/10.1109/PIMRC59610.2024.10817403",
     "summary": "Robust, data-driven propagation modeling for wireless-network digital twins.",
     "topics": [
       "Digital Twins",

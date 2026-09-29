@@ -1,5 +1,7 @@
 name: Deploy portfolio to GitHub Pages
 
+# Production deployment is intentionally restricted to main.
+# Development and feature branches should be previewed locally/Codespaces.
 on:
   push:
     branches: [main]

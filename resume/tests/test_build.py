@@ -37,7 +37,22 @@ class SelectionTests(unittest.TestCase):
     def test_placeholder_dates_do_not_print(self):
         for value in ['Date to update', 'Target date to be updated', '', 'Completed']:
             self.assertEqual(module.date_label(value), '')
-        self.assertEqual(module.date_label('February 2026'), 'February 2026')
+        self.assertEqual(module.date_label('February 2026'), '02/2026')
+        self.assertEqual(module.date_label('Feb. 2025–Present'), '02/2025 - Present')
+        self.assertEqual(module.date_label('Sep. 2024–Dec. 2024'), '09/2024 - 12/2024')
+
+    def test_resume_only_visibility_can_override_website_hidden(self):
+        self.assertTrue(module.eligible({'id': 'finance', 'published': False, 'resumePublished': True}))
+        self.assertFalse(module.eligible({'id': 'hidden', 'published': False}))
+        self.assertFalse(module.eligible({'id': 'resume-hidden', 'published': True, 'resumePublished': False}))
+
+    def test_mojibake_punctuation_is_normalized(self):
+        self.assertEqual(module.clean('AT&T Â· 2025â€“Present'), 'AT&T | 2025-Present')
+
+    def test_contact_header_is_not_joined_character_by_character(self):
+        renderer = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        self.assertIn('CONTACTS=contacts', renderer)
+        self.assertNotIn("CONTACTS=r' \\quad '.join(filter(None, contacts))", renderer)
 
 
 if __name__ == '__main__':

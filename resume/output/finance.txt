@@ -1,0 +1,100 @@
+Waseem Raza, PhD
+Machine Learning Engineer | Financial AI/ML & Data Science
+Financial ML | Forecasting | Risk Analytics | Data Engineering
+New Jersey, United States ☎ +1 732-803-9703 ✉ waseem.placements@gmail.com | waseemraza844@gmail.com
+LinkedIn | GitHub | Google Scholar | Portfolio
+Professional Summary
+Machine Learning Engineer and Data Scientist with a PhD in Electrical and Computer Engineering, production ML experience, and
+finance-focused portfolio work in credit-risk modeling, loan-default prediction, time-series forecasting, and reinforcement-learning
+applications. Skilled in Python, SQL, scikit-learn, XGBoost, TensorFlow, PyTorch, Pandas, NumPy, statistical modeling, cross-
+validation, feature engineering, Azure Databricks, Apache Spark, ETL/ELT, predictive analytics, and model evaluation. Developing
+deeper specialization in financial forecasting, risk analytics, portfolio optimization, and data-driven decision intelligence.
+Technical Skills
+Financial Machine Learning: Credit-risk modeling, loan-default prediction, supervised learning, predictive modeling, reinforcement-learning
+concepts, portfolio and trading applications
+Time Series & Statistics: Forecasting, statistical modeling, feature engineering, regression, classification, model diagnostics, validation, and
+uncertainty-aware analysis
+Data Science & Analytics: Python, SQL, Pandas, NumPy, SciPy, Statsmodels, exploratory analysis, visualization, and data-quality assessment
+Machine Learning: scikit-learn, XGBoost, TensorFlow, PyTorch, cross-validation, hyperparameter tuning, anomaly detection, and model
+evaluation
+Data Engineering & Cloud: ETL/ELT, Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Synapse Analytics, BigQuery, and
+AI-ready datasets
+MLOps & Engineering: Git, Docker, CI/CD, APIs, testing, reproducible workflows, model deployment, and production-oriented engineering
+Leadership and Professional Strengths
+• Ownership and accountability:Lead AI/ML initiatives through requirements analysis, data preparation, model development,
+validation, stakeholder review, and deployment planning.
+• Technical leadership:Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings
+to guide projects from ambiguous requirements to measurable outcomes.
+• Cross-functional collaboration: Work with software engineers, network specialists, researchers, geologists, and public-safety
+stakeholders to translate domain requirements into practical data and AI solutions.
+• Continuous learning:Apply ongoing study in generative AI, agentic AI, RAG, LLM evaluation, and cloud-native platforms
+through hands-on projects and professional coursework.
+• Reliability and commitment:Maintain reproducible workflows, careful validation, and attention to detail throughout experi-
+mentation and delivery.
+• Adaptability and problem solving:Combine critical thinking, systematic experimentation, and data-driven analysis to address
+unfamiliar technologies and complex operational problems.
+Professional Experience
+Machine Learning Engineer 02/2025 - Present
+AT&T, contractor via Innovatix Inc. Bedminster, NJ
+• Lead end-to-end development, validation, and operational integration of machine-learning diagnostics, including data preparation,
+classification, model evaluation, and error analysis.
+• Design domain-adaptive neural models and reusable data-processing pipelines that improve robustness across heterogeneous
+operational datasets and distribution shifts.
+• Build cross-domain validation, data-quality, and failure-mode assessment workflows to support reliable predictive analytics and
+decision-support systems.
+• Translate complex operational requirements into measurable ML objectives, validated datasets, and production-oriented analytical
+workflows.
+Data Scientist and AI/ML Engineer 09/2024 - 12/2024
+Impac Exploration Services Weatherford, OK
+• Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large
+structured datasets.
+• Automated ingestion, cleansing, transformation, and validation workflows, reducing data-preparation time by 40% and improving
+reproducibility.
+• Implemented cross-validation, data-quality, and consistency checks that improved reliability of analytical outputs by 20%.
+• Translated domain requirements into AI-ready datasets and reproducible analytical workflows for data-driven decision support.
+Graduate Research Assistant 09/2019 - 07/2025
+AI4Networks, University of Oklahoma Tulsa, OK
+• Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
+network simulator and an AI-enabled 5G testbed.
+• Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-
+domain modeling.
+• Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled
+samples; led 100+ experiments from problem formulation through validation.
+• Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.
+• Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
+experimental design, and technical writing.
+Education
+PhD, Electrical and Computer Engineering 09/2019 - 07/2025
+University of Oklahoma, Norman, Oklahoma, USA
+MSc, Telecommunication Engineering 08/2014 - 08/2016
+University of Engineering and Technology, Taxila, Pakistan
+BSc, Telecommunication Engineering 11/2010 - 06/2014
+University of Engineering and Technology, Taxila, Pakistan
+Selected Projects
+Financial ML and Forecasting 2024-2025
+Portfolio Project
+• Credit-risk and loan-default modeling alongside time-series forecasting workflows for financial data.
+Tools & methods: Python, Machine Learning, Time Series, Model Evaluation
+AI-Ready Lakehouse Pipeline 2024
+Portfolio Project
+• An Azure Databricks data pipeline designed for analytics and downstream machine-learning workloads.
+Tools & methods: Azure, Databricks, Spark, Data Engineering
+System Design Case-Study Portfolio 2026 | In progress
+Guided Project
+• Documented architecture studies that translate product requirements into scalable services, data models, APIs, caching strategies,
+and reliability tradeoffs.
+Tools & methods: System Design, APIs, Distributed Systems, Scalability
+Certifications
+1. Machine Learning and Reinforcement Learning in Finance Specialization— New York University / Coursera| Completed
+(0/4) courses
+Focus: An applied machine-learning specialization focused on financial prediction, portfolio management, trading, risk modeling,
+market dynamics, and reinforcement-learning methods for finance.
+T ools & Skills: Machine Learning for Finance, Reinforcement Learning, Financial Modeling, Portfolio Management, Financial Trading, Risk
+Modeling, Predictive Modeling, Supervised Learning, Unsupervised Learning, Statistical Machine Learning, Market Dynamics, Derivatives,
+TensorFlow, Scikit-learn, Python
+2. Machine Learning— Stanford University / Coursera | Completed
+Focus: Core supervised and unsupervised learning, model evaluation, optimization, and practical ML system development.
+T ools & Skills: Supervised Learning, Unsupervised Learning, Model Evaluation, Optimization
+3. Google Cloud Data Analytics Professional Certificate— Google Cloud / Coursera | Completed
+Focus: Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.
+T ools & Skills: SQL, BigQuery, Data Analytics, Visualization
