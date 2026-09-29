@@ -1,0 +1,289 @@
+{
+  "variants": [
+    {
+      "file": "Waseem_Raza_GENERIC.pdf",
+      "pages": 3,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "agentic-ai-rag",
+          "lakehouse-pipeline",
+          "syntheticnet",
+          "wearable-intelligence",
+          "system-design-portfolio"
+        ],
+        "certifications": [
+          "aws-bedrock-professional",
+          "ibm-rag-agentic-ai",
+          "stanford-machine-learning",
+          "google-cloud-data-analytics",
+          "ai-for-telecommunications",
+          "4g-network-fundamentals"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024"
+        ]
+      }
+    },
+    {
+      "file": "Waseem_Raza_COMPREHENSIVE.pdf",
+      "pages": 5,
+      "maxPages": 6,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research",
+          "teaching"
+        ],
+        "projects": [
+          "system-design-portfolio",
+          "agentic-ai-rag",
+          "financial-ml",
+          "cloud-computer-vision",
+          "lakehouse-pipeline",
+          "meeting-minutes-llm",
+          "unstructured-document-extraction",
+          "syntheticnet",
+          "turboran",
+          "wearable-intelligence"
+        ],
+        "certifications": [
+          "aws-bedrock-professional",
+          "ibm-genai-engineering",
+          "ibm-rag-agentic-ai",
+          "genai-fundamentals",
+          "ibm-building-ai-agents",
+          "ibm-rag-generative-ai-applications",
+          "system-design-masterclass",
+          "ibm-devops",
+          "stanford-machine-learning",
+          "ml-reinforcement-learning-finance",
+          "deep-learning-healthcare",
+          "google-cloud-data-analytics",
+          "google-cloud-cybersecurity",
+          "ai-for-telecommunications",
+          "4g-network-fundamentals",
+          "business-considerations-5g-edge-iot-ai"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      }
+    },
+    {
+      "file": "Waseem_Raza_GENAI.pdf",
+      "pages": 3,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "agentic-ai-rag",
+          "meeting-minutes-llm",
+          "unstructured-document-extraction",
+          "lakehouse-pipeline",
+          "system-design-portfolio"
+        ],
+        "certifications": [
+          "aws-bedrock-professional",
+          "ibm-genai-engineering",
+          "ibm-rag-agentic-ai",
+          "genai-fundamentals"
+        ],
+        "publications": []
+      }
+    },
+    {
+      "file": "Waseem_Raza_AIML.pdf",
+      "pages": 3,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "financial-ml",
+          "wearable-intelligence",
+          "cloud-computer-vision",
+          "lakehouse-pipeline"
+        ],
+        "certifications": [
+          "stanford-machine-learning",
+          "google-cloud-data-analytics",
+          "ibm-genai-engineering",
+          "deep-learning-healthcare",
+          "ml-reinforcement-learning-finance"
+        ],
+        "publications": [
+          "resilient-propagation-2024"
+        ]
+      }
+    },
+    {
+      "file": "Waseem_Raza_WIRELESS.pdf",
+      "pages": 3,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran"
+        ],
+        "certifications": [
+          "ai-for-telecommunications",
+          "4g-network-fundamentals",
+          "business-considerations-5g-edge-iot-ai",
+          "stanford-machine-learning"
+        ],
+        "publications": [
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022",
+          "positioning-ran-2022"
+        ]
+      }
+    },
+    {
+      "file": "Waseem_Raza_HEALTHCARE.pdf",
+      "pages": 2,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "ou-research"
+        ],
+        "projects": [
+          "wearable-intelligence",
+          "cloud-computer-vision"
+        ],
+        "certifications": [
+          "deep-learning-healthcare",
+          "stanford-machine-learning",
+          "google-cloud-data-analytics",
+          "ibm-genai-engineering"
+        ],
+        "publications": [
+          "medication-adherence-2026"
+        ]
+      }
+    },
+    {
+      "file": "Waseem_Raza_FINANCE.pdf",
+      "pages": 2,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "ou-research"
+        ],
+        "projects": [
+          "financial-ml",
+          "lakehouse-pipeline",
+          "system-design-portfolio"
+        ],
+        "certifications": [
+          "ml-reinforcement-learning-finance",
+          "stanford-machine-learning",
+          "google-cloud-data-analytics"
+        ],
+        "publications": []
+      }
+    },
+    {
+      "file": "Waseem_Raza_FACULTY.pdf",
+      "pages": 3,
+      "maxPages": 3,
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research",
+          "teaching"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "wearable-intelligence"
+        ],
+        "certifications": [
+          "stanford-machine-learning",
+          "ai-for-telecommunications",
+          "4g-network-fundamentals",
+          "genai-fundamentals",
+          "aws-bedrock-professional"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022",
+          "positioning-ran-2022"
+        ]
+      }
+    }
+  ],
+  "reviewNotes": [
+    "Source states PhD 2026 and combines AT&T Labs / Futurewei internships into one 2022-2024 record; retained without inferring exact dates.",
+    "Hidden from every PDF: experience/industry-research.",
+    "Hidden from every PDF: certifications/ibm-ai-product-manager.",
+    "No confirmed date printed for certification ibm-genai-engineering.",
+    "IBM RAG: honored reported 8/8 awarded curriculum rather than ten entries in the expanded catalog.",
+    "No confirmed date printed for certification ibm-devops.",
+    "No confirmed date printed for certification stanford-machine-learning.",
+    "No confirmed date printed for certification ml-reinforcement-learning-finance.",
+    "No confirmed date printed for certification deep-learning-healthcare.",
+    "No confirmed date printed for certification google-cloud-data-analytics.",
+    "Some publication entries lack authors, DOI, or full venue details. Printed supplied title/venue/year only; no bibliographic details invented."
+  ]
+}

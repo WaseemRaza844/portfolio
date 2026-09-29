@@ -1,0 +1,135 @@
+Dr Waseem Raza, PhD
+Researcher & Engineering Educator | AI, Wireless Systems & Applied Machine Learning
+AI for Wireless Networks | Reliable Learning Systems | Wearable Intelligence | Engineering Education
+New Jersey, United States 732-803-9703 waseemraza844@gmail.com LinkedIn GitHub Scholar Portfolio
+Professional Summary
+Researcher and engineering educator with a PhD in Electrical and Computer Engineering and experience spanning AI-enabled wireless
+networks, reliable machine learning, network resilience, propagation modeling, optimization, and wearable intelligence. Academic work
+combines analytical modeling, large-scale simulation, experimental validation, and data-driven methods, complemented by industry
+research at AT&T Labs and Futurewei and applied ML engineering in telecommunications. Research and teaching interests connect
+artificial intelligence with wireless and connected systems, dependable automation, and human-centered sensing.
+Technical Expertise, Leadership, and Professional Strengths
+Research Areas: AI for wireless networks, resilient and autonomous networks, propagation modeling, digital twins, RAN optimization, wearable
+intelligence, and data-efficient learning
+Machine Learning: Deep learning, transfer learning, domain adaptation, adversarial learning, generative modeling, reinforcement learning,
+classification, time-series analysis, and model evaluation
+Wireless Systems: LTE/4G, 5G-NR, NTN, mobility, radio access networks, propagation, outage management, network measurements, and
+service assurance
+Research Methods: Experimental design, simulation, statistical analysis, cross-validation, robustness evaluation, reproducible workflows, and
+technical communication
+Engineering & Data: Python, SQL, PyTorch, TensorFlow, scikit-learn, XGBoost, Pandas, NumPy, cloud analytics, data pipelines, and
+visualization
+T eaching & Mentoring: Wireless communications, digital communications, networking, signals and systems, machine learning, programming,
+experimental methods, and student research development
+Leadership and Professional Strengths
+• Research leadership: Develop research questions into reproducible modeling, simulation, experimentation, validation, and
+publication workflows.
+• T eaching and mentoring: Connect engineering fundamentals with applied examples and support students in technical problem
+solving, implementation, experimentation, and communication.
+• Industry translation: Bridge academic methods with practical telecommunications problems through experience in university
+research and industry R&D environments.
+• Interdisciplinary collaboration: Work across wireless communications, machine learning, data science, and wearable sensing
+while communicating results to technical and domain stakeholders.
+• Persistence and rigor: Approach difficult research problems through systematic experimentation, careful validation, iterative
+refinement, and attention to reproducibility.
+• Continuous development: Extend teaching and research capability through ongoing study in generative AI, agentic systems,
+cloud engineering, and emerging wireless technologies.
+Professional Experience
+Machine Learning Engineer F eb. 2025-Present
+AT&T, contractor via Innovatix Inc. Bedminster, NJ
+• Own end-to-enddevelopment, testing, and operational integration of anAI-driven diagnostic systemfor critical E911service-assurance
+workflows, improving automated root-cause classification accuracy from 20% to 80%.
+• Designed domain-adaptive neural models and reusable data-processing workflows that generalize across heterogeneous operational
+domains and reduce performance degradation caused by distribution shifts.
+• Developed multimodal AI prototypes combining work-order text, location information, network context, and operational signals to
+support GenAI-assisted diagnostics for VoNR and 5G service assurance.
+• Created model-validation, error-analysis, and failure-mode assessment procedures to compare performance across domains and
+support reliable deployment in high-impact operational environments.
+• Partnered with network engineers, software teams, and public-safety stakeholders to translate operational requirements into validated
+AI workflows and production-oriented data assets.
+Advanced-Degrees Intern Jun. 2024-Aug. 2024
+AT&T Labs Austin, TX
+• Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.
+• Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and
+validation.
+• Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting
+next-generation wireless systems.
+Advanced Wireless T echnology Development Intern Sep. 2022-Jan. 2023
+Futurewei Technologies Schaumburg, IL
+• Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation
+on large wireless datasets.
+• Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.
+• Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation
+communication systems.
+Advanced-Degrees Intern Jun. 2022-Aug. 2022
+AT&T Labs Bedminster, NJ
+• Designed ML and statistical methods for analyzing users’ timing in 5G standalone networks, improving analytical precision by 20%.
+• Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.
+• Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization.
+Graduate Research Assistant Sep. 2019-Sep. 2024
+AI4Networks, University of Oklahoma Tulsa, OK
+• Designed reusable Python simulation and data-generation platforms for large-scale experimentation, including a 3GPP-compliant
+network simulator and an AI-enabled 5G testbed.
+• Built transfer-learning, adversarial-learning, GAN, autoencoder, and reinforcement-learning pipelines for sparse-data and cross-
+domain modeling.
+• Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled
+samples; led 100+ experiments from problem formulation through validation.
+• Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.
+• Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation,
+experimental design, and technical writing.
+Lecturer
+Engineering and Technology Programs
+• Taught and mentored undergraduate engineering students in communications, programming, and foundational engineering subjects.
+Education
+PhD, Electrical and Computer Engineering 09/2019-07/2025
+University of Oklahoma, Norman, Oklahoma, USA
+MSc, T elecommunication Engineering 08/2014-08/2016
+University of Engineering and Technology, Taxila, Pakistan
+BSc, T elecommunication Engineering 11/2010-06/2014
+University of Engineering and Technology, Taxila, Pakistan
+Selected Publications
+Real-W orld Medication Adherence Monitoring Using Hybrid Neural Networks and Smartwatches 2026
+HealthINF | Accepted
+On Multi-Parameter Optimization and Proactive Reliability in Cellular Networks 2025
+Journal article
+An AI-Driven F ramework for Enhancing Resilience in Propagation Models to Enable Digital T win 2024
+IEEE PIMRC
+Data-Driven Intelligent Outage Management for High Shadowing Environments in 5G&B Networks 2024
+IEEE SmartNets
+T oward a Hybrid RF/Optical Lunar Communication System (LunarComm) 2022
+IEEE Network
+T owards Positioning Error Impact Characterization and Minimization in User-Centric RAN 2022
+IEEE WCNC
+Selected Projects
+SyntheticNET: 3GPP-Compliant Network Simulation 2020-2024
+Research Project
+• Python-based simulation environment for realistic mobility, propagation, and data-driven experimentation in cellular networks.
+Tools & methods: Python, 3GPP, Simulation, Wireless Networks
+T urboRAN Experimental Platform 2020-2024
+Research Infrastructure
+• Multi-band, multi-tier experimental platform supporting evaluation of emerging AI-enabled radio-access-network solutions.
+Tools & methods: 5G Testbeds, RAN, Experiment Design, Network Measurement
+W earable Intelligence for Health Monitoring 2024-2026
+Research Project
+• Deep-learning methods for continuous recognition of medication and dietary activities from wrist-worn inertial sensors.
+Tools & methods: Wearable AI, Time Series, Deep Learning, Smartwatch Sensing
+Certifications and Continuing Education
+1. Machine Learning — Stanford University / Coursera | Completed
+F ocus:Core supervised and unsupervised learning, model evaluation, optimization, and practical ML system development.
+T ools & Skills: Supervised Learning, Unsupervised Learning, Model Evaluation, Optimization
+2. AI for T elecommunications Specialization — AI CERTs / Coursera| Completed (3/3) courses | June 2026 | Certificate
+F ocus:Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer
+experience.
+T ools & Skills: AI for Telecommunications, Network Optimization, Cybersecurity, Customer Experience, Internet of Things, Python, TensorFlow
+3. 4G Network F undamentals — Institut Mines-Télécom / Coursera| Completed (1/1) courses | August 2026 | Certificate
+F ocus:Foundational study of fourth-generation cellular networks.
+T ools & Skills: 4G Networks, Cellular Networks, Telecommunications
+4. Generative AI F undamentals Specialization — IBM / Coursera| Completed (5/5) courses | July 2026 | Certificate
+F ocus:Five-course foundation in generative AI, prompt engineering, LLMs, and practical enterprise applications.
+T ools & Skills: Generative AI, Prompt Engineering, Foundation Models, Responsible AI, IBM watsonx, Hugging Face, Business Applications
+5. A WS Generative AI and AI Agents with Amazon Bedrock — AWS/Coursera| Completed (3/3) courses | 08/2026 |Certificate
+F ocus:Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications
+and intelligent agents with Amazon Bedrock.
+T ools & Skills: Amazon Bedrock, Generative AI, AI Agents, Foundation Models, Knowledge Bases, Retrieval-Augmented Generation, LangChain,
+Amazon Q Developer, Model Customization, Prompt Engineering, Natural Language Processing, Text Generation, Summarization, Generative AI
+Application Development
