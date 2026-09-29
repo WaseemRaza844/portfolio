@@ -86,7 +86,7 @@ def build_pdf(key, variant, data, settings, output):
                 section('Professional Summary')
                 body.append(tex(variant['summary']))
             elif name == 'skills':
-                section('Technical Expertise, Leadership, and Professional Strengths')
+                section('Technical Skills')
                 for label, value in variant['skills'].items():
                     body.append(r'\Needspace{2\baselineskip}\noindent{\small\textbf{' + tex(label) + ':} ' + tex(value) + r'}\par')
                 strengths = variant.get('leadership', {})
@@ -119,7 +119,7 @@ def build_pdf(key, variant, data, settings, output):
                     if row.get('skills'):
                         body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
             elif name == 'certifications':
-                section('Certifications and Continuing Education')
+                section('Certifications')
                 for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
@@ -154,17 +154,43 @@ def build_pdf(key, variant, data, settings, output):
             else:
                 raise ValueError('Unknown section: ' + name)
 
-    contacts = [tex(identity.get('location', ''))]
-    if identity.get('phone'):
-        contacts.append(tex(identity['phone']))
-    if identity.get('email'):
-        contacts.append(r'\href{mailto:' + tex(identity['email']) + '}{' + tex(identity['email']) + '}')
-    for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Scholar', 'scholar')]:
+    def icon(name):
+        return r'\faIcon{' + name + r'}'
+
+    emails = identity.get('emails') or [identity.get('email'), identity.get('secondaryEmail')]
+    emails = [str(email).strip() for email in emails if str(email or '').strip()]
+    phone = str(identity.get('phone') or '').strip()
+    phone_href = re.sub(r'[^+0-9]', '', phone)
+
+    primary_contacts = []
+    if identity.get('location'):
+        primary_contacts.append(icon('map-marker-alt') + r'\enspace ' + tex(identity['location']))
+    if phone:
+        primary_contacts.append(icon('phone') + r'\enspace ' + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+    if emails:
+        email_links = [r'\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
+        primary_contacts.append(icon('envelope') + r'\enspace ' + r' \textbar{} '.join(email_links))
+
+    social_contacts = []
+    social_specs = [
+        ('linkedin', 'LinkedIn', 'linkedin'),
+        ('github', 'GitHub', 'github'),
+        ('graduation-cap', 'Google Scholar', 'scholar')
+    ]
+    for icon_name, label, field in social_specs:
         url = identity.get('links', {}).get(field)
         if web_url(url):
-            contacts.append(link(label, url))
+            social_contacts.append(icon(icon_name) + r'\enspace ' + link(label, url))
     if web_url(identity.get('portfolioUrl')):
-        contacts.append(link('Portfolio', identity['portfolioUrl']))
+        social_contacts.append(icon('globe') + r'\enspace ' + link('Portfolio', identity['portfolioUrl']))
+
+    contact_lines = []
+    if primary_contacts:
+        contact_lines.append(r' \quad '.join(primary_contacts))
+    if social_contacts:
+        contact_lines.append(r' \quad '.join(social_contacts))
+    contacts = r'\\[1pt]'.join(contact_lines)
+
     size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
     if size not in (8, 9, 10, 11, 12):
         raise ValueError('latexFontSize must be 8, 9, 10, 11 or 12.')
