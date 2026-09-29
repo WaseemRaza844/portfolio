@@ -45,6 +45,27 @@
         skills: ["Architecture Tradeoffs", "Reliability"],
         certificateUrl: "",
       },
+      {
+        title: "Applied Case Study: Scalable Distributed Architecture",
+        status: "Completed",
+        completionDate: "Completed",
+        summary:
+          "Hands-on design evaluations translating real-world constraints into distributed system components, APIs, caching policies, and consistency tradeoffs.",
+        takeaway:
+          "Translate practical scale, latency, availability, and consistency constraints into explicit distributed-system architecture decisions.",
+        skills: [
+          "Distributed Systems",
+          "API Design",
+          "Caching",
+          "Consistency Models",
+          "Scalability",
+          "Architecture Tradeoffs",
+        ],
+        certificateUrl: "",
+        links: {
+          github: "https://github.com/waseemraza844/system-design-portfolio",
+        },
+      },
     ],
     featured: true,
   };
