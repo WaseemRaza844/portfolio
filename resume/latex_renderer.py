@@ -196,7 +196,7 @@ def build_pdf(key, variant, data, settings, output):
                   MARGIN=str(margin), ACCENT=accent, NAME=tex(identity['name']),
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
-                  CONTACTS=r' \quad '.join(filter(None, contacts)), BODY='\n'.join(body))
+                  CONTACTS=contacts, BODY='\n'.join(body))
     template = (HERE / 'template.tex').read_text()
     source = re.sub(r'@@([A-Z]+)@@', lambda m: values[m[1]], template)
     output.mkdir(parents=True, exist_ok=True)
