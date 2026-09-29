@@ -91,23 +91,22 @@
       '</article>';
   }
 
-  function projectLinkList(links) {
+  function projectLinkList(item) {
     const labels = { github: 'GitHub', demo: 'Live demo', coursera: 'Coursera', paper: 'Publication', project: 'Project link' };
-    return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
+    const standard = Object.entries(item.links || {}).filter(([, url]) => url).map(([key, url]) =>
       '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
-    ).join('');
+    );
+    const research = (item.resourceLinks || []).filter((link) => link?.url).map((link) =>
+      '<a class="research-link" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(link.label) + ' ↗</a>'
+    );
+    return standard.concat(research).join('');
   }
 
   function projectAccordion(item, index) {
-    const projectLinks = projectLinkList(item.links);
-    const relatedCertifications = (item.relatedCertificationIds || [])
-      .map((id) => data.certifications.find((cert) => cert.id === id))
-      .filter(Boolean);
+    const projectLinks = projectLinkList(item);
     const credentialBlock = item.certificateUrl
       ? '<div><p class="field-label">Project certificate / credential</p>' + pdfDocument(item.certificateUrl, 'project certificate') + '</div>'
-      : relatedCertifications.length
-        ? '<div><p class="field-label">Related learning credentials</p><div class="project-related-credentials">' + relatedCertifications.map((cert) => '<span>' + esc(cert.title) + '</span>').join('') + '</div></div>'
-        : '<div><p class="field-label">Certificate / credential</p><p>No separate project certificate is currently recorded for this project.</p></div>';
+      : '';
 
     return '<details class="project-accordion reveal visible" id="' + esc(item.id || '') + '"><summary>' +
       '<span class="project-number">' + String(index + 1).padStart(2, '0') + '</span>' +
@@ -125,8 +124,13 @@
   }
 
   function projectGroupSection(group, items) {
+    const badges = {
+      'academic-research': '🔬 Academic & Research',
+      'guided': '⚙ Guided Implementations',
+      'coursera-portfolio': '🧩 Portfolio & Applied Learning'
+    };
     return '<section class="project-group" data-project-group="' + esc(group.id) + '">' +
-      '<div class="project-group-head"><div><p class="eyebrow">PROJECT GROUP</p><h2>' + esc(group.title) + '</h2><p>' + esc(group.description) + '</p></div>' +
+      '<div class="project-group-head"><div><span class="section-badge">' + esc(badges[group.id] || group.title) + '</span><h2>' + esc(group.title) + '</h2><p>' + esc(group.description) + '</p></div>' +
       '<span>' + items.length + ' project' + (items.length === 1 ? '' : 's') + '</span></div>' +
       '<div class="project-accordion-list">' + items.map(projectAccordion).join('') + '</div></section>';
   }
