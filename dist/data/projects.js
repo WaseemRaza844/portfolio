@@ -45,7 +45,11 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": true,
     "group": "coursera-portfolio",
-    "status": "In progress"
+    "status": "In progress",
+    "links": {
+      "github": "https://github.com/WaseemRaza844/system-design-masterclass"
+    },
+    "architecture": "Requirements and traffic assumptions → service boundaries and APIs → data model and storage choices → caching and consistency strategy → reliability and capacity tradeoff review."
   },
   {
     "id": "agentic-ai-rag",
@@ -73,7 +77,17 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": true,
     "group": "coursera-portfolio",
-    "status": "In progress"
+    "status": "In progress",
+    "links": {
+      "github": "https://github.com/WaseemRaza844/agentic-ai-projects-by-was"
+    },
+    "architecture": "User task → retrieval/context layer → LangGraph-style state and routing → tool-using agents → memory/evaluation → grounded response or multi-agent handoff.",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/professional-cert/0CB713GHZC1B"
+      }
+    ]
   },
   {
     "id": "financial-ml",
@@ -102,15 +116,18 @@ window.PORTFOLIO_DATA.projects = [
       "generic",
       "aiml"
     ],
-    "title": "Cloud Computer Vision",
+    "title": "Cloud Computer Vision (GCP AutoML / Object Detection)",
     "category": "Guided Project",
     "date": "2025",
-    "summary": "Real-time object detection, vehicle counting, and image-classification workflows using cloud-native AI services.",
+    "summary": "Implemented cloud-based computer-vision exercises for object detection, vehicle counting, and image classification using managed model workflows and Python-based inference.",
+    "architecture": "Image/video input → preprocessing and frame sampling → managed AutoML/object-detection inference → class/count aggregation → result visualization and evaluation.",
     "skills": [
       "Computer Vision",
-      "Streaming",
+      "Object Detection",
       "Google Cloud AutoML",
-      "Python"
+      "Python",
+      "Streaming",
+      "Model Evaluation"
     ],
     "featured": false,
     "group": "guided",
@@ -140,35 +157,51 @@ window.PORTFOLIO_DATA.projects = [
   {
     "id": "meeting-minutes-llm",
     "profiles": [
+      "generic",
       "genai"
     ],
-    "title": "Automated Meeting Minutes Generator with LLMs",
+    "title": "Automated Audio Meeting Minutes with Whisper & GPT",
     "category": "Guided Project",
     "date": "2025",
-    "summary": "A workflow that transcribes meetings, produces structured summaries, and extracts decisions and action items for downstream collaboration.",
+    "summary": "Built a multimodal meeting workflow that converts recorded audio to text, generates a structured summary, and extracts decisions, owners, and action items.",
+    "architecture": "Meeting audio → Whisper speech-to-text → transcript cleanup/chunking → GPT/LLM summarization → structured decisions and action items → shareable meeting-minutes output.",
     "skills": [
       "Python",
+      "OpenAI Whisper",
       "Speech-to-Text",
+      "GPT / LLMs",
+      "Structured Output",
       "LLM Summarization",
       "Workflow Automation"
     ],
     "featured": false,
     "group": "guided",
-    "status": "Completed"
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/professional-cert/0CB713GHZC1B"
+      }
+    ]
   },
   {
     "id": "unstructured-document-extraction",
     "profiles": [
+      "generic",
       "genai"
     ],
-    "title": "LLM-Based Extraction from Unstructured Documents",
+    "title": "OCR & Document Intelligence Extraction Pipeline",
     "category": "Guided Project",
     "date": "2025",
-    "summary": "Document intelligence pipeline for extracting entities, fields, and tables from reports, invoices, and contracts.",
+    "summary": "Implemented a document-intelligence workflow for extracting entities, key fields, and tables from reports, invoices, and contract-style documents.",
+    "architecture": "Document/PDF input → OCR and text extraction → layout/table parsing → entity and field extraction → normalization/validation → structured JSON or tabular output.",
     "skills": [
-      "LLMs",
       "OCR",
+      "Document Intelligence",
+      "LLMs",
       "Named Entity Recognition",
+      "Table Extraction",
+      "Structured Data",
       "Data Integration"
     ],
     "featured": false,
@@ -299,6 +332,139 @@ window.PORTFOLIO_DATA.projects = [
       {
         "label": "Domain-Informed GANs (IEEE VTC)",
         "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=d58Drr0AAAAJ&citation_for_view=d58Drr0AAAAJ:b0M2c_1WBrUC"
+      }
+    ]
+  },
+  {
+    "id": "aws-bedrock-applied-genai",
+    "profiles": ["generic", "genai", "aiml"],
+    "title": "Amazon Bedrock Generative AI & Agent Workflows",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Implemented credential-backed exercises for foundation-model prompting, Bedrock knowledge bases, RAG integration, model customization, workflow automation, and intelligent-agent development.",
+    "architecture": "Prompt/task input → Amazon Bedrock foundation model → knowledge-base retrieval or LangChain orchestration → optional model customization/agent tools → evaluated application output.",
+    "skills": ["Amazon Bedrock", "RAG", "Knowledge Bases", "LangChain", "AI Agents", "Prompt Engineering", "Amazon Q Developer"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/professional-cert/XMNOUZNOW9M0"
+      }
+    ]
+  },
+  {
+    "id": "genai-prompt-foundations",
+    "profiles": ["generic", "genai", "faculty"],
+    "title": "Prompt Engineering & Foundation Model Workflows",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Applied prompt-engineering patterns, context design, model/platform comparison, and responsible-AI considerations across practical generative-AI exercises.",
+    "architecture": "Task definition → prompt/context design → foundation-model selection → iterative response evaluation → responsible-use checks → refined task workflow.",
+    "skills": ["Prompt Engineering", "Foundation Models", "IBM watsonx", "Hugging Face", "Responsible AI", "Context Design"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/specialization/IPQKDOHF3IV2"
+      }
+    ]
+  },
+  {
+    "id": "multi-agent-orchestration",
+    "profiles": ["generic", "genai"],
+    "title": "Multi-Agent Orchestration with LangGraph, CrewAI & AutoGen",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Implemented stateful agent workflows with tool calling, memory, conditional routing, ReAct-style reasoning, and multi-agent coordination across LangGraph, CrewAI, AutoGen/AG2, and BeeAI.",
+    "architecture": "User objective → task decomposition → state/memory layer → conditional routing → specialized tool-using agents → collaboration/handoff → synthesized result.",
+    "skills": ["LangGraph", "CrewAI", "AutoGen / AG2", "BeeAI", "Tool Calling", "Agent Memory", "Multi-Agent Systems"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/specialization/CEVQP0RYI532"
+      }
+    ]
+  },
+  {
+    "id": "rag-vector-retrieval-stack",
+    "profiles": ["generic", "genai"],
+    "title": "RAG Retrieval Stack with ChromaDB, FAISS & LlamaIndex",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Built retrieval exercises covering document processing, embeddings, vector storage, semantic search, advanced retrievers, and interactive RAG application flows.",
+    "architecture": "Documents → chunking/embeddings → ChromaDB or FAISS vector index → similarity/advanced retrieval → LangChain/LlamaIndex orchestration → grounded LLM response.",
+    "skills": ["RAG", "ChromaDB", "FAISS", "LlamaIndex", "LangChain", "Embeddings", "HNSW", "Gradio"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/specialization/I7IDRI3160WV"
+      }
+    ]
+  },
+  {
+    "id": "ai-telecom-optimization",
+    "profiles": ["generic", "faculty", "wireless"],
+    "title": "AI for Telecom Network & Security Optimization",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Applied AI concepts to telecommunications network optimization, security analysis, and customer-experience improvement through a three-course specialization.",
+    "architecture": "Telecom use case → network/security/customer data framing → AI-assisted analysis → optimization or service-improvement recommendation → operational interpretation.",
+    "skills": ["AI for Telecommunications", "Network Optimization", "Telecom Security", "Customer Experience", "Python", "TensorFlow"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/specialization/D8Y6MVC0XM51"
+      }
+    ]
+  },
+  {
+    "id": "4g-cellular-analysis",
+    "profiles": ["generic", "faculty", "wireless"],
+    "title": "4G Cellular Network Fundamentals Lab",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Consolidated LTE/4G architecture, cellular-network concepts, and telecommunications fundamentals into a structured network-analysis learning project.",
+    "architecture": "4G architecture and protocol concepts → radio/core-network role mapping → mobility and service-flow analysis → cellular-system interpretation.",
+    "skills": ["4G Networks", "LTE", "Cellular Networks", "Telecommunications"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/DLW1YN474VZJ"
+      }
+    ]
+  },
+  {
+    "id": "5g-edge-iot-ai-analysis",
+    "profiles": ["generic", "faculty", "wireless"],
+    "title": "5G + Edge + IoT + AI Architecture Analysis",
+    "category": "Certification Project",
+    "date": "2026",
+    "summary": "Evaluated how 5G connectivity, edge computing, IoT, and AI interact in service architectures and business-oriented deployment scenarios.",
+    "architecture": "Use-case requirements → 5G connectivity assumptions → edge placement → IoT data flow → AI processing layer → business and operational tradeoff analysis.",
+    "skills": ["5G", "Edge Computing", "IoT", "Artificial Intelligence", "Architecture Analysis"],
+    "featured": false,
+    "group": "coursera-portfolio",
+    "status": "Completed",
+    "resourceLinks": [
+      {
+        "label": "View Verified Certificate / Credential",
+        "url": "https://coursera.org/verify/SAUEVQXV5W71"
       }
     ]
   }
