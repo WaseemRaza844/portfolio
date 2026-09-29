@@ -2305,3 +2305,172 @@ body:not(.landing-dark) .enterprise-footer-bottom{
     transform:none;
   }
 }
+
+
+/* LEARNING_DARK_CREDENTIAL_SYNC_2026 */
+.learning-dark .page-hero{
+  position:relative;
+  padding-top:82px;
+  padding-bottom:62px;
+}
+.learning-dark .page-hero::before{
+  content:"";
+  position:absolute;
+  inset:-110px -10vw auto auto;
+  width:430px;
+  height:430px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);
+  pointer-events:none;
+}
+.learning-dark .page-hero>*{position:relative;z-index:1}
+.learning-dark .page-hero h1{
+  color:#f9fafb;
+}
+.learning-dark .page-hero>p{
+  color:#94a3b8;
+}
+.learning-dark .page-stats span{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(17,24,39,.8);
+  color:#94a3b8;
+}
+.learning-dark .page-stats strong{color:#38bdf8}
+
+.learning-dark .domain-area+.domain-area::before{
+  background:linear-gradient(90deg,rgba(56,189,248,.3),rgba(255,255,255,.08) 36%,transparent);
+}
+.learning-dark .domain-area-head{
+  border-bottom-color:rgba(255,255,255,.08);
+}
+.learning-dark .domain-area-head h2{
+  color:#f9fafb;
+}
+.learning-dark .domain-area-head p:last-child{
+  color:#94a3b8;
+}
+.learning-dark .domain-area-head>span{
+  border-color:rgba(255,255,255,.08);
+  background:rgba(17,24,39,.8);
+  color:#94a3b8;
+}
+
+.learning-dark .certification-accordion,
+.learning-dark .course-accordion{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(17,24,39,.8);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+.learning-dark .certification-accordion[open]{
+  border-color:rgba(56,189,248,.3);
+  background:linear-gradient(145deg,rgba(17,24,39,.96),rgba(15,23,42,.9));
+}
+.learning-dark .cert-summary-main h2,
+.learning-dark .course-accordion summary strong{
+  color:#f9fafb;
+}
+.learning-dark .cert-teaser,
+.learning-dark .course-accordion summary small,
+.learning-dark .course-heading>span{
+  color:#94a3b8;
+}
+.learning-dark .cert-number{
+  background:#38bdf8;
+  color:#06111a;
+}
+.learning-dark .course-number{
+  border:1px solid rgba(56,189,248,.18);
+  background:rgba(56,189,248,.08);
+  color:#38bdf8;
+}
+.learning-dark .cert-progress strong,
+.learning-dark .course-progress strong{
+  color:#e2e8f0;
+}
+.learning-dark .cert-progress span,
+.learning-dark .course-progress small{
+  color:#94a3b8;
+}
+.learning-dark .accordion-icon{
+  border-color:rgba(56,189,248,.2);
+  background:rgba(56,189,248,.06);
+}
+.learning-dark .accordion-icon::before,
+.learning-dark .accordion-icon::after{
+  background:#38bdf8;
+}
+.learning-dark .certification-content,
+.learning-dark .course-content{
+  border-top-color:rgba(255,255,255,.08);
+}
+.learning-dark .cert-overview>div+div{
+  border-top-color:rgba(255,255,255,.08);
+}
+.learning-dark .cert-overview p:not(.field-label),
+.learning-dark .course-content p:not(.field-label){
+  color:#94a3b8;
+}
+.learning-dark .field-label{
+  color:#38bdf8;
+}
+.learning-dark .credential-links a{
+  border:1px solid rgba(56,189,248,.24);
+  background:rgba(56,189,248,.06);
+  color:#38bdf8;
+}
+.learning-dark .credential-links a:hover,
+.learning-dark .credential-links a:focus-visible{
+  border-color:rgba(0,242,254,.46);
+  background:rgba(0,242,254,.07);
+  color:#00f2fe;
+}
+.learning-dark .course-credential-links{
+  justify-content:flex-start;
+}
+.learning-dark .tags span{
+  border-color:rgba(255,255,255,.08);
+  background:rgba(148,163,184,.08);
+  color:#cbd5e1;
+}
+
+.learning-dark .pdf-preview{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(9,13,22,.45);
+}
+.learning-dark .pdf-preview>.preview-btn{
+  color:#38bdf8;
+  background:rgba(56,189,248,.04);
+}
+.learning-dark .pdf-preview>.preview-btn:hover{
+  color:#00f2fe;
+  background:rgba(0,242,254,.05);
+}
+.learning-dark .pdf-preview-body{
+  border-top-color:rgba(255,255,255,.08);
+}
+.learning-dark .pdf-link{
+  border-color:rgba(56,189,248,.3);
+  background:rgba(56,189,248,.06);
+  color:#38bdf8;
+}
+.learning-dark .pdf-link:hover{
+  border-color:rgba(0,242,254,.46);
+  background:rgba(0,242,254,.07);
+  color:#00f2fe;
+}
+
+.learning-dark .enterprise-footer{
+  margin-top:72px;
+}
+
+@media(max-width:700px){
+  .learning-dark .page-hero{padding-top:64px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .learning-dark .credential-links a,
+  .learning-dark .pdf-preview>.preview-btn,
+  .learning-dark .pdf-link{
+    transition:none;
+  }
+}
