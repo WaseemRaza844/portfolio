@@ -4,7 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Waseem Raza, PhD | Machine Learning Engineer | Wireless AI &amp; GenAI</title>
+      <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+<title>Waseem Raza, PhD | Machine Learning Engineer | Wireless AI &amp; GenAI</title>
   <meta name="description"
     content="Machine Learning Engineer at AT&T specializing in 5G wireless network intelligence, resilient automation, and Agentic AI/RAG systems. PhD in ECE." />
   <link rel="canonical" href="https://waseemraza844.github.io/portfolio/" />
@@ -44,7 +54,7 @@
   </script>
 </head>
 
-<body>
+<body class="landing-dark">
   <div class="noise" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -64,6 +74,7 @@
         <a href="./faculty/">Faculty &amp; Academic</a>
       </div>
     </details>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
   </header>
 
   <main id="top">
@@ -75,12 +86,13 @@
           <p class="lead hero-title">Machine Learning Engineer &amp; Wireless AI Specialist</p>
           <p class="hero-motto">Building reliable intelligent systems that adapt, scale, and perform in real-world environments.</p>
           <p class="lede">Machine Learning Engineer at AT&amp;T building production ML for critical 5G and E911 network operations, including root-cause diagnostics, domain adaptation, and resilient automation. My PhD research spans wireless-network intelligence and digital twins, while my current engineering portfolio extends into RAG and agentic workflows for grounded decision support.</p>
-          <div class="designation-tags" aria-label="Core specializations">
-            <span>Production Machine Learning</span>
-            <span>Wireless AI · 5G/6G</span>
-            <span>GenAI · RAG · Agents</span>
-            <span>Reliable AI Systems</span>
-          </div>
+          <ul class="seo-pill-list hero-seo-grid" aria-label="Core technical specializations">
+            <li class="seo-pill" tabindex="0">Production ML &amp; MLOps</li>
+            <li class="seo-pill" tabindex="0">Wireless AI · 5G/6G &amp; RAN</li>
+            <li class="seo-pill" tabindex="0">Agentic Workflows &amp; RAG</li>
+            <li class="seo-pill" tabindex="0">Digital Twins &amp; Simulation</li>
+            <li class="seo-pill" tabindex="0">Resilient Automated Systems</li>
+          </ul>
           <div class="hero-actions" aria-label="Home page shortcuts">
             <a class="button primary" href="#projects">Featured Projects <span>↓</span></a>
             <a class="button ghost" href="#experience">Experience</a>
@@ -118,9 +130,16 @@
     <section class="section projects" id="projects" aria-labelledby="projects-title">
       <header class="section-head row reveal">
         <div>
-          <p class="eyebrow">01 / FEATURED PROJECTS</p>
-          <h2 id="projects-title">Engineering work with architecture, implementation, and evidence.</h2>
+          <span class="section-badge">⚡ Architectures &amp; Systems</span>
+          <h2 id="projects-title">Featured Engineering Projects</h2>
           <p>Selected research and portfolio systems spanning wireless simulation, system design, and agentic AI.</p>
+          <ul class="seo-pill-list section-seo-bar" aria-label="Featured project technologies">
+            <li class="seo-pill" tabindex="0">LangGraph</li>
+            <li class="seo-pill" tabindex="0">ChromaDB</li>
+            <li class="seo-pill" tabindex="0">3GPP Simulation</li>
+            <li class="seo-pill" tabindex="0">System Design</li>
+            <li class="seo-pill" tabindex="0">Vector Embeddings</li>
+          </ul>
         </div>
         <a href="./projects.html">View all projects ↗</a>
       </header>
@@ -129,8 +148,15 @@
 
     <section class="section experience" id="experience" aria-labelledby="experience-title">
       <header class="section-head reveal">
-        <p class="eyebrow">02 / EXPERIENCE</p>
-        <h2 id="experience-title">Industry and research experience backed by measurable outcomes.</h2>
+        <span class="section-badge">💼 Production ML &amp; 5G Operations</span>
+        <h2 id="experience-title">Professional Experience</h2>
+        <p>Production ML and wireless-AI work across mission-critical network operations, large-scale diagnostic data, and robust cross-domain modeling.</p>
+        <ul class="seo-pill-list section-seo-bar" aria-label="Experience highlights">
+          <li class="seo-pill" tabindex="0">E911 Operations</li>
+          <li class="seo-pill" tabindex="0">Root-Cause Analysis (80% Acc)</li>
+          <li class="seo-pill" tabindex="0">500K+ Production Logs</li>
+          <li class="seo-pill" tabindex="0">Domain Adaptation</li>
+        </ul>
       </header>
       <div class="timeline">
         <article class="timeline-item experience-card reveal">
@@ -188,8 +214,8 @@
 
     <section class="section education-section" id="education" aria-labelledby="education-title">
       <header class="section-head section-head-wide reveal">
-        <p class="eyebrow">03 / EDUCATION</p>
-        <h2 class="split-section-title" id="education-title"><span class="title-lead">Educational Journey</span><span class="title-detail">Telecommunications, wireless systems, and AI/ML engineering.</span></h2>
+        <span class="section-badge">🎓 Academic Foundation</span>
+        <h2 id="education-title">Education &amp; Technical Foundation</h2>
       </header>
       <div class="education-grid">
         <article><span>2019–2025</span><h3>PhD, Electrical and Computer Engineering</h3><p>University of Oklahoma, Oklahoma, USA</p></article>
@@ -200,9 +226,15 @@
 
     <section class="section research-legacy" id="research" aria-labelledby="research-title">
       <header class="section-head section-head-wide reveal">
-        <p class="eyebrow">04 / RESEARCH &amp; TECHNICAL FOCUS</p>
-        <h2 class="split-section-title" id="research-title"><span class="title-lead">Research Focus</span><span class="title-detail">Reliable AI for wireless networks and connected intelligent systems.</span></h2>
+        <span class="section-badge">🔬 Wireless AI &amp; Digital Twins</span>
+        <h2 id="research-title">Research &amp; Technical Focus</h2>
         <p>My doctoral and applied research spans AI/ML for wireless networks, propagation and digital-twin modeling, resilient network automation, domain adaptation, optimization, and wearable intelligence.</p>
+        <ul class="seo-pill-list section-seo-bar" aria-label="Research focus keywords">
+          <li class="seo-pill" tabindex="0">Digital Twins</li>
+          <li class="seo-pill" tabindex="0">Propagation Modeling</li>
+          <li class="seo-pill" tabindex="0">Wearable AI</li>
+          <li class="seo-pill" tabindex="0">Proactive Reliability</li>
+        </ul>
       </header>
       <div class="research-grid compact">
         <article class="research-card reveal"><span class="num">01</span><h3>AI/ML for Wireless</h3><p>Data-driven modeling, optimization, propagation intelligence, and resilience for 4G/5G/6G, digital twins, and radio access networks.</p></article>
@@ -214,8 +246,8 @@
     <section class="section publications" id="publications" aria-labelledby="publications-title">
       <header class="section-head row reveal">
         <div>
-          <p class="eyebrow">05 / SELECTED PUBLICATIONS</p>
-          <h2 id="publications-title">Selected peer-reviewed research contributions.</h2>
+          <span class="section-badge">📄 Peer-Reviewed Research</span>
+          <h2 id="publications-title">Selected Publications</h2>
           <p>Recent work across wearable intelligence, proactive cellular reliability, and resilient propagation modeling.</p>
         </div>
         <a href="./publications.html">View all publications ↗</a>
@@ -226,8 +258,8 @@
     <section class="section learning-home" id="self-learning" aria-labelledby="learning-title">
       <header class="section-head row reveal">
         <div>
-          <p class="eyebrow">06 / CURATED LEARNING</p>
-          <h2 id="learning-title">Continuous learning, intentionally curated.</h2>
+          <span class="section-badge">🏆 Credentials &amp; Certifications</span>
+          <h2 id="learning-title">Continuous Learning</h2>
           <p>Three high-impact credentials aligned with agentic AI, production GenAI, and scalable system design.</p>
         </div>
       </header>
@@ -240,7 +272,7 @@
     <section class="section mindset-compact" id="mindset" aria-labelledby="mindset-title">
       <header class="section-head reveal">
         <p class="eyebrow">07 / MINDSET &amp; APPROACH</p>
-        <h2 id="mindset-title">Understand deeply. Validate rigorously. Iterate purposefully.</h2>
+        <h2 id="mindset-title">Engineering Mindset &amp; Approach</h2>
       </header>
       <div class="approach-grid">
         <article><strong>01 · Understand</strong><p>Clarify requirements, constraints, data quality, and the underlying engineering problem before selecting a model or architecture.</p></article>
@@ -261,13 +293,37 @@
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Waseem Raza, PhD</p>
-    <nav aria-label="Professional profile links">
-      <a href="https://scholar.google.com/citations?user=d58Drr0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
-      <a href="https://orcid.org/0000-0002-5544-2637" target="_blank" rel="noopener noreferrer">ORCID</a>
-      <a href="https://github.com/WaseemRaza844" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
+    <footer class="enterprise-footer" aria-label="Portfolio footer">
+    <div class="enterprise-footer-grid">
+      <nav class="enterprise-footer-column" aria-label="Explore portfolio">
+        <h3>Explore</h3>
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./learning.html">Learning</a>
+      </nav>
+
+      <nav class="enterprise-footer-column" aria-label="Specialized portfolio profiles">
+        <h3>Specialized Profiles</h3>
+        <a href="./index.html">Core Overview</a>
+        <a href="./genai/">GenAI &amp; Agentic AI</a>
+        <a href="./aiml/">AI/ML &amp; Data Science</a>
+        <a href="./faculty/">Faculty &amp; Academic</a>
+      </nav>
+
+      <nav class="enterprise-footer-column" aria-label="Connect and verify">
+        <h3>Connect &amp; Verify</h3>
+        <a href="https://www.linkedin.com/in/waseem-raza-ai/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://scholar.google.com/citations?user=d58Drr0AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+        <a href="https://orcid.org/0000-0002-3906-8800" target="_blank" rel="noopener noreferrer">ORCID <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/waseemraza844" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+
+    <div class="enterprise-footer-bottom">
+      <p>© 2026 Waseem Raza, PhD</p>
+      <a href="#top">Back to Top <span aria-hidden="true">↑</span></a>
+    </div>
   </footer>
 
   <script src="./data/site-config.js"></script>

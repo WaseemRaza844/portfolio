@@ -45,6 +45,27 @@
         skills: ["Architecture Tradeoffs", "Reliability"],
         certificateUrl: "",
       },
+      {
+        title: "Applied Case Study: Scalable Distributed Architecture",
+        status: "Completed",
+        completionDate: "Completed",
+        summary:
+          "Hands-on design evaluations translating real-world constraints into distributed system components, APIs, caching policies, and consistency tradeoffs.",
+        takeaway:
+          "Translate practical scale, latency, availability, and consistency constraints into explicit distributed-system architecture decisions.",
+        skills: [
+          "Distributed Systems",
+          "API Design",
+          "Caching",
+          "Consistency Models",
+          "Scalability",
+          "Architecture Tradeoffs",
+        ],
+        certificateUrl: "",
+        links: {
+          github: "https://github.com/waseemraza844/system-design-portfolio",
+        },
+      },
     ],
     featured: true,
   };
@@ -143,7 +164,8 @@
           "Test-Driven Development",
           "Behavior-Driven Development",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C1. Coursera Y66Q2D7RTWFI.pdf",
+        links: { coursera: "https://coursera.org/verify/Y66Q2D7RTWFI" },
       },
 
       {
@@ -164,7 +186,8 @@
           "Hybrid Cloud",
           "Cloud Infrastructure",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C2. Coursera K0PUSRUCCHYV.pdf",
+        links: { coursera: "https://coursera.org/verify/K0PUSRUCCHYV" },
       },
 
       {
@@ -184,7 +207,8 @@
           "Product Backlogs",
           "Agile Project Management",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
+        links: { coursera: "https://coursera.org/verify/IFP65WAOEMCU" },
       },
 
       {
@@ -204,7 +228,8 @@
           "Python",
           "Web Development",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C4. Coursera 9FFBAK7THJZ5.pdf",
+        links: { coursera: "https://coursera.org/verify/9FFBAK7THJZ5" },
       },
 
       {
@@ -245,7 +270,8 @@
           "Package Management",
           "File Systems",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C6. Coursera JTSKKU8ARP1E.pdf",
+        links: { coursera: "https://coursera.org/verify/JTSKKU8ARP1E" },
       },
 
       {
@@ -265,7 +291,8 @@
           "Web Scraping",
           "Object-Oriented Programming",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C7. Coursera WRA89JEJU8EE.pdf",
+        links: { coursera: "https://coursera.org/verify/WRA89JEJU8EE" },
       },
 
       {
@@ -285,7 +312,8 @@
           "Application Deployment",
           "PEP 8",
         ],
-        certificateUrl: "",
+        certificateUrl: "./certificates/cloud-devops/C8. Coursera PO4XIY9YEB44.pdf",
+        links: { coursera: "https://coursera.org/verify/PO4XIY9YEB44" },
       },
 
       {
@@ -1228,7 +1256,8 @@
     title: "AWS Generative AI and AI Agents with Amazon Bedrock",
     issuer: "AWS/Coursera",
     status: "Completed",
-    completionDate: "08/2026",
+    completionDate: "August 29, 2026",
+    completionDateISO: "2026-08-29",
     summary:
       "Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications and intelligent agents with Amazon Bedrock.",
     takeaway:
@@ -1700,7 +1729,8 @@
     title: "IBM RAG and Agentic AI Professional Certificate",
     issuer: "IBM / Coursera",
     status: "Completed",
-    completionDate: "February 2026",
+    completionDate: "February 14, 2026",
+    completionDateISO: "2026-02-14",
     reportedProgress: {
       completed: 8,
       total: 8,
@@ -1899,7 +1929,8 @@
     title: "Generative AI Fundamentals Specialization",
     issuer: "IBM / Coursera",
     status: "Completed",
-    completionDate: "July 2026",
+    completionDate: "July 16, 2026",
+    completionDateISO: "2026-07-16",
     summary:
       "Five-course foundation in generative AI, prompt engineering, LLMs, and practical enterprise applications.",
     takeaway:
@@ -1999,7 +2030,8 @@
     title: "Building AI Agents and Agentic Workflows Specialization",
     issuer: "IBM / Coursera",
     status: "Completed",
-    completionDate: "February 2026",
+    completionDate: "February 14, 2026",
+    completionDateISO: "2026-02-14",
     reportedProgress: {
       completed: 3,
       total: 3,
@@ -2096,7 +2128,8 @@
     title: "RAG for Generative AI Applications Specialization",
     issuer: "IBM / Coursera",
     status: "Completed",
-    completionDate: "March 2026",
+    completionDate: "March 21, 2026",
+    completionDateISO: "2026-03-21",
     reportedProgress: {
       completed: 4,
       total: 4,
@@ -2200,7 +2233,69 @@
   };
   // #endregion
 
+
+  // #region — Google Cloud Generative AI for Healthcare
+  const CERT_HEALTHCARE_GENAI_GOOGLE = {
+    id: "google-generative-ai-healthcare",
+    profiles: ["generic", "aiml", "faculty"],
+    domain: "genai",
+    published: true,
+    featured: false,
+    title: "Generative AI for Healthcare",
+    issuer: "Google Cloud / Coursera",
+    status: "Completed",
+    completionDate: "February 17, 2026",
+    completionDateISO: "2026-02-17",
+    reportedProgress: {
+      completed: 1,
+      total: 1,
+    },
+    summary:
+      "Applied generative AI and large language model concepts to healthcare use cases, including medical foundation models, multimodal workflows, and prompt design.",
+    takeaway:
+      "Connect LLM capabilities, healthcare use cases, and prompt engineering with responsible, domain-aware application design.",
+    skills: [
+      "Generative AI",
+      "Large Language Models",
+      "Prompt Engineering",
+      "Healthcare AI",
+      "Vertex AI",
+      "Multimodal AI",
+    ],
+    certificateUrl: "./certificates/Coursera P5AXL262N71P.pdf",
+    links: {
+      coursera: "https://coursera.org/verify/P5AXL262N71P",
+      linkedin: "",
+      github: "",
+    },
+    courses: [
+      {
+        title: "Generative AI for Healthcare",
+        status: "Completed",
+        completionDate: "February 17, 2026",
+        completionDateISO: "2026-02-17",
+        summary:
+          "Google Cloud course on generative AI, large language models, healthcare use cases, medical foundation models, and prompt design.",
+        takeaway:
+          "Applied prompt design and generative-AI concepts to healthcare-focused examples and workflows.",
+        skills: [
+          "Generative AI",
+          "Large Language Models",
+          "Prompt Engineering",
+          "Healthcare AI",
+          "Vertex AI",
+        ],
+        certificateUrl: "./certificates/Coursera P5AXL262N71P.pdf",
+        links: {
+          coursera: "https://coursera.org/verify/P5AXL262N71P",
+        },
+      },
+    ],
+  };
+  // #endregion Google Cloud Generative AI for Healthcare
+
   window.PORTFOLIO_DATA.certifications = [
+    CERT_HEALTHCARE_GENAI_GOOGLE,
     CERT_GENAI_01_AWS_BEDROCK,
     CERT_GENAI_02_IBM_GENAI_ENGINEERING,
     CERT_GENAI_03_IBM_RAG_AGENTIC_AI,

@@ -18,7 +18,7 @@
     if (!isPdf) {
       return '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open ' + esc(label) + ' <span>↗</span></a>';
     }
-    return '<details class="pdf-preview"><summary>Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
+    return '<details class="pdf-preview"><summary class="preview-btn">Preview ' + esc(label) + '<span class="preview-chevron" aria-hidden="true">⌄</span></summary>' +
       '<div class="pdf-preview-body"><iframe src="' + esc(url) + '#view=FitH" title="' + esc(label) + ' preview" loading="lazy"></iframe>' +
       '<a class="pdf-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open full PDF in a new tab <span>↗</span></a></div></details>';
   };
@@ -54,6 +54,10 @@
       '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
+      ((course.links?.coursera || course.links?.github) ? '<div class="credential-links course-credential-links">' +
+        (course.links?.coursera ? externalLinks({ coursera: course.links.coursera }) : '') +
+        (course.links?.github ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View GitHub Repo ↗</a>' : '') +
+        '</div>' : '') +
       pdfDocument(course.certificateUrl, "course certificate") + '</div></details>';
   }
 
@@ -91,23 +95,22 @@
       '</article>';
   }
 
-  function projectLinkList(links) {
+  function projectLinkList(item) {
     const labels = { github: 'GitHub', demo: 'Live demo', coursera: 'Coursera', paper: 'Publication', project: 'Project link' };
-    return Object.entries(links || {}).filter(([, url]) => url).map(([key, url]) =>
+    const standard = Object.entries(item.links || {}).filter(([, url]) => url).map(([key, url]) =>
       '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
-    ).join('');
+    );
+    const research = (item.resourceLinks || []).filter((link) => link?.url).map((link) =>
+      '<a class="research-link" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(link.label) + ' ↗</a>'
+    );
+    return standard.concat(research).join('');
   }
 
   function projectAccordion(item, index) {
-    const projectLinks = projectLinkList(item.links);
-    const relatedCertifications = (item.relatedCertificationIds || [])
-      .map((id) => data.certifications.find((cert) => cert.id === id))
-      .filter(Boolean);
+    const projectLinks = projectLinkList(item);
     const credentialBlock = item.certificateUrl
       ? '<div><p class="field-label">Project certificate / credential</p>' + pdfDocument(item.certificateUrl, 'project certificate') + '</div>'
-      : relatedCertifications.length
-        ? '<div><p class="field-label">Related learning credentials</p><div class="project-related-credentials">' + relatedCertifications.map((cert) => '<span>' + esc(cert.title) + '</span>').join('') + '</div></div>'
-        : '<div><p class="field-label">Certificate / credential</p><p>No separate project certificate is currently recorded for this project.</p></div>';
+      : '';
 
     return '<details class="project-accordion reveal visible" id="' + esc(item.id || '') + '"><summary>' +
       '<span class="project-number">' + String(index + 1).padStart(2, '0') + '</span>' +
@@ -117,6 +120,7 @@
       '<div class="project-status"><strong>' + esc(item.status || 'Project') + '</strong><span>' + esc(item.date || '') + '</span></div></div>' +
       '</summary><div class="project-accordion-content">' +
       '<div class="project-overview"><div><p class="field-label">Project overview</p><p>' + esc(item.summary) + '</p></div>' +
+      (item.architecture ? '<div><p class="field-label">Architecture overview</p><p>' + esc(item.architecture) + '</p></div>' : '') +
       '<div><p class="field-label">Project type</p><p>' + esc(item.category) + '</p></div>' +
       '<div><p class="field-label">Status & timeline</p><p>' + esc(item.status || '') + (item.date ? ' · ' + esc(item.date) : '') + '</p></div></div>' +
       '<div class="project-evidence"><div><p class="field-label">Important skills & tools</p>' + tags(item.skills || []) + '</div>' +
@@ -125,8 +129,13 @@
   }
 
   function projectGroupSection(group, items) {
+    const badges = {
+      'academic-research': '🔬 Academic & Research',
+      'guided': '⚙ Guided Implementations',
+      'coursera-portfolio': '🧩 Portfolio & Applied Learning'
+    };
     return '<section class="project-group" data-project-group="' + esc(group.id) + '">' +
-      '<div class="project-group-head"><div><p class="eyebrow">PROJECT GROUP</p><h2>' + esc(group.title) + '</h2><p>' + esc(group.description) + '</p></div>' +
+      '<div class="project-group-head"><div><span class="section-badge">' + esc(badges[group.id] || group.title) + '</span><h2>' + esc(group.title) + '</h2><p>' + esc(group.description) + '</p></div>' +
       '<span>' + items.length + ' project' + (items.length === 1 ? '' : 's') + '</span></div>' +
       '<div class="project-accordion-list">' + items.map(projectAccordion).join('') + '</div></section>';
   }
@@ -163,8 +172,9 @@
     const encodedBibtex = encodeURIComponent(bibtex);
 
     return '<article class="pub publication-item reveal visible" itemscope itemtype="https://schema.org/ScholarlyArticle">' +
-      '<time class="year" itemprop="datePublished" datetime="' + esc(item.year) + '">' + esc(item.year) + '</time>' +
-      '<div class="publication-copy"><span class="badge publication-badge" itemprop="isPartOf">' + esc(venueBadge) + '</span>' +
+      '<div class="publication-copy"><div class="publication-meta">' +
+      '<time class="year publication-year" itemprop="datePublished" datetime="' + esc(item.year) + '">' + esc(item.year) + '</time>' +
+      '<span class="badge publication-badge" itemprop="isPartOf">' + esc(venueBadge) + '</span></div>' +
       '<h3 itemprop="headline">' + esc(item.title) + '</h3><p itemprop="description">' + esc(item.summary) + '</p>' +
       (item.topics?.length ? tags(item.topics) : '') +
       '<div class="publication-actions"><a href="' + esc(paperUrl) + '" target="_blank" rel="noopener noreferrer" itemprop="url">' + esc(paperLabel) + '</a>' +
