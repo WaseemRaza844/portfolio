@@ -74,31 +74,19 @@
     )
     .join("");
 
-  const certifications = byIds(
-    portfolio.certifications,
-    variant.certificationIds,
+  const certifications = portfolio.certifications.filter(item =>
+    item.published !== false && (item.profiles || []).includes(variantId) && item.status === "Completed"
   );
   document.getElementById("variant-certifications").innerHTML = certifications
-    .map(
-      (item) =>
-        '<article class="detail-card reveal visible"><div class="detail-card-top"><span class="credential-state' +
-        (item.status.toLowerCase().includes("progress") ? " active" : "") +
-        '">' +
-        esc(item.status) +
-        '</span><span class="detail-date">' +
-        esc(item.completionDate) +
-        '</span></div><p class="detail-type">' +
-        esc(item.issuer) +
-        "</p><h3>" +
-        esc(item.title) +
-        "</h3><p>" +
-        esc(item.summary) +
-        "</p>" +
-        tags(item.skills.slice(0, 6)) +
-        '<a class="text-link" href="../learning.html?profile=' +
-        esc(variantId) +
-        '">View relevant credential details ↗</a></article>',
-    )
+    .map(item => {
+      const url=item.links?.coursera || item.inventoryUrl || "";
+      const verified=/\/verify\//i.test(url) || /account\/accomplishments\//i.test(url);
+      const label=verified ? "Verify Coursera Credential ↗" : "View Coursera Course ↗";
+      return '<article class="detail-card reveal visible"><div class="detail-card-top"><span class="credential-state">Completed</span><span class="detail-date">' +
+        esc(item.completionDate || "Completion date unavailable") + '</span></div><p class="detail-type">' + esc(item.issuer) + '</p><h3>' + esc(item.title) + '</h3><p>' +
+        esc(item.summary) + '</p>' + tags(item.skills.slice(0, 6)) + (url ? '<a class="text-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + label + '</a>' :
+        '<a class="text-link" href="../learning.html?profile=' + esc(variantId) + '">View course details ↗</a>') + '</article>';
+    })
     .join("");
 
   const projects = byIds(portfolio.projects, variant.projectIds);
