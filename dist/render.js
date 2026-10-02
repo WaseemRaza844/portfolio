@@ -28,6 +28,12 @@
       '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
     ).join('');
   };
+  const credentialAction = (url) => {
+    if (!url) return '';
+    const verified = /\/verify\//i.test(url) || /account\/accomplishments\//i.test(url);
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' +
+      (verified ? 'Verify Coursera Credential ↗' : 'View Coursera Course ↗') + '</a>';
+  };
   const completedCount = (courses) => courses.filter((course) =>
     /^completed/i.test(course.status || '') || /^completed/i.test(course.completionDate || '')
   ).length;
@@ -43,11 +49,17 @@
   function courseAccordion(course, index) {
     const status = course.status || (/^completed/i.test(course.completionDate || '') ? 'Completed' : 'In progress');
     const hasModuleCount = Number.isFinite(course.modulesCompleted) && Number.isFinite(course.modulesTotal);
-    const moduleText = hasModuleCount ? status + ' (' + course.modulesCompleted + '/' + course.modulesTotal + ') modules' : status;
+    const moduleText = hasModuleCount ? status + ' (' + course.modulesCompleted + '/' + course.modulesTotal + ') modules' :
+      (status.toLowerCase().includes('progress') && Number.isFinite(course.progressPercent) ? status + ' · ' + course.progressPercent + '%' : status);
     const rawDate = String(course.completionDate || '').replace(/^(Target:|Completed:?)\s*/i, '');
     const dateText = rawDate && !/^(completed|in progress)$/i.test(rawDate)
       ? (status.toLowerCase().includes('progress') ? 'Target: ' : 'Completed: ') + rawDate
       : '';
+    const relatedCredentialMarkup = (course.relatedCredentials || []).map(credential =>
+      '<div class="course-related-credential"><p class="field-label">Related program credential · ' + esc(credential.title) + '</p>' +
+      (credential.links?.coursera ? '<div class="credential-links course-credential-links">' + credentialAction(credential.links.coursera) + '</div>' : '') +
+      pdfDocument(credential.certificateUrl, 'program certificate') + '</div>'
+    ).join('');
     return '<details class="course-accordion"><summary><span class="course-number">C' + (index + 1) + '</span><span class="course-title"><strong>' + esc(course.title) + '</strong>' +
       ((course.summary || course.takeaway) ? '<small class="course-teaser">' + esc(course.summary || course.takeaway) + '</small>' : '') + '</span>' +
       '<span class="course-progress"><strong>' + esc(moduleText) + '</strong>' + (dateText ? '<small>' + esc(dateText) + '</small>' : '') + '</span>' +
@@ -55,10 +67,10 @@
       '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
       ((course.links?.coursera || course.links?.github) ? '<div class="credential-links course-credential-links">' +
-        (course.links?.coursera ? externalLinks({ coursera: course.links.coursera }) : '') +
+        credentialAction(course.links?.coursera) +
         (course.links?.github ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View GitHub Repo ↗</a>' : '') +
         '</div>' : '') +
-      pdfDocument(course.certificateUrl, "course certificate") + '</div></details>';
+      pdfDocument(course.certificateUrl, "course certificate") + relatedCredentialMarkup + '</div></details>';
   }
 
   function certificationAccordion(item, index) {
@@ -66,9 +78,9 @@
     const total = item.reportedProgress?.total ?? item.courses.length;
     const inProgress = item.status.toLowerCase().includes('progress');
     const rawDate = item.completionDate.replace(/^(Target:|Completed:?)\s*/i, '');
-    const dateText = rawDate && !/^completed$/i.test(rawDate) ? (inProgress ? 'Target: ' : 'Completed: ') + rawDate : 'Completion date on credential';
-    const progressLabel = inProgress ? 'In progress (' + completed + '/' + total + ') courses' : 'Completed (' + completed + '/' + total + ') courses';
-    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + externalLinks(item.links) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + esc(progressLabel) + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
+    const dateText = rawDate && !/^completed$/i.test(rawDate) ? (inProgress ? 'Current course progress' : 'Completed: ') + rawDate : (inProgress ? 'Course status from Coursera' : 'Completion date unavailable');
+    const progressLabel = inProgress && Number.isFinite(item.progressPercent) ? 'In Progress · ' + item.progressPercent + '%' : 'Completed course';
+    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><span class="credential-state' + (inProgress ? ' active' : '') + '">' + esc(inProgress ? 'In Progress' : 'Completed') + '</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + esc(progressLabel) + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
       '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.curriculumNote ? '<div><p class="field-label">Curriculum version</p><p>' + esc(item.curriculumNote) + '</p></div>' : '') + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfDocument(item.certificateUrl, "professional certificate") + '</div>' +
       '<div class="course-section"><div class="course-heading"><p class="field-label">Courses included</p><span>Select a course to see details</span></div>' + item.courses.map(courseAccordion).join("") + '</div></div></details>';
   }
@@ -195,7 +207,8 @@
     el.innerHTML = selected.map(render).join("");
   }
   function domainAreaSection(area, items) {
-    return '<section class="domain-area" data-domain="' + esc(area.id) + '"><div class="domain-area-head"><div><p class="eyebrow">DOMAIN AREA</p><h2>' + esc(area.title) + '</h2><p>' + esc(area.description) + '</p></div><span>' + items.length + ' certification' + (items.length === 1 ? '' : 's') + '</span></div><div class="accordion-list">' + items.map(certificationAccordion).join('') + '</div></section>';
+    const done=items.filter(x=>!x.status.toLowerCase().includes('progress')).length;
+    return '<section class="domain-area" data-domain="' + esc(area.id) + '"><div class="domain-area-head"><div><p class="eyebrow">DOMAIN AREA</p><h2>' + esc(area.title) + '</h2><p>' + esc(area.description) + '</p></div><span>' + done + '/' + items.length + ' courses completed · ' + (items.length-done) + ' in progress</span></div><div class="accordion-list">' + items.map(certificationAccordion).join('') + '</div></section>';
   }
   function mountDomainAreas() {
     const el = document.getElementById('all-certifications');
@@ -210,7 +223,8 @@
     if (stats) {
       const visibleAreas = areas.filter((area) => filteredCertifications.some((item) => item.domain === area.id)).length;
       const inProgress = filteredCertifications.filter((item) => item.status.toLowerCase().includes('progress')).length;
-      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domain areas</span><span><strong>' + filteredCertifications.length + '</strong> certifications</span><span><strong>' + inProgress + '</strong> in progress</span>';
+      const completed=filteredCertifications.length-inProgress;
+      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domains</span><span><strong>' + filteredCertifications.length + '</strong> courses</span><span><strong>' + completed + '</strong> completed</span><span><strong>' + inProgress + '</strong> in progress</span>';
     }
   }
   function applySiteSettings() {

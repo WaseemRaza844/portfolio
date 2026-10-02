@@ -7,7 +7,7 @@ window.PORTFOLIO_DATA.domainAreas = [  {
   },
   {
     "id": "ml-data",
-    "title": "AIML: Data Science & Analytics",
+    "title": "AI/ML: Data Science & Analytics",
     "description": "Traditional machine learning, data analytics, data engineering platforms, and model development, testing and evaluation."
   },
   {
@@ -26,22 +26,6 @@ window.PORTFOLIO_DATA.domainAreas = [  {
     "title": "System Design & Software Architecture",
     "description": "Scalable services, distributed systems, architecture tradeoffs, and reliability."
   },
-  {
-    "id": "cybersecurity",
-    "title": "Cybersecurity",
-    "description": "Cloud security, threat detection, incident response, risk management, and secure system operations."
-  },
-  {
-    "id": "product-management",
-    "title": "Management: Project, AI Product",
-    "description": "AI product strategy, stakeholder alignment, product delivery, and responsible adoption of generative AI."
-  },
-  {
-    "id": "quantum-compute",
-    "title": "Quantum Computing",
-    "description": "AI product strategy, stakeholder alignment, product delivery, and responsible adoption of generative AI."
-  }
-
 ];
 
 // WIRELESS_CERTIFICATES_V1: reuse an existing domain; otherwise append it.
