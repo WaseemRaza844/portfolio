@@ -29,12 +29,12 @@
       "system-design-portfolio"
     ],
     "certificationIds": [
-      "aws-bedrock-professional",
-      "ibm-rag-agentic-ai",
-      "stanford-machine-learning",
-      "google-cloud-data-analytics",
-      "ai-for-telecommunications",
-      "4g-network-fundamentals"
+      "coursera-generative-ai-applications-with-amazon-bedrock",
+      "coursera-agentic-ai-with-langchain-and-langgraph",
+      "coursera-machine-learning",
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-4g-network-fundamentals"
     ],
     "publicationIds": [
       "medication-adherence-2026",
@@ -105,7 +105,7 @@
         "publications"
       ]
     ],
-    "maxPages": 6,
+    "maxPages": 10,
     "leadership": {
       "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
       "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
@@ -148,10 +148,10 @@
       "system-design-portfolio"
     ],
     "certificationIds": [
-      "aws-bedrock-professional",
-      "ibm-genai-engineering",
-      "ibm-rag-agentic-ai",
-      "genai-fundamentals"
+      "coursera-generative-ai-applications-with-amazon-bedrock",
+      "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+      "coursera-agentic-ai-with-langchain-and-langgraph",
+      "coursera-generative-ai-foundation-models-and-platforms"
     ],
     "publicationIds": [],
     "pages": [
@@ -206,11 +206,10 @@
       "lakehouse-pipeline"
     ],
     "certificationIds": [
-      "stanford-machine-learning",
-      "google-cloud-data-analytics",
-      "ibm-genai-engineering",
-      "deep-learning-healthcare",
-      "ml-reinforcement-learning-finance"
+      "coursera-machine-learning",
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+      "coursera-introduction-to-deep-learning-neural-networks-with-keras"
     ],
     "publicationIds": [
       "resilient-propagation-2024"
@@ -263,10 +262,10 @@
       "turboran"
     ],
     "certificationIds": [
-      "ai-for-telecommunications",
-      "4g-network-fundamentals",
-      "business-considerations-5g-edge-iot-ai",
-      "stanford-machine-learning"
+      "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-4g-network-fundamentals",
+      "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
+      "coursera-machine-learning"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
@@ -321,10 +320,10 @@
       "cloud-computer-vision"
     ],
     "certificationIds": [
-      "deep-learning-healthcare",
-      "stanford-machine-learning",
-      "google-cloud-data-analytics",
-      "ibm-genai-engineering"
+      "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+      "coursera-machine-learning",
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-generative-ai-engineering-and-fine-tuning-transformers"
     ],
     "publicationIds": [
       "medication-adherence-2026"
@@ -376,9 +375,8 @@
       "system-design-portfolio"
     ],
     "certificationIds": [
-      "ml-reinforcement-learning-finance",
-      "stanford-machine-learning",
-      "google-cloud-data-analytics"
+      "coursera-machine-learning",
+      "coursera-introduction-to-data-analytics-in-google-cloud"
     ],
     "publicationIds": [],
     "pages": [
@@ -430,11 +428,11 @@
       "wearable-intelligence"
     ],
     "certificationIds": [
-      "stanford-machine-learning",
-      "ai-for-telecommunications",
-      "4g-network-fundamentals",
-      "genai-fundamentals",
-      "aws-bedrock-professional"
+      "coursera-machine-learning",
+      "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-4g-network-fundamentals",
+      "coursera-generative-ai-foundation-models-and-platforms",
+      "coursera-generative-ai-applications-with-amazon-bedrock"
     ],
     "publicationIds": [
       "medication-adherence-2026",
