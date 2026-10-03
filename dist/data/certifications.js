@@ -1749,7 +1749,7 @@ window.PORTFOLIO_DATA.certifications = [
     "skills": [
       "Cloud, DevOps & Software Engineering"
     ],
-    "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
+    "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WA0EMCU.pdf",
     "links": {
       "coursera": "https://www.coursera.org/account/accomplishments/verify/IFP65WAOEMCU"
     },
@@ -2545,7 +2545,7 @@ window.PORTFOLIO_DATA.certifications = [
     "skills": [
       "Cloud, DevOps & Software Engineering"
     ],
-    "certificateUrl": "",
+    "certificateUrl": "./certificates/cyber-security/google-cloud/c5-cloud-security-analyst.pdf",
     "links": {
       "coursera": "https://www.coursera.org/account/accomplishments/verify/PX5PBY5920SA"
     },
