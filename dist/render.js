@@ -138,10 +138,6 @@
     const dateText = program.completionDate
       ? program.completionDate
       : (program.awarded ? 'Program credential verified' : 'Parent curriculum in progress');
-    const programNote = program.awarded
-      ? 'Only child courses with 100% completion, a completion date, and a Coursera verification credential are shown.'
-      : 'This parent is used only as a curriculum grouping. No incomplete course or partial-progress percentage is displayed.';
-
     return '<details class="certification-accordion reveal visible program-accordion">' +
       '<summary><span class="cert-number">' + (index + 1) + '</span>' +
       '<div class="cert-summary-main"><span class="credential-provider-badge">' + esc(program.issuer || 'Coursera') + '</span><p class="detail-type">' + esc(program.credentialType || 'Program') + '</p><h2>' + esc(program.title) + '</h2><p class="cert-teaser">' + esc(program.summary || '') + '</p></div>' +
@@ -149,7 +145,6 @@
       '<div class="credential-links">' + programAction(program) + '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
       '<div class="certification-content vertical-credential-content">' +
       '<div class="certificate-preview-row">' + pdfDocument(program.certificateUrl, 'Program Certificate') + '</div>' +
-      '<div class="parent-overview-row"><p class="field-label">Parent credential / curriculum</p><p>' + esc(programNote) + '</p></div>' +
       '<section class="course-section completed-subcourses-section"><div class="completed-subcourses-head"><h3>COMPLETED SUB-COURSES <span>(' + courses.length + ' verified credential' + (courses.length === 1 ? '' : 's') + ')</span></h3></div>' +
       '<div class="completed-course-stack">' + courses.map(courseAccordion).join("") + '</div></section>' +
       '</div></details>';
