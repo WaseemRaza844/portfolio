@@ -1,10 +1,18 @@
 name: Deploy portfolio to GitHub Pages
 
-# Production deployment is intentionally restricted to main.
-# Development and feature branches should be previewed locally/Codespaces.
+# One GitHub Pages site serves both environments:
+#   main    -> /portfolio/
+#   develop -> /portfolio/develop/
+#
+# A push to either integration branch rebuilds the complete Pages artifact from
+# the latest versions of both branches. This prevents develop from overwriting
+# the production site while still providing a persistent non-production URL.
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
+    paths:
+      - 'dist/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -13,27 +21,77 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: portfolio-pages
   cancel-in-progress: true
 
 jobs:
   deploy:
     environment:
-      name: github-pages
+      # Keep the production Pages environment protected for main. Development
+      # uses its own deployment environment so develop pushes do not need
+      # production approval or production branch permissions.
+      name: ${{ github.ref_name == 'main' && 'github-pages' || 'github-pages-development' }}
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository
+      - name: Check out production branch
         uses: actions/checkout@v4
+        with:
+          ref: main
+          path: source-main
+
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          path: source-develop
+
+      - name: Assemble production and development sites
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf _site
+          mkdir -p _site/develop
+
+          # Production site at the repository Pages root.
+          cp -a source-main/dist/. _site/
+
+          # Development preview under /develop/.
+          cp -a source-develop/dist/. _site/develop/
+
+          # Prevent the non-production mirror from being indexed by search engines.
+          while IFS= read -r -d '' file; do
+            if grep -qi '</head>' "$file"; then
+              sed -i '0,/<\/head>/s//  <meta name="robots" content="noindex,nofollow">\n<\/head>/' "$file"
+            fi
+          done < <(find _site/develop -type f -name '*.html' -print0)
+
+          # GitHub Pages should serve files directly without Jekyll processing.
+          touch _site/.nojekyll
+
+          echo "Production: https://waseemraza844.github.io/portfolio/"
+          echo "Develop:    https://waseemraza844.github.io/portfolio/develop/"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
+      - name: Upload combined website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: ./_site
 
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Publish environment links
+        shell: bash
+        run: |
+          {
+            echo "## Portfolio deployment"
+            echo
+            echo "- Production: https://waseemraza844.github.io/portfolio/"
+            echo "- Develop preview: https://waseemraza844.github.io/portfolio/develop/"
+          } >> "$GITHUB_STEP_SUMMARY"

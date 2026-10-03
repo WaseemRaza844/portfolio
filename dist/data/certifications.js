@@ -1,2531 +1,4745 @@
-/*
-  Certifications and their nested courses.
-
-  VS Code navigation:
-  - Press Ctrl+Shift+O (Cmd+Shift+O on macOS), then type CERT_.
-  - In Outline, disable Show Properties and keep Show Variables enabled.
-  - Fold or unfold each // #region block from the editor gutter.
-*/
-
-(function registerCertifications() {
-  // #region 01 — System Design Masterclass
-  const CERT_01_systemDesignMasterclass = {
-    id: "system-design-masterclass",
-    profiles: ["generic", "genai"],
-    domain: "system-design",
-    title: "System Design Masterclass",
-    issuer: "Packt / Coursera",
-    status: "In progress",
-    completionDate: "Target: 2026",
-    summary:
-      "Architecture case studies covering scalable feeds, distributed data flows, caching, consistency, availability, and engineering tradeoffs.",
-    takeaway:
-      "Translate product requirements into explicit capacity assumptions, service boundaries, data models, and defensible architecture tradeoffs.",
-    skills: ["System Design", "Distributed Systems", "Scalability", "Caching"],
-    certificateUrl: "",
-    links: {
-      coursera: "",
-      linkedin: "",
-      github: "",
+/* Coursera courses reconciled from the signed-in course inventory reviewed September 30, 2026. */
+window.PORTFOLIO_DATA = window.PORTFOLIO_DATA || {};
+window.PORTFOLIO_DATA.certifications = [
+  {
+    "id": "coursera-4g-network-fundamentals",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "4G Network Fundamentals",
+    "issuer": "Institut Mines-Télécom / Coursera",
+    "status": "Completed",
+    "completionDate": "August 2, 2026",
+    "progressPercent": 100,
+    "summary": "Institut Mines-Télécom · Completed Coursera credential.",
+    "takeaway": "Institut Mines-Télécom · Completed Coursera credential.",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "./certificates/wireless/4g-network-fundamentals.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/DLW1YN474VZJ"
     },
-    courses: [
+    "courses": [
       {
-        title: "Design Instagram Newsfeed",
-        completionDate: "Completed",
-        takeaway:
-          "Designed feed generation, fan-out, storage, caching, and availability paths.",
-        skills: ["Feed Design", "Caching", "Fan-out"],
-        certificateUrl: "",
+        "title": "4G Network Fundamentals",
+        "status": "Completed",
+        "completionDate": "August 2, 2026",
+        "progressPercent": 100,
+        "summary": "Institut Mines-Télécom · Completed Coursera credential.",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "./certificates/wireless/4g-network-fundamentals.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/DLW1YN474VZJ"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/4g-network-fundamentals",
+    "featured": false
+  },
+  {
+    "id": "coursera-advanced-rag-with-vector-databases-and-retrievers",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Advanced RAG with Vector Databases and Retrievers",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 24, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/AH57KRK80TBQ"
+    },
+    "courses": [
+      {
+        "title": "Advanced RAG with Vector Databases and Retrievers",
+        "status": "Completed",
+        "completionDate": "January 24, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/AH57KRK80TBQ"
+        },
+        "relatedCredentials": [
+          {
+            "title": "RAG for Generative AI Applications Specialization",
+            "certificateUrl": "./certificates/genai/ibm-rag-applications/ibm-rag-applications.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/specialization/I7IDRI3160WV"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/advanced-rag-with-vector-databases-and-retrievers",
+    "featured": false
+  },
+  {
+    "id": "coursera-agentic-ai-with-langchain-and-langgraph",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Agentic AI with LangChain and LangGraph",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "February 9, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/L4EY4SLGCPUE"
+    },
+    "courses": [
+      {
+        "title": "Agentic AI with LangChain and LangGraph",
+        "status": "Completed",
+        "completionDate": "February 9, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/L4EY4SLGCPUE"
+        },
+        "relatedCredentials": [
+          {
+            "title": "IBM RAG and Agentic AI Professional Certificate",
+            "certificateUrl": "./certificates/genai/ibm-rag-agentic-ai/ibm-rag-agentic-ai-professional-certificate.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/professional-cert/0CB713GHZC1B"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/agentic-ai-with-langchain-and-langgraph",
+    "featured": false
+  },
+  {
+    "id": "coursera-agentic-ai-with-langgraph-crewai-autogen-and-beeai",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "February 14, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/DABWO56HO9W4"
+    },
+    "courses": [
+      {
+        "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+        "status": "Completed",
+        "completionDate": "February 14, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/DABWO56HO9W4"
+        },
+        "relatedCredentials": [
+          {
+            "title": "Building AI Agents and Agentic Workflows Specialization",
+            "certificateUrl": "./certificates/genai/ibm-building-ai-agents/ibm-building-ai-agents.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/specialization/CEVQP0RYI532"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/agentic-ai-with-langgraph-crewai-autogen-and-beeai",
+    "featured": false
+  },
+  {
+    "id": "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "AI Foundations & Industry Overview for Telecommunication",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "June 19, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "./certificates/wireless/c1-ai-found-indus-overview.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/3900EVOH4I1Y"
+    },
+    "courses": [
+      {
+        "title": "AI Foundations & Industry Overview for Telecommunication",
+        "status": "Completed",
+        "completionDate": "June 19, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "./certificates/wireless/c1-ai-found-indus-overview.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/3900EVOH4I1Y"
+        },
+        "relatedCredentials": [
+          {
+            "title": "AI for Telecommunications Specialization",
+            "certificateUrl": "./certificates/wireless/ai-for-telecom.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/specialization/D8Y6MVC0XM51"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/ai-foundations-industry-overview-for-telecommunication",
+    "featured": false
+  },
+  {
+    "id": "coursera-amazon-bedrock-customization-optimization-automation",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Amazon Bedrock Customization, Optimization & Automation",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 29, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "./certificates/genai/aws-bedrock/c3-bedrock-customization-optimization-automation.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/UXN7H3PL7JKL"
+    },
+    "courses": [
+      {
+        "title": "Amazon Bedrock Customization, Optimization & Automation",
+        "status": "Completed",
+        "completionDate": "August 29, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "./certificates/genai/aws-bedrock/c3-bedrock-customization-optimization-automation.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/UXN7H3PL7JKL"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/amazon-bedrock-customization-optimization-automation",
+    "featured": false
+  },
+  {
+    "id": "coursera-build-ai-agents-using-mcp",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Build AI Agents using MCP",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "June 28, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/QWAQ3NL4TGSZ"
+    },
+    "courses": [
+      {
+        "title": "Build AI Agents using MCP",
+        "status": "Completed",
+        "completionDate": "June 28, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/QWAQ3NL4TGSZ"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/build-ai-agents-using-mcp",
+    "featured": false
+  },
+  {
+    "id": "coursera-build-multimodal-generative-ai-applications",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Build Multimodal Generative AI Applications",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 26, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/R8KU5VA238T0"
+    },
+    "courses": [
+      {
+        "title": "Build Multimodal Generative AI Applications",
+        "status": "Completed",
+        "completionDate": "January 26, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/R8KU5VA238T0"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/build-multimodal-generative-ai-applications",
+    "featured": false
+  },
+  {
+    "id": "coursera-build-rag-applications-get-started",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Build RAG Applications: Get Started",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 18, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/P0ZOGAN1KLS5"
+    },
+    "courses": [
+      {
+        "title": "Build RAG Applications: Get Started",
+        "status": "Completed",
+        "completionDate": "January 18, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/P0ZOGAN1KLS5"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/build-rag-applications-get-started",
+    "featured": false
+  },
+  {
+    "id": "coursera-building-generative-ai-powered-applications-with-python",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Building Generative AI-Powered Applications with Python",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 2, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/3RQ3DE0H1S6F"
+    },
+    "courses": [
+      {
+        "title": "Building Generative AI-Powered Applications with Python",
+        "status": "Completed",
+        "completionDate": "August 2, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/3RQ3DE0H1S6F"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/building-gen-ai-powered-applications",
+    "featured": false
+  },
+  {
+    "id": "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "Business Considerations for 5G with Edge, IoT, and AI",
+    "issuer": "EDUCBA / Coursera",
+    "status": "Completed",
+    "completionDate": "February 18, 2026",
+    "progressPercent": 100,
+    "summary": "EDUCBA · Completed Coursera credential.",
+    "takeaway": "EDUCBA · Completed Coursera credential.",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "./certificates/wireless/bus-cons-5g.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/SAUEVQXV5W71"
+    },
+    "courses": [
+      {
+        "title": "Business Considerations for 5G with Edge, IoT, and AI",
+        "status": "Completed",
+        "completionDate": "February 18, 2026",
+        "progressPercent": 100,
+        "summary": "EDUCBA · Completed Coursera credential.",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "./certificates/wireless/bus-cons-5g.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/SAUEVQXV5W71"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/business-considerations-for-5g-with-edge-iot-and-ai",
+    "featured": false
+  },
+  {
+    "id": "coursera-chatgpt-prompt-engineering-for-developers",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "ChatGPT Prompt Engineering for Developers",
+    "issuer": "DeepLearning.AI / Coursera",
+    "status": "Completed",
+    "completionDate": "",
+    "progressPercent": 100,
+    "summary": "DeepLearning.AI · Completed Coursera credential.",
+    "takeaway": "DeepLearning.AI · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/chatgpt-prompt-engineering-for-developers-project"
+    },
+    "courses": [
+      {
+        "title": "ChatGPT Prompt Engineering for Developers",
+        "status": "Completed",
+        "completionDate": "",
+        "progressPercent": 100,
+        "summary": "DeepLearning.AI · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/chatgpt-prompt-engineering-for-developers-project"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/chatgpt-prompt-engineering-for-developers-project",
+    "featured": false
+  },
+  {
+    "id": "coursera-cloud-security-risks-identify-and-protect-against-threats",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Cloud Security Risks: Identify and Protect Against Threats",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "October 6, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cyber-security/google-cloud/c3-identify-protect-threats.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/7TILMOWSQIJE"
+    },
+    "courses": [
+      {
+        "title": "Cloud Security Risks: Identify and Protect Against Threats",
+        "status": "Completed",
+        "completionDate": "October 6, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cyber-security/google-cloud/c3-identify-protect-threats.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/7TILMOWSQIJE"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/cloud-security-risks-identify-and-protect-against-threats",
+    "featured": false
+  },
+  {
+    "id": "coursera-customer-experience-in-telecommunication",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "Customer Experience in Telecommunication",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "June 28, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "./certificates/wireless/c3-cust-exp-telecom.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/NXOIIASQQXKX"
+    },
+    "courses": [
+      {
+        "title": "Customer Experience in Telecommunication",
+        "status": "Completed",
+        "completionDate": "June 28, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "./certificates/wireless/c3-cust-exp-telecom.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/NXOIIASQQXKX"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/customer-experience-in-telecommunication",
+    "featured": false
+  },
+  {
+    "id": "coursera-data-management-and-storage-in-the-cloud",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Data Management and Storage in the Cloud",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "July 26, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/FP8QBSEPCCGD"
+    },
+    "courses": [
+      {
+        "title": "Data Management and Storage in the Cloud",
+        "status": "Completed",
+        "completionDate": "July 26, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/FP8QBSEPCCGD"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/data-management-and-storage-in-the-cloud",
+    "featured": false
+  },
+  {
+    "id": "coursera-data-transformation-in-the-cloud",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Data Transformation in the Cloud",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "July 29, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/LDN9W7UTJ79L"
+    },
+    "courses": [
+      {
+        "title": "Data Transformation in the Cloud",
+        "status": "Completed",
+        "completionDate": "July 29, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/LDN9W7UTJ79L"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/data-transformation-in-the-cloud",
+    "featured": false
+  },
+  {
+    "id": "coursera-detect-respond-and-recover-from-cloud-cybersecurity-attacks",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Detect, Respond, and Recover from Cloud Cybersecurity Attacks",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 31, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cyber-security/google-cloud/c4-detect-respond-recover.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/KNPSUAEEI9WC"
+    },
+    "courses": [
+      {
+        "title": "Detect, Respond, and Recover from Cloud Cybersecurity Attacks",
+        "status": "Completed",
+        "completionDate": "January 31, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cyber-security/google-cloud/c4-detect-respond-recover.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/KNPSUAEEI9WC"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/detect-respond-and-recover-from-cloud-cybersecurity-attacks",
+    "featured": false
+  },
+  {
+    "id": "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Detecting COVID-19 with Chest X-Ray using PyTorch",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 27, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/MI6TUKWF37N2"
+    },
+    "courses": [
+      {
+        "title": "Detecting COVID-19 with Chest X-Ray using PyTorch",
+        "status": "Completed",
+        "completionDate": "January 27, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/MI6TUKWF37N2"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/covid-19-detection-x-ray",
+    "featured": false
+  },
+  {
+    "id": "coursera-develop-generative-ai-applications-get-started",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Develop Generative AI Applications: Get Started",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 17, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/JWDUKM66Q9JK"
+    },
+    "courses": [
+      {
+        "title": "Develop Generative AI Applications: Get Started",
+        "status": "Completed",
+        "completionDate": "January 17, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/JWDUKM66Q9JK"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/develop-generative-ai-applications-get-started",
+    "featured": false
+  },
+  {
+    "id": "coursera-developing-ai-applications-with-python-and-flask",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Developing AI Applications with Python and Flask",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "July 5, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C8. Coursera PO4XIY9YEB44.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/PO4XIY9YEB44"
+    },
+    "courses": [
+      {
+        "title": "Developing AI Applications with Python and Flask",
+        "status": "Completed",
+        "completionDate": "July 5, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C8. Coursera PO4XIY9YEB44.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/PO4XIY9YEB44"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/python-project-for-ai-application-development",
+    "featured": false
+  },
+  {
+    "id": "coursera-exploratory-vs-confirmatory-data-analysis-using-python",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Exploratory vs Confirmatory data analysis using Python",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 21, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/WDAM9O1JNEAH"
+    },
+    "courses": [
+      {
+        "title": "Exploratory vs Confirmatory data analysis using Python",
+        "status": "Completed",
+        "completionDate": "August 21, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/WDAM9O1JNEAH"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/exploratory-vs-confirmatory-data-analysis-using-python",
+    "featured": false
+  },
+  {
+    "id": "coursera-function-calling-and-data-extraction-with-llms",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Function-Calling and Data Extraction with LLMs",
+    "issuer": "DeepLearning.AI / Coursera",
+    "status": "Completed",
+    "completionDate": "",
+    "progressPercent": 100,
+    "summary": "DeepLearning.AI · Completed Coursera credential.",
+    "takeaway": "DeepLearning.AI · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/function-calling-and-data-extraction-with-llms"
+    },
+    "courses": [
+      {
+        "title": "Function-Calling and Data Extraction with LLMs",
+        "status": "Completed",
+        "completionDate": "",
+        "progressPercent": 100,
+        "summary": "DeepLearning.AI · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/function-calling-and-data-extraction-with-llms"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/function-calling-and-data-extraction-with-llms",
+    "featured": false
+  },
+  {
+    "id": "coursera-fundamentals-of-ai-agents-using-rag-and-langchain",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Fundamentals of AI Agents Using RAG and LangChain",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "February 7, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/AKQWSBB9JPAG"
+    },
+    "courses": [
+      {
+        "title": "Fundamentals of AI Agents Using RAG and LangChain",
+        "status": "Completed",
+        "completionDate": "February 7, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/AKQWSBB9JPAG"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/fundamentals-of-ai-agents-using-rag-and-langchain",
+    "featured": false
+  },
+  {
+    "id": "coursera-fundamentals-of-building-ai-agents",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Fundamentals of Building AI Agents",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 31, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/E0N616QO593C"
+    },
+    "courses": [
+      {
+        "title": "Fundamentals of Building AI Agents",
+        "status": "Completed",
+        "completionDate": "January 31, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/E0N616QO593C"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/fundamentals-of-building-ai-agents",
+    "featured": false
+  },
+  {
+    "id": "coursera-gen-ai-foundational-models-for-nlp-language-understanding",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Gen AI Foundational Models for NLP & Language Understanding",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "February 6, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/RR9Q501YIUHS"
+    },
+    "courses": [
+      {
+        "title": "Gen AI Foundational Models for NLP & Language Understanding",
+        "status": "Completed",
+        "completionDate": "February 6, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/RR9Q501YIUHS"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/gen-ai-foundational-models-for-nlp-and-language-understanding",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-advanced-fine-tuning-for-llms",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI Advanced Fine-Tuning for LLMs",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 7, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/X82CC2K89W2J"
+    },
+    "courses": [
+      {
+        "title": "Generative AI Advanced Fine-Tuning for LLMs",
+        "status": "Completed",
+        "completionDate": "August 7, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/X82CC2K89W2J"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-advanced-fine-tuning-for-llms",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-and-llms-architecture-and-data-preparation",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "system-design",
+    "published": true,
+    "title": "Generative AI and LLMs: Architecture and Data Preparation",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "February 4, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "System Design & Software Architecture"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/NYAVYB2PQ7W7"
+    },
+    "courses": [
+      {
+        "title": "Generative AI and LLMs: Architecture and Data Preparation",
+        "status": "Completed",
+        "completionDate": "February 4, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "System Design & Software Architecture"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/NYAVYB2PQ7W7"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-llm-architecture-data-preparation",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-applications-with-amazon-bedrock",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI Applications with Amazon Bedrock",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 27, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "./certificates/genai/aws-bedrock/c2-generative-ai-applications-bedrock.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/3W16P8EE4BJZ"
+    },
+    "courses": [
+      {
+        "title": "Generative AI Applications with Amazon Bedrock",
+        "status": "Completed",
+        "completionDate": "August 27, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "./certificates/genai/aws-bedrock/c2-generative-ai-applications-bedrock.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/3W16P8EE4BJZ"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-applications-amazon-bedrock",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+    "profiles": [
+      "genai",
+      "aiml"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI Engineering and Fine-Tuning Transformers",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 6, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/SG4GDJ4CLPVL"
+    },
+    "courses": [
+      {
+        "title": "Generative AI Engineering and Fine-Tuning Transformers",
+        "status": "Completed",
+        "completionDate": "August 6, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/SG4GDJ4CLPVL"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-engineering-and-fine-tuning-transformers",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-for-healthcare",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI for Healthcare",
+    "issuer": "Google Cloud / Coursera",
+    "status": "Completed",
+    "completionDate": "February 17, 2026",
+    "progressPercent": 100,
+    "summary": "Google Cloud · Completed Coursera credential.",
+    "takeaway": "Google Cloud · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "./certificates/Coursera P5AXL262N71P.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/P5AXL262N71P"
+    },
+    "courses": [
+      {
+        "title": "Generative AI for Healthcare",
+        "status": "Completed",
+        "completionDate": "February 17, 2026",
+        "progressPercent": 100,
+        "summary": "Google Cloud · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "./certificates/Coursera P5AXL262N71P.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/P5AXL262N71P"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-for-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-language-modeling-with-transformers",
+    "profiles": [
+      "genai",
+      "aiml"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI Language Modeling with Transformers",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "July 29, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/EGTBALB0RC98"
+    },
+    "courses": [
+      {
+        "title": "Generative AI Language Modeling with Transformers",
+        "status": "Completed",
+        "completionDate": "July 29, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/EGTBALB0RC98"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-language-modeling-with-transformers",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-business-transformation-and-career-growth",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Business Transformation and Career Growth",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "July 15, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/A18GT5YN24WR"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Business Transformation and Career Growth",
+        "status": "Completed",
+        "completionDate": "July 15, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/A18GT5YN24WR"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-business-and-career-growth",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-foundation-models-and-platforms",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Foundation Models and Platforms",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "October 1, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/AXQJZ5PZ3WH5"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Foundation Models and Platforms",
+        "status": "Completed",
+        "completionDate": "October 1, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/AXQJZ5PZ3WH5"
+        },
+        "relatedCredentials": [
+          {
+            "title": "Generative AI Fundamentals Specialization",
+            "certificateUrl": "./certificates/genai/ibm-genai-fundamentals/ibm-genai-fundamentals.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/specialization/IPQKDOHF3IV2"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-foundation-models-and-platforms",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-impact-considerations-and-ethical-issues",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Impact, Considerations, and Ethical Issues",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "July 16, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/0WCOACDWVG22"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Impact, Considerations, and Ethical Issues",
+        "status": "Completed",
+        "completionDate": "July 16, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/0WCOACDWVG22"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-ethical-considerations-and-implications",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-introduction-and-applications",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Introduction and Applications",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "September 30, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/8D0CC57GFA1J"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Introduction and Applications",
+        "status": "Completed",
+        "completionDate": "September 30, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/8D0CC57GFA1J"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-introduction-and-applications",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-prompt-engineering-basics",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Prompt Engineering Basics",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "October 1, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/SHEKK4NVB2E9"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Prompt Engineering Basics",
+        "status": "Completed",
+        "completionDate": "October 1, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/SHEKK4NVB2E9"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-prompt-engineering-for-everyone",
+    "featured": false
+  },
+  {
+    "id": "coursera-getting-started-with-aws-generative-ai-for-developers",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Getting Started with AWS Generative AI for Developers",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 9, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "./certificates/genai/aws-bedrock/c1-getting-started-aws-generative-ai.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/YLXJ6TDG3OWZ"
+    },
+    "courses": [
+      {
+        "title": "Getting Started with AWS Generative AI for Developers",
+        "status": "Completed",
+        "completionDate": "August 9, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "./certificates/genai/aws-bedrock/c1-getting-started-aws-generative-ai.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/YLXJ6TDG3OWZ"
+        },
+        "relatedCredentials": [
+          {
+            "title": "AWS Generative AI and AI Agents with Amazon Bedrock Professional Certificate",
+            "certificateUrl": "./certificates/genai/aws-bedrock/aws-generative-ai-agents-amazon-bedrock.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/professional-cert/XMNOUZNOW9M0"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/getting-started-aws-generative-ai-developers",
+    "featured": false
+  },
+  {
+    "id": "coursera-getting-started-with-rstudio",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Getting Started with Rstudio",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 21, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/3NBZO5FU11S6"
+    },
+    "courses": [
+      {
+        "title": "Getting Started with Rstudio",
+        "status": "Completed",
+        "completionDate": "August 21, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/3NBZO5FU11S6"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/getting-started-rstudio",
+    "featured": false
+  },
+  {
+    "id": "coursera-hands-on-introduction-to-linux-commands-and-shell-scripting",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Hands-on Introduction to Linux Commands and Shell Scripting",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 14, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C6. Coursera JTSKKU8ARP1E.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/JTSKKU8ARP1E"
+    },
+    "courses": [
+      {
+        "title": "Hands-on Introduction to Linux Commands and Shell Scripting",
+        "status": "Completed",
+        "completionDate": "August 14, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C6. Coursera JTSKKU8ARP1E.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/JTSKKU8ARP1E"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting",
+    "featured": false
+  },
+  {
+    "id": "coursera-health-data-science-foundation",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Health Data Science Foundation",
+    "issuer": "University of Illinois Urbana-Champaign / Coursera",
+    "status": "Completed",
+    "completionDate": "March 15, 2026",
+    "progressPercent": 100,
+    "summary": "University of Illinois Urbana-Champaign · Completed Coursera credential.",
+    "takeaway": "University of Illinois Urbana-Champaign · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/42IDM121SWBS"
+    },
+    "courses": [
+      {
+        "title": "Health Data Science Foundation",
+        "status": "Completed",
+        "completionDate": "March 15, 2026",
+        "progressPercent": 100,
+        "summary": "University of Illinois Urbana-Champaign · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/42IDM121SWBS"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/health-data-science-foundation",
+    "featured": false
+  },
+  {
+    "id": "coursera-improving-accuracy-of-llm-applications",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Improving Accuracy of LLM Applications",
+    "issuer": "DeepLearning.AI / Coursera",
+    "status": "Completed",
+    "completionDate": "",
+    "progressPercent": 100,
+    "summary": "DeepLearning.AI · Completed Coursera credential.",
+    "takeaway": "DeepLearning.AI · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/improving-accuracy-of-llm-applications"
+    },
+    "courses": [
+      {
+        "title": "Improving Accuracy of LLM Applications",
+        "status": "Completed",
+        "completionDate": "",
+        "progressPercent": 100,
+        "summary": "DeepLearning.AI · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/improving-accuracy-of-llm-applications"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/improving-accuracy-of-llm-applications",
+    "featured": false
+  },
+  {
+    "id": "coursera-intro-to-finance-in-healthcare",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Intro to Finance in Healthcare",
+    "issuer": "Northeastern University / Coursera",
+    "status": "Completed",
+    "completionDate": "July 20, 2026",
+    "progressPercent": 100,
+    "summary": "Northeastern University · Completed Coursera credential.",
+    "takeaway": "Northeastern University · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/YYTDGNSFYA9L"
+    },
+    "courses": [
+      {
+        "title": "Intro to Finance in Healthcare",
+        "status": "Completed",
+        "completionDate": "July 20, 2026",
+        "progressPercent": 100,
+        "summary": "Northeastern University · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/YYTDGNSFYA9L"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/intro-to-finance-in-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-agile-development-and-scrum",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Agile Development and Scrum",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 9, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/IFP65WAOEMCU"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Agile Development and Scrum",
+        "status": "Completed",
+        "completionDate": "August 9, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/IFP65WAOEMCU"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/agile-development-and-scrum",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-artificial-intelligence-ai",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Artificial Intelligence (AI)",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "July 11, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/4FZOMVIAGZBL"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Artificial Intelligence (AI)",
+        "status": "Completed",
+        "completionDate": "July 11, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/4FZOMVIAGZBL"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-ai",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-cloud-computing",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Cloud Computing",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "July 14, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C2. Coursera K0PUSRUCCHYV.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/K0PUSRUCCHYV"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Cloud Computing",
+        "status": "Completed",
+        "completionDate": "July 14, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C2. Coursera K0PUSRUCCHYV.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/K0PUSRUCCHYV"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-cloud",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-computer-vision-with-tensorflow",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Computer Vision with TensorFlow",
+    "issuer": "Google Cloud / Coursera",
+    "status": "Completed",
+    "completionDate": "August 13, 2024",
+    "progressPercent": 100,
+    "summary": "Google Cloud · Completed Coursera credential.",
+    "takeaway": "Google Cloud · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/R6248BNQAC0D"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Computer Vision with TensorFlow",
+        "status": "Completed",
+        "completionDate": "August 13, 2024",
+        "progressPercent": 100,
+        "summary": "Google Cloud · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/R6248BNQAC0D"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/googlecloud-introduction-to-computer-vision-with-tensorflow-7q5na",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-data-analytics-in-google-cloud",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Data Analytics in Google Cloud",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "July 24, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/R9FGPRZ3NJE8"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Data Analytics in Google Cloud",
+        "status": "Completed",
+        "completionDate": "July 24, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/R9FGPRZ3NJE8"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-data-analytics-in-google-cloud",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Deep Learning & Neural Networks with Keras",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 12, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/Y6NP4GWLS4DZ"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Deep Learning & Neural Networks with Keras",
+        "status": "Completed",
+        "completionDate": "August 12, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/Y6NP4GWLS4DZ"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-deep-learning-with-keras",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-devops",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to DevOps",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 6, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C1. Coursera Y66Q2D7RTWFI.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/Y66Q2D7RTWFI"
+    },
+    "courses": [
+      {
+        "title": "Introduction to DevOps",
+        "status": "Completed",
+        "completionDate": "August 6, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C1. Coursera Y66Q2D7RTWFI.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/Y66Q2D7RTWFI"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/intro-to-devops",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-front-end-development",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Front-End Development",
+    "issuer": "Meta / Coursera",
+    "status": "Completed",
+    "completionDate": "October 7, 2023",
+    "progressPercent": 100,
+    "summary": "Meta · Completed Coursera credential.",
+    "takeaway": "Meta · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-front-end-development"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Front-End Development",
+        "status": "Completed",
+        "completionDate": "October 7, 2023",
+        "progressPercent": 100,
+        "summary": "Meta · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-front-end-development"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-front-end-development",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-healthcare-accounting",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Healthcare Accounting",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "March 14, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/4J5IFQCME6O7"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Healthcare Accounting",
+        "status": "Completed",
+        "completionDate": "March 14, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/4J5IFQCME6O7"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-healthcare-accounting",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-healthcare-finance",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Healthcare Finance",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "May 25, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/63W4ZI53MCZR"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Healthcare Finance",
+        "status": "Completed",
+        "completionDate": "May 25, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/63W4ZI53MCZR"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-healthcare-finance",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-healthcare-management",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Healthcare Management",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "March 3, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/8CIQHG3YD4HM"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Healthcare Management",
+        "status": "Completed",
+        "completionDate": "March 3, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/8CIQHG3YD4HM"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-healthcare-management",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-relational-databases-rdbms",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Relational Databases (RDBMS)",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "October 6, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/M5MIU6EHF9MB"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Relational Databases (RDBMS)",
+        "status": "Completed",
+        "completionDate": "October 6, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/M5MIU6EHF9MB"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-relational-databases",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-security-principles-in-cloud-computing",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Security Principles in Cloud Computing",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 4, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cyber-security/google-cloud/c1-security-principles.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/ELY74U4RIHTK"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Security Principles in Cloud Computing",
+        "status": "Completed",
+        "completionDate": "August 4, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cyber-security/google-cloud/c1-security-principles.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/ELY74U4RIHTK"
+        },
+        "relatedCredentials": [
+          {
+            "title": "Google Cloud Cybersecurity Professional Certificate",
+            "certificateUrl": "./certificates/cyber-security/google-cloud/google-cloud-cybersecurity-certificate.pdf",
+            "links": {}
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-security-principles-in-cloud-computing",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-software-engineering",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Software Engineering",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "November 12, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C4. Coursera 9FFBAK7THJZ5.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/9FFBAK7THJZ5"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Software Engineering",
+        "status": "Completed",
+        "completionDate": "November 12, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C4. Coursera 9FFBAK7THJZ5.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/9FFBAK7THJZ5"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-software-engineering",
+    "featured": false
+  },
+  {
+    "id": "coursera-langchain-for-llm-application-development",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "LangChain for LLM Application Development",
+    "issuer": "DeepLearning.AI / Coursera",
+    "status": "Completed",
+    "completionDate": "",
+    "progressPercent": 100,
+    "summary": "DeepLearning.AI · Completed Coursera credential.",
+    "takeaway": "DeepLearning.AI · Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/langchain-for-llm-application-development-project"
+    },
+    "courses": [
+      {
+        "title": "LangChain for LLM Application Development",
+        "status": "Completed",
+        "completionDate": "",
+        "progressPercent": 100,
+        "summary": "DeepLearning.AI · Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/langchain-for-llm-application-development-project"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/langchain-for-llm-application-development-project",
+    "featured": false
+  },
+  {
+    "id": "coursera-machine-learning",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Machine Learning",
+    "issuer": "Stanford Online / Coursera",
+    "status": "Completed",
+    "completionDate": "March 29, 2020",
+    "progressPercent": 100,
+    "summary": "Stanford Online · Completed Coursera credential.",
+    "takeaway": "Stanford Online · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/VU3Y5TBLVLZT"
+    },
+    "courses": [
+      {
+        "title": "Machine Learning",
+        "status": "Completed",
+        "completionDate": "March 29, 2020",
+        "progressPercent": 100,
+        "summary": "Stanford Online · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/VU3Y5TBLVLZT"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/machine-learning-course",
+    "featured": false
+  },
+  {
+    "id": "coursera-network-and-security-optimization-in-telecommunication",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "Network and Security Optimization in Telecommunication",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "June 20, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "./certificates/wireless/c2-net-sec-optim-tel.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/4TQ51W1OQWRE"
+    },
+    "courses": [
+      {
+        "title": "Network and Security Optimization in Telecommunication",
+        "status": "Completed",
+        "completionDate": "June 20, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "./certificates/wireless/c2-net-sec-optim-tel.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/4TQ51W1OQWRE"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/network-and-security-optimization-in-telecommunication",
+    "featured": false
+  },
+  {
+    "id": "coursera-product-management-an-introduction",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Product Management: An Introduction",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "August 24, 2024",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/0173K92H68QK"
+    },
+    "courses": [
+      {
+        "title": "Product Management: An Introduction",
+        "status": "Completed",
+        "completionDate": "August 24, 2024",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/0173K92H68QK"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/product-management-an-introduction",
+    "featured": false
+  },
+  {
+    "id": "coursera-publication-ready-tables-in-r",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Publication-Ready Tables in R",
+    "issuer": "Deprecated Guided Projects / Coursera",
+    "status": "Completed",
+    "completionDate": "August 21, 2024",
+    "progressPercent": 100,
+    "summary": "Deprecated Guided Projects · Completed Coursera credential.",
+    "takeaway": "Deprecated Guided Projects · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/035KV6T8V0AI"
+    },
+    "courses": [
+      {
+        "title": "Publication-Ready Tables in R",
+        "status": "Completed",
+        "completionDate": "August 21, 2024",
+        "progressPercent": 100,
+        "summary": "Deprecated Guided Projects · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/035KV6T8V0AI"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/publication-ready-tables-r-programming",
+    "featured": false
+  },
+  {
+    "id": "coursera-put-it-all-together-prepare-for-a-cloud-data-analyst-job",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Put It All Together: Prepare for a Cloud Data Analyst Job",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 2, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/S9SBZEHPJO2O"
+    },
+    "courses": [
+      {
+        "title": "Put It All Together: Prepare for a Cloud Data Analyst Job",
+        "status": "Completed",
+        "completionDate": "August 2, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/S9SBZEHPJO2O"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/put-it-all-together-prepare-for-a-cloud-data-analyst-job",
+    "featured": false
+  },
+  {
+    "id": "coursera-put-it-all-together-prepare-for-a-cloud-security-analyst-job",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Put It All Together: Prepare for a Cloud Security Analyst Job",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "June 20, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/PX5PBY5920SA"
+    },
+    "courses": [
+      {
+        "title": "Put It All Together: Prepare for a Cloud Security Analyst Job",
+        "status": "Completed",
+        "completionDate": "June 20, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/PX5PBY5920SA"
+        },
+        "relatedCredentials": [
+          {
+            "title": "Prepare for a Cloud Security Analyst Job",
+            "certificateUrl": "./certificates/cyber-security/google-cloud/c5-cloud-security-analyst.pdf",
+            "links": {
+              "coursera": "https://coursera.org/verify/PX5PBY5920SA"
+            }
+          }
+        ]
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/put-it-all-together-prepare-for-a-cloud-security-analyst-job",
+    "featured": false
+  },
+  {
+    "id": "coursera-python-for-data-science-ai-development",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Python for Data Science, AI & Development",
+    "issuer": "IBM / Coursera",
+    "status": "Completed",
+    "completionDate": "July 12, 2026",
+    "progressPercent": 100,
+    "summary": "IBM · Completed Coursera credential.",
+    "takeaway": "IBM · Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "./certificates/cloud-devops/C7. Coursera WRA89JEJU8EE.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/WRA89JEJU8EE"
+    },
+    "courses": [
+      {
+        "title": "Python for Data Science, AI & Development",
+        "status": "Completed",
+        "completionDate": "July 12, 2026",
+        "progressPercent": 100,
+        "summary": "IBM · Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "./certificates/cloud-devops/C7. Coursera WRA89JEJU8EE.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/WRA89JEJU8EE"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/python-for-applied-data-science-ai",
+    "featured": false
+  },
+  {
+    "id": "coursera-strategies-for-cloud-security-risk-management",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Strategies for Cloud Security Risk Management",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 23, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "./certificates/cyber-security/google-cloud/c2-security-risk-management.pdf",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/I801R4F0GVB9"
+    },
+    "courses": [
+      {
+        "title": "Strategies for Cloud Security Risk Management",
+        "status": "Completed",
+        "completionDate": "August 23, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "./certificates/cyber-security/google-cloud/c2-security-risk-management.pdf",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/I801R4F0GVB9"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/strategies-for-cloud-security-risk-management",
+    "featured": false
+  },
+  {
+    "id": "coursera-tesla-stock-price-prediction-using-facebook-prophet",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Tesla Stock Price Prediction using Facebook Prophet",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "March 16, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/05C4RBWX0A39"
+    },
+    "courses": [
+      {
+        "title": "Tesla Stock Price Prediction using Facebook Prophet",
+        "status": "Completed",
+        "completionDate": "March 16, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/05C4RBWX0A39"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/tesla-stock-price-prediction-facebook-prophet",
+    "featured": false
+  },
+  {
+    "id": "coursera-the-power-of-storytelling-how-to-visualize-data-in-the-cloud",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "The Power of Storytelling: How to Visualize Data in the Cloud",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 1, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/1UM5A1B0FP55"
+    },
+    "courses": [
+      {
+        "title": "The Power of Storytelling: How to Visualize Data in the Cloud",
+        "status": "Completed",
+        "completionDate": "August 1, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/1UM5A1B0FP55"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/the-power-of-storytelling-how-to-visualize-data-in-the-cloud",
+    "featured": false
+  },
+  {
+    "id": "coursera-transforming-data-in-r",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Transforming Data in R",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "August 21, 2024",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/914QMGRYLF04"
+    },
+    "courses": [
+      {
+        "title": "Transforming Data in R",
+        "status": "Completed",
+        "completionDate": "August 21, 2024",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/914QMGRYLF04"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/transforming-data-in-r",
+    "featured": false
+  },
+  {
+    "id": "coursera-vector-databases-for-rag-an-introduction",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Vector Databases for RAG: An Introduction",
+    "issuer": "Coursera",
+    "status": "Completed",
+    "completionDate": "January 24, 2026",
+    "progressPercent": 100,
+    "summary": "Completed Coursera credential.",
+    "takeaway": "Completed Coursera credential.",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/account/accomplishments/verify/5OJH470DQX55"
+    },
+    "courses": [
+      {
+        "title": "Vector Databases for RAG: An Introduction",
+        "status": "Completed",
+        "completionDate": "January 24, 2026",
+        "progressPercent": 100,
+        "summary": "Completed Coursera credential.",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/account/accomplishments/verify/5OJH470DQX55"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/vector-databases-for-rag-an-introduction",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-containers-w-docker-kubernetes-openshift",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 99,
+    "summary": "Currently in progress (99%).",
+    "takeaway": "Currently in progress (99%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 99,
+        "summary": "Currently in progress (99%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift",
+    "featured": false
+  },
+  {
+    "id": "coursera-getting-started-with-git-and-github",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Getting Started with Git and GitHub",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 96,
+    "summary": "Currently in progress (96%).",
+    "takeaway": "Currently in progress (96%).",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/getting-started-with-git-and-github"
+    },
+    "courses": [
+      {
+        "title": "Getting Started with Git and GitHub",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 96,
+        "summary": "Currently in progress (96%).",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/getting-started-with-git-and-github"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/getting-started-with-git-and-github",
+    "featured": false
+  },
+  {
+    "id": "coursera-applied-data-science-capstone",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Applied Data Science Capstone",
+    "issuer": "IBM / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 80,
+    "summary": "IBM · Currently in progress (80%).",
+    "takeaway": "IBM · Currently in progress (80%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/applied-data-science-capstone"
+    },
+    "courses": [
+      {
+        "title": "Applied Data Science Capstone",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 80,
+        "summary": "IBM · Currently in progress (80%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/applied-data-science-capstone"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/applied-data-science-capstone",
+    "featured": false
+  },
+  {
+    "id": "coursera-prepare-clean-transform-and-load-data-using-power-bi",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Prepare, Clean, Transform, and Load Data using Power BI",
+    "issuer": "Deprecated Guided Projects / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 75,
+    "summary": "Deprecated Guided Projects · Currently in progress (75%).",
+    "takeaway": "Deprecated Guided Projects · Currently in progress (75%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/prepare-clean-transform-and-load-data-using-powerbi"
+    },
+    "courses": [
+      {
+        "title": "Prepare, Clean, Transform, and Load Data using Power BI",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 75,
+        "summary": "Deprecated Guided Projects · Currently in progress (75%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/prepare-clean-transform-and-load-data-using-powerbi"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/prepare-clean-transform-and-load-data-using-powerbi",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-healthcare",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Healthcare",
+    "issuer": "Stanford Online / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 73,
+    "summary": "Stanford Online · Currently in progress (73%).",
+    "takeaway": "Stanford Online · Currently in progress (73%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/intro-to-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 73,
+        "summary": "Stanford Online · Currently in progress (73%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/intro-to-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/intro-to-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-system-design-masterclass",
+    "profiles": [],
+    "domain": "system-design",
+    "published": true,
+    "title": "System Design Masterclass",
+    "issuer": "Packt / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 64,
+    "summary": "Packt · Currently in progress (64%).",
+    "takeaway": "Packt · Currently in progress (64%).",
+    "skills": [
+      "System Design & Software Architecture"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4"
+    },
+    "courses": [
+      {
+        "title": "System Design Masterclass",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 64,
+        "summary": "Packt · Currently in progress (64%).",
+        "skills": [
+          "System Design & Software Architecture"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4"
+        }
       },
       {
-        title: "System Architecture Assessments",
-        completionDate: "In progress",
-        takeaway:
-          "Practice comparing architectural choices against scale, reliability, latency, and consistency requirements.",
-        skills: ["Architecture Tradeoffs", "Reliability"],
-        certificateUrl: "",
+        "title": "Design Instagram Newsfeed",
+        "status": "Completed",
+        "completionDate": "",
+        "summary": "System design case study covering feed generation, fan-out, storage, caching, and availability.",
+        "takeaway": "Designed feed-generation, fan-out, storage, caching, and availability paths.",
+        "skills": [
+          "System Design",
+          "Feed Architecture",
+          "Caching"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4"
+        }
       },
       {
-        title: "Applied Case Study: Scalable Distributed Architecture",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Hands-on design evaluations translating real-world constraints into distributed system components, APIs, caching policies, and consistency tradeoffs.",
-        takeaway:
-          "Translate practical scale, latency, availability, and consistency constraints into explicit distributed-system architecture decisions.",
-        skills: [
+        "title": "System Architecture Assessments",
+        "status": "In progress",
+        "completionDate": "",
+        "summary": "Continued practice comparing architecture choices against scale, reliability, latency, and consistency requirements.",
+        "takeaway": "Compare architecture choices against scale, reliability, latency, and consistency requirements.",
+        "skills": [
+          "Software Architecture",
+          "Reliability",
+          "Architecture Tradeoffs"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4"
+        }
+      },
+      {
+        "title": "Applied Case Study: Scalable Distributed Architecture",
+        "status": "Completed",
+        "completionDate": "",
+        "summary": "Hands-on case study translating practical constraints into distributed components, APIs, caching policies, and consistency decisions.",
+        "takeaway": "Translate scale, latency, availability, and consistency constraints into distributed-system architecture decisions.",
+        "skills": [
           "Distributed Systems",
           "API Design",
           "Caching",
-          "Consistency Models",
-          "Scalability",
-          "Architecture Tradeoffs",
-        ],
-        certificateUrl: "",
-        links: {
-          github: "https://github.com/waseemraza844/system-design-portfolio",
-        },
-      },
-    ],
-    featured: true,
-  };
-  // #endregion System Design Masterclass
-
-  // #region 04 — IBM DevOps and Software Engineering Professional Certificate
-  const CERT_04_ibmDevops = {
-    id: "ibm-devops",
-
-    /*
-     * published:
-     * true  = eligible to appear on the website
-     * false = stored here but hidden everywhere
-     */
-    published: true,
-
-    /*
-     * Controls which portfolio variants may display this certification.
-     */
-    profiles: ["generic", "genai"],
-
-    domain: "cloud-devops",
-
-    title: "IBM DevOps and Software Engineering Professional Certificate",
-    issuer: "IBM / Coursera",
-
-    status: "In progress",
-    reportedProgress: {
-      completed: 10,
-      total: 15,
-    },
-
-    /*
-     * Replace this when you establish a target month.
-     * Example: "Target: December 2026"
-     */
-    completionDate: "Target date to be updated",
-
-    summary:
-      "A 15-course professional certificate covering software engineering, DevOps culture, Agile and Scrum, Python application development, Linux, Git and GitHub, cloud-native architecture, containers, microservices, serverless computing, automated testing, CI/CD, application security, monitoring, and observability.",
-    takeaway:
-      "Develop and operate cloud-native applications through the complete software lifecycle—from requirements, source control, and Python development to containers, automated testing, CI/CD, security, deployment, monitoring, and production operations.",
-    skills: [
-      "DevOps",
-      "Software Engineering",
-      "Cloud-Native Development",
-      "CI/CD",
-      "Docker",
-      "Kubernetes",
-      "OpenShift",
-      "Microservices",
-      "Serverless Computing",
-      "Python",
-      "Linux",
-      "Bash",
-      "Git",
-      "GitHub",
-      "Agile Development",
-      "Scrum",
-      "Test-Driven Development",
-      "Behavior-Driven Development",
-      "Application Security",
-      "Monitoring and Observability",
-      "Prometheus",
-      "Grafana",
-      "Infrastructure as Code",
-    ],
-
-    /*
-     * Add the final professional certificate PDF here after
-     * completing all 15 courses.
-     */
-    certificateUrl: "",
-
-    links: {
-      coursera:
-        "https://www.coursera.org/professional-certificates/devops-and-software-engineering",
-      linkedin: "",
-      github: "",
-    },
-
-    courses: [
-      {
-        title: "Introduction to DevOps",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces DevOps culture, shared responsibility, resilient software, cloud-native development, continuous integration, continuous delivery, and deployment automation.",
-        takeaway:
-          "Applied the cultural and engineering principles that connect software development and operations through automation and shared ownership.",
-        skills: [
-          "DevOps",
-          "CI/CD",
-          "Cloud-Native Computing",
-          "Microservices",
-          "Test-Driven Development",
-          "Behavior-Driven Development",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C1. Coursera Y66Q2D7RTWFI.pdf",
-        links: { coursera: "https://coursera.org/verify/Y66Q2D7RTWFI" },
-      },
-
-      {
-        title: "Introduction to Cloud Computing",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers cloud characteristics, service and deployment models, infrastructure components, cloud-native systems, serverless computing, and major cloud platforms.",
-        takeaway:
-          "Compared cloud service and deployment models and connected them with modern application development and infrastructure decisions.",
-        skills: [
-          "Cloud Computing",
-          "IaaS",
-          "PaaS",
-          "SaaS",
-          "Public Cloud",
-          "Private Cloud",
-          "Hybrid Cloud",
-          "Cloud Infrastructure",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C2. Coursera K0PUSRUCCHYV.pdf",
-        links: { coursera: "https://coursera.org/verify/K0PUSRUCCHYV" },
-      },
-
-      {
-        title: "Introduction to Agile Development and Scrum",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers Agile practices, Scrum roles and events, user stories, product backlogs, sprint planning, Kanban, estimation, and progress measurement.",
-        takeaway:
-          "Planned iterative software delivery using user stories, product backlogs, sprint plans, Kanban boards, and Scrum practices.",
-        skills: [
-          "Agile Development",
-          "Scrum",
-          "User Stories",
-          "Sprint Planning",
-          "Kanban",
-          "Product Backlogs",
-          "Agile Project Management",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
-        links: { coursera: "https://coursera.org/verify/IFP65WAOEMCU" },
-      },
-
-      {
-        title: "Introduction to Software Engineering",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces software-engineering principles, the software development lifecycle, programming concepts, development tools, architectures, design patterns, and software roles.",
-        takeaway:
-          "Connected requirements, design, development, testing, deployment, and maintenance within a structured software-engineering lifecycle.",
-        skills: [
-          "Software Engineering",
-          "Software Development Lifecycle",
-          "Software Architecture",
-          "Software Design",
-          "Design Patterns",
-          "Python",
-          "Web Development",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C4. Coursera 9FFBAK7THJZ5.pdf",
-        links: { coursera: "https://coursera.org/verify/9FFBAK7THJZ5" },
-      },
-
-      {
-        title: "Getting Started with Git and GitHub",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers distributed version control, Git repositories and branches, GitHub collaboration, pull requests, merge operations, and open-source workflows.",
-        takeaway:
-          "Used Git and GitHub to manage source history, develop through branches, and collaborate through pull requests and merges.",
-        skills: [
-          "Git",
-          "GitHub",
-          "Version Control",
-          "Branching",
-          "Pull Requests",
-          "Open Source",
-          "Collaborative Development",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Hands-on Introduction to Linux Commands and Shell Scripting",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers Linux architecture, file and networking commands, Bash scripting, environment variables, pipes, filters, package management, and scheduled jobs.",
-        takeaway:
-          "Automated repeatable development and operational tasks using Linux commands, Bash scripts, pipelines, environment variables, and cron.",
-        skills: [
-          "Linux",
-          "Bash",
-          "Shell Scripting",
-          "Linux Commands",
-          "Automation",
-          "Cron",
-          "Package Management",
-          "File Systems",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C6. Coursera JTSKKU8ARP1E.pdf",
-        links: { coursera: "https://coursera.org/verify/JTSKKU8ARP1E" },
-      },
-
-      {
-        title: "Python for Data Science, AI & Development",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops Python foundations through data structures, control flow, functions, exception handling, object-oriented programming, APIs, web scraping, NumPy, and Pandas.",
-        takeaway:
-          "Built practical Python programs and data workflows using core language features, APIs, notebooks, NumPy, and Pandas.",
-        skills: [
-          "Python",
-          "Pandas",
-          "NumPy",
-          "Jupyter",
-          "REST APIs",
-          "Web Scraping",
-          "Object-Oriented Programming",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C7. Coursera WRA89JEJU8EE.pdf",
-        links: { coursera: "https://coursera.org/verify/WRA89JEJU8EE" },
-      },
-
-      {
-        title: "Developing AI Applications with Python and Flask",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers Python application development, modules, packaging, unit testing, coding standards, Flask routing, error handling, CRUD operations, and deployment.",
-        takeaway:
-          "Structured, tested, packaged, and deployed Python and AI-enabled web applications using Flask.",
-        skills: [
-          "Python",
-          "Flask",
-          "REST APIs",
-          "Unit Testing",
-          "Application Packaging",
-          "Application Deployment",
-          "PEP 8",
-        ],
-        certificateUrl: "./certificates/cloud-devops/C8. Coursera PO4XIY9YEB44.pdf",
-        links: { coursera: "https://coursera.org/verify/PO4XIY9YEB44" },
-      },
-
-      {
-        title: "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces containerization and cloud-native deployment using Docker, Kubernetes, OpenShift, Istio, YAML manifests, pods, services, and ReplicaSets.",
-        takeaway:
-          "Containerized applications and deployed declaratively managed workloads using Docker, Kubernetes, OpenShift, and YAML.",
-        skills: [
-          "Docker",
-          "Kubernetes",
-          "OpenShift",
-          "Containers",
-          "YAML",
-          "Istio",
-          "Cloud-Native Deployment",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Application Development using Microservices and Serverless",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers microservice architecture, REST APIs, API documentation, Docker-based services, serverless computing, and cloud deployment.",
-        takeaway:
-          "Designed and deployed independently scalable services using REST APIs, containers, microservices, and serverless technologies.",
-        skills: [
-          "Microservices",
-          "Serverless Computing",
-          "REST APIs",
-          "Docker",
-          "OpenShift",
-          "API Gateway",
-          "Swagger",
-          "Postman",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Introduction to Test and Behavior Driven Development",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        summary:
-          "Covers unit testing, test-driven development, behavior-driven development, assertions, fixtures, mocks, test coverage, and automated testing.",
-        takeaway:
-          "Create maintainable software by defining expected behavior and automated tests before or alongside implementation.",
-        skills: [
-          "Test-Driven Development",
-          "Behavior-Driven Development",
-          "Unit Testing",
-          "Test Automation",
-          "Mock Objects",
-          "Test Fixtures",
-          "Code Coverage",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Continuous Integration and Continuous Delivery (CI/CD)",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        summary:
-          "Covers continuous integration and delivery, Infrastructure as Code, GitHub Actions, Jenkins, Terraform, OpenShift Pipelines, and Argo CD.",
-        takeaway:
-          "Automate application integration, infrastructure provisioning, testing, and deployment through repeatable CI/CD pipelines.",
-        skills: [
-          "CI/CD",
-          "Continuous Integration",
-          "Continuous Delivery",
-          "GitHub Actions",
-          "Jenkins",
-          "Terraform",
-          "Infrastructure as Code",
-          "Argo CD",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Application Security for Developers and DevOps Professionals",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        summary:
-          "Covers security by design, defensive coding, OWASP principles, threat modeling, container vulnerability scanning, penetration testing, and DevSecOps.",
-        takeaway:
-          "Integrate application-security controls and vulnerability assessment throughout development and deployment workflows.",
-        skills: [
-          "Application Security",
-          "DevSecOps",
-          "Secure Coding",
-          "OWASP",
-          "Threat Modeling",
-          "Vulnerability Scanning",
-          "Security Testing",
-          "Kali Linux",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "Monitoring and Observability for Development and DevOps",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        summary:
-          "Covers monitoring, Golden Signals, logging, metrics, tracing, telemetry, cloud-native observability, Prometheus, Grafana, OpenTelemetry, and Instana.",
-        takeaway:
-          "Instrument and diagnose distributed applications using logs, metrics, traces, dashboards, and cloud-native observability platforms.",
-        skills: [
-          "Monitoring",
-          "Observability",
-          "Prometheus",
-          "Grafana",
-          "OpenTelemetry",
-          "Logging",
-          "Distributed Tracing",
-          "Instana",
-        ],
-        certificateUrl: "",
-      },
-
-      {
-        title: "DevOps Capstone Project",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        summary:
-          "Integrates Agile planning, microservices, containers, serverless technologies, automated testing, CI/CD, security, and cloud deployment in a complete project.",
-        takeaway:
-          "Deliver an end-to-end cloud-native application through Agile planning, development, testing, automation, security, and deployment.",
-        skills: [
-          "DevOps",
-          "Agile Development",
-          "Microservices",
-          "Kubernetes",
-          "OpenShift",
-          "Test-Driven Development",
-          "CI/CD",
-          "Cloud Deployment",
-        ],
-        certificateUrl: "",
-      },
-    ],
-
-    /*
-     * true  = may appear on the main landing page
-     * false = appears only in the Learning archive/variants
-     *
-     * published:false overrides featured:true.
-     */
-    featured: true,
-  };
-  // #endregion IBM DevOps and Software Engineering Professional Certificate
-
-  // #region 06 — Machine Learning
-  const CERT_06_stanfordMachineLearning = {
-    id: "stanford-machine-learning",
-    profiles: ["generic", "faculty", "aiml"],
-    domain: "ml-data",
-    title: "Machine Learning",
-    issuer: "Stanford University / Coursera",
-    status: "Completed",
-    completionDate: "Completed",
-    summary:
-      "Core supervised and unsupervised learning, model evaluation, optimization, and practical ML system development.",
-    takeaway:
-      "Select, train, diagnose, and improve machine-learning models using principled evaluation.",
-    skills: [
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Model Evaluation",
-      "Optimization",
-    ],
-    certificateUrl: "",
-    links: {
-      coursera: "",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Machine Learning",
-        completionDate: "Completed",
-        takeaway:
-          "Applied regression, classification, clustering, anomaly detection, and model diagnostics.",
-        skills: ["Regression", "Classification", "Clustering"],
-        certificateUrl: "",
-      },
-    ],
-    featured: false,
-  };
-
-  // #endregion Machine Learning
-
-  // #region Machine Learning and Reinforcement Learning in Finance
-  const CERT_ML_FINANCE = {
-    id: "ml-reinforcement-learning-finance",
-    published: false,
-
-    profiles: ["finance"],
-
-    domain: "ml-data",
-
-    title:
-      "Machine Learning and Reinforcement Learning in Finance Specialization",
-    issuer: "New York University / Coursera",
-    status: "In progress",
-
-    reportedProgress: {
-      completed: 0,
-      total: 4,
-    },
-
-    completionDate: "Target date to be updated",
-
-    summary:
-      "An applied machine-learning specialization focused on financial prediction, portfolio management, trading, risk modeling, market dynamics, and reinforcement-learning methods for finance.",
-
-    takeaway:
-      "Select, implement, and evaluate machine-learning and reinforcement-learning methods for practical financial problems involving trading, portfolio optimization, market modeling, derivatives, and risk.",
-
-    skills: [
-      "Machine Learning for Finance",
-      "Reinforcement Learning",
-      "Financial Modeling",
-      "Portfolio Management",
-      "Financial Trading",
-      "Risk Modeling",
-      "Predictive Modeling",
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Statistical Machine Learning",
-      "Market Dynamics",
-      "Derivatives",
-      "TensorFlow",
-      "Scikit-learn",
-      "Python",
-    ],
-
-    certificateUrl: "",
-
-    links: {
-      coursera:
-        "https://www.coursera.org/specializations/machine-learning-reinforcement-finance",
-      linkedin: "",
-      github: "",
-    },
-
-    courses: [
-      {
-        title: "Guided Tour of Machine Learning in Finance",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-
-        /*
-         * Informational field retained in the data.
-         * Your current renderer does not display percentages.
-         */
-        progressPercent: 44,
-
-        summary:
-          "Introduces the machine-learning landscape through financial applications, including supervised learning, bank-failure prediction, model selection, and performance evaluation.",
-
-        takeaway:
-          "Frame financial problems as machine-learning tasks and select suitable supervised, unsupervised, or reinforcement-learning methods.",
-
-        skills: [
-          "Machine Learning",
-          "Financial Analytics",
-          "Supervised Learning",
-          "Regression",
-          "Classification",
-          "Artificial Neural Networks",
-          "TensorFlow",
-          "Scikit-learn",
-          "Model Evaluation",
-          "Predictive Modeling",
-        ],
-
-        certificateUrl: "",
-      },
-
-      {
-        title: "Fundamentals of Machine Learning in Finance",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        progressPercent: 24,
-
-        summary:
-          "Examines supervised, unsupervised, and reinforcement-learning algorithms for financial problems, including portfolio analysis and trading-strategy development.",
-
-        takeaway:
-          "Implement and evaluate machine-learning methods for financial datasets, portfolio construction, and trading applications.",
-
-        skills: [
-          "Machine Learning",
-          "Portfolio Management",
-          "Unsupervised Learning",
-          "Dimensionality Reduction",
-          "Decision Trees",
-          "Financial Trading",
-          "Exploratory Data Analysis",
-          "Correlation Analysis",
-          "Python",
-          "Scikit-learn",
-        ],
-
-        certificateUrl: "",
-      },
-
-      {
-        title: "Reinforcement Learning in Finance",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-        progressPercent: 16,
-
-        summary:
-          "Applies reinforcement learning to portfolio optimization, optimal trading, option valuation, risk management, and financial-market dynamics.",
-
-        takeaway:
-          "Formulate financial decisions as sequential optimization problems and solve them using reinforcement-learning methods such as Q-learning.",
-
-        skills: [
-          "Reinforcement Learning",
-          "Q-Learning",
-          "Portfolio Optimization",
-          "Optimal Trading",
-          "Option Pricing",
-          "Risk Management",
-          "Markov Models",
-          "Financial Modeling",
-          "Market Dynamics",
-        ],
-
-        certificateUrl: "",
-      },
-
-      {
-        title:
-          "Overview of Advanced Methods of Reinforcement Learning in Finance",
-        status: "Not started",
-        completionDate: "Target date to be updated",
-        progressPercent: 0,
-
-        summary:
-          "Explores inverse reinforcement learning, market impact, price dynamics, option pricing, high-frequency trading, cryptocurrency markets, and credit-risk applications.",
-
-        takeaway:
-          "Evaluate advanced reinforcement-learning approaches for complex financial markets, trading systems, and risk-related decisions.",
-
-        skills: [
-          "Advanced Reinforcement Learning",
-          "Inverse Reinforcement Learning",
-          "High-Frequency Trading",
-          "Market Impact",
-          "Market Liquidity",
-          "Credit Risk",
-          "Cryptocurrency Trading",
-          "Derivatives",
-          "Financial Modeling",
-        ],
-
-        certificateUrl: "",
-      },
-    ],
-
-    featured: false,
-  };
-  // #endregion Machine Learning and Reinforcement Learning in Finance
-
-  // #region Deep Learning for Healthcare
-  const CERT_DEEP_LEARNING_HEALTHCARE = {
-    id: "deep-learning-healthcare",
-    published: true,
-
-    profiles: ["healthcare", "faculty"],
-
-    domain: "ml-data",
-
-    title: "Deep Learning for Healthcare Specialization",
-    issuer: "University of Illinois Urbana-Champaign / Coursera",
-    status: "In progress",
-
-    /*
-     * Update these two numbers after confirming completion.
-     */
-    reportedProgress: {
-      completed: 0,
-      total: 3,
-    },
-
-    completionDate: "Target date to be updated",
-
-    summary:
-      "An advanced specialization covering health-data processing, neural-network methods, and the development of deep-learning solutions for real-world medical and healthcare applications.",
-
-    takeaway:
-      "Design, train, evaluate, and apply deep-learning models to healthcare data through programming assignments, practical experiments, and application-focused projects.",
-
-    skills: [
-      "Deep Learning",
-      "Healthcare AI",
-      "Health Informatics",
-      "Health Data Processing",
-      "Artificial Neural Networks",
-      "Convolutional Neural Networks",
-      "Recurrent Neural Networks",
-      "Autoencoders",
-      "Generative Models",
-      "Medical Image Analysis",
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Predictive Modeling",
-      "Model Evaluation",
-      "PyTorch",
-      "Jupyter Notebooks",
-    ],
-
-    certificateUrl: "",
-
-    links: {
-      coursera:
-        "https://www.coursera.org/specializations/deep-learning-healthcare",
-      linkedin: "",
-      github: "",
-    },
-
-    courses: [
-      {
-        title: "Health Data Science Foundation",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-
-        modulesCompleted: 0,
-        modulesTotal: 4,
-
-        summary:
-          "Introduces health-data processing and foundational supervised and unsupervised machine-learning methods for healthcare applications.",
-
-        takeaway:
-          "Prepare and analyze healthcare data and evaluate foundational machine-learning approaches for medical problems.",
-
-        skills: [
-          "Health Data Processing",
-          "Health Informatics",
-          "Healthcare AI",
-          "Machine Learning",
-          "Supervised Learning",
-          "Unsupervised Learning",
-          "Model Evaluation",
-          "Artificial Neural Networks",
-        ],
-
-        certificateUrl: "",
-      },
-
-      {
-        title: "Deep Learning Methods for Healthcare",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-
-        modulesCompleted: 0,
-        modulesTotal: 4,
-
-        summary:
-          "Develops practical deep-learning models for healthcare data using neural networks, programming laboratories, written assignments, and an applied project.",
-
-        takeaway:
-          "Develop and evaluate deep-learning models that address practical healthcare and medical-data problems.",
-
-        skills: [
-          "Deep Learning",
-          "Convolutional Neural Networks",
-          "Recurrent Neural Networks",
-          "Autoencoders",
-          "Embeddings",
-          "Medical Image Analysis",
-          "Dimensionality Reduction",
-          "Model Deployment",
-          "PyTorch",
-        ],
-
-        certificateUrl: "",
-      },
-
-      {
-        title: "Advanced Deep Learning Methods for Healthcare",
-        status: "In progress",
-        completionDate: "Target date to be updated",
-
-        modulesCompleted: 0,
-        modulesTotal: 4,
-
-        summary:
-          "Examines advanced neural, graph-based, generative, and data-synthesis methods for complex healthcare-data applications.",
-
-        takeaway:
-          "Apply advanced deep-learning and generative-model architectures to healthcare prediction, network analysis, and synthetic-data problems.",
-
-        skills: [
-          "Advanced Deep Learning",
-          "Graph Neural Methods",
-          "Graph Theory",
-          "Generative AI",
-          "Generative Models",
-          "Data Synthesis",
-          "Autoencoders",
-          "Predictive Modeling",
-          "Network Analysis",
-          "Health Informatics",
-        ],
-
-        certificateUrl: "",
-      },
-    ],
-
-    featured: false,
-  };
-  // #endregion Deep Learning for Healthcare
-
-  // #region 07 — Google Cloud Data Analytics Professional Certificate
-  const CERT_07_googleCloudDataAnalytics = {
-    id: "google-cloud-data-analytics",
-    profiles: ["generic", "aiml"],
-    domain: "cloud-devops",
-    title: "Google Cloud Data Analytics Professional Certificate",
-    issuer: "Google Cloud / Coursera",
-    status: "Completed",
-    completionDate: "Completed",
-    summary:
-      "Cloud data transformation, analysis, visualization, and decision support using Google Cloud tools.",
-    takeaway:
-      "Turn raw cloud data into governed, queryable, and decision-ready analytical outputs.",
-    skills: ["SQL", "BigQuery", "Data Analytics", "Visualization"],
-    certificateUrl: "",
-    links: {
-      coursera: "",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Introduction to Data Analytics in Google Cloud",
-        completionDate: "Completed",
-        takeaway:
-          "Mapped analytical questions to cloud data workflows and services.",
-        skills: ["Google Cloud", "Analytics"],
-        certificateUrl: "",
-      },
-      {
-        title: "Data Management and Storage",
-        completionDate: "Completed",
-        takeaway:
-          "Selected storage and governance patterns for analytical workloads.",
-        skills: ["Data Management", "Cloud Storage"],
-        certificateUrl: "",
-      },
-      {
-        title: "Data Transformation",
-        completionDate: "Completed",
-        takeaway: "Prepared and transformed data for reliable analysis.",
-        skills: ["SQL", "BigQuery", "Data Transformation"],
-        certificateUrl: "",
-      },
-      {
-        title: "The Power of Storytelling: How to Visualize Data in the Cloud",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Uses visualization design and narrative structure to communicate cloud-data insights effectively.",
-        takeaway:
-          "Designed decision-oriented visualizations and dashboards that connect analysis with stakeholder needs.",
-        skills: [
-          "Looker",
-          "Data Visualization",
-          "Dashboard Development",
-          "Data Storytelling",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Put It All Together: Prepare for a Cloud Data Analyst Job",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Capstone course applying the cloud analytics lifecycle to acquire, prepare, analyze, visualize, and communicate data.",
-        takeaway:
-          "Integrated Google Cloud analytics tools into an end-to-end, decision-focused data workflow.",
-        skills: ["Cloud Analytics", "BigQuery", "Looker", "Data Governance"],
-        certificateUrl: "",
-      },
-    ],
-    featured: false,
-  };
-  // #endregion Google Cloud Data Analytics Professional Certificate
-
-  // #region 08 — Google Cloud Cybersecurity Professional Certificate
-  // #region Google Cloud Cybersecurity
-  const CERT_08_googleCloudCybersecurity = {
-    id: "google-cloud-cybersecurity",
-    profiles: ["generic"],
-    domain: "cloud-devops",
-
-    // Set false to hide this certification from the website.
-    published: true,
-    featured: false,
-
-    title: "Google Cloud Cybersecurity Professional Certificate",
-    issuer: "Google Cloud / Coursera",
-    status: "Completed",
-    completionDate: "June 2026",
-
-    reportedProgress: {
-      completed: 5,
-      total: 5,
-    },
-
-    summary:
-      "Cloud-security training covering risk management, threat prevention, detection, incident response, and recovery in Google Cloud environments.",
-
-    takeaway:
-      "Develop secure cloud operations by combining identity controls, threat monitoring, vulnerability management, and structured incident response.",
-
-    skills: [
-      "Google Cloud Security",
-      "Identity and Access Management",
-      "Threat Detection",
-      "Incident Response",
-      "Risk Management",
-      "Security Command Center",
-      "Cloud Logging",
-      "Vulnerability Management",
-      "Security Governance",
-      "Data Protection",
-    ],
-
-    certificateUrl:
-      "./certificates/cyber-security/google-cloud/google-cloud-cybersecurity-certificate.pdf",
-
-    links: {
-      coursera: "",
-      linkedin: "",
-      github: "",
-    },
-
-    courses: [
-      // #region C1 — Security Principles
-      {
-        title: "Introduction to Security Principles in Cloud Computing",
-        status: "Completed",
-        completionDate: "Completed",
-
-        summary:
-          "Introduces cloud-security principles, shared responsibility, identity, data protection, and foundational risk concepts.",
-
-        takeaway:
-          "Connect core security principles with cloud architecture and operational responsibilities.",
-
-        skills: [
-          "Cloud Security",
-          "Shared Responsibility",
-          "Identity and Access Management",
-          "Data Protection",
-        ],
-
-        certificateUrl:
-          "./certificates/cyber-security/google-cloud/c1-security-principles.pdf",
-      },
-      // #endregion
-
-      // #region C2 — Security Risk Management
-      {
-        title: "Strategies for Cloud Security Risk Management",
-        status: "Completed",
-        completionDate: "Completed",
-
-        summary:
-          "Covers cloud risk identification, assessment, governance, and controls for reducing organizational exposure.",
-
-        takeaway:
-          "Apply structured risk-management practices to cloud services and workloads.",
-
-        skills: [
-          "Risk Assessment",
-          "Risk Management",
-          "Security Governance",
-          "Cloud Security Controls",
-        ],
-
-        certificateUrl:
-          "./certificates/cyber-security/google-cloud/c2-security-risk-management.pdf",
-      },
-      // #endregion
-
-      // #region C3 — Identify and Protect Against Threats
-      {
-        title: "Cloud Security Risks: Identify and Protect Against Threats",
-        status: "Completed",
-        completionDate: "Completed",
-
-        summary:
-          "Examines cloud threats, vulnerabilities, preventive controls, and secure configuration practices.",
-
-        takeaway:
-          "Map common cloud threats to preventive and protective security controls.",
-
-        skills: [
-          "Threat Identification",
-          "Vulnerability Management",
-          "Secure Configuration",
-          "Preventive Security Controls",
-        ],
-
-        certificateUrl:
-          "./certificates/cyber-security/google-cloud/c3-identify-protect-threats.pdf",
-      },
-      // #endregion
-
-      // #region C4 — Detect, Respond, and Recover
-      {
-        title: "Detect, Respond, and Recover from Cloud Cybersecurity Attacks",
-        status: "Completed",
-        completionDate: "Completed",
-
-        summary:
-          "Develops detection, investigation, response, and recovery practices for cybersecurity incidents in cloud environments.",
-
-        takeaway:
-          "Connect monitoring evidence with incident containment, response, and service recovery.",
-
-        skills: [
-          "Threat Detection",
-          "Incident Response",
-          "Cloud Logging",
-          "Incident Investigation",
-          "Recovery",
-        ],
-
-        certificateUrl:
-          "./certificates/cyber-security/google-cloud/c4-detect-respond-recover.pdf",
-      },
-      // #endregion
-
-      // #region C5 — Cloud Security Analyst Preparation
-      {
-        title: "Prepare for a Cloud Security Analyst Job",
-        status: "Completed",
-        completionDate: "Completed",
-
-        summary:
-          "Integrates cloud-security knowledge through practical analyst workflows and career-focused preparation.",
-
-        takeaway:
-          "Consolidate technical and analytical practices used in cloud-security operations.",
-
-        skills: [
-          "Security Analysis",
-          "Technical Documentation",
-          "Operational Readiness",
-          "Professional Communication",
-        ],
-
-        certificateUrl:
-          "./certificates/cyber-security/google-cloud/c5-cloud-security-analyst.pdf",
-      },
-      // #endregion
-    ],
-  };
-
-  // #endregion Google Cloud Cybersecurity Professional Certificate
-
-  // #region 09 — IBM AI Product Manager Professional Certificate
-  const CERT_09_ibmAiProductManager = {
-    id: "ibm-ai-product-manager",
-    profiles: ["generic", "genai"],
-    domain: "product-management",
-    title: "IBM AI Product Manager Professional Certificate",
-    issuer: "IBM / Coursera",
-    status: "In progress",
-    completionDate: "Date to update",
-    reportedProgress: { completed: 4, total: 10 },
-    summary:
-      "Professional program combining product-management practice with AI foundations, generative AI, stakeholder collaboration, and AI-powered product strategy.",
-    takeaway:
-      "Frame AI capabilities as viable products by connecting user needs, stakeholder priorities, delivery planning, and responsible AI adoption.",
-    skills: [
-      "AI Product Strategy",
-      "Product Lifecycle",
-      "Stakeholder Management",
-      "Generative AI",
-      "Prompt Engineering",
-      "Roadmapping",
-      "Agile Delivery",
-      "Responsible AI",
-    ],
-    certificateUrl: "",
-    links: { coursera: "", linkedin: "", github: "" },
-    courses: [
-      {
-        title: "Product Management: An Introduction",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Introduces product-management responsibilities, customer needs, value propositions, and product lifecycle decisions.",
-        takeaway:
-          "Established a product-centered framework for moving from customer problems to measurable outcomes.",
-        skills: [
-          "Product Management",
-          "Customer Discovery",
-          "Value Proposition",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Product Management Foundations & Stakeholder Collaboration",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Develops foundational planning and collaboration practices for aligning product stakeholders.",
-        takeaway:
-          "Structured stakeholder communication around shared product goals, constraints, and decisions.",
-        skills: ["Stakeholder Management", "Communication", "Product Planning"],
-        certificateUrl: "",
-      },
-      {
-        title: "Initial Product Strategy and Plan",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Covers market framing, product strategy, prioritization, roadmaps, and initial delivery planning.",
-        takeaway:
-          "Translated product opportunities into an actionable strategy and prioritized roadmap.",
-        skills: ["Product Strategy", "Roadmapping", "Prioritization"],
-        certificateUrl: "",
-      },
-      {
-        title: "Developing and Delivering a New Product",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Examines execution from product definition through development, launch, and outcome assessment.",
-        takeaway:
-          "Connected cross-functional product delivery with launch readiness and performance evaluation.",
-        skills: ["Product Delivery", "Agile", "Launch Planning"],
-        certificateUrl: "",
-      },
-      {
-        title: "Introduction to Artificial Intelligence",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Introduces AI concepts, applications, limitations, and the organizational context of AI-enabled products.",
-        takeaway:
-          "Evaluated where AI creates product value and where technical or ethical limitations require controls.",
-        skills: [
-          "Artificial Intelligence",
-          "AI Applications",
-          "Responsible AI",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Introduction and Applications",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Surveys generative AI concepts, modalities, foundation models, and practical business applications.",
-        takeaway:
-          "Identified product opportunities for generative AI across text, image, code, and knowledge workflows.",
-        skills: ["Generative AI", "Foundation Models", "Use-Case Analysis"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Prompt Engineering Basics",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Introduces prompt patterns, context design, iteration, and evaluation for generative AI outputs.",
-        takeaway:
-          "Designed clearer prompts and evaluation loops for reliable task-oriented model behavior.",
-        skills: ["Prompt Engineering", "Prompt Patterns", "Evaluation"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Foundation Models and Platforms",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Explores foundation-model capabilities and platforms used to build generative AI products.",
-        takeaway:
-          "Compared model and platform choices against product requirements, risk, and operational constraints.",
-        skills: ["Foundation Models", "AI Platforms", "Model Selection"],
-        certificateUrl: "",
-      },
-      {
-        title: "Building AI-Powered Products",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Applies product-management methods to AI solution definition, development, evaluation, and responsible delivery.",
-        takeaway:
-          "Integrated model capabilities, data requirements, user experience, and governance into AI product planning.",
-        skills: ["AI Product Development", "Data Strategy", "Governance"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Supercharge Your Product Manager Career",
-        status: "Status to verify",
-        completionDate: "",
-        summary:
-          "Uses generative AI to improve product research, planning, communication, and career development workflows.",
-        takeaway:
-          "Applied generative AI as a productivity aid while maintaining human review and product judgment.",
-        skills: [
-          "AI-Assisted Product Management",
-          "Career Development",
-          "Productivity",
-        ],
-        certificateUrl: "",
-      },
-    ],
-    published: false,
-    featured: false,
-  };
-  // #endregion IBM AI Product Manager Professional Certificate
-
-  // #region 02 — AWS Generative AI and AI Agents with Amazon Bedrock
-  const CERT_GENAI_01_AWS_BEDROCK = {
-    id: "aws-bedrock-professional",
-    profiles: ["generic", "genai", "faculty", "aiml"],
-    reportedProgress: {
-      completed: 3,
-      total: 3,
-    },
-    domain: "genai",
-    title: "AWS Generative AI and AI Agents with Amazon Bedrock",
-    issuer: "AWS/Coursera",
-    status: "Completed",
-    completionDate: "August 29, 2026",
-    completionDateISO: "2026-08-29",
-    summary:
-      "Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications and intelligent agents with Amazon Bedrock.",
-    takeaway:
-      "Build and deploy generative AI applications using foundation models, knowledge bases, LangChain, Amazon Q Developer, and Amazon Bedrock agent capabilities.",
-    skills: [
-      "Amazon Bedrock",
-      "Generative AI",
-      "AI Agents",
-      "Foundation Models",
-      "Knowledge Bases",
-      "Retrieval-Augmented Generation",
-      "LangChain",
-      "Amazon Q Developer",
-      "Model Customization",
-      "Prompt Engineering",
-      "Natural Language Processing",
-      "Text Generation",
-      "Summarization",
-      "Generative AI Application Development",
-    ],
-    certificateUrl:
-      "./certificates/genai/aws-bedrock/aws-generative-ai-agents-amazon-bedrock.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/professional-cert/XMNOUZNOW9M0",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Getting Started with AWS Generative AI for Developers",
-        status: "Completed",
-        modulesCompleted: 2,
-        modulesTotal: 2,
-        completionDate: "08/2026",
-        summary:
-          "Foundation course covering generative AI concepts, language models, prompt engineering, and AWS services for developers.",
-        takeaway:
-          "Established the foundations needed to design and evaluate generative AI applications on AWS.",
-        skills: [
-          "AWS Generative AI",
-          "Foundation Models",
-          "Large Language Models",
-          "Prompt Engineering",
-          "Natural Language Processing",
-        ],
-        certificateUrl:
-          "./certificates/genai/aws-bedrock/c1-getting-started-aws-generative-ai.pdf",
-      },
-      {
-        title: "Generative AI Applications with Amazon Bedrock",
-        completionDate: "Completed",
-        takeaway:
-          "Developed generative AI applications with Amazon Bedrock using foundation models, knowledge bases, LangChain, and application-oriented architecture patterns.",
-        skills: [
-          "Amazon Bedrock",
-          "Generative AI Applications",
-          "Knowledge Bases",
-          "LangChain",
-          "Retrieval-Augmented Generation",
-          "Text Generation",
-          "Summarization",
-        ],
-        certificateUrl:
-          "./certificates/genai/aws-bedrock/c2-generative-ai-applications-bedrock.pdf",
-      },
-      {
-        title: "Amazon Bedrock Customization, Optimization & Automation",
-        completionDate: "Completed",
-        takeaway:
-          "Applied advanced Amazon Bedrock capabilities for model customization, application optimization, workflow automation, and intelligent-agent development.",
-        skills: [
-          "Amazon Bedrock",
-          "AI Agents",
-          "Model Customization",
-          "Generative AI Optimization",
-          "Workflow Automation",
-          "Amazon Q Developer",
-          "Agentic AI",
-        ],
-        certificateUrl:
-          "./certificates/genai/aws-bedrock/c3-bedrock-customization-optimization-automation.pdf",
-      },
-    ],
-    featured: true,
-  };
-  // #endregion AWS Generative AI and AI Agents with Amazon Bedrock
-  // #region 03 — IBM Generative AI Engineering Professional Certificate
-  const CERT_GENAI_02_IBM_GENAI_ENGINEERING = {
-    id: "ibm-genai-engineering",
-    profiles: ["generic", "genai", "faculty", "aiml"],
-    domain: "genai",
-    title: "IBM Generative AI Engineering Professional Certificate",
-    issuer: "IBM / Coursera",
-    status: "In progress",
-    completionDate: "Date to update",
-
-    reportedProgress: {
-      completed: 13,
-      total: 16,
-    },
-
-    summary:
-      "Sixteen-course professional certificate developing job-ready skills across AI foundations, Python application development, machine learning, deep learning, NLP, transformer architectures, LLM fine-tuning, RAG, LangChain, and AI agents.",
-
-    takeaway:
-      "Build and evaluate production-oriented generative AI applications by combining Python software engineering, data and ML foundations, transformer modeling, parameter-efficient fine-tuning, preference optimization, retrieval, and agentic workflows.",
-
-    skills: [
-      "Generative AI Engineering",
-      "Large Language Models",
-      "Transformer Architectures",
-      "Prompt Engineering",
-      "RAG",
-      "LangChain",
-      "AI Agents",
-      "Hugging Face",
-      "PyTorch",
-      "Keras",
-      "Scikit-learn",
-      "Python",
-      "Flask",
-      "Gradio",
-      "PEFT",
-      "LoRA",
-      "QLoRA",
-      "RLHF",
-      "DPO",
-      "PPO",
-      "NLP",
-      "Machine Learning",
-      "Deep Learning",
-      "Vector Databases",
-    ],
-
-    certificateUrl: "",
-
-    links: {
-      coursera: "",
-      linkedin: "",
-      github: "",
-    },
-
-    courses: [
-      {
-        title: "Introduction to Artificial Intelligence (AI)",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces AI applications, machine learning, deep learning, neural networks, generative AI, organizational use cases, and responsible solution design.",
-        takeaway:
-          "Connected fundamental AI capabilities with practical use cases, business value, risk mitigation, and ethical solution design.",
-        skills: [
-          "Artificial Intelligence",
-          "Machine Learning",
-          "Deep Learning",
-          "Neural Networks",
-          "Generative AI",
-          "Responsible AI",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Introduction and Applications",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Explores generative AI concepts, common models, tools, modalities, capabilities, and applications across industries.",
-        takeaway:
-          "Distinguished generative from discriminative AI and evaluated suitable models and modalities for real-world applications.",
-        skills: [
-          "Generative AI",
-          "Foundation Models",
-          "ChatGPT",
-          "Text Generation",
-          "Image Generation",
-          "Use-Case Analysis",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Prompt Engineering Basics",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers prompt-engineering principles, best practices, tools, patterns, context management, and techniques for producing effective model responses.",
-        takeaway:
-          "Developed structured prompts and iterative evaluation practices for clearer, more reliable generative AI outputs.",
-        skills: [
-          "Prompt Engineering",
-          "Prompt Patterns",
-          "Context Management",
-          "AI Workflows",
-          "ChatGPT",
-          "Evaluation",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Python for Data Science, AI & Development",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds Python foundations through data structures, control flow, functions, exceptions, object-oriented programming, NumPy, Pandas, APIs, and web scraping.",
-        takeaway:
-          "Applied Python and its data ecosystem to acquire, transform, analyze, and automate data-driven workflows.",
-        skills: [
-          "Python",
-          "NumPy",
-          "Pandas",
-          "Jupyter",
-          "REST APIs",
-          "Web Scraping",
-          "Object-Oriented Programming",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Developing AI Applications with Python and Flask",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops tested and deployable Python applications using modules, packaging, PEP 8, unit testing, Flask routing, error handling, CRUD operations, and IBM AI services.",
-        takeaway:
-          "Structured AI applications as maintainable Python services and deployed them through Flask-based web interfaces.",
-        skills: [
-          "Python",
-          "Flask",
-          "REST APIs",
-          "Unit Testing",
-          "Application Deployment",
-          "IBM Cloud",
-          "Software Development Lifecycle",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Building Generative AI-Powered Applications with Python",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds generative AI applications and chatbots using LLMs, RAG, Hugging Face, LangChain, speech services, Flask, Gradio, and basic front-end technologies.",
-        takeaway:
-          "Integrated language, retrieval, and speech capabilities into user-facing Python generative AI applications.",
-        skills: [
-          "Python",
-          "LLM Applications",
-          "RAG",
-          "LangChain",
-          "Hugging Face",
-          "Flask",
-          "Gradio",
-          "Speech-to-Text",
-          "Text-to-Speech",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Data Analysis with Python",
-        status: "In progress",
-        completionDate: "",
-        summary:
-          "Covers data cleaning, preparation, exploratory analysis, statistical relationships, visualization, feature engineering, regression modeling, and evaluation using Python.",
-        takeaway:
-          "Apply an end-to-end analytical workflow that converts raw datasets into validated predictive insights.",
-        skills: [
-          "Pandas",
-          "NumPy",
-          "SciPy",
-          "Matplotlib",
-          "Data Cleaning",
-          "EDA",
-          "Regression",
-          "Scikit-learn",
-          "Model Evaluation",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Machine Learning with Python",
-        status: "In progress",
-        completionDate: "",
-        summary:
-          "Covers supervised and unsupervised learning, regression, classification, clustering, dimensionality reduction, feature engineering, model validation, and optimization.",
-        takeaway:
-          "Build and evaluate end-to-end machine-learning solutions using appropriate algorithms, metrics, and validation strategies.",
-        skills: [
-          "Machine Learning",
-          "Scikit-learn",
-          "Regression",
-          "Classification",
-          "Clustering",
-          "Dimensionality Reduction",
-          "Feature Engineering",
-          "Model Evaluation",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Introduction to Deep Learning & Neural Networks with Keras",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces neurons and deep networks, training challenges, Keras models, regression and classification, CNNs, RNNs, transformers, and model evaluation.",
-        takeaway:
-          "Selected and implemented neural architectures suited to image, sequence, regression, and classification problems.",
-        skills: [
-          "Deep Learning",
-          "Keras",
-          "Neural Networks",
-          "CNNs",
-          "RNNs",
-          "Transformers",
-          "Transfer Learning",
-          "Model Evaluation",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI and LLMs: Architecture and Data Preparation",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Examines RNNs, transformers, VAEs, GANs, diffusion models, major LLM families, tokenization, numericalization, padding, and PyTorch NLP data loaders.",
-        takeaway:
-          "Prepared text data and matched generative architectures with language, image, and multimodal modeling requirements.",
-        skills: [
-          "LLM Architectures",
-          "Transformers",
-          "RNNs",
-          "VAEs",
-          "GANs",
-          "Diffusion Models",
-          "Tokenization",
-          "PyTorch",
-          "NLP Data Pipelines",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Gen AI Foundational Models for NLP & Language Understanding",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops numerical text representations, Word2Vec with CBOW and Skip-gram, N-gram and feedforward language models, and encoder-decoder RNNs for sequence transformation.",
-        takeaway:
-          "Built foundational NLP representations and neural language models progressing from embeddings to sequence-to-sequence architectures.",
-        skills: [
-          "NLP",
-          "Embeddings",
-          "Word2Vec",
-          "CBOW",
-          "Skip-gram",
-          "N-grams",
-          "Encoder-Decoder Models",
-          "PyTorch",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI Language Modeling with Transformers",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers attention, positional encoding, masking, encoder- and decoder-based language models, and transformer applications for classification and translation using PyTorch and Hugging Face.",
-        takeaway:
-          "Implemented core transformer components and applied pretrained architectures to practical NLP tasks.",
-        skills: [
-          "Transformers",
-          "Attention",
-          "Positional Encoding",
-          "Masking",
-          "BERT",
-          "GPT",
-          "PyTorch",
-          "Hugging Face",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI Engineering and Fine-Tuning Transformers",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Applies pretrained transformer models to downstream language tasks and covers inference, training, PEFT, LoRA, and QLoRA using Hugging Face and PyTorch.",
-        takeaway:
-          "Adapted pretrained LLMs efficiently through task-specific fine-tuning and parameter-efficient methods.",
-        skills: [
-          "LLM Fine-Tuning",
-          "PEFT",
-          "LoRA",
-          "QLoRA",
-          "Hugging Face",
-          "PyTorch",
-          "Transfer Learning",
-          "Inference",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI Advance Fine-Tuning for LLMs",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers instruction tuning, reward modeling, LLMs as policies, RLHF, direct preference optimization, proximal policy optimization, scoring functions, and dataset tokenization.",
-        takeaway:
-          "Compared alignment strategies and applied preference- and reward-based techniques for advanced LLM adaptation.",
-        skills: [
-          "Instruction Tuning",
-          "Reward Modeling",
-          "RLHF",
-          "DPO",
-          "PPO",
-          "Hugging Face",
-          "Reinforcement Learning",
-          "LLM Alignment",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Fundamentals of AI Agents Using RAG and LangChain",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Combines in-context learning, advanced prompting, LangChain tools, chat models, chains, agents, PyTorch, Hugging Face, embeddings, and RAG application development.",
-        takeaway:
-          "Built grounded, tool-using AI agents by combining retrieval, language models, LangChain components, and structured prompts.",
-        skills: [
-          "AI Agents",
-          "RAG",
-          "LangChain",
-          "Prompt Engineering",
-          "Embeddings",
-          "Hugging Face",
-          "PyTorch",
-          "Tool Use",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Project: Generative AI Applications with RAG and LangChain",
-        status: "In progress",
-        completionDate: "",
-        summary:
-          "Capstone project creating a real-world RAG application with document embeddings, a vector database, retriever, LangChain question-answering workflow, LLM, and Gradio interface.",
-        takeaway:
-          "Integrate the complete retrieval and generation stack into a demonstrable, interview-ready application.",
-        skills: [
-          "RAG",
-          "LangChain",
-          "Vector Databases",
-          "Embeddings",
-          "Document Retrieval",
-          "LLM Applications",
-          "Gradio",
-          "Capstone Development",
-        ],
-        certificateUrl: "",
-      },
-    ],
-
-    featured: true,
-  };
-  // #endregion IBM Generative AI Engineering Professional Certificate
-  // #region CERT_GENAI_03_IBM_RAG_AGENTIC_AI
-  const CERT_GENAI_03_IBM_RAG_AGENTIC_AI = {
-    id: "ibm-rag-agentic-ai",
-    profiles: ["generic", "genai", "faculty"],
-    domain: "genai",
-    title: "IBM RAG and Agentic AI Professional Certificate",
-    issuer: "IBM / Coursera",
-    status: "Completed",
-    completionDate: "February 14, 2026",
-    completionDateISO: "2026-02-14",
-    reportedProgress: {
-      completed: 8,
-      total: 8,
-    },
-    summary:
-      "Completed eight-course professional certificate covering retrieval-augmented generation, vector databases, multimodal applications, and agentic AI workflows.",
-    curriculumNote:
-      "This record documents the original eight-course curriculum listed on the certificate awarded February 14, 2026.",
-    takeaway:
-      "Designed context-aware generative AI systems by combining retrieval pipelines, vector databases, multimodal models, tool calling, agent memory, conditional workflows, and multi-agent orchestration.",
-    skills: [
-      "Retrieval-Augmented Generation",
-      "Agentic AI",
-      "LangChain",
-      "LangGraph",
-      "Vector Databases",
-      "ChromaDB",
-      "FAISS",
-      "LlamaIndex",
-      "Multimodal AI",
-      "Tool Calling",
-      "Prompt Engineering",
-      "CrewAI",
-      "AutoGen / AG2",
-      "BeeAI",
-      "Gradio",
-      "Python",
-      "Flask",
-    ],
-    certificateUrl:
-      "./certificates/genai/ibm-rag-agentic-ai/ibm-rag-agentic-ai-professional-certificate.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/professional-cert/0CB713GHZC1B",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Develop Generative AI Applications: Get Started",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops modular generative AI applications using prompt engineering, LangChain templates, chains, agents, structured outputs, Flask, and model evaluation.",
-        takeaway:
-          "Built flexible LLM applications by combining reusable LangChain components with structured prompting, model selection, and a Flask interface.",
-        skills: [
-          "Prompt Engineering",
-          "LangChain",
-          "LLM Applications",
-          "Model Evaluation",
-          "JSON",
-          "Flask",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Build RAG Applications: Get Started",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces practical RAG application development with document processing, embeddings, vector stores, LangChain, LlamaIndex, Python, and Gradio.",
-        takeaway:
-          "Connected external knowledge with LLM generation through an end-to-end retrieval pipeline and interactive application interface.",
-        skills: [
-          "RAG",
-          "Embeddings",
-          "Vector Databases",
-          "LangChain",
-          "LlamaIndex",
-          "Gradio",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Vector Databases for RAG: An Introduction",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers vector representations, similarity search, ChromaDB collections, database operations, recommendation workflows, and internal RAG mechanisms.",
-        takeaway:
-          "Applied embeddings and similarity search to store, retrieve, and rank semantically relevant information for grounded generation.",
-        skills: [
-          "Vector Databases",
-          "ChromaDB",
-          "Embeddings",
-          "Similarity Search",
-          "Database Management",
-          "RAG",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Advanced RAG with Vector Databases and Retrievers",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds advanced retrieval pipelines using FAISS, ChromaDB, HNSW indexing, LangChain, LlamaIndex retrievers, and Gradio interfaces.",
-        takeaway:
-          "Improved retrieval quality by combining suitable vector indexes, advanced retrievers, orchestration components, and application-level evaluation.",
-        skills: [
-          "Advanced RAG",
-          "FAISS",
-          "ChromaDB",
-          "HNSW",
-          "LlamaIndex",
-          "LangChain",
-          "Performance Tuning",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Build Multimodal Generative AI Applications",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops applications that combine text, speech, image, and video using IBM Granite, Meta Llama, Whisper, DALL-E, Sora, Hugging Face, Flask, and Gradio.",
-        takeaway:
-          "Integrated multiple data modalities and foundation models into coherent, user-facing generative AI workflows.",
-        skills: [
-          "Multimodal AI",
-          "IBM Granite",
-          "Meta Llama",
-          "OpenAI Whisper",
-          "DALL-E",
-          "Hugging Face",
-          "Gradio",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Fundamentals of Building AI Agents",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces autonomous agents, reasoning, tool calling, chaining, data-analysis agents, visualization, database queries, and agent-focused prompt engineering.",
-        takeaway:
-          "Built agents that select and use tools within structured workflows to complete analytical and application tasks.",
-        skills: [
-          "AI Agents",
-          "LangChain",
-          "Tool Calling",
-          "Agentic Workflows",
-          "Data Analysis",
-          "Data Visualization",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Agentic AI with LangChain and LangGraph",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds stateful agentic systems with memory, conditional routing, iteration, Reflection, Reflexion, ReAct, collaborative agents, and Agentic RAG.",
-        takeaway:
-          "Designed stateful and self-improving agent workflows that route tasks, retain context, invoke retrieval, and coordinate reasoning steps.",
-        skills: [
-          "LangGraph",
-          "LangChain",
-          "Agentic RAG",
-          "ReAct",
-          "Reflection",
-          "Memory",
-          "Conditional Routing",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Compares agentic frameworks and implements structured multi-agent workflows using LangGraph, CrewAI, AG2/AutoGen, BeeAI, custom tools, and conversation-driven coordination.",
-        takeaway:
-          "Selected and combined agent frameworks according to workflow state, collaboration, tool integration, and orchestration requirements.",
-        skills: [
-          "Multi-Agent Systems",
-          "LangGraph",
-          "CrewAI",
-          "AutoGen / AG2",
-          "BeeAI",
-          "Tool Calling",
-          "Agent Orchestration",
-        ],
-        certificateUrl: "",
-      },
-    ],
-    featured: true,
-    published: true,
-  };
-  // #endregion
-  // #region CERT_GENAI_04_FUNDAMENTALS
-  const CERT_GENAI_04_FUNDAMENTALS = {
-    id: "genai-fundamentals",
-    profiles: ["genai", "faculty", "generic"],
-    domain: "genai",
-    title: "Generative AI Fundamentals Specialization",
-    issuer: "IBM / Coursera",
-    status: "Completed",
-    completionDate: "July 16, 2026",
-    completionDateISO: "2026-07-16",
-    summary:
-      "Five-course foundation in generative AI, prompt engineering, LLMs, and practical enterprise applications.",
-    takeaway:
-      "Understand how generative models work, where they create value, and how to apply them responsibly.",
-    skills: [
-      "Generative AI",
-      "Prompt Engineering",
-      "Foundation Models",
-      "Responsible AI",
-      "IBM watsonx",
-      "Hugging Face",
-      "Business Applications",
-    ],
-    certificateUrl:
-      "./certificates/genai/ibm-genai-fundamentals/ibm-genai-fundamentals.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/specialization/IPQKDOHF3IV2",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Generative AI: Introduction and Applications",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Explore generative AI capabilities, tools, and applications across different modalities.",
-        takeaway:
-          "Explore generative AI capabilities, tools, and applications across different modalities.",
-        skills: ["Generative AI", "AI Applications", "Foundation Models"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Prompt Engineering Basics",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develop prompts that communicate task goals and context clearly.",
-        takeaway:
-          "Develop prompts that communicate task goals and context clearly.",
-        skills: ["Prompt Engineering", "Prompt Iteration", "Context Design"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Foundation Models and Platforms",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Explore foundation models and platforms including IBM watsonx and Hugging Face.",
-        takeaway:
-          "Explore foundation models and platforms including IBM watsonx and Hugging Face.",
-        skills: ["Foundation Models", "IBM watsonx", "Hugging Face"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Impact, Considerations, and Ethical Issues",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Examine the implications and ethical considerations of generative AI adoption.",
-        takeaway:
-          "Examine the implications and ethical considerations of generative AI adoption.",
-        skills: ["Responsible AI", "AI Ethics", "Risk Awareness"],
-        certificateUrl: "",
-      },
-      {
-        title: "Generative AI: Business Transformation and Career Growth",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Explore business applications and career opportunities associated with generative AI.",
-        takeaway:
-          "Explore business applications and career opportunities associated with generative AI.",
-        skills: [
-          "Business Transformation",
-          "AI Use Cases",
-          "Career Development",
-        ],
-        certificateUrl: "",
-      },
-    ],
-    featured: true,
-    reportedProgress: {
-      completed: 5,
-      total: 5,
-    },
-    published: true,
-  };
-  // #endregion
-  // #region CERT_GENAI_05_BUILDING_AI_AGENTS
-  const CERT_GENAI_05_BUILDING_AI_AGENTS = {
-    id: "ibm-building-ai-agents",
-    profiles: ["generic", "genai"],
-    domain: "genai",
-    published: true,
-    featured: true,
-    title: "Building AI Agents and Agentic Workflows Specialization",
-    issuer: "IBM / Coursera",
-    status: "Completed",
-    completionDate: "February 14, 2026",
-    completionDateISO: "2026-02-14",
-    reportedProgress: {
-      completed: 3,
-      total: 3,
-    },
-    summary:
-      "Design agentic workflows with memory, conditional logic, tool use, and multi-agent orchestration using LangGraph, CrewAI, AutoGen, and BeeAI.",
-    takeaway:
-      "Design agentic workflows with memory, conditional logic, tool use, and multi-agent orchestration using LangGraph, CrewAI, AutoGen, and BeeAI.",
-    skills: [
-      "Agentic AI",
-      "LangGraph",
-      "LangChain",
-      "CrewAI",
-      "AutoGen / AG2",
-      "BeeAI",
-      "Agent Memory",
-      "Tool Calling",
-      "Multi-Agent Orchestration",
-    ],
-    certificateUrl:
-      "./certificates/genai/ibm-building-ai-agents/ibm-building-ai-agents.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/specialization/CEVQP0RYI532",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Fundamentals of Building AI Agents",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces autonomous agents, reasoning, tool calling, chaining, data-analysis agents, visualization, database queries, and agent-focused prompt engineering.",
-        takeaway:
-          "Built agents that select and use tools within structured workflows to complete analytical and application tasks.",
-        skills: [
-          "AI Agents",
-          "LangChain",
-          "Tool Calling",
-          "Agentic Workflows",
-          "Data Analysis",
-          "Data Visualization",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Agentic AI with LangChain and LangGraph",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds stateful agentic systems with memory, conditional routing, iteration, Reflection, Reflexion, ReAct, collaborative agents, and Agentic RAG.",
-        takeaway:
-          "Designed stateful and self-improving agent workflows that route tasks, retain context, invoke retrieval, and coordinate reasoning steps.",
-        skills: [
-          "LangGraph",
-          "LangChain",
-          "Agentic RAG",
-          "ReAct",
-          "Reflection",
-          "Memory",
-          "Conditional Routing",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Compares agentic frameworks and implements structured multi-agent workflows using LangGraph, CrewAI, AG2/AutoGen, BeeAI, custom tools, and conversation-driven coordination.",
-        takeaway:
-          "Selected and combined agent frameworks according to workflow state, collaboration, tool integration, and orchestration requirements.",
-        skills: [
-          "Multi-Agent Systems",
-          "LangGraph",
-          "CrewAI",
-          "AutoGen / AG2",
-          "BeeAI",
-          "Tool Calling",
-          "Agent Orchestration",
-        ],
-        certificateUrl: "",
-      },
-    ],
-  };
-  // #endregion
-  // #region CERT_GENAI_06_RAG_APPLICATIONS
-  const CERT_GENAI_06_RAG_APPLICATIONS = {
-    id: "ibm-rag-generative-ai-applications",
-    profiles: ["generic", "genai"],
-    domain: "genai",
-    published: true,
-    featured: true,
-    title: "RAG for Generative AI Applications Specialization",
-    issuer: "IBM / Coursera",
-    status: "Completed",
-    completionDate: "March 21, 2026",
-    completionDateISO: "2026-03-21",
-    reportedProgress: {
-      completed: 4,
-      total: 4,
-    },
-    summary:
-      "Build retrieval-augmented applications using LangChain, LlamaIndex, FAISS, and ChromaDB to connect language models with relevant external information.",
-    takeaway:
-      "Build retrieval-augmented applications using LangChain, LlamaIndex, FAISS, and ChromaDB to connect language models with relevant external information.",
-    skills: [
-      "Retrieval-Augmented Generation",
-      "LangChain",
-      "LlamaIndex",
-      "Vector Databases",
-      "FAISS",
-      "ChromaDB",
-      "Semantic Retrieval",
-      "LLM Applications",
-    ],
-    certificateUrl:
-      "./certificates/genai/ibm-rag-applications/ibm-rag-applications.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/specialization/I7IDRI3160WV",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Develop Generative AI Applications: Get Started",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Develops modular generative AI applications using prompt engineering, LangChain templates, chains, agents, structured outputs, Flask, and model evaluation.",
-        takeaway:
-          "Built flexible LLM applications by combining reusable LangChain components with structured prompting, model selection, and a Flask interface.",
-        skills: [
-          "Prompt Engineering",
-          "LangChain",
-          "LLM Applications",
-          "Model Evaluation",
-          "JSON",
-          "Flask",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Build RAG Applications: Get Started",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Introduces practical RAG application development with document processing, embeddings, vector stores, LangChain, LlamaIndex, Python, and Gradio.",
-        takeaway:
-          "Connected external knowledge with LLM generation through an end-to-end retrieval pipeline and interactive application interface.",
-        skills: [
-          "RAG",
-          "Embeddings",
-          "Vector Databases",
-          "LangChain",
-          "LlamaIndex",
-          "Gradio",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Vector Databases for RAG: An Introduction",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Covers vector representations, similarity search, ChromaDB collections, database operations, recommendation workflows, and internal RAG mechanisms.",
-        takeaway:
-          "Applied embeddings and similarity search to store, retrieve, and rank semantically relevant information for grounded generation.",
-        skills: [
-          "Vector Databases",
-          "ChromaDB",
-          "Embeddings",
-          "Similarity Search",
-          "Database Management",
-          "RAG",
-        ],
-        certificateUrl: "",
-      },
-      {
-        title: "Advanced RAG with Vector Databases and Retrievers",
-        status: "Completed",
-        completionDate: "Completed",
-        summary:
-          "Builds advanced retrieval pipelines using FAISS, ChromaDB, HNSW indexing, LangChain, LlamaIndex retrievers, and Gradio interfaces.",
-        takeaway:
-          "Improved retrieval quality by combining suitable vector indexes, advanced retrievers, orchestration components, and application-level evaluation.",
-        skills: [
-          "Advanced RAG",
-          "FAISS",
-          "ChromaDB",
-          "HNSW",
-          "LlamaIndex",
-          "LangChain",
-          "Performance Tuning",
-        ],
-        certificateUrl: "",
-      },
-    ],
-  };
-  // #endregion
-
-
-  // #region — Google Cloud Generative AI for Healthcare
-  const CERT_HEALTHCARE_GENAI_GOOGLE = {
-    id: "google-generative-ai-healthcare",
-    profiles: ["generic", "aiml", "faculty"],
-    domain: "genai",
-    published: true,
-    featured: false,
-    title: "Generative AI for Healthcare",
-    issuer: "Google Cloud / Coursera",
-    status: "Completed",
-    completionDate: "February 17, 2026",
-    completionDateISO: "2026-02-17",
-    reportedProgress: {
-      completed: 1,
-      total: 1,
-    },
-    summary:
-      "Applied generative AI and large language model concepts to healthcare use cases, including medical foundation models, multimodal workflows, and prompt design.",
-    takeaway:
-      "Connect LLM capabilities, healthcare use cases, and prompt engineering with responsible, domain-aware application design.",
-    skills: [
-      "Generative AI",
-      "Large Language Models",
-      "Prompt Engineering",
-      "Healthcare AI",
-      "Vertex AI",
-      "Multimodal AI",
-    ],
-    certificateUrl: "./certificates/Coursera P5AXL262N71P.pdf",
-    links: {
-      coursera: "https://coursera.org/verify/P5AXL262N71P",
-      linkedin: "",
-      github: "",
-    },
-    courses: [
-      {
-        title: "Generative AI for Healthcare",
-        status: "Completed",
-        completionDate: "February 17, 2026",
-        completionDateISO: "2026-02-17",
-        summary:
-          "Google Cloud course on generative AI, large language models, healthcare use cases, medical foundation models, and prompt design.",
-        takeaway:
-          "Applied prompt design and generative-AI concepts to healthcare-focused examples and workflows.",
-        skills: [
-          "Generative AI",
-          "Large Language Models",
-          "Prompt Engineering",
-          "Healthcare AI",
-          "Vertex AI",
-        ],
-        certificateUrl: "./certificates/Coursera P5AXL262N71P.pdf",
-        links: {
-          coursera: "https://coursera.org/verify/P5AXL262N71P",
-        },
-      },
-    ],
-  };
-  // #endregion Google Cloud Generative AI for Healthcare
-
-  window.PORTFOLIO_DATA.certifications = [
-    CERT_HEALTHCARE_GENAI_GOOGLE,
-    CERT_GENAI_01_AWS_BEDROCK,
-    CERT_GENAI_02_IBM_GENAI_ENGINEERING,
-    CERT_GENAI_03_IBM_RAG_AGENTIC_AI,
-    CERT_GENAI_04_FUNDAMENTALS,
-    CERT_GENAI_05_BUILDING_AI_AGENTS,
-    CERT_GENAI_06_RAG_APPLICATIONS,
-    CERT_01_systemDesignMasterclass,
-    CERT_04_ibmDevops,
-    CERT_06_stanfordMachineLearning,
-    CERT_ML_FINANCE,
-    CERT_DEEP_LEARNING_HEALTHCARE,
-    CERT_07_googleCloudDataAnalytics,
-    CERT_08_googleCloudCybersecurity,
-    CERT_09_ibmAiProductManager,
-  ];
-})();
-
-// WIRELESS_CERTIFICATES_V1
-(function registerWirelessCertifications() {
-
-// #region CERT_WIRELESS_01_AI_TELECOMMUNICATIONS
-const CERT_WIRELESS_01_AI_TELECOMMUNICATIONS = {
-  "id": "ai-for-telecommunications",
-  "profiles": [
-    "generic",
-    "wireless",
-    "faculty"
-  ],
-  "domain": "wireless",
-  "published": true,
-  "featured": true,
-  "title": "AI for Telecommunications Specialization",
-  "issuer": "AI CERTs / Coursera",
-  "status": "Completed",
-  "completionDate": "June 2026",
-  "completionDateISO": "2026-06-29",
-  "reportedProgress": {
-    "completed": 3,
-    "total": 3
-  },
-  "summary": "Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer experience.",
-  "takeaway": "Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer experience.",
-  "skills": [
-    "AI for Telecommunications",
-    "Network Optimization",
-    "Cybersecurity",
-    "Customer Experience",
-    "Internet of Things",
-    "Python",
-    "TensorFlow"
-  ],
-  "certificateUrl": "./certificates/wireless/ai-for-telecom.pdf",
-  "links": {
-    "coursera": "https://coursera.org/verify/specialization/D8Y6MVC0XM51",
-    "linkedin": "",
-    "github": ""
-  },
-  "courses": [
-    {
-      "title": "AI Foundations & Industry Overview for Telecommunication",
-      "status": "Completed",
-      "completionDate": "Completed: June 2026",
-      "completionDateISO": "2026-06-20",
-      "summary": "Introduces artificial intelligence foundations and their relevance to the telecommunications industry.",
-      "takeaway": "Introduces artificial intelligence foundations and their relevance to the telecommunications industry.",
-      "skills": [
-        "Artificial Intelligence",
-        "Telecommunications",
-        "AI Applications"
-      ],
-      "certificateUrl": "./certificates/wireless/c1-ai-found-indus-overview.pdf",
-      "links": {
-        "coursera": "https://coursera.org/verify/3900EVOH4I1Y"
+          "Consistency Models"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4"
+        }
       }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/packt-system-design-masterclass-bniz4",
+    "featured": false
+  },
+  {
+    "id": "coursera-getting-started-with-generative-ai-in-azure",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Getting started with generative AI in Azure",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 55,
+    "summary": "Currently in progress (55%).",
+    "takeaway": "Currently in progress (55%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/microsoft-getting-started-with-generative-ai-in-azure"
     },
-    {
-      "title": "Network and Security Optimization in Telecommunication",
-      "status": "Completed",
-      "completionDate": "Completed: June 2026",
-      "completionDateISO": "2026-06-20",
-      "summary": "Explores network optimization and security in telecommunications.",
-      "takeaway": "Explores network optimization and security in telecommunications.",
-      "skills": [
-        "Network Optimization",
-        "Telecommunications Security",
-        "Applied AI"
-      ],
-      "certificateUrl": "./certificates/wireless/c2-net-sec-optim-tel.pdf",
-      "links": {
-        "coursera": "https://coursera.org/verify/4TQ51W1OQWRE"
+    "courses": [
+      {
+        "title": "Getting started with generative AI in Azure",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 55,
+        "summary": "Currently in progress (55%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/microsoft-getting-started-with-generative-ai-in-azure"
+        }
       }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/microsoft-getting-started-with-generative-ai-in-azure",
+    "featured": false
+  },
+  {
+    "id": "coursera-healthcare-financial-management-fundamentals",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Healthcare Financial Management Fundamentals",
+    "issuer": "Northeastern University / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 53,
+    "summary": "Northeastern University · Currently in progress (53%).",
+    "takeaway": "Northeastern University · Currently in progress (53%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/healthcare-financial-management-fundamentals"
     },
-    {
-      "title": "Customer Experience in Telecommunication",
-      "status": "Completed",
-      "completionDate": "Completed: June 2026",
-      "completionDateISO": "2026-06-29",
-      "summary": "Examines customer experience in telecommunications and its role in service improvement.",
-      "takeaway": "Examines customer experience in telecommunications and its role in service improvement.",
-      "skills": [
-        "Customer Experience",
-        "Telecommunications",
-        "Service Improvement"
-      ],
-      "certificateUrl": "./certificates/wireless/c3-cust-exp-telecom.pdf",
-      "links": {
-        "coursera": "https://coursera.org/verify/NXOIIASQQXKX"
+    "courses": [
+      {
+        "title": "Healthcare Financial Management Fundamentals",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 53,
+        "summary": "Northeastern University · Currently in progress (53%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/healthcare-financial-management-fundamentals"
+        }
       }
-    }
-  ]
-};
-// #endregion
-
-// #region CERT_WIRELESS_02_4G_FUNDAMENTALS
-const CERT_WIRELESS_02_4G_FUNDAMENTALS = {
-  "id": "4g-network-fundamentals",
-  "profiles": [
-    "generic",
-    "wireless",
-    "faculty"
-  ],
-  "domain": "wireless",
-  "published": true,
-  "featured": true,
-  "title": "4G Network Fundamentals",
-  "issuer": "Institut Mines-Télécom / Coursera",
-  "status": "Completed",
-  "completionDate": "August 2026",
-  "completionDateISO": "2026-08-02",
-  "reportedProgress": {
-    "completed": 1,
-    "total": 1
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/healthcare-financial-management-fundamentals",
+    "featured": false
   },
-  "summary": "Foundational study of fourth-generation cellular networks.",
-  "takeaway": "Foundational study of fourth-generation cellular networks.",
-  "skills": [
-    "4G Networks",
-    "Cellular Networks",
-    "Telecommunications"
-  ],
-  "certificateUrl": "./certificates/wireless/4g-network-fundamentals.pdf",
-  "links": {
-    "coursera": "https://coursera.org/verify/DLW1YN474VZJ",
-    "linkedin": "",
-    "github": ""
-  },
-  "courses": [
-    {
-      "title": "4G Network Fundamentals",
-      "status": "Completed",
-      "completionDate": "Completed: August 2026",
-      "completionDateISO": "2026-08-02",
-      "summary": "Foundational study of fourth-generation cellular networks.",
-      "takeaway": "Foundational study of fourth-generation cellular networks.",
-      "skills": [
-        "4G Networks",
-        "Cellular Networks",
-        "Telecommunications"
-      ],
-      "certificateUrl": "./certificates/wireless/4g-network-fundamentals.pdf",
-      "links": {
-        "coursera": "https://coursera.org/verify/DLW1YN474VZJ"
+  {
+    "id": "coursera-data-management-with-azure-implement-compliance-controls",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Data Management with Azure: Implement Compliance Controls",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 50,
+    "summary": "Currently in progress (50%).",
+    "takeaway": "Currently in progress (50%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/data-management-azure-implement-compliance-controls"
+    },
+    "courses": [
+      {
+        "title": "Data Management with Azure: Implement Compliance Controls",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 50,
+        "summary": "Currently in progress (50%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/data-management-azure-implement-compliance-controls"
+        }
       }
-    }
-  ]
-};
-// #endregion
-
-// #region CERT_WIRELESS_03_5G_BUSINESS
-const CERT_WIRELESS_03_5G_BUSINESS = {
-  "id": "business-considerations-5g-edge-iot-ai",
-  "profiles": [
-    "generic",
-    "wireless",
-    "faculty"
-  ],
-  "domain": "wireless",
-  "published": true,
-  "featured": true,
-  "title": "Business Considerations for 5G with Edge, IoT, and AI",
-  "issuer": "EDUCBA / Coursera",
-  "status": "Completed",
-  "completionDate": "February 2026",
-  "completionDateISO": "2026-02-19",
-  "reportedProgress": {
-    "completed": 1,
-    "total": 1
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/data-management-azure-implement-compliance-controls",
+    "featured": false
   },
-  "summary": "Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.",
-  "takeaway": "Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.",
-  "skills": [
-    "5G",
-    "Edge Computing",
-    "Internet of Things",
-    "Artificial Intelligence",
-    "Business Analysis"
-  ],
-  "certificateUrl": "./certificates/wireless/bus-cons-5g.pdf",
-  "links": {
-    "coursera": "https://coursera.org/verify/SAUEVQXV5W71",
-    "linkedin": "",
-    "github": ""
-  },
-  "courses": [
-    {
-      "title": "Business Considerations for 5G with Edge, IoT, and AI",
-      "status": "Completed",
-      "completionDate": "Completed: February 2026",
-      "completionDateISO": "2026-02-19",
-      "summary": "Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.",
-      "takeaway": "Explores business considerations for combining 5G connectivity with edge computing, IoT, and AI.",
-      "skills": [
-        "5G",
-        "Edge Computing",
-        "Internet of Things",
-        "Artificial Intelligence",
-        "Business Analysis"
-      ],
-      "certificateUrl": "./certificates/wireless/bus-cons-5g.pdf",
-      "links": {
-        "coursera": "https://coursera.org/verify/SAUEVQXV5W71"
+  {
+    "id": "coursera-fundamental-neuroscience-for-neuroimaging",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Fundamental Neuroscience for Neuroimaging",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 50,
+    "summary": "Currently in progress (50%).",
+    "takeaway": "Currently in progress (50%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/neuroscience-neuroimaging"
+    },
+    "courses": [
+      {
+        "title": "Fundamental Neuroscience for Neuroimaging",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 50,
+        "summary": "Currently in progress (50%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/neuroscience-neuroimaging"
+        }
       }
-    }
-  ]
-};
-// #endregion
-
-const wirelessRecords = [CERT_WIRELESS_01_AI_TELECOMMUNICATIONS, CERT_WIRELESS_02_4G_FUNDAMENTALS, CERT_WIRELESS_03_5G_BUSINESS];
-const existing = window.PORTFOLIO_DATA.certifications;
-for (const record of wirelessRecords) {
-  if (!existing.some(item => item.id === record.id)) existing.push(record);
-}
-})();
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/neuroscience-neuroimaging",
+    "featured": false
+  },
+  {
+    "id": "coursera-guided-tour-of-machine-learning-in-finance",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Guided Tour of Machine Learning in Finance",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 44,
+    "summary": "Currently in progress (44%).",
+    "takeaway": "Currently in progress (44%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/guided-tour-machine-learning-finance"
+    },
+    "courses": [
+      {
+        "title": "Guided Tour of Machine Learning in Finance",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 44,
+        "summary": "Currently in progress (44%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/guided-tour-machine-learning-finance"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/guided-tour-machine-learning-finance",
+    "featured": false
+  },
+  {
+    "id": "coursera-fundamentals-of-data-science-in-healthcare",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Fundamentals of Data Science in Healthcare",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 37,
+    "summary": "Currently in progress (37%).",
+    "takeaway": "Currently in progress (37%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/fundamentals-of-data-science-in-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Fundamentals of Data Science in Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 37,
+        "summary": "Currently in progress (37%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/fundamentals-of-data-science-in-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/fundamentals-of-data-science-in-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-project-generative-ai-applications-with-rag-and-langchain",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Project: Generative AI Applications with RAG and LangChain",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 34,
+    "summary": "Currently in progress (34%).",
+    "takeaway": "Currently in progress (34%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain"
+    },
+    "courses": [
+      {
+        "title": "Project: Generative AI Applications with RAG and LangChain",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 34,
+        "summary": "Currently in progress (34%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain",
+    "featured": false
+  },
+  {
+    "id": "coursera-azure-ai-and-healthcare-cloud-fundamentals",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Azure AI and Healthcare Cloud Fundamentals",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 32,
+    "summary": "Currently in progress (32%).",
+    "takeaway": "Currently in progress (32%).",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/azure-ai-and-healthcare-cloud-fundamentals"
+    },
+    "courses": [
+      {
+        "title": "Azure AI and Healthcare Cloud Fundamentals",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 32,
+        "summary": "Currently in progress (32%).",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/azure-ai-and-healthcare-cloud-fundamentals"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/azure-ai-and-healthcare-cloud-fundamentals",
+    "featured": false
+  },
+  {
+    "id": "coursera-deep-learning-methods-for-healthcare",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Deep Learning Methods for Healthcare",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 32,
+    "summary": "Currently in progress (32%).",
+    "takeaway": "Currently in progress (32%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/deep-learning-methods-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Deep Learning Methods for Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 32,
+        "summary": "Currently in progress (32%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/deep-learning-methods-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/deep-learning-methods-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-ai-fundamentals-in-financial-services",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "AI Fundamentals in Financial Services",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 30,
+    "summary": "Currently in progress (30%).",
+    "takeaway": "Currently in progress (30%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/ai-financial-services"
+    },
+    "courses": [
+      {
+        "title": "AI Fundamentals in Financial Services",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 30,
+        "summary": "Currently in progress (30%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/ai-financial-services"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/ai-financial-services",
+    "featured": false
+  },
+  {
+    "id": "coursera-application-development-using-microservices-and-serverless",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Application Development using Microservices and Serverless",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 30,
+    "summary": "Currently in progress (30%).",
+    "takeaway": "Currently in progress (30%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/applications-development-microservices-serverless-openshift"
+    },
+    "courses": [
+      {
+        "title": "Application Development using Microservices and Serverless",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 30,
+        "summary": "Currently in progress (30%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/applications-development-microservices-serverless-openshift"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/applications-development-microservices-serverless-openshift",
+    "featured": false
+  },
+  {
+    "id": "coursera-data-analysis-with-python",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Data Analysis with Python",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 28,
+    "summary": "Currently in progress (28%).",
+    "takeaway": "Currently in progress (28%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/data-analysis-with-python"
+    },
+    "courses": [
+      {
+        "title": "Data Analysis with Python",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 28,
+        "summary": "Currently in progress (28%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/data-analysis-with-python"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/data-analysis-with-python",
+    "featured": false
+  },
+  {
+    "id": "coursera-machine-learning-with-python",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Machine Learning with Python",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 26,
+    "summary": "Currently in progress (26%).",
+    "takeaway": "Currently in progress (26%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/machine-learning-with-python"
+    },
+    "courses": [
+      {
+        "title": "Machine Learning with Python",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 26,
+        "summary": "Currently in progress (26%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/machine-learning-with-python"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/machine-learning-with-python",
+    "featured": false
+  },
+  {
+    "id": "coursera-advanced-deep-learning-methods-for-healthcare",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Advanced Deep Learning Methods for Healthcare",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 24,
+    "summary": "Currently in progress (24%).",
+    "takeaway": "Currently in progress (24%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/advanced-deep-learning-methods-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Advanced Deep Learning Methods for Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 24,
+        "summary": "Currently in progress (24%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/advanced-deep-learning-methods-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/advanced-deep-learning-methods-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-fundamentals-of-machine-learning-in-finance",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Fundamentals of Machine Learning in Finance",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 24,
+    "summary": "Currently in progress (24%).",
+    "takeaway": "Currently in progress (24%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/fundamentals-machine-learning-in-finance"
+    },
+    "courses": [
+      {
+        "title": "Fundamentals of Machine Learning in Finance",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 24,
+        "summary": "Currently in progress (24%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/fundamentals-machine-learning-in-finance"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/fundamentals-machine-learning-in-finance",
+    "featured": false
+  },
+  {
+    "id": "coursera-gen-ai-beyond-the-chatbot",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Gen AI: Beyond the Chatbot",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 24,
+    "summary": "Currently in progress (24%).",
+    "takeaway": "Currently in progress (24%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/gen-ai-beyond-the-chatbot"
+    },
+    "courses": [
+      {
+        "title": "Gen AI: Beyond the Chatbot",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 24,
+        "summary": "Currently in progress (24%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/gen-ai-beyond-the-chatbot"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/gen-ai-beyond-the-chatbot",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-generative-ai-in-healthcare",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Introduction to Generative AI in Healthcare",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 22,
+    "summary": "Currently in progress (22%).",
+    "takeaway": "Currently in progress (22%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-generative-ai-in-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Generative AI in Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 22,
+        "summary": "Currently in progress (22%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-generative-ai-in-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-generative-ai-in-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-5g-network-fundamentals",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "5G Network Fundamentals",
+    "issuer": "Institut Mines-Télécom / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 21,
+    "summary": "Institut Mines-Télécom · Currently in progress (21%).",
+    "takeaway": "Institut Mines-Télécom · Currently in progress (21%).",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/5g-network-fundamentals"
+    },
+    "courses": [
+      {
+        "title": "5G Network Fundamentals",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 21,
+        "summary": "Institut Mines-Télécom · Currently in progress (21%).",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/5g-network-fundamentals"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/5g-network-fundamentals",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-essentials-for-finance-and-accounting",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI Essentials for Finance and Accounting",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 21,
+    "summary": "Currently in progress (21%).",
+    "takeaway": "Currently in progress (21%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/generative-ai-essentials-for-finance-and-accounting"
+    },
+    "courses": [
+      {
+        "title": "Generative AI Essentials for Finance and Accounting",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 21,
+        "summary": "Currently in progress (21%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/generative-ai-essentials-for-finance-and-accounting"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-essentials-for-finance-and-accounting",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-systems-architecture",
+    "profiles": [],
+    "domain": "system-design",
+    "published": true,
+    "title": "Introduction to Systems Architecture",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 17,
+    "summary": "Currently in progress (17%).",
+    "takeaway": "Currently in progress (17%).",
+    "skills": [
+      "System Design & Software Architecture"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-systems-architecture"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Systems Architecture",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 17,
+        "summary": "Currently in progress (17%).",
+        "skills": [
+          "System Design & Software Architecture"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-systems-architecture"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-systems-architecture",
+    "featured": false
+  },
+  {
+    "id": "coursera-machine-learning-for-healthcare-applications",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Machine Learning for Healthcare Applications",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 17,
+    "summary": "Currently in progress (17%).",
+    "takeaway": "Currently in progress (17%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/machine-learning-for-healthcare-applications"
+    },
+    "courses": [
+      {
+        "title": "Machine Learning for Healthcare Applications",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 17,
+        "summary": "Currently in progress (17%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/machine-learning-for-healthcare-applications"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/machine-learning-for-healthcare-applications",
+    "featured": false
+  },
+  {
+    "id": "coursera-reinforcement-learning-in-finance",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Reinforcement Learning in Finance",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 16,
+    "summary": "Currently in progress (16%).",
+    "takeaway": "Currently in progress (16%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/reinforcement-learning-in-finance"
+    },
+    "courses": [
+      {
+        "title": "Reinforcement Learning in Finance",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 16,
+        "summary": "Currently in progress (16%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/reinforcement-learning-in-finance"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/reinforcement-learning-in-finance",
+    "featured": false
+  },
+  {
+    "id": "coursera-advanced-healthcare-analytics",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Advanced Healthcare Analytics",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 15,
+    "summary": "Currently in progress (15%).",
+    "takeaway": "Currently in progress (15%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/advanced-healthcare-analytics"
+    },
+    "courses": [
+      {
+        "title": "Advanced Healthcare Analytics",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 15,
+        "summary": "Currently in progress (15%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/advanced-healthcare-analytics"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/advanced-healthcare-analytics",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-clinical-data",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Clinical Data",
+    "issuer": "Stanford Online / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 14,
+    "summary": "Stanford Online · Currently in progress (14%).",
+    "takeaway": "Stanford Online · Currently in progress (14%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-clinical-data"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Clinical Data",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 14,
+        "summary": "Stanford Online · Currently in progress (14%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-clinical-data"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-clinical-data",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-for-healthcare-students-and-professionals",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI for Healthcare Students and Professionals",
+    "issuer": "University of Glasgow / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 11,
+    "summary": "University of Glasgow · Currently in progress (11%).",
+    "takeaway": "University of Glasgow · Currently in progress (11%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/generative-ai-for-healthcare-students-and-professionals"
+    },
+    "courses": [
+      {
+        "title": "Generative AI for Healthcare Students and Professionals",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 11,
+        "summary": "University of Glasgow · Currently in progress (11%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/generative-ai-for-healthcare-students-and-professionals"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-for-healthcare-students-and-professionals",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-software-development",
+    "profiles": [],
+    "domain": "cloud-devops",
+    "published": true,
+    "title": "Introduction to Software Development",
+    "issuer": "Amazon / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 11,
+    "summary": "Amazon · Currently in progress (11%).",
+    "takeaway": "Amazon · Currently in progress (11%).",
+    "skills": [
+      "Cloud, DevOps & Software Engineering"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-software-development"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Software Development",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 11,
+        "summary": "Amazon · Currently in progress (11%).",
+        "skills": [
+          "Cloud, DevOps & Software Engineering"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-software-development"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-software-development",
+    "featured": false
+  },
+  {
+    "id": "coursera-langchain-masterclass-build-15-llm-apps-with-python",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "LangChain MasterClass: Build 15 LLM Apps with Python",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 9,
+    "summary": "Currently in progress (9%).",
+    "takeaway": "Currently in progress (9%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/packt-langchain-masterclass-build-15-openai-and-llama-2-llm-apps-using-pyt-s2uus"
+    },
+    "courses": [
+      {
+        "title": "LangChain MasterClass: Build 15 LLM Apps with Python",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 9,
+        "summary": "Currently in progress (9%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/packt-langchain-masterclass-build-15-openai-and-llama-2-llm-apps-using-pyt-s2uus"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/packt-langchain-masterclass-build-15-openai-and-llama-2-llm-apps-using-pyt-s2uus",
+    "featured": false
+  },
+  {
+    "id": "coursera-overview-of-important-protocols",
+    "profiles": [],
+    "domain": "system-design",
+    "published": true,
+    "title": "Overview of Important Protocols",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 8,
+    "summary": "Currently in progress (8%).",
+    "takeaway": "Currently in progress (8%).",
+    "skills": [
+      "System Design & Software Architecture"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/overview-of-important-protocols"
+    },
+    "courses": [
+      {
+        "title": "Overview of Important Protocols",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 8,
+        "summary": "Currently in progress (8%).",
+        "skills": [
+          "System Design & Software Architecture"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/overview-of-important-protocols"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/overview-of-important-protocols",
+    "featured": false
+  },
+  {
+    "id": "coursera-foundations-of-neuroscience",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Foundations of Neuroscience",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 7,
+    "summary": "Currently in progress (7%).",
+    "takeaway": "Currently in progress (7%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/foundations-of-neuroscience"
+    },
+    "courses": [
+      {
+        "title": "Foundations of Neuroscience",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 7,
+        "summary": "Currently in progress (7%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/foundations-of-neuroscience"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/foundations-of-neuroscience",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-neural-networks",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Neural Networks",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 7,
+    "summary": "Currently in progress (7%).",
+    "takeaway": "Currently in progress (7%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-neural-networks"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Neural Networks",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 7,
+        "summary": "Currently in progress (7%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-neural-networks"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-neural-networks",
+    "featured": false
+  },
+  {
+    "id": "coursera-5g-for-everyone",
+    "profiles": [
+      "faculty"
+    ],
+    "domain": "wireless",
+    "published": true,
+    "title": "5G for Everyone",
+    "issuer": "Qualcomm Academy / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 6,
+    "summary": "Qualcomm Academy · Currently in progress (6%).",
+    "takeaway": "Qualcomm Academy · Currently in progress (6%).",
+    "skills": [
+      "Wireless Communications & Networks"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/5g-training-qualcomm"
+    },
+    "courses": [
+      {
+        "title": "5G for Everyone",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 6,
+        "summary": "Qualcomm Academy · Currently in progress (6%).",
+        "skills": [
+          "Wireless Communications & Networks"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/5g-training-qualcomm"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/5g-training-qualcomm",
+    "featured": false
+  },
+  {
+    "id": "coursera-foundations-of-business-analysis",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Foundations of Business Analysis",
+    "issuer": "SAP / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 5,
+    "summary": "SAP · Currently in progress (5%).",
+    "takeaway": "SAP · Currently in progress (5%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/foundations-business-analysis"
+    },
+    "courses": [
+      {
+        "title": "Foundations of Business Analysis",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 5,
+        "summary": "SAP · Currently in progress (5%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/foundations-business-analysis"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/foundations-business-analysis",
+    "featured": false
+  },
+  {
+    "id": "coursera-network-architecture-fundamentals",
+    "profiles": [],
+    "domain": "system-design",
+    "published": true,
+    "title": "Network Architecture Fundamentals",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 5,
+    "summary": "Currently in progress (5%).",
+    "takeaway": "Currently in progress (5%).",
+    "skills": [
+      "System Design & Software Architecture"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/network-architecture-fundamentals"
+    },
+    "courses": [
+      {
+        "title": "Network Architecture Fundamentals",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 5,
+        "summary": "Currently in progress (5%).",
+        "skills": [
+          "System Design & Software Architecture"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/network-architecture-fundamentals"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/network-architecture-fundamentals",
+    "featured": false
+  },
+  {
+    "id": "coursera-machine-learning-and-ai-applications-in-healthcare",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Machine Learning and AI Applications in Healthcare",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 4,
+    "summary": "Currently in progress (4%).",
+    "takeaway": "Currently in progress (4%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/machine-learning-and-ai-applications-in-healthcare"
+    },
+    "courses": [
+      {
+        "title": "Machine Learning and AI Applications in Healthcare",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 4,
+        "summary": "Currently in progress (4%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/machine-learning-and-ai-applications-in-healthcare"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/machine-learning-and-ai-applications-in-healthcare",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-generative-ai-concepts-and-techniques",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Introduction to Generative AI: Concepts and Techniques",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 3,
+    "summary": "Currently in progress (3%).",
+    "takeaway": "Currently in progress (3%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/introduction-to-generative-ai-concepts-and-techniques"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Generative AI: Concepts and Techniques",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 3,
+        "summary": "Currently in progress (3%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/introduction-to-generative-ai-concepts-and-techniques"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/introduction-to-generative-ai-concepts-and-techniques",
+    "featured": false
+  },
+  {
+    "id": "coursera-neural-networks-and-deep-learning",
+    "profiles": [
+      "aiml",
+      "faculty"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Neural Networks and Deep Learning",
+    "issuer": "DeepLearning.AI / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 3,
+    "summary": "DeepLearning.AI · Currently in progress (3%).",
+    "takeaway": "DeepLearning.AI · Currently in progress (3%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/neural-networks-deep-learning"
+    },
+    "courses": [
+      {
+        "title": "Neural Networks and Deep Learning",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 3,
+        "summary": "DeepLearning.AI · Currently in progress (3%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/neural-networks-deep-learning"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/neural-networks-deep-learning",
+    "featured": false
+  },
+  {
+    "id": "coursera-principles-of-fmri-1",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Principles of fMRI 1",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 3,
+    "summary": "Currently in progress (3%).",
+    "takeaway": "Currently in progress (3%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/functional-mri"
+    },
+    "courses": [
+      {
+        "title": "Principles of fMRI 1",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 3,
+        "summary": "Currently in progress (3%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/functional-mri"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/functional-mri",
+    "featured": false
+  },
+  {
+    "id": "coursera-generative-ai-elevate-your-software-development-career",
+    "profiles": [
+      "genai"
+    ],
+    "domain": "genai",
+    "published": true,
+    "title": "Generative AI: Elevate your Software Development Career",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 2,
+    "summary": "Currently in progress (2%).",
+    "takeaway": "Currently in progress (2%).",
+    "skills": [
+      "Generative & Agentic AI"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/generative-ai-elevate-software-development-career"
+    },
+    "courses": [
+      {
+        "title": "Generative AI: Elevate your Software Development Career",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 2,
+        "summary": "Currently in progress (2%).",
+        "skills": [
+          "Generative & Agentic AI"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/generative-ai-elevate-software-development-career"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/generative-ai-elevate-software-development-career",
+    "featured": false
+  },
+  {
+    "id": "coursera-introduction-to-neurohacking-in-r",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Introduction to Neurohacking In R",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 2,
+    "summary": "Currently in progress (2%).",
+    "takeaway": "Currently in progress (2%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/neurohacking"
+    },
+    "courses": [
+      {
+        "title": "Introduction to Neurohacking In R",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 2,
+        "summary": "Currently in progress (2%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/neurohacking"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/neurohacking",
+    "featured": false
+  },
+  {
+    "id": "coursera-principles-of-fmri-2",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Principles of fMRI 2",
+    "issuer": "Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 2,
+    "summary": "Currently in progress (2%).",
+    "takeaway": "Currently in progress (2%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/functional-mri-2"
+    },
+    "courses": [
+      {
+        "title": "Principles of fMRI 2",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 2,
+        "summary": "Currently in progress (2%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/functional-mri-2"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/functional-mri-2",
+    "featured": false
+  },
+  {
+    "id": "coursera-learning-how-to-learn-powerful-mental-tools-to-help-you-master-tough-subjects",
+    "profiles": [
+      "aiml"
+    ],
+    "domain": "ml-data",
+    "published": true,
+    "title": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
+    "issuer": "Deep Teaching Solutions / Coursera",
+    "status": "In progress",
+    "completionDate": "",
+    "progressPercent": 1,
+    "summary": "Deep Teaching Solutions · Currently in progress (1%).",
+    "takeaway": "Deep Teaching Solutions · Currently in progress (1%).",
+    "skills": [
+      "AI/ML: Data Science & Analytics"
+    ],
+    "certificateUrl": "",
+    "links": {
+      "coursera": "https://www.coursera.org/learn/learning-how-to-learn"
+    },
+    "courses": [
+      {
+        "title": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
+        "status": "In progress",
+        "completionDate": "",
+        "progressPercent": 1,
+        "summary": "Deep Teaching Solutions · Currently in progress (1%).",
+        "skills": [
+          "AI/ML: Data Science & Analytics"
+        ],
+        "certificateUrl": "",
+        "links": {
+          "coursera": "https://www.coursera.org/learn/learning-how-to-learn"
+        }
+      }
+    ],
+    "inventoryUrl": "https://www.coursera.org/learn/learning-how-to-learn",
+    "featured": false
+  }
+];
