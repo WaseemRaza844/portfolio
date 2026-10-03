@@ -28,10 +28,11 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "title": "System Design Case-Study Portfolio",
     "category": "Guided Project",
-    "date": "2026 · In progress",
+    "date": "2026",
     "summary": "Documented architecture studies that translate product requirements into scalable services, data models, APIs, caching strategies, and reliability tradeoffs.",
     "home": {
       "badge": "Architecture / System Design",
+      "statusBadge": "Active Architecture",
       "problem": "Translate ambiguous product requirements into architectures that remain scalable, reliable, and explainable under realistic traffic and data constraints.",
       "implementation": "Documented case studies cover service boundaries, APIs, storage models, caching, consistency, capacity assumptions, and availability tradeoffs across distributed-system designs.",
       "architectureUrl": "https://github.com/WaseemRaza844/system-design-masterclass",
@@ -45,7 +46,7 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": true,
     "group": "coursera-portfolio",
-    "status": "In progress",
+    "status": "Active Architecture",
     "links": {
       "github": "https://github.com/WaseemRaza844/system-design-masterclass"
     },
@@ -59,10 +60,11 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "title": "Agentic AI and RAG Applications",
     "category": "Portfolio Project",
-    "date": "2026 · In progress",
+    "date": "2026",
     "summary": "Practical experiments with retrieval, tool-using agents, orchestration, memory, evaluation, and multi-agent workflows.",
     "home": {
       "badge": "GenAI / Agentic Systems",
+      "statusBadge": "Active System",
       "problem": "Build grounded AI workflows that can retrieve context, use tools, maintain state, and complete multi-step tasks without relying on a single unconstrained model call.",
       "implementation": "Hands-on implementations explore RAG, vector retrieval, LangGraph-style orchestration, tool-using agents, memory, evaluation, and multi-agent workflow patterns.",
       "architectureUrl": "https://github.com/WaseemRaza844/agentic-ai-projects-by-was",
@@ -77,7 +79,7 @@ window.PORTFOLIO_DATA.projects = [
     ],
     "featured": true,
     "group": "coursera-portfolio",
-    "status": "In progress",
+    "status": "Active System",
     "links": {
       "github": "https://github.com/WaseemRaza844/agentic-ai-projects-by-was"
     },
