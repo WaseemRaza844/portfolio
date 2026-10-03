@@ -55,5 +55,21 @@ class SelectionTests(unittest.TestCase):
         self.assertNotIn("CONTACTS=r' \\quad '.join(filter(None, contacts))", renderer)
 
 
+class LatexEscapingTests(unittest.TestCase):
+    def test_course_titles_escape_latex_special_characters(self):
+        import importlib.util
+
+        path = Path(__file__).parents[1] / 'latex_renderer.py'
+        spec = importlib.util.spec_from_file_location('resume_latex_renderer', path)
+        renderer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(renderer)
+
+        self.assertEqual(
+            renderer.tex('R&D 50%_AI {LLM} #1 $10 ~ ^ | < > \\'),
+            r'R\&D 50\%\_AI \{LLM\} \#1 \$10 \textasciitilde{} \textasciicircum{} '
+            r'\textbar{} \textless{} \textgreater{} \textbackslash{}',
+        )
+
+
 if __name__ == '__main__':
     unittest.main()
