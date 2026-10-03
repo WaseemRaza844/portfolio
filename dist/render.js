@@ -38,6 +38,39 @@
     /^completed/i.test(course.status || '') || /^completed/i.test(course.completionDate || '')
   ).length;
 
+  const isVerifiedCompletedCourse = (item) => {
+    const url = item?.links?.coursera || "";
+    return item?.status === "Completed" &&
+      item?.progressPercent === 100 &&
+      Boolean(String(item?.completionDate || "").trim()) &&
+      /coursera\.org\/(?:account\/accomplishments\/|verify\/)/i.test(url);
+  };
+
+  const courseFromRecord = (record) => {
+    const nested = record?.courses?.[0] || {};
+    return {
+      ...nested,
+      title: record.title,
+      status: "Completed",
+      completionDate: record.completionDate,
+      progressPercent: 100,
+      summary: record.summary || nested.summary || "",
+      takeaway: record.takeaway || nested.takeaway || "",
+      skills: record.skills || nested.skills || [],
+      certificateUrl: record.certificateUrl || nested.certificateUrl || "",
+      links: record.links || nested.links || {},
+      relatedCredentials: []
+    };
+  };
+
+  const programAction = (program) => {
+    const url = program?.links?.coursera;
+    if (!url) return "";
+    const verified = /\/verify\//i.test(url) || /account\/accomplishments\//i.test(url);
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' +
+      (verified ? 'Verify Program Credential ↗' : 'View Coursera Program ↗') + '</a>';
+  };
+
   function featuredCertificationCard(item) {
     const active = item.status.toLowerCase().includes("progress") ? " active" : "";
     return '<article class="detail-card reveal visible">' +
@@ -74,15 +107,33 @@
   }
 
   function certificationAccordion(item, index) {
-    const completed = item.reportedProgress?.completed ?? completedCount(item.courses);
-    const total = item.reportedProgress?.total ?? item.courses.length;
-    const inProgress = item.status.toLowerCase().includes('progress');
-    const rawDate = item.completionDate.replace(/^(Target:|Completed:?)\s*/i, '');
-    const dateText = rawDate && !/^completed$/i.test(rawDate) ? (inProgress ? 'Current course progress' : 'Completed: ') + rawDate : (inProgress ? 'Course status from Coursera' : 'Completion date unavailable');
-    const progressLabel = inProgress && Number.isFinite(item.progressPercent) ? 'In Progress · ' + item.progressPercent + '%' : 'Completed course';
-    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><span class="credential-state' + (inProgress ? ' active' : '') + '">' + esc(inProgress ? 'In Progress' : 'Completed') + '</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + esc(progressLabel) + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
-      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Certification overview</p><p>' + esc(item.summary) + '</p></div>' + (item.curriculumNote ? '<div><p class="field-label">Curriculum version</p><p>' + esc(item.curriculumNote) + '</p></div>' : '') + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills) + '</div>' + pdfDocument(item.certificateUrl, "professional certificate") + '</div>' +
-      '<div class="course-section"><div class="course-heading"><p class="field-label">Courses included</p><span>Select a course to see details</span></div>' + item.courses.map(courseAccordion).join("") + '</div></div></details>';
+    const rawDate = String(item.completionDate || "").replace(/^(Target:|Completed:?)\s*/i, '');
+    const dateText = rawDate && !/^completed$/i.test(rawDate) ? 'Completed: ' + rawDate : 'Verified completed credential';
+    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><span class="credential-state">Completed</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>Standalone course certificate</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
+      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Course overview</p><p>' + esc(item.summary) + '</p></div>' + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills || []) + '</div>' + pdfDocument(item.certificateUrl, "course certificate") + '</div>' +
+      '<div class="course-section"><div class="course-heading"><p class="field-label">Completed course</p><span>Dated and Coursera-verified</span></div>' + (item.courses || []).map(courseAccordion).join("") + '</div></div></details>';
+  }
+
+  function programAccordion(program, index, records) {
+    const courses = (program.courseIds || [])
+      .map((id) => records.find((record) => record.id === id))
+      .filter(Boolean)
+      .filter(visibleForProfile)
+      .filter(isVerifiedCompletedCourse)
+      .map(courseFromRecord);
+    if (!courses.length) return "";
+
+    const awardedLabel = program.awarded ? 'Completed program' : 'Completed courses only';
+    const dateText = program.completionDate
+      ? 'Completed: ' + program.completionDate
+      : (program.awarded ? 'Awarded program credential' : 'Incomplete courses intentionally excluded');
+    const programNote = program.awarded
+      ? 'Only child courses with 100% completion, a completion date, and a Coursera verification credential are shown.'
+      : 'This parent is used only as a curriculum grouping. No incomplete course or partial-progress percentage is displayed.';
+
+    return '<details class="certification-accordion reveal visible program-accordion"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(program.credentialType || 'Program') + ' · ' + esc(program.issuer || 'Coursera') + '</p><span class="credential-state">' + esc(awardedLabel) + '</span><h2>' + esc(program.title) + '</h2><p class="cert-teaser">' + esc(program.summary || '') + '</p></div><div class="cert-summary-side"><div class="credential-links">' + programAction(program) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + courses.length + ' verified completed course' + (courses.length === 1 ? '' : 's') + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
+      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Parent credential / curriculum</p><p>' + esc(program.summary || '') + '</p></div><div><p class="field-label">Completion policy</p><p>' + esc(programNote) + '</p></div>' + pdfDocument(program.certificateUrl, "program certificate") + '</div>' +
+      '<div class="course-section"><div class="course-heading"><p class="field-label">Completed sub-courses</p><span>' + courses.length + ' verified credential' + (courses.length === 1 ? '' : 's') + '</span></div>' + courses.map(courseAccordion).join("") + '</div></div></details>';
   }
   function projectCard(item) {
     const home = item.home || {};
@@ -206,25 +257,84 @@
       : (featured ? visible.filter((x) => x.featured) : visible);
     el.innerHTML = selected.map(render).join("");
   }
-  function domainAreaSection(area, items) {
-    const done=items.filter(x=>!x.status.toLowerCase().includes('progress')).length;
-    return '<section class="domain-area" data-domain="' + esc(area.id) + '"><div class="domain-area-head"><div><p class="eyebrow">DOMAIN AREA</p><h2>' + esc(area.title) + '</h2><p>' + esc(area.description) + '</p></div><span>' + done + '/' + items.length + ' courses completed · ' + (items.length-done) + ' in progress</span></div><div class="accordion-list">' + items.map(certificationAccordion).join('') + '</div></section>';
+  function learningSubsection(title, description, content, countLabel) {
+    if (!content) return "";
+    return '<section class="course-section learning-subsection"><div class="course-heading"><div><p class="field-label">' + esc(title) + '</p>' +
+      (description ? '<p class="course-teaser">' + esc(description) + '</p>' : '') + '</div><span>' + esc(countLabel) + '</span></div><div class="accordion-list">' + content + '</div></section>';
   }
+
+  function domainAreaSection(area, verifiedRecords, allPrograms, guidedIds) {
+    const programs = (allPrograms || []).filter((program) => program.domain === area.id);
+    const programMarkup = [];
+    const groupedIds = new Set();
+
+    programs.forEach((program) => {
+      const eligibleIds = (program.courseIds || []).filter((id) =>
+        verifiedRecords.some((record) => record.id === id)
+      );
+      if (!eligibleIds.length) return;
+      eligibleIds.forEach((id) => groupedIds.add(id));
+      const markup = programAccordion(program, programMarkup.length, verifiedRecords);
+      if (markup) programMarkup.push(markup);
+    });
+
+    const guided = verifiedRecords.filter((record) =>
+      guidedIds.has(record.id) && record.domain === area.id
+    );
+    const formalStandalone = verifiedRecords.filter((record) =>
+      record.domain === area.id && !guidedIds.has(record.id) && !groupedIds.has(record.id)
+    );
+
+    const formalMarkup = programMarkup.join('') +
+      formalStandalone.map((item, index) => certificationAccordion(item, programMarkup.length + index)).join('');
+    const guidedMarkup = guided.map(certificationAccordion).join('');
+
+    const uniqueCourseIds = new Set([
+      ...programs.flatMap((program) => (program.courseIds || []).filter((id) => verifiedRecords.some((record) => record.id === id))),
+      ...formalStandalone.map((item) => item.id),
+      ...guided.map((item) => item.id)
+    ]);
+
+    if (!uniqueCourseIds.size && !learningSettings.showEmptyPaths) return '';
+
+    const formalCount = new Set([
+      ...programs.flatMap((program) => (program.courseIds || []).filter((id) => verifiedRecords.some((record) => record.id === id))),
+      ...formalStandalone.map((item) => item.id)
+    ]).size;
+
+    return '<section class="domain-area" data-domain="' + esc(area.id) + '"><div class="domain-area-head"><div><p class="eyebrow">DOMAIN AREA</p><h2>' + esc(area.title) + '</h2><p>' + esc(area.description) + '</p></div><span>' + uniqueCourseIds.size + ' verified completed course' + (uniqueCourseIds.size === 1 ? '' : 's') + '</span></div>' +
+      learningSubsection(area.formalTitle || 'Formal Certifications & Specializations', 'Parent programs contain only completed, dated, Coursera-verified sub-courses. Standalone formal courses remain single-course credentials.', formalMarkup, formalCount + ' formal course credential' + (formalCount === 1 ? '' : 's')) +
+      learningSubsection(area.guidedTitle || 'Applied Guided Projects & Practical Labs', area.guidedDescription || '', guidedMarkup, guided.length + ' guided project' + (guided.length === 1 ? '' : 's')) +
+      '</section>';
+  }
+
   function mountDomainAreas() {
     const el = document.getElementById('all-certifications');
     if (!el) return;
     const areas = data.domainAreas || [];
-    const filteredCertifications = data.certifications.filter(visibleForProfile);
-    el.innerHTML = areas.map((area) => {
-      const items = filteredCertifications.filter((item) => item.domain === area.id);
-      return items.length || learningSettings.showEmptyPaths ? domainAreaSection(area, items) : '';
-    }).join('');
+    const allPrograms = data.learningPrograms || [];
+    const guidedIds = new Set(data.learningGuidedProjectIds || []);
+    const verifiedRecords = data.certifications
+      .filter(visibleForProfile)
+      .filter(isVerifiedCompletedCourse);
+
+    el.innerHTML = areas.map((area) =>
+      domainAreaSection(area, verifiedRecords, allPrograms, guidedIds)
+    ).join('');
+
     const stats = document.getElementById('learning-stats');
     if (stats) {
-      const visibleAreas = areas.filter((area) => filteredCertifications.some((item) => item.domain === area.id)).length;
-      const inProgress = filteredCertifications.filter((item) => item.status.toLowerCase().includes('progress')).length;
-      const completed=filteredCertifications.length-inProgress;
-      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domains</span><span><strong>' + filteredCertifications.length + '</strong> courses</span><span><strong>' + completed + '</strong> completed</span><span><strong>' + inProgress + '</strong> in progress</span>';
+      const visibleAreas = areas.filter((area) => {
+        const direct = verifiedRecords.some((item) => item.domain === area.id);
+        const grouped = allPrograms.some((program) =>
+          program.domain === area.id &&
+          (program.courseIds || []).some((id) => verifiedRecords.some((record) => record.id === id))
+        );
+        return direct || grouped;
+      }).length;
+      const guidedCount = verifiedRecords.filter((item) => guidedIds.has(item.id)).length;
+      const formalCount = verifiedRecords.length - guidedCount;
+      stats.innerHTML = '<span><strong>' + visibleAreas + '</strong> domains</span><span><strong>' + verifiedRecords.length + '</strong> verified completed courses</span><span><strong>' + formalCount + '</strong> formal course credentials</span><span><strong>' + guidedCount + '</strong> guided projects</span>';
     }
   }
   function applySiteSettings() {
