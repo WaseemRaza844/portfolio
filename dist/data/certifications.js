@@ -1749,7 +1749,7 @@ window.PORTFOLIO_DATA.certifications = [
     "skills": [
       "Cloud, DevOps & Software Engineering"
     ],
-    "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WA0EMCU.pdf",
+    "certificateUrl": "./certificates/cloud-devops/C3. Coursera IFP65WAOEMCU.pdf",
     "links": {
       "coursera": "https://www.coursera.org/account/accomplishments/verify/IFP65WAOEMCU"
     },
