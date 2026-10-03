@@ -28,9 +28,12 @@
       '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + esc(labels[key] || key) + ' ↗</a>'
     ).join('');
   };
+  const isVerifiedCourseraUrl = (url) =>
+    /\/verify\//i.test(url || '') || /account\/accomplishments\//i.test(url || '');
+
   const credentialAction = (url) => {
     if (!url) return '';
-    const verified = /\/verify\//i.test(url) || /account\/accomplishments\//i.test(url);
+    const verified = isVerifiedCourseraUrl(url);
     return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' +
       (verified ? 'Verify Coursera Credential ↗' : 'View Coursera Course ↗') + '</a>';
   };
@@ -85,7 +88,7 @@
       ? rawDate
       : 'Completion date verified';
     const verifyLink = course.links?.coursera ? credentialAction(course.links.coursera) : '';
-    const verifiedFallbackBadge = course.links?.coursera && !course.certificateUrl
+    const verifiedFallbackBadge = isVerifiedCourseraUrl(course.links?.coursera) && !course.certificateUrl
       ? '<span class="badge badge-subtle">Coursera Verified</span>'
       : '';
     const githubLink = course.links?.github
@@ -120,7 +123,7 @@
       '<div class="cert-summary-main"><span class="credential-provider-badge">' + esc(item.issuer) + '</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div>' +
       '<div class="cert-summary-side"><span class="credential-state">Completed</span><span class="credential-date">' + esc(dateText) + '</span>' +
       '<div class="credential-links">' + credentialAction(item.links?.coursera) +
-      (item.links?.coursera && !item.certificateUrl ? '<span class="badge badge-subtle">Coursera Verified</span>' : '') +
+      (isVerifiedCourseraUrl(item.links?.coursera) && !item.certificateUrl ? '<span class="badge badge-subtle">Coursera Verified</span>' : '') +
       '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
       '<div class="certification-content vertical-credential-content">' +
       '<div class="certificate-preview-row">' + pdfDocument(item.certificateUrl, 'course certificate') + '</div>' +
