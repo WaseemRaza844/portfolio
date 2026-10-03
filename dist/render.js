@@ -102,9 +102,9 @@
       ((verifyLink || githubLink) ? '<div class="credential-links course-credential-links">' + verifyLink + githubLink + '</div>' : '') +
       '</div></div>' +
       '<div class="course-card-details">' +
+      pdfDocument(course.certificateUrl, 'course certificate') +
       (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
-      pdfDocument(course.certificateUrl, 'course certificate') +
       relatedCredentialMarkup +
       '</div></article>';
   }
@@ -148,8 +148,8 @@
       '<div class="cert-summary-side"><span class="credential-state">' + esc(awardedLabel) + '</span><span class="credential-date">' + esc(dateText) + '</span>' +
       '<div class="credential-links">' + programAction(program) + '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
       '<div class="certification-content vertical-credential-content">' +
-      '<div class="parent-overview-row"><p class="field-label">Parent credential / curriculum</p><p>' + esc(programNote) + '</p></div>' +
       '<div class="certificate-preview-row">' + pdfDocument(program.certificateUrl, 'Program Certificate') + '</div>' +
+      '<div class="parent-overview-row"><p class="field-label">Parent credential / curriculum</p><p>' + esc(programNote) + '</p></div>' +
       '<section class="course-section completed-subcourses-section"><div class="completed-subcourses-head"><h3>COMPLETED SUB-COURSES <span>(' + courses.length + ' verified credential' + (courses.length === 1 ? '' : 's') + ')</span></h3></div>' +
       '<div class="completed-course-stack">' + courses.map(courseAccordion).join("") + '</div></section>' +
       '</div></details>';
