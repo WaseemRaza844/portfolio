@@ -3614,20 +3614,25 @@ html[data-theme="light"] .learning-dark .parent-overview-row{
 
 
 /* NAV_PROJECT_VISITOR_REFINEMENTS_2026 */
-.enterprise-footer-meta{
-  min-width:0;
+.visitor-tracker-section{
+  box-sizing:border-box;
+  max-width:100%;
+  overflow:hidden;
 }
 
 .visitor-counter-wrapper{
   display:flex;
   justify-content:center;
   align-items:center;
+  box-sizing:border-box;
   width:max-content;
   max-width:100%;
   margin:1.5rem auto 0 auto;
   padding:6px;
+  overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
   border-radius:8px;
+  background:#0f172a;
   opacity:.8;
   transition:opacity .2s ease;
 }
@@ -3642,13 +3647,15 @@ html[data-theme="light"] .learning-dark .parent-overview-row{
   max-width:100%;
 }
 
-.visitor-counter-wrapper img{
-  height:auto;
-  border-radius:6px;
+.visitor-counter-wrapper a{
+  min-width:0;
+  overflow:hidden;
 }
 
-html[data-theme="light"] .visitor-counter-wrapper{
-  border-color:rgba(15,23,42,.10);
+.visitor-counter-wrapper img{
+  width:auto;
+  height:auto;
+  border-radius:6px;
 }
 
 .badge.badge-subtle{
@@ -3673,9 +3680,6 @@ html[data-theme="light"] .badge.badge-subtle{
 }
 
 @media(max-width:600px){
-  .enterprise-footer-meta{
-    width:100%;
-  }
   .visitor-counter-wrapper{
     margin-left:auto;
     margin-right:auto;
