@@ -85,6 +85,9 @@
       ? rawDate
       : 'Completion date verified';
     const verifyLink = course.links?.coursera ? credentialAction(course.links.coursera) : '';
+    const verifiedFallbackBadge = course.links?.coursera && !course.certificateUrl
+      ? '<span class="badge badge-subtle">Coursera Verified</span>'
+      : '';
     const githubLink = course.links?.github
       ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer">View GitHub Repo ↗</a>'
       : '';
@@ -99,7 +102,7 @@
       '<div class="course-title"><strong>' + esc(course.title) + '</strong>' +
       ((course.summary || course.takeaway) ? '<small class="course-teaser">' + esc(course.summary || course.takeaway) + '</small>' : '') +
       '</div><div class="course-card-meta"><span class="credential-state">Completed</span><span class="course-date">' + esc(dateText) + '</span>' +
-      ((verifyLink || githubLink) ? '<div class="credential-links course-credential-links">' + verifyLink + githubLink + '</div>' : '') +
+      ((verifyLink || githubLink) ? '<div class="credential-links course-credential-links">' + verifyLink + verifiedFallbackBadge + githubLink + '</div>' : '') +
       '</div></div>' +
       '<div class="course-card-details">' +
       pdfDocument(course.certificateUrl, 'course certificate') +
@@ -116,7 +119,9 @@
       '<summary><span class="cert-number">' + (index + 1) + '</span>' +
       '<div class="cert-summary-main"><span class="credential-provider-badge">' + esc(item.issuer) + '</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div>' +
       '<div class="cert-summary-side"><span class="credential-state">Completed</span><span class="credential-date">' + esc(dateText) + '</span>' +
-      '<div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
+      '<div class="credential-links">' + credentialAction(item.links?.coursera) +
+      (item.links?.coursera && !item.certificateUrl ? '<span class="badge badge-subtle">Coursera Verified</span>' : '') +
+      '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
       '<div class="certification-content vertical-credential-content">' +
       '<div class="certificate-preview-row">' + pdfDocument(item.certificateUrl, 'course certificate') + '</div>' +
       '<div class="cert-overview standalone-overview"><div><p class="field-label">Course overview</p><p>' + esc(item.summary) + '</p></div>' +
@@ -164,7 +169,7 @@
     const caseStudyLink = '<a class="project-action" href="' + esc(caseStudyUrl) + '">Case Study <span>↗</span></a>';
 
     return '<article class="project-card engineering-card reveal visible">' +
-      '<header class="engineering-card-head"><span class="project-kind">' + esc(home.badge || item.category) + '</span><span class="project-year">' + esc(item.date) + '</span></header>' +
+      '<header class="engineering-card-head"><span class="project-kind">' + esc(home.badge || item.category) + '</span><span class="project-year">' + esc(home.statusBadge || item.date) + '</span></header>' +
       '<h3>' + esc(item.title) + '</h3>' +
       '<div class="engineering-card-copy"><p><strong>Problem.</strong> ' + esc(problem) + '</p>' +
       (implementation ? '<p><strong>Implementation.</strong> ' + esc(implementation) + '</p>' : '') + '</div>' +
