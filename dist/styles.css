@@ -3180,3 +3180,56 @@ html[data-theme="light"] body .enterprise-footer{
     transform:none;
   }
 }
+
+
+/* LEARNING_THREE_TIER_HIERARCHY_2026 */
+.learning-subsection{
+  margin-top:26px;
+  padding:22px;
+  border:1px solid var(--border-card,var(--line));
+  border-radius:16px;
+  background:rgba(15,23,42,.42);
+}
+.learning-subsection + .learning-subsection{
+  margin-top:18px;
+}
+.learning-subsection>.course-heading{
+  align-items:flex-start;
+  margin-bottom:16px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--border-card,var(--line));
+}
+.learning-subsection>.course-heading>div{
+  max-width:760px;
+}
+.learning-subsection>.course-heading .course-teaser{
+  margin:6px 0 0;
+  color:var(--text-secondary,var(--muted));
+  font-size:13px;
+}
+.learning-subsection>.course-heading>span{
+  flex:0 0 auto;
+  padding:5px 8px;
+  border:1px solid rgba(56,189,248,.18);
+  border-radius:999px;
+  background:rgba(56,189,248,.06);
+  color:var(--accent-cyan,var(--cyan));
+  font:600 10.5px/1.3 "Space Grotesk",sans-serif;
+}
+.program-accordion .credential-state{
+  width:max-content;
+  border-color:rgba(56,189,248,.22);
+  color:var(--accent-cyan,var(--cyan));
+}
+html[data-theme="light"] .learning-subsection{
+  background:rgba(255,255,255,.72);
+}
+@media(max-width:700px){
+  .learning-subsection{
+    padding:16px;
+  }
+  .learning-subsection>.course-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
