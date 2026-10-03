@@ -6,6 +6,9 @@ on:
     paths:
       - 'resume/**'
       - 'dist/data/**'
+      - 'dist/render.js'
+      - 'dist/styles.css'
+      - 'dist/learning.html'
       - '.github/workflows/build-resumes.yml'
   workflow_dispatch:
 
