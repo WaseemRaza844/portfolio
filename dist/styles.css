@@ -3468,7 +3468,7 @@ html[data-theme="light"] .learning-subsection{
   gap:16px;
   width:100%;
   min-width:0;
-  padding:0 18px 18px 68px;
+  padding:0 18px 18px;
 }
 
 .learning-dark .course-card-details:empty{
@@ -3556,7 +3556,7 @@ html[data-theme="light"] .learning-dark .parent-overview-row{
   }
 
   .learning-dark .course-card-details{
-    padding-left:68px;
+    padding:0 18px 18px;
   }
 }
 
