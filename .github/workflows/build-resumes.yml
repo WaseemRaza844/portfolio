@@ -2,7 +2,7 @@ name: Build resume PDFs
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, feature/awais]
     paths:
       - 'resume/**'
       - 'dist/data/**'
