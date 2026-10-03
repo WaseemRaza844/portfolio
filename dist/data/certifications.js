@@ -4743,3 +4743,219 @@ window.PORTFOLIO_DATA.certifications = [
     "featured": false
   }
 ];
+
+// LEARNING_HIERARCHY_V2_2026
+// Website-only hierarchy metadata. The flat certification records above remain the
+// source of truth for resume IDs and Coursera inventory reconciliation.
+window.PORTFOLIO_DATA.learningPrograms = [
+  {
+    id: "learning-aws-bedrock-professional",
+    domain: "genai",
+    title: "AWS Generative AI and AI Agents with Amazon Bedrock Professional Certificate",
+    issuer: "AWS / Coursera",
+    credentialType: "Professional Certificate",
+    awarded: true,
+    completionDate: "August 29, 2026",
+    summary: "Three-course professional certificate focused on developing, customizing, optimizing, and automating generative AI applications and intelligent agents with Amazon Bedrock.",
+    certificateUrl: "./certificates/genai/aws-bedrock/aws-generative-ai-agents-amazon-bedrock.pdf",
+    links: { coursera: "https://coursera.org/verify/professional-cert/XMNOUZNOW9M0" },
+    courseIds: [
+      "coursera-getting-started-with-aws-generative-ai-for-developers",
+      "coursera-generative-ai-applications-with-amazon-bedrock",
+      "coursera-amazon-bedrock-customization-optimization-automation"
+    ]
+  },
+  {
+    id: "learning-ibm-genai-engineering",
+    domain: "genai",
+    title: "IBM Generative AI Engineering Professional Certificate",
+    issuer: "IBM / Coursera",
+    credentialType: "Professional Certificate Curriculum",
+    awarded: false,
+    summary: "Professional-certificate curriculum grouped here with only the individually completed, dated, and Coursera-verified course credentials currently present in the inventory.",
+    links: {},
+    courseIds: [
+      "coursera-introduction-to-artificial-intelligence-ai",
+      "coursera-generative-ai-introduction-and-applications",
+      "coursera-generative-ai-prompt-engineering-basics",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-developing-ai-applications-with-python-and-flask",
+      "coursera-building-generative-ai-powered-applications-with-python",
+      "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+      "coursera-generative-ai-and-llms-architecture-and-data-preparation",
+      "coursera-gen-ai-foundational-models-for-nlp-language-understanding",
+      "coursera-generative-ai-language-modeling-with-transformers",
+      "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+      "coursera-generative-ai-advanced-fine-tuning-for-llms",
+      "coursera-fundamentals-of-ai-agents-using-rag-and-langchain"
+    ]
+  },
+  {
+    id: "learning-ibm-rag-agentic-ai",
+    domain: "genai",
+    title: "IBM RAG and Agentic AI Professional Certificate",
+    issuer: "IBM / Coursera",
+    credentialType: "Professional Certificate",
+    awarded: true,
+    completionDate: "February 14, 2026",
+    summary: "Completed professional certificate covering retrieval-augmented generation, vector databases, multimodal applications, and agentic AI workflows.",
+    certificateUrl: "./certificates/genai/ibm-rag-agentic-ai/ibm-rag-agentic-ai-professional-certificate.pdf",
+    links: { coursera: "https://coursera.org/verify/professional-cert/0CB713GHZC1B" },
+    courseIds: [
+      "coursera-develop-generative-ai-applications-get-started",
+      "coursera-build-rag-applications-get-started",
+      "coursera-vector-databases-for-rag-an-introduction",
+      "coursera-advanced-rag-with-vector-databases-and-retrievers",
+      "coursera-build-multimodal-generative-ai-applications",
+      "coursera-fundamentals-of-building-ai-agents",
+      "coursera-agentic-ai-with-langchain-and-langgraph",
+      "coursera-agentic-ai-with-langgraph-crewai-autogen-and-beeai"
+    ]
+  },
+  {
+    id: "learning-genai-fundamentals",
+    domain: "genai",
+    title: "Generative AI Fundamentals Specialization",
+    issuer: "IBM / Coursera",
+    credentialType: "Specialization",
+    awarded: true,
+    completionDate: "July 16, 2026",
+    summary: "Five-course specialization covering generative AI foundations, prompt engineering, foundation models, responsible AI, and business applications.",
+    certificateUrl: "./certificates/genai/ibm-genai-fundamentals/ibm-genai-fundamentals.pdf",
+    links: { coursera: "https://coursera.org/verify/specialization/IPQKDOHF3IV2" },
+    courseIds: [
+      "coursera-generative-ai-introduction-and-applications",
+      "coursera-generative-ai-prompt-engineering-basics",
+      "coursera-generative-ai-foundation-models-and-platforms",
+      "coursera-generative-ai-impact-considerations-and-ethical-issues",
+      "coursera-generative-ai-business-transformation-and-career-growth"
+    ]
+  },
+  {
+    id: "learning-building-ai-agents",
+    domain: "genai",
+    title: "Building AI Agents and Agentic Workflows Specialization",
+    issuer: "IBM / Coursera",
+    credentialType: "Specialization",
+    awarded: true,
+    completionDate: "February 14, 2026",
+    summary: "Specialization in agent foundations, stateful orchestration, tool use, and multi-agent workflows.",
+    certificateUrl: "./certificates/genai/ibm-building-ai-agents/ibm-building-ai-agents.pdf",
+    links: { coursera: "https://coursera.org/verify/specialization/CEVQP0RYI532" },
+    courseIds: [
+      "coursera-fundamentals-of-building-ai-agents",
+      "coursera-agentic-ai-with-langchain-and-langgraph",
+      "coursera-agentic-ai-with-langgraph-crewai-autogen-and-beeai"
+    ]
+  },
+  {
+    id: "learning-rag-generative-ai-applications",
+    domain: "genai",
+    title: "RAG for Generative AI Applications Specialization",
+    issuer: "IBM / Coursera",
+    credentialType: "Specialization",
+    awarded: true,
+    completionDate: "March 21, 2026",
+    summary: "Specialization focused on building retrieval-augmented applications with vector databases and advanced retrievers.",
+    certificateUrl: "./certificates/genai/ibm-rag-applications/ibm-rag-applications.pdf",
+    links: { coursera: "https://coursera.org/verify/specialization/I7IDRI3160WV" },
+    courseIds: [
+      "coursera-develop-generative-ai-applications-get-started",
+      "coursera-build-rag-applications-get-started",
+      "coursera-vector-databases-for-rag-an-introduction",
+      "coursera-advanced-rag-with-vector-databases-and-retrievers"
+    ]
+  },
+  {
+    id: "learning-ibm-devops",
+    domain: "cloud-devops",
+    title: "IBM DevOps and Software Engineering Professional Certificate",
+    issuer: "IBM / Coursera",
+    credentialType: "Professional Certificate Curriculum",
+    awarded: false,
+    summary: "Professional-certificate curriculum grouped here with only completed, dated, and verified course credentials; unfinished courses are intentionally omitted.",
+    links: { coursera: "https://www.coursera.org/professional-certificates/devops-and-software-engineering" },
+    courseIds: [
+      "coursera-introduction-to-devops",
+      "coursera-introduction-to-cloud-computing",
+      "coursera-introduction-to-agile-development-and-scrum",
+      "coursera-introduction-to-software-engineering",
+      "coursera-hands-on-introduction-to-linux-commands-and-shell-scripting",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-developing-ai-applications-with-python-and-flask"
+    ]
+  },
+  {
+    id: "learning-google-cloud-data-analytics",
+    domain: "cloud-devops",
+    title: "Google Cloud Data Analytics Professional Certificate",
+    issuer: "Google Cloud / Coursera",
+    credentialType: "Professional Certificate",
+    awarded: true,
+    summary: "Five-course cloud data analytics curriculum covering data management, transformation, visualization, and job-ready analytical workflows.",
+    links: {},
+    courseIds: [
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-data-management-and-storage-in-the-cloud",
+      "coursera-data-transformation-in-the-cloud",
+      "coursera-the-power-of-storytelling-how-to-visualize-data-in-the-cloud",
+      "coursera-put-it-all-together-prepare-for-a-cloud-data-analyst-job"
+    ]
+  },
+  {
+    id: "learning-google-cloud-cybersecurity",
+    domain: "cloud-devops",
+    title: "Google Cloud Cybersecurity Professional Certificate",
+    issuer: "Google Cloud / Coursera",
+    credentialType: "Professional Certificate",
+    awarded: true,
+    completionDate: "June 2026",
+    summary: "Cloud-security curriculum covering risk management, threat prevention, detection, incident response, recovery, and analyst preparation.",
+    certificateUrl: "./certificates/cyber-security/google-cloud/google-cloud-cybersecurity-certificate.pdf",
+    links: {},
+    courseIds: [
+      "coursera-introduction-to-security-principles-in-cloud-computing",
+      "coursera-strategies-for-cloud-security-risk-management",
+      "coursera-cloud-security-risks-identify-and-protect-against-threats",
+      "coursera-detect-respond-and-recover-from-cloud-cybersecurity-attacks",
+      "coursera-put-it-all-together-prepare-for-a-cloud-security-analyst-job"
+    ]
+  },
+  {
+    id: "learning-deep-learning-healthcare",
+    domain: "ml-data",
+    title: "Deep Learning for Healthcare Specialization",
+    issuer: "University of Illinois Urbana-Champaign / Coursera",
+    credentialType: "Specialization Curriculum",
+    awarded: false,
+    summary: "Healthcare deep-learning specialization path; only currently completed and verified child credentials are displayed.",
+    links: { coursera: "https://www.coursera.org/specializations/deep-learning-healthcare" },
+    courseIds: [
+      "coursera-health-data-science-foundation"
+    ]
+  },
+  {
+    id: "learning-ai-telecommunications",
+    domain: "wireless",
+    title: "AI for Telecommunications Specialization",
+    issuer: "AI CERTs / Coursera",
+    credentialType: "Specialization",
+    awarded: true,
+    completionDate: "June 2026",
+    summary: "Three-course specialization connecting AI foundations with telecommunications network optimization, security, and customer experience.",
+    certificateUrl: "./certificates/wireless/ai-for-telecom.pdf",
+    links: { coursera: "https://coursera.org/verify/specialization/D8Y6MVC0XM51" },
+    courseIds: [
+      "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-network-and-security-optimization-in-telecommunication",
+      "coursera-customer-experience-in-telecommunication"
+    ]
+  }
+];
+
+window.PORTFOLIO_DATA.learningGuidedProjectIds = [
+  "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch",
+  "coursera-tesla-stock-price-prediction-using-facebook-prophet",
+  "coursera-publication-ready-tables-in-r"
+];
+
