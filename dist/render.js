@@ -80,38 +80,49 @@
   }
 
   function courseAccordion(course, index) {
-    const status = course.status || (/^completed/i.test(course.completionDate || '') ? 'Completed' : 'In progress');
-    const hasModuleCount = Number.isFinite(course.modulesCompleted) && Number.isFinite(course.modulesTotal);
-    const moduleText = hasModuleCount ? status + ' (' + course.modulesCompleted + '/' + course.modulesTotal + ') modules' :
-      (status.toLowerCase().includes('progress') && Number.isFinite(course.progressPercent) ? status + ' · ' + course.progressPercent + '%' : status);
     const rawDate = String(course.completionDate || '').replace(/^(Target:|Completed:?)\s*/i, '');
     const dateText = rawDate && !/^(completed|in progress)$/i.test(rawDate)
-      ? (status.toLowerCase().includes('progress') ? 'Target: ' : 'Completed: ') + rawDate
+      ? rawDate
+      : 'Completion date verified';
+    const verifyLink = course.links?.coursera ? credentialAction(course.links.coursera) : '';
+    const githubLink = course.links?.github
+      ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer">View GitHub Repo ↗</a>'
       : '';
     const relatedCredentialMarkup = (course.relatedCredentials || []).map(credential =>
       '<div class="course-related-credential"><p class="field-label">Related program credential · ' + esc(credential.title) + '</p>' +
       (credential.links?.coursera ? '<div class="credential-links course-credential-links">' + credentialAction(credential.links.coursera) + '</div>' : '') +
-      pdfDocument(credential.certificateUrl, 'program certificate') + '</div>'
+      pdfDocument(credential.certificateUrl, 'Program Certificate') + '</div>'
     ).join('');
-    return '<details class="course-accordion"><summary><span class="course-number">C' + (index + 1) + '</span><span class="course-title"><strong>' + esc(course.title) + '</strong>' +
-      ((course.summary || course.takeaway) ? '<small class="course-teaser">' + esc(course.summary || course.takeaway) + '</small>' : '') + '</span>' +
-      '<span class="course-progress"><strong>' + esc(moduleText) + '</strong>' + (dateText ? '<small>' + esc(dateText) + '</small>' : '') + '</span>' +
-      '<span class="accordion-icon" aria-hidden="true"></span></summary>' +
-      '<div class="course-content">' + (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
+
+    return '<article class="course-accordion course-card">' +
+      '<div class="course-card-row"><span class="course-number">C' + (index + 1) + '</span>' +
+      '<div class="course-title"><strong>' + esc(course.title) + '</strong>' +
+      ((course.summary || course.takeaway) ? '<small class="course-teaser">' + esc(course.summary || course.takeaway) + '</small>' : '') +
+      '</div><div class="course-card-meta"><span class="credential-state">Completed</span><span class="course-date">' + esc(dateText) + '</span>' +
+      ((verifyLink || githubLink) ? '<div class="credential-links course-credential-links">' + verifyLink + githubLink + '</div>' : '') +
+      '</div></div>' +
+      '<div class="course-card-details">' +
+      (course.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(course.takeaway) + '</p></div>' : '') +
       (course.skills?.length ? '<div><p class="field-label">Skills</p>' + tags(course.skills) + '</div>' : '') +
-      ((course.links?.coursera || course.links?.github) ? '<div class="credential-links course-credential-links">' +
-        credentialAction(course.links?.coursera) +
-        (course.links?.github ? '<a href="' + esc(course.links.github) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View GitHub Repo ↗</a>' : '') +
-        '</div>' : '') +
-      pdfDocument(course.certificateUrl, "course certificate") + relatedCredentialMarkup + '</div></details>';
+      pdfDocument(course.certificateUrl, 'course certificate') +
+      relatedCredentialMarkup +
+      '</div></article>';
   }
 
   function certificationAccordion(item, index) {
     const rawDate = String(item.completionDate || "").replace(/^(Target:|Completed:?)\s*/i, '');
-    const dateText = rawDate && !/^completed$/i.test(rawDate) ? 'Completed: ' + rawDate : 'Verified completed credential';
-    return '<details class="certification-accordion reveal visible"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(item.issuer) + '</p><span class="credential-state">Completed</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div><div class="cert-summary-side"><div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>Standalone course certificate</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
-      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Course overview</p><p>' + esc(item.summary) + '</p></div>' + (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') + '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills || []) + '</div>' + pdfDocument(item.certificateUrl, "course certificate") + '</div>' +
-      '<div class="course-section"><div class="course-heading"><p class="field-label">Completed course</p><span>Dated and Coursera-verified</span></div>' + (item.courses || []).map(courseAccordion).join("") + '</div></div></details>';
+    const dateText = rawDate && !/^completed$/i.test(rawDate) ? rawDate : 'Verified completion date';
+    return '<details class="certification-accordion standalone-credential reveal visible">' +
+      '<summary><span class="cert-number">' + (index + 1) + '</span>' +
+      '<div class="cert-summary-main"><span class="credential-provider-badge">' + esc(item.issuer) + '</span><h2>' + esc(item.title) + '</h2><p class="cert-teaser">' + esc(item.summary) + '</p></div>' +
+      '<div class="cert-summary-side"><span class="credential-state">Completed</span><span class="credential-date">' + esc(dateText) + '</span>' +
+      '<div class="credential-links">' + credentialAction(item.links?.coursera) + '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
+      '<div class="certification-content vertical-credential-content">' +
+      '<div class="certificate-preview-row">' + pdfDocument(item.certificateUrl, 'course certificate') + '</div>' +
+      '<div class="cert-overview standalone-overview"><div><p class="field-label">Course overview</p><p>' + esc(item.summary) + '</p></div>' +
+      (item.takeaway ? '<div class="takeaway-field"><p class="field-label">Key takeaway</p><p>' + esc(item.takeaway) + '</p></div>' : '') +
+      '<div><p class="field-label">Key skills &amp; tools</p>' + tags(item.skills || []) + '</div></div>' +
+      '</div></details>';
   }
 
   function programAccordion(program, index, records) {
@@ -125,16 +136,25 @@
 
     const awardedLabel = program.awarded ? 'Completed program' : 'Completed courses only';
     const dateText = program.completionDate
-      ? 'Completed: ' + program.completionDate
-      : (program.awarded ? 'Awarded program credential' : 'Incomplete courses intentionally excluded');
+      ? program.completionDate
+      : (program.awarded ? 'Program credential verified' : 'Parent curriculum in progress');
     const programNote = program.awarded
       ? 'Only child courses with 100% completion, a completion date, and a Coursera verification credential are shown.'
       : 'This parent is used only as a curriculum grouping. No incomplete course or partial-progress percentage is displayed.';
 
-    return '<details class="certification-accordion reveal visible program-accordion"><summary><span class="cert-number">' + (index + 1) + '</span><div class="cert-summary-main"><p class="detail-type">' + esc(program.credentialType || 'Program') + ' · ' + esc(program.issuer || 'Coursera') + '</p><span class="credential-state">' + esc(awardedLabel) + '</span><h2>' + esc(program.title) + '</h2><p class="cert-teaser">' + esc(program.summary || '') + '</p></div><div class="cert-summary-side"><div class="credential-links">' + programAction(program) + '</div><span class="accordion-icon" aria-hidden="true"></span><div class="cert-progress"><strong>' + courses.length + ' verified completed course' + (courses.length === 1 ? '' : 's') + '</strong><span>' + esc(dateText) + '</span></div></div></summary>' +
-      '<div class="certification-content"><div class="cert-overview"><div><p class="field-label">Parent credential / curriculum</p><p>' + esc(program.summary || '') + '</p></div><div><p class="field-label">Completion policy</p><p>' + esc(programNote) + '</p></div>' + pdfDocument(program.certificateUrl, "program certificate") + '</div>' +
-      '<div class="course-section"><div class="course-heading"><p class="field-label">Completed sub-courses</p><span>' + courses.length + ' verified credential' + (courses.length === 1 ? '' : 's') + '</span></div>' + courses.map(courseAccordion).join("") + '</div></div></details>';
+    return '<details class="certification-accordion reveal visible program-accordion">' +
+      '<summary><span class="cert-number">' + (index + 1) + '</span>' +
+      '<div class="cert-summary-main"><span class="credential-provider-badge">' + esc(program.issuer || 'Coursera') + '</span><p class="detail-type">' + esc(program.credentialType || 'Program') + '</p><h2>' + esc(program.title) + '</h2><p class="cert-teaser">' + esc(program.summary || '') + '</p></div>' +
+      '<div class="cert-summary-side"><span class="credential-state">' + esc(awardedLabel) + '</span><span class="credential-date">' + esc(dateText) + '</span>' +
+      '<div class="credential-links">' + programAction(program) + '</div><span class="accordion-icon" aria-hidden="true"></span></div></summary>' +
+      '<div class="certification-content vertical-credential-content">' +
+      '<div class="parent-overview-row"><p class="field-label">Parent credential / curriculum</p><p>' + esc(programNote) + '</p></div>' +
+      '<div class="certificate-preview-row">' + pdfDocument(program.certificateUrl, 'Program Certificate') + '</div>' +
+      '<section class="course-section completed-subcourses-section"><div class="completed-subcourses-head"><h3>COMPLETED SUB-COURSES <span>(' + courses.length + ' verified credential' + (courses.length === 1 ? '' : 's') + ')</span></h3></div>' +
+      '<div class="completed-course-stack">' + courses.map(courseAccordion).join("") + '</div></section>' +
+      '</div></details>';
   }
+
   function projectCard(item) {
     const home = item.home || {};
     const problem = home.problem || item.summary || "";
