@@ -219,6 +219,7 @@ def build_pdf(key, variant, data, settings, output):
     page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     return {'file': filename + '.pdf', 'pages': len(texts),
             'minPages': variant.get('minPages', 1),
+            'minLastPageChars': variant.get('minLastPageChars', 0),
             'maxPages': variant.get('maxPages', 2),
             'pageTextChars': page_text_chars,
             'renderer': 'latex', 'selectedIds': {name: [r['id'] for r in rows] for name, rows in selected.items()}}

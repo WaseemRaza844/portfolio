@@ -62,7 +62,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "comprehensive": {
     "label": "Comprehensive CV",
@@ -146,13 +147,17 @@
       "meeting-minutes-llm",
       "unstructured-document-extraction",
       "lakehouse-pipeline",
-      "system-design-portfolio"
+      "system-design-portfolio",
+      "multi-agent-orchestration",
+      "rag-vector-retrieval-stack"
     ],
     "certificationIds": [
       "coursera-generative-ai-applications-with-amazon-bedrock",
       "coursera-generative-ai-engineering-and-fine-tuning-transformers",
       "coursera-agentic-ai-with-langchain-and-langgraph",
-      "coursera-generative-ai-foundation-models-and-platforms"
+      "coursera-generative-ai-foundation-models-and-platforms",
+      "coursera-advanced-rag-with-vector-databases-and-retrievers",
+      "coursera-build-ai-agents-using-mcp"
     ],
     "publicationIds": [],
     "pages": [
@@ -175,7 +180,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -205,16 +211,20 @@
       "financial-ml",
       "wearable-intelligence",
       "cloud-computer-vision",
-      "lakehouse-pipeline"
+      "lakehouse-pipeline",
+      "propagation-digital-twins"
     ],
     "certificationIds": [
       "coursera-machine-learning",
       "coursera-introduction-to-data-analytics-in-google-cloud",
       "coursera-generative-ai-engineering-and-fine-tuning-transformers",
-      "coursera-introduction-to-deep-learning-neural-networks-with-keras"
+      "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-introduction-to-computer-vision-with-tensorflow"
     ],
     "publicationIds": [
-      "resilient-propagation-2024"
+      "resilient-propagation-2024",
+      "medication-adherence-2026"
     ],
     "pages": [
       [
@@ -237,7 +247,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -264,7 +275,9 @@
       "syntheticnet",
       "turboran",
       "propagation-digital-twins",
-      "ai-telecom-optimization"
+      "ai-telecom-optimization",
+      "4g-cellular-analysis",
+      "5g-edge-iot-ai-analysis"
     ],
     "certificationIds": [
       "coursera-ai-foundations-industry-overview-for-telecommunication",
@@ -303,7 +316,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -322,13 +336,16 @@
       "att-current",
       "impac",
       "att-labs-2024",
+      "futurewei-2022",
       "ou-research"
     ],
     "experienceText": "generic",
     "projectIds": [
       "wearable-intelligence",
       "cloud-computer-vision",
-      "agentic-ai-rag"
+      "agentic-ai-rag",
+      "aws-bedrock-applied-genai",
+      "genai-prompt-foundations"
     ],
     "certificationIds": [
       "coursera-health-data-science-foundation",
@@ -338,12 +355,15 @@
       "coursera-machine-learning",
       "coursera-introduction-to-healthcare-management",
       "coursera-introduction-to-healthcare-finance",
-      "coursera-intro-to-finance-in-healthcare"
+      "coursera-intro-to-finance-in-healthcare",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-introduction-to-artificial-intelligence-ai"
     ],
     "publicationIds": [
       "medication-adherence-2026",
       "resilient-propagation-2024",
-      "outage-management-2024"
+      "outage-management-2024",
+      "multiparameter-reliability-2025"
     ],
     "pages": [
       [
@@ -366,7 +386,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -401,7 +422,11 @@
       "coursera-introduction-to-data-analytics-in-google-cloud",
       "coursera-python-for-data-science-ai-development",
       "coursera-exploratory-vs-confirmatory-data-analysis-using-python",
-      "coursera-introduction-to-relational-databases-rdbms"
+      "coursera-introduction-to-relational-databases-rdbms",
+      "coursera-ai-fundamentals-in-financial-services",
+      "coursera-fundamentals-of-machine-learning-in-finance",
+      "coursera-reinforcement-learning-in-finance",
+      "coursera-introduction-to-healthcare-finance"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
@@ -428,7 +453,8 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -455,14 +481,17 @@
     "projectIds": [
       "syntheticnet",
       "turboran",
-      "wearable-intelligence"
+      "wearable-intelligence",
+      "propagation-digital-twins",
+      "ai-telecom-optimization"
     ],
     "certificationIds": [
       "coursera-machine-learning",
       "coursera-ai-foundations-industry-overview-for-telecommunication",
       "coursera-4g-network-fundamentals",
       "coursera-generative-ai-foundation-models-and-platforms",
-      "coursera-generative-ai-applications-with-amazon-bedrock"
+      "coursera-generative-ai-applications-with-amazon-bedrock",
+      "coursera-network-and-security-optimization-in-telecommunication"
     ],
     "publicationIds": [
       "medication-adherence-2026",
@@ -470,7 +499,8 @@
       "resilient-propagation-2024",
       "outage-management-2024",
       "lunarcomm-2022",
-      "positioning-ran-2022"
+      "positioning-ran-2022",
+      "rf-energy-harvesting-2020"
     ],
     "pages": [
       [
@@ -493,6 +523,7 @@
       "Continuous development": "Extend teaching and research capability through ongoing study in generative AI, agentic systems, cloud engineering, and emerging wireless technologies."
     },
     "latexFontSize": 9,
-    "minPages": 3
+    "minPages": 3,
+    "minLastPageChars": 1400
   }
 }
