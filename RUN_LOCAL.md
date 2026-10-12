@@ -126,7 +126,21 @@ Windows PowerShell:
 .\resume\.venv\Scripts\python.exe -m unittest discover -s resume\tests
 ```
 
-## 7. Main source files
+## 7. Remote develop resume preview
+
+After resume changes are merged into `develop`, GitHub Actions runs the resume tests and LaTeX build automatically.
+
+Browser-viewable PDFs are published at:
+
+```text
+https://waseemraza844.github.io/portfolio/develop/resumes/
+```
+
+Each PDF opens directly in a browser tab. The same workflow also publishes the generated `.tex` files under the preview's `tex/` directory and keeps `build-report.json` with the generated output.
+
+The separate **Build resume PDFs** workflow also keeps the PDF/TeX files as a downloadable GitHub Actions artifact for 30 days.
+
+## 8. Main source files
 
 | Purpose | File |
 | --- | --- |
@@ -139,7 +153,7 @@ Windows PowerShell:
 | Resume layout | `resume/template.tex` |
 | Resume rendering logic | `resume/latex_renderer.py` |
 
-## 9. Codespaces port troubleshooting
+## 10. Codespaces port troubleshooting
 
 The repository explicitly forwards ports **8000** (website) and **8001** (resume PDFs).
 After a change to `.devcontainer/devcontainer.json`, simply pulling the repository does **not** re-apply container settings to an already-running Codespace.
@@ -170,7 +184,7 @@ pkill -f "live-server dist" || true
 bash .devcontainer/start-portfolio.sh
 ```
 
-## 8. Normal branch flow
+## 9. Normal branch flow
 
 ```text
 feature/... → develop → main
