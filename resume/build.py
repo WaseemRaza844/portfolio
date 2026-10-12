@@ -427,6 +427,7 @@ def build_pdf(key, variant, data, settings, output):
     page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     result = {'file': pdf_path.name, 'pages': len(reader.pages),
               'minPages': variant.get('minPages', 1),
+              'minLastPageChars': variant.get('minLastPageChars', 0),
               'maxPages': variant.get('maxPages', len(pages)),
               'pageTextChars': page_text_chars,
               'selectedIds': {name: [row['id'] for row in rows] for name, rows in selected.items()}}
@@ -494,6 +495,12 @@ def main():
             raise ValueError(f'{result["file"]} is only {result["pages"]} pages; '
                              f'target is at least {result["minPages"]} pages. '
                              'Add relevant evidence rather than forced blank pages.')
+        min_last = result.get('minLastPageChars', 0)
+        page_chars = result.get('pageTextChars', [])
+        if min_last and page_chars and page_chars[-1] < min_last:
+            raise ValueError(f'{result["file"]} page {result["pages"]} contains only '
+                             f'{page_chars[-1]} extracted text characters; target is at least '
+                             f'{min_last}. Add relevant content instead of accepting a sparse final page.')
         if result['pages'] > result['maxPages'] and not args.allow_overflow:
             raise ValueError(f'{result["file"]} exceeds its {result["maxPages"]}-page budget. '
                              'Shorten selections or adjust explicit page breaks in variants.json. '
