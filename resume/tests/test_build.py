@@ -70,6 +70,10 @@ class LatexEscapingTests(unittest.TestCase):
             r'\textbar{} \textless{} \textgreater{} \textbackslash{}',
         )
 
+    def test_zero_course_progress_is_suppressed(self):
+        self.assertEqual(module.progress({'id': 'x', 'reportedProgress': {'completed': 0, 'total': 4}}), '')
+        self.assertEqual(module.progress({'id': 'x', 'reportedProgress': {'completed': 2, 'total': 4}}), '2/4 courses')
+
 
 if __name__ == '__main__':
     unittest.main()
