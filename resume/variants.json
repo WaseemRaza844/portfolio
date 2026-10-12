@@ -61,7 +61,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "comprehensive": {
     "label": "Comprehensive CV",
@@ -173,7 +174,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -234,7 +236,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -259,10 +262,14 @@
     "experienceText": "generic",
     "projectIds": [
       "syntheticnet",
-      "turboran"
+      "turboran",
+      "propagation-digital-twins",
+      "ai-telecom-optimization"
     ],
     "certificationIds": [
       "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-network-and-security-optimization-in-telecommunication",
+      "coursera-customer-experience-in-telecommunication",
       "coursera-4g-network-fundamentals",
       "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
       "coursera-machine-learning"
@@ -272,7 +279,8 @@
       "resilient-propagation-2024",
       "outage-management-2024",
       "lunarcomm-2022",
-      "positioning-ran-2022"
+      "positioning-ran-2022",
+      "rf-energy-harvesting-2020"
     ],
     "pages": [
       [
@@ -294,7 +302,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -312,21 +321,29 @@
     "experienceIds": [
       "att-current",
       "impac",
+      "att-labs-2024",
       "ou-research"
     ],
     "experienceText": "generic",
     "projectIds": [
       "wearable-intelligence",
-      "cloud-computer-vision"
+      "cloud-computer-vision",
+      "agentic-ai-rag"
     ],
     "certificationIds": [
+      "coursera-health-data-science-foundation",
+      "coursera-generative-ai-for-healthcare",
+      "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch",
       "coursera-introduction-to-deep-learning-neural-networks-with-keras",
       "coursera-machine-learning",
-      "coursera-introduction-to-data-analytics-in-google-cloud",
-      "coursera-generative-ai-engineering-and-fine-tuning-transformers"
+      "coursera-introduction-to-healthcare-management",
+      "coursera-introduction-to-healthcare-finance",
+      "coursera-intro-to-finance-in-healthcare"
     ],
     "publicationIds": [
-      "medication-adherence-2026"
+      "medication-adherence-2026",
+      "resilient-propagation-2024",
+      "outage-management-2024"
     ],
     "pages": [
       [
@@ -348,7 +365,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -366,19 +384,29 @@
     "experienceIds": [
       "att-current",
       "impac",
+      "att-labs-2024",
+      "futurewei-2022",
       "ou-research"
     ],
     "experienceText": "generic",
     "projectIds": [
       "financial-ml",
       "lakehouse-pipeline",
-      "system-design-portfolio"
+      "system-design-portfolio",
+      "agentic-ai-rag"
     ],
     "certificationIds": [
       "coursera-machine-learning",
-      "coursera-introduction-to-data-analytics-in-google-cloud"
+      "coursera-tesla-stock-price-prediction-using-facebook-prophet",
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-exploratory-vs-confirmatory-data-analysis-using-python",
+      "coursera-introduction-to-relational-databases-rdbms"
     ],
-    "publicationIds": [],
+    "publicationIds": [
+      "multiparameter-reliability-2025",
+      "resilient-propagation-2024"
+    ],
     "pages": [
       [
         "summary",
@@ -386,7 +414,8 @@
         "experience",
         "education",
         "projects",
-        "certifications"
+        "certifications",
+        "publications"
       ]
     ],
     "maxPages": 3,
@@ -398,7 +427,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -462,6 +492,7 @@
       "Persistence and rigor": "Approach difficult research problems through systematic experimentation, careful validation, iterative refinement, and attention to reproducibility.",
       "Continuous development": "Extend teaching and research capability through ongoing study in generative AI, agentic systems, cloud engineering, and emerging wireless technologies."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "minPages": 3
   }
 }

@@ -182,6 +182,10 @@ def progress(row):
         done, total = reported['completed'], reported['total']
         if not isinstance(done, int) or not isinstance(total, int) or not 0 <= done <= total:
             raise ValueError('Invalid progress for ' + row['id'])
+        # "0/x courses" adds no useful resume signal. Show progress only after
+        # at least one course in a multi-course credential is actually complete.
+        if done == 0:
+            return ''
         return f'{done}/{total} courses'
     # Do not infer totals from possibly incomplete course arrays.
     return ''
@@ -420,8 +424,11 @@ def build_pdf(key, variant, data, settings, output):
     if '\ufffd' in joined or '\u25a0' in joined:
         raise ValueError('Unexpected missing-glyph character in ' + str(pdf_path))
     (output / f'{key}.txt').write_text(joined, encoding='utf-8')
+    page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     result = {'file': pdf_path.name, 'pages': len(reader.pages),
+              'minPages': variant.get('minPages', 1),
               'maxPages': variant.get('maxPages', len(pages)),
+              'pageTextChars': page_text_chars,
               'selectedIds': {name: [row['id'] for row in rows] for name, rows in selected.items()}}
     return result
 
@@ -478,9 +485,15 @@ def main():
     report = {'variants': results, 'reviewNotes': notes}
     (args.output / 'build-report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     for result in results:
-        print(f'{result["file"]}: {result["pages"]} pages')
+        fill = result.get('pageTextChars', [])
+        suffix = (' | text chars/page: ' + ', '.join(str(n) for n in fill)) if fill else ''
+        print(f'{result["file"]}: {result["pages"]} pages' + suffix)
     print('Review notes: ' + str(args.output / 'build-report.json'))
     for result in results:
+        if result['pages'] < result.get('minPages', 1):
+            raise ValueError(f'{result["file"]} is only {result["pages"]} pages; '
+                             f'target is at least {result["minPages"]} pages. '
+                             'Add relevant evidence rather than forced blank pages.')
         if result['pages'] > result['maxPages'] and not args.allow_overflow:
             raise ValueError(f'{result["file"]} exceeds its {result["maxPages"]}-page budget. '
                              'Shorten selections or adjust explicit page breaks in variants.json. '
