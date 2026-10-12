@@ -74,6 +74,13 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertEqual(module.progress({'id': 'x', 'reportedProgress': {'completed': 0, 'total': 4}}), '')
         self.assertEqual(module.progress({'id': 'x', 'reportedProgress': {'completed': 2, 'total': 4}}), '2/4 courses')
 
+    def test_focused_variants_define_page_fill_target(self):
+        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
+            self.assertEqual(variants[key].get('minPages'), 3)
+            self.assertEqual(variants[key].get('maxPages'), 3)
+            self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 1200)
+
 
 if __name__ == '__main__':
     unittest.main()
