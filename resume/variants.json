@@ -63,7 +63,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "comprehensive": {
     "label": "Comprehensive CV",
@@ -181,7 +181,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -212,7 +212,8 @@
       "wearable-intelligence",
       "cloud-computer-vision",
       "lakehouse-pipeline",
-      "propagation-digital-twins"
+      "propagation-digital-twins",
+      "unstructured-document-extraction"
     ],
     "certificationIds": [
       "coursera-machine-learning",
@@ -220,7 +221,9 @@
       "coursera-generative-ai-engineering-and-fine-tuning-transformers",
       "coursera-introduction-to-deep-learning-neural-networks-with-keras",
       "coursera-python-for-data-science-ai-development",
-      "coursera-introduction-to-computer-vision-with-tensorflow"
+      "coursera-introduction-to-computer-vision-with-tensorflow",
+      "coursera-developing-ai-applications-with-python-and-flask",
+      "coursera-data-transformation-in-the-cloud"
     ],
     "publicationIds": [
       "resilient-propagation-2024",
@@ -248,7 +251,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -285,7 +288,8 @@
       "coursera-customer-experience-in-telecommunication",
       "coursera-4g-network-fundamentals",
       "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
-      "coursera-machine-learning"
+      "coursera-machine-learning",
+      "coursera-5g-network-fundamentals"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
@@ -317,7 +321,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -387,7 +391,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -429,7 +433,8 @@
       "coursera-introduction-to-healthcare-finance",
       "coursera-introduction-to-healthcare-accounting",
       "coursera-intro-to-finance-in-healthcare",
-      "coursera-getting-started-with-rstudio"
+      "coursera-getting-started-with-rstudio",
+      "coursera-guided-tour-of-machine-learning-in-finance"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
@@ -457,7 +462,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -486,7 +491,8 @@
       "turboran",
       "wearable-intelligence",
       "propagation-digital-twins",
-      "ai-telecom-optimization"
+      "ai-telecom-optimization",
+      "genai-prompt-foundations"
     ],
     "certificationIds": [
       "coursera-machine-learning",
@@ -527,6 +533,6 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1400
+    "minLastPageChars": 1700
   }
 }
