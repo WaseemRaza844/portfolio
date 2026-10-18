@@ -1,6 +1,7 @@
 """Guard factual selection and PDF markup boundaries, rather than styling."""
 import importlib.util
 from pathlib import Path
+import tempfile
 import unittest
 
 spec = importlib.util.spec_from_file_location('resume_build', Path(__file__).parents[1] / 'build.py')
@@ -80,6 +81,24 @@ class LatexEscapingTests(unittest.TestCase):
             self.assertEqual(variants[key].get('minPages'), 3)
             self.assertEqual(variants[key].get('maxPages'), 3)
             self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 1700)
+
+    def test_utf8_output_writer_handles_phone_symbol(self):
+        import importlib.util
+
+        path = Path(__file__).parents[1] / 'latex_renderer.py'
+        spec = importlib.util.spec_from_file_location('resume_latex_renderer_utf8', path)
+        renderer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(renderer)
+
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / 'extracted.txt'
+            renderer.write_utf8_text(target, '☎ +1 732-803-9703 | résumé')
+            self.assertEqual(target.read_text(encoding='utf-8'), '☎ +1 732-803-9703 | résumé')
+
+    def test_latex_renderer_uses_explicit_utf8_for_text_io(self):
+        source = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        self.assertIn("encoding='utf-8'", source)
+        self.assertNotIn("write_text('\\n'.join(texts))", source)
 
 
 if __name__ == '__main__':

@@ -8,6 +8,14 @@ from pypdf import PdfReader
 HERE = Path(__file__).resolve().parent
 
 
+def read_utf8_text(path, *, errors='strict'):
+    return Path(path).read_text(encoding='utf-8', errors=errors)
+
+
+def write_utf8_text(path, text):
+    return Path(path).write_text(text, encoding='utf-8')
+
+
 def tex(value):
     """Repair common mojibake, normalize punctuation, and escape text for LaTeX."""
     value = str(value or '')
@@ -197,25 +205,26 @@ def build_pdf(key, variant, data, settings, output):
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
                   CONTACTS=contacts, BODY='\n'.join(body))
-    template = (HERE / 'template.tex').read_text()
+    template = read_utf8_text(HERE / 'template.tex')
     source = re.sub(r'@@([A-Z]+)@@', lambda m: values[m[1]], template)
     output.mkdir(parents=True, exist_ok=True)
     filename = f'Waseem_Raza_{key.upper()}'
     tex_path = output / (filename + '.tex')
-    tex_path.write_text(source, encoding='utf-8')
+    write_utf8_text(tex_path, source)
     for _ in range(2):
         proc = subprocess.run(['pdflatex', '-no-shell-escape', '-interaction=nonstopmode', '-halt-on-error', tex_path.name],
-                              cwd=output, capture_output=True, text=True, timeout=120)
+                              cwd=output, capture_output=True, text=True, encoding='utf-8',
+                              errors='replace', timeout=120)
         if proc.returncode:
             raise ValueError('LaTeX failed; inspect ' + str(output / (filename + '.log')) + '\n' + proc.stdout[-2500:])
-    log = (output / (filename + '.log')).read_text(errors='replace')
+    log = read_utf8_text(output / (filename + '.log'), errors='replace')
     if 'Overfull \\hbox' in log or 'Overfull \\vbox' in log:
         raise ValueError('LaTeX content overflow; inspect ' + str(output / (filename + '.log')))
     reader = PdfReader(output / (filename + '.pdf'))
     texts = [page.extract_text() or '' for page in reader.pages]
     if any(len(text.strip()) < 60 for text in texts) or identity['shortName'] not in '\n'.join(texts):
         raise ValueError('Missing or unreadable PDF text.')
-    (output / (key + '.txt')).write_text('\n'.join(texts))
+    write_utf8_text(output / (key + '.txt'), '\n'.join(texts))
     page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     return {'file': filename + '.pdf', 'pages': len(texts),
             'minPages': variant.get('minPages', 1),

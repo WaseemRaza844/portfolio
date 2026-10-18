@@ -116,7 +116,8 @@ def read_source(snapshot=None):
         return read_json(snapshot)
     try:
         process = subprocess.run(['node', str(HERE / 'export-source.cjs')],
-                                 capture_output=True, text=True, timeout=20, check=True)
+                                 capture_output=True, text=True, encoding='utf-8', errors='replace',
+                                 timeout=20, check=True)
     except FileNotFoundError:
         raise ValueError('Node.js is required. Use Codespaces or install Node.js.')
     except subprocess.CalledProcessError as exc:
