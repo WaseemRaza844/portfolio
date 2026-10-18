@@ -119,7 +119,7 @@ def build_pdf(key, variant, data, settings, output):
                     if row.get('skills'):
                         body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
             elif name == 'certifications':
-                section('Certifications')
+                section('Certifications & Professional Development')
                 for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
