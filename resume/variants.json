@@ -63,7 +63,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "comprehensive": {
     "label": "Comprehensive CV",
@@ -116,7 +117,8 @@
       "Reliability and commitment": "Maintain reproducible workflows, careful validation, and attention to detail throughout experimentation and delivery.",
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
-    "latexFontSize": 9
+    "latexFontSize": 9,
+    "detailedCertificationDescriptions": false
   },
   "genai": {
     "label": "Generative & Agentic AI",
@@ -181,7 +183,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -251,7 +254,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -322,7 +326,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -392,7 +397,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -464,7 +470,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -535,6 +542,7 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700
+    "minLastPageChars": 1700,
+    "detailedCertificationDescriptions": true
   }
 }
