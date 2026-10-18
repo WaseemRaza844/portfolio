@@ -79,7 +79,7 @@ class LatexEscapingTests(unittest.TestCase):
         for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
             self.assertEqual(variants[key].get('minPages'), 3)
             self.assertEqual(variants[key].get('maxPages'), 3)
-            self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 1200)
+            self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 1700)
 
 
 if __name__ == '__main__':
