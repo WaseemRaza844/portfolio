@@ -4953,6 +4953,163 @@ window.PORTFOLIO_DATA.learningPrograms = [
   }
 ];
 
+
+const resumeCertificationDetails = {
+  "coursera-4g-network-fundamentals": {
+    resumeSummary: "Covers LTE/4G architecture from radio access through core-network functions, including cellular-network evolution, mobility, resource management, and end-to-end service operation. Emphasizes how major network components interact to deliver reliable broadband connectivity.",
+    resumeSkills: ["LTE/4G architecture", "RAN and EPC concepts", "mobility and handover", "radio resource management", "cellular networking", "network-service fundamentals"]
+  },
+  "coursera-advanced-rag-with-vector-databases-and-retrievers": {
+    resumeSummary: "Covers advanced retrieval-augmented generation pipelines that improve grounding through vector databases, retriever design, indexing, semantic search, and retrieval strategies. Emphasizes selecting and evaluating retrieval components that provide more relevant context to LLM applications.",
+    resumeSkills: ["RAG", "vector databases", "embeddings", "semantic retrieval", "retriever design", "chunking and indexing", "retrieval evaluation"]
+  },
+  "coursera-agentic-ai-with-langchain-and-langgraph": {
+    resumeSummary: "Covers design of stateful agentic applications using LangChain and LangGraph, including graph-based orchestration, tool use, memory and state, routing, and multi-step workflows. Emphasizes controllable agent execution and composition of reliable LLM-driven processes.",
+    resumeSkills: ["LangChain", "LangGraph", "tool-calling", "state and memory", "workflow orchestration", "routing", "agent design"]
+  },
+  "coursera-ai-foundations-industry-overview-for-telecommunication": {
+    resumeSummary: "Introduces AI and machine-learning concepts in the telecommunications domain, connecting network data with automation, optimization, predictive analytics, and operational decision support. Reviews how AI can support network planning, service assurance, and customer-facing workflows.",
+    resumeSkills: ["telecom AI/ML use cases", "network analytics", "automation", "optimization", "predictive modeling concepts", "operational intelligence"]
+  },
+  "coursera-build-ai-agents-using-mcp": {
+    resumeSummary: "Covers construction of AI agents that use Model Context Protocol to connect language models with external tools, services, and structured context. Emphasizes interoperable tool interfaces, context-aware actions, and agent workflows that combine reasoning with external capabilities.",
+    resumeSkills: ["Model Context Protocol", "tool-using agents", "context integration", "LLM orchestration", "API and tool interfaces", "agent workflow design"]
+  },
+  "coursera-business-considerations-for-5g-with-edge-iot-and-ai": {
+    resumeSummary: "Examines how 5G capabilities combine with edge computing, IoT, and AI to enable new enterprise and telecommunications services. Emphasizes use-case evaluation, business value, deployment considerations, and technology tradeoffs across connected intelligent systems.",
+    resumeSkills: ["5G business cases", "edge computing", "IoT", "AI integration", "use-case analysis", "deployment tradeoffs", "telecom strategy"]
+  },
+  "coursera-customer-experience-in-telecommunication": {
+    resumeSummary: "Covers customer-experience management in telecommunications by linking service quality, customer journeys, operational performance, and analytics to satisfaction and retention. Emphasizes identifying experience gaps through telecom service data and performance indicators.",
+    resumeSkills: ["customer experience", "quality-of-experience concepts", "customer journey analysis", "telecom analytics", "churn and retention concepts", "service improvement"]
+  },
+  "coursera-data-transformation-in-the-cloud": {
+    resumeSummary: "Covers cloud-based data transformation workflows that prepare raw data for analytics, including cleaning, reshaping, validation, and repeatable transformation logic. Emphasizes reliable processing practices within modern cloud data pipelines and analytical environments.",
+    resumeSkills: ["data transformation", "ETL/ELT", "data cleaning", "schema and format handling", "cloud analytics workflows", "data validation", "reproducibility"]
+  },
+  "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch": {
+    resumeSummary: "Applies deep learning to chest X-ray image classification using PyTorch, covering image preprocessing, model training, validation, and interpretation in a healthcare context. Demonstrates an end-to-end computer-vision workflow for medical-image analysis.",
+    resumeSkills: ["PyTorch", "medical image classification", "convolutional neural networks", "image preprocessing", "training and validation", "model evaluation", "healthcare AI"]
+  },
+  "coursera-developing-ai-applications-with-python-and-flask": {
+    resumeSummary: "Covers development of AI-enabled web applications in Python, moving from application logic to a Flask-based service interface. Emphasizes reusable application structure, request handling, API integration, testing, and deployment-oriented software development.",
+    resumeSkills: ["Python", "Flask", "REST and API concepts", "application structure", "request handling", "testing", "AI application integration"]
+  },
+  "coursera-exploratory-vs-confirmatory-data-analysis-using-python": {
+    resumeSummary: "Distinguishes exploratory data analysis from confirmatory analysis and applies Python-based statistical workflows to investigate patterns and test hypotheses. Emphasizes selecting analytical methods that match the purpose and stage of a data-science investigation.",
+    resumeSkills: ["exploratory data analysis", "confirmatory analysis", "Python", "statistical reasoning", "data visualization", "hypothesis-testing concepts", "analytical workflow design"]
+  },
+  "coursera-generative-ai-applications-with-amazon-bedrock": {
+    resumeSummary: "Covers development of generative-AI applications on Amazon Bedrock, including foundation-model access, prompt-based application logic, model interaction, and managed AWS services. Emphasizes practical cloud patterns for building and operating LLM-powered applications.",
+    resumeSkills: ["Amazon Bedrock", "foundation models", "prompt engineering", "AWS generative-AI services", "LLM application development", "cloud AI workflows"]
+  },
+  "coursera-generative-ai-engineering-and-fine-tuning-transformers": {
+    resumeSummary: "Covers transformer-based generative-AI engineering, including pretrained language models, model adaptation, fine-tuning strategies, and evaluation. Emphasizes converting reusable foundation models into task-focused systems while understanding training and inference tradeoffs.",
+    resumeSkills: ["transformers", "foundation models", "fine-tuning", "transfer learning", "tokenization concepts", "model adaptation", "LLM evaluation"]
+  },
+  "coursera-generative-ai-for-healthcare": {
+    resumeSummary: "Explores generative-AI applications in healthcare, including information workflows, domain-aware application design, and opportunities to augment health-data analysis and communication. Emphasizes responsible adoption, usefulness, and evaluation within healthcare constraints.",
+    resumeSkills: ["healthcare GenAI use cases", "prompt and application design", "health-data workflows", "responsible AI", "domain-specific evaluation", "AI adoption considerations"]
+  },
+  "coursera-generative-ai-foundation-models-and-platforms": {
+    resumeSummary: "Introduces foundation-model concepts and the platforms used to build generative-AI applications, including model capabilities, model selection, prompting, and application integration. Emphasizes how pretrained models serve as reusable components across modern GenAI workflows.",
+    resumeSkills: ["foundation models", "LLM concepts", "model selection", "prompt engineering", "generative-AI platforms", "application integration", "responsible model use"]
+  },
+  "coursera-getting-started-with-rstudio": {
+    resumeSummary: "Introduces the RStudio environment for data analysis, including project setup, scripts, packages, data inspection, and reproducible analytical workflows. Builds practical familiarity with organizing, executing, and documenting R-based data-analysis work.",
+    resumeSkills: ["R", "RStudio", "packages", "scripts", "data inspection", "reproducible analysis", "analytical project organization"]
+  },
+  "coursera-health-data-science-foundation": {
+    resumeSummary: "Builds foundational skills for working with healthcare data by connecting data-science methods with clinical and health-domain questions. Emphasizes data representation, preprocessing, analysis workflows, interpretation, and practical constraints associated with health datasets.",
+    resumeSkills: ["health data science", "healthcare datasets", "data preprocessing", "statistical analysis", "data interpretation", "reproducible analytics", "health-domain reasoning"]
+  },
+  "coursera-intro-to-finance-in-healthcare": {
+    resumeSummary: "Introduces financial decision-making in healthcare organizations, including revenue and cost concepts, budgeting, financial statements, and resource allocation. Connects healthcare operations with the financial analysis used to evaluate organizational performance and sustainability.",
+    resumeSkills: ["healthcare finance", "budgeting", "cost and revenue analysis", "financial statements", "resource allocation", "financial decision-making"]
+  },
+  "coursera-introduction-to-artificial-intelligence-ai": {
+    resumeSummary: "Introduces core artificial-intelligence concepts, major application areas, machine-learning foundations, generative AI, and the role of data in intelligent systems. Provides a broad framework for evaluating AI capabilities, limitations, and practical use cases.",
+    resumeSkills: ["AI concepts", "machine-learning foundations", "generative-AI concepts", "data-driven systems", "AI use-case analysis", "responsible-AI basics"]
+  },
+  "coursera-introduction-to-computer-vision-with-tensorflow": {
+    resumeSummary: "Covers computer-vision workflows with TensorFlow, including image preprocessing, model construction, training, validation, and image-classification tasks. Emphasizes practical use of deep-learning methods for extracting predictive information from visual data.",
+    resumeSkills: ["TensorFlow", "computer vision", "image preprocessing", "convolutional neural networks", "image classification", "model training", "model evaluation"]
+  },
+  "coursera-introduction-to-data-analytics-in-google-cloud": {
+    resumeSummary: "Introduces cloud-native data analytics in Google Cloud, covering the analytics lifecycle, data sources, storage and processing concepts, and how cloud services support scalable analysis. Emphasizes organizing data work to produce reliable analytical insight.",
+    resumeSkills: ["Google Cloud", "cloud analytics", "data lifecycle", "data-ingestion concepts", "storage and processing", "analytical workflows", "data-driven decision support"]
+  },
+  "coursera-introduction-to-deep-learning-neural-networks-with-keras": {
+    resumeSummary: "Introduces deep-learning and neural-network fundamentals using Keras, covering network architecture, training, validation, and model improvement. Connects concepts such as activation functions and optimization with practical neural-network implementation and evaluation.",
+    resumeSkills: ["Keras", "deep learning", "neural networks", "model training", "validation", "activation functions", "optimization", "model evaluation"]
+  },
+  "coursera-introduction-to-healthcare-accounting": {
+    resumeSummary: "Introduces accounting concepts used in healthcare organizations, including financial statements, revenues and expenses, cost classification, and performance reporting. Emphasizes interpreting accounting information in the context of healthcare operations and management.",
+    resumeSkills: ["healthcare accounting", "financial statements", "cost classification", "revenue and expense analysis", "performance reporting", "financial interpretation"]
+  },
+  "coursera-introduction-to-healthcare-finance": {
+    resumeSummary: "Covers finance fundamentals for healthcare organizations, including budgeting, cost and revenue analysis, capital and operating decisions, and interpretation of financial performance. Emphasizes how financial information supports planning and resource decisions in healthcare settings.",
+    resumeSkills: ["healthcare finance", "budgeting", "cost analysis", "revenue analysis", "financial performance", "resource planning", "financial decision support"]
+  },
+  "coursera-introduction-to-healthcare-management": {
+    resumeSummary: "Introduces management concepts for healthcare organizations, including organizational structure, stakeholders, service delivery, operations, leadership, and resource coordination. Emphasizes how managerial decisions affect quality, efficiency, and performance in healthcare systems.",
+    resumeSkills: ["healthcare management", "healthcare operations", "organizational structure", "stakeholder management", "resource coordination", "service delivery", "performance improvement"]
+  },
+  "coursera-introduction-to-relational-databases-rdbms": {
+    resumeSummary: "Introduces relational-database concepts including structured tables, schemas, keys, relationships, and database organization for analytical applications. Emphasizes reliable data modeling and the foundations needed to store, query, and manage structured datasets.",
+    resumeSkills: ["relational databases", "data modeling", "schemas", "primary and foreign keys", "SQL concepts", "normalization concepts", "structured-data management"]
+  },
+  "coursera-machine-learning": {
+    resumeSummary: "Covers foundational machine-learning methods for supervised and unsupervised problems, including regression, classification, model evaluation, regularization, clustering, and practical model-selection considerations. Emphasizes translating data into predictive models while controlling generalization error.",
+    resumeSkills: ["supervised learning", "regression", "classification", "regularization", "clustering", "model evaluation", "bias-variance tradeoffs", "machine-learning workflows"]
+  },
+  "coursera-network-and-security-optimization-in-telecommunication": {
+    resumeSummary: "Covers telecommunications network optimization together with security considerations that affect service performance and reliability. Emphasizes performance analysis, operational improvement, risk awareness, and protecting network services while maintaining efficient operation.",
+    resumeSkills: ["telecom network optimization", "network performance", "security concepts", "service reliability", "operational analysis", "risk awareness", "network improvement"]
+  },
+  "coursera-python-for-data-science-ai-development": {
+    resumeSummary: "Builds practical Python skills for data science and AI development, including core programming, data structures, data manipulation, and application-oriented analytical workflows. Emphasizes using Python as a reusable foundation for data processing, modeling, and AI applications.",
+    resumeSkills: ["Python", "data structures", "data manipulation", "Pandas concepts", "NumPy concepts", "data-analysis workflows", "AI application development"]
+  },
+  "coursera-tesla-stock-price-prediction-using-facebook-prophet": {
+    resumeSummary: "Applies time-series forecasting to stock-price data using Facebook Prophet, covering data preparation, trend and seasonality modeling, forecast generation, and visualization. Demonstrates an end-to-end predictive workflow for financial time-series analysis.",
+    resumeSkills: ["time-series forecasting", "Facebook Prophet", "financial data", "trend analysis", "seasonality", "forecast visualization", "predictive analytics"]
+  },
+  "coursera-guided-tour-of-machine-learning-in-finance": {
+    resumeSummary: "Current study surveys how machine-learning methods are applied to financial problems, with emphasis on data representation, predictive modeling, features, validation, and decision-oriented use cases. Builds a framework for connecting ML techniques with financial analytics.",
+    resumeSkills: ["financial machine learning", "predictive modeling", "feature engineering concepts", "model validation", "financial data", "risk and decision workflows"]
+  },
+  "coursera-ai-fundamentals-in-financial-services": {
+    resumeSummary: "Current study focuses on AI applications in financial services, including how data-driven systems can support customer, operational, risk, and analytical workflows. Emphasizes practical opportunities, limitations, and responsible adoption of AI in financial organizations.",
+    resumeSkills: ["financial-services AI", "AI use-case analysis", "risk and operations concepts", "data-driven decision support", "responsible AI", "financial analytics"]
+  },
+  "coursera-fundamentals-of-machine-learning-in-finance": {
+    resumeSummary: "Current study focuses on machine-learning foundations for financial data, connecting supervised-learning concepts, feature design, model validation, and predictive tasks with finance-oriented examples. Emphasizes robust modeling choices for noisy and decision-sensitive datasets.",
+    resumeSkills: ["machine learning in finance", "supervised learning", "feature engineering", "model validation", "predictive analytics", "financial-data modeling"]
+  },
+  "coursera-5g-network-fundamentals": {
+    resumeSummary: "Current study covers 5G network fundamentals, including architecture, radio-access evolution, core-network concepts, service categories, and the capabilities that distinguish 5G from earlier cellular generations. Emphasizes how network components support new connectivity use cases.",
+    resumeSkills: ["5G architecture", "5G NR concepts", "radio access", "5G core concepts", "service categories", "cellular-network evolution", "5G use cases"]
+  },
+  "coursera-generative-ai-essentials-for-finance-and-accounting": {
+    resumeSummary: "Current study explores generative-AI applications for finance and accounting workflows, including information synthesis, analysis, reporting, and automation. Emphasizes where LLM-based tools can augment professional work while preserving review, control, and responsible use.",
+    resumeSkills: ["finance and accounting GenAI", "LLM-assisted analysis", "reporting workflows", "automation", "prompting concepts", "responsible AI", "human-in-the-loop review"]
+  },
+  "coursera-reinforcement-learning-in-finance": {
+    resumeSummary: "Current study applies reinforcement-learning concepts to sequential financial decision problems, connecting states, actions, rewards, value estimation, and policy learning with finance-oriented scenarios. Emphasizes learning decision strategies under uncertainty and changing conditions.",
+    resumeSkills: ["reinforcement learning", "states and actions", "reward design", "value functions", "policy learning", "sequential decision-making", "financial applications"]
+  },
+  "coursera-5g-for-everyone": {
+    resumeSummary: "Current study provides a practical overview of 5G capabilities, network evolution, spectrum concepts, deployment considerations, and major consumer and enterprise use cases. Emphasizes how 5G changes connectivity, performance, and the services enabled by mobile networks.",
+    resumeSkills: ["5G capabilities", "cellular-network evolution", "spectrum concepts", "deployment considerations", "5G services", "consumer and enterprise use cases"]
+  }
+};
+
+for (const certification of window.PORTFOLIO_DATA.certifications) {
+  const details = resumeCertificationDetails[certification.id];
+  if (details) Object.assign(certification, details);
+}
+
 window.PORTFOLIO_DATA.learningGuidedProjectIds = [
   "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch",
   "coursera-tesla-stock-price-prediction-using-facebook-prophet",

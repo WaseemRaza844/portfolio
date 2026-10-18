@@ -141,12 +141,23 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'\Needspace{3\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
-                    description = row.get('resumeSummary') or row.get('summary') or row.get('overview')
+                    detailed = variant.get('detailedCertificationDescriptions', True)
+                    if detailed:
+                        description = row.get('resumeSummary')
+                        skills = row.get('resumeSkills', [])
+                        if not description or len(description.strip()) < 150:
+                            raise ValueError('Certification ' + row['id'] + ' needs a substantive resumeSummary (150+ characters).')
+                        skill_text = ', '.join(skills) if isinstance(skills, list) else str(skills or '')
+                        if len(skill_text.strip()) < 60:
+                            raise ValueError('Certification ' + row['id'] + ' needs a substantive resumeSkills description.')
+                    else:
+                        description = row.get('summary') or row.get('overview')
+                        skills = row.get('skills', [])
+                        skill_text = ', '.join(skills) if isinstance(skills, list) else str(skills or '')
                     if description:
                         body.append(r'\textbf{Focus:} ' + tex(description) + r'\par')
-                    skills = row.get('resumeSkills', row.get('skills', []))
-                    if skills:
-                        body.append(r'{\small\textbf{Tools \& Skills:} ' + tex(', '.join(skills) if isinstance(skills, list) else skills) + r'\par}')
+                    if skill_text:
+                        body.append(r'{\small\textbf{Tools \& Skills:} ' + tex(skill_text) + r'\par}')
                     if variant.get('includeCourseDetails'):
                         for course in row.get('courses', []):
                             status = course.get('status') or ('Completed' if str(course.get('completionDate', '')).startswith('Completed') else 'Status not supplied')
