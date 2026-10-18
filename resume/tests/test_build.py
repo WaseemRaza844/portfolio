@@ -100,6 +100,12 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertIn("encoding='utf-8'", source)
         self.assertNotIn("write_text('\\n'.join(texts))", source)
 
+    def test_focused_variants_require_detailed_certifications(self):
+        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
+            self.assertTrue(variants[key].get('detailedCertificationDescriptions'))
+        self.assertFalse(variants['comprehensive'].get('detailedCertificationDescriptions', True))
+
 
 if __name__ == '__main__':
     unittest.main()
