@@ -73,6 +73,10 @@ jobs:
         working-directory: source-develop
         run: python resume/build.py --all
 
+      - name: Generate tailored develop resumes
+        working-directory: source-develop
+        run: python resume/build_tailored.py --all
+
       - name: Assemble production, development, and resume previews
         shell: bash
         run: |
@@ -80,6 +84,7 @@ jobs:
 
           rm -rf _site
           mkdir -p _site/develop/resumes/tex
+          mkdir -p _site/develop/resumes/tailored
 
           # Production website.
           cp -a source-main/dist/. _site/
@@ -91,6 +96,15 @@ jobs:
           cp source-develop/resume/output/*.pdf _site/develop/resumes/
           cp source-develop/resume/output/*.tex _site/develop/resumes/tex/
           cp source-develop/resume/output/build-report.json _site/develop/resumes/
+
+          # Job-specific tailored resumes.
+          while IFS= read -r -d '' pdf; do
+            job_dir="$(basename "$(dirname "$(dirname "$pdf")")")"
+            mkdir -p "_site/develop/resumes/tailored/$job_dir"
+            cp "$pdf" "_site/develop/resumes/tailored/$job_dir/"
+            src_tex="$(dirname "$(dirname "$pdf")")"/*.tex
+            cp $src_tex "_site/develop/resumes/tailored/$job_dir/" 2>/dev/null || true
+          done < <(find source-develop/resume/tailored -type f -path '*/output/*.pdf' -print0)
 
           # Browser index for the generated PDFs.
           {
@@ -122,6 +136,18 @@ jobs:
               label="${label%.pdf}"
               printf '      <a class="card" href="%s" target="_blank"><strong>%s</strong><span class="meta">Open PDF ↗</span></a>\n' "$file" "$label"
             done
+
+            cat <<'HTML'
+            </div>
+            <h2 style="margin-top:36px">Tailored job resumes</h2>
+            <div class="grid">
+          HTML
+
+            while IFS= read -r -d '' pdf; do
+              rel="${pdf#_site/develop/resumes/}"
+              label="$(basename "$pdf" .pdf)"
+              printf '      <a class="card" href="%s" target="_blank"><strong>%s</strong><span class="meta">Open tailored PDF ↗</span></a>\n' "$rel" "$label"
+            done < <(find _site/develop/resumes/tailored -type f -name '*.pdf' -print0)
 
             cat <<'HTML'
             </div>
@@ -160,4 +186,5 @@ jobs:
             echo "- Production portfolio: https://waseemraza844.github.io/portfolio/"
             echo "- Develop portfolio: https://waseemraza844.github.io/portfolio/develop/"
             echo "- Develop resume PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/"
+            echo "- Infosys 154451BR tailored resume: https://waseemraza844.github.io/portfolio/develop/resumes/tailored/infosys-genai-engineer-154451BR/Waseem_Raza_INFOSYS_GENAI_154451BR.pdf"
           } >> "$GITHUB_STEP_SUMMARY"
