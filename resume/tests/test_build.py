@@ -80,7 +80,8 @@ class LatexEscapingTests(unittest.TestCase):
         for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
             self.assertEqual(variants[key].get('minPages'), 3)
             self.assertEqual(variants[key].get('maxPages'), 3)
-            self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 1700)
+            self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 3000)
+            self.assertGreaterEqual(variants[key].get('minPageTextChars', 0), 3000)
 
     def test_utf8_output_writer_handles_phone_symbol(self):
         import importlib.util
@@ -105,6 +106,15 @@ class LatexEscapingTests(unittest.TestCase):
         for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
             self.assertTrue(variants[key].get('detailedCertificationDescriptions'))
         self.assertFalse(variants['comprehensive'].get('detailedCertificationDescriptions', True))
+
+    def test_comprehensive_is_three_page_application_resume(self):
+        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        comprehensive = variants['comprehensive']
+        self.assertEqual(comprehensive.get('minPages'), 3)
+        self.assertEqual(comprehensive.get('maxPages'), 3)
+        self.assertNotEqual(comprehensive.get('projectIds'), 'all')
+        self.assertNotEqual(comprehensive.get('certificationIds'), 'all')
+        self.assertNotEqual(comprehensive.get('publicationIds'), 'all')
 
 
 if __name__ == '__main__':
