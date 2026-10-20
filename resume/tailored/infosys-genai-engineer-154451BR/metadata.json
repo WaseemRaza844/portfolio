@@ -8,6 +8,8 @@
   "baseResume": "Waseem_Raza_GENAI.tex",
   "notes": [
     "Tailored toward enterprise GenAI, RAG, agentic AI, data preparation, production ML, model evaluation, multimodal/document AI, and stakeholder delivery.",
-    "Unsupported requirements such as SAS, FastAPI, RAGAS, DeepEval, LangSmith, Anthropic, Terraform, Helm, React/TypeScript, and specific AI coding assistants are not claimed as experience."
-  ]
+    "Unsupported requirements such as SAS, FastAPI, RAGAS, DeepEval, LangSmith, Anthropic, Terraform, Helm, React/TypeScript, and specific AI coding assistants are not claimed as experience.",
+    "Each page must contain at least 3000 extracted text characters to avoid sparse three-page layouts."
+  ],
+  "minPageTextChars": 3000
 }
