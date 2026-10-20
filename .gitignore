@@ -2,4 +2,4 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
-resume/output/
+resume/output/\nresume/tailored/**/output/\n

@@ -65,6 +65,8 @@ jobs:
         run: python -m unittest discover -s resume/tests
       - name: Generate all variants
         run: python resume/build.py --all
+      - name: Generate tailored job resumes
+        run: python resume/build_tailored.py --all
       - name: Store generated PDFs
         uses: actions/upload-artifact@v4
         with:
@@ -73,5 +75,8 @@ jobs:
             resume/output/*.pdf
             resume/output/*.tex
             resume/output/build-report.json
+            resume/tailored/**/output/*.pdf
+            resume/tailored/**/output/build-report.json
+            resume/tailored/**/*.tex
           if-no-files-found: error
           retention-days: 30
