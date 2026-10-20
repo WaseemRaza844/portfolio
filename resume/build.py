@@ -428,6 +428,7 @@ def build_pdf(key, variant, data, settings, output):
     page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     result = {'file': pdf_path.name, 'pages': len(reader.pages),
               'minPages': variant.get('minPages', 1),
+              'minPageTextChars': variant.get('minPageTextChars', 0),
               'minLastPageChars': variant.get('minLastPageChars', 0),
               'maxPages': variant.get('maxPages', len(pages)),
               'pageTextChars': page_text_chars,
@@ -496,8 +497,15 @@ def main():
             raise ValueError(f'{result["file"]} is only {result["pages"]} pages; '
                              f'target is at least {result["minPages"]} pages. '
                              'Add relevant evidence rather than forced blank pages.')
-        min_last = result.get('minLastPageChars', 0)
         page_chars = result.get('pageTextChars', [])
+        min_page = result.get('minPageTextChars', 0)
+        if min_page and page_chars:
+            sparse = [(i + 1, value) for i, value in enumerate(page_chars) if value < min_page]
+            if sparse:
+                details = ', '.join(f'page {page}: {value}' for page, value in sparse)
+                raise ValueError(f'{result["file"]} does not meet its per-page content-density '
+                                 f'target of {min_page} extracted text characters ({details}).')
+        min_last = result.get('minLastPageChars', 0)
         if min_last and page_chars and page_chars[-1] < min_last:
             raise ValueError(f'{result["file"]} page {result["pages"]} contains only '
                              f'{page_chars[-1]} extracted text characters; target is at least '
