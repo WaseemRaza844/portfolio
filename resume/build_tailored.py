@@ -83,8 +83,19 @@ def compile_job(job_key, job):
             "Adjust content instead of accepting a sparse or overflowing application resume."
         )
 
-    if any(len(re.sub(r"\s+", " ", text).strip()) < 600 for text in texts):
+    page_chars = [len(re.sub(r"\s+", " ", text).strip()) for text in texts]
+    if any(value < 600 for value in page_chars):
         raise ValueError(f"{pdf_path.name} contains a sparse or unreadable page.")
+
+    min_page_chars = int(metadata.get("minPageTextChars", 0))
+    if min_page_chars:
+        sparse_pages = [(index + 1, value) for index, value in enumerate(page_chars) if value < min_page_chars]
+        if sparse_pages:
+            details = ", ".join(f"page {page}: {value}" for page, value in sparse_pages)
+            raise ValueError(
+                f"{pdf_path.name} does not meet the tailored page-density target of "
+                f"{min_page_chars} extracted text characters ({details})."
+            )
 
     joined = "\n".join(texts)
     if "Waseem Raza" not in joined:
@@ -94,8 +105,6 @@ def compile_job(job_key, job):
 
     text_path = output / f"{tex_path.stem}.txt"
     text_path.write_text(joined, encoding="utf-8")
-    page_chars = [len(re.sub(r"\s+", " ", text).strip()) for text in texts]
-
     result = {
         "job": job_key,
         "file": pdf_path.name,
