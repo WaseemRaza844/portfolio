@@ -26,7 +26,8 @@
       "lakehouse-pipeline",
       "syntheticnet",
       "wearable-intelligence",
-      "system-design-portfolio"
+      "system-design-portfolio",
+      "propagation-digital-twins"
     ],
     "certificationIds": [
       "coursera-generative-ai-applications-with-amazon-bedrock",
@@ -38,8 +39,10 @@
     ],
     "publicationIds": [
       "medication-adherence-2026",
+      "multiparameter-reliability-2025",
       "resilient-propagation-2024",
-      "multiparameter-reliability-2025"
+      "outage-management-2024",
+      "lunarcomm-2022"
     ],
     "pages": [
       [
@@ -63,26 +66,23 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "comprehensive": {
-    "label": "Comprehensive CV",
+    "label": "Comprehensive 3-Page Resume",
     "tagline": "Applied AI | Generative AI | Wireless Networks | Research and Engineering",
-    "headline": "Machine Learning Engineer | AI, Wireless Systems & Research",
+    "headline": "Machine Learning Engineer | AI/ML, GenAI, Data & Intelligent Systems",
     "summary": "AI/ML and Generative AI Engineer with a PhD in Electrical and Computer Engineering and 7+ years of combined industry, research, and engineering experience across enterprise AI, data science, wireless systems, and applied research. Experience spans LLM-enabled analytics, retrieval-augmented generation (RAG), domain-adaptive machine learning, predictive modeling, time-series analysis, ETL/ELT, Azure Databricks, Apache Spark, MLOps, 5G/6G network intelligence, and experimental research. At AT&T, lead development and operational integration of AI solutions for critical service-assurance workflows, combining model validation, data quality, cross-domain evaluation, and stakeholder-driven delivery.",
     "skills": {
-      "Generative & Agentic AI": "LLM applications, retrieval-augmented generation (RAG), prompt engineering, document ingestion, chunking, embeddings, semantic retrieval, structured information extraction, tool-using agents, agent orchestration, and grounded response generation",
-      "Microsoft AI Ecosystem": "Microsoft Foundry, Azure OpenAI, Azure AI Services, Azure AI Search, Azure Machine Learning, Foundry models and agents, Azure Content Understanding, Semantic Kernel, and responsible AI concepts",
-      "LLM Frameworks & Models": "Hugging Face Transformers, LangChain, LangGraph, OpenAI APIs, transformer architectures, fine-tuning concepts, NLP foundation models, prompt templates, structured outputs, and LLM evaluation",
-      "Data & AI Platforms": "Azure Databricks, Apache Spark, PySpark, Azure Data Factory, Azure Synapse Analytics, Azure Functions, Azure Blob Storage, Azure Data Lake, Google BigQuery, and cloud analytics workflows",
-      "Data Engineering": "ETL/ELT pipelines, AI-ready datasets, batch processing, ingestion, cleansing, schema transformation, validation, feature engineering, data-quality assessment, and structured and unstructured data workflows",
-      "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, transfer learning, domain adaptation, adversarial learning, anomaly detection, classification, regression, time-series forecasting, cross-validation, and model evaluation",
-      "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, shell scripting, model deployment, reproducible workflows, and cloud-native application development",
-      "Programming & Analytics": "Python, SQL, C/C++, and R; Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Plotly, Streamlit, Jupyter, and exploratory data analysis",
-      "Wireless Systems": "LTE/5G-NR, NR-NTN, cell selection, user timing in 5G standalone networks, RAN optimization, mobility, propagation modeling, and service assurance",
-      "Wireless AI & Optimization": "Transfer learning, domain adaptation, adversarial learning, autoencoder-based CSI compression, GAN-based data generation, reinforcement learning, self-healing, and outage management",
-      "Simulation & Experimentation": "Python simulation platforms, 3GPP-compliant network simulation, AI-enabled 5G testbeds, diagnostic logs, measurement analysis, robustness testing, and systematic experimentation"
+      "Generative & Agentic AI": "LLM applications, RAG, embeddings, semantic retrieval, prompt engineering, structured extraction, LangChain, LangGraph, LlamaIndex, tool-using agents, memory, orchestration, and grounded generation",
+      "Machine Learning": "PyTorch, TensorFlow, scikit-learn, XGBoost, classification, regression, anomaly detection, time-series forecasting, transfer learning, domain adaptation, cross-validation, and model evaluation",
+      "Data Engineering & Analytics": "Python, SQL, Pandas, NumPy, ETL/ELT, feature engineering, data validation, Azure Databricks, Apache Spark, PySpark, Synapse Analytics, and cloud analytics",
+      "MLOps & Software Engineering": "Docker, Kubernetes, OpenShift, Git, GitHub Actions, CI/CD, REST APIs, Flask, testing, Linux, model deployment, system design, and reproducible workflows",
+      "Cloud & AI Platforms": "AWS Bedrock, Azure OpenAI, Microsoft Foundry, Azure AI Services, Hugging Face Transformers, Google Cloud analytics, managed AI services, and foundation-model workflows",
+      "Wireless & Network Intelligence": "LTE/4G, 5G-NR, NR-NTN, RAN, mobility, propagation modeling, network measurements, outage management, optimization, self-healing, and service assurance",
+      "Research & Experimentation": "3GPP-aligned simulation, synthetic data, GANs, reinforcement learning, robustness testing, distribution-shift evaluation, statistical validation, and experimental design"
     },
     "experienceIds": [
       "att-current",
@@ -90,13 +90,37 @@
       "att-labs-2024",
       "futurewei-2022",
       "att-labs-2022",
-      "ou-research",
-      "teaching"
+      "ou-research"
     ],
     "experienceText": "generic",
-    "projectIds": "all",
-    "certificationIds": "all",
-    "publicationIds": "all",
+    "projectIds": [
+      "agentic-ai-rag",
+      "lakehouse-pipeline",
+      "financial-ml",
+      "wearable-intelligence",
+      "propagation-digital-twins",
+      "syntheticnet",
+      "system-design-portfolio"
+    ],
+    "certificationIds": [
+      "coursera-generative-ai-applications-with-amazon-bedrock",
+      "coursera-agentic-ai-with-langchain-and-langgraph",
+      "coursera-machine-learning",
+      "coursera-introduction-to-data-analytics-in-google-cloud",
+      "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+      "coursera-python-for-data-science-ai-development",
+      "coursera-ai-foundations-industry-overview-for-telecommunication",
+      "coursera-4g-network-fundamentals"
+    ],
+    "publicationIds": [
+      "medication-adherence-2026",
+      "multiparameter-reliability-2025",
+      "resilient-propagation-2024",
+      "outage-management-2024",
+      "lunarcomm-2022",
+      "positioning-ran-2022",
+      "rf-energy-harvesting-2020"
+    ],
     "pages": [
       [
         "summary",
@@ -108,7 +132,7 @@
         "publications"
       ]
     ],
-    "maxPages": 10,
+    "maxPages": 3,
     "leadership": {
       "Ownership and accountability": "Lead AI/ML initiatives through requirements analysis, data preparation, model development, validation, stakeholder review, and deployment planning.",
       "Technical leadership": "Define technical approaches, evaluate alternatives, coordinate experimentation, and communicate findings to guide projects from ambiguous requirements to measurable outcomes.",
@@ -118,7 +142,10 @@
       "Adaptability and problem solving": "Combine critical thinking, systematic experimentation, and data-driven analysis to address unfamiliar technologies and complex operational problems."
     },
     "latexFontSize": 9,
-    "detailedCertificationDescriptions": false
+    "detailedCertificationDescriptions": true,
+    "minPages": 3,
+    "minPageTextChars": 3000,
+    "minLastPageChars": 3000
   },
   "genai": {
     "label": "Generative & Agentic AI",
@@ -146,12 +173,12 @@
     "experienceText": "genai",
     "projectIds": [
       "agentic-ai-rag",
-      "meeting-minutes-llm",
-      "unstructured-document-extraction",
-      "lakehouse-pipeline",
-      "system-design-portfolio",
       "multi-agent-orchestration",
-      "rag-vector-retrieval-stack"
+      "rag-vector-retrieval-stack",
+      "aws-bedrock-applied-genai",
+      "unstructured-document-extraction",
+      "meeting-minutes-llm",
+      "system-design-portfolio"
     ],
     "certificationIds": [
       "coursera-generative-ai-applications-with-amazon-bedrock",
@@ -161,7 +188,11 @@
       "coursera-advanced-rag-with-vector-databases-and-retrievers",
       "coursera-build-ai-agents-using-mcp"
     ],
-    "publicationIds": [],
+    "publicationIds": [
+      "resilient-propagation-2024",
+      "medication-adherence-2026",
+      "multiparameter-reliability-2025"
+    ],
     "pages": [
       [
         "summary",
@@ -169,7 +200,8 @@
         "experience",
         "education",
         "projects",
-        "certifications"
+        "certifications",
+        "publications"
       ]
     ],
     "maxPages": 3,
@@ -183,8 +215,9 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -216,7 +249,8 @@
       "cloud-computer-vision",
       "lakehouse-pipeline",
       "propagation-digital-twins",
-      "unstructured-document-extraction"
+      "unstructured-document-extraction",
+      "agentic-ai-rag"
     ],
     "certificationIds": [
       "coursera-machine-learning",
@@ -225,12 +259,14 @@
       "coursera-introduction-to-deep-learning-neural-networks-with-keras",
       "coursera-python-for-data-science-ai-development",
       "coursera-introduction-to-computer-vision-with-tensorflow",
-      "coursera-developing-ai-applications-with-python-and-flask",
       "coursera-data-transformation-in-the-cloud"
     ],
     "publicationIds": [
+      "medication-adherence-2026",
+      "multiparameter-reliability-2025",
       "resilient-propagation-2024",
-      "medication-adherence-2026"
+      "outage-management-2024",
+      "positioning-ran-2022"
     ],
     "pages": [
       [
@@ -254,8 +290,9 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -292,9 +329,7 @@
       "coursera-customer-experience-in-telecommunication",
       "coursera-4g-network-fundamentals",
       "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
-      "coursera-machine-learning",
-      "coursera-5g-network-fundamentals",
-      "coursera-5g-for-everyone"
+      "coursera-machine-learning"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
@@ -326,8 +361,9 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -353,9 +389,10 @@
     "projectIds": [
       "wearable-intelligence",
       "cloud-computer-vision",
+      "unstructured-document-extraction",
       "agentic-ai-rag",
       "aws-bedrock-applied-genai",
-      "genai-prompt-foundations"
+      "lakehouse-pipeline"
     ],
     "certificationIds": [
       "coursera-health-data-science-foundation",
@@ -364,10 +401,7 @@
       "coursera-introduction-to-deep-learning-neural-networks-with-keras",
       "coursera-machine-learning",
       "coursera-introduction-to-healthcare-management",
-      "coursera-introduction-to-healthcare-finance",
-      "coursera-intro-to-finance-in-healthcare",
-      "coursera-python-for-data-science-ai-development",
-      "coursera-introduction-to-artificial-intelligence-ai"
+      "coursera-python-for-data-science-ai-development"
     ],
     "publicationIds": [
       "medication-adherence-2026",
@@ -397,8 +431,9 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -425,7 +460,9 @@
       "financial-ml",
       "lakehouse-pipeline",
       "system-design-portfolio",
-      "agentic-ai-rag"
+      "agentic-ai-rag",
+      "unstructured-document-extraction",
+      "aws-bedrock-applied-genai"
     ],
     "certificationIds": [
       "coursera-machine-learning",
@@ -433,16 +470,13 @@
       "coursera-introduction-to-data-analytics-in-google-cloud",
       "coursera-python-for-data-science-ai-development",
       "coursera-exploratory-vs-confirmatory-data-analysis-using-python",
-      "coursera-introduction-to-relational-databases-rdbms",
       "coursera-ai-fundamentals-in-financial-services",
-      "coursera-fundamentals-of-machine-learning-in-finance",
-      "coursera-reinforcement-learning-in-finance",
-      "coursera-guided-tour-of-machine-learning-in-finance",
-      "coursera-generative-ai-essentials-for-finance-and-accounting"
+      "coursera-fundamentals-of-machine-learning-in-finance"
     ],
     "publicationIds": [
       "multiparameter-reliability-2025",
-      "resilient-propagation-2024"
+      "resilient-propagation-2024",
+      "outage-management-2024"
     ],
     "pages": [
       [
@@ -466,8 +500,9 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   },
   "faculty": {
     "label": "Faculty & Academic",
@@ -538,7 +573,8 @@
     },
     "latexFontSize": 9,
     "minPages": 3,
-    "minLastPageChars": 1700,
-    "detailedCertificationDescriptions": true
+    "minLastPageChars": 3000,
+    "detailedCertificationDescriptions": true,
+    "minPageTextChars": 3000
   }
 }
