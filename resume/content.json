@@ -20,7 +20,8 @@
     "fontSize": 10.3,
     "leading": 14,
     "accent": "#155B8A",
-    "marginInches": 0.55
+    "horizontalMarginInches": 0.68,
+    "verticalMarginInches": 0.45
   },
   "experienceOverrides": {
     "att-current": {
