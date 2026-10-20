@@ -119,13 +119,20 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(date_label(row.get('period'))) + '}')
                     body.append(tex(row['school']) + r'\par')
             elif name == 'projects':
-                section('Projects' if key == 'generic' else 'Selected Projects')
+                section('Selected Projects')
                 for row in selected[name]:
-                    body.append(r'\entry{' + link(row['title'], row.get('url') or row.get('links', {}).get('github')) + '}{' + tex(row.get('date', '')) + '}')
-                    body.append(r'\textit{' + tex(row.get('category', 'Project')) + r'}\par')
-                    bullets([row['summary']])
-                    if row.get('skills'):
-                        body.append(r'{\small\textit{Tools \& methods:} ' + tex(', '.join(row['skills'])) + r'\par}')
+                    project_meta = ' | '.join([part for part in [row.get('category', 'Project'), row.get('date', '')] if part])
+                    body.append(r'\entry{' + link(row['title'], row.get('url') or row.get('links', {}).get('github')) + '}{' + tex(project_meta) + '}')
+                    description = row.get('resumeSummary') or row.get('summary', '')
+                    if not description or len(description.strip()) < 180:
+                        raise ValueError('Project ' + row['id'] + ' needs a substantive resumeSummary (180+ characters).')
+                    body.append(tex(description) + r'\par')
+                    skills = row.get('resumeSkills') or row.get('skills', [])
+                    skill_text = ', '.join(skills) if isinstance(skills, list) else str(skills or '')
+                    if len(skill_text.strip()) < 60:
+                        raise ValueError('Project ' + row['id'] + ' needs substantive resumeSkills.')
+                    body.append(r'{\small\textit{Tools \& Methods:} ' + tex(skill_text) + r'\par}')
+                    body.append(r'\vspace{1pt}')
             elif name == 'certifications':
                 section('Certifications & Professional Development')
                 for number, row in enumerate(selected[name], start=1):
@@ -208,11 +215,12 @@ def build_pdf(key, variant, data, settings, output):
     accent = settings.get('accent', '#155B8A').lstrip('#')
     if not re.fullmatch('[0-9A-Fa-f]{6}', accent):
         raise ValueError('accent must be a six-digit hex color.')
-    margin = float(settings.get('marginInches', .55))
-    if not .3 <= margin <= 1.5:
-        raise ValueError('marginInches must be between 0.3 and 1.5.')
+    horizontal_margin = float(variant.get('horizontalMarginInches', settings.get('horizontalMarginInches', .68)))
+    vertical_margin = float(variant.get('verticalMarginInches', settings.get('verticalMarginInches', .45)))
+    if not .3 <= horizontal_margin <= 1.5 or not .3 <= vertical_margin <= 1.5:
+        raise ValueError('Resume margins must be between 0.3 and 1.5 inches.')
     values = dict(SIZE=str(size), PAPER={'LETTER': 'letter', 'A4': 'a4'}[settings.get('paper', 'LETTER').upper()],
-                  MARGIN=str(margin), ACCENT=accent, NAME=tex(identity['name']),
+                  HMARGIN=str(horizontal_margin), VMARGIN=str(vertical_margin), ACCENT=accent, NAME=tex(identity['name']),
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
                   CONTACTS=contacts, BODY='\n'.join(body))
@@ -239,6 +247,7 @@ def build_pdf(key, variant, data, settings, output):
     page_text_chars = [len(re.sub(r'\s+', ' ', text).strip()) for text in texts]
     return {'file': filename + '.pdf', 'pages': len(texts),
             'minPages': variant.get('minPages', 1),
+            'minPageTextChars': variant.get('minPageTextChars', 0),
             'minLastPageChars': variant.get('minLastPageChars', 0),
             'maxPages': variant.get('maxPages', 2),
             'pageTextChars': page_text_chars,
