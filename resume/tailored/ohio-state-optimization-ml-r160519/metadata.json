@@ -1,0 +1,15 @@
+{
+  "jobId": "R160519",
+  "company": "The Ohio State University",
+  "unit": "Integrated Systems Engineering / Electrical and Computer Engineering",
+  "role": "Assistant Professor Tenure-Track Faculty Position in Optimization for Machine Learning",
+  "source": "User-provided job description in ChatGPT conversation",
+  "expectedPages": 3,
+  "minPageTextChars": 3000,
+  "baseResume": "Waseem_Raza_FACULTY.tex",
+  "notes": [
+    "Tailored to Optimization for Machine Learning across ISE and ECE.",
+    "Positions prior work around optimization, reinforcement learning, robust learning, networked systems, domain adaptation, digital twins, and trustworthy/reliable AI.",
+    "Does not claim unsupported expertise in zeroth-order, first-order, mixed-integer, bilevel, or federated optimization as established prior research; forward-looking distributed/communication-efficient optimization is presented as research trajectory."
+  ]
+}
