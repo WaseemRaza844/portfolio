@@ -1,0 +1,14 @@
+{
+  "company": "micro1",
+  "role": "ML Engineer",
+  "jobId": "micro1-ml-engineer",
+  "source": "User-provided job description in ChatGPT conversation",
+  "expectedPages": 3,
+  "minPageTextChars": 3000,
+  "baseResume": "Waseem_Raza_AIML.tex",
+  "notes": [
+    "Tailored toward coding-heavy ML engineering: Python, numerical computing, model development, training/inference, reproducibility, evaluation, debugging, and recognized industry/research experience.",
+    "Includes AI-assisted/coding-agent development workflow because the candidate actively uses coding agents for Python/repository iteration.",
+    "Does not claim JAX, SGLang, vLLM, or llama.cpp as hands-on experience because the current resume data does not establish them."
+  ]
+}
