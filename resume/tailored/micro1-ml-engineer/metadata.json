@@ -9,6 +9,8 @@
   "notes": [
     "Tailored toward coding-heavy ML engineering: Python, numerical computing, model development, training/inference, reproducibility, evaluation, debugging, and recognized industry/research experience.",
     "Includes AI-assisted/coding-agent development workflow because the candidate actively uses coding agents for Python/repository iteration.",
-    "Does not claim JAX, SGLang, vLLM, or llama.cpp as hands-on experience because the current resume data does not establish them."
-  ]
+    "Does not claim JAX, SGLang, vLLM, or llama.cpp as hands-on experience because the current resume data does not establish them.",
+    "Uses visual bottom-fill validation in addition to character-density checks so manually sparse pages fail CI."
+  ],
+  "maxBottomWhitespaceInches": 1.55
 }

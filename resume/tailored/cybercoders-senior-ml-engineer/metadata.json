@@ -9,6 +9,8 @@
   "notes": [
     "Tailored toward senior ML engineering, generative modeling, Python, data pipelines, MLOps, reproducible research, mentoring, and production-oriented deployment.",
     "Hands-on generative-model evidence is centered on GANs and autoencoder architectures.",
-    "Does not claim JAX, diffusion models, VAEs, Airflow, biomolecular simulation, mixed-precision training, or deployment-side model compression without supporting evidence."
-  ]
+    "Does not claim JAX, diffusion models, VAEs, Airflow, biomolecular simulation, mixed-precision training, or deployment-side model compression without supporting evidence.",
+    "Uses visual bottom-fill validation in addition to character-density checks so manually sparse pages fail CI."
+  ],
+  "maxBottomWhitespaceInches": 1.55
 }
