@@ -87,6 +87,41 @@ def compile_job(job_key, job):
     if any(value < 600 for value in page_chars):
         raise ValueError(f"{pdf_path.name} contains a sparse or unreadable page.")
 
+    # Character count alone can miss visually sparse pages when content is packed tightly
+    # into the upper half. Track the lowest text baseline on each page as a visual-fill
+    # proxy and allow tailored metadata to enforce a maximum bottom whitespace.
+    page_lowest_text_y = []
+    for page in reader.pages:
+        y_values = []
+
+        def visitor_text(text, cm, tm, font_dict, font_size):
+            if text and text.strip():
+                try:
+                    y_values.append(float(tm[5]))
+                except (TypeError, ValueError, IndexError):
+                    pass
+
+        page.extract_text(visitor_text=visitor_text)
+        page_lowest_text_y.append(min(y_values) if y_values else float(page.mediabox.height))
+
+    max_bottom_whitespace_inches = float(metadata.get("maxBottomWhitespaceInches", 0))
+    if max_bottom_whitespace_inches:
+        max_bottom_whitespace_points = max_bottom_whitespace_inches * 72.0
+        visually_sparse = [
+            (index + 1, round(value, 1))
+            for index, value in enumerate(page_lowest_text_y)
+            if value > max_bottom_whitespace_points
+        ]
+        if visually_sparse:
+            details = ", ".join(
+                f"page {page}: lowest text baseline {value} pt"
+                for page, value in visually_sparse
+            )
+            raise ValueError(
+                f"{pdf_path.name} leaves excessive bottom whitespace; target is at most "
+                f"{max_bottom_whitespace_inches:.2f} in ({details})."
+            )
+
     min_page_chars = int(metadata.get("minPageTextChars", 0))
     if min_page_chars:
         sparse_pages = [(index + 1, value) for index, value in enumerate(page_chars) if value < min_page_chars]
@@ -110,6 +145,7 @@ def compile_job(job_key, job):
         "file": pdf_path.name,
         "pages": len(reader.pages),
         "pageTextChars": page_chars,
+        "pageLowestTextY": [round(value, 1) for value in page_lowest_text_y],
         "target": {
             "company": metadata.get("company"),
             "role": metadata.get("role"),
@@ -142,6 +178,8 @@ def main():
         print(
             f'{result["file"]}: {result["pages"]} pages | text chars/page: '
             + ", ".join(str(value) for value in result["pageTextChars"])
+            + " | lowest text y/page: "
+            + ", ".join(str(value) for value in result["pageLowestTextY"])
         )
 
 
