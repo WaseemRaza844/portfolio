@@ -1,0 +1,14 @@
+{
+  "company": "CyberCoders / Everforth",
+  "role": "Senior Machine Learning Engineer",
+  "jobId": "cybercoders-senior-ml-engineer-2026",
+  "source": "User-provided job description in ChatGPT conversation",
+  "expectedPages": 3,
+  "minPageTextChars": 3000,
+  "baseResume": "Waseem_Raza_AIML.tex",
+  "notes": [
+    "Tailored toward senior ML engineering, generative modeling, Python, data pipelines, MLOps, reproducible research, mentoring, and production-oriented deployment.",
+    "Hands-on generative-model evidence is centered on GANs and autoencoder architectures.",
+    "Does not claim JAX, diffusion models, VAEs, Airflow, biomolecular simulation, mixed-precision training, or deployment-side model compression without supporting evidence."
+  ]
+}
