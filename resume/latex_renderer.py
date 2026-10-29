@@ -274,12 +274,20 @@ def build_pdf(key, variant, data, settings, output):
                         description = row.get('facultyDescription')
                         if not description:
                             raise ValueError('Faculty course description missing for ' + row['id'])
-                        body.append(r'\Needspace{4\baselineskip}\noindent'
-                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
-                                    r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
-                        body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
-                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\\')
-                        body.append(r'\end{tabularx}')
+                        metadata = r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}'
+                        if len(row['title']) > 42:
+                            # Never isolate the final words of an official course title.
+                            # Metadata remains right aligned on its dedicated line.
+                            body.append(r'\Needspace{5\baselineskip}\noindent\textbf{' +
+                                        tex(str(number) + '. ') + title + r'}\par')
+                            body.append(r'\noindent\makebox[\linewidth][r]{' + metadata + r'}\par')
+                        else:
+                            body.append(r'\Needspace{4\baselineskip}\noindent'
+                                        r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
+                                        r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
+                            body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & ' +
+                                        metadata + r'\\')
+                            body.append(r'\end{tabularx}')
                         body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
                         continue
                     count = progress(row)
