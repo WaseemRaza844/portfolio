@@ -40,30 +40,31 @@ def check_pdf(path):
             first = leading[0][3]
             if first.startswith("•"):
                 errors.append(f"{path.name} page {number}: starts mid-bullet: {first[:72]}")
-        for idx, (y, x, width, t) in enumerate(lines):
-            if idx == 0:
-                continue
-            prior = lines[idx-1]
-            prev_y, prev_x, prev_width, prev_t = prior
-            if not 0 < y-prev_y < 14.5:
-                continue
-            # Bullet-list continuation lines are indented near the left margin.
-            # Do not misclassify metadata, years, headings or table columns.
-            is_continuation = (margin + 7 <= x <= margin + 36 and
-                               (prev_t.startswith("•") or
-                                margin + 7 <= prev_x <= margin + 36))
-            if is_continuation:
-                ratio = width / max_width
-                if ratio < .23 and len(t.split()) <= 4:
-                    errors.append(f"{path.name} page {number}: orphaned bullet "
-                                  f"({ratio:.0%} line width): {t}")
-                elif ratio < .42 and len(t.split()) <= 6:
-                    warnings.append(f"{path.name} page {number}: short bullet end "
-                                    f"({ratio:.0%}): {t}")
-            if prev_t.endswith("-") and re.match(r"^[a-z]", t) and \
-                    x < margin + 40 and prev_x < margin + 40:
-                errors.append(f"{path.name} page {number}: word hyphenated "
-                              f"across lines: {prev_t[-28:]} / {t[:28]}")
+        # Track actual bullet paragraphs rather than guessing from indentation.
+        # Titles, venues, dates and certificate rows can have the same indent.
+        active_bullet = False
+        previous = None
+        for y, x, width, t in lines:
+            if previous:
+                prev_y, prev_x, _, prev_t = previous
+                contiguous = 0 < y-prev_y < 14.5
+                if (prev_t.endswith("-") and re.match(r"^[a-z]", t) and
+                        contiguous and x < margin + 40 and prev_x < margin + 40):
+                    errors.append(f"{path.name} page {number}: word hyphenated "
+                                  f"across lines: {prev_t[-28:]} / {t[:28]}")
+                if active_bullet and contiguous and margin + 7 <= x <= margin + 36 and not prev_t.endswith((".", "!", "?")):
+                    ratio = width / max_width
+                    if ratio < .23 and len(t.split()) <= 4:
+                        errors.append(f"{path.name} page {number}: orphaned bullet "
+                                      f"({ratio:.0%} line width): {t}")
+                    elif ratio < .42 and len(t.split()) <= 6:
+                        warnings.append(f"{path.name} page {number}: short bullet end "
+                                        f"({ratio:.0%}): {t}")
+                else:
+                    active_bullet = False
+            if t.startswith("•"):
+                active_bullet = True
+            previous = (y, x, width, t)
     return errors, warnings
 
 
