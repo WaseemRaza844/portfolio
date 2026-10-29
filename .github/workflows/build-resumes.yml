@@ -73,6 +73,8 @@ jobs:
         run: python -m unittest discover -s resume/tests
       - name: Generate all variants
         run: python resume/build.py --all
+      - name: Audit faculty PDF line breaks and pagination
+        run: python resume/validate_pdf_layout.py
       - name: Generate tailored job resumes
         run: python resume/build_tailored.py --all
 
