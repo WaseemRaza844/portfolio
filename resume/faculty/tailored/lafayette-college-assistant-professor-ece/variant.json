@@ -26,7 +26,7 @@
     "Sensing, Signals & Intelligent Systems": "Smartwatch inertial sensing, time-series analysis, activity recognition, digital signal processing, sensor data collection, wearable health monitoring, cyber-physical data analysis",
     "Experimental ECE & Communications": "3GPP-informed wireless simulation, cellular communication systems, 5G testbed design, network measurements, model-based evaluation, experimental design, and digital twins",
     "Machine Learning & Control-Oriented AI": "Deep learning, generative augmentation, transfer and domain-adaptive learning, reinforcement learning, network self-healing and adaptive optimization",
-    "Software & Research Platforms": "Python, C/C++, MATLAB-style numerical analysis, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SQL, Linux, and Git"
+    "Software & Research Platforms": "Python, C/C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SQL, Linux, and Git"
   },
   "projectIds": [
     "wearable-intelligence",
