@@ -272,8 +272,8 @@ class LatexEscapingTests(unittest.TestCase):
         cv = module.load_variants()['academic_cv']
         self.assertEqual(cv['pageBreakBefore'], [])
         source = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
-        self.assertNotIn(r'\\begin{minipage}{\\linewidth}', source)
-        self.assertIn(r'\\Needspace{6\\baselineskip}', source)
+        self.assertNotIn('begin{minipage}', source)
+        self.assertIn('Needspace{6', source)
         layout = (Path(__file__).parents[1] / 'validate_pdf_layout.py').read_text(encoding='utf-8')
         self.assertIn('excessive bottom whitespace', layout)
 
