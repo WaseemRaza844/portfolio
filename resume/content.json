@@ -68,9 +68,9 @@
           "Translate complex operational requirements into measurable ML objectives, validated datasets, and production-oriented analytical workflows."
         ],
         "faculty": [
-          "Applied domain-adaptive ML research to telecom service assurance, emphasizing operational reliability and model validation.",
-          "Developed cross-domain evaluation and error-analysis methods for models exposed to changing operational data.",
-          "Worked with software, network, and public-safety teams to connect AI research with practical service-assurance requirements."
+          "Applied domain-adaptive ML to telecom service assurance and model validation.",
+          "Designed cross-domain evaluation and error-analysis methods for operational ML.",
+          "Worked with engineering and public-safety teams on reliable network assurance."
         ]
       }
     },
@@ -109,11 +109,11 @@
           "Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs."
         ],
         "faculty": [
-          "Built an LLM-enabled analytics pipeline to interpret geochemical well data and support technical decision making.",
-          "Developed cloud data-ingestion and validation workflows using Python, Azure Databricks, Functions, and Synapse Analytics.",
-          "Automated exploration-data ETL, reducing preparation time by 40% while improving reproducibility.",
-          "Introduced validation and quality checks that improved the reliability of analytical outputs by 20%.",
-          "Translated geologists' domain requirements into structured datasets and actionable analytics."
+          "Built LLM-enabled analytics to interpret geochemical well data for decision support.",
+          "Built Python pipelines in Azure Databricks, Functions, and Synapse Analytics.",
+          "Automated exploration-data ETL, cutting preparation time by 40%.",
+          "Used data-validation and quality controls to improve output reliability by 20%.",
+          "Turned geologists' technical needs into structured datasets and useful analytics."
         ]
       }
     },
@@ -130,11 +130,11 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Built reusable Python simulation platforms for wireless AI experiments, including a 3GPP-compliant network simulator and an AI-enabled 5G testbed for reproducible network studies.",
-          "Developed transfer-learning, GAN, autoencoder, adversarial-learning, and reinforcement-learning pipelines to study sparse wireless datasets and generalization across domains.",
-          "Led more than 100 experiments evaluating wireless ML under distribution shifts, missing data, and limited labeled samples.",
-          "Developed self-healing and outage-management methods, improving modeled network resilience by 30%.",
-          "Published peer-reviewed wireless AI research, presented internationally, and mentored junior researchers in experimental design and technical writing."
+          "Built 3GPP-compliant Python simulation tools and an AI-enabled 5G research testbed.",
+          "Built GAN, transfer-learning, autoencoder, and reinforcement-learning models for wireless data.",
+          "Led 100+ experiments testing wireless ML under domain shift and limited labeled data.",
+          "Developed self-healing and outage-management methods, improving resilience by 30%.",
+          "Published wireless AI research and mentored junior researchers in experimental design."
         ]
       }
     },
@@ -153,10 +153,10 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Taught Computer Programming, Communication Systems, and Wireless Communication through engineering-oriented lectures and practical examples.",
-          "Advised students on senior-design projects, technical problem solving, academic planning, and early career development.",
-          "Aligned course materials with learning outcomes, industry expectations, and accreditation requirements.",
-          "Supported examinations, accreditation records, technical workshops, student orientations, and departmental activities."
+          "Taught programming, communication systems, and wireless communication with practical examples.",
+          "Advised senior-design students on projects, academic plans, and early careers.",
+          "Aligned course materials with learning outcomes and accreditation standards.",
+          "Supported accreditation, exams, technical workshops, and student activities."
         ]
       }
     },
@@ -172,10 +172,10 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Researched wireless communications through analytical modeling, simulation, experimental analysis, and publication-oriented technical writing.",
-          "Mentored Bachelor's and Master's students in thesis design, research methods, experiments, and presenting technical results.",
-          "Reviewed research manuscripts and student reports, providing constructive feedback to strengthen technical quality and publication readiness.",
-          "Supported research proposals, literature reviews, lab seminars, paper discussions, and coordination of research activities."
+          "Modeled wireless communication systems through simulation, analysis, and technical reports.",
+          "Mentored Bachelor's and Master's theses in experiment design and research presentation.",
+          "Reviewed student reports and manuscripts for rigor and publication readiness.",
+          "Supported proposals, literature reviews, lab seminars, and research coordination."
         ]
       }
     },
@@ -191,10 +191,10 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Conducted graduate research in wireless communications while completing the MSc in Telecommunication Engineering.",
-          "Assisted faculty with communication-systems courses, student assignments, laboratory teaching, grading, and examinations.",
-          "Supervised wireless communication laboratories and prepared practical experiments and instructional manuals.",
-          "Helped develop course materials and student projects connecting communication theory with hands-on experiments."
+          "Researched wireless communication systems while completing an MSc in Telecommunications.",
+          "Supported communications courses, labs, assignments, grading, and examinations.",
+          "Led wireless communication labs and prepared technical manuals and experiments.",
+          "Developed course and student-project materials for practical wireless engineering."
         ]
       }
     }
@@ -247,9 +247,9 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Analyzed more than 500,000 LTE/5G-NR diagnostic logs with ML, reducing diagnostic time by 20%.",
-          "Improved 5G NR-NTN cell-selection algorithms by 15% through data-driven analysis and validation.",
-          "Presented findings from large operational datasets to engineers developing next-generation wireless systems."
+          "Analyzed 500K+ LTE/5G-NR logs with ML, reducing diagnostic time by 20%.",
+          "Improved 5G NR-NTN cell selection by 15% through data-driven validation.",
+          "Presented operational data insights to next-generation wireless engineering teams."
         ]
       }
     },
@@ -266,9 +266,9 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Improved channel-state-information compression by 25% using transfer learning and autoencoder models.",
-          "Ran more than 50 experiments to evaluate wireless ML performance under changing data conditions.",
-          "Translated wireless modeling results into engineering recommendations for future communication systems."
+          "Improved wireless CSI compression by 25% with transfer learning and autoencoders.",
+          "Ran 50+ experiments on wireless ML robustness under changing data conditions.",
+          "Translated research results into recommendations for future wireless networks."
         ]
       }
     },
@@ -285,9 +285,9 @@
       ],
       "bulletsByVariant": {
         "faculty": [
-          "Improved 5G standalone user-timing precision by 20% using machine learning and statistical analysis.",
-          "Analyzed user trace data using SQL and visualization tools and presented findings to engineering leadership.",
-          "Converted operational network traces into interpretable indicators for diagnosis and optimization."
+          "Improved 5G standalone user-timing precision by 20% with ML and statistics.",
+          "Analyzed user traces with SQL and presented results to engineering leadership.",
+          "Turned operational traces into indicators for network diagnosis and optimization."
         ]
       }
     }
