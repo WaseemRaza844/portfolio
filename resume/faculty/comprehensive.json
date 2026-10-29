@@ -4,12 +4,12 @@
   "headline": "Researcher & Engineering Educator | Intelligent Wireless Systems",
   "summary": "Electrical and Computer Engineering researcher and educator specializing in AI/ML for wireless networks, resilient learning, and 5G/6G network intelligence. Research spans propagation modeling, generative data augmentation, digital twins, optimization, self-healing, domain adaptation, and reinforcement learning. Academic work includes teaching, laboratory instruction, student mentoring, research publications, proposal development, and curriculum activities. Industrial R&D at AT&T Labs, Futurewei, Impac, and AT&T brings operational data and applied validation to this research program.",
   "researchInterests": [
-    "AI/ML for Wireless and 5G/6G Networks",
-    "Reliable, Robust, and Data-Efficient Learning",
-    "Network Optimization, Self-Healing, and Autonomous Systems",
-    "Propagation Modeling, Digital Twins, and Synthetic Data",
-    "Transfer Learning, Domain Adaptation, and Generative Modeling",
-    "Reinforcement Learning and Sequential Decision-Making",
+    "AI/ML for 5G/6G Wireless Networks",
+    "Robust and Data-Efficient Learning",
+    "Network Optimization and Self-Healing",
+    "Propagation Modeling and Digital Twins",
+    "Transfer Learning and Generative Augmentation",
+    "Reinforcement Learning for Autonomous Networks",
     "Wearable Intelligence and Human-Centered Sensing"
   ],
   "skillsSectionTitle": "Research Methods & Technical Expertise",

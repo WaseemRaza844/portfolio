@@ -4,12 +4,12 @@
   "headline": "Researcher & Educator | AI/ML for Wireless Networks",
   "summary": "Electrical and Computer Engineering researcher, educator, and machine-learning engineer with a PhD from the University of Oklahoma focused on AI/ML for wireless networks. Research emphasizes reliable learning, 5G/6G network intelligence, propagation and digital-twin modeling, self-healing, transfer learning, generative augmentation, and reinforcement learning. Experience includes university teaching, research mentoring, laboratory instruction, curriculum development, and interdisciplinary publication work, supported by industrial R&D at AT&T Labs, Futurewei, Impac, and AT&T.",
   "researchInterests": [
-    "AI/ML for Wireless and 5G/6G Networks",
-    "Reliable, Robust, and Data-Efficient Learning",
-    "Network Optimization, Self-Healing, and Autonomous Systems",
-    "Propagation Modeling, Digital Twins, and Synthetic Data",
-    "Transfer Learning, Domain Adaptation, and Generative Modeling",
-    "Reinforcement Learning and Sequential Decision-Making",
+    "AI/ML for 5G/6G Wireless Networks",
+    "Robust and Data-Efficient Learning",
+    "Network Optimization and Self-Healing",
+    "Propagation Modeling and Digital Twins",
+    "Transfer Learning and Generative Augmentation",
+    "Reinforcement Learning for Autonomous Networks",
     "Wearable Intelligence and Human-Centered Sensing"
   ],
   "skillsSectionTitle": "Research Methods & Technical Expertise",
