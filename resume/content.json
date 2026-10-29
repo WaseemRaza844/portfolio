@@ -123,6 +123,39 @@
     },
     "industry-research": {
       "resumePublished": false
+    },
+    "teaching": {
+      "period": "12/2017 - 09/2019",
+      "organization": "University of Lahore, Pakistan",
+      "location": "Lahore, Pakistan",
+      "bullets": [
+        "Taught undergraduate Electrical Engineering Technology courses including Computer Programming, Communication Systems, and Wireless Communication, connecting theory with implementation-oriented examples.",
+        "Mentored and advised students on academic projects, technical problem solving, and career pathways, including senior-design and course-project development.",
+        "Contributed to curriculum development and course-content alignment with program outcomes, industry needs, and accreditation requirements.",
+        "Supported departmental accreditation documentation, examinations, student orientation, technical workshops, seminars, and academic administration."
+      ]
+    },
+    "comsats-research-associate": {
+      "period": "06/2016 - 12/2017",
+      "organization": "COMSATS University Islamabad, Pakistan",
+      "location": "Islamabad, Pakistan",
+      "bullets": [
+        "Conducted research in wireless communication systems and contributed to publication-oriented modeling, simulation, analysis, and technical writing.",
+        "Mentored Bachelor’s and Master’s students on thesis projects, research methodology, experiment design, technical writing, and presentation of results.",
+        "Reviewed research manuscripts and student technical reports, providing structured feedback aligned with publication and academic-quality standards.",
+        "Assisted with research-proposal preparation, literature synthesis, lab seminars, paper-review meetings, and coordination of research activities."
+      ]
+    },
+    "uet-research-scholar": {
+      "period": "08/2014 - 02/2016",
+      "organization": "University of Engineering and Technology, Taxila, Pakistan",
+      "location": "Taxila, Pakistan",
+      "bullets": [
+        "Conducted full-time graduate research in communication systems and wireless engineering while completing the MSc in Telecommunication Engineering.",
+        "Assisted faculty with Communication Systems and Digital Communication Systems instruction, student questions, assignments, grading, and exam preparation.",
+        "Supervised laboratory sessions for Communication Systems and Wireless Communication and developed lab manuals and implementation-oriented exercises.",
+        "Supported curriculum development and student technical-project activities connecting theoretical communication concepts with practical experimentation."
+      ]
     }
   },
   "projectOverrides": {},
