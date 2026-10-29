@@ -90,7 +90,7 @@ jobs:
           {
             echo "# Generated resume PDFs"
             echo
-            echo "PDF snapshots from the latest validated `develop` build. Choose a PDF below to preview it directly in GitHub."
+            echo 'PDF snapshots from the latest validated develop build. Choose a PDF below to preview it directly in GitHub.'
             echo
             for group in faculty industry tailored; do
               echo "## ${group^}"
