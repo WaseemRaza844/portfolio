@@ -128,6 +128,43 @@ class LatexEscapingTests(unittest.TestCase):
         cv = module.load_variants()['academic_cv']
         self.assertNotIn('coursera-5g-network-fundamentals', cv['certificationIds'])
 
+    def test_faculty_profile_and_teaching_first_hierarchy(self):
+        variants = module.load_variants()
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            groups = variants[key]['pages'][0]
+            self.assertEqual(groups[0]['title'], 'Academic Profile')
+            self.assertEqual(groups[0]['items'][0], 'summary')
+            self.assertEqual(groups[0]['items'][1]['id'], 'research_interests')
+            self.assertEqual(groups[0]['items'][2]['id'], 'dissertation')
+            experience = next(item for item in groups if item['title'] == 'Teaching, Research & Professional Experience')
+            self.assertEqual(experience['items'][0]['id'], 'teaching_experience')
+            self.assertEqual(experience['items'][1], 'teaching_areas')
+            experience_ids = [x if isinstance(x, str) else x['id'] for x in experience['items']]
+            self.assertIn('academic_experience', experience_ids)
+            self.assertIn('industry_experience', experience_ids)
+            ids = [x if isinstance(x, str) else x['id'] for group in groups for x in group['items']]
+            self.assertEqual(len(ids), len(set(ids)))
+            self.assertTrue({'publications', 'projects', 'education', 'skills', 'honors', 'certifications'}.issubset(ids))
+
+    def test_industry_variants_keep_all_sections_with_grouped_hierarchy(self):
+        variants = module.load_variants()
+        for key in ('generic', 'comprehensive', 'genai', 'aiml', 'wireless', 'healthcare', 'finance'):
+            groups = variants[key]['pages'][0]
+            self.assertEqual([group['title'] for group in groups], [
+                'Professional Profile', 'Professional Experience', 'Education',
+                'Selected Projects & Research', 'Certifications & Professional Development'
+            ])
+            ids = [x if isinstance(x, str) else x['id'] for group in groups for x in group['items']]
+            self.assertEqual(set(ids), {'summary', 'skills', 'experience', 'education',
+                                        'projects', 'publications', 'certifications'})
+
+    def test_renderer_defines_a_compact_subsection_style(self):
+        renderer = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        template = (Path(__file__).parents[1] / 'template.tex').read_text(encoding='utf-8')
+        self.assertIn('subsection(subtitle)', renderer)
+        self.assertIn("entries.append((name, group_title if index == 0 else None, subtitle, True))", renderer)
+        self.assertIn(r'\titleformat{\subsection}', template)
+
     def test_comprehensive_is_three_page_application_resume(self):
         variants = module.load_variants()
         comprehensive = variants['comprehensive']
