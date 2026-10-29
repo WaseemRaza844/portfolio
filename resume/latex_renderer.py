@@ -256,7 +256,7 @@ def build_pdf(key, variant, data, settings, output):
                         if status.lower() == 'in progress' and row.get('progressPercent') not in (None, 0):
                             status = f"In progress ({row['progressPercent']}%)"
                         course_date = date_label(row.get('completionDate'))
-                        course_date = re.sub(r'\\b(January|February|March|April|May|June|July|August|September|October|November|December)\\b',
+                        course_date = re.sub(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b',
                                              lambda match: match.group(1)[:3], course_date)
                         meta = [issuer, tex(status)]
                         if course_date:
@@ -264,13 +264,13 @@ def build_pdf(key, variant, data, settings, output):
                         description = row.get('facultyDescription')
                         if not description:
                             raise ValueError('Faculty course description missing for ' + row['id'])
-                        body.append(r'\\Needspace{4\\baselineskip}\\noindent'
-                                    r'\\begin{tabularx}{\\linewidth}{@{}>{\\raggedright\\arraybackslash}X'
-                                    r'>{\\raggedleft\\arraybackslash}p{0.46\\linewidth}@{}}')
-                        body.append(r'\\textbf{' + tex(str(number) + '. ') + title + r'} & '
-                                    r'{\\scriptsize ' + r' \\textbar{} '.join(meta) + r'}\\')
-                        body.append(r'\\end{tabularx}')
-                        body.append(r'\\noindent{\\footnotesize ' + tex(description) + r'}\\par\\vspace{2pt}')
+                        body.append(r'\Needspace{4\baselineskip}\noindent'
+                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
+                                    r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
+                        body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
+                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\')
+                        body.append(r'\end{tabularx}')
+                        body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
                         continue
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
@@ -328,16 +328,16 @@ def build_pdf(key, variant, data, settings, output):
     # compact third row of clickable professional profiles.
     contact_lines = []
     if emails:
-        email_links = [r'\\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
-        contact_lines.append(r'\\ding{41}\\enspace ' + r' \\textbar{} '.join(email_links))
+        email_links = [r'\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
+        contact_lines.append(r'\ding{41}\enspace ' + r' \textbar{} '.join(email_links))
     secondary_contacts = []
     if identity.get('location'):
         secondary_contacts.append(tex(identity['location']))
     if phone:
-        secondary_contacts.append(r'\\ding{37}\\enspace '
-                                  + r'\\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+        secondary_contacts.append(r'\ding{37}\enspace '
+                                  + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
     if secondary_contacts:
-        contact_lines.append(r' \\quad '.join(secondary_contacts))
+        contact_lines.append(r' \quad '.join(secondary_contacts))
 
     social_contacts = []
     for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Google Scholar', 'scholar')]:
@@ -349,8 +349,8 @@ def build_pdf(key, variant, data, settings, output):
     if web_url(identity.get('portfolioUrl')):
         social_contacts.append(link('Portfolio', identity['portfolioUrl']))
     if social_contacts:
-        contact_lines.append(r' \\textbar{} '.join(social_contacts))
-    contacts = r'\\\\[1pt]'.join(contact_lines)
+        contact_lines.append(r' \textbar{} '.join(social_contacts))
+    contacts = r'\\[1pt]'.join(contact_lines)
 
     size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
     if size not in (8, 9, 10, 11, 12):
@@ -367,7 +367,7 @@ def build_pdf(key, variant, data, settings, output):
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
                   DEGREE=(' ' + tex('(' + variant['headerDegree'] + ')')) if variant.get('headerDegree') else '',
-                  TYPOGRAPHY=(r'\\hyphenpenalty=8500\\exhyphenpenalty=8500\\emergencystretch=1em'
+                  TYPOGRAPHY=(r'\hyphenpenalty=8500\exhyphenpenalty=8500\emergencystretch=1em'
                               if variant.get('headerDegree') else ''),
                   CONTACTS=contacts, BODY='\n'.join(body))
     template = read_utf8_text(HERE / 'template.tex')
