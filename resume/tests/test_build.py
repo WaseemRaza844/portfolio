@@ -129,7 +129,8 @@ class LatexEscapingTests(unittest.TestCase):
         source = module.merge_source(module.read_source(), module.read_json(Path(__file__).parents[1] / 'content.json'))
         course = next(row for row in source['certifications'] if row['id'] == 'coursera-5g-network-fundamentals')
         self.assertEqual(course['status'], 'In progress')
-        self.assertEqual(course['progressPercent'], 21)
+        self.assertEqual(course['progressPercent'], 60)
+        self.assertTrue(course['progressEstimated'])
         self.assertFalse(course.get('completionDate'))
         self.assertTrue(course.get('facultyDescription'))
         for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
@@ -177,6 +178,31 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertIn('subsection(subtitle)', renderer)
         self.assertIn("entries.append((name, group_title if index == 0 else None, subtitle, True))", renderer)
         self.assertIn(r'\titleformat{\subsection}', template)
+
+    def test_faculty_learning_dates_and_layout_keep_metadata_on_title_row(self):
+        renderer_path = Path(__file__).parents[1] / 'latex_renderer.py'
+        spec_renderer = importlib.util.spec_from_file_location('faculty_renderer', renderer_path)
+        renderer_module = importlib.util.module_from_spec(spec_renderer)
+        spec_renderer.loader.exec_module(renderer_module)
+        course_month_year = renderer_module.course_month_year
+        self.assertEqual(course_month_year('August 12, 2026'), 'Aug 2026')
+        self.assertEqual(course_month_year('March 29, 2020'), 'Mar 2020')
+        self.assertEqual(course_month_year(''), '')
+        renderer = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        self.assertIn("begin{tabularx}", renderer)
+        self.assertIn("title + r'} & '", renderer)
+        self.assertIn("meta.append(tex(course_date))", renderer)
+        self.assertNotIn("if len(row['title']) > 42:", renderer)
+        self.assertIn("~{row['progressPercent']}%", renderer)
+
+    def test_faculty_publications_use_columns_with_clickable_metadata(self):
+        renderer = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        self.assertIn("if variant.get('headerDegree'):", renderer)
+        self.assertIn("url = row.get('url')", renderer)
+        self.assertIn("venue = tex(row.get('venue', ''))", renderer)
+        self.assertIn("line2 = year +", renderer)
+        self.assertIn("label = 'DOI'", renderer)
+        self.assertIn("link(row['title'], url)", renderer)
 
     def test_faculty_course_descriptions_are_complete_and_short(self):
         variants = module.load_variants()

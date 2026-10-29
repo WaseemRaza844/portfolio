@@ -211,5 +211,8 @@
     "Numerical Analysis",
     "Information Theory",
     "Digital Signal Processing"
+  ],
+  "pageBreakBefore": [
+    "certifications"
   ]
 }
