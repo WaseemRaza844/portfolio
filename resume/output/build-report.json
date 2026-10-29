@@ -342,8 +342,8 @@
       "maxPages": 4,
       "pageTextChars": [
         3865,
-        4324,
-        2657
+        4369,
+        2606
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -393,9 +393,9 @@
       "maxPages": 5,
       "pageTextChars": [
         4122,
-        3645,
+        3697,
         4613,
-        1733
+        1665
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -452,10 +452,10 @@
       "maxPages": 7,
       "pageTextChars": [
         3080,
-        3602,
-        4175,
-        3046,
-        1116
+        3610,
+        4372,
+        2139,
+        1796
       ],
       "renderer": "latex",
       "selectedIds": {
