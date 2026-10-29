@@ -120,5 +120,49 @@ window.PORTFOLIO_DATA.publications = [
     ],
     "url": "https://doi.org/10.1016/j.aeue.2020.153244",
     "featured": false
+  },
+  {
+    "id": "ai-powered-resilience-2025",
+    "profiles": ["faculty", "wireless", "aiml"],
+    "year": "2025",
+    "title": "AI-Powered Resilience: A Dual-Approach for Outage Management in Dense Cellular Networks",
+    "venue": "Computer Communications",
+    "url": "https://doi.org/10.1016/j.comcom.2025.108129",
+    "summary": "Integrated outage detection and actor-critic reinforcement-learning compensation for resilient 5G-and-beyond networks.",
+    "topics": ["Reinforcement Learning", "Self-Healing Networks", "Outage Management", "5G/6G"],
+    "featured": false
+  },
+  {
+    "id": "domain-informed-gans-vtc-2024",
+    "profiles": ["faculty", "wireless", "aiml"],
+    "year": "2024",
+    "title": "Refining Wireless Propagation Models using Domain-Informed GANs amid Data Scarcity",
+    "venue": "IEEE VTC-Fall 2024",
+    "url": "https://www.ai4networks.com/files/conferences/c-24-7.pdf",
+    "summary": "Domain-informed GAN initialization and synthetic-data generation for robust propagation modeling under severe data scarcity.",
+    "topics": ["GANs", "Propagation Modeling", "Data Scarcity", "Domain Knowledge"],
+    "featured": false
+  },
+  {
+    "id": "positioning-compensation-globecom-2023",
+    "profiles": ["faculty", "wireless"],
+    "year": "2023",
+    "title": "Positioning Error Impact Compensation through Data-Driven Optimization in User-Centric Networks",
+    "venue": "IEEE GLOBECOM 2023",
+    "url": "https://arxiv.org/abs/2402.15795",
+    "summary": "Residual-learning and data-driven optimization framework for compensating positioning errors in user-centric networks.",
+    "topics": ["Optimization", "Positioning", "User-Centric RAN", "Residual Learning"],
+    "featured": false
+  },
+  {
+    "id": "mdt-zero-touch-2024",
+    "profiles": ["faculty", "wireless", "aiml"],
+    "year": "2024",
+    "title": "An AI-Enabled Framework to Defend Ingenious MDT-Based Attacks on the Emerging Zero Touch Cellular Networks",
+    "venue": "IEEE Network, 38(1), 228-237",
+    "url": "https://doi.org/10.1109/MNET.006.2100377",
+    "summary": "Machine-learning framework for detecting malicious MDT reports and improving resilience of zero-touch cellular-network automation.",
+    "topics": ["Trustworthy AI", "Network Security", "MDT", "Zero-Touch Networks"],
+    "featured": false
   }
 ];
