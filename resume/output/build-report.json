@@ -337,13 +337,13 @@
       "file": "Waseem_Raza_FACULTY.pdf",
       "pages": 3,
       "minPages": 3,
-      "minPageTextChars": 1400,
+      "minPageTextChars": 800,
       "minLastPageChars": 1000,
       "maxPages": 4,
       "pageTextChars": [
-        4513,
-        3810,
-        4686
+        3865,
+        4324,
+        2657
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -388,14 +388,14 @@
       "file": "Waseem_Raza_FACULTY_COMPREHENSIVE.pdf",
       "pages": 4,
       "minPages": 4,
-      "minPageTextChars": 1200,
+      "minPageTextChars": 800,
       "minLastPageChars": 900,
       "maxPages": 5,
       "pageTextChars": [
-        4346,
-        4813,
-        4717,
-        3134
+        4122,
+        3645,
+        4613,
+        1733
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -451,11 +451,11 @@
       "minLastPageChars": 500,
       "maxPages": 7,
       "pageTextChars": [
-        3878,
-        3971,
-        3181,
-        4491,
-        2388
+        3080,
+        3602,
+        4175,
+        3046,
+        1116
       ],
       "renderer": "latex",
       "selectedIds": {
