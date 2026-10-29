@@ -49,6 +49,8 @@ jobs:
           python -c "import importlib.util, pathlib, tempfile; p=pathlib.Path('resume/latex_renderer.py'); s=importlib.util.spec_from_file_location('lr',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); d=tempfile.TemporaryDirectory(); f=pathlib.Path(d.name)/'phone.txt'; m.write_utf8_text(f,'☎ +1 732-803-9703 | résumé'); assert f.read_text(encoding='utf-8') == '☎ +1 732-803-9703 | résumé'"
 
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -73,6 +75,35 @@ jobs:
         run: python resume/build.py --all
       - name: Generate tailored job resumes
         run: python resume/build_tailored.py --all
+
+      - name: Collect every PDF into the output folder
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf resume/output/tailored
+          for pdf in resume/tailored/*/output/*.pdf; do
+            [ -f "$pdf" ] || continue
+            job="$(basename "$(dirname "$(dirname "$pdf")")")"
+            mkdir -p "resume/output/tailored/$job"
+            cp "$pdf" "resume/output/tailored/$job/"
+          done
+          {
+            echo "# Generated resume PDFs"
+            echo
+            echo "PDF snapshots from the latest validated `develop` build. Choose a PDF below to preview it directly in GitHub."
+            echo
+            for group in faculty industry tailored; do
+              echo "## ${group^}"
+              echo
+              while IFS= read -r pdf; do
+                relative="${pdf#resume/output/}"
+                printf -- '- [%s](%s)\n' "$(basename "$pdf")" "$relative"
+              done < <(find "resume/output/$group" -type f -name '*.pdf' | sort)
+              echo
+            done
+          } > resume/output/README.md
+          test "$(find resume/output -name '*.pdf' | wc -l)" -ge 10
+
       - name: Store generated PDFs
         uses: actions/upload-artifact@v4
         with:
@@ -81,8 +112,30 @@ jobs:
             resume/output/**/*.pdf
             resume/output/**/*.tex
             resume/output/build-report.json
+            resume/output/README.md
             resume/tailored/**/output/*.pdf
             resume/tailored/**/output/build-report.json
             resume/tailored/**/*.tex
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish browseable PDF snapshots to develop
+        if: github.event_name == 'push' && github.ref_name == 'develop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The generated directory is ignored for ordinary local work.
+          # Explicitly track only PDFs, the concise index, and the build report.
+          while IFS= read -r -d '' pdf; do
+            git add -f -- "$pdf"
+          done < <(find resume/output -type f -name '*.pdf' -print0)
+          git add -f -- resume/output/README.md resume/output/build-report.json
+          git add -u -- resume/output
+          if git diff --cached --quiet; then
+            echo "Generated PDF snapshots are already current."
+          else
+            git commit -m "docs(resume): update generated PDFs [skip ci]"
+            git push origin HEAD:develop
+          fi
