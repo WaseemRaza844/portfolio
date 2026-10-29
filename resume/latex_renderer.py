@@ -142,7 +142,11 @@ def build_pdf(key, variant, data, settings, output):
                 bullets(academic.get('service', []))
             elif name == 'honors':
                 section('Selected Honors & Awards')
-                for row in academic.get('honors', []):
+                honor_rows = academic.get('honors', [])
+                honor_limit = variant.get('honorLimit')
+                if isinstance(honor_limit, int) and honor_limit > 0:
+                    honor_rows = honor_rows[:honor_limit]
+                for row in honor_rows:
                     body.append(r'\entry{' + tex(row.get('title', '')) + '}{' + tex(row.get('year', '')) + '}')
                     if row.get('organization'):
                         body.append(r'{\small ' + tex(row['organization']) + r'\par}')
@@ -209,6 +213,9 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'\Needspace{3\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
+                    if variant.get('compactCertifications', False):
+                        body.append(r'\vspace{1pt}')
+                        continue
                     detailed = variant.get('detailedCertificationDescriptions', True)
                     if detailed:
                         description = row.get('resumeSummary')
