@@ -4,13 +4,12 @@
   "headline": "Researcher & Engineering Educator | AI/ML for Wireless Networks",
   "summary": "Electrical and Computer Engineering researcher and educator with a PhD from the University of Oklahoma specializing in AI/ML for wireless networks. Research addresses reliable learning, propagation modeling, network optimization, self-healing, digital twins, generative augmentation, and reinforcement learning for 5G/6G systems. University teaching and research are complemented by industrial R&D at AT&T Labs, Futurewei, and AT&T, bridging rigorous experiments with real-world network challenges.",
   "researchInterests": [
-    "AI/ML for 5G/6G Wireless Networks",
-    "Robust and Data-Efficient Learning",
+    "Wireless AI and 5G/6G",
+    "Robust and Data-Efficient ML",
+    "Digital Twins and Propagation Modeling",
     "Network Optimization and Self-Healing",
-    "Propagation Modeling and Digital Twins",
-    "Transfer Learning and Generative Augmentation",
-    "Reinforcement Learning for Autonomous Networks",
-    "Wearable Intelligence and Human-Centered Sensing"
+    "Transfer and Generative Learning",
+    "Autonomous Networks and Wearable AI"
   ],
   "skillsSectionTitle": "Research Methods & Technical Expertise",
   "skills": {
@@ -155,10 +154,40 @@
   "verticalMarginInches": 0.45,
   "minPages": 3,
   "maxPages": 4,
-  "minPageTextChars": 1400,
+  "minPageTextChars": 800,
   "minLastPageChars": 1000,
   "headerDegree": "Electrical and Computer Engineering",
   "dissertationFocus": "Doctoral research in AI/ML for wireless networks, emphasizing resilient propagation models, data-efficient generative learning, adaptive network optimization, self-healing, and reproducible evaluation.",
   "facultyLearningLayout": true,
-  "sortCertificationsByStatus": true
+  "sortCertificationsByStatus": true,
+  "teachingAreas": [
+    "Wireless Communication Systems",
+    "LTE/5G Networks",
+    "Signals and Digital Signal Processing",
+    "Machine Learning and AI",
+    "Programming and Data Science",
+    "Experimental Design and Labs"
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate students in wireless ML experiments, simulation, and technical writing.",
+    "Guided communications thesis and project work, including experiment design and research presentations.",
+    "Advised senior and capstone projects and supported students' academic development.",
+    "Developed practical labs and assignments connecting communication theory with engineering systems."
+  ],
+  "academicServiceBullets": [
+    "Aligned engineering course material with curriculum outcomes and industry requirements.",
+    "Supported accreditation records, examinations, and academic administration.",
+    "Reviewed student reports and research manuscripts, providing publication-focused feedback.",
+    "Participated in research seminars, technical workshops, and student events.",
+    "Contributed to research proposals, literature reviews, and experimental planning."
+  ],
+  "selectedCoursework": [
+    "LTE Networks and Telecommunications",
+    "Emerging 5G Systems",
+    "Advanced ML and Computer Vision",
+    "Wireless Testbed Design",
+    "Numerical Analysis",
+    "Information Theory",
+    "Digital Signal Processing"
+  ]
 }

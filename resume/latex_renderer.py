@@ -97,6 +97,10 @@ def build_pdf(key, variant, data, settings, output):
             row = experience_lookup.get(exp_id)
             if not row:
                 continue
+            # Each academic appointment should read as one coherent entry.
+            # A minipage prevents its bullets from stranding across pages.
+            if variant.get('headerDegree'):
+                body.append(r'\par\noindent\begin{minipage}{\linewidth}')
             body.append(r'\role{' + tex(row['role']) + '}{' + tex(date_label(row.get('period'))) + '}{' + tex(row['organization']) + '}{' + tex(row.get('location', '')) + '}')
             variant_bullets = row.get('bulletsByVariant', {})
             items = (variant_bullets.get(key)
@@ -106,6 +110,8 @@ def build_pdf(key, variant, data, settings, output):
                 text = row.get(variant.get('experienceText', key)) or row.get('generic') or row.get('faculty') or row.get('summary', '')
                 items = [text] if text else []
             bullets(items)
+            if variant.get('headerDegree'):
+                body.append(r'\end{minipage}\par\vspace{1pt}')
 
     for page_index, sections in enumerate(variant['pages']):
         if page_index and settings.get('explicitPageBreaks', False):
@@ -145,6 +151,8 @@ def build_pdf(key, variant, data, settings, output):
                 section(group_title)
             grouped = is_grouped
             if subtitle:
+                if variant.get('headerDegree') and name in ('teaching_experience', 'academic_experience', 'industry_experience'):
+                    body.append(r'\Needspace{12\baselineskip}')
                 subsection(subtitle)
             if name == 'summary':
                 section(variant.get('summarySectionTitle', 'Professional Summary'))
@@ -153,7 +161,8 @@ def build_pdf(key, variant, data, settings, output):
                 section('Research Interests')
                 interests = variant.get('researchInterests') or academic.get('researchInterests', [])
                 if interests:
-                    body.append(tex(' | '.join(interests)) + r'\par')
+                    delimiter = '; ' if variant.get('headerDegree') else ' | '
+                    body.append(tex(delimiter.join(interests)) + r'\par')
             elif name == 'dissertation':
                 section('Doctoral Research Focus')
                 focus = variant.get('dissertationFocus') or academic.get('dissertationFocus', '')
@@ -169,20 +178,20 @@ def build_pdf(key, variant, data, settings, output):
                                         variant.get('industryExperienceIds', []))
             elif name == 'teaching_areas':
                 section('Teaching Areas')
-                areas = academic.get('teachingAreas', [])
+                areas = variant.get('teachingAreas') or academic.get('teachingAreas', [])
                 if areas:
                     if grouped:
-                        body.append(r'{\small\textbf{Teaching areas:} ' + tex(' | '.join(areas)) + r'}\par')
+                        body.append(r'{\small\textbf{Teaching areas:} ' + tex('; '.join(areas)) + r'}\par')
                     else:
                         body.append(tex(' | '.join(areas)) + r'\par')
             elif name == 'mentoring':
                 section('Student Mentoring & Research Development')
                 if grouped:
                     body.append(r'\Needspace{2\baselineskip}\noindent\textbf{Student mentoring and research development}\par')
-                bullets(academic.get('mentoring', []))
+                bullets(variant.get('mentoringBullets') or academic.get('mentoring', []))
             elif name == 'service':
                 section('Academic Service & Program Contributions')
-                bullets(academic.get('service', []))
+                bullets(variant.get('academicServiceBullets') or academic.get('service', []))
             elif name == 'honors':
                 section('Selected Honors & Awards')
                 honor_rows = academic.get('honors', [])
@@ -195,9 +204,10 @@ def build_pdf(key, variant, data, settings, output):
                         body.append(r'{\small ' + tex(row['organization']) + r'\par}')
             elif name == 'coursework':
                 section('Selected Graduate Coursework')
-                courses = academic.get('selectedCoursework', [])
+                courses = variant.get('selectedCoursework') or academic.get('selectedCoursework', [])
                 if courses:
-                    body.append(tex(' | '.join(courses)) + r'\par')
+                    delimiter = '; ' if variant.get('headerDegree') else ' | '
+                    body.append(tex(delimiter.join(courses)) + r'\par')
             elif name == 'skills':
                 section(variant.get('skillsSectionTitle', 'Technical Skills'))
                 for label, value in variant['skills'].items():
@@ -264,12 +274,20 @@ def build_pdf(key, variant, data, settings, output):
                         description = row.get('facultyDescription')
                         if not description:
                             raise ValueError('Faculty course description missing for ' + row['id'])
-                        body.append(r'\Needspace{4\baselineskip}\noindent'
-                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
-                                    r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
-                        body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
-                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\\')
-                        body.append(r'\end{tabularx}')
+                        metadata = r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}'
+                        if len(row['title']) > 42:
+                            # Never isolate the final words of an official course title.
+                            # Metadata remains right aligned on its dedicated line.
+                            body.append(r'\Needspace{5\baselineskip}\noindent\textbf{' +
+                                        tex(str(number) + '. ') + title + r'}\par')
+                            body.append(r'\noindent\makebox[\linewidth][r]{' + metadata + r'}\par')
+                        else:
+                            body.append(r'\Needspace{4\baselineskip}\noindent'
+                                        r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
+                                        r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
+                            body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & ' +
+                                        metadata + r'\\')
+                            body.append(r'\end{tabularx}')
                         body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
                         continue
                     count = progress(row)
@@ -366,8 +384,8 @@ def build_pdf(key, variant, data, settings, output):
                   HMARGIN=str(horizontal_margin), VMARGIN=str(vertical_margin), ACCENT=accent, NAME=tex(identity['name']),
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
-                  DEGREE=(' ' + tex('(' + variant['headerDegree'] + ')')) if variant.get('headerDegree') else '',
-                  TYPOGRAPHY=(r'\hyphenpenalty=8500\exhyphenpenalty=8500\emergencystretch=1em'
+                  DEGREE=(r'\enspace ' + tex('(' + variant['headerDegree'] + ')')) if variant.get('headerDegree') else '',
+                  TYPOGRAPHY=(r'\hyphenpenalty=10000\exhyphenpenalty=10000\pretolerance=10000\emergencystretch=2em\widowpenalty=10000\clubpenalty=10000'
                               if variant.get('headerDegree') else ''),
                   CONTACTS=contacts, BODY='\n'.join(body))
     template = read_utf8_text(HERE / 'template.tex')
