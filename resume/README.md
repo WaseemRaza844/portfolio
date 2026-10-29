@@ -1,12 +1,14 @@
 # Reference-style resume PDFs
 
+**Faculty family:** See [`faculty/README.md`](faculty/README.md) for generic, comprehensive, and full academic CV sources, institution-specific tailoring, and their isolated output directory. Industry configurations remain in `variants.json`.
+
 Python fills `template.tex` from portfolio data and runs pdflatex. The style follows
 your supplied resumes: Latin Modern serif fonts, centered name/title/tagline,
 blue section headings with rules, compact bullets, right-aligned dates, 9 pt text,
 Letter paper and 0.55 inch margins. Contact links use words instead of Font Awesome
 icons. No running header or page numbers, as in the reference.
 
-The four variants—Generic, GenAI & Agentic AI, AI/ML & Data Science, and Faculty & Academic—keep their portfolio-derived content. Additional achievement
+The industry and faculty variant families share verified portfolio-derived content but maintain separate configuration files. Additional achievement
 bullets and metrics in the reference resumes were not imported automatically.
 Only email and phone were copied into contact settings. The website is unchanged.
 
@@ -38,7 +40,9 @@ Your website can run separately using `npm run dev` on port 8000.
 
 | File | Purpose |
 | --- | --- |
-| `resume/variants.json` | Headline, tagline, summary, skills, selected IDs and section order |
+| `resume/variants.json` | Industry-specific headline, tagline, summary, skills, selected IDs and section order |
+| `resume/faculty/*.json` | Faculty generic, expanded resume and academic CV configurations |
+| `resume/faculty/tailored/*/variant.json` | Optional university-specific academic overlays |
 | `resume/content.json` | Contacts, resume-only overrides/additions and display settings |
 | `resume/template.tex` | Fonts, centered header, heading rules and spacing |
 | `resume/latex_renderer.py` | Maps data to LaTeX sections and compiles PDFs |
@@ -52,8 +56,9 @@ Other IDs: `aiml`, `faculty`, `generic`. `--list` lists available variants.
 
 ## Outputs and layout
 
-`resume/output/` contains four PDFs, matching standalone `.tex` files, extracted
-text, compiler logs and `build-report.json`. Focused variants have a three-page budget;
+`resume/output/industry/` and `resume/output/faculty/` contain the respective PDFs,
+matching standalone `.tex` files, extracted text and compiler logs. The shared
+`build-report.json` remains under `resume/output/`. Focused variants have a three-page budget;
 the comprehensive CV is three. Content edits may change these counts. Generated
 output and virtual environments are gitignored. Generated `.tex` files are
 overwritten: edit the template/JSON for persistent changes, or copy a generated

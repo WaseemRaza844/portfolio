@@ -11,6 +11,12 @@ on:
       - 'dist/learning.html'
       - '.github/workflows/build-resumes.yml'
   workflow_dispatch:
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'resume/**'
+      - 'dist/data/**'
+      - '.github/workflows/build-resumes.yml'
 
 permissions:
   contents: read
@@ -72,8 +78,8 @@ jobs:
         with:
           name: Waseem-Raza-Resumes
           path: |
-            resume/output/*.pdf
-            resume/output/*.tex
+            resume/output/**/*.pdf
+            resume/output/**/*.tex
             resume/output/build-report.json
             resume/tailored/**/output/*.pdf
             resume/tailored/**/output/build-report.json

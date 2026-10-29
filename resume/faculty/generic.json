@@ -1,0 +1,102 @@
+{
+  "label": "Faculty / Generic",
+  "tagline": "PhD ECE | AI/ML for Wireless Networks | Reliable Learning | 5G/6G | Engineering Education",
+  "headline": "Researcher & Engineering Educator | AI/ML for Wireless Networks",
+  "summary": "Electrical and Computer Engineering researcher and educator with a PhD from the University of Oklahoma and a research focus on artificial intelligence and machine learning for wireless networks. Research spans reliable and data-efficient learning, 5G/6G network intelligence, propagation modeling and digital twins, network optimization and self-healing, transfer learning, domain adaptation, generative modeling, reinforcement learning, and wearable intelligence. Experience combines university research and teaching with industrial R&D at AT&T Labs, Futurewei, and AT&T, with emphasis on rigorous experimentation, reproducibility, student mentoring, and translation of AI methods into real communication systems.",
+  "researchInterests": [
+    "AI/ML for Wireless and 5G/6G Networks",
+    "Reliable and Robust Machine Learning",
+    "Network Optimization and Self-Healing",
+    "Propagation Modeling and Wireless Digital Twins",
+    "Transfer Learning and Domain Adaptation",
+    "Reinforcement Learning for Autonomous Networks",
+    "Wearable Intelligence"
+  ],
+  "skillsSectionTitle": "Research Methods & Technical Expertise",
+  "skills": {
+    "Machine Learning": "Deep learning, transfer learning, domain adaptation, adversarial learning, generative modeling, reinforcement learning, classification, time-series analysis, robustness evaluation, and model validation",
+    "Wireless & Networked Systems": "LTE/4G, 5G-NR, NTN, mobility, RAN, propagation modeling, outage management, self-healing, network measurements, and service assurance",
+    "Research Methods": "Experimental design, 3GPP-aligned simulation, statistical analysis, cross-validation, reproducible workflows, distribution-shift evaluation, technical writing, and publication development",
+    "Engineering Tools": "Python, PyTorch, TensorFlow, scikit-learn, XGBoost, Pandas, NumPy, SQL, cloud analytics, data pipelines, visualization, Git, and Linux",
+    "Teaching & Mentoring": "Wireless communications, communication systems, programming, machine learning, laboratory instruction, experimental methods, student projects, and research development"
+  },
+  "experienceIds": [
+    "ou-research",
+    "comsats-research-associate",
+    "uet-research-scholar",
+    "teaching",
+    "att-current",
+    "att-labs-2024",
+    "futurewei-2022",
+    "att-labs-2022"
+  ],
+  "experienceText": "faculty",
+  "academicExperienceIds": [
+    "ou-research",
+    "comsats-research-associate",
+    "uet-research-scholar"
+  ],
+  "teachingExperienceIds": [
+    "teaching"
+  ],
+  "industryExperienceIds": [
+    "att-current",
+    "att-labs-2024",
+    "futurewei-2022",
+    "att-labs-2022"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "wearable-intelligence"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-4g-network-fundamentals"
+  ],
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023",
+    "lunarcomm-2022"
+  ],
+  "pages": [
+    [
+      "summary",
+      "research_interests",
+      "dissertation",
+      "skills",
+      "education",
+      "academic_experience",
+      "teaching_experience",
+      "industry_experience",
+      "publications",
+      "projects",
+      "honors",
+      "certifications"
+    ]
+  ],
+  "summarySectionTitle": "Academic Profile",
+  "academicExperienceTitle": "Academic & Research Experience",
+  "publicationSectionTitle": "Selected Publications",
+  "projectSectionTitle": "Selected Research Programs & Infrastructure",
+  "certificationSectionTitle": "Selected Professional Development",
+  "honorLimit": 5,
+  "compactCertifications": true,
+  "detailedCertificationDescriptions": false,
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.68,
+  "verticalMarginInches": 0.45,
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 1400,
+  "minLastPageChars": 1000
+}

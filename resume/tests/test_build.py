@@ -76,7 +76,7 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertEqual(module.progress({'id': 'x', 'reportedProgress': {'completed': 2, 'total': 4}}), '2/4 courses')
 
     def test_focused_variants_define_page_fill_target(self):
-        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        variants = module.load_variants()
         for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance'):
             self.assertEqual(variants[key].get('minPages'), 3)
             self.assertEqual(variants[key].get('maxPages'), 3)
@@ -84,7 +84,7 @@ class LatexEscapingTests(unittest.TestCase):
             self.assertGreaterEqual(variants[key].get('minPageTextChars', 0), 3000)
 
     def test_academic_variants_have_distinct_page_budgets(self):
-        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        variants = module.load_variants()
         self.assertEqual((variants['faculty']['minPages'], variants['faculty']['maxPages']), (3, 4))
         self.assertEqual((variants['faculty_comprehensive']['minPages'], variants['faculty_comprehensive']['maxPages']), (4, 5))
         self.assertEqual((variants['academic_cv']['minPages'], variants['academic_cv']['maxPages']), (5, 7))
@@ -108,14 +108,28 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertNotIn("write_text('\\n'.join(texts))", source)
 
     def test_reusable_variants_require_detailed_certifications(self):
-        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        variants = module.load_variants()
         for key in ('generic', 'comprehensive', 'genai', 'aiml', 'wireless', 'healthcare', 'finance'):
             self.assertTrue(variants[key].get('detailedCertificationDescriptions'))
         for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
             self.assertTrue(variants[key].get('compactCertifications'))
 
+    def test_faculty_sources_and_outputs_are_separate(self):
+        folder = Path(__file__).parents[1]
+        industry = module.read_json(folder / 'variants.json')
+        faculty = module.load_variants()
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            self.assertNotIn(key, industry)
+            self.assertIn(key, faculty)
+            self.assertEqual(module.variant_output_dir(folder / 'output', key).name, 'faculty')
+        self.assertEqual(module.variant_output_dir(folder / 'output', 'aiml').name, 'industry')
+
+    def test_academic_cv_does_not_show_in_progress_5g_course_as_completed(self):
+        cv = module.load_variants()['academic_cv']
+        self.assertNotIn('coursera-5g-network-fundamentals', cv['certificationIds'])
+
     def test_comprehensive_is_three_page_application_resume(self):
-        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        variants = module.load_variants()
         comprehensive = variants['comprehensive']
         self.assertEqual(comprehensive.get('minPages'), 3)
         self.assertEqual(comprehensive.get('maxPages'), 3)

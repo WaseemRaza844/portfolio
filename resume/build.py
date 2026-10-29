@@ -111,6 +111,44 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def load_variants():
+    """Load independently maintained industry and faculty resume families.
+
+    Stable historic IDs are retained so existing commands keep working.
+    Faculty-specific applications belong under faculty/tailored/<slug>/variant.json.
+    """
+    industry = read_json(HERE / 'variants.json')
+    faculty_dir = HERE / 'faculty'
+    faculty = {
+        'faculty': read_json(faculty_dir / 'generic.json'),
+        'faculty_comprehensive': read_json(faculty_dir / 'comprehensive.json'),
+        'academic_cv': read_json(faculty_dir / 'academic_cv.json'),
+    }
+    overlap = set(industry).intersection(faculty)
+    if overlap:
+        raise ValueError('Faculty variant IDs are duplicated in industry variants: ' + str(overlap))
+
+    for path in sorted((faculty_dir / 'tailored').glob('*/variant.json')):
+        slug = path.parent.name
+        if not re.fullmatch(r'[a-z0-9][a-z0-9-]*', slug):
+            raise ValueError('Faculty tailoring directory must be a lowercase slug: ' + slug)
+        override = read_json(path)
+        base = override.pop('baseVariant', 'faculty')
+        if base not in faculty:
+            raise ValueError('Unknown faculty base variant for ' + slug + ': ' + base)
+        key = 'faculty_' + slug.replace('-', '_')
+        if key in faculty or key in industry:
+            raise ValueError('Duplicate faculty tailored ID: ' + key)
+        faculty[key] = {**faculty[base], **override}
+    return {**industry, **faculty}
+
+
+def variant_output_dir(output, key):
+    """Isolate faculty PDFs and intermediate LaTeX from industry artifacts."""
+    return output / ('faculty' if key in {'faculty', 'faculty_comprehensive', 'academic_cv'}
+                     or key.startswith('faculty_') else 'industry')
+
+
 def read_source(snapshot=None):
     if snapshot:
         return read_json(snapshot)
@@ -460,7 +498,7 @@ def main():
     parser.add_argument('--source-json', type=Path, help='Optional portfolio export; avoids Node.js.')
     parser.add_argument('--allow-overflow', action='store_true', help='Permit PDFs exceeding maxPages.')
     args = parser.parse_args()
-    variants = read_json(HERE / 'variants.json')
+    variants = load_variants()
     if args.list:
         for key, variant in variants.items():
             print(key + ': ' + variant['label'])
@@ -471,7 +509,11 @@ def main():
     if any(key not in variants for key in keys):
         parser.error('Unknown variant; use --list.')
     if args.all:
-        remove_stale_generated(args.output, variants.keys())
+        for group in ('industry', 'faculty'):
+            group_keys = [key for key in variants if variant_output_dir(args.output, key).name == group]
+            remove_stale_generated(args.output / group, group_keys)
+        # Clean up legacy flat output artifacts from older versions of this builder.
+        remove_stale_generated(args.output, [])
     config = read_json(HERE / 'content.json')
     data = merge_source(read_source(args.source_json), config)
     notes = audit(data)
@@ -484,13 +526,18 @@ def main():
         render = build_pdf
     else:
         raise ValueError('renderer must be latex or reportlab')
-    results = [render(key, variants[key], data, settings, args.output) for key in keys]
+    results = []
+    for key in keys:
+        folder = variant_output_dir(args.output, key)
+        result = render(key, variants[key], data, settings, folder)
+        result['relativePath'] = str(folder.relative_to(args.output) / result['file'])
+        results.append(result)
     report = {'variants': results, 'reviewNotes': notes}
     (args.output / 'build-report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     for result in results:
         fill = result.get('pageTextChars', [])
         suffix = (' | text chars/page: ' + ', '.join(str(n) for n in fill)) if fill else ''
-        print(f'{result["file"]}: {result["pages"]} pages' + suffix)
+        print(f'{result["relativePath"]}: {result["pages"]} pages' + suffix)
     print('Review notes: ' + str(args.output / 'build-report.json'))
     for result in results:
         if result['pages'] < result.get('minPages', 1):
