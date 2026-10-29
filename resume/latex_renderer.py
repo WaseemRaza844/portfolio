@@ -74,11 +74,18 @@ def build_pdf(key, variant, data, settings, output):
     identity = data['identity']
     academic = identity.get('academic', {})
     body = []
+    grouped = False
     experience_lookup = {row['id']: row for row in selected['experience']}
 
     def section(title):
+        if grouped:
+            return  # The enclosing group supplies one major heading.
         body.append(r'\Needspace{3\baselineskip}')
         body.append(r'\section{' + tex(title) + '}')
+
+    def subsection(title):
+        body.append(r'\Needspace{2\baselineskip}')
+        body.append(r'\subsection{' + tex(title) + '}')
 
     def bullets(items):
         if items:
@@ -103,11 +110,42 @@ def build_pdf(key, variant, data, settings, output):
     for page_index, sections in enumerate(variant['pages']):
         if page_index and settings.get('explicitPageBreaks', False):
             body.append(r'\newpage')
-        for name in sections:
+
+        # Plain section IDs still work. Groups generate one major heading and
+        # optional subsection headings while reusing the same data renderers.
+        entries = []
+        for item in sections:
+            if isinstance(item, str):
+                entries.append((item, None, None, False))
+            elif isinstance(item, dict):
+                group_title = item.get('title')
+                children = item.get('items', [])
+                if not isinstance(group_title, str) or not group_title.strip() or not children:
+                    raise ValueError('Section groups require a title and nonempty items.')
+                for index, child in enumerate(children):
+                    if isinstance(child, str):
+                        name, subtitle = child, None
+                    elif isinstance(child, dict):
+                        name, subtitle = child.get('id'), child.get('title')
+                    else:
+                        raise ValueError('Invalid grouped section entry: ' + repr(child))
+                    if not isinstance(name, str) or not name:
+                        raise ValueError('Grouped section entries require an id.')
+                    entries.append((name, group_title if index == 0 else None, subtitle, True))
+            else:
+                raise ValueError('Invalid section entry: ' + repr(item))
+
+        for name, group_title, subtitle, is_grouped in entries:
             if name in selected and not selected[name]:
                 continue
             if name in variant.get('pageBreakBefore', []):
                 body.append(r'\newpage')
+            grouped = False
+            if group_title:
+                section(group_title)
+            grouped = is_grouped
+            if subtitle:
+                subsection(subtitle)
             if name == 'summary':
                 section(variant.get('summarySectionTitle', 'Professional Summary'))
                 body.append(tex(variant['summary']))
@@ -133,9 +171,14 @@ def build_pdf(key, variant, data, settings, output):
                 section('Teaching Areas')
                 areas = academic.get('teachingAreas', [])
                 if areas:
-                    body.append(tex(' | '.join(areas)) + r'\par')
+                    if grouped:
+                        body.append(r'{\small\textbf{Teaching areas:} ' + tex(' | '.join(areas)) + r'}\par')
+                    else:
+                        body.append(tex(' | '.join(areas)) + r'\par')
             elif name == 'mentoring':
                 section('Student Mentoring & Research Development')
+                if grouped:
+                    body.append(r'\Needspace{2\baselineskip}\noindent\textbf{Student mentoring and research development}\par')
                 bullets(academic.get('mentoring', []))
             elif name == 'service':
                 section('Academic Service & Program Contributions')
