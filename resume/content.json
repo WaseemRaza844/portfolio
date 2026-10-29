@@ -10,7 +10,8 @@
       "waseem.placements@gmail.com",
       "waseemraza844@gmail.com"
     ],
-    "location": "New Jersey, United States"
+    "location": "New Jersey, United States",
+    "courseraPortfolioUrl": "https://waseemraza844.github.io/portfolio/learning.html"
   },
   "settings": {
     "renderer": "latex",
@@ -159,7 +160,38 @@
     }
   },
   "projectOverrides": {},
-  "certificationOverrides": {},
+  "certificationOverrides": {
+    "coursera-machine-learning": {
+      "facultyDescription": "Supervised and unsupervised learning, regularization, model evaluation, and practical predictive modeling."
+    },
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras": {
+      "facultyDescription": "Neural networks, training workflows, optimization, loss functions, and model evaluation with Keras."
+    },
+    "coursera-ai-foundations-industry-overview-for-telecommunication": {
+      "facultyDescription": "AI applications in telecom networks, operations analytics, service assurance, and automation."
+    },
+    "coursera-network-and-security-optimization-in-telecommunication": {
+      "facultyDescription": "Data-driven network optimization, telecom security, reliability analysis, and operational efficiency."
+    },
+    "coursera-4g-network-fundamentals": {
+      "facultyDescription": "LTE radio and core networks, cellular architecture, mobility management, and 4G fundamentals."
+    },
+    "coursera-5g-network-fundamentals": {
+      "facultyDescription": "5G NR radio, network architecture, service capabilities, and next-generation cellular fundamentals."
+    },
+    "coursera-introduction-to-computer-vision-with-tensorflow": {
+      "facultyDescription": "Image processing and convolutional neural networks for computer vision using TensorFlow."
+    },
+    "coursera-python-for-data-science-ai-development": {
+      "facultyDescription": "Python programming, data analysis, APIs, and reproducible data-science workflows."
+    },
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers": {
+      "facultyDescription": "Transformer architectures, model fine-tuning, embeddings, and generative-AI engineering."
+    },
+    "coursera-generative-ai-foundation-models-and-platforms": {
+      "facultyDescription": "Foundation models, generative-AI platforms, model capabilities, and deployment concepts."
+    }
+  },
   "publicationOverrides": {},
   "additionalExperience": [
     {
