@@ -3,6 +3,7 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
+from datetime import datetime
 from pypdf import PdfReader
 
 HERE = Path(__file__).resolve().parent
@@ -57,6 +58,19 @@ def tex(value):
         '>': r'\textgreater{}'
     }
     return ''.join(escapes.get(char, char) for char in value)
+
+def course_month_year(value):
+    """Render course completion dates at month/year precision only."""
+    value = str(value or '').strip()
+    if not value:
+        return ''
+    for fmt in ('%B %d, %Y', '%b %d, %Y', '%Y-%m-%d', '%B %Y', '%b %Y'):
+        try:
+            return datetime.strptime(value, fmt).strftime('%b %Y')
+        except ValueError:
+            pass
+    raise ValueError('Unsupported course completion date: ' + value)
+
 
 def build_pdf(key, variant, data, settings, output):
     from build import select, date_label, progress, certificate_links, web_url
@@ -255,39 +269,34 @@ def build_pdf(key, variant, data, settings, output):
                 section(variant.get('certificationSectionTitle', 'Certifications & Professional Development'))
                 for number, row in enumerate(selected[name], start=1):
                     if variant.get('facultyLearningLayout'):
-                        # Keep the exact course title on the left and metadata
-                        # independently right-aligned; a description spans both.
+                        # Two top-aligned columns on ONE table row: no metadata-only
+                        # line below long course names. Titles may wrap inside their
+                        # left cell; their first line always shares a row with metadata.
                         coursera = row.get('links', {}).get('coursera')
                         links = certificate_links(row, identity)
                         certificate = next((url for label, url in links if label in ('Certificate', 'Certificate PDF')), '')
                         title = link(row['title'], certificate or coursera)
-                        issuer = link(row.get('issuer') or 'Coursera', coursera)
+                        issuer = row.get('issuer') or 'Coursera'
+                        issuer = (issuer.replace('Stanford Online / Coursera', 'Stanford/Coursera')
+                                        .replace('Institut Mines-Télécom / Coursera', 'Mines-Télécom/Coursera')
+                                        .replace('Google Cloud / Coursera', 'Google/Coursera')
+                                        .replace('IBM / Coursera', 'IBM/Coursera'))
                         status = row.get('status') or 'Status not supplied'
-                        if status.lower() == 'in progress' and row.get('progressPercent') not in (None, 0):
-                            status = f"In progress ({row['progressPercent']}%)"
-                        course_date = date_label(row.get('completionDate'))
-                        course_date = re.sub(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b',
-                                             lambda match: match.group(1)[:3], course_date)
-                        meta = [issuer, tex(status)]
+                        if status.lower() == 'in progress' and row.get('progressPercent') is not None:
+                            status = f"In progress (~{row['progressPercent']}%)" if row.get('progressEstimated') else f"In progress ({row['progressPercent']}%)"
+                        course_date = course_month_year(row.get('completionDate'))
+                        meta = [link(issuer, coursera), tex(status)]
                         if course_date:
                             meta.append(tex(course_date))
                         description = row.get('facultyDescription')
                         if not description:
                             raise ValueError('Faculty course description missing for ' + row['id'])
-                        metadata = r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}'
-                        if len(row['title']) > 42:
-                            # Never isolate the final words of an official course title.
-                            # Metadata remains right aligned on its dedicated line.
-                            body.append(r'\Needspace{5\baselineskip}\noindent\textbf{' +
-                                        tex(str(number) + '. ') + title + r'}\par')
-                            body.append(r'\noindent\makebox[\linewidth][r]{' + metadata + r'}\par')
-                        else:
-                            body.append(r'\Needspace{4\baselineskip}\noindent'
-                                        r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
-                                        r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
-                            body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & ' +
-                                        metadata + r'\\')
-                            body.append(r'\end{tabularx}')
+                        body.append(r'\Needspace{4\baselineskip}\noindent'
+                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.59\linewidth}'
+                                    r'@{\hspace{7pt}}>{\raggedleft\arraybackslash}X@{}}')
+                        body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
+                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\\')
+                        body.append(r'\end{tabularx}\vspace{-2pt}')
                         body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
                         continue
                     count = progress(row)
@@ -330,10 +339,25 @@ def build_pdf(key, variant, data, settings, output):
             elif name == 'publications':
                 section(variant.get('publicationSectionTitle', 'Publications' if key == 'generic' else 'Selected Publications'))
                 for row in selected[name]:
-                    body.append(r'\entry{' + link(row['title'], row.get('url')) + '}{' + tex(row.get('year')) + '}')
-                    body.append(r'\textit{' + tex(row.get('venue', '')) + r'}\par')
-                    if key == 'generic':
-                        body.append(tex(row.get('summary', '')) + r'\par')
+                    if variant.get('headerDegree'):
+                        # Never concatenate a long publication title and year.
+                        # Left: linked full title. Right: venue, year and DOI/link.
+                        url = row.get('url')
+                        label = 'DOI' if isinstance(url, str) and 'doi.org/' in url else 'Link'
+                        venue = tex(row.get('venue', ''))
+                        year = tex(row.get('year', ''))
+                        line2 = year + (r' \textbar{} ' + link(label, url) if web_url(url) else '')
+                        body.append(r'\Needspace{4\baselineskip}\noindent'
+                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.68\linewidth}'
+                                    r'@{\hspace{8pt}}>{\raggedleft\arraybackslash}X@{}}')
+                        body.append(r'\textbf{' + link(row['title'], url) + r'} & '
+                                    r'{\scriptsize\textit{' + venue + r'}\newline ' + line2 + r'}\\')
+                        body.append(r'\end{tabularx}\vspace{1pt}')
+                    else:
+                        body.append(r'\entry{' + link(row['title'], row.get('url')) + '}{' + tex(row.get('year')) + '}')
+                        body.append(r'\textit{' + tex(row.get('venue', '')) + r'}\par')
+                        if key == 'generic':
+                            body.append(tex(row.get('summary', '')) + r'\par')
             else:
                 raise ValueError('Unknown section: ' + name)
 
