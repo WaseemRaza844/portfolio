@@ -823,12 +823,12 @@
     "certificationSectionTitle": "Selected Professional Development",
     "compactCertifications": true,
     "detailedCertificationDescriptions": false,
-    "latexFontSize": 9,
-    "horizontalMarginInches": 0.72,
-    "verticalMarginInches": 0.5,
+    "latexFontSize": 10,
+    "horizontalMarginInches": 0.75,
+    "verticalMarginInches": 0.55,
     "minPages": 5,
     "maxPages": 7,
-    "minPageTextChars": 900,
-    "minLastPageChars": 700
+    "minPageTextChars": 700,
+    "minLastPageChars": 500
   }
 }
