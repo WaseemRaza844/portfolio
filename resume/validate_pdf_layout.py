@@ -33,6 +33,19 @@ def check_pdf(path):
     warnings = []
     for number, page in enumerate(document, 1):
         lines = lines_in(page)
+        # An oversized role minipage or artificial section break can leave
+        # several inches unused on a non-final page. Detect that separately
+        # from short-line checks; the final page is naturally exempt.
+        if number < len(document) and lines:
+            blocks = [b for b in page.get_text('dict')['blocks'] if b.get('type') == 0]
+            deepest = max((l['bbox'][3] for b in blocks for l in b['lines']), default=0)
+            bottom_gap = page.rect.height - deepest - 33  # normal ~0.45in bottom inset
+            if bottom_gap > 115:
+                errors.append(f"{path.name} page {number}: excessive bottom whitespace "
+                              f"({bottom_gap:.0f}pt above normal margin)")
+            elif bottom_gap > 85:
+                warnings.append(f"{path.name} page {number}: increased bottom whitespace "
+                                f"({bottom_gap:.0f}pt above normal margin)")
         margin = 0.06 * page.rect.width
         max_width = page.rect.width - 2 * margin
         leading = [(y, x, width, t) for y, x, width, t in lines if x < margin + 45]
