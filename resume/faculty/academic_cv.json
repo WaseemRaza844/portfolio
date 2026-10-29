@@ -174,7 +174,7 @@
   "latexFontSize": 10,
   "horizontalMarginInches": 0.75,
   "verticalMarginInches": 0.55,
-  "minPages": 5,
+  "minPages": 4,
   "maxPages": 7,
   "minPageTextChars": 700,
   "minLastPageChars": 500,
@@ -212,7 +212,5 @@
     "Information Theory",
     "Digital Signal Processing"
   ],
-  "pageBreakBefore": [
-    "certifications"
-  ]
+  "pageBreakBefore": []
 }
