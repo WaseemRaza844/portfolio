@@ -3797,9 +3797,10 @@ window.PORTFOLIO_DATA.certifications = [
     "issuer": "Institut Mines-Télécom / Coursera",
     "status": "In progress",
     "completionDate": "",
-    "progressPercent": 21,
-    "summary": "Institut Mines-Télécom · Currently in progress (21%).",
-    "takeaway": "Institut Mines-Télécom · Currently in progress (21%).",
+    "progressPercent": 60,
+    "progressEstimated": true,
+    "summary": "Institut Mines-Télécom · Currently in progress (approximately 60%, self-reported).",
+    "takeaway": "Institut Mines-Télécom · Currently in progress (approximately 60%, self-reported).",
     "skills": [
       "Wireless Communications & Networks"
     ],
@@ -3812,8 +3813,8 @@ window.PORTFOLIO_DATA.certifications = [
         "title": "5G Network Fundamentals",
         "status": "In progress",
         "completionDate": "",
-        "progressPercent": 21,
-        "summary": "Institut Mines-Télécom · Currently in progress (21%).",
+        "progressPercent": 60,
+        "summary": "Institut Mines-Télécom · Currently in progress (approximately 60%, self-reported).",
         "skills": [
           "Wireless Communications & Networks"
         ],
