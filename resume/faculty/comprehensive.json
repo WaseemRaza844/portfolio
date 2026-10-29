@@ -1,8 +1,8 @@
 {
   "label": "Faculty / Comprehensive",
-  "tagline": "PhD ECE | AI/ML for Wireless Networks | Reliable AI | 5G/6G | Teaching & Research",
-  "headline": "Researcher & Engineering Educator | AI/ML, Wireless Systems & Intelligent Networks",
-  "summary": "Researcher and engineering educator with a PhD in Electrical and Computer Engineering focused on AI/ML for wireless networks. The research program combines reliable machine learning, data-efficient modeling, network optimization, self-healing, propagation modeling, digital twins, transfer learning, domain adaptation, generative modeling, reinforcement learning, and wearable sensing. Academic experience includes university teaching, laboratory instruction, student mentoring, publication-oriented research, proposal support, curriculum and accreditation activities, and development of reproducible simulation and experimental platforms. Industry R&D experience at AT&T Labs, Futurewei, Impac, and AT&T complements this academic foundation with large-scale operational data, 5G/NTN systems, domain-adaptive ML, and production-oriented validation.",
+  "tagline": "Wireless AI | 5G/6G | Network Optimization | Research & Education",
+  "headline": "Researcher & Engineering Educator | Intelligent Wireless Systems",
+  "summary": "Electrical and Computer Engineering researcher and educator specializing in AI/ML for wireless networks, resilient learning, and 5G/6G network intelligence. Research spans propagation modeling, generative data augmentation, digital twins, optimization, self-healing, domain adaptation, and reinforcement learning. Academic work includes teaching, laboratory instruction, student mentoring, research publications, proposal development, and curriculum activities. Industrial R&D at AT&T Labs, Futurewei, Impac, and AT&T brings operational data and applied validation to this research program.",
   "researchInterests": [
     "AI/ML for Wireless and 5G/6G Networks",
     "Reliable, Robust, and Data-Efficient Learning",
@@ -61,7 +61,8 @@
     "coursera-ai-foundations-industry-overview-for-telecommunication",
     "coursera-network-and-security-optimization-in-telecommunication",
     "coursera-4g-network-fundamentals",
-    "coursera-generative-ai-engineering-and-fine-tuning-transformers"
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+    "coursera-5g-network-fundamentals"
   ],
   "publicationIds": [
     "medication-adherence-2026",
@@ -154,7 +155,7 @@
         ]
       },
       {
-        "title": "Professional Development",
+        "title": "Self-Learning",
         "items": [
           "certifications"
         ]
@@ -165,7 +166,7 @@
   "academicExperienceTitle": "Academic & Research Experience",
   "publicationSectionTitle": "Research Publications",
   "projectSectionTitle": "Research Programs, Platforms & Applied Projects",
-  "certificationSectionTitle": "Selected Professional Development",
+  "certificationSectionTitle": "Self-Learning",
   "honorLimit": 9,
   "compactCertifications": true,
   "detailedCertificationDescriptions": false,
@@ -175,5 +176,9 @@
   "minPages": 4,
   "maxPages": 5,
   "minPageTextChars": 1200,
-  "minLastPageChars": 900
+  "minLastPageChars": 900,
+  "headerDegree": "Electrical and Computer Engineering",
+  "dissertationFocus": "Doctoral research in AI/ML for wireless networks, emphasizing resilient propagation models, data-efficient generative learning, adaptive network optimization, self-healing, and reproducible evaluation.",
+  "facultyLearningLayout": true,
+  "sortCertificationsByStatus": true
 }
