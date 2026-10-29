@@ -124,9 +124,22 @@ class LatexEscapingTests(unittest.TestCase):
             self.assertEqual(module.variant_output_dir(folder / 'output', key).name, 'faculty')
         self.assertEqual(module.variant_output_dir(folder / 'output', 'aiml').name, 'industry')
 
-    def test_academic_cv_does_not_show_in_progress_5g_course_as_completed(self):
-        cv = module.load_variants()['academic_cv']
-        self.assertNotIn('coursera-5g-network-fundamentals', cv['certificationIds'])
+    def test_in_progress_5g_course_is_separately_labeled_in_faculty_documents(self):
+        variants = module.load_variants()
+        source = module.merge_source(module.read_source(), module.read_json(Path(__file__).parents[1] / 'content.json'))
+        course = next(row for row in source['certifications'] if row['id'] == 'coursera-5g-network-fundamentals')
+        self.assertEqual(course['status'], 'In progress')
+        self.assertEqual(course['progressPercent'], 21)
+        self.assertFalse(course.get('completionDate'))
+        self.assertTrue(course.get('facultyDescription'))
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            variant = variants[key]
+            self.assertIn(course['id'], variant['certificationIds'])
+            self.assertEqual(variant['pages'][0][-1]['title'], 'Self-Learning')
+            self.assertTrue(variant['facultyLearningLayout'])
+            self.assertEqual(variant['headerDegree'], 'Electrical and Computer Engineering')
+            self.assertNotIn('Curriculum Vitae', variant['headline'])
+
 
     def test_faculty_profile_and_teaching_first_hierarchy(self):
         variants = module.load_variants()
@@ -164,6 +177,26 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertIn('subsection(subtitle)', renderer)
         self.assertIn("entries.append((name, group_title if index == 0 else None, subtitle, True))", renderer)
         self.assertIn(r'\titleformat{\subsection}', template)
+
+    def test_faculty_course_descriptions_are_complete_and_short(self):
+        variants = module.load_variants()
+        source = module.merge_source(module.read_source(), module.read_json(Path(__file__).parents[1] / 'content.json'))
+        lookup = {row['id']: row for row in source['certifications']}
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            for course_id in variants[key]['certificationIds']:
+                desc = lookup[course_id].get('facultyDescription')
+                self.assertIsNotNone(desc, course_id)
+                self.assertTrue(55 <= len(desc) <= 160, course_id)
+
+    def test_header_links_and_right_aligned_course_layout(self):
+        text = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        template = (Path(__file__).parents[1] / 'template.tex').read_text(encoding='utf-8')
+        self.assertIn("contact_lines.append(r'\\ding{41}", text)
+        self.assertIn("social_contacts.append(link('Coursera Courses'", text)
+        self.assertIn("facultyLearningLayout", text)
+        self.assertIn("raggedleft", text)
+        self.assertIn('@@DEGREE@@', template)
+        self.assertIn('@@TYPOGRAPHY@@', template)
 
     def test_comprehensive_is_three_page_application_resume(self):
         variants = module.load_variants()

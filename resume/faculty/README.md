@@ -58,9 +58,17 @@ or publication status from general descriptions.
 Coursera selection is drawn from the existing signed-in course inventory
 reconciled into `dist/data/certifications.js`. Prioritize completed ML, deep
 learning, computer vision, telecom AI, wireless network and data-science courses;
-do not represent an *in-progress* course as an awarded certificate. In particular,
-5G Network Fundamentals is marked in progress and is excluded from the academic
-CV's completed certification list.
+do not represent an *in-progress* course as an awarded certificate. The faculty
+variants now include 5G Network Fundamentals, marked **In progress (21%)**,
+without a completion date or an awarded-certificate claim.
+
+The last main section is **Self-Learning**, with each exact course title on the
+left, issuer/status/date right-aligned, and a concise one-line topic and skills
+description below. Descriptions are stored as `facultyDescription` overrides
+in `resume/content.json` and verified in unit tests. Faculty headers identify
+the PhD discipline directly, list emails before the phone number, and link to
+the portfolio's Coursera courses page. To avoid PDF portability issues,
+professional profiles use clickable text labels rather than extra icon fonts.
 
 ## Tailored versions
 

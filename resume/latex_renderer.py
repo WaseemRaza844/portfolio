@@ -244,6 +244,34 @@ def build_pdf(key, variant, data, settings, output):
             elif name == 'certifications':
                 section(variant.get('certificationSectionTitle', 'Certifications & Professional Development'))
                 for number, row in enumerate(selected[name], start=1):
+                    if variant.get('facultyLearningLayout'):
+                        # Keep the exact course title on the left and metadata
+                        # independently right-aligned; a description spans both.
+                        coursera = row.get('links', {}).get('coursera')
+                        links = certificate_links(row, identity)
+                        certificate = next((url for label, url in links if label in ('Certificate', 'Certificate PDF')), '')
+                        title = link(row['title'], certificate or coursera)
+                        issuer = link(row.get('issuer') or 'Coursera', coursera)
+                        status = row.get('status') or 'Status not supplied'
+                        if status.lower() == 'in progress' and row.get('progressPercent') not in (None, 0):
+                            status = f"In progress ({row['progressPercent']}%)"
+                        course_date = date_label(row.get('completionDate'))
+                        course_date = re.sub(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b',
+                                             lambda match: match.group(1)[:3], course_date)
+                        meta = [issuer, tex(status)]
+                        if course_date:
+                            meta.append(tex(course_date))
+                        description = row.get('facultyDescription')
+                        if not description:
+                            raise ValueError('Faculty course description missing for ' + row['id'])
+                        body.append(r'\Needspace{4\baselineskip}\noindent'
+                                    r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
+                                    r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
+                        body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
+                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\\')
+                        body.append(r'\end{tabularx}')
+                        body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
+                        continue
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
                     issuer = row.get('issuer', '')
@@ -296,26 +324,30 @@ def build_pdf(key, variant, data, settings, output):
     phone = str(identity.get('phone') or '').strip()
     phone_href = re.sub(r'[^+0-9]', '', phone)
 
-    primary_contacts = []
-    if identity.get('location'):
-        primary_contacts.append(tex(identity['location']))
-    if phone:
-        primary_contacts.append(r'\ding{37}\enspace ' + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+    # Contact order prioritizes email, keeps phone last, and presents a
+    # compact third row of clickable professional profiles.
+    contact_lines = []
     if emails:
         email_links = [r'\href{mailto:' + tex(email) + '}{' + tex(email) + '}' for email in emails]
-        primary_contacts.append(r'\ding{41}\enspace ' + r' \textbar{} '.join(email_links))
+        contact_lines.append(r'\ding{41}\enspace ' + r' \textbar{} '.join(email_links))
+    secondary_contacts = []
+    if identity.get('location'):
+        secondary_contacts.append(tex(identity['location']))
+    if phone:
+        secondary_contacts.append(r'\ding{37}\enspace '
+                                  + r'\href{tel:' + tex(phone_href) + '}{' + tex(phone) + '}')
+    if secondary_contacts:
+        contact_lines.append(r' \quad '.join(secondary_contacts))
 
     social_contacts = []
     for label, field in [('LinkedIn', 'linkedin'), ('GitHub', 'github'), ('Google Scholar', 'scholar')]:
         url = identity.get('links', {}).get(field)
         if web_url(url):
             social_contacts.append(link(label, url))
+    if web_url(identity.get('courseraPortfolioUrl')):
+        social_contacts.append(link('Coursera Courses', identity['courseraPortfolioUrl']))
     if web_url(identity.get('portfolioUrl')):
         social_contacts.append(link('Portfolio', identity['portfolioUrl']))
-
-    contact_lines = []
-    if primary_contacts:
-        contact_lines.append(r' \quad '.join(primary_contacts))
     if social_contacts:
         contact_lines.append(r' \textbar{} '.join(social_contacts))
     contacts = r'\\[1pt]'.join(contact_lines)
@@ -334,6 +366,9 @@ def build_pdf(key, variant, data, settings, output):
                   HMARGIN=str(horizontal_margin), VMARGIN=str(vertical_margin), ACCENT=accent, NAME=tex(identity['name']),
                   TITLE=tex(identity['name'] + ' - ' + variant['label']),
                   HEADLINE=tex(variant['headline']), TAGLINE=tex(variant.get('tagline', '')),
+                  DEGREE=(' ' + tex('(' + variant['headerDegree'] + ')')) if variant.get('headerDegree') else '',
+                  TYPOGRAPHY=(r'\hyphenpenalty=8500\exhyphenpenalty=8500\emergencystretch=1em'
+                              if variant.get('headerDegree') else ''),
                   CONTACTS=contacts, BODY='\n'.join(body))
     template = read_utf8_text(HERE / 'template.tex')
     source = re.sub(r'@@([A-Z]+)@@', lambda m: values[m[1]], template)

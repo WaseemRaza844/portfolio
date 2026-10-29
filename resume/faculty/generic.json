@@ -1,8 +1,8 @@
 {
   "label": "Faculty / Generic",
-  "tagline": "PhD ECE | AI/ML for Wireless Networks | Reliable Learning | 5G/6G | Engineering Education",
+  "tagline": "Wireless AI | 5G/6G Networks | Robust Learning | Research & Teaching",
   "headline": "Researcher & Engineering Educator | AI/ML for Wireless Networks",
-  "summary": "Electrical and Computer Engineering researcher and educator with a PhD from the University of Oklahoma and a research focus on artificial intelligence and machine learning for wireless networks. Research spans reliable and data-efficient learning, 5G/6G network intelligence, propagation modeling and digital twins, network optimization and self-healing, transfer learning, domain adaptation, generative modeling, reinforcement learning, and wearable intelligence. Experience combines university research and teaching with industrial R&D at AT&T Labs, Futurewei, and AT&T, with emphasis on rigorous experimentation, reproducibility, student mentoring, and translation of AI methods into real communication systems.",
+  "summary": "Electrical and Computer Engineering researcher and educator with a PhD from the University of Oklahoma specializing in AI/ML for wireless networks. Research addresses reliable learning, propagation modeling, network optimization, self-healing, digital twins, generative augmentation, and reinforcement learning for 5G/6G systems. University teaching and research are complemented by industrial R&D at AT&T Labs, Futurewei, and AT&T, bridging rigorous experiments with real-world network challenges.",
   "researchInterests": [
     "AI/ML for Wireless and 5G/6G Networks",
     "Reliable and Robust Machine Learning",
@@ -56,7 +56,8 @@
     "coursera-introduction-to-deep-learning-neural-networks-with-keras",
     "coursera-ai-foundations-industry-overview-for-telecommunication",
     "coursera-network-and-security-optimization-in-telecommunication",
-    "coursera-4g-network-fundamentals"
+    "coursera-4g-network-fundamentals",
+    "coursera-5g-network-fundamentals"
   ],
   "publicationIds": [
     "medication-adherence-2026",
@@ -134,7 +135,7 @@
         ]
       },
       {
-        "title": "Professional Development",
+        "title": "Self-Learning",
         "items": [
           "certifications"
         ]
@@ -145,7 +146,7 @@
   "academicExperienceTitle": "Academic & Research Experience",
   "publicationSectionTitle": "Selected Publications",
   "projectSectionTitle": "Selected Research Programs & Infrastructure",
-  "certificationSectionTitle": "Selected Professional Development",
+  "certificationSectionTitle": "Self-Learning",
   "honorLimit": 5,
   "compactCertifications": true,
   "detailedCertificationDescriptions": false,
@@ -155,5 +156,9 @@
   "minPages": 3,
   "maxPages": 4,
   "minPageTextChars": 1400,
-  "minLastPageChars": 1000
+  "minLastPageChars": 1000,
+  "headerDegree": "Electrical and Computer Engineering",
+  "dissertationFocus": "Doctoral research in AI/ML for wireless networks, emphasizing resilient propagation models, data-efficient generative learning, adaptive network optimization, self-healing, and reproducible evaluation.",
+  "facultyLearningLayout": true,
+  "sortCertificationsByStatus": true
 }
