@@ -68,9 +68,9 @@
           "Translate complex operational requirements into measurable ML objectives, validated datasets, and production-oriented analytical workflows."
         ],
         "faculty": [
-          "Translate machine-learning research into operational telecommunications systems, emphasizing domain adaptation, reliability, model validation, and responsible decision support.",
-          "Develop reusable cross-domain evaluation and error-analysis methods for AI systems operating under distribution shift and heterogeneous operational conditions.",
-          "Collaborate across engineering, software, and public-safety teams to connect research methods with real-world network-assurance requirements."
+          "Applied domain-adaptive ML research to telecom service assurance, emphasizing operational reliability and model validation.",
+          "Developed cross-domain evaluation and error-analysis methods for models exposed to changing operational data.",
+          "Worked with software, network, and public-safety teams to connect AI research with practical service-assurance requirements."
         ]
       }
     },
@@ -107,6 +107,13 @@
           "Developed scalable analytical and ETL pipelines using Python, Azure Databricks, Azure Functions, and Synapse Analytics for large domain datasets.",
           "Built reusable ingestion, cleansing, transformation, and validation workflows for machine-learning and LLM-assisted analytics.",
           "Implemented cross-validation, data-quality, and consistency checks to improve reliability and reproducibility of analytical outputs."
+        ],
+        "faculty": [
+          "Built an LLM-enabled analytics pipeline to interpret geochemical well data and support technical decision making.",
+          "Developed cloud data-ingestion and validation workflows using Python, Azure Databricks, Functions, and Synapse Analytics.",
+          "Automated exploration-data ETL, reducing preparation time by 40% while improving reproducibility.",
+          "Introduced validation and quality checks that improved the reliability of analytical outputs by 20%.",
+          "Translated geologists' domain requirements into structured datasets and actionable analytics."
         ]
       }
     },
@@ -120,7 +127,16 @@
         "Developed robustness evaluation frameworks for models operating under distribution shifts, missing data, and limited labeled samples; led 100+ experiments from problem formulation through validation.",
         "Developed scalable self-healing and outage-management frameworks that improved modeled network resilience by 30%.",
         "Published peer-reviewed research, presented technical results internationally, and mentored junior researchers in ML implementation, experimental design, and technical writing."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Built reusable Python simulation platforms for wireless AI experiments, including a 3GPP-compliant network simulator and an AI-enabled 5G testbed for reproducible network studies.",
+          "Developed transfer-learning, GAN, autoencoder, adversarial-learning, and reinforcement-learning pipelines to study sparse wireless datasets and generalization across domains.",
+          "Led more than 100 experiments evaluating wireless ML under distribution shifts, missing data, and limited labeled samples.",
+          "Developed self-healing and outage-management methods, improving modeled network resilience by 30%.",
+          "Published peer-reviewed wireless AI research, presented internationally, and mentored junior researchers in experimental design and technical writing."
+        ]
+      }
     },
     "industry-research": {
       "resumePublished": false
@@ -134,7 +150,15 @@
         "Mentored and advised students on academic projects, technical problem solving, and career pathways, including senior-design and course-project development.",
         "Contributed to curriculum development and course-content alignment with program outcomes, industry needs, and accreditation requirements.",
         "Supported departmental accreditation documentation, examinations, student orientation, technical workshops, seminars, and academic administration."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Taught Computer Programming, Communication Systems, and Wireless Communication through engineering-oriented lectures and practical examples.",
+          "Advised students on senior-design projects, technical problem solving, academic planning, and early career development.",
+          "Aligned course materials with learning outcomes, industry expectations, and accreditation requirements.",
+          "Supported examinations, accreditation records, technical workshops, student orientations, and departmental activities."
+        ]
+      }
     },
     "comsats-research-associate": {
       "period": "06/2016 - 12/2017",
@@ -145,7 +169,15 @@
         "Mentored Bachelor’s and Master’s students on thesis projects, research methodology, experiment design, technical writing, and presentation of results.",
         "Reviewed research manuscripts and student technical reports, providing structured feedback aligned with publication and academic-quality standards.",
         "Assisted with research-proposal preparation, literature synthesis, lab seminars, paper-review meetings, and coordination of research activities."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Researched wireless communications through analytical modeling, simulation, experimental analysis, and publication-oriented technical writing.",
+          "Mentored Bachelor's and Master's students in thesis design, research methods, experiments, and presenting technical results.",
+          "Reviewed research manuscripts and student reports, providing constructive feedback to strengthen technical quality and publication readiness.",
+          "Supported research proposals, literature reviews, lab seminars, paper discussions, and coordination of research activities."
+        ]
+      }
     },
     "uet-research-scholar": {
       "period": "08/2014 - 02/2016",
@@ -156,7 +188,15 @@
         "Assisted faculty with Communication Systems and Digital Communication Systems instruction, student questions, assignments, grading, and exam preparation.",
         "Supervised laboratory sessions for Communication Systems and Wireless Communication and developed lab manuals and implementation-oriented exercises.",
         "Supported curriculum development and student technical-project activities connecting theoretical communication concepts with practical experimentation."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Conducted graduate research in wireless communications while completing the MSc in Telecommunication Engineering.",
+          "Assisted faculty with communication-systems courses, student assignments, laboratory teaching, grading, and examinations.",
+          "Supervised wireless communication laboratories and prepared practical experiments and instructional manuals.",
+          "Helped develop course materials and student projects connecting communication theory with hands-on experiments."
+        ]
+      }
     }
   },
   "projectOverrides": {},
@@ -204,7 +244,14 @@
         "Analyzed 500K+ LTE/5G-NR diagnostic logs and applied ML methods to detect anomalies, reducing diagnostic time by 20%.",
         "Investigated 5G NR-NTN cell-selection behavior and improved decision algorithms by 15% through data-driven analysis and validation.",
         "Conducted structured analysis of large operational datasets and communicated technical findings to engineering teams supporting next-generation wireless systems."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Analyzed more than 500,000 LTE/5G-NR diagnostic logs with ML, reducing diagnostic time by 20%.",
+          "Improved 5G NR-NTN cell-selection algorithms by 15% through data-driven analysis and validation.",
+          "Presented findings from large operational datasets to engineers developing next-generation wireless systems."
+        ]
+      }
     },
     {
       "id": "futurewei-2022",
@@ -216,7 +263,14 @@
         "Improved autoencoder-based channel-state-information compression by 25% using transfer learning and systematic experimentation on large wireless datasets.",
         "Conducted 50+ experiments to validate model performance, robustness, and generalization under changing data conditions.",
         "Collaborated with research and engineering stakeholders to translate modeling results into recommendations for next-generation communication systems."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Improved channel-state-information compression by 25% using transfer learning and autoencoder models.",
+          "Ran more than 50 experiments to evaluate wireless ML performance under changing data conditions.",
+          "Translated wireless modeling results into engineering recommendations for future communication systems."
+        ]
+      }
     },
     {
       "id": "att-labs-2022",
@@ -228,7 +282,14 @@
         "Designed ML and statistical methods for analyzing users' timing in 5G standalone networks, improving analytical precision by 20%.",
         "Analyzed large-scale user trace data with SQL and visualization tools and communicated findings to senior technical leadership.",
         "Converted raw operational traces into interpretable performance indicators to support diagnosis and network optimization."
-      ]
+      ],
+      "bulletsByVariant": {
+        "faculty": [
+          "Improved 5G standalone user-timing precision by 20% using machine learning and statistical analysis.",
+          "Analyzed user trace data using SQL and visualization tools and presented findings to engineering leadership.",
+          "Converted operational network traces into interpretable indicators for diagnosis and optimization."
+        ]
+      }
     }
   ],
   "additionalProjects": [],
