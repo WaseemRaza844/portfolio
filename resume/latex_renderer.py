@@ -268,7 +268,7 @@ def build_pdf(key, variant, data, settings, output):
                                     r'\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X'
                                     r'>{\raggedleft\arraybackslash}p{0.46\linewidth}@{}}')
                         body.append(r'\textbf{' + tex(str(number) + '. ') + title + r'} & '
-                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\')
+                                    r'{\scriptsize ' + r' \textbar{} '.join(meta) + r'}\\')
                         body.append(r'\end{tabularx}')
                         body.append(r'\noindent{\footnotesize ' + tex(description) + r'}\par\vspace{2pt}')
                         continue
