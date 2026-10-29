@@ -180,7 +180,11 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertIn(r'\titleformat{\subsection}', template)
 
     def test_faculty_learning_dates_and_layout_keep_metadata_on_title_row(self):
-        from latex_renderer import course_month_year
+        renderer_path = Path(__file__).parents[1] / 'latex_renderer.py'
+        spec_renderer = importlib.util.spec_from_file_location('faculty_renderer', renderer_path)
+        renderer_module = importlib.util.module_from_spec(spec_renderer)
+        spec_renderer.loader.exec_module(renderer_module)
+        course_month_year = renderer_module.course_month_year
         self.assertEqual(course_month_year('August 12, 2026'), 'Aug 2026')
         self.assertEqual(course_month_year('March 29, 2020'), 'Mar 2020')
         self.assertEqual(course_month_year(''), '')
