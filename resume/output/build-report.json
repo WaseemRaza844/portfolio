@@ -8,7 +8,7 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5054,
+        5073,
         4917,
         4724
       ],
@@ -55,7 +55,7 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5435,
+        5454,
         4882,
         5120
       ],
@@ -105,7 +105,7 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5356,
+        5375,
         4887,
         5125
       ],
@@ -152,7 +152,7 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5303,
+        5322,
         4901,
         4904
       ],
@@ -200,7 +200,7 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4844,
+        4863,
         4931,
         3986
       ],
@@ -248,9 +248,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4845,
-        5097,
-        4309
+        4700,
+        5094,
+        4476
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -295,9 +295,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4913,
-        5085,
-        4031
+        4768,
+        5093,
+        4187
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -341,9 +341,9 @@
       "minLastPageChars": 1000,
       "maxPages": 4,
       "pageTextChars": [
-        4595,
-        3957,
-        4071
+        4495,
+        3810,
+        4686
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -368,7 +368,8 @@
           "coursera-introduction-to-deep-learning-neural-networks-with-keras",
           "coursera-ai-foundations-industry-overview-for-telecommunication",
           "coursera-network-and-security-optimization-in-telecommunication",
-          "coursera-4g-network-fundamentals"
+          "coursera-4g-network-fundamentals",
+          "coursera-5g-network-fundamentals"
         ],
         "publications": [
           "medication-adherence-2026",
@@ -391,10 +392,10 @@
       "minLastPageChars": 900,
       "maxPages": 5,
       "pageTextChars": [
-        4577,
-        4706,
-        4765,
-        2553
+        4422,
+        4813,
+        4717,
+        3134
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -423,7 +424,8 @@
           "coursera-ai-foundations-industry-overview-for-telecommunication",
           "coursera-network-and-security-optimization-in-telecommunication",
           "coursera-4g-network-fundamentals",
-          "coursera-generative-ai-engineering-and-fine-tuning-transformers"
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-5g-network-fundamentals"
         ],
         "publications": [
           "medication-adherence-2026",
@@ -449,11 +451,11 @@
       "minLastPageChars": 500,
       "maxPages": 7,
       "pageTextChars": [
-        4017,
-        3940,
-        2800,
-        4829,
-        1678
+        3954,
+        3971,
+        3181,
+        4491,
+        2388
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -485,7 +487,8 @@
           "coursera-network-and-security-optimization-in-telecommunication",
           "coursera-4g-network-fundamentals",
           "coursera-generative-ai-engineering-and-fine-tuning-transformers",
-          "coursera-generative-ai-foundation-models-and-platforms"
+          "coursera-generative-ai-foundation-models-and-platforms",
+          "coursera-5g-network-fundamentals"
         ],
         "publications": [
           "medication-adherence-2026",
