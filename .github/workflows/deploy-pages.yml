@@ -136,7 +136,7 @@ jobs:
           HTML
 
             for group in faculty industry; do
-              printf '    <h2 style="margin-top:36px">%s resumes</h2>\n    <div class="grid">\n' "${group^}"
+              printf '    <h2 id="%s" style="margin-top:36px">%s resumes</h2>\n    <div class="grid">\n' "$group" "${group^}"
               for pdf in "_site/develop/resumes/$group/"Waseem_Raza_*.pdf; do
                 test -f "$pdf" || { echo "Missing PDF preview in $group" >&2; exit 1; }
                 file="$(basename "$pdf")"
@@ -195,7 +195,7 @@ jobs:
             echo "- Production portfolio: https://waseemraza844.github.io/portfolio/"
             echo "- Develop portfolio: https://waseemraza844.github.io/portfolio/develop/"
             echo "- Browse ALL resume PDFs (faculty, industry, tailored): https://waseemraza844.github.io/portfolio/develop/resumes/"
-            echo "- Faculty PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/faculty/"
-            echo "- Industry PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/industry/"
+            echo "- Faculty PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/#faculty"
+            echo "- Industry PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/#industry"
             echo "- Infosys 154451BR tailored resume: https://waseemraza844.github.io/portfolio/develop/resumes/tailored/infosys-genai-engineer-154451BR/Waseem_Raza_INFOSYS_GENAI_154451BR.pdf"
           } >> "$GITHUB_STEP_SUMMARY"
