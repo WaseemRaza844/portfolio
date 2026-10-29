@@ -8,9 +8,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5047,
-        4914,
-        4688
+        5054,
+        4917,
+        4724
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -55,9 +55,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5429,
-        4879,
-        5093
+        5435,
+        4882,
+        5120
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -105,9 +105,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5350,
-        4848,
-        5134
+        5356,
+        4887,
+        5125
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -152,9 +152,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        5296,
-        4898,
-        4877
+        5303,
+        4901,
+        4904
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -200,9 +200,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4838,
-        4921,
-        3966
+        4844,
+        4931,
+        3986
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -248,9 +248,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4839,
-        5058,
-        4318
+        4845,
+        5097,
+        4309
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -295,9 +295,9 @@
       "minLastPageChars": 3000,
       "maxPages": 3,
       "pageTextChars": [
-        4743,
-        5210,
-        4040
+        4913,
+        5085,
+        4031
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -341,9 +341,9 @@
       "minLastPageChars": 1000,
       "maxPages": 4,
       "pageTextChars": [
-        4611,
-        4098,
-        3595
+        4595,
+        3957,
+        4071
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -391,10 +391,10 @@
       "minLastPageChars": 900,
       "maxPages": 5,
       "pageTextChars": [
-        4703,
-        4364,
-        4545,
-        2961
+        4577,
+        4706,
+        4765,
+        2553
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -449,11 +449,11 @@
       "minLastPageChars": 500,
       "maxPages": 7,
       "pageTextChars": [
-        4111,
-        3943,
-        3197,
-        4009,
-        1970
+        4017,
+        3940,
+        2800,
+        4829,
+        1678
       ],
       "renderer": "latex",
       "selectedIds": {
