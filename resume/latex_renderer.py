@@ -156,7 +156,7 @@ def build_pdf(key, variant, data, settings, output):
                 if courses:
                     body.append(tex(' | '.join(courses)) + r'\par')
             elif name == 'skills':
-                section('Technical Skills')
+                section(variant.get('skillsSectionTitle', 'Technical Skills'))
                 for label, value in variant['skills'].items():
                     body.append(r'\Needspace{2\baselineskip}\noindent{\small\textbf{' + tex(label) + ':} ' + tex(value) + r'}\par')
                 strengths = variant.get('leadership', {})
