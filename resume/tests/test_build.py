@@ -77,11 +77,17 @@ class LatexEscapingTests(unittest.TestCase):
 
     def test_focused_variants_define_page_fill_target(self):
         variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
-        for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
+        for key in ('generic', 'genai', 'aiml', 'wireless', 'healthcare', 'finance'):
             self.assertEqual(variants[key].get('minPages'), 3)
             self.assertEqual(variants[key].get('maxPages'), 3)
             self.assertGreaterEqual(variants[key].get('minLastPageChars', 0), 3000)
             self.assertGreaterEqual(variants[key].get('minPageTextChars', 0), 3000)
+
+    def test_academic_variants_have_distinct_page_budgets(self):
+        variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
+        self.assertEqual((variants['faculty']['minPages'], variants['faculty']['maxPages']), (3, 4))
+        self.assertEqual((variants['faculty_comprehensive']['minPages'], variants['faculty_comprehensive']['maxPages']), (4, 5))
+        self.assertEqual((variants['academic_cv']['minPages'], variants['academic_cv']['maxPages']), (5, 7))
 
     def test_utf8_output_writer_handles_phone_symbol(self):
         import importlib.util
@@ -103,8 +109,10 @@ class LatexEscapingTests(unittest.TestCase):
 
     def test_reusable_variants_require_detailed_certifications(self):
         variants = module.read_json(Path(__file__).parents[1] / 'variants.json')
-        for key in ('generic', 'comprehensive', 'genai', 'aiml', 'wireless', 'healthcare', 'finance', 'faculty'):
+        for key in ('generic', 'comprehensive', 'genai', 'aiml', 'wireless', 'healthcare', 'finance'):
             self.assertTrue(variants[key].get('detailedCertificationDescriptions'))
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            self.assertTrue(variants[key].get('compactCertifications'))
 
     def test_comprehensive_is_three_page_application_resume(self):
         variants = module.read_json(Path(__file__).parents[1] / 'variants.json')

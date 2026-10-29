@@ -23,6 +23,61 @@ window.PROFILE_DATA = {
       { degree: "MSc, Telecommunication Engineering",       school: "University of Engineering and Technology, Taxila, Pakistan",             period: "08/2014–08/2016" },
       { degree: "BSc, Telecommunication Engineering",       school: "University of Engineering and Technology, Taxila, Pakistan",             period: "11/2010–06/2014" }
     ],
+    academic: {
+      dissertationFocus: "Artificial Intelligence and Machine Learning for Wireless Networks, with emphasis on resilient learning, data-efficient modeling, network optimization, propagation and digital-twin modeling, self-healing cellular networks, and reliable AI under real-world variability.",
+      researchInterests: [
+        "AI/ML for wireless and 5G/6G networks",
+        "Reliable and robust machine learning",
+        "Network optimization, self-healing, and intelligent automation",
+        "Propagation modeling and wireless digital twins",
+        "Transfer learning, domain adaptation, and generative augmentation",
+        "Reinforcement learning for autonomous network control",
+        "Wearable intelligence and human-centered sensing"
+      ],
+      teachingAreas: [
+        "Wireless Communications",
+        "Digital and Analog Communication Systems",
+        "5G/6G and Emerging Wireless Networks",
+        "Machine Learning and Artificial Intelligence",
+        "Signals and Systems",
+        "Digital Signal Processing",
+        "Computer Programming",
+        "Data Science and Experimental Methods"
+      ],
+      selectedCoursework: [
+        "Telecommunication Technology / LTE Networks",
+        "Emerging Topics in LTE-Advanced and 5G",
+        "Advanced Machine Learning / Computer Vision",
+        "Testbed Design for Emerging Cellular Networks",
+        "Numerical Analysis",
+        "Information Theory and Probability",
+        "Digital Signal Processing"
+      ],
+      mentoring: [
+        "Mentored undergraduate and graduate researchers on machine-learning implementation, wireless-network experimentation, simulation, data analysis, and technical writing.",
+        "Supported Bachelor’s and Master’s thesis/project work in communications and wireless systems, including research methodology, experiment planning, manuscript preparation, and presentation.",
+        "Advised students on senior/capstone projects, academic planning, and technical career development.",
+        "Developed assignments, laboratory material, and implementation-oriented exercises connecting communication theory with practical engineering systems."
+      ],
+      service: [
+        "Contributed to curriculum development and course-content alignment with engineering program and industry needs.",
+        "Supported departmental accreditation and quality-assurance documentation, examination processes, and academic administration.",
+        "Reviewed research manuscripts and student technical reports and provided publication-oriented feedback.",
+        "Participated in research seminars, paper-review meetings, student orientations, technical workshops, and academic events.",
+        "Assisted research teams with proposal preparation, literature synthesis, experimental planning, and documentation."
+      ],
+      honors: [
+        { year: "2024", title: "William H. Barkow Scholarship", organization: "University of Oklahoma, Electrical and Computer Engineering" },
+        { year: "2024", title: "Clyde L. Farrar Endowment Scholarship", organization: "University of Oklahoma" },
+        { year: "2023", title: "P.H. Robinson Fellowship", organization: "University of Oklahoma" },
+        { year: "2023", title: "FAS-Charles Forgan Scholarship", organization: "University of Oklahoma" },
+        { year: "2022", title: "Nettie Vincent Boggs Graduate Endowment", organization: "University of Oklahoma" },
+        { year: "2022", title: "SHS-Paul D. Massad Scholarship", organization: "University of Oklahoma" },
+        { year: "2021", title: "Cleo Cross Memorial Scholarship", organization: "University of Oklahoma" },
+        { year: "2021", title: "Marjorie Haskell Engineering Scholarship", organization: "University of Oklahoma" },
+        { year: "2019", title: "Fully Funded PhD / Graduate Research Assistantship", organization: "University of Oklahoma" }
+      ]
+    },
     experience: [
       {
         id: "att-current",
@@ -63,11 +118,27 @@ window.PROFILE_DATA = {
       },
       {
         id: "teaching",
-        period: "Earlier",
-        role: "Lecturer",
-        organization: "Engineering and Technology Programs",
+        period: "12/2017–09/2019",
+        role: "Lecturer, Department of Technology",
+        organization: "University of Lahore, Pakistan",
         profiles: ["faculty"],
-        faculty: "Taught and mentored undergraduate engineering students in communications, programming, and foundational engineering subjects."
+        faculty: "Taught undergraduate Electrical Engineering Technology courses including Computer Programming, Communication Systems, and Wireless Communication; mentored student projects and contributed to curriculum, accreditation, examinations, and academic advising."
+      },
+      {
+        id: "comsats-research-associate",
+        period: "06/2016–12/2017",
+        role: "Research Associate, ComSens Lab",
+        organization: "COMSATS University Islamabad, Pakistan",
+        profiles: ["faculty"],
+        faculty: "Conducted research in wireless communications, mentored Bachelor’s and Master’s students, reviewed technical manuscripts, assisted research-proposal development, and coordinated lab research discussions."
+      },
+      {
+        id: "uet-research-scholar",
+        period: "08/2014–02/2016",
+        role: "Full-Time Research Scholar, Communication Systems Lab",
+        organization: "University of Engineering and Technology, Taxila, Pakistan",
+        profiles: ["faculty"],
+        faculty: "Supported teaching and laboratory instruction in communication systems, digital communications, and wireless communications while contributing to research, assignments, grading, and curriculum support."
       }
     ]
   },

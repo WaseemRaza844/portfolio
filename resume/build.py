@@ -216,7 +216,7 @@ def audit(data):
         notes.append('No email supplied. Add identity.email in resume/content.json before sending applications.')
     if not identity.get('portfolioUrl'):
         notes.append('No portfolioUrl supplied. Local certificate PDFs are not linked until a public base URL is set.')
-    notes.append('Source states PhD 2026 and combines AT&T Labs / Futurewei internships into one 2022-2024 record; retained without inferring exact dates.')
+    notes.append('Academic resume variants use the shared portfolio education and appointment data plus resume-specific verified detail overrides.')
     for name in COLLECTIONS:
         for row in data[name]:
             if not eligible(row):

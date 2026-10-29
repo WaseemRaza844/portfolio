@@ -72,7 +72,9 @@ def build_pdf(key, variant, data, settings, output):
     if variant.get('sortCertificationsByStatus'):
         selected['certifications'].sort(key=lambda row: row.get('status') != 'Completed')
     identity = data['identity']
+    academic = identity.get('academic', {})
     body = []
+    experience_lookup = {row['id']: row for row in selected['experience']}
 
     def section(title):
         body.append(r'\Needspace{3\baselineskip}')
@@ -81,6 +83,22 @@ def build_pdf(key, variant, data, settings, output):
     def bullets(items):
         if items:
             body.extend([r'\begin{itemize}\interlinepenalty=10000', *[r'\item ' + tex(x) for x in items], r'\end{itemize}'])
+
+    def render_experience_group(title, ids):
+        section(title)
+        for exp_id in ids:
+            row = experience_lookup.get(exp_id)
+            if not row:
+                continue
+            body.append(r'\role{' + tex(row['role']) + '}{' + tex(date_label(row.get('period'))) + '}{' + tex(row['organization']) + '}{' + tex(row.get('location', '')) + '}')
+            variant_bullets = row.get('bulletsByVariant', {})
+            items = (variant_bullets.get(key)
+                     or variant_bullets.get(variant.get('experienceText', key))
+                     or row.get('bullets'))
+            if not items:
+                text = row.get(variant.get('experienceText', key)) or row.get('generic') or row.get('faculty') or row.get('summary', '')
+                items = [text] if text else []
+            bullets(items)
 
     for page_index, sections in enumerate(variant['pages']):
         if page_index and settings.get('explicitPageBreaks', False):
@@ -91,10 +109,54 @@ def build_pdf(key, variant, data, settings, output):
             if name in variant.get('pageBreakBefore', []):
                 body.append(r'\newpage')
             if name == 'summary':
-                section('Professional Summary')
+                section(variant.get('summarySectionTitle', 'Professional Summary'))
                 body.append(tex(variant['summary']))
+            elif name == 'research_interests':
+                section('Research Interests')
+                interests = variant.get('researchInterests') or academic.get('researchInterests', [])
+                if interests:
+                    body.append(tex(' | '.join(interests)) + r'\par')
+            elif name == 'dissertation':
+                section('Doctoral Research Focus')
+                focus = variant.get('dissertationFocus') or academic.get('dissertationFocus', '')
+                if focus:
+                    body.append(tex(focus) + r'\par')
+            elif name == 'academic_experience':
+                render_experience_group(variant.get('academicExperienceTitle', 'Academic & Research Experience'),
+                                        variant.get('academicExperienceIds', []))
+            elif name == 'teaching_experience':
+                render_experience_group('Teaching Experience', variant.get('teachingExperienceIds', []))
+            elif name == 'industry_experience':
+                render_experience_group('Industry Research & Engineering Experience',
+                                        variant.get('industryExperienceIds', []))
+            elif name == 'teaching_areas':
+                section('Teaching Areas')
+                areas = academic.get('teachingAreas', [])
+                if areas:
+                    body.append(tex(' | '.join(areas)) + r'\par')
+            elif name == 'mentoring':
+                section('Student Mentoring & Research Development')
+                bullets(academic.get('mentoring', []))
+            elif name == 'service':
+                section('Academic Service & Program Contributions')
+                bullets(academic.get('service', []))
+            elif name == 'honors':
+                section('Selected Honors & Awards')
+                honor_rows = academic.get('honors', [])
+                honor_limit = variant.get('honorLimit')
+                if isinstance(honor_limit, int) and honor_limit > 0:
+                    honor_rows = honor_rows[:honor_limit]
+                for row in honor_rows:
+                    body.append(r'\entry{' + tex(row.get('title', '')) + '}{' + tex(row.get('year', '')) + '}')
+                    if row.get('organization'):
+                        body.append(r'{\small ' + tex(row['organization']) + r'\par}')
+            elif name == 'coursework':
+                section('Selected Graduate Coursework')
+                courses = academic.get('selectedCoursework', [])
+                if courses:
+                    body.append(tex(' | '.join(courses)) + r'\par')
             elif name == 'skills':
-                section('Technical Skills')
+                section(variant.get('skillsSectionTitle', 'Technical Skills'))
                 for label, value in variant['skills'].items():
                     body.append(r'\Needspace{2\baselineskip}\noindent{\small\textbf{' + tex(label) + ':} ' + tex(value) + r'}\par')
                 strengths = variant.get('leadership', {})
@@ -108,7 +170,10 @@ def build_pdf(key, variant, data, settings, output):
                 section('Professional Experience')
                 for row in selected[name]:
                     body.append(r'\role{' + tex(row['role']) + '}{' + tex(date_label(row.get('period'))) + '}{' + tex(row['organization']) + '}{' + tex(row.get('location', '')) + '}')
-                    items = row.get('bulletsByVariant', {}).get(key) or row.get('bullets')
+                    variant_bullets = row.get('bulletsByVariant', {})
+                    items = (variant_bullets.get(key)
+                             or variant_bullets.get(variant.get('experienceText', key))
+                             or row.get('bullets'))
                     if not items:
                         text = row.get(variant.get('experienceText', key)) or row.get('generic') or row.get('faculty') or row.get('summary', '')
                         items = [text] if text else []
@@ -119,7 +184,7 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'\entry{' + tex(row['degree']) + '}{' + tex(date_label(row.get('period'))) + '}')
                     body.append(tex(row['school']) + r'\par')
             elif name == 'projects':
-                section('Selected Projects')
+                section(variant.get('projectSectionTitle', 'Selected Projects'))
                 for row in selected[name]:
                     project_meta = ' | '.join([part for part in [row.get('category', 'Project'), row.get('date', '')] if part])
                     body.append(r'\entry{' + link(row['title'], row.get('url') or row.get('links', {}).get('github')) + '}{' + tex(project_meta) + '}')
@@ -134,7 +199,7 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'{\small\textit{Tools \& Methods:} ' + tex(skill_text) + r'\par}')
                     body.append(r'\vspace{1pt}')
             elif name == 'certifications':
-                section('Certifications & Professional Development')
+                section(variant.get('certificationSectionTitle', 'Certifications & Professional Development'))
                 for number, row in enumerate(selected[name], start=1):
                     count = progress(row)
                     completion = ('Completed (' + count.removesuffix(' courses') + ') courses') if count else ('Completed' if row.get('status') == 'Completed' else '')
@@ -148,6 +213,9 @@ def build_pdf(key, variant, data, settings, output):
                     body.append(r'\Needspace{3\baselineskip}\noindent\textbf{' + tex(str(number) + '. ' + row['title']) + r'} {\small --- ' + r' \textbar{} '.join(parts) + r'}\par')
                     if row['id'] == 'ibm-rag-agentic-ai' and count == '8/8 courses':
                         body.append(r'{\small Original eight-course credential.\par}')
+                    if variant.get('compactCertifications', False):
+                        body.append(r'\vspace{1pt}')
+                        continue
                     detailed = variant.get('detailedCertificationDescriptions', True)
                     if detailed:
                         description = row.get('resumeSummary')
@@ -171,7 +239,7 @@ def build_pdf(key, variant, data, settings, output):
                             body.append(r'{\small ' + link(course['title'], course.get('courseraUrl')) + ' -- ' + tex(status) + r'\par}')
                     body.append(r'\vspace{2pt}')
             elif name == 'publications':
-                section('Publications' if key == 'generic' else 'Selected Publications')
+                section(variant.get('publicationSectionTitle', 'Publications' if key == 'generic' else 'Selected Publications'))
                 for row in selected[name]:
                     body.append(r'\entry{' + link(row['title'], row.get('url')) + '}{' + tex(row.get('year')) + '}')
                     body.append(r'\textit{' + tex(row.get('venue', '')) + r'}\par')
