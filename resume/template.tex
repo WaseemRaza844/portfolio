@@ -20,6 +20,9 @@
 \definecolor{accent}{HTML}{@@ACCENT@@}
 \titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{0.5pt}\color{accent}\titlerule]
 \titlespacing*{\section}{0pt}{3pt}{2pt}
+% Compact subsections beneath the main accent-rule sections.
+\titleformat{\subsection}{\normalsize\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
 \setlist[itemize]{leftmargin=1.15em,itemsep=0.8pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 \newcommand{\role}[4]{%
   \Needspace{4\baselineskip}\textbf{#1}\hfill\textbf{#2}\\[-1pt]

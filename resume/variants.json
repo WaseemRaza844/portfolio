@@ -45,13 +45,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -119,13 +153,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -191,13 +259,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -264,13 +366,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -335,13 +471,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -405,13 +575,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,
@@ -474,13 +678,47 @@
     ],
     "pages": [
       [
-        "summary",
-        "skills",
-        "experience",
-        "education",
-        "projects",
-        "certifications",
-        "publications"
+        {
+          "title": "Professional Profile",
+          "items": [
+            "summary",
+            {
+              "id": "skills",
+              "title": "Technical Competencies"
+            }
+          ]
+        },
+        {
+          "title": "Professional Experience",
+          "items": [
+            "experience"
+          ]
+        },
+        {
+          "title": "Education",
+          "items": [
+            "education"
+          ]
+        },
+        {
+          "title": "Selected Projects & Research",
+          "items": [
+            {
+              "id": "projects",
+              "title": "Projects & Applied Research"
+            },
+            {
+              "id": "publications",
+              "title": "Publications"
+            }
+          ]
+        },
+        {
+          "title": "Certifications & Professional Development",
+          "items": [
+            "certifications"
+          ]
+        }
       ]
     ],
     "maxPages": 3,

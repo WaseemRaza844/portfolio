@@ -54,6 +54,31 @@ Your website can run separately using `npm run dev` on port 8000.
 Build one variant with `resume/.venv/bin/python resume/build.py --variant genai`.
 Other IDs: `aiml`, `faculty`, `generic`. `--list` lists available variants.
 
+## Major sections and subsections
+
+The LaTeX renderer accepts both older flat section IDs and grouped sections
+in each variant's `pages` setting. Groups have a `title` and `items` array;
+each item is either a section ID or `{"id": "...", "title": "..."}` to create a
+compact subsection heading. This allows controlled hierarchy without copying
+content between variants:
+
+```json
+{
+  "title": "Academic Profile",
+  "items": [
+    "summary",
+    {"id": "research_interests", "title": "Research Interests"},
+    {"id": "dissertation", "title": "Doctoral Research Focus"}
+  ]
+}
+```
+
+The faculty resumes use a teaching-first experience section and integrated
+research outputs. The seven industry versions combine their profile and
+skills, and group related projects and publications, while retaining distinct
+experience, education, and professional-development sections. The four
+independently authored job-specific LaTeX application files remain unchanged.
+
 ## Outputs and layout
 
 `resume/output/industry/` and `resume/output/faculty/` contain the respective PDFs,

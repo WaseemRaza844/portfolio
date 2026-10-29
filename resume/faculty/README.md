@@ -28,6 +28,23 @@ Faculty PDF and TeX outputs are in `resume/output/faculty/`; nonfaculty
 outputs are in `resume/output/industry/`. Reports remain in
 `resume/output/build-report.json`. GitHub Actions also collects both groups.
 
+## Section hierarchy
+
+All three academic variants now follow a consistent, teaching-forward hierarchy:
+
+1. **Academic Profile:** profile summary, research interests, and doctoral research focus.
+2. **Education:** degrees, and graduate coursework in the expanded CV.
+3. **Teaching, Research & Professional Experience:** teaching appointments first, related teaching areas and student mentoring (where selected), academic research appointments, then industry R&D.
+4. **Research Contributions:** publications and research projects in one section.
+5. **Research Methods & Technical Expertise.**
+6. **Academic Service & Recognition:** academic service (where selected) and honors.
+7. **Professional Development:** selected completed certifications.
+
+Major section headings have accent rules, while relevant subsections use
+smaller, bold, compact headings. The same source records are reused; headings
+do not duplicate positions or remove research evidence. Institution-specific
+variants can override `pages` if a posting calls for a different emphasis.
+
 ## Faculty focus
 
 The generic resume leads with PhD Electrical and Computer Engineering and
