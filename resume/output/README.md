@@ -7,6 +7,7 @@ PDF snapshots from the latest validated develop build. Choose a PDF below to pre
 - [Waseem_Raza_ACADEMIC_CV.pdf](faculty/Waseem_Raza_ACADEMIC_CV.pdf)
 - [Waseem_Raza_FACULTY.pdf](faculty/Waseem_Raza_FACULTY.pdf)
 - [Waseem_Raza_FACULTY_COMPREHENSIVE.pdf](faculty/Waseem_Raza_FACULTY_COMPREHENSIVE.pdf)
+- [Waseem_Raza_FACULTY_LAFAYETTE_COLLEGE_ASSISTANT_PROFESSOR_ECE.pdf](faculty/Waseem_Raza_FACULTY_LAFAYETTE_COLLEGE_ASSISTANT_PROFESSOR_ECE.pdf)
 
 ## Industry
 
