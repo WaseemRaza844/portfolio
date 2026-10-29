@@ -87,7 +87,7 @@ class LatexEscapingTests(unittest.TestCase):
         variants = module.load_variants()
         self.assertEqual((variants['faculty']['minPages'], variants['faculty']['maxPages']), (3, 4))
         self.assertEqual((variants['faculty_comprehensive']['minPages'], variants['faculty_comprehensive']['maxPages']), (4, 5))
-        self.assertEqual((variants['academic_cv']['minPages'], variants['academic_cv']['maxPages']), (5, 7))
+        self.assertEqual((variants['academic_cv']['minPages'], variants['academic_cv']['maxPages']), (4, 7))
 
     def test_utf8_output_writer_handles_phone_symbol(self):
         import importlib.util
@@ -253,6 +253,29 @@ class LatexEscapingTests(unittest.TestCase):
                      '.github/workflows/deploy-pages.yml'):
             text = (root / file).read_text(encoding='utf-8')
             self.assertIn('python resume/validate_pdf_layout.py', text)
+
+    def test_lafayette_cv_is_separate_and_teaching_centered(self):
+        variants = module.load_variants()
+        key = 'faculty_lafayette_college_assistant_professor_ece'
+        self.assertIn(key, variants)
+        tailored = variants[key]
+        self.assertEqual(tailored['experienceText'], 'faculty')
+        self.assertTrue(tailored['workAuthorization'].startswith('U.S. work authorization:'))
+        self.assertIn('STEM OPT', tailored['workAuthorization'])
+        self.assertNotIn('I-485 approved', tailored['workAuthorization'])
+        self.assertEqual(tailored.get('pageBreakBefore'), [])
+        self.assertIn('wearable-intelligence', tailored['projectIds'])
+        self.assertEqual(module.variant_output_dir(Path('output'), key).name, 'faculty')
+        self.assertIn('mentoring', tailored['pages'][0][2]['items'])
+
+    def test_master_academic_cv_does_not_force_a_self_learning_page(self):
+        cv = module.load_variants()['academic_cv']
+        self.assertEqual(cv['pageBreakBefore'], [])
+        source = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
+        self.assertNotIn('begin{minipage}', source)
+        self.assertIn('Needspace{6', source)
+        layout = (Path(__file__).parents[1] / 'validate_pdf_layout.py').read_text(encoding='utf-8')
+        self.assertIn('excessive bottom whitespace', layout)
 
     def test_comprehensive_is_three_page_application_resume(self):
         variants = module.load_variants()
