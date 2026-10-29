@@ -81,22 +81,87 @@
   ],
   "pages": [
     [
-      "summary",
-      "research_interests",
-      "dissertation",
-      "skills",
-      "education",
-      "coursework",
-      "academic_experience",
-      "teaching_experience",
-      "teaching_areas",
-      "mentoring",
-      "industry_experience",
-      "publications",
-      "projects",
-      "honors",
-      "service",
-      "certifications"
+      {
+        "title": "Academic Profile",
+        "items": [
+          "summary",
+          {
+            "id": "research_interests",
+            "title": "Research Interests"
+          },
+          {
+            "id": "dissertation",
+            "title": "Doctoral Research Focus"
+          }
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education",
+          {
+            "id": "coursework",
+            "title": "Relevant Graduate Coursework"
+          }
+        ]
+      },
+      {
+        "title": "Teaching, Research & Professional Experience",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "Teaching & Instruction"
+          },
+          "teaching_areas",
+          "mentoring",
+          {
+            "id": "academic_experience",
+            "title": "University Research Appointments"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industry Research & Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Research Contributions",
+        "items": [
+          {
+            "id": "publications",
+            "title": "Publications"
+          },
+          {
+            "id": "projects",
+            "title": "Research Projects & Platforms"
+          }
+        ]
+      },
+      {
+        "title": "Research Methods & Technical Expertise",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "Academic Service & Recognition",
+        "items": [
+          {
+            "id": "service",
+            "title": "Academic Service"
+          },
+          {
+            "id": "honors",
+            "title": "Honors & Awards"
+          }
+        ]
+      },
+      {
+        "title": "Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
     ]
   ],
   "summarySectionTitle": "Academic Profile",
