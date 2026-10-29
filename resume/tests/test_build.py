@@ -198,6 +198,36 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertIn('@@DEGREE@@', template)
         self.assertIn('@@TYPOGRAPHY@@', template)
 
+    def test_faculty_has_balanced_research_and_teaching_lists(self):
+        for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
+            variant = module.load_variants()[key]
+            self.assertGreaterEqual(len(variant.get('researchInterests', [])), 5)
+            self.assertLessEqual(len('; '.join(variant['researchInterests'])), 225)
+            self.assertLessEqual(len('; '.join(variant['teachingAreas'])), 225)
+            self.assertTrue(variant['academicServiceBullets'])
+            self.assertTrue(variant['mentoringBullets'])
+
+    def test_faculty_experience_is_variant_specific_and_preserves_results(self):
+        config = module.read_json(Path(__file__).parents[1] / 'content.json')
+        results = config['experienceOverrides']
+        for role in ('ou-research', 'comsats-research-associate', 'uet-research-scholar',
+                     'teaching', 'att-current', 'impac'):
+            self.assertTrue(results[role]['bulletsByVariant']['faculty'])
+        research = ' '.join(results['ou-research']['bulletsByVariant']['faculty'])
+        self.assertIn('100', research)
+        self.assertIn('30%', research)
+        internships = {row['id']: row for row in config['additionalExperience']}
+        for role in ('att-labs-2024', 'futurewei-2022', 'att-labs-2022'):
+            self.assertTrue(internships[role]['bulletsByVariant']['faculty'])
+        self.assertIn('20%', ' '.join(internships['att-labs-2022']['bulletsByVariant']['faculty']))
+
+    def test_faculty_pdf_layout_audit_is_in_both_workflows(self):
+        root = Path(__file__).parents[2]
+        for file in ('.github/workflows/build-resumes.yml',
+                     '.github/workflows/deploy-pages.yml'):
+            text = (root / file).read_text(encoding='utf-8')
+            self.assertIn('python resume/validate_pdf_layout.py', text)
+
     def test_comprehensive_is_three_page_application_resume(self):
         variants = module.load_variants()
         comprehensive = variants['comprehensive']
