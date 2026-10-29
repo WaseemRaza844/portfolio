@@ -2,4 +2,7 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
-resume/output/\nresume/tailored/**/output/\n
+# Generated source files and temporary LaTeX build products.
+# CI deliberately force-adds validated PDFs and a README to develop.
+resume/output/
+resume/tailored/**/output/
