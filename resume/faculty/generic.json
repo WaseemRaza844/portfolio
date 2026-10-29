@@ -70,18 +70,75 @@
   ],
   "pages": [
     [
-      "summary",
-      "research_interests",
-      "dissertation",
-      "skills",
-      "education",
-      "academic_experience",
-      "teaching_experience",
-      "industry_experience",
-      "publications",
-      "projects",
-      "honors",
-      "certifications"
+      {
+        "title": "Academic Profile",
+        "items": [
+          "summary",
+          {
+            "id": "research_interests",
+            "title": "Research Interests"
+          },
+          {
+            "id": "dissertation",
+            "title": "Doctoral Research Focus"
+          }
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education"
+        ]
+      },
+      {
+        "title": "Teaching, Research & Professional Experience",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "Teaching & Instruction"
+          },
+          "teaching_areas",
+          {
+            "id": "academic_experience",
+            "title": "University Research Appointments"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industry Research & Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Research Contributions",
+        "items": [
+          {
+            "id": "publications",
+            "title": "Publications"
+          },
+          {
+            "id": "projects",
+            "title": "Research Projects & Platforms"
+          }
+        ]
+      },
+      {
+        "title": "Research Methods & Technical Expertise",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "Academic Service & Recognition",
+        "items": [
+          "honors"
+        ]
+      },
+      {
+        "title": "Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
     ]
   ],
   "summarySectionTitle": "Academic Profile",
