@@ -111,10 +111,12 @@ def build_pdf(key, variant, data, settings, output):
             row = experience_lookup.get(exp_id)
             if not row:
                 continue
-            # Each academic appointment should read as one coherent entry.
-            # A minipage prevents its bullets from stranding across pages.
+            # Protect the heading and the first bullet, not the entire role.
+            # Whole-role minipages left large blank areas at the bottom of pages.
+            # Items already have high interline penalties, so individual bullets
+            # are kept together while a long appointment may cross page breaks.
             if variant.get('headerDegree'):
-                body.append(r'\par\noindent\begin{minipage}{\linewidth}')
+                body.append(r'\Needspace{6\baselineskip}')
             body.append(r'\role{' + tex(row['role']) + '}{' + tex(date_label(row.get('period'))) + '}{' + tex(row['organization']) + '}{' + tex(row.get('location', '')) + '}')
             variant_bullets = row.get('bulletsByVariant', {})
             items = (variant_bullets.get(key)
@@ -125,7 +127,7 @@ def build_pdf(key, variant, data, settings, output):
                 items = [text] if text else []
             bullets(items)
             if variant.get('headerDegree'):
-                body.append(r'\end{minipage}\par\vspace{1pt}')
+                body.append(r'\vspace{1pt}')
 
     for page_index, sections in enumerate(variant['pages']):
         if page_index and settings.get('explicitPageBreaks', False):
@@ -166,7 +168,7 @@ def build_pdf(key, variant, data, settings, output):
             grouped = is_grouped
             if subtitle:
                 if variant.get('headerDegree') and name in ('teaching_experience', 'academic_experience', 'industry_experience'):
-                    body.append(r'\Needspace{12\baselineskip}')
+                    body.append(r'\Needspace{6\baselineskip}')
                 subsection(subtitle)
             if name == 'summary':
                 section(variant.get('summarySectionTitle', 'Professional Summary'))
@@ -392,6 +394,9 @@ def build_pdf(key, variant, data, settings, output):
         social_contacts.append(link('Portfolio', identity['portfolioUrl']))
     if social_contacts:
         contact_lines.append(r' \textbar{} '.join(social_contacts))
+    # Job-specific optional line; generic/industry master CVs remain unchanged.
+    if variant.get('workAuthorization'):
+        contact_lines.append(r'{\scriptsize ' + tex(variant['workAuthorization']) + r'}')
     contacts = r'\\[1pt]'.join(contact_lines)
 
     size = int(variant.get('latexFontSize', settings.get('latexFontSize', 9)))
