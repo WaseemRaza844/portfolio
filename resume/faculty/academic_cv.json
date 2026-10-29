@@ -1,0 +1,116 @@
+{
+  "label": "Full Academic CV",
+  "tagline": "Electrical & Computer Engineering | AI/ML for Wireless Networks | 5G/6G | Reliable Learning | Engineering Education",
+  "headline": "Curriculum Vitae | AI/ML for Wireless Networks & Intelligent Systems",
+  "summary": "Electrical and Computer Engineering researcher, educator, and machine-learning engineer with a PhD from the University of Oklahoma. Doctoral and continuing research focuses on AI/ML for wireless networks, including resilient and data-efficient learning, 5G/6G network intelligence, propagation modeling and digital twins, optimization, self-healing, transfer learning, domain adaptation, generative modeling, reinforcement learning, and experimental wireless systems. Academic experience spans university teaching, research mentoring, laboratory instruction, curriculum and accreditation support, publication development, and interdisciplinary research, complemented by industrial R&D at AT&T Labs, Futurewei, Impac, and AT&T.",
+  "researchInterests": [
+    "AI/ML for Wireless and 5G/6G Networks",
+    "Reliable, Robust, and Data-Efficient Learning",
+    "Network Optimization, Self-Healing, and Autonomous Systems",
+    "Propagation Modeling, Digital Twins, and Synthetic Data",
+    "Transfer Learning, Domain Adaptation, and Generative Modeling",
+    "Reinforcement Learning and Sequential Decision-Making",
+    "Wearable Intelligence and Human-Centered Sensing"
+  ],
+  "skillsSectionTitle": "Research Methods & Technical Expertise",
+  "skills": {
+    "AI/ML Methods": "Deep learning, transfer learning, domain adaptation, adversarial learning, GANs, autoencoders, reinforcement learning, classification, regression, anomaly detection, time-series modeling, and model evaluation",
+    "Wireless Systems": "LTE/4G, 5G-NR, NTN, RAN, mobility, propagation, positioning, outage management, self-healing, network measurements, digital twins, and service assurance",
+    "Simulation & Experimentation": "3GPP-compliant simulation, synthetic data, experimental testbeds, statistical analysis, robustness testing, cross-validation, distribution-shift evaluation, and reproducible research workflows",
+    "Programming & Data": "Python, SQL, PyTorch, TensorFlow, Keras, scikit-learn, XGBoost, Pandas, NumPy, SciPy, visualization, cloud analytics, Spark/Databricks, Git, and Linux",
+    "Teaching & Academic Practice": "Communication systems, wireless communications, programming, laboratory instruction, research methods, technical writing, student mentoring, curriculum development, and academic service"
+  },
+  "experienceIds": [
+    "ou-research",
+    "comsats-research-associate",
+    "uet-research-scholar",
+    "teaching",
+    "att-current",
+    "impac",
+    "att-labs-2024",
+    "futurewei-2022",
+    "att-labs-2022"
+  ],
+  "experienceText": "faculty",
+  "academicExperienceIds": [
+    "ou-research",
+    "comsats-research-associate",
+    "uet-research-scholar"
+  ],
+  "teachingExperienceIds": [
+    "teaching"
+  ],
+  "industryExperienceIds": [
+    "att-current",
+    "impac",
+    "att-labs-2024",
+    "futurewei-2022",
+    "att-labs-2022"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "wearable-intelligence",
+    "ai-telecom-optimization",
+    "genai-prompt-foundations"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-introduction-to-computer-vision-with-tensorflow",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-4g-network-fundamentals",
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+    "coursera-generative-ai-foundation-models-and-platforms"
+  ],
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "outage-management-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023",
+    "lunarcomm-2022",
+    "positioning-ran-2022",
+    "rf-energy-harvesting-2020"
+  ],
+  "pages": [
+    [
+      "summary",
+      "research_interests",
+      "dissertation",
+      "skills",
+      "education",
+      "coursework",
+      "academic_experience",
+      "teaching_experience",
+      "teaching_areas",
+      "mentoring",
+      "industry_experience",
+      "publications",
+      "projects",
+      "honors",
+      "service",
+      "certifications"
+    ]
+  ],
+  "summarySectionTitle": "Academic Profile",
+  "academicExperienceTitle": "Academic & Research Appointments",
+  "publicationSectionTitle": "Publications",
+  "projectSectionTitle": "Research Programs, Platforms & Selected Projects",
+  "certificationSectionTitle": "Selected Professional Development",
+  "compactCertifications": true,
+  "detailedCertificationDescriptions": false,
+  "latexFontSize": 10,
+  "horizontalMarginInches": 0.75,
+  "verticalMarginInches": 0.55,
+  "minPages": 5,
+  "maxPages": 7,
+  "minPageTextChars": 700,
+  "minLastPageChars": 500
+}
