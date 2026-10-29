@@ -1,0 +1,66 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Lafayette College | Assistant Professor ECE | Academic CV",
+  "headline": "ECE Educator-Scholar | Intelligent Sensing, Signal Processing & Wireless AI",
+  "tagline": "Undergraduate Teaching & Mentoring | Hands-On ECE Labs | Applied AI Research",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with experience teaching undergraduate engineering, supervising laboratory activities, mentoring student projects, and conducting applied research. Scholarship connects AI/ML for wireless networks, reproducible experimental platforms, and wearable sensing for health monitoring. Particularly interested in project-based ECE instruction, cross-disciplinary sensing and cyber-physical applications, and research experiences accessible to undergraduate students.",
+  "researchInterests": [
+    "Biomedical and Wearable Sensing",
+    "Signal Processing and Intelligent Systems",
+    "Wireless AI and Networked Cyber-Physical Systems",
+    "Robust, Data-Efficient Machine Learning",
+    "Experimental Testbeds and Undergraduate Research"
+  ],
+  "dissertationFocus": "PhD dissertation focused on AI/ML for wireless networks, including data-efficient radio propagation modeling, generative augmentation, robust learning under distribution shift, network self-healing, and reproducible simulation and experimental evaluation.",
+  "teachingAreas": [
+    "Computer Programming",
+    "Communication Systems",
+    "Signals and Digital Signal Processing",
+    "Wireless Communications",
+    "Applied Machine Learning",
+    "Hands-On Labs and Engineering Design",
+    "Sensing and Experimental Data Analysis"
+  ],
+  "skills": {
+    "Teaching & Undergraduate Research": "Undergraduate engineering instruction, laboratory facilitation, project and thesis mentoring, applied programming, hands-on experimentation, curriculum alignment, and student-centered technical feedback",
+    "Sensing, Signals & Intelligent Systems": "Smartwatch inertial sensing, time-series analysis, activity recognition, digital signal processing, sensor data collection, wearable health monitoring, cyber-physical data analysis",
+    "Experimental ECE & Communications": "3GPP-informed wireless simulation, cellular communication systems, 5G testbed design, network measurements, model-based evaluation, experimental design, and digital twins",
+    "Machine Learning & Control-Oriented AI": "Deep learning, generative augmentation, transfer and domain-adaptive learning, reinforcement learning, network self-healing and adaptive optimization",
+    "Software & Research Platforms": "Python, C/C++, MATLAB-style numerical analysis, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, SQL, Linux, and Git"
+  },
+  "projectIds": [
+    "wearable-intelligence",
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "ai-telecom-optimization"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-introduction-to-computer-vision-with-tensorflow",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-4g-network-fundamentals",
+    "coursera-5g-network-fundamentals"
+  ],
+  "academicServiceBullets": [
+    "Developed course materials and supported engineering-program curriculum alignment and accreditation activities.",
+    "Mentored student project teams, contributed to research seminars, and reviewed technical reports and manuscripts.",
+    "Supported departmental workshops, student orientations, and laboratory learning activities."
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate students in communications and wireless-network research, experiment design, simulation, and technical writing.",
+    "Supported capstone and thesis projects through applied modeling, project planning, research presentations, and constructive feedback.",
+    "Developed laboratory exercises and guided student work connecting communication theory with real engineering problems."
+  ],
+  "honorLimit": 6,
+  "pageBreakBefore": [],
+  "workAuthorization": "U.S. work authorization: STEM OPT through Feb 2028 | EB-2 NIW I-140 approved",
+  "latexFontSize": 10,
+  "horizontalMarginInches": 0.72,
+  "verticalMarginInches": 0.49,
+  "minPages": 4,
+  "maxPages": 6,
+  "minPageTextChars": 800,
+  "minLastPageChars": 600
+}
