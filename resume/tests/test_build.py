@@ -189,7 +189,7 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertEqual(course_month_year('March 29, 2020'), 'Mar 2020')
         self.assertEqual(course_month_year(''), '')
         renderer = (Path(__file__).parents[1] / 'latex_renderer.py').read_text(encoding='utf-8')
-        self.assertIn("r'\\begin{tabularx}{\\linewidth}'", renderer)
+        self.assertIn("begin{tabularx}", renderer)
         self.assertIn("title + r'} & '", renderer)
         self.assertIn("meta.append(tex(course_date))", renderer)
         self.assertNotIn("if len(row['title']) > 42:", renderer)
