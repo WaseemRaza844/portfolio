@@ -22,13 +22,14 @@ The resume emphasizes established evidence in:
 It intentionally avoids presenting unsupported pure-OR methods as established expertise.
 
 ## Source and build
-This is a preserved standalone LaTeX application resume from the earlier workflow, not yet converted to a `variant.json` faculty overlay.
+This is a preserved standalone LaTeX application resume from the earlier workflow. It remains separate from the profile-based Lafayette CV overlay, but is included in the unified application-resume build.
 
-From the repository root, compile the source directly:
+From the repository root, compile and validate the PDF directly into this folder:
 
 ```bash
-cd resume/job-applications/faculty/ohio-state-optimization-ml-r160519
-pdflatex -no-shell-escape Waseem_Raza_OHIO_STATE_OPTIMIZATION_ML_R160519.tex
+python resume/build_tailored.py --job ohio-state-optimization-ml-r160519
 ```
+
+The builder uses a temporary directory for LaTeX intermediates and writes only the final PDF and build report beside the source.
 
 The PDF is stored beside the source. For future faculty applications, use the reusable profile-overlay workflow documented in `resume/resume-profiles/faculty/README.md`.
