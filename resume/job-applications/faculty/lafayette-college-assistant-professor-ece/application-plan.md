@@ -35,6 +35,10 @@
 - Work authorization on the targeted CV: “U.S. work authorization: STEM OPT through Feb 2028 | EB-2 NIW I-140 approved.” The I-485 filing is in preparation; it is not described as filed or approved.
 - **Immigration follow-up:** Confirm directly with Lafayette HR whether the institution is E-Verify enrolled and can support the I-983 employer training obligations for a STEM OPT appointment. Current STEM OPT authorization runs only into February 2028, after the July 2027 start. An approved I-140 alone is not permanent employment authorization; confirm longer-term work authorization before making representations about sponsorship. Consult a qualified immigration attorney if needed.
 
+## Build and output paths
+
+The tailored CV is built with `python resume/build.py --variant faculty_lafayette_college_assistant_professor_ece` and is written directly into this Lafayette application folder. The five Word documents are generated beside their Markdown sources with `python resume/build_application_documents.py`. Generic faculty PDFs remain separate under `resume/generic-resume/faculty/`.
+
 ## Site research
 
 - Official ECE curriculum: https://ece.lafayette.edu/program/degree-requirements/
@@ -46,7 +50,7 @@
 
 ## Quality-control checklist
 
-- [ ] PDF compiled through GitHub Actions and available under `resume/output/faculty/`
+- [ ] PDF compiled through GitHub Actions and available under `resume/job-applications/faculty/lafayette-college-assistant-professor-ece/`
 - [ ] No large non-final-page whitespace from oversized blocks or unnecessary manual page breaks
 - [ ] No isolated subsection headings, single-word bullet endings, or clipped entries
 - [ ] Every publication contains accurate year, venue and a verified link where one exists
