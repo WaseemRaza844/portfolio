@@ -91,6 +91,12 @@ jobs:
           applications=list((root/'job-applications').rglob('*.pdf'))
           assert len(generic) >= 10, f'Expected 10+ generic/profile PDFs, found {len(generic)}'
           assert len(applications) >= 5, f'Expected 5+ tailored application PDFs, found {len(applications)}'
+          job_reports=list((root/'job-applications').rglob('build-report.json'))
+          assert len(job_reports) >= 4, f'Expected reports for three industry and one standalone faculty application, found {len(job_reports)}'
+          ohio=root/'job-applications/faculty/ohio-state-optimization-ml-r160519'
+          ohio_report=ohio/'build-report.json'
+          assert ohio_report.is_file(), 'Ohio State standalone faculty resume was not rebuilt'
+          assert json.loads(ohio_report.read_text(encoding='utf-8'))['pages']==3, 'Ohio State resume must remain three pages'
           app=root/'job-applications/faculty/lafayette-college-assistant-professor-ece'
           manifest=app/'application-documents.json'
           assert manifest.is_file(), 'Lafayette application document manifest is missing'
