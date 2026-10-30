@@ -11,5 +11,6 @@
     "Tailored to Optimization for Machine Learning across ISE and ECE.",
     "Positions prior work around optimization, reinforcement learning, robust learning, networked systems, domain adaptation, digital twins, and trustworthy/reliable AI.",
     "Does not claim unsupported expertise in zeroth-order, first-order, mixed-integer, bilevel, or federated optimization as established prior research; forward-looking distributed/communication-efficient optimization is presented as research trajectory."
-  ]
+  ],
+  "minLastPageChars": 1500
 }
