@@ -35,6 +35,10 @@ def discover_jobs():
         for folder in sorted(p for p in root.iterdir() if p.is_dir()):
             meta_path = folder / "metadata.json"
             tex_files = sorted(folder.glob("*.tex"))
+            # Faculty folders with variant.json are built by build.py, even if
+            # application metadata is later added for tracking purposes.
+            if (folder / "variant.json").exists():
+                continue
             if not meta_path.exists() or len(tex_files) != 1:
                 continue
             if folder.name in jobs:
