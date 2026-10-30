@@ -72,7 +72,7 @@ def main():
 
     if args.watch:
         threading.Thread(target=watch, daemon=True).start()
-    print(f'Resume preview on port {args.port}. Open /generic-resume/ or /job-applications/ in the browser.', flush=True)
+    print(f'Resume preview on port {args.port}. Open /resume-profiles/ or /job-applications/ in the browser.', flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
