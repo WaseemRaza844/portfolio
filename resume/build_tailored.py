@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build industry job-specific resumes directly inside their application folders."""
+"""Build standalone LaTeX job-application resumes in their application folders."""
 
 import argparse
 import json
@@ -184,7 +184,7 @@ def main():
 
     jobs = discover_jobs()
     if not jobs:
-        print("No industry job applications configured.")
+        print("No standalone LaTeX job applications configured.")
         return
 
     keys = list(jobs) if args.all else [args.job] if args.job else list(jobs)
