@@ -116,7 +116,7 @@ class LatexEscapingTests(unittest.TestCase):
 
     def test_faculty_sources_and_outputs_are_separate(self):
         folder = Path(__file__).parents[1]
-        industry = module.read_json(folder / 'variants.json')
+        industry = module.read_json(folder / 'resume-profiles' / 'industry' / 'variants.json')
         faculty = module.load_variants()
         for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
             self.assertNotIn(key, industry)
@@ -265,7 +265,7 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertNotIn('I-485 approved', tailored['workAuthorization'])
         self.assertEqual(tailored.get('pageBreakBefore'), [])
         self.assertIn('wearable-intelligence', tailored['projectIds'])
-        self.assertEqual(module.variant_output_dir(Path('output'), key).name, 'faculty')
+        self.assertEqual(module.variant_output_dir(Path('resume-root'), key), Path('resume-root') / 'job-applications' / 'faculty' / 'lafayette-college-assistant-professor-ece')
         self.assertIn('mentoring', tailored['pages'][0][2]['items'])
 
     def test_master_academic_cv_does_not_force_a_self_learning_page(self):
@@ -285,6 +285,36 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertNotEqual(comprehensive.get('projectIds'), 'all')
         self.assertNotEqual(comprehensive.get('certificationIds'), 'all')
         self.assertNotEqual(comprehensive.get('publicationIds'), 'all')
+
+    def test_resume_folders_follow_the_profiles_applications_and_generic_outputs_model(self):
+        root = Path(__file__).parents[1]
+        industry = module.read_json(root / 'resume-profiles' / 'industry' / 'variants.json')
+        self.assertIn('generic', industry)
+        self.assertTrue((root / 'resume-profiles' / 'faculty' / 'generic.json').is_file())
+        self.assertTrue((root / 'job-applications' / 'faculty' /
+                         'lafayette-college-assistant-professor-ece' / 'variant.json').is_file())
+        self.assertEqual(module.variant_output_dir(root, 'generic'), root / 'generic-resume' / 'industry')
+        self.assertEqual(module.variant_output_dir(root, 'faculty'), root / 'generic-resume' / 'faculty')
+        self.assertEqual(
+            module.variant_output_dir(root, 'faculty_lafayette_college_assistant_professor_ece'),
+            root / 'job-applications' / 'faculty' / 'lafayette-college-assistant-professor-ece'
+        )
+
+    def test_industry_tailored_builder_uses_job_application_folders(self):
+        path = Path(__file__).parents[1] / 'build_tailored.py'
+        source = path.read_text(encoding='utf-8')
+        self.assertIn('HERE / "job-applications" / "industry"', source)
+        self.assertIn('TemporaryDirectory', source)
+        self.assertNotIn('folder / "output"', source)
+
+    def test_faculty_application_documents_are_flat_and_manifest_driven(self):
+        root = Path(__file__).parents[1]
+        app = root / 'job-applications' / 'faculty' / 'lafayette-college-assistant-professor-ece'
+        manifest = module.read_json(app / 'application-documents.json')
+        self.assertEqual(len(manifest['documents']), 5)
+        self.assertTrue(all((app / item['source']).is_file() for item in manifest['documents']))
+        self.assertTrue(all((app / item['output']).is_file() for item in manifest['documents']))
+        self.assertFalse((app / 'documents').exists())
 
 
 if __name__ == '__main__':
