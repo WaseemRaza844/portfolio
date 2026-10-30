@@ -139,5 +139,8 @@ jobs:
             echo "Generated PDF snapshots are already current."
           else
             git commit -m "docs(resume): update generated PDFs [skip ci]"
+            # Other artifact publishers (e.g. Lafayette Word documents) may
+            # also update develop from the same source commit.
+            git pull --rebase origin develop
             git push origin HEAD:develop
           fi
