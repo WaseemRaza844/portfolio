@@ -18,5 +18,5 @@ job-applications/**/*.toc
 job-applications/**/*.synctex.gz
 
 # Faculty tailored CV TeX is generated from variant.json; industry .tex files are sources.
-job-applications/faculty/**/*.tex
+job-applications/faculty/**/Waseem_Raza_FACULTY_*.tex
 job-applications/faculty/**/*.txt
