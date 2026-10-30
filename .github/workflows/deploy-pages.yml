@@ -87,7 +87,7 @@ jobs:
           set -euo pipefail
 
           rm -rf _site
-          mkdir -p _site/develop/resumes/generic-resume _site/develop/resumes/job-applications
+          mkdir -p _site/develop/resumes/resume-profiles _site/develop/resumes/job-applications
 
           # Production website.
           cp -a source-main/dist/. _site/
@@ -95,16 +95,16 @@ jobs:
           # Development website.
           cp -a source-develop/dist/. _site/develop/
 
-          # Publish only generic PDFs and their index/report, not LaTeX intermediates.
-          cp source-develop/resume/generic-resume/README.md _site/develop/resumes/generic-resume/
-          cp source-develop/resume/generic-resume/build-report.json _site/develop/resumes/generic-resume/
+          # Publish profile PDFs, editable TeX, and report.
+          cp source-develop/resume/resume-profiles/README.md _site/develop/resumes/resume-profiles/
+          cp source-develop/resume/resume-profiles/build-report.json _site/develop/resumes/resume-profiles/
           while IFS= read -r -d '' pdf; do
-            relative="${pdf#source-develop/resume/generic-resume/}"
-            destination="_site/develop/resumes/generic-resume/$relative"
+            relative="${pdf#source-develop/resume/resume-profiles/}"
+            destination="_site/develop/resumes/resume-profiles/$relative"
             mkdir -p "$(dirname "$destination")"
             cp "$pdf" "$destination"
-          done < <(find source-develop/resume/generic-resume -type f -name '*.pdf' -print0)
-          test "$(find _site/develop/resumes/generic-resume -type f -name '*.pdf' | wc -l)" -ge 10
+          done < <(find source-develop/resume/resume-profiles -type f \( -name '*.pdf' -o -name '*.tex' \) -print0)
+          test "$(find _site/develop/resumes/resume-profiles -type f -name '*.pdf' | wc -l)" -ge 10
 
           # Job-specific PDFs are stored directly inside their application folders.
           while IFS= read -r -d '' pdf; do
@@ -139,13 +139,13 @@ jobs:
           HTML
 
             for group in faculty industry; do
-              printf '    <h2 id="%s" style="margin-top:36px">Generic %s resumes</h2>\n    <div class="grid">\n' "$group" "${group^}"
-              for pdf in "_site/develop/resumes/generic-resume/$group/"Waseem_Raza_*.pdf; do
+              printf '    <h2 id="%s" style="margin-top:36px">Reusable %s resumes</h2>\n    <div class="grid">\n' "$group" "${group^}"
+              for pdf in "_site/develop/resumes/resume-profiles/$group/"Waseem_Raza_*.pdf; do
                 test -f "$pdf" || { echo "Missing generic PDF preview in $group" >&2; exit 1; }
                 file="$(basename "$pdf")"
                 label="${file#Waseem_Raza_}"
                 label="${label%.pdf}"
-                printf '      <a class="card" href="generic-resume/%s/%s" target="_blank"><strong>%s</strong><span class="meta">Open PDF ↗</span></a>\n' "$group" "$file" "$label"
+                printf '      <a class="card" href="resume-profiles/%s/%s" target="_blank"><strong>%s</strong><span class="meta">Open PDF ↗</span></a>\n' "$group" "$file" "$label"
               done
               printf '    </div>\n'
             done
