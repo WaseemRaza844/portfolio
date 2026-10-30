@@ -20,7 +20,7 @@ python resume/build.py --all
 python -m unittest discover -s resume/tests
 ```
 
-The three reusable PDFs are generated in `resume/generic-resume/faculty/`. Institution-specific faculty overlays are defined in `resume/job-applications/faculty/<college>/variant.json`; their tailored CV PDFs are generated directly in the same college folder.
+The three reusable PDFs are generated in `resume/resume-profiles/faculty/`. Institution-specific faculty overlays are defined in `resume/job-applications/faculty/<college>/variant.json`; their tailored CV PDFs are generated directly in the same college folder.
 
 ## Section hierarchy
 
@@ -41,3 +41,7 @@ Coursera selections are drawn from the reconciled course inventory in `dist/data
 ## Tailoring
 
 Create one folder under `resume/job-applications/faculty/` for each real institution and position. Add a `variant.json` with a `baseVariant` of `faculty`, `faculty_comprehensive`, or `academic_cv`. Use a lowercase, hyphenated college-and-role slug. Keep the tailored CV and all supporting documents together in that application folder.
+
+## Editing LaTeX directly
+
+The source `.tex` and output `.pdf` live in this folder. Edit a profile's TeX and run `python resume/build.py --variant <id>` to compile without replacing the TeX. To explicitly regenerate a TeX source after updating JSON or shared portfolio data, use `python resume/build.py --variant <id> --refresh-tex` (overwrites manual TeX edits).
