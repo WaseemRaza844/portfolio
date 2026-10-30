@@ -87,9 +87,11 @@ jobs:
           from docx import Document
           import json
           root=Path('resume')
-          generic=list((root/'generic-resume').glob('*/*.pdf'))
+          generic=list((root/'resume-profiles').glob('*/*.pdf'))
           applications=list((root/'job-applications').rglob('*.pdf'))
-          assert len(generic) >= 10, f'Expected 10+ generic/profile PDFs, found {len(generic)}'
+          assert len(generic) >= 10, f'Expected 10+ profile PDFs, found {len(generic)}'
+          sources=list((root/'resume-profiles').glob('*/Waseem_Raza_*.tex'))
+          assert len(sources) >= 10, f'Expected editable TeX for 10+ profiles, found {len(sources)}'
           assert len(applications) >= 5, f'Expected 5+ tailored application PDFs, found {len(applications)}'
           job_reports=list((root/'job-applications').rglob('build-report.json'))
           assert len(job_reports) >= 4, f'Expected reports for three industry and one standalone faculty application, found {len(job_reports)}'
@@ -120,8 +122,9 @@ jobs:
         with:
           name: Waseem-Raza-Resume-and-Application-Documents
           path: |
-            resume/generic-resume/**/*.pdf
-            resume/generic-resume/build-report.json
+            resume/resume-profiles/**/*.pdf
+            resume/resume-profiles/**/*.tex
+            resume/resume-profiles/build-report.json
             resume/job-applications/**/*.pdf
             resume/job-applications/faculty/**/*.docx
             resume/job-applications/faculty/**/*.md
@@ -138,12 +141,12 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          while IFS= read -r -d '' file; do git add -f -- "$file"; done < <(find resume/generic-resume resume/job-applications -type f \( -name '*.pdf' -o -name '*.docx' -o -name 'build-report.json' \) -print0)
-          git add -u -- resume/generic-resume resume/job-applications
+          while IFS= read -r -d '' file; do git add -f -- "$file"; done < <(find resume/resume-profiles resume/job-applications -type f \( -name '*.pdf' -o -name '*.tex' -o -name '*.docx' -o -name 'build-report.json' \) -print0)
+          git add -u -- resume/resume-profiles resume/job-applications
           if git diff --cached --quiet; then
-            echo "Generated PDFs and Word documents are already current."
+            echo "Generated TeX, PDFs, and Word documents are already current."
           else
-            git commit -m "docs(resume): refresh generated profiles and application files [skip ci]"
+            git commit -m "docs(resume): publish editable TeX and profile PDFs [skip ci]"
             git pull --rebase origin develop
             git push origin HEAD:develop
           fi
