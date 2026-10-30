@@ -1,52 +1,84 @@
-# Resume and Academic Application System
+# Resume and Faculty Application Workspace
 
-This directory contains reusable resume profiles, job-specific applications, and generated generic resume PDFs. Shared factual source data and build tools stay at this level.
+Two primary folders keep source files beside deliverables:
 
-## Folder map
+- **[resume-profiles/](resume-profiles/README.md)**: reusable industry and faculty profiles. Each has its editable `.tex` and generated `.pdf` beside the JSON configuration.
+- **[job-applications/](job-applications/README.md)**: employer/college-specific resumes, PDFs, and supporting documents. Each application has one folder.
 
-| Folder | Purpose |
-| --- | --- |
-| [resume-profiles/](resume-profiles/README.md) | Reusable industry and faculty resume configurations |
-| [job-applications/](job-applications/README.md) | Job-specific resume sources and all supporting application materials |
-| [generic-resume/](generic-resume/README.md) | Generated generic industry and faculty resume PDFs |
-| [tests/](tests/) | Automated checks for data selection, content, and layout contracts |
+Shared build tools, the master LaTeX template, `content.json`, and `tests/` remain under `resume/`. There is **no separate generated-output directory**.
 
-## Build commands
+## How the system works
 
-Run from the repository root:
+For reusable profiles, Python transforms `dist/data/`, `resume/content.json`, and profile JSON into a complete LaTeX source **only when a TeX source is missing or you request it**. A normal build compiles existing `.tex` as-is into `.pdf` using `pdflatex`. This keeps small manual TeX edits intact.
+
+### Build from repository root (Python 3.12, Node.js, and pdflatex required)
 
 ```bash
 python -m pip install -r resume/requirements.txt
 python -m unittest discover -s resume/tests
-python resume/build.py --list
 python resume/build.py --all
 python resume/build_tailored.py --all
 python resume/build_application_documents.py
 python resume/validate_pdf_layout.py
 ```
 
-- `build.py --all` generates generic industry/faculty PDFs and institution-specific faculty CVs. Generic PDFs go to `generic-resume/`; a faculty application CV is generated directly inside its college folder.
-- `build_tailored.py --all` compiles standalone LaTeX application PDFs (industry and legacy faculty) directly beside their sources in `job-applications/industry/<job>/` or `job-applications/faculty/<college>/`.
-- `build_application_documents.py` generates editable Word files beside Markdown sources in faculty application folders.
-- `preview.py --watch` builds all outputs and serves the resume tree on port 8001.
+### Refresh TeX deliberately from shared data
 
-## Editing rules
+```bash
+python resume/build.py --all --refresh-tex
+python resume/build.py --variant faculty --refresh-tex
+```
 
-1. Correct shared facts in `content.json` or the portfolio data under `dist/data/`.
-2. Edit reusable profile emphasis and selections under `resume-profiles/`.
-3. Edit job-specific overlays, LaTeX sources, and supporting documents under the relevant `job-applications/` folder.
-4. Treat PDFs and DOCX files as generated deliverables. For faculty statements, edit the Markdown source and regenerate the Word file; direct edits to a DOCX are not synchronized back to Markdown.
-5. Never place confidential reference letters, identity documents, or private immigration records in this public portfolio repository.
+**Warning:** `--refresh-tex` replaces manual TeX edits in the affected variant(s). Commit or back up those changes before refreshing. A normal `--all` rebuild preserves them. To apply a change to the shared JSON or portfolio source to a document, run `--refresh-tex` for that variant, review the TeX diff, then commit both TeX and PDF.
 
-## Shared source files
+### Recompile a single profile / tailored application
 
-- `content.json`: resume-only factual overrides and additional verified records.
-- `export-source.cjs`: exports shared profile, experience, education, project, certification, and publication data.
-- `template.tex` and `latex_renderer.py`: common LaTeX rendering.
-- `build.py`: generic and faculty profile builder.
-- `build_tailored.py`: standalone LaTeX job-application builder for industry and legacy faculty applications.
-- `build_application_documents.py`: faculty application Markdown-to-Word builder.
-- `validate_pdf_layout.py`: faculty PDF pagination and line-break audit.
-- `preview.py`: local browser preview and watch mode.
+```bash
+python resume/build.py --variant genai
+python resume/build.py --variant faculty
+python resume/build_tailored.py --job ohio-state-optimization-ml-r160519
+```
 
-See the three folder-level READMEs for detailed conventions.
+Editable Word files in faculty applications are built from adjacent Markdown with:
+
+```bash
+python resume/build_application_documents.py
+```
+
+The **Build resume PDFs and application documents** GitHub Action runs tests, compiles every profile/application TeX, validates PDFs, builds Word documents, and publishes files to `develop`. The **Deploy portfolio to GitHub Pages** workflow renders PDF browser previews.
+
+## Windows PowerShell
+
+From the repo root after Python 3.12, Node.js, and MiKTeX/TeX Live are installed:
+
+```powershell
+python -m venv resume\.venv
+.\resume\.venv\Scripts\python.exe -m pip install -r resume\requirements.txt
+.\resume\.venv\Scripts\python.exe resume\build.py --all
+.\resume\.venv\Scripts\python.exe resume\build_tailored.py --all
+.\resume\.venv\Scripts\python.exe resume\build_application_documents.py
+.\resume\.venv\Scripts\python.exe resume\validate_pdf_layout.py
+```
+
+To remove the **old local-only** `resume/output` folder after confirming no important edits are inside it:
+
+```powershell
+# First inspect any old files
+Get-ChildItem resume\output -Recurse
+# Then, only if you no longer need them:
+Remove-Item resume\output -Recurse -Force
+```
+
+Git cannot delete an ignored/untracked folder on your Windows computer just by pulling a branch. The old `output/` is no longer used by these builders.
+
+## Files to edit
+
+- `dist/data/*.js`: website/shared academic and professional facts.
+- `content.json`: resume-specific factual overrides.
+- `resume-profiles/industry/variants.json`, `resume-profiles/faculty/*.json`: profile metadata/selections (refresh TeX to apply).
+- `resume-profiles/<industry|faculty>/Waseem_Raza_*.tex`: directly editable LaTeX sources (normal build preserves edits).
+- `job-applications/<industry|faculty>/<job>/*.tex`: specific resume sources (normal build preserves edits).
+- `job-applications/faculty/<college>/*.md`: supporting document sources (Word files rebuilt from Markdown).
+- `template.tex` and `latex_renderer.py`: common renderer used **when refreshing TeX**.
+
+Do not commit private reference letters, identity documents, or confidential immigration files to this public repository.
