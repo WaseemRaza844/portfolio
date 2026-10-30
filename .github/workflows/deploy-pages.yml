@@ -73,13 +73,13 @@ jobs:
         working-directory: source-develop
         run: python resume/build.py --all
 
-      - name: Audit faculty PDF line breaks and pagination
-        working-directory: source-develop
-        run: python resume/validate_pdf_layout.py
-
       - name: Generate tailored develop resumes
         working-directory: source-develop
         run: python resume/build_tailored.py --all
+
+      - name: Audit faculty PDF line breaks and pagination
+        working-directory: source-develop
+        run: python resume/validate_pdf_layout.py
 
       - name: Assemble production, development, and resume previews
         shell: bash
