@@ -503,7 +503,7 @@ def main():
     parser.add_argument('--all', action='store_true', help='Build all configured variants.')
     parser.add_argument('--variant', help='Variant ID; default genai.')
     parser.add_argument('--list', action='store_true', help='List available variants.')
-    parser.add_argument('--output', type=Path, default=OUTPUT)
+    parser.add_argument('--output', type=Path, default=OUTPUT, help='Resume root; outputs are routed into generic-resume/ and job-applications/.')
     parser.add_argument('--source-json', type=Path, help='Optional portfolio export; avoids Node.js.')
     parser.add_argument('--allow-overflow', action='store_true', help='Permit PDFs exceeding maxPages.')
     args = parser.parse_args()
