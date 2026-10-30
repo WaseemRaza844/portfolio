@@ -14,6 +14,8 @@ from pypdf import PdfReader
 
 HERE = Path(__file__).resolve().parent
 TAILORED = HERE / "job-applications" / "industry"
+FACULTY_APPLICATIONS = HERE / "job-applications" / "faculty"
+APPLICATION_ROOTS = (TAILORED, FACULTY_APPLICATIONS)
 
 
 def read_json(path):
@@ -21,19 +23,27 @@ def read_json(path):
 
 
 def discover_jobs():
+    """Find standalone LaTeX application resumes in industry and faculty folders.
+
+    Profile-based faculty CVs are built by build.py from variant.json and do not
+    have metadata.json, so they are intentionally skipped here.
+    """
     jobs = {}
-    if not TAILORED.exists():
-        return jobs
-    for folder in sorted(p for p in TAILORED.iterdir() if p.is_dir()):
-        meta_path = folder / "metadata.json"
-        tex_files = sorted(folder.glob("*.tex"))
-        if not meta_path.exists() or len(tex_files) != 1:
+    for root in APPLICATION_ROOTS:
+        if not root.exists():
             continue
-        jobs[folder.name] = {
-            "folder": folder,
-            "metadata": read_json(meta_path),
-            "tex": tex_files[0],
-        }
+        for folder in sorted(p for p in root.iterdir() if p.is_dir()):
+            meta_path = folder / "metadata.json"
+            tex_files = sorted(folder.glob("*.tex"))
+            if not meta_path.exists() or len(tex_files) != 1:
+                continue
+            if folder.name in jobs:
+                raise ValueError("Duplicate job-application folder slug across industry/faculty: " + folder.name)
+            jobs[folder.name] = {
+                "folder": folder,
+                "metadata": read_json(meta_path),
+                "tex": tex_files[0],
+            }
     return jobs
 
 
@@ -164,8 +174,8 @@ def compile_job(job_key, job):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--job", help="Application folder name under resume/job-applications/industry/.")
-    group.add_argument("--all", action="store_true", help="Build every configured industry application resume.")
+    group.add_argument("--job", help="Application folder name under resume/job-applications/industry/ or faculty/.")
+    group.add_argument("--all", action="store_true", help="Build every standalone industry and faculty application resume.")
     args = parser.parse_args()
 
     jobs = discover_jobs()
