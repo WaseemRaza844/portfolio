@@ -73,13 +73,13 @@ jobs:
         working-directory: source-develop
         run: python resume/build.py --all
 
-      - name: Audit faculty PDF line breaks and pagination
-        working-directory: source-develop
-        run: python resume/validate_pdf_layout.py
-
       - name: Generate tailored develop resumes
         working-directory: source-develop
         run: python resume/build_tailored.py --all
+
+      - name: Audit faculty PDF line breaks and pagination
+        working-directory: source-develop
+        run: python resume/validate_pdf_layout.py
 
       - name: Assemble production, development, and resume previews
         shell: bash
@@ -87,10 +87,7 @@ jobs:
           set -euo pipefail
 
           rm -rf _site
-          mkdir -p _site/develop/resumes/tailored
-          for group in faculty industry; do
-            mkdir -p "_site/develop/resumes/$group/tex"
-          done
+          mkdir -p _site/develop/resumes/generic-resume _site/develop/resumes/job-applications
 
           # Production website.
           cp -a source-main/dist/. _site/
@@ -98,23 +95,25 @@ jobs:
           # Development website.
           cp -a source-develop/dist/. _site/develop/
 
-          # Development resume outputs generated from the same develop commit.
-          for group in faculty industry; do
-            # Keep category folders separate so every faculty/industry PDF has a stable URL.
-            cp source-develop/resume/output/"$group"/*.pdf "_site/develop/resumes/$group/"
-            cp source-develop/resume/output/"$group"/*.tex "_site/develop/resumes/$group/tex/"
-            test "$(find "_site/develop/resumes/$group" -maxdepth 1 -name '*.pdf' | wc -l)" -gt 0
-          done
-          cp source-develop/resume/output/build-report.json _site/develop/resumes/
-
-          # Job-specific tailored resumes.
+          # Publish only generic PDFs and their index/report, not LaTeX intermediates.
+          cp source-develop/resume/generic-resume/README.md _site/develop/resumes/generic-resume/
+          cp source-develop/resume/generic-resume/build-report.json _site/develop/resumes/generic-resume/
           while IFS= read -r -d '' pdf; do
-            job_dir="$(basename "$(dirname "$(dirname "$pdf")")")"
-            mkdir -p "_site/develop/resumes/tailored/$job_dir"
-            cp "$pdf" "_site/develop/resumes/tailored/$job_dir/"
-            src_tex="$(dirname "$(dirname "$pdf")")"/*.tex
-            cp $src_tex "_site/develop/resumes/tailored/$job_dir/" 2>/dev/null || true
-          done < <(find source-develop/resume/tailored -type f -path '*/output/*.pdf' -print0)
+            relative="${pdf#source-develop/resume/generic-resume/}"
+            destination="_site/develop/resumes/generic-resume/$relative"
+            mkdir -p "$(dirname "$destination")"
+            cp "$pdf" "$destination"
+          done < <(find source-develop/resume/generic-resume -type f -name '*.pdf' -print0)
+          test "$(find _site/develop/resumes/generic-resume -type f -name '*.pdf' | wc -l)" -ge 10
+
+          # Job-specific PDFs are stored directly inside their application folders.
+          while IFS= read -r -d '' pdf; do
+            relative="${pdf#source-develop/resume/}"
+            destination="_site/develop/resumes/$relative"
+            mkdir -p "$(dirname "$destination")"
+            cp "$pdf" "$destination"
+          done < <(find source-develop/resume/job-applications -type f -name '*.pdf' -print0)
+          test "$(find _site/develop/resumes/job-applications -type f -name '*.pdf' | wc -l)" -ge 5
 
           # Browser index for the generated PDFs.
           {
@@ -140,27 +139,27 @@ jobs:
           HTML
 
             for group in faculty industry; do
-              printf '    <h2 id="%s" style="margin-top:36px">%s resumes</h2>\n    <div class="grid">\n' "$group" "${group^}"
-              for pdf in "_site/develop/resumes/$group/"Waseem_Raza_*.pdf; do
-                test -f "$pdf" || { echo "Missing PDF preview in $group" >&2; exit 1; }
+              printf '    <h2 id="%s" style="margin-top:36px">Generic %s resumes</h2>\n    <div class="grid">\n' "$group" "${group^}"
+              for pdf in "_site/develop/resumes/generic-resume/$group/"Waseem_Raza_*.pdf; do
+                test -f "$pdf" || { echo "Missing generic PDF preview in $group" >&2; exit 1; }
                 file="$(basename "$pdf")"
                 label="${file#Waseem_Raza_}"
                 label="${label%.pdf}"
-                printf '      <a class="card" href="%s/%s" target="_blank"><strong>%s</strong><span class="meta">Open PDF ↗</span></a>\n' "$group" "$file" "$label"
+                printf '      <a class="card" href="generic-resume/%s/%s" target="_blank"><strong>%s</strong><span class="meta">Open PDF ↗</span></a>\n' "$group" "$file" "$label"
               done
               printf '    </div>\n'
             done
 
             cat <<'HTML'
-            <h2 style="margin-top:36px">Tailored job resumes</h2>
+            <h2 style="margin-top:36px">Job-specific applications</h2>
             <div class="grid">
           HTML
 
             while IFS= read -r -d '' pdf; do
               rel="${pdf#_site/develop/resumes/}"
               label="$(basename "$pdf" .pdf)"
-              printf '      <a class="card" href="%s" target="_blank"><strong>%s</strong><span class="meta">Open tailored PDF ↗</span></a>\n' "$rel" "$label"
-            done < <(find _site/develop/resumes/tailored -type f -name '*.pdf' -print0)
+              printf '      <a class="card" href="%s" target="_blank"><strong>%s</strong><span class="meta">Open application PDF ↗</span></a>\n' "$rel" "$label"
+            done < <(find _site/develop/resumes/job-applications -type f -name '*.pdf' -print0)
 
             cat <<'HTML'
             </div>
@@ -198,8 +197,8 @@ jobs:
             echo
             echo "- Production portfolio: https://waseemraza844.github.io/portfolio/"
             echo "- Develop portfolio: https://waseemraza844.github.io/portfolio/develop/"
-            echo "- Browse ALL resume PDFs (faculty, industry, tailored): https://waseemraza844.github.io/portfolio/develop/resumes/"
+            echo "- Browse ALL generic and job-specific resume PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/"
             echo "- Faculty PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/#faculty"
             echo "- Industry PDFs: https://waseemraza844.github.io/portfolio/develop/resumes/#industry"
-            echo "- Infosys 154451BR tailored resume: https://waseemraza844.github.io/portfolio/develop/resumes/tailored/infosys-genai-engineer-154451BR/Waseem_Raza_INFOSYS_GENAI_154451BR.pdf"
+            echo "- Infosys 154451BR tailored resume: https://waseemraza844.github.io/portfolio/develop/resumes/job-applications/industry/infosys-genai-engineer-154451BR/Waseem_Raza_INFOSYS_GENAI_154451BR.pdf"
           } >> "$GITHUB_STEP_SUMMARY"

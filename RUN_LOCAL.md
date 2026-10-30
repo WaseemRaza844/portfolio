@@ -54,6 +54,9 @@ Build all variants:
 
 ```bash
 resume/.venv/bin/python resume/build.py --all
+resume/.venv/bin/python resume/build_tailored.py --all
+resume/.venv/bin/python resume/build_application_documents.py
+resume/.venv/bin/python resume/validate_pdf_layout.py
 ```
 
 Build one variant:
@@ -69,7 +72,7 @@ resume/.venv/bin/python resume/build.py --variant finance
 resume/.venv/bin/python resume/build.py --variant faculty
 ```
 
-Generated files are written to `resume/output/`.
+Generic profile PDFs are written to `resume/generic-resume/industry/` and `resume/generic-resume/faculty/`. The Lafayette faculty CV and industry-specific tailored PDFs are generated directly inside their respective `resume/job-applications/` folders. Supporting faculty Word documents are generated beside their Markdown sources.
 
 ## 5. Windows PowerShell setup
 
@@ -136,9 +139,9 @@ Browser-viewable PDFs are published at:
 https://waseemraza844.github.io/portfolio/develop/resumes/
 ```
 
-Each PDF opens directly in a browser tab. The same workflow also publishes the generated `.tex` files under the preview's `tex/` directory and keeps `build-report.json` with the generated output.
+Each generic or job-specific PDF opens directly in a browser tab. Generic PDFs are under `resumes/generic-resume/`; tailored PDFs are under `resumes/job-applications/`, mirroring the repository layout. The generic build report is stored in `resume/generic-resume/build-report.json`.
 
-The separate **Build resume PDFs** workflow also keeps the PDF/TeX files as a downloadable GitHub Actions artifact for 30 days.
+The **Build resume PDFs and application documents** workflow validates and publishes generated PDFs and Word files as repository outputs and keeps a downloadable GitHub Actions artifact for 30 days.
 
 ## 8. Main source files
 
@@ -148,7 +151,10 @@ The separate **Build resume PDFs** workflow also keeps the PDF/TeX files as a do
 | Certifications and courses | `dist/data/certifications.js` |
 | Projects | `dist/data/projects.js` |
 | Publications | `dist/data/publications.js` |
-| Resume variant selection and positioning | `resume/variants.json` |
+| Industry resume variants | `resume/resume-profiles/industry/variants.json` |
+| Faculty resume variants | `resume/resume-profiles/faculty/*.json` |
+| Job-specific resume overlays and application materials | `resume/job-applications/` |
+| Generic generated profile PDFs | `resume/generic-resume/` |
 | Resume-specific overrides and contact data | `resume/content.json` |
 | Resume layout | `resume/template.tex` |
 | Resume rendering logic | `resume/latex_renderer.py` |

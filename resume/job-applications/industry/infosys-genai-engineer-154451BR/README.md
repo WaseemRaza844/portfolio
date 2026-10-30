@@ -9,7 +9,7 @@ This is a job-specific resume tailored from the reusable GenAI resume.
 - Career role: Data Science Consultant 2
 
 ## Source files
-- `Waseem_Raza_INFOSYS_GENAI_154451BR.tex` — tracked tailored LaTeX source
+- `Waseem_Raza_INFOSYS_GENAI_154451BR.tex` — tracked tailored LaTeX source; generated PDF is stored beside it
 - `metadata.json` — job/application metadata
 - `output/` — generated PDF and LaTeX artifacts; ignored by Git
 

@@ -41,7 +41,9 @@ resume/.venv/bin/python resume/preview.py --watch
 | Website pages | `dist/*.html`, `dist/genai/`, `dist/aiml/`, `dist/faculty/` |
 | Website renderer | `dist/render.js`, `dist/variant-render.js` |
 | Website styling | `dist/styles.css` |
-| Resume variants | `resume/variants.json` |
+| Reusable resume profiles | `resume/resume-profiles/industry/variants.json`, `resume/resume-profiles/faculty/*.json` |
+| Job-specific applications | `resume/job-applications/` |
+| Generic generated PDFs | `resume/generic-resume/` |
 | Resume-specific content | `resume/content.json` |
 | Resume generator | `resume/build.py`, `resume/latex_renderer.py`, `resume/template.tex` |
 

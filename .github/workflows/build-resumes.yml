@@ -1,4 +1,4 @@
-name: Build resume PDFs
+name: Build resume PDFs and application documents
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -63,84 +63,87 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install PDF dependencies
+      - name: Install PDF and Word dependencies
         run: python -m pip install -r resume/requirements.txt
       - name: Install LaTeX
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
-      - name: Check source selection and links
+      - name: Run resume unit tests
         run: python -m unittest discover -s resume/tests
-      - name: Generate all variants
+      - name: Generate reusable and faculty application CVs
         run: python resume/build.py --all
-      - name: Audit faculty PDF line breaks and pagination
-        run: python resume/validate_pdf_layout.py
-      - name: Generate tailored job resumes
+      - name: Generate standalone industry and faculty application resumes
         run: python resume/build_tailored.py --all
-
-      - name: Collect every PDF into the output folder
+      - name: Generate editable faculty application Word documents
+        run: python resume/build_application_documents.py
+      - name: Audit generic and tailored faculty PDF layouts
+        run: python resume/validate_pdf_layout.py
+      - name: Validate all generated outputs
         shell: bash
         run: |
-          set -euo pipefail
-          rm -rf resume/output/tailored
-          for pdf in resume/tailored/*/output/*.pdf; do
-            [ -f "$pdf" ] || continue
-            job="$(basename "$(dirname "$(dirname "$pdf")")")"
-            mkdir -p "resume/output/tailored/$job"
-            cp "$pdf" "resume/output/tailored/$job/"
-          done
-          {
-            echo "# Generated resume PDFs"
-            echo
-            echo 'PDF snapshots from the latest validated develop build. Choose a PDF below to preview it directly in GitHub.'
-            echo
-            for group in faculty industry tailored; do
-              echo "## ${group^}"
-              echo
-              while IFS= read -r pdf; do
-                relative="${pdf#resume/output/}"
-                printf -- '- [%s](%s)\n' "$(basename "$pdf")" "$relative"
-              done < <(find "resume/output/$group" -type f -name '*.pdf' | sort)
-              echo
-            done
-          } > resume/output/README.md
-          test "$(find resume/output -name '*.pdf' | wc -l)" -ge 10
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          import json
+          root=Path('resume')
+          generic=list((root/'generic-resume').glob('*/*.pdf'))
+          applications=list((root/'job-applications').rglob('*.pdf'))
+          assert len(generic) >= 10, f'Expected 10+ generic/profile PDFs, found {len(generic)}'
+          assert len(applications) >= 5, f'Expected 5+ tailored application PDFs, found {len(applications)}'
+          job_reports=list((root/'job-applications').rglob('build-report.json'))
+          assert len(job_reports) >= 4, f'Expected reports for three industry and one standalone faculty application, found {len(job_reports)}'
+          ohio=root/'job-applications/faculty/ohio-state-optimization-ml-r160519'
+          ohio_report=ohio/'build-report.json'
+          assert ohio_report.is_file(), 'Ohio State standalone faculty resume was not rebuilt'
+          assert json.loads(ohio_report.read_text(encoding='utf-8'))['pages']==3, 'Ohio State resume must remain three pages'
+          app=root/'job-applications/faculty/lafayette-college-assistant-professor-ece'
+          manifest=app/'application-documents.json'
+          assert manifest.is_file(), 'Lafayette application document manifest is missing'
+          specs=json.loads(manifest.read_text(encoding='utf-8'))['documents']
+          assert len(specs)==5, f'Expected five supporting documents, found {len(specs)}'
+          for spec in specs:
+              source=app/spec['source']
+              output=app/spec['output']
+              assert source.is_file(), f'Missing editable source: {source}'
+              assert output.is_file(), f'Missing Word document: {output}'
+              doc=Document(output)
+              text=' '.join(p.text for p in doc.paragraphs)
+              assert len(text)>400, f'Word file is unexpectedly empty: {output.name}'
+              if spec.get('layout')=='references':
+                  assert len(doc.tables)==3, 'Expected three editable professional-reference tables'
+          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and five Word documents.')
+          PY
 
-      - name: Store generated PDFs
+      - name: Upload generated resumes and application documents
         uses: actions/upload-artifact@v4
         with:
-          name: Waseem-Raza-Resumes
+          name: Waseem-Raza-Resume-and-Application-Documents
           path: |
-            resume/output/**/*.pdf
-            resume/output/**/*.tex
-            resume/output/build-report.json
-            resume/output/README.md
-            resume/tailored/**/output/*.pdf
-            resume/tailored/**/output/build-report.json
-            resume/tailored/**/*.tex
+            resume/generic-resume/**/*.pdf
+            resume/generic-resume/build-report.json
+            resume/job-applications/**/*.pdf
+            resume/job-applications/faculty/**/*.docx
+            resume/job-applications/faculty/**/*.md
+            resume/job-applications/industry/**/*.tex
+            resume/job-applications/faculty/**/*.tex
+            resume/job-applications/industry/**/metadata.json
           if-no-files-found: error
           retention-days: 30
 
-      - name: Publish browseable PDF snapshots to develop
+      - name: Publish browseable generated files to develop
         if: github.event_name == 'push' && github.ref_name == 'develop'
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # The generated directory is ignored for ordinary local work.
-          # Explicitly track only PDFs, the concise index, and the build report.
-          while IFS= read -r -d '' pdf; do
-            git add -f -- "$pdf"
-          done < <(find resume/output -type f -name '*.pdf' -print0)
-          git add -f -- resume/output/README.md resume/output/build-report.json
-          git add -u -- resume/output
+          while IFS= read -r -d '' file; do git add -f -- "$file"; done < <(find resume/generic-resume resume/job-applications -type f \( -name '*.pdf' -o -name '*.docx' -o -name 'build-report.json' \) -print0)
+          git add -u -- resume/generic-resume resume/job-applications
           if git diff --cached --quiet; then
-            echo "Generated PDF snapshots are already current."
+            echo "Generated PDFs and Word documents are already current."
           else
-            git commit -m "docs(resume): update generated PDFs [skip ci]"
-            # Other artifact publishers (e.g. Lafayette Word documents) may
-            # also update develop from the same source commit.
+            git commit -m "docs(resume): refresh generated profiles and application files [skip ci]"
             git pull --rebase origin develop
             git push origin HEAD:develop
           fi

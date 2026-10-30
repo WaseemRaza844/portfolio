@@ -1,0 +1,30 @@
+{
+  "documents": [
+    {
+      "source": "01_Lafayette_Cover_Letter.md",
+      "output": "01_Lafayette_Cover_Letter.docx",
+      "title": "Lafayette College Cover Letter"
+    },
+    {
+      "source": "02_Lafayette_Teaching_Statement.md",
+      "output": "02_Lafayette_Teaching_Statement.docx",
+      "title": "Teaching Interests and Philosophy"
+    },
+    {
+      "source": "03_Lafayette_Research_Statement.md",
+      "output": "03_Lafayette_Research_Statement.docx",
+      "title": "Research Statement and Undergraduate Engagement Plan"
+    },
+    {
+      "source": "04_Lafayette_Professional_References_Template.md",
+      "output": "04_Lafayette_Professional_References_Template.docx",
+      "title": "Three Professional References",
+      "layout": "references"
+    },
+    {
+      "source": "05_Lafayette_Application_Checklist.md",
+      "output": "05_Lafayette_Application_Checklist.docx",
+      "title": "Application Checklist and Submission Guide"
+    }
+  ]
+}
