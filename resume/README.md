@@ -26,7 +26,7 @@ python resume/validate_pdf_layout.py
 ```
 
 - `build.py --all` generates generic industry/faculty PDFs and institution-specific faculty CVs. Generic PDFs go to `generic-resume/`; a faculty application CV is generated directly inside its college folder.
-- `build_tailored.py --all` compiles industry application PDFs directly beside their source files in `job-applications/industry/<job>/`.
+- `build_tailored.py --all` compiles standalone LaTeX application PDFs (industry and legacy faculty) directly beside their sources in `job-applications/industry/<job>/` or `job-applications/faculty/<college>/`.
 - `build_application_documents.py` generates editable Word files beside Markdown sources in faculty application folders.
 - `preview.py --watch` builds all outputs and serves the resume tree on port 8001.
 
@@ -44,7 +44,7 @@ python resume/validate_pdf_layout.py
 - `export-source.cjs`: exports shared profile, experience, education, project, certification, and publication data.
 - `template.tex` and `latex_renderer.py`: common LaTeX rendering.
 - `build.py`: generic and faculty profile builder.
-- `build_tailored.py`: industry job-application builder.
+- `build_tailored.py`: standalone LaTeX job-application builder for industry and legacy faculty applications.
 - `build_application_documents.py`: faculty application Markdown-to-Word builder.
 - `validate_pdf_layout.py`: faculty PDF pagination and line-break audit.
 - `preview.py`: local browser preview and watch mode.
