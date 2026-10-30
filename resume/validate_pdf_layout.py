@@ -89,7 +89,7 @@ def main():
     if args.directory:
         directories = args.directory
     else:
-        generic = HERE / "generic-resume" / "faculty"
+        generic = HERE / "resume-profiles" / "faculty"
         applications = HERE / "job-applications" / "faculty"
         directories = [generic] + sorted(p for p in applications.iterdir() if p.is_dir()) if applications.exists() else [generic]
         generic_files = list(generic.glob("Waseem_Raza_*.pdf"))
