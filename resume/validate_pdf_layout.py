@@ -83,11 +83,21 @@ def check_pdf(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--directory", type=Path, default=HERE/"output"/"faculty")
+    parser.add_argument("--directory", type=Path, action="append",
+                        help="Specific directory to audit; may be supplied more than once.")
     args = parser.parse_args()
-    files = sorted(args.directory.glob("Waseem_Raza_*.pdf"))
-    if len(files) < 3:
-        parser.error(f"Expected all three academic PDFs in {args.directory}; got {len(files)}")
+    if args.directory:
+        directories = args.directory
+    else:
+        generic = HERE / "generic-resume" / "faculty"
+        applications = HERE / "job-applications" / "faculty"
+        directories = [generic] + sorted(p for p in applications.iterdir() if p.is_dir()) if applications.exists() else [generic]
+        generic_files = list(generic.glob("Waseem_Raza_*.pdf"))
+        if len(generic_files) < 3:
+            parser.error(f"Expected all three generic faculty PDFs in {generic}; got {len(generic_files)}")
+    files = sorted({file for directory in directories for file in directory.glob("Waseem_Raza_*.pdf")})
+    if not files:
+        parser.error("No faculty PDFs found in: " + ", ".join(str(path) for path in directories))
     errors, warnings = [], []
     for file in files:
         bad, caution = check_pdf(file)
