@@ -112,7 +112,7 @@ Avoid manually running a build while the watch server is already rebuilding.
 
 ```bash
 printf 'Website: https://%s-8000.%s/\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
-printf 'GenAI PDF: https://%s-8001.%s/Waseem_Raza_GENAI.pdf\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
+printf 'GenAI PDF: https://%s-8001.%s/generic-resume/industry/Waseem_Raza_GENAI.pdf\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
 ```
 
 Click the printed URL, or Ctrl+click if your editor requires it. These commands
