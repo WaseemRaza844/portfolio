@@ -2,10 +2,10 @@
 """Build editable DOCX documents from browser-editable Markdown sources."""
 from __future__ import annotations
 import base64
+import bz2
 import json
 from pathlib import Path
 import re
-import zlib
 
 from docx import Document
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
@@ -32,10 +32,12 @@ def restore_seed():
     missing = [n for n in FILENAMES if not (SOURCE / (n + '.md')).exists()]
     if not missing:
         return
-    if not SEED.exists():
+    parts = sorted(ROOT.glob('source.seed.part*.txt'))
+    if not parts and not SEED.exists():
         raise FileNotFoundError(f"Missing sources: {missing}")
-    packed = base64.b64decode(SEED.read_text(encoding='utf-8').strip())
-    data = json.loads(zlib.decompress(packed))
+    encoded = ''.join(p.read_text(encoding='utf-8').strip() for p in parts) if parts else SEED.read_text(encoding='utf-8').strip()
+    packed = base64.b64decode(encoded, validate=True)
+    data = json.loads(bz2.decompress(packed))
     SOURCE.mkdir(parents=True, exist_ok=True)
     for name in missing:
         key = name + '.md'
