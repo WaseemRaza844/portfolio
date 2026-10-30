@@ -73,7 +73,7 @@ jobs:
         run: python -m unittest discover -s resume/tests
       - name: Generate reusable and faculty application CVs
         run: python resume/build.py --all
-      - name: Generate industry job-application resumes
+      - name: Generate standalone industry and faculty application resumes
         run: python resume/build_tailored.py --all
       - name: Generate editable faculty application Word documents
         run: python resume/build_application_documents.py
@@ -120,6 +120,7 @@ jobs:
             resume/job-applications/faculty/**/*.docx
             resume/job-applications/faculty/**/*.md
             resume/job-applications/industry/**/*.tex
+            resume/job-applications/faculty/**/*.tex
             resume/job-applications/industry/**/metadata.json
           if-no-files-found: error
           retention-days: 30
