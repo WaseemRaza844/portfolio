@@ -95,8 +95,15 @@ jobs:
           # Development website.
           cp -a source-develop/dist/. _site/develop/
 
-          # Reusable generic profile PDFs are kept separate from applications.
-          cp -a source-develop/resume/generic-resume/. _site/develop/resumes/generic-resume/
+          # Publish only generic PDFs and their index/report, not LaTeX intermediates.
+          cp source-develop/resume/generic-resume/README.md _site/develop/resumes/generic-resume/
+          cp source-develop/resume/generic-resume/build-report.json _site/develop/resumes/generic-resume/
+          while IFS= read -r -d '' pdf; do
+            relative="${pdf#source-develop/resume/generic-resume/}"
+            destination="_site/develop/resumes/generic-resume/$relative"
+            mkdir -p "$(dirname "$destination")"
+            cp "$pdf" "$destination"
+          done < <(find source-develop/resume/generic-resume -type f -name '*.pdf' -print0)
           test "$(find _site/develop/resumes/generic-resume -type f -name '*.pdf' | wc -l)" -ge 10
 
           # Job-specific PDFs are stored directly inside their application folders.
