@@ -168,8 +168,30 @@ def build_application(app_folder, manifest_path):
         doc = Document()
         setup(doc, spec, app_folder.name)
         blocks = re.split(r"\n\s*\n", source.read_text(encoding="utf-8").strip())
-        for block in blocks:
-            add_block(doc, block, spec)
+        if spec.get("layout") == "references":
+            # Keep the three referee records as three editable Word tables.
+            # The Markdown source separates each field with blank lines, so
+            # accumulate all field blocks until the next reference heading.
+            index = 0
+            while index < len(blocks):
+                block = blocks[index].strip()
+                add_block(doc, block, spec)
+                if block.startswith("## Reference "):
+                    fields = []
+                    index += 1
+                    while index < len(blocks) and blocks[index].strip().startswith("- **"):
+                        for line in blocks[index].splitlines():
+                            match = re.match(r"-\s+\*\*(.*?):\*\*\s*(.+)", line.strip())
+                            if match:
+                                fields.append(match.groups())
+                        index += 1
+                    if fields:
+                        fields_table(doc, fields)
+                    continue
+                index += 1
+        else:
+            for block in blocks:
+                add_block(doc, block, spec)
         doc.save(output)
         created.append(output)
         print(f"Created {output.relative_to(HERE)} ({output.stat().st_size} bytes)")
