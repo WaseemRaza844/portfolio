@@ -2,14 +2,14 @@
 
 October 29, 2026
 
-Professor Yih-Choung Yu and Members of the Search Committee  
+Members of the Search Committee  
 Department of Electrical and Computer Engineering  
 Lafayette College  
 Easton, Pennsylvania
 
 Re: Tenure-Track Assistant Professor of Electrical and Computer Engineering
 
-Dear Professor Yu and Members of the Search Committee:
+Dear Members of the Search Committee:
 
 I am applying for the tenure-track Assistant Professor of Electrical and Computer Engineering position at Lafayette College for the 2027–28 academic year. I earned my PhD in Electrical and Computer Engineering from the University of Oklahoma in 2025, focusing on AI/ML for wireless networks. My experience combines undergraduate teaching and laboratory instruction, student mentoring, and applied research in wireless systems and wearable sensing. Lafayette's emphasis on close faculty–student relationships, hands-on engineering, and scholarship involving undergraduates makes this opportunity especially compelling.
 
@@ -27,4 +27,4 @@ Sincerely,
 
 Waseem Raza, PhD
 
-> waseem.placements@gmail.com  |  waseemraza844@gmail.com  |  +1 732-803-9703
+> waseem.placements@outlook.com  |  waseemraza844@gmail.com  |  +1 732-803-9703
