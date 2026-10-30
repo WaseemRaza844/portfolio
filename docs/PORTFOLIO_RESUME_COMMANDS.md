@@ -61,6 +61,9 @@ Check that `dist/`, `resume/`, and `package.json` are visible in Explorer.
 
 ```bash
 resume/.venv/bin/python resume/build.py --all
+resume/.venv/bin/python resume/build_tailored.py --all
+resume/.venv/bin/python resume/build_application_documents.py
+resume/.venv/bin/python resume/validate_pdf_layout.py
 ```
 
 **Only the variant you need — run one of these:**
@@ -80,14 +83,12 @@ resume/.venv/bin/python resume/build.py --list
 
 | Variant | Generated PDF |
 | --- | --- |
-| GenAI | `resume/output/Waseem_Raza_GENAI.pdf` |
-| AI/ML | `resume/output/Waseem_Raza_AIML.pdf` |
-| Faculty & Academic | `resume/output/Waseem_Raza_FACULTY.pdf` |
-| Generic | `resume/output/Waseem_Raza_GENERIC.pdf` |
+| GenAI | `resume/generic-resume/industry/Waseem_Raza_GENAI.pdf` |
+| AI/ML | `resume/generic-resume/industry/Waseem_Raza_AIML.pdf` |
+| Faculty & Academic | `resume/generic-resume/faculty/Waseem_Raza_FACULTY.pdf` |
+| Generic | `resume/generic-resume/industry/Waseem_Raza_GENERIC.pdf` |
 
-The output folder also contains editable generated `.tex` files, extracted text,
-compiler logs, and `build-report.json`. Rebuilding overwrites generated files.
-Make lasting edits in the source files listed below.
+Generic PDFs are stored in `resume/generic-resume/industry/` and `resume/generic-resume/faculty/`. Faculty application CVs and industry tailored PDFs are stored directly in their respective `resume/job-applications/` folders. The generic build report is `resume/generic-resume/build-report.json`. Generated LaTeX intermediates are not intended as editable source; make lasting edits in the profile JSON or application source files.
 
 ## 4. Preview options
 
@@ -100,7 +101,7 @@ resume/.venv/bin/python resume/preview.py
 **Serve existing PDFs immediately without rebuilding:**
 
 ```bash
-python3 -m http.server 8001 --bind 0.0.0.0 --directory resume/output
+python3 -m http.server 8001 --bind 0.0.0.0 --directory resume
 ```
 
 Use only one server on port 8001. The simple Python server has no automatic
@@ -119,7 +120,7 @@ print links; they do not start a server. The corresponding server and forwarded
 port must already be running. The Ports panel's copied address is authoritative
 if your environment uses a different forwarding address.
 
-For another PDF, change `GENAI` to `AIML`, `FACULTY`, or `GENERIC` in the filename.
+For another generic PDF, change the filename and, where appropriate, the `industry/` or `faculty/` directory. Job-specific PDFs are inside `job-applications/industry/<job>/` or `job-applications/faculty/<college>/`.
 To download a PDF, use the browser PDF viewer's download button or right-click
 the generated file in Codespaces Explorer and select **Download**.
 
@@ -164,7 +165,9 @@ The four active profiles are `generic`, `genai`, `aiml`, and `faculty`, with mat
 | Certifications, course details, progress and certificate URLs | `dist/data/certifications.js` |
 | Projects | `dist/data/projects.js` |
 | Publications | `dist/data/publications.js` |
-| Resume headline, summary, skills, leadership, selected IDs and page limits | `resume/variants.json` |
+| Industry resume headline, summary, skills, selected IDs and page limits | `resume/resume-profiles/industry/variants.json` |
+| Faculty generic, comprehensive and academic CV profiles | `resume/resume-profiles/faculty/*.json` |
+| Job-specific resume overlays and supporting application documents | `resume/job-applications/` |
 | Resume contacts, experience overrides and separate internship records | `resume/content.json` |
 | Resume font packages, heading rules and spacing | `resume/template.tex` |
 | Resume field rendering and certificate-header formatting | `resume/latex_renderer.py` |
@@ -188,7 +191,7 @@ changes; it does not automatically refresh the browser PDF viewer.
 | Build fails after a JSON edit | Check double quotes, commas and brackets; JSON does not support comments or trailing commas. |
 | Unknown selected ID | Match the ID in `variants.json` to the corresponding source record. |
 | PDF exceeds page budget | Edit selections/layout or increase `maxPages`; inspect the retained PDF. |
-| LaTeX compilation error | Inspect the terminal message and matching `.log` in `resume/output/`. |
+| LaTeX compilation error | Inspect the terminal message and matching `.log` in the relevant `resume/generic-resume/` or application folder. Industry LaTeX intermediates are created temporarily and are not retained. |
 
 For an intentionally oversized draft:
 
@@ -241,8 +244,7 @@ git status --short
 git diff --stat
 ```
 
-The supplied **Build resume PDFs** GitHub Actions workflow builds PDFs separately
-and offers them as an artifact. It does not automatically publish them to Pages.
+The **Build resume PDFs and application documents** GitHub Actions workflow builds and validates generic and tailored PDFs plus the faculty Word files. It publishes the generated files to the corresponding repository folders and provides a downloadable artifact.
 Keep `.venv`, temporary compiler output, and local backups out of routine commits.
 
 ## Daily reminder
