@@ -79,11 +79,12 @@ def compile_job(job_key, job):
             raise ValueError(f"Expected PDF was not generated: {built_pdf}")
 
         reader = PdfReader(built_pdf)
+        page_count = len(reader.pages)
         texts = [page.extract_text() or "" for page in reader.pages]
         expected_pages = int(metadata.get("expectedPages", 3))
-        if len(reader.pages) != expected_pages:
+        if page_count != expected_pages:
             raise ValueError(
-                f"{pdf_name} is {len(reader.pages)} pages; expected exactly {expected_pages}. "
+                f"{pdf_name} is {page_count} pages; expected exactly {expected_pages}. "
                 "Adjust content instead of accepting a sparse or overflowing application resume."
             )
 
@@ -147,7 +148,7 @@ def compile_job(job_key, job):
     result = {
         "job": job_key,
         "file": pdf_name,
-        "pages": len(reader.pages),
+        "pages": page_count,
         "pageTextChars": page_chars,
         "pageLowestTextY": [round(value, 1) for value in page_lowest_text_y],
         "target": {
