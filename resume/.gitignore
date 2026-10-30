@@ -1,2 +1,22 @@
 .venv/
 __pycache__/
+
+# Generated generic-profile LaTeX and extraction intermediates; PDFs/reports remain tracked.
+generic-resume/**/*.tex
+generic-resume/**/*.txt
+generic-resume/**/*.aux
+generic-resume/**/*.log
+generic-resume/**/*.out
+generic-resume/**/*.toc
+generic-resume/**/*.synctex.gz
+
+# LaTeX build intermediates in application folders.
+job-applications/**/*.aux
+job-applications/**/*.log
+job-applications/**/*.out
+job-applications/**/*.toc
+job-applications/**/*.synctex.gz
+
+# Faculty tailored CV TeX is generated from variant.json; industry .tex files are sources.
+job-applications/faculty/**/*.tex
+job-applications/faculty/**/*.txt
