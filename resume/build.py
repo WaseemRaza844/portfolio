@@ -30,7 +30,7 @@ from pypdf import PdfReader
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-OUTPUT = HERE / 'output'
+OUTPUT = HERE  # output root; generated profile PDFs live in generic-resume/
 COLLECTIONS = ('experience', 'projects', 'certifications', 'publications')
 
 
@@ -112,13 +112,13 @@ def read_json(path):
 
 
 def load_variants():
-    """Load independently maintained industry and faculty resume families.
+    """Load reusable profiles and job-specific faculty overlays.
 
-    Stable historic IDs are retained so existing commands keep working.
-    Faculty-specific applications belong under faculty/tailored/<slug>/variant.json.
+    Stable variant IDs are retained. Generic profiles live in resume-profiles/;
+    faculty application overlays live in job-applications/faculty/<slug>/variant.json.
     """
-    industry = read_json(HERE / 'variants.json')
-    faculty_dir = HERE / 'faculty'
+    industry = read_json(HERE / 'resume-profiles' / 'industry' / 'variants.json')
+    faculty_dir = HERE / 'resume-profiles' / 'faculty'
     faculty = {
         'faculty': read_json(faculty_dir / 'generic.json'),
         'faculty_comprehensive': read_json(faculty_dir / 'comprehensive.json'),
@@ -128,7 +128,7 @@ def load_variants():
     if overlap:
         raise ValueError('Faculty variant IDs are duplicated in industry variants: ' + str(overlap))
 
-    for path in sorted((faculty_dir / 'tailored').glob('*/variant.json')):
+    for path in sorted((HERE / 'job-applications' / 'faculty').glob('*/variant.json')):
         slug = path.parent.name
         if not re.fullmatch(r'[a-z0-9][a-z0-9-]*', slug):
             raise ValueError('Faculty tailoring directory must be a lowercase slug: ' + slug)
@@ -144,9 +144,18 @@ def load_variants():
 
 
 def variant_output_dir(output, key):
-    """Isolate faculty PDFs and intermediate LaTeX from industry artifacts."""
-    return output / ('faculty' if key in {'faculty', 'faculty_comprehensive', 'academic_cv'}
-                     or key.startswith('faculty_') else 'industry')
+    """Return the canonical destination for generic or institution-specific PDFs.
+
+    ``output`` is the resume root. Reusable profiles go to generic-resume/;
+    faculty overlays are published directly inside their college application folder.
+    """
+    base_faculty = {'faculty', 'faculty_comprehensive', 'academic_cv'}
+    if key in base_faculty:
+        return output / 'generic-resume' / 'faculty'
+    if key.startswith('faculty_'):
+        slug = key.removeprefix('faculty_').replace('_', '-')
+        return output / 'job-applications' / 'faculty' / slug
+    return output / 'generic-resume' / 'industry'
 
 
 def read_source(snapshot=None):
@@ -509,11 +518,10 @@ def main():
     if any(key not in variants for key in keys):
         parser.error('Unknown variant; use --list.')
     if args.all:
-        for group in ('industry', 'faculty'):
-            group_keys = [key for key in variants if variant_output_dir(args.output, key).name == group]
-            remove_stale_generated(args.output / group, group_keys)
-        # Clean up legacy flat output artifacts from older versions of this builder.
-        remove_stale_generated(args.output, [])
+        industry_keys = [key for key in variants if key not in {'faculty', 'faculty_comprehensive', 'academic_cv'} and not key.startswith('faculty_')]
+        faculty_keys = ['faculty', 'faculty_comprehensive', 'academic_cv']
+        remove_stale_generated(args.output / 'generic-resume' / 'industry', industry_keys)
+        remove_stale_generated(args.output / 'generic-resume' / 'faculty', faculty_keys)
     config = read_json(HERE / 'content.json')
     data = merge_source(read_source(args.source_json), config)
     notes = audit(data)
@@ -533,12 +541,14 @@ def main():
         result['relativePath'] = str(folder.relative_to(args.output) / result['file'])
         results.append(result)
     report = {'variants': results, 'reviewNotes': notes}
-    (args.output / 'build-report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    report_path = args.output / 'generic-resume' / 'build-report.json'
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, indent=2), encoding='utf-8')
     for result in results:
         fill = result.get('pageTextChars', [])
         suffix = (' | text chars/page: ' + ', '.join(str(n) for n in fill)) if fill else ''
         print(f'{result["relativePath"]}: {result["pages"]} pages' + suffix)
-    print('Review notes: ' + str(args.output / 'build-report.json'))
+    print('Review notes: ' + str(report_path))
     for result in results:
         if result['pages'] < result.get('minPages', 1):
             raise ValueError(f'{result["file"]} is only {result["pages"]} pages; '
@@ -559,7 +569,7 @@ def main():
                              f'{min_last}. Add relevant content instead of accepting a sparse final page.')
         if result['pages'] > result['maxPages'] and not args.allow_overflow:
             raise ValueError(f'{result["file"]} exceeds its {result["maxPages"]}-page budget. '
-                             'Shorten selections or adjust explicit page breaks in variants.json. '
+                             'Shorten selections or adjust explicit page breaks in the relevant resume-profiles JSON file. '
                              'PDF retained for inspection; no text was discarded.')
 
 
