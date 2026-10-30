@@ -141,8 +141,13 @@ def compile_job(job_key, job):
                 )
 
         min_page_chars = int(metadata.get("minPageTextChars", 0))
+        min_last_page_chars = int(metadata.get("minLastPageChars", min_page_chars))
         if min_page_chars:
-            sparse_pages = [(index + 1, value) for index, value in enumerate(page_chars) if value < min_page_chars]
+            sparse_pages = [
+                (index + 1, value)
+                for index, value in enumerate(page_chars)
+                if value < (min_last_page_chars if index == len(page_chars) - 1 else min_page_chars)
+            ]
             if sparse_pages:
                 details = ", ".join(f"page {page}: {value}" for page, value in sparse_pages)
                 raise ValueError(
