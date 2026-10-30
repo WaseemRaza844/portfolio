@@ -1,0 +1,92 @@
+name: Build Lafayette application Word files
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/source/**'
+      - 'resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/source.seed.part*.txt'
+      - 'resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/build_documents.py'
+      - '.github/workflows/build-lafayette-word.yml'
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/**'
+      - '.github/workflows/build-lafayette-word.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lafayette-word-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-word:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Word document library
+        run: python -m pip install python-docx==1.2.0
+
+      - name: Restore editable sources and generate Word files
+        run: python resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/build_documents.py
+
+      - name: Check five DOCX outputs and all editable sources
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          base=Path('resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents')
+          sources=sorted((base/'source').glob('*.md'))
+          words=sorted((base/'word').glob('*.docx'))
+          assert len(sources)==5, f'Expected 5 Markdown sources, got {len(sources)}'
+          assert len(words)==5, f'Expected 5 DOCX files, got {len(words)}'
+          for source in sources:
+              match=base/'word'/f'{source.stem}.docx'
+              assert match.is_file(), f'Missing Word output for {source.name}'
+              doc=Document(match)
+              text=' '.join(p.text for p in doc.paragraphs)
+              assert len(text)>400, f'Generated document is unexpectedly empty: {match.name}'
+              if 'References' in source.name:
+                  assert len(doc.tables)==3, 'Expected three professional reference tables'
+          print('All five editable Word documents and Markdown source files validated.')
+          PY
+
+      - name: Upload Word files and editable text sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lafayette-ECE-Word-Application
+          path: |
+            resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/word/*.docx
+            resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/source/*.md
+          if-no-files-found: error
+          retention-days: 60
+
+      - name: Publish Word files and Markdown to develop
+        if: github.event_name == 'push' && github.ref_name == 'develop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/source/*.md
+          git add -f resume/faculty/tailored/lafayette-college-assistant-professor-ece/documents/word/*.docx
+          if git diff --cached --quiet; then
+            echo 'Application Word files are current.'
+          else
+            git commit -m 'docs(faculty): refresh Lafayette Word files and editable sources [skip ci]'
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
