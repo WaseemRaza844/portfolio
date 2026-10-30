@@ -1,7 +1,10 @@
 # Faculty Job Applications
 
-Create one folder per institution and position. Each folder contains the tailored faculty CV, variant configuration, job-specific application plan, cover letter, teaching statement, research statement, professional references template, checklist, Markdown sources, and generated Word documents.
+Create one folder per institution and position. Each folder contains the tailored faculty CV, variant configuration or standalone LaTeX source, application plan, supporting statements, reference template, checklist, and generated deliverables. There are no nested `documents/`, `source/`, or `word/` directories.
 
-There are no nested `documents/`, `source/`, or `word/` directories. Keep every material for a college together in its folder.
+Current applications:
 
-See [Lafayette College](lafayette-college-assistant-professor-ece/README.md) for the first application.
+- [Lafayette College — Assistant Professor of ECE](lafayette-college-assistant-professor-ece/README.md): profile-based CV plus five Markdown/Word supporting documents.
+- [The Ohio State University — Optimization for Machine Learning](ohio-state-optimization-ml-r160519/README.md): preserved standalone LaTeX application resume and metadata from the earlier application workflow.
+
+For new faculty applications, prefer a `variant.json` overlay based on `faculty`, `faculty_comprehensive`, or `academic_cv`. The builder generates the resulting PDF directly into that college's folder. Existing standalone LaTeX applications remain self-contained until converted to the profile-overlay format.

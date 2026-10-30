@@ -21,16 +21,14 @@ The resume emphasizes established evidence in:
 
 It intentionally avoids presenting unsupported pure-OR methods as established expertise.
 
-## Build locally
+## Source and build
+This is a preserved standalone LaTeX application resume from the earlier workflow, not yet converted to a `variant.json` faculty overlay.
 
-Windows:
-
-```powershell
-.\resume\.venv\Scripts\python.exe resume\build_tailored.py --job ohio-state-optimization-ml-r160519
-```
-
-Linux / Codespaces:
+From the repository root, compile the source directly:
 
 ```bash
-python resume/build_tailored.py --job ohio-state-optimization-ml-r160519
+cd resume/job-applications/faculty/ohio-state-optimization-ml-r160519
+pdflatex -no-shell-escape Waseem_Raza_OHIO_STATE_OPTIMIZATION_ML_R160519.tex
 ```
+
+The PDF is stored beside the source. For future faculty applications, use the reusable profile-overlay workflow documented in `resume/resume-profiles/faculty/README.md`.
