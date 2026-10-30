@@ -83,12 +83,12 @@ resume/.venv/bin/python resume/build.py --list
 
 | Variant | Generated PDF |
 | --- | --- |
-| GenAI | `resume/generic-resume/industry/Waseem_Raza_GENAI.pdf` |
-| AI/ML | `resume/generic-resume/industry/Waseem_Raza_AIML.pdf` |
-| Faculty & Academic | `resume/generic-resume/faculty/Waseem_Raza_FACULTY.pdf` |
-| Generic | `resume/generic-resume/industry/Waseem_Raza_GENERIC.pdf` |
+| GenAI | `resume/resume-profiles/industry/Waseem_Raza_GENAI.pdf` |
+| AI/ML | `resume/resume-profiles/industry/Waseem_Raza_AIML.pdf` |
+| Faculty & Academic | `resume/resume-profiles/faculty/Waseem_Raza_FACULTY.pdf` |
+| Generic | `resume/resume-profiles/industry/Waseem_Raza_GENERIC.pdf` |
 
-Generic PDFs are stored in `resume/generic-resume/industry/` and `resume/generic-resume/faculty/`. Faculty application CVs and industry tailored PDFs are stored directly in their respective `resume/job-applications/` folders. The generic build report is `resume/generic-resume/build-report.json`. Generated LaTeX intermediates are not intended as editable source; make lasting edits in the profile JSON or application source files.
+Generic PDFs are stored in `resume/resume-profiles/industry/` and `resume/resume-profiles/faculty/`. Faculty application CVs and industry tailored PDFs are stored directly in their respective `resume/job-applications/` folders. The generic build report is `resume/resume-profiles/build-report.json`. Generated LaTeX intermediates are not intended as editable source; make lasting edits in the profile JSON or application source files.
 
 ## 4. Preview options
 
@@ -112,7 +112,7 @@ Avoid manually running a build while the watch server is already rebuilding.
 
 ```bash
 printf 'Website: https://%s-8000.%s/\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
-printf 'GenAI PDF: https://%s-8001.%s/generic-resume/industry/Waseem_Raza_GENAI.pdf\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
+printf 'GenAI PDF: https://%s-8001.%s/resume-profiles/industry/Waseem_Raza_GENAI.pdf\n' "$CODESPACE_NAME" "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
 ```
 
 Click the printed URL, or Ctrl+click if your editor requires it. These commands
@@ -191,7 +191,7 @@ changes; it does not automatically refresh the browser PDF viewer.
 | Build fails after a JSON edit | Check double quotes, commas and brackets; JSON does not support comments or trailing commas. |
 | Unknown selected ID | Match the ID in `variants.json` to the corresponding source record. |
 | PDF exceeds page budget | Edit selections/layout or increase `maxPages`; inspect the retained PDF. |
-| LaTeX compilation error | Inspect the terminal message and matching `.log` in the relevant `resume/generic-resume/` or application folder. Industry LaTeX intermediates are created temporarily and are not retained. |
+| LaTeX compilation error | Inspect the terminal message and matching `.log` in the relevant `resume/resume-profiles/` or application folder. Industry LaTeX intermediates are created temporarily and are not retained. |
 
 For an intentionally oversized draft:
 
