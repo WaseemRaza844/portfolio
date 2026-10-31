@@ -39,6 +39,9 @@ def validate(payload):
             errors.append(f"{prefix}.status is invalid")
         if j.get("priority") not in PRIORITIES:
             errors.append(f"{prefix}.priority is invalid")
+        rank = j.get("rank")
+        if rank is not None and (type(rank) is not int or not 1 <= rank <= 999):
+            errors.append(f"{prefix}.rank must be 1..999 or null")
         for k in DATE_FIELDS:
             value = j.get(k)
             if value is not None:
