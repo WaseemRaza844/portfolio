@@ -343,6 +343,10 @@ def main() -> int:
     payload = json.loads(args.path.read_text(encoding="utf-8"))
     changed = 0
     for index, job in enumerate(payload.get("jobs", [])):
+        if job.get("enrichmentStatus") is None and job.get("status") in {"saved", "researching", "preparing", "ready"}:
+            job = dict(job)
+            job["enrichmentStatus"] = "pending"
+            job["enrichmentMessage"] = "Queued for public posting-page metadata extraction."
         if job.get("enrichmentStatus") != "pending":
             continue
         updated, did_change = enrich_job(job)
