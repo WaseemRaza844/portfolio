@@ -409,7 +409,7 @@ async function connectGithub(e) {
   const error=el("github-error");error.hidden=true;
   el("authorize-github").disabled=true;
   try {
-    if (!value) throw new Error("Enter a fine-grained GitHub token.");
+    if (!value) throw new Error("Paste your GitHub token into this field.");
     const fresh=await githubRead(value);
     token=value;
     el("github-token").value="";
@@ -437,45 +437,61 @@ function exportCSV() {
   document.body.append(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-async function init() {
-  ["search","filter-stage","filter-priority","sort-by"].forEach(name=>
-    el(name).addEventListener(name==="search"?"input":"change",render));
-  el("toggle-queue").addEventListener("click",()=>{showAllQueue=!showAllQueue;render();});
-  el("add-job").addEventListener("click",openAdd);
-  el("job-form").addEventListener("submit",submitJobForm);
-  el("github-form").addEventListener("submit",connectGithub);
-  el("connect-github").addEventListener("click",()=>{
-    if (token) {
-      token="";lastMessage="Disconnected. Token cleared from this page.";showSyncStatus();
-    } else {
-      el("github-error").hidden=true;el("github-token").value="";
-      el("github-dialog").showModal();
-    }
-  });
-  el("sync-now").addEventListener("click",()=>void syncGitHub());
-  el("export-csv").addEventListener("click",exportCSV);
-  for (const b of document.querySelectorAll("[data-close]")) {
-    b.addEventListener("click",()=>closeDialog(b.dataset.close));
-  }
+async function fetchWithTimeout(url, milliseconds) {
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), milliseconds);
   try {
-    try {
-      basePayload=(await githubRead("")).payload;
-    } catch (_) {
-      try {
-        const raw=await fetch("https://raw.githubusercontent.com/WaseemRaza844/portfolio/develop/dist/applications/jobs.json?fresh="+Date.now(),{cache:"no-store"});
-        if (!raw.ok) throw new Error("Raw GitHub data unavailable");
-        basePayload=await raw.json();
-      } catch (_) {
-        const resp=await fetch("./jobs.json",{cache:"no-store"});
-        if (!resp.ok) throw new Error("Unable to download jobs.json");
-        basePayload=await resp.json();
+    return await fetch(url, { cache:"no-store", signal:controller.signal });
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+async function init() {
+  try {
+    ["search","filter-stage","filter-priority","sort-by"].forEach(name=>
+      el(name).addEventListener(name==="search"?"input":"change",render));
+    el("toggle-queue").addEventListener("click",()=>{showAllQueue=!showAllQueue;render();});
+    el("add-job").addEventListener("click",openAdd);
+    el("job-form").addEventListener("submit",submitJobForm);
+    el("github-form").addEventListener("submit",connectGithub);
+    el("connect-github").addEventListener("click",()=>{
+      if (token) {
+        token="";lastMessage="Disconnected. Token cleared from this page.";showSyncStatus();
+      } else {
+        el("github-error").hidden=true;el("github-token").value="";
+        el("github-dialog").showModal();
       }
+    });
+    el("sync-now").addEventListener("click",()=>void syncGitHub());
+    el("export-csv").addEventListener("click",exportCSV);
+    for (const b of document.querySelectorAll("[data-close]")) {
+      b.addEventListener("click",()=>closeDialog(b.dataset.close));
     }
-    if (!Array.isArray(basePayload.jobs)) throw new Error("Invalid tracker data");
+    el("sync-label").textContent="Loading your application list...";
+    el("sync-detail").textContent="Connecting to the latest tracker data.";
+    if (!C) throw new Error("The tracker helper did not load. Refresh this page to load the latest scripts.");
+    let loadError = null;
+    try {
+      const live = await fetchWithTimeout(
+        "https://raw.githubusercontent.com/WaseemRaza844/portfolio/develop/dist/applications/jobs.json?v="+Date.now(), 4000);
+      if (!live.ok) throw new Error("GitHub returned HTTP "+live.status);
+      basePayload = await live.json();
+    } catch (err) {
+      loadError = err;
+      const local = await fetchWithTimeout("./jobs.json?v=20261031-quickfix1", 5000);
+      if (!local.ok) throw new Error("Could not load the tracker from GitHub or this site (HTTP "+local.status+").");
+      basePayload = await local.json();
+      lastMessage = "Using the latest dashboard copy. Connect GitHub to synchronize edits.";
+    }
+    if (!basePayload || !Array.isArray(basePayload.jobs)) throw new Error("The application list is not valid JSON.");
     refreshLocal();
+    if (loadError) {
+      el("sync-detail").textContent="Loaded the dashboard copy. "+(pendingOps.length ? "You have unsynced browser edits." : "Connect GitHub when you are ready to save changes.");
+    }
   } catch (err) {
-    el("sync-label").textContent="Could not load application data";
-    el("sync-detail").textContent=err.message+". Run the page through a web server and retry.";
+    el("sync-label").textContent="Tracker could not finish loading";
+    el("sync-detail").textContent=err.message+" You can still refresh the page; no existing GitHub records were changed.";
+    el("sync-indicator").className="sync-dot pending";
   }
 }
 init();
