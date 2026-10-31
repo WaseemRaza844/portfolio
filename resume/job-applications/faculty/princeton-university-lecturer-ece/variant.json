@@ -30,17 +30,14 @@
   "projectIds": [
     "turboran",
     "syntheticnet",
-    "propagation-digital-twins",
-    "ai-telecom-optimization",
-    "wearable-intelligence"
+    "propagation-digital-twins"
   ],
   "certificationIds": [
     "coursera-machine-learning",
     "coursera-python-for-data-science-ai-development",
     "coursera-ai-foundations-industry-overview-for-telecommunication",
     "coursera-network-and-security-optimization-in-telecommunication",
-    "coursera-4g-network-fundamentals",
-    "coursera-5g-network-fundamentals"
+    "coursera-4g-network-fundamentals"
   ],
   "mentoringBullets": [
     "Mentored student communications and wireless research projects through simulations and technical presentations.",
@@ -57,7 +54,20 @@
   "horizontalMarginInches": 0.72,
   "verticalMarginInches": 0.52,
   "minPages": 3,
-  "maxPages": 6,
+  "maxPages": 4,
   "minPageTextChars": 650,
-  "minLastPageChars": 450
+  "minLastPageChars": 850,
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023",
+    "lunarcomm-2022",
+    "positioning-ran-2022"
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "honorLimit": 4
 }
