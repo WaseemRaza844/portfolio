@@ -4,8 +4,9 @@ on:
     branches: [develop]
     paths:
       - 'dist/applications/**'
-      - 'resume/job-applications/validate_tracker.py'
+      - 'resume/job-applications/**'
       - '.github/workflows/validate-application-tracker.yml'
+      - '.github/workflows/enrich-application-postings.yml'
   push:
     branches: [develop]
     paths:
@@ -37,6 +38,8 @@ jobs:
           node --check dist/applications/app.js
       - name: Test tracker operations
         run: node --test resume/job-applications/tests/tracker-core.test.cjs
+      - name: Test posting metadata extraction
+        run: python -m unittest discover -s resume/job-applications/tests -p 'test_*.py'
       - name: Check HTML/JS/data files exist
         run: |
           test -s dist/applications/index.html
