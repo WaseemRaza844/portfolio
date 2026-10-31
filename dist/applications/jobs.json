@@ -166,7 +166,7 @@
     {
       "id": "job-mvvx6lbn-0-7725jw",
       "institution": "Not researched",
-      "title": "Posting to research (higheredjobs.com)",
+      "title": "Assistant Professor - Electrical Engineering Technology - HigherEdJobs",
       "location": "Not specified",
       "type": "Faculty / teaching (unverified)",
       "area": "",
@@ -184,7 +184,14 @@
       "targetApplyBy": "2026-11-02",
       "deadline": null,
       "submittedAt": null,
-      "lastReviewed": "2026-10-31"
+      "lastReviewed": "2026-10-31",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179593321"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/details.cfm?JobCode=179593321",
+      "enrichedAt": "2026-10-31"
     },
     {
       "id": "job-mvvx8cz7-0-pyr60o",
@@ -207,7 +214,14 @@
       "targetApplyBy": "2026-11-03",
       "deadline": null,
       "submittedAt": null,
-      "lastReviewed": "2026-10-31"
+      "lastReviewed": "2026-10-31",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179454262"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/details.cfm?JobCode=179454262",
+      "enrichedAt": "2026-10-31"
     }
   ]
 }
