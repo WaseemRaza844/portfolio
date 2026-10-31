@@ -32,7 +32,11 @@ jobs:
       - name: Validate tracker data and privacy
         run: python resume/job-applications/validate_tracker.py
       - name: Check dashboard JavaScript syntax
-        run: node --check dist/applications/app.js
+        run: |
+          node --check dist/applications/core.js
+          node --check dist/applications/app.js
+      - name: Test tracker operations
+        run: node --test resume/job-applications/tests/tracker-core.test.cjs
       - name: Check HTML/JS/data files exist
         run: |
           test -s dist/applications/index.html
