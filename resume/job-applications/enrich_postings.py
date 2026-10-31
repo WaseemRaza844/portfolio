@@ -259,20 +259,33 @@ def enrich_job(job: dict, fetcher=fetch_posting_page, today: str | None = None) 
     updated = dict(job)
     try:
         last_error = None
+        best = None
+        best_score = -1
         candidates = list(dict.fromkeys([job.get("postingUrl"), job.get("officialUrl")]))
-        html = ""
-        final_url = ""
         for candidate in candidates:
             if not candidate:
                 continue
             try:
                 html, final_url = fetcher(candidate)
-                break
+                metadata_candidate = extract_posting_metadata(html, final_url)
+                score = (
+                    10 * int(metadata_candidate["structuredJobPosting"])
+                    + 3 * int(bool(metadata_candidate["institution"]))
+                    + 2 * int(bool(metadata_candidate["title"]))
+                    + 2 * int(bool(metadata_candidate["location"]))
+                    + 2 * int(bool(metadata_candidate["deadline"]))
+                    + int(bool(metadata_candidate["description"]))
+                )
+                if score > best_score:
+                    best = (html, final_url, metadata_candidate)
+                    best_score = score
+                if metadata_candidate["structuredJobPosting"]:
+                    break
             except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
                 last_error = exc
-        if not html:
+        if best is None:
             raise last_error or ValueError("No public posting URL was available.")
-        metadata = extract_posting_metadata(html, final_url)
+        html, final_url, metadata = best
         if _placeholder(updated.get("title", ""), "Posting to research") or updated.get("title", "").startswith("Posting to research ("):
             if metadata["title"] and metadata["title"].lower() not in {"jobs", "careers", "job search"}:
                 updated["title"] = metadata["title"]
