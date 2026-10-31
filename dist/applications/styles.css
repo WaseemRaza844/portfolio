@@ -93,3 +93,78 @@ footer a{font-weight:600}
   .job-badges{justify-content:flex-start;margin-top:9px}
   .toplinks{gap:12px}
 }
+
+
+/* Interactive tracker v2 */
+.heading-actions{flex-wrap:wrap}
+button{transition:background .16s ease,border-color .16s ease,transform .12s ease}
+button:active{transform:translateY(1px)}
+.sync-panel{display:flex;align-items:center;gap:12px;padding:15px 17px;margin:4px 0 20px;background:#eff5ff;border:1px solid #d4e2f6;border-radius:13px}
+.sync-panel strong{font-size:13px}
+.sync-panel p{font-size:12px;color:#60718b;margin-top:2px}
+.sync-panel button{margin-left:auto;flex-shrink:0}
+.sync-dot{width:11px;height:11px;flex-shrink:0;border-radius:50%;background:#24a27b;box-shadow:0 0 0 4px #d5f5e7}
+.sync-dot.pending{background:#e6a520;box-shadow:0 0 0 4px #fff3d2}
+.sync-dot.working{background:#3a75dc;box-shadow:0 0 0 4px #dceafd}
+.count{font-weight:700;font-size:12px;color:#63748a}
+.jobs{gap:12px}
+.job{position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(25,45,76,.04)}
+.job.done{opacity:1;background:#eff8f5;border:2px solid #64b29c;border-left:7px solid #157f66;padding-left:15px}
+.job.done.closed{background:#f4f6f8;border-color:#bdc7d3;border-left-color:#6e7b8c}
+.job.done h3{text-decoration:line-through;text-decoration-color:#13634f;text-decoration-thickness:2.5px;color:#375e54}
+.job.done.closed h3{text-decoration-color:#5e7181;color:#536578}
+.job.done .job-name>p{color:#64796f}
+.completion-mark{display:inline-block;padding:5px 11px;margin:-2px 0 12px;background:#146b56;color:white;font-size:11px;font-weight:800;letter-spacing:.09em;border-radius:7px}
+.closed .completion-mark{background:#657489}
+.job-title{display:flex;align-items:flex-start;gap:13px}
+.job-title .queue-number{background:#1e497f;color:#fff;border-radius:11px;min-width:35px;height:35px;display:grid;place-items:center;font-weight:800;font-size:16px;flex-shrink:0}
+.job-name{min-width:0}
+.job-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.small-btn{font-size:12px;font-weight:700;padding:8px 11px;border-radius:8px}
+.small-btn.applied-action{background:#116d56;border-color:#116d56;color:#fff}
+.small-btn.applied-action:hover{background:#0c553f}
+.small-btn.edit-action{background:#e9f1fc;color:#1b5596;border-color:#c9d9ec}
+.job-meta{align-items:center}
+.pill.target{background:#e9efff;color:#2557a0}
+.pill.urgent{background:#ffebeb;color:#b31d36}
+.pill.stage-submitted,.pill.stage-interview,.pill.stage-offer{background:#d2f2e2;color:#0b6347;border:1px solid #9bd7b7}
+.pill.stage-closed{background:#e2e7ed;color:#42566b;border:1px solid #c1cad6}
+.job-bottom{align-items:flex-start}
+.job-links{display:flex;gap:7px;flex-wrap:wrap}
+.job-details{min-width:150px}
+.empty{padding:25px;color:#63738a;background:#f5f8fd;border-radius:11px}
+.secondary-action{width:100%;margin-top:12px;background:#eef3fa;color:#1d4b85}
+dialog{border:0;padding:0;width:min(700px,calc(100vw - 30px));max-height:min(92vh,910px);overflow:auto;border-radius:17px;box-shadow:0 27px 90px rgba(10,30,55,.3);background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(7,22,42,.68)}
+dialog form{padding:25px;display:grid;gap:14px}
+.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.dialog-head h2{margin:0}
+.dialog-head button{border:0;background:#edf2f9;border-radius:50%;width:33px;height:33px;padding:0;flex-shrink:0}
+dialog label{font-size:12px;font-weight:720;color:#45566c;display:grid;gap:5px}
+dialog input,dialog textarea,dialog select{display:block;width:100%;border:1px solid #d1dce7;border-radius:8px;font:14px/1.45 system-ui,sans-serif;padding:10px 11px;color:#17253e;background:white}
+dialog textarea{resize:vertical;min-height:65px}
+dialog input:focus-visible,dialog textarea:focus-visible,dialog select:focus-visible{outline:3px solid #b4d7fb;outline-offset:1px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.form-error{padding:9px 11px;border-radius:8px;background:#fff0f0;color:#a1172d;font-size:13px}
+.dialog-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:10px;border-top:1px solid var(--line)}
+.dialog-actions button{font-size:13px}
+#github-dialog{width:min(550px,calc(100vw - 30px))}
+#github-dialog form>p{font-size:13px;line-height:1.6}
+#github-dialog code{font-size:.9em}
+@media (max-width:740px){
+ .heading-actions{width:100%}
+ .heading-actions button{flex:1}
+ .job-top{display:flex;flex-direction:column}
+ .job-badges{max-width:100%;justify-content:flex-start}
+ .job-bottom{display:block}
+ .job-links{margin-top:10px}
+}
+@media (max-width:560px){
+ .form-grid{grid-template-columns:1fr}
+ dialog form{padding:17px}
+ .sync-panel{flex-wrap:wrap}
+ .sync-panel button{margin-left:22px}
+ .job{padding:14px}
+ .job.done{padding-left:12px}
+ .job-title .queue-number{min-width:30px;height:30px;border-radius:8px}
+}
