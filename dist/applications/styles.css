@@ -195,3 +195,5 @@ dialog input:focus-visible,dialog textarea:focus-visible,dialog select:focus-vis
  .collapsible-panel>summary .sub{max-width:260px}
  #refresh-data{margin-left:22px}
 }
+
+.form-error[hidden]{display:none}
