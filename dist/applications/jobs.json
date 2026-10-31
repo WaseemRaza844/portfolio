@@ -92,8 +92,7 @@
       "nextAction": "Verify original posting remains active and check exact portal upload requirements; consider newer NYC ECE vacancy.",
       "notes": "Original employer link was inaccessible during research. Do not treat vacancy as confirmed open.",
       "enrichmentStatus": "partial",
-      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
-      "postingDescription": "Jobs in higher education. Faculty and administrative positions at colleges and universities. Updated daily. Free to job seekers.",
+      "enrichmentMessage": "The job board exposed only generic site metadata, not the job-specific description. Manual research is still needed.",
       "enrichmentSource": "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179595929",
       "enrichedAt": "2026-10-31"
     },
@@ -124,11 +123,12 @@
       "nextAction": "First assess genuine alignment with the college's Christian mission and pastoral reference requirement; then decide whether to apply.",
       "notes": "Open until filled according to posting; mission and faith conditions are substantive requirements.",
       "enrichmentStatus": "complete",
-      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. The date shown is the posting's valid-through date; verify the employer's application deadline and required documents.",
       "datePosted": "2026-10-28",
       "postingDescription": "The Department of Electrical and Computer Engineering at Grove City College invites applications for a faculty position at the rank of Assistant or Associate Professor in Electrical Engineering or Computer Engineering. Passion for teaching fundamentals of electrical and computer engineering at the bachelor’s level is essential, along with an interest in applied research. Individuals with expertise across a wide range of areas related to electrical and computer engineering will be considered. The department has both B.S. in Electrical Engineering and B.S. in Computer Engineering programs, an interdisciplinary Robotics minor, and a growing mechatronics and student research focus. The department also supports an ABET-accredited B.S. in Computer Science, a B.S. in Computer Programming, and a B.S. in Data Science. The department seeks applicants who support its commitment to academic excellence, undergraduate teaching and research, hands-on interdisciplinary engineering design, and advising within the context of a college community that values liberal arts education, the life of the Christian mind, and service for the common good. Individuals with a strong industry background are especially encouraged to apply. Responsibilities will include teaching undergraduate courses, including laboratory courses, and advising interdisciplinary senior capstone design projects. A PhD in Electrical Engineering, Computer Engineering, Computer Science, or another closely related field of engineering or science is required. Applicants must demonstrate proficiency in teaching in both classroom and laboratory settings. Although undergraduate teaching is the primary focus at Grove City College, student/faculty research and other scholarly work are highly valued, and applicants should have the ab",
       "enrichmentSource": "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179600937",
-      "enrichedAt": "2026-10-31"
+      "enrichedAt": "2026-10-31",
+      "deadlineSource": "Schema.org JobPosting.validThrough"
     },
     {
       "id": "smccd-telecom-instructor-179494565",
@@ -156,8 +156,7 @@
       "nextAction": "Verify deadline in official portal, review required cover-letter questions, and assess California location and pool appointment.",
       "notes": "Deadline sourced from a secondary listing, not independently confirmed by employer; mark unverified.",
       "enrichmentStatus": "partial",
-      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
-      "postingDescription": "Jobs in higher education. Faculty and administrative positions at colleges and universities. Updated daily. Free to job seekers.",
+      "enrichmentMessage": "The job board exposed only generic site metadata, not the job-specific description. Manual research is still needed.",
       "alternateUrls": [
         "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179494565"
       ],
