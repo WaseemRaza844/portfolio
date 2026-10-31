@@ -1,0 +1,82 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Rutgers University | ECE Lecturer 2026–2027",
+  "headline": "ECE Lecturer | Communication Networks, Programming & Applied Machine Learning",
+  "tagline": "Undergraduate & Graduate Instruction | Wireless Networks | Data-Driven Engineering",
+  "summary": "Electrical and Computer Engineering PhD (University of Oklahoma, 2025) with prior university-level teaching in Computer Programming, Communication Systems, and Wireless Communication. Experienced in engineering laboratory support, student-project mentoring, curriculum-aligned assignments and assessment. Doctoral research in AI/ML for wireless networks complements industrial research and engineering experience at AT&T Labs, Futurewei, and AT&T. Prepared to contribute to Rutgers ECE lectures, discussions and applied coursework aligned with communication networks, wireless systems, programming, and machine learning for engineers.",
+  "researchInterests": [
+    "Computer and Communication Networks",
+    "Wireless and Mobile Communication Systems",
+    "Machine Learning for Engineers and Networked Systems",
+    "Data-Driven Signal Analysis and Network Optimization",
+    "Reliability, Robustness and Engineering Experimentation"
+  ],
+  "teachingAreas": [
+    "Computer Programming",
+    "Communication Systems",
+    "Wireless Communication",
+    "Computer and Communication Networks (related technical expertise)",
+    "Machine Learning for Engineers (related research and industry expertise)",
+    "Communication Laboratories and Applied Computational Projects"
+  ],
+  "skillsSectionTitle": "Teaching, Networking & Applied-ML Expertise",
+  "skills": {
+    "Documented Teaching": "Undergraduate Computer Programming, Communication Systems and Wireless Communication; assignments, laboratory support, student guidance and assessment",
+    "Computer & Wireless Networking": "Network protocols and performance, LTE/4G, 5G-NR, radio-access networks, wireless propagation, network measurements, reliability and data-driven optimization",
+    "AI/ML & Data Analysis": "Supervised learning, classification, regression, anomaly detection, generative modeling, transfer learning, reinforcement learning, data evaluation and visualization",
+    "Programming & Tools": "Python, C/C++, MATLAB, SQL, PyTorch, TensorFlow, scikit-learn, NumPy, Pandas, Git and Linux",
+    "Teaching Practice": "Worked problems, reproducible simulations, formative feedback, accessible assignments, structured office hours and project-based learning"
+  },
+  "projectIds": [
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins"
+  ],
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023",
+    "lunarcomm-2022",
+    "positioning-ran-2022"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-4g-network-fundamentals"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate student projects in communications, programming and related engineering topics.",
+    "Supported graduate and undergraduate research students on simulation, experimental design and technical reports.",
+    "Developed laboratory exercises and practical examples connecting communication theory with implementation."
+  ],
+  "academicServiceBullets": [
+    "Supported engineering assessment, examinations and curriculum-related activities.",
+    "Contributed to laboratory instruction, technical seminars and student mentoring."
+  ],
+  "dissertationFocus": "Dissertation on improving resilience and accuracy of AI models and wireless networks through outage detection, data-driven optimization, generative propagation modeling and robustness under distribution shift.",
+  "publicationSectionTitle": "Selected ECE Research Publications",
+  "projectSectionTitle": "Selected Wireless Networking Research and Testbeds",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.71,
+  "verticalMarginInches": 0.49,
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 620,
+  "minLastPageChars": 650,
+  "pageBreakBefore": [
+    "projects"
+  ],
+  "identity": {
+    "email": "waseem.placements@outlook.com",
+    "secondaryEmail": "waseemraza844@gmail.com",
+    "emails": [
+      "waseem.placements@outlook.com",
+      "waseemraza844@gmail.com"
+    ]
+  }
+}
