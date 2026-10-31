@@ -1,31 +1,34 @@
 # List of Courses Taught
 
-> Waseem Raza, PhD | Lecturer Pool, Electrical and Computer Engineering | Rutgers University-New Brunswick
+> Waseem Raza, PhD | Rutgers University-New Brunswick | Electrical and Computer Engineering Lecturer Pool
 
-## Courses taught as lecturer
+## University Courses Previously Taught
 
-**University of Lahore, Pakistan | Lecturer, Department of Technology | December 2017–September 2019**
+**University of Lahore, Pakistan | Lecturer | December 2017 to September 2019**
 
-- **Computer Programming** — University-level lecture instruction; programming fundamentals and engineering applications.
-- **Communication Systems** — University-level lecture instruction; concepts and analytical problem-solving in communication systems.
-- **Wireless Communication** — University-level lecture instruction; fundamental wireless communication principles and applications.
+- **Computer Programming.** Delivered university-level instruction in programming fundamentals, problem-solving, and engineering applications.
+- **Communication Systems.** Taught concepts and analytical methods for communication systems, including technical problem-solving and engineering applications.
+- **Wireless Communication.** Taught principles of wireless communication and their application to modern communication systems.
 
-> The course titles above reflect the verified teaching record in the academic CV. Exact catalog codes, semesters, enrollment numbers, and credit hours have not been independently established and are therefore intentionally omitted.
+## Additional Instructional Experience
 
-## Additional instructional and mentoring experience (not represented as courses independently taught)
+**University of Engineering and Technology, Taxila, Pakistan | Communication Systems Laboratory | August 2014 to February 2016**
 
-**University of Engineering and Technology, Taxila, Pakistan | Research Scholar, Communication Systems Lab | August 2014–February 2016**
+- Supported communications laboratory instruction, experiments, assignment preparation, examinations, and grading.
+- Assisted students with practical experiments and technical documentation.
 
-- Supported communications course instruction, laboratory activities, technical manuals, assignments, examinations, and grading.
-- Guided practical wireless communication experiments and student project materials.
+**COMSATS University Islamabad, Pakistan | Research Associate, ComSens Lab | June 2016 to December 2017**
 
-**COMSATS University Islamabad, Pakistan | Research Associate, ComSens Lab | June 2016–December 2017**
+- Mentored Bachelor's and Master's students on communications-related research, thesis projects, experiments, and technical presentations.
 
-- Mentored Bachelor's and Master's research and thesis students in communications-related experiments, reports, and research presentation.
-- Supported laboratory seminars and research activities.
+## Related Courses of Teaching Interest (Not Previously Taught as Instructor of Record)
 
-## Rutgers ECE curricular alignment (interest and preparation, not prior teaching claims)
+My PhD in Electrical and Computer Engineering, research in AI/ML for wireless networks, and industry work in telecommunications provide a technical foundation for related instructional assignments, subject to course needs and preparation:
 
-Based on published Rutgers ECE course descriptions, relevant course areas for consideration include **14:332:423 Computer and Communication Networks** and **14:332:443 Machine Learning for Engineers**, in addition to suitable communication systems, wireless networks, and programming assignments. This section describes areas of academic and industry preparation; it does **not** assert that the named Rutgers courses were previously taught.
+- **Machine Learning for Engineers and Introductory AI/ML:** supervised learning, classification, regression, model evaluation, and engineering datasets.
+- **Data Science and Programming for Engineers:** Python-based data processing, visualization, statistical learning, and reproducible experiments.
+- **Computer and Communication Networks:** networking principles, network performance, and wireless/cellular systems.
 
-> Before submission: add exact course codes, terms, credit hours, or teaching evaluations only if you can confirm them from your institutional teaching records.
+At Rutgers, **14:332:423 Computer and Communication Networks** and **14:332:443 Machine Learning for Engineers** are examples of relevant curricular areas. These Rutgers courses and the AI/ML areas above are **prospective teaching interests, not claims of previous classroom instruction**.
+
+> Course codes, semesters, credit hours, and enrollments for the previously taught courses are omitted because these details have not been independently confirmed.
