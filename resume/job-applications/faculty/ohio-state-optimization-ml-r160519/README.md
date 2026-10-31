@@ -32,4 +32,4 @@ python resume/build_tailored.py --job ohio-state-optimization-ml-r160519
 
 The builder uses a temporary directory for LaTeX intermediates and writes only the final PDF and build report beside the source.
 
-The PDF is stored beside the source. For future faculty applications, use the reusable profile-overlay workflow documented in `resume/resume-profiles/faculty/README.md`.
+The PDF is stored beside the source. The current validated target is two well-filled pages. For future faculty applications, use the reusable profile-overlay workflow documented in `resume/resume-profiles/faculty/README.md`.
