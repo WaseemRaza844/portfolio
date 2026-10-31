@@ -7,9 +7,9 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Interactive academic job application tracker">
   <title>Faculty Application Tracker</title>
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./core.js"></script>
-  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="./styles.css?v=20261031-quickfix1">
+  <script defer src="./core.js?v=20261031-quickfix1"></script>
+  <script defer src="./app.js?v=20261031-quickfix1"></script>
 </head>
 <body>
 <div class="shell">
@@ -125,9 +125,9 @@
   <form id="github-form">
     <header class="dialog-head"><h2 id="github-dialog-title">Sync with GitHub</h2>
       <button type="button" data-close="github-dialog" aria-label="Close">✕</button></header>
-    <p>GitHub Pages cannot edit the repository anonymously. To save directly to <code>develop</code>, use a <strong>fine-grained personal access token</strong> restricted to <strong>WaseemRaza844/portfolio</strong> with only <strong>Contents: Read and write</strong>.</p>
+    <p>GitHub Pages cannot edit the repository anonymously. To save directly to <code>develop</code>, use a <strong>fine-grained personal access token (recommended)</strong> restricted to <strong>WaseemRaza844/portfolio</strong> with <strong>Contents: Read and write</strong>. A classic token with the <code>repo</code> scope also works, but grants broader access.</p>
     <p class="sub tiny">Create one in <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">GitHub token settings ↗</a>. Do not paste it into ChatGPT or a repository file. It remains only in this page's memory and is cleared when you close or refresh the tab.</p>
-    <label>GitHub access token<input id="github-token" type="password" autocomplete="off" spellcheck="false" required placeholder="github_pat_..."></label>
+    <label>GitHub access token<input id="github-token" type="password" autocomplete="off" spellcheck="false" required placeholder="Paste your GitHub token (github_pat_... or ghp_...)"></label>
     <p id="github-error" class="form-error" role="alert" hidden></p>
     <div class="dialog-actions"><button type="button" data-close="github-dialog">Cancel</button>
       <button type="submit" class="button primary" id="authorize-github">Connect and sync</button></div>
