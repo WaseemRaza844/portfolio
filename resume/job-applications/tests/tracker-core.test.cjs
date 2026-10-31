@@ -6,7 +6,7 @@ const C = require("../../../dist/applications/core.js");
 const fixture = () => ({
   schemaVersion:1,
   jobs:[
-    {id:"first",institution:"University A",title:"Lecturer",postingUrl:"https://www.higheredjobs.com/details.cfm?JobCode=123&Title=Lecturer",priority:"high",status:"preparing"},
+    {id:"first",institution:"University A",title:"Lecturer",postingUrl:"https://www.higheredjobs.com/details.cfm?JobCode=123&Title=Lecturer",officialUrl:"https://careers.university-a.edu/jobs/lecturer",priority:"high",status:"preparing"},
     {id:"second",institution:"University B",title:"Researcher",postingUrl:"https://jobs.example.edu/posting/9",priority:"medium",status:"submitted"}
   ]
 });
@@ -48,4 +48,21 @@ test("close and reopen are distinct from submitted and sort ranks first",()=>{
   assert.deepEqual(jobs.sort(C.prioritySort).map(j=>j.id),["1","2","3"]);
   assert.equal(C.done(jobs[2]),true);
   assert.equal(C.submitted(jobs[2]),false);
+});
+
+
+test("duplicate detection includes employer and alternate URLs",()=>{
+  const jobs=fixture().jobs;
+  assert.equal(C.findDuplicate(jobs,"https://careers.university-a.edu/jobs/lecturer/"),jobs[0]);
+  assert.equal(C.findDuplicate(jobs,"https://www.higheredjobs.com/details.cfm?Title=Assistant&JobCode=123"),jobs[0]);
+  assert.equal(C.findDuplicate(jobs,"https://higheredjobs.com/details.cfm?JOBCODE=123&Title=Other"),jobs[0]);
+  assert.equal(C.findDuplicate(jobs,"https://new.example.edu/job/1"),null);
+});
+
+test("bulk add silently skips a posting already represented by an employer URL",()=>{
+  const candidate={id:"repeat",institution:"University A",title:"Lecturer",
+    postingUrl:"https://careers.university-a.edu/jobs/lecturer/",status:"saved",priority:"high"};
+  const out=C.applyOperations(fixture(),[{type:"add",job:candidate}]);
+  assert.equal(out.jobs.length,2);
+  assert.equal(out.jobs.some(j=>j.id==="repeat"),false);
 });

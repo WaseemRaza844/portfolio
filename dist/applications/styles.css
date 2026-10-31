@@ -168,3 +168,32 @@ dialog input:focus-visible,dialog textarea:focus-visible,dialog select:focus-vis
  .job.done{padding-left:12px}
  .job-title .queue-number{min-width:30px;height:30px;border-radius:8px}
 }
+
+
+
+/* Collapsible application groups and research indicators */
+.collapsible-panel{padding:21px 24px}
+.collapsible-panel>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0}
+.collapsible-panel>summary::-webkit-details-marker{display:none}
+.collapsible-panel>summary::after{content:"＋";font-size:19px;font-weight:700;color:var(--blue);margin-left:auto;flex-shrink:0}
+.collapsible-panel[open]>summary::after{content:"−"}
+.collapsible-panel[open]>summary{margin-bottom:18px}
+.collapsible-panel:not([open])>summary .sub{margin-bottom:0}
+.collapsible-panel>summary:hover h2{color:var(--blue)}
+.research-pending{background:#e8f0ff;color:#2857a6;border:1px solid #c9d9fa}
+.research-needed{background:#fff4df;color:#865b00;border:1px solid #f0d89d}
+.research-done{background:#e5f5ef;color:#17634d;border:1px solid #b9e1d0}
+.form-error{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.duplicate-highlight{outline:3px solid #e0ad36;outline-offset:3px;animation:duplicate-pulse 1.3s ease-out 1}
+@keyframes duplicate-pulse{0%{outline-color:#e0ad36}100%{outline-color:transparent}}
+#refresh-data{white-space:nowrap;margin-left:auto}
+.sync-panel{flex-wrap:wrap}
+.sync-panel>div{min-width:150px;flex:1}
+@media(max-width:600px){
+ .collapsible-panel{padding:17px 14px}
+ .collapsible-panel>summary{align-items:flex-start}
+ .collapsible-panel>summary .sub{max-width:260px}
+ #refresh-data{margin-left:22px}
+}
+
+.form-error[hidden]{display:none}

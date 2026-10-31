@@ -90,7 +90,9 @@
       "submittedAt": null,
       "lastReviewed": "2026-10-30",
       "nextAction": "Verify original posting remains active and check exact portal upload requirements; consider newer NYC ECE vacancy.",
-      "notes": "Original employer link was inaccessible during research. Do not treat vacancy as confirmed open."
+      "notes": "Original employer link was inaccessible during research. Do not treat vacancy as confirmed open.",
+      "enrichmentStatus": "pending",
+      "enrichmentMessage": "Queued for automatic extraction from the public posting page after the tracker update is merged."
     },
     {
       "id": "grove-city-ece-faculty-179600937",
@@ -117,7 +119,9 @@
       "submittedAt": null,
       "lastReviewed": "2026-10-30",
       "nextAction": "First assess genuine alignment with the college's Christian mission and pastoral reference requirement; then decide whether to apply.",
-      "notes": "Open until filled according to posting; mission and faith conditions are substantive requirements."
+      "notes": "Open until filled according to posting; mission and faith conditions are substantive requirements.",
+      "enrichmentStatus": "pending",
+      "enrichmentMessage": "Queued for automatic extraction from the public posting page after the tracker update is merged."
     },
     {
       "id": "smccd-telecom-instructor-179494565",
@@ -143,7 +147,9 @@
       "submittedAt": null,
       "lastReviewed": "2026-10-30",
       "nextAction": "Verify deadline in official portal, review required cover-letter questions, and assess California location and pool appointment.",
-      "notes": "Deadline sourced from a secondary listing, not independently confirmed by employer; mark unverified."
+      "notes": "Deadline sourced from a secondary listing, not independently confirmed by employer; mark unverified.",
+      "enrichmentStatus": "pending",
+      "enrichmentMessage": "Queued for automatic extraction from the public posting page after the tracker update is merged."
     }
   ]
 }

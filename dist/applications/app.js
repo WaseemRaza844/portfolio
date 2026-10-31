@@ -14,6 +14,7 @@ let token = ""; // NEVER save a token in localStorage, sessionStorage or reposit
 let syncing = false;
 let showAllQueue = false;
 let lastMessage = "";
+let duplicateNotice = "";
 
 const el = id => document.getElementById(id);
 function make(tag, className, text) {
@@ -84,7 +85,7 @@ function showSyncStatus() {
       : "Saved in this browser only. Connect GitHub to update develop and your reminders.";
   } else {
     head.textContent = token ? "GitHub connected · all changes saved" : "Up to date · viewing saved GitHub data";
-    detail.textContent = lastMessage || (token ? "Edits will automatically commit to develop." : "You can edit immediately; connect GitHub to sync across devices.");
+    detail.textContent = lastMessage || duplicateNotice || (token ? "Edits will automatically commit to develop." : "You can edit immediately; connect GitHub to sync across devices.");
   }
   syncButton.hidden = syncing || count===0;
   syncButton.disabled = syncing;
@@ -105,14 +106,17 @@ function detailsSection(job) {
   inside.append(make("p", "", job.documents && job.documents.length
     ? "Documents: " + job.documents.join(" · ") : "Documents not yet researched"));
   if (job.submittedAt) inside.append(make("p", "", "Application submitted: " + niceDate(job.submittedAt)));
-  if (job.notes) inside.append(make("p", "", job.notes));
   if (job.area) inside.append(make("p", "", "Focus: " + job.area));
+  if (job.postingDescription) inside.append(make("p", "", "Posting summary: " + job.postingDescription));
+  if (job.enrichmentMessage) inside.append(make("p", "", "Automatic details: " + job.enrichmentMessage));
+  if (job.notes) inside.append(make("p", "", job.notes));
   node.append(inside);
   return node;
 }
 function card(job, position) {
   const done = C.done(job);
   const item=make("article", "job" + (done ? " done " + job.status : ""));
+  item.dataset.jobId=job.id;
   if (done) item.append(make("div", "completion-mark", job.status==="closed"?"✕ CLOSED":"✓ APPLIED"));
   const titleRow=make("div", "job-top");
   const title=make("div", "job-title");
@@ -125,6 +129,9 @@ function card(job, position) {
   const pills=make("div", "job-badges");
   pills.append(badge(STATUS[job.status] || job.status,"stage-"+job.status));
   pills.append(badge((job.priority || "medium").toUpperCase()+" PRIORITY","priority-"+job.priority));
+  if (job.enrichmentStatus==="pending") pills.append(badge("Metadata pending","research-pending"));
+  else if (job.enrichmentStatus==="partial" || job.enrichmentStatus==="failed") pills.append(badge("Needs research","research-needed"));
+  else if (job.enrichmentStatus==="complete") pills.append(badge("Page details extracted","research-done"));
   titleRow.append(pills);
   item.append(titleRow);
 
@@ -177,6 +184,12 @@ function render() {
   toggle.hidden=active.length<=5;
   toggle.textContent=showAllQueue?"Show top five only":"Show all "+active.length+" pending applications";
 
+  const submitted=records.filter(C.submitted).sort(C.prioritySort);
+  el("submitted-count").textContent=submitted.length+" applications";
+  const submittedList=el("submitted-jobs");submittedList.replaceChildren();
+  if (!submitted.length) submittedList.append(make("p","empty","No submitted applications yet."));
+  submitted.forEach(j=>submittedList.append(card(j,null)));
+
   const q=el("search").value.trim().toLowerCase();
   const status=el("filter-stage").value, priority=el("filter-priority").value;
   const list=records.filter(j=>{
@@ -184,7 +197,7 @@ function render() {
     if (status==="submitted-group" && !C.submitted(j)) return false;
     if (!["all","pending","submitted-group"].includes(status) && j.status!==status) return false;
     if (priority!=="all" && j.priority!==priority) return false;
-    return [j.institution,j.title,j.location,j.area,j.notes,j.postingUrl].join(" ").toLowerCase().includes(q);
+    return [j.institution,j.title,j.location,j.area,j.notes,j.postingUrl,j.officialUrl,j.postingDescription].join(" ").toLowerCase().includes(q);
   });
   const ordering=el("sort-by").value;
   if (ordering==="institution") list.sort((a,b)=>a.institution.localeCompare(b.institution));
@@ -205,6 +218,7 @@ function newOp(type, extras) {
   return Object.assign({type:type, opId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10)},extras);
 }
 function recordChange(operation) {
+  duplicateNotice="";
   pendingOps.push(operation);
   persistPending();
   lastMessage="";
@@ -227,6 +241,25 @@ function setStatus(job, status) {
   recordChange(newOp("update",{jobId:job.id,patch:patch}));
 }
 function closeDialog(name) { el(name).close(); }
+function showFormError(message, existingJob) {
+  const error=el("form-error");
+  error.replaceChildren(document.createTextNode(message+" "));
+  if (existingJob) {
+    error.append(button("View existing application",()=>{
+      closeDialog("job-dialog");
+      el("search").value="";
+      el("filter-stage").value="all";
+      el("filter-priority").value="all";
+      if (C.submitted(existingJob)) el("submitted-section").open=true;
+      else if (C.pending(existingJob)) showAllQueue=true;
+      else el("all-section").open=true;
+      render();
+      const match=[...document.querySelectorAll(".job[data-job-id]")].find(n=>n.dataset.jobId===existingJob.id);
+      if (match) { match.scrollIntoView({behavior:"smooth",block:"center"}); match.classList.add("duplicate-highlight"); }
+    },"small-btn edit-action"));
+  }
+  error.hidden=false;
+}
 function openAdd() {
   el("job-form").reset();
   el("editing-id").value="";
@@ -276,16 +309,32 @@ function submitJobForm(e) {
     const urls=formInput("job-urls").split(/\s+/).filter(Boolean).map(publicURL);
     if (!urls.length) throw new Error("Paste at least one job posting URL.");
     if (editId && urls.length!==1) throw new Error("A single application can only have one posting URL.");
-    const duplicates=[];
+    const duplicateJobs=[];
+    const duplicateInputs=[];
+    const uniqueUrls=[];
     const keys=new Set();
     for (const url of urls) {
       const key=C.jobKey(url);
-      if (keys.has(key)) duplicates.push(url);
+      if (keys.has(key)) { duplicateInputs.push(url); continue; }
       keys.add(key);
-      const match=records.find(j=>j.id!==editId && C.samePosting(url,j.postingUrl));
-      if (match) duplicates.push("Already tracked: " + match.institution + " — " + match.title);
+      const match=C.findDuplicate(records,url,editId);
+      if (match) { duplicateJobs.push(match); continue; }
+      uniqueUrls.push(url);
     }
-    if (duplicates.length) throw new Error("Duplicate posting detected. " + duplicates[0]);
+    if (editId && duplicateJobs.length) {
+      const match=duplicateJobs[0];
+      showFormError("This URL already belongs to "+match.institution+" — "+match.title+" ("+(STATUS[match.status]||match.status)+"). No change was made.",match);
+      return;
+    }
+    if (!editId && uniqueUrls.length===0) {
+      if (duplicateJobs.length) {
+        const match=duplicateJobs[0];
+        showFormError("Already tracked: "+match.institution+" — "+match.title+" ("+(STATUS[match.status]||match.status)+"). No duplicate was added.",match);
+      } else {
+        showFormError("The same URL appears more than once in your pasted list. No duplicate was added.");
+      }
+      return;
+    }
     if (urls.length>1 && (formInput("job-title")||formInput("job-institution")) &&
         !window.confirm("You entered shared institution/title details for multiple links. Apply those same details to all postings?")) return;
     const st=formInput("job-status");
@@ -305,14 +354,19 @@ function submitJobForm(e) {
       const previous=records.find(j=>j.id===editId);
       if (!previous) throw new Error("Application was not found; refresh the page.");
       Object.assign(fields,{
-        postingUrl:urls[0], institution:institution||previous.institution, title:title||previous.title,
+        postingUrl:uniqueUrls[0], institution:institution||previous.institution, title:title||previous.title,
         location:location||previous.location,
         nextAction:next||previous.nextAction
       });
+      if (!C.samePosting(previous.postingUrl,uniqueUrls[0])) {
+        fields.alternateUrls=[...new Set([...(previous.alternateUrls||[]),previous.postingUrl].filter(Boolean))];
+        fields.enrichmentStatus="pending";
+        fields.enrichmentMessage="Posting URL changed; queued for public page metadata extraction after sync.";
+      }
       if (st==="submitted" && previous.status!=="submitted" && !fields.submittedAt) fields.submittedAt=todayISO();
       recordChange(newOp("update",{jobId:editId,patch:fields}));
     } else {
-      const adds=urls.map((url,i)=>{
+      const adds=uniqueUrls.map((url,i)=>{
         const hostname=new URL(url).hostname.replace(/^www\./,"");
         const j=Object.assign({
           id:"job-"+Date.now().toString(36)+"-"+i+"-"+Math.random().toString(36).slice(2,8),
@@ -323,18 +377,26 @@ function submitJobForm(e) {
           area:"", postingUrl:url, officialUrl:null, deadlineVerified:false,
           documents:[], documentsReady:false, applicationFolder:null,
           nextAction:next||"Research job description, deadline, eligibility and required documents.",
-          notes:"Added directly from dashboard; job details have not yet been verified."
+          notes:"Added directly from dashboard; job details have not yet been verified.",
+          enrichmentStatus:"pending",
+          enrichmentMessage:"Waiting for automatic extraction from the public posting page."
         },fields);
         if (st==="closed" || st==="saved") j.submittedAt=null;
         return j;
       });
       adds.forEach(job=>pendingOps.push(newOp("add",{job:job})));
+      duplicateNotice="";
+      if (duplicateJobs.length || duplicateInputs.length) {
+        const existing=duplicateJobs[0];
+        duplicateNotice="Added "+adds.length+" new posting(s); skipped "+(duplicateJobs.length+duplicateInputs.length)+" duplicate link(s)."+
+          (existing ? " Already tracked: "+existing.institution+" — "+existing.title+" ("+(STATUS[existing.status]||existing.status)+")." : "");
+      } else duplicateNotice="Added "+adds.length+" posting(s). Automatic page-metadata extraction will run after GitHub sync.";
       persistPending();lastMessage="";refreshLocal();
       if (token) void syncGitHub();
     }
     closeDialog("job-dialog");
     el("filter-stage").value="all";el("search").value="";render();
-  } catch (err) {error.textContent=err.message;error.hidden=false;}
+  } catch (err) {showFormError(err.message);}
 }
 async function githubRead(authToken) {
   const headers={Accept:"application/vnd.github+json"};
@@ -373,6 +435,7 @@ async function githubWrite(payload,sha) {
 async function syncGitHub() {
   if (syncing) return;
   if (!token) {el("github-dialog").showModal();return;}
+  const notice=duplicateNotice;
   syncing=true;lastMessage="";showSyncStatus();
   try {
     let attempt=0;
@@ -395,7 +458,7 @@ async function syncGitHub() {
       records=C.applyOperations(basePayload,pendingOps).jobs;
       render();
     }
-    lastMessage="Changes committed to GitHub develop. Your other devices and reminders can read them.";
+    lastMessage=(notice ? notice+" " : "")+"Changes committed to GitHub develop. Public posting metadata will be extracted automatically when available; refresh in a minute to see it.";
   } catch (err) {
     lastMessage="Sync failed: "+err.message+". Your edits are still saved in this browser.";
   } finally {
@@ -403,6 +466,36 @@ async function syncGitHub() {
     showSyncStatus();
   }
 }
+async function refreshFromGitHub() {
+  const refreshButton=el("refresh-data");
+  refreshButton.disabled=true;
+  const oldLabel=refreshButton.textContent;
+  refreshButton.textContent="Refreshing...";
+  try {
+    let latest;
+    if (token) {
+      latest=(await githubRead(token)).payload;
+    } else {
+      const response=await fetchWithTimeout(
+        "https://raw.githubusercontent.com/WaseemRaza844/portfolio/develop/dist/applications/jobs.json?v="+Date.now(),5000);
+      if (!response.ok) throw new Error("GitHub returned HTTP "+response.status);
+      latest=await response.json();
+    }
+    if (!latest || !Array.isArray(latest.jobs)) throw new Error("GitHub returned invalid tracker data.");
+    basePayload=latest;
+    records=C.applyOperations(basePayload,pendingOps).jobs;
+    lastMessage="Loaded the latest GitHub tracker, including any extracted posting details.";
+    render();
+    showSyncStatus();
+  } catch (err) {
+    lastMessage="Could not refresh GitHub data: "+err.message;
+    showSyncStatus();
+  } finally {
+    refreshButton.disabled=false;
+    refreshButton.textContent=oldLabel;
+  }
+}
+
 async function connectGithub(e) {
   e.preventDefault();
   const value=formInput("github-token");
@@ -463,6 +556,7 @@ async function init() {
       }
     });
     el("sync-now").addEventListener("click",()=>void syncGitHub());
+    el("refresh-data").addEventListener("click",()=>void refreshFromGitHub());
     el("export-csv").addEventListener("click",exportCSV);
     for (const b of document.querySelectorAll("[data-close]")) {
       b.addEventListener("click",()=>closeDialog(b.dataset.close));
