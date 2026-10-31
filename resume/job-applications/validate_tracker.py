@@ -90,6 +90,8 @@ def validate(payload):
                     URLs[key] = job_id
         if j.get("enrichmentStatus") is not None and j.get("enrichmentStatus") not in ENRICHMENT_STATES:
             errors.append(f"{prefix}.enrichmentStatus is invalid")
+        if j.get("deadlineSource") is not None and not isinstance(j.get("deadlineSource"), str):
+            errors.append(f"{prefix}.deadlineSource must be text or null")
         if j.get("postingDescription") is not None and (
             not isinstance(j.get("postingDescription"), str) or len(j["postingDescription"]) > 3000
         ):
