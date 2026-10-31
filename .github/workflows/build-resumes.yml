@@ -98,7 +98,7 @@ jobs:
           ohio=root/'job-applications/faculty/ohio-state-optimization-ml-r160519'
           ohio_report=ohio/'build-report.json'
           assert ohio_report.is_file(), 'Ohio State standalone faculty resume was not rebuilt'
-          assert json.loads(ohio_report.read_text(encoding='utf-8'))['pages']==3, 'Ohio State resume must remain three pages'
+          assert json.loads(ohio_report.read_text(encoding='utf-8'))['pages']==2, 'Ohio State resume must be two well-filled pages'
           app=root/'job-applications/faculty/lafayette-college-assistant-professor-ece'
           manifest=app/'application-documents.json'
           assert manifest.is_file(), 'Lafayette application document manifest is missing'
