@@ -138,7 +138,7 @@ function card(job, position) {
   const info=make("div", "job-meta");
   info.append(make("span", "", job.type || "Faculty / teaching"));
   if (job.targetApplyBy) info.append(badge("Apply by " + niceDate(job.targetApplyBy), "target"));
-  if (job.deadline) info.append(make("span", "", "Employer deadline: " + niceDate(job.deadline) +
+  if (job.deadline) info.append(make("span", "", (job.deadlineSource ? "Posting valid through: " : "Employer deadline: ") + niceDate(job.deadline) +
     (job.deadlineVerified ? "" : " (unverified)")));
   const due=daysLeft(job.targetApplyBy || job.deadline);
   if (C.pending(job) && due != null) {
