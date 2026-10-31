@@ -11,8 +11,9 @@ on:
     branches: [develop]
     paths:
       - 'dist/applications/**'
-      - 'resume/job-applications/validate_tracker.py'
+      - 'resume/job-applications/**'
       - '.github/workflows/validate-application-tracker.yml'
+      - '.github/workflows/enrich-application-postings.yml'
   workflow_dispatch:
 
 permissions:
