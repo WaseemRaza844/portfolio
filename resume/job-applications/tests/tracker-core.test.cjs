@@ -55,6 +55,7 @@ test("duplicate detection includes employer and alternate URLs",()=>{
   const jobs=fixture().jobs;
   assert.equal(C.findDuplicate(jobs,"https://careers.university-a.edu/jobs/lecturer/"),jobs[0]);
   assert.equal(C.findDuplicate(jobs,"https://www.higheredjobs.com/details.cfm?Title=Assistant&JobCode=123"),jobs[0]);
+  assert.equal(C.findDuplicate(jobs,"https://higheredjobs.com/details.cfm?JOBCODE=123&Title=Other"),jobs[0]);
   assert.equal(C.findDuplicate(jobs,"https://new.example.edu/job/1"),null);
 });
 
