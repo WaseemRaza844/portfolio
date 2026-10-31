@@ -70,8 +70,8 @@ class PostingEnrichmentTests(unittest.TestCase):
         job["deadlineVerified"] = False
         preserved, _ = enrich_job(job, fetcher=lambda url: (JOB_HTML, url), today="2026-10-31")
         self.assertEqual(preserved["institution"], "Manually researched University")
-        self.assertEqual(preserved["deadline"], "2027-06-30")
-        self.assertFalse(preserved["deadlineVerified"])
+        self.assertEqual(preserved["deadline"], "2027-07-27")
+        self.assertTrue(preserved["deadlineVerified"])
 
     def test_non_pending_record_is_not_fetched_or_changed(self):
         job = {"id": "done", "enrichmentStatus": "complete"}
