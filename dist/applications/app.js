@@ -337,7 +337,7 @@ function submitJobForm(e) {
   } catch (err) {error.textContent=err.message;error.hidden=false;}
 }
 async function githubRead(authToken) {
-  const headers={Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
+  const headers={Accept:"application/vnd.github+json"};
   if (authToken) headers.Authorization="Bearer "+authToken;
   const response=await fetch(API_URL,{headers:headers,cache:"no-store"});
   if (!response.ok) throw new Error(response.status===401?"Invalid or expired GitHub token":response.status===403?"GitHub permission or rate limit error":"GitHub read failed (HTTP "+response.status+")");
@@ -358,7 +358,7 @@ async function githubWrite(payload,sha) {
   const response=await fetch(UPDATE_URL,{
     method:"PUT",
     headers:{Accept:"application/vnd.github+json",Authorization:"Bearer "+token,
-      "X-GitHub-Api-Version":"2022-11-28","Content-Type":"application/json"},
+      "Content-Type":"application/json"},
     body:JSON.stringify({message:"chore(applications): update faculty tracker from dashboard",
       content:content,sha:sha,branch:"develop"})
   });
