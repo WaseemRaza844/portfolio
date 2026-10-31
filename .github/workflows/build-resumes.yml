@@ -77,6 +77,8 @@ jobs:
         run: python resume/build_tailored.py --all
       - name: Generate editable faculty application Word documents
         run: python resume/build_application_documents.py
+      - name: Generate Princeton Lecturer cover letter PDF
+        run: python resume/job-applications/faculty/princeton-university-lecturer-ece/build_cover_letter.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
