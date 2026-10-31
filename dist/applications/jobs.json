@@ -240,8 +240,8 @@
       "priority": "medium",
       "postingUrl": "https://www.higheredjobs.com/details.cfm?JobCode=179603087",
       "officialUrl": null,
-      "deadline": null,
-      "deadlineVerified": false,
+      "deadline": "2028-04-22",
+      "deadlineVerified": true,
       "targetApplyBy": null,
       "documents": [],
       "documentsReady": false,
@@ -249,7 +249,17 @@
       "submittedAt": null,
       "lastReviewed": "2026-10-31",
       "nextAction": "Obtain the visible job title, employer, and complete job description from the posting; then verify required materials and priority.",
-      "notes": "Unable to access HigherEdJobs direct page or independently verify the job using its code. No institution, deadline, or requirements have been inferred."
+      "notes": "Unable to access HigherEdJobs direct page or independently verify the job using its code. No institution, deadline, or requirements have been inferred.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "deadlineSource": "Schema.org JobPosting.validThrough",
+      "datePosted": "2026-10-30",
+      "postingDescription": "Assistant Professor of Computer Science Susquehanna University Job Type: Faculty - Full-Time Benefits Eligible FLSA: Exempt Hours per week: Variable Number of months: 9 Location : Selinsgrove, PA Closing Date: Continuous About Susquehanna Susquehanna University is the future-ready institution for today, invested in cultivating intellectual grounding, active learning and global citizenship for all students. Renowned as one of the finest U.S. national liberal arts colleges, Susquehanna inspires and challenges 2,200 enterprising, bright-minded students studying the arts, business, humanities and sciences. Our students seize opportunities through exceptional worldwide internships, expert-guided research and an acclaimed study-abroad program, leading to a transformative education that empowers each graduate to realize their unique potential and lead a successful and meaningful life. The Susquehanna River Valley with its fresh air and overall pleasant year-round climate, provides four distinct seasons amidst a backdrop of vibrant autumn foliage, occasional winter snowfalls, flower-filled springs and warm summer evenings illuminated by fireflies. Nearby outdoor recreational areas for hiking, kayaking, fishing and skiing - and the bustling cultural and commerce hubs of New York City, Washington D.C., Baltimore and Philadelphia within a three-hour drive - present abundant opportunities for learning and discovery. Job Summary Susquehanna University invites applications for a full-time tenure-track position at the rank of Assistant Professor of Computer Science, beginning in August 2027. The area of specialization is open. Specific Responsibilities Teaching duties will be three courses per semester and will span a broad range of undergraduate Computer Science courses. The successf",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179603087"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/details.cfm?JobCode=179603087",
+      "enrichedAt": "2026-10-31"
     },
     {
       "id": "susquehanna-cs-assistant-professor-0000311",
