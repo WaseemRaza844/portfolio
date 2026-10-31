@@ -49,7 +49,9 @@
     "Supported research seminars, engineering laboratory instruction and student mentoring."
   ],
   "dissertationFocus": "Doctoral research on AI/ML for wireless networks, including data-driven radio propagation modeling, robust learning, generative augmentation, network optimization and self-healing.",
-  "pageBreakBefore": [],
+  "pageBreakBefore": [
+    "projects"
+  ],
   "latexFontSize": 9,
   "horizontalMarginInches": 0.72,
   "verticalMarginInches": 0.52,
