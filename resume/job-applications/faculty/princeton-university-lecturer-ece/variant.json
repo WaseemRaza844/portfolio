@@ -1,0 +1,63 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Princeton University | ECE Lecturer | Academic CV",
+  "headline": "ECE Educator | Computer Networking, Data Science & Wireless AI",
+  "tagline": "Undergraduate Engineering Instruction | Computing & Networking | Data & Information Science",
+  "summary": "Electrical and Computer Engineering PhD (University of Oklahoma, 2025) with undergraduate teaching experience in computer programming, communication systems, and wireless communications; additional laboratory, student-project, and research mentoring experience. Academic research in AI/ML for wireless networks and data-driven network optimization is complemented by telecommunications engineering and applied machine learning experience at AT&T and Futurewei. Prepared to contribute to course instruction, precepts, laboratory learning, assessment, and office hours in computing, networking, and related data-intensive ECE subjects.",
+  "researchInterests": [
+    "Computer Networking and Wireless Systems",
+    "Data and Information Science",
+    "Machine Learning for Networked Systems",
+    "Network Optimization, Reliability and Resilience",
+    "Simulation, Data Analysis and Reproducible Experiments"
+  ],
+  "teachingAreas": [
+    "Computer Programming",
+    "Computer Networking and Wireless Communications",
+    "Communication Systems",
+    "Data Science and Applied Machine Learning",
+    "Signals, Systems and Data Analysis",
+    "Laboratory and Project-Based Engineering Instruction"
+  ],
+  "skillsSectionTitle": "Teaching, Networking & Data Science Expertise",
+  "skills": {
+    "Undergraduate Teaching & Course Support": "Computer programming, communication systems and wireless communications instruction; communications laboratories, student mentoring, course materials, technical discussions, assessment and feedback",
+    "Computer Networking & Wireless Systems": "LTE/4G, 5G-NR, radio access networks, wireless communications, network measurements, propagation, network reliability, service assurance, self-healing and optimization",
+    "Data & Information Science": "Python, SQL, data preprocessing, statistical analysis, machine learning, classification, regression, anomaly detection, time-series analysis, evaluation and visualization",
+    "AI/ML & Network Modeling": "Deep learning, generative modeling, transfer learning, reinforcement learning, distribution-shift robustness, data-driven simulation and predictive optimization",
+    "Programming & Research Tools": "Python, C/C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, Git, Linux and reproducible computational workflows"
+  },
+  "projectIds": [
+    "turboran",
+    "syntheticnet",
+    "propagation-digital-twins",
+    "ai-telecom-optimization",
+    "wearable-intelligence"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-4g-network-fundamentals",
+    "coursera-5g-network-fundamentals"
+  ],
+  "mentoringBullets": [
+    "Mentored students on communications and wireless research projects, including experimental design, simulation, analysis and presentations.",
+    "Guided student technical reports and projects with emphasis on understanding methods, reproducibility and constructive feedback.",
+    "Developed and supported practical laboratory and programming activities that connect engineering theory to implementation."
+  ],
+  "academicServiceBullets": [
+    "Developed teaching materials and supported engineering curriculum activities and academic assessment.",
+    "Supported laboratory learning, technical reviews, student mentoring and academic seminars."
+  ],
+  "dissertationFocus": "Doctoral research on AI/ML for wireless networks, including data-driven radio propagation modeling, robust learning, generative augmentation, network optimization and self-healing.",
+  "pageBreakBefore": [],
+  "latexFontSize": 10,
+  "horizontalMarginInches": 0.72,
+  "verticalMarginInches": 0.52,
+  "minPages": 3,
+  "maxPages": 6,
+  "minPageTextChars": 650,
+  "minLastPageChars": 450
+}
