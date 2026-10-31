@@ -360,6 +360,8 @@ function submitJobForm(e) {
       });
       if (!C.samePosting(previous.postingUrl,uniqueUrls[0])) {
         fields.alternateUrls=[...new Set([...(previous.alternateUrls||[]),previous.postingUrl].filter(Boolean))];
+        fields.enrichmentStatus="pending";
+        fields.enrichmentMessage="Posting URL changed; queued for public page metadata extraction after sync.";
       }
       if (st==="submitted" && previous.status!=="submitted" && !fields.submittedAt) fields.submittedAt=todayISO();
       recordChange(newOp("update",{jobId:editId,patch:fields}));
