@@ -195,33 +195,39 @@
     },
     {
       "id": "job-mvvx8cz7-0-pyr60o",
-      "institution": "Rutgers",
-      "title": "Lecturer",
-      "location": "Not specified",
-      "type": "Faculty / teaching (unverified)",
-      "area": "",
+      "institution": "Rutgers University",
+      "title": "Lecturers - Electrical and Computer Engineering",
+      "location": "Piscataway, NJ",
+      "type": "Part-time lecturer pool (2026–2027)",
+      "area": "Communication Networks; Wireless Communications; Computer Programming; Machine Learning for Engineers",
       "postingUrl": "https://www.higheredjobs.com/details.cfm?JobCode=179454262",
-      "officialUrl": null,
-      "deadlineVerified": false,
-      "documents": [],
+      "officialUrl": "https://jobs.rutgers.edu/postings/275804",
+      "deadlineVerified": true,
+      "documents": [
+        "Resume/CV",
+        "Teaching Philosophy",
+        "List of Professional References (contact information)",
+        "List of Courses Taught"
+      ],
       "documentsReady": false,
-      "applicationFolder": null,
-      "nextAction": "Research job description, deadline, eligibility and required documents.",
-      "notes": "Added directly from dashboard; job details have not yet been verified.",
+      "applicationFolder": "resume/job-applications/faculty/rutgers-ece-lecturer-2026/",
+      "nextAction": "Review generated Rutgers CV, teaching philosophy, and courses-taught PDFs; complete the private third-referee details, then upload all four to Rutgers ROCS by February 1, 2027.",
+      "notes": "Official posting 26FA0517 verified. User-selected apply-by target November 3, 2026 retained. Reference PDF remains incomplete pending finalized third referee; cover letter is optional. Posting is a lecturer pool, not a guaranteed teaching appointment.",
       "priority": "high",
-      "status": "saved",
+      "status": "preparing",
       "rank": null,
       "targetApplyBy": "2026-11-03",
-      "deadline": null,
+      "deadline": "2027-02-01",
       "submittedAt": null,
       "lastReviewed": "2026-10-31",
-      "enrichmentStatus": "partial",
-      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Verified against the official Rutgers posting; required upload list confirmed.",
       "alternateUrls": [
         "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179454262"
       ],
-      "enrichmentSource": "https://www.higheredjobs.com/details.cfm?JobCode=179454262",
-      "enrichedAt": "2026-10-31"
+      "enrichmentSource": "https://jobs.rutgers.edu/postings/275804",
+      "enrichedAt": "2026-10-31",
+      "postingDescription": "Rutgers School of Engineering ECE lecturer pool for AY 2026–2027. Multiple openings for undergraduate and graduate teaching. Bachelor's required; MS/PhD and prior university teaching preferred. Required uploads: CV, teaching philosophy, professional reference contacts, courses taught."
     }
   ]
 }

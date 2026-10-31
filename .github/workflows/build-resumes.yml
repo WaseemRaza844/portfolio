@@ -79,6 +79,8 @@ jobs:
         run: python resume/build_application_documents.py
       - name: Generate Princeton Lecturer cover letter PDF
         run: python resume/job-applications/faculty/princeton-university-lecturer-ece/build_cover_letter.py
+      - name: Generate Rutgers ECE Lecturer supporting PDFs
+        run: python resume/job-applications/faculty/rutgers-ece-lecturer-2026/build_documents.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -116,7 +118,16 @@ jobs:
               assert len(text)>400, f'Word file is unexpectedly empty: {output.name}'
               if spec.get('layout')=='references':
                   assert len(doc.tables)==3, 'Expected three editable professional-reference tables'
-          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and five Word documents.')
+          rutgers=root/'job-applications/faculty/rutgers-ece-lecturer-2026'
+          rutgers_sources=json.loads((rutgers/'application-documents.json').read_text(encoding='utf-8'))['documents']
+          assert len(rutgers_sources)==4, 'Rutgers must have four editable document sources'
+          for spec in rutgers_sources:
+              assert (rutgers/spec['source']).is_file(), f"Missing Rutgers source: {spec['source']}"
+              assert (rutgers/spec['output']).is_file(), f"Missing Rutgers Word output: {spec['output']}"
+          assert (rutgers/'Waseem_Raza_FACULTY_RUTGERS_ECE_LECTURER_2026.pdf').is_file(), 'Missing Rutgers academic CV'
+          assert (rutgers/'Waseem_Raza_RUTGERS_Teaching_Philosophy.pdf').is_file(), 'Missing Rutgers teaching philosophy'
+          assert (rutgers/'Waseem_Raza_RUTGERS_Courses_Taught.pdf').is_file(), 'Missing Rutgers courses-taught file'
+          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and five Lafayette plus four Rutgers Word documents.')
           PY
 
       - name: Upload generated resumes and application documents
