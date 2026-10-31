@@ -1,0 +1,75 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Susquehanna University | Assistant Professor of Computer Science | 2027",
+  "headline": "Computer Science Educator-Scholar | Applied ML, Data Science & Networked Systems",
+  "tagline": "Undergraduate Programming & Mentoring | Reliable AI Research | Industry-Connected Computing",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with university-level teaching in Computer Programming, Communication Systems and Wireless Communication, additional lab and research mentoring, and applied ML engineering experience. Research spans robust and data-efficient machine learning, network analytics, wearable sensing and reproducible computational experiments. Interested in undergraduate CS teaching and accessible student research linking programming, algorithmic reasoning and empirical evaluation.",
+  "researchInterests": [
+    "Reliable and Data-Efficient Machine Learning",
+    "Data Science, Time-Series Analytics and Responsible AI",
+    "Computer and Wireless Networks",
+    "Network and Sensor Data Modeling",
+    "Reproducible Computing and Undergraduate Capstone Research"
+  ],
+  "dissertationFocus": "PhD dissertation in AI/ML for wireless networks: outage detection, self-healing decisions, data-efficient and generative propagation models, transfer learning under distribution shift, and reproducible computational evaluation.",
+  "teachingAreas": [
+    "Computer Programming (previous university instruction)",
+    "Applied Machine Learning and Data Science (research and industry expertise)",
+    "Computer and Communication Networks (technical expertise)",
+    "Computational Problem Solving and Python",
+    "Data Analysis and Reproducible Experiments",
+    "Capstone Research Mentoring and Software Projects"
+  ],
+  "skillsSectionTitle": "Computer Science, Teaching and Research Competencies",
+  "skills": {
+    "Teaching & Mentoring": "Undergraduate computer programming instruction, problem-solving instruction, student-project advising, communications laboratories, research mentoring, structured feedback and technical writing",
+    "Computer Science & Software": "Python, C/C++, programming fundamentals, debugging, software workflows, SQL, Git, Linux, numerical computing, data visualization and reproducible experiments",
+    "Machine Learning & Data Science": "Scikit-learn, PyTorch, TensorFlow, classification, regression, deep learning, time-series modeling, model evaluation, fairness analysis, transfer learning and data-efficient ML",
+    "Networks & Intelligent Systems": "Computer and wireless networks, network measurements, performance analysis, LTE/5G systems, anomaly detection, reliability and optimization",
+    "Research Methods": "Experimental design, model comparison, simulation, error analysis, cross-validation, distribution-shift studies, open datasets, transparent reporting and student-accessible computational research"
+  },
+  "projectIds": [
+    "wearable-intelligence",
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "ai-telecom-optimization"
+  ],
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "outage-management-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-introduction-to-computer-vision-with-tensorflow",
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate student projects and supported Bachelor’s and Master’s thesis research, including simulation, implementation and technical communication.",
+    "Helped students scope tractable experiments and document assumptions, methods and results.",
+    "Designed and supported laboratory exercises and worked examples connecting technical concepts with testing and interpretation."
+  ],
+  "academicServiceBullets": [
+    "Supported instructional assessment, examinations, course and laboratory materials, and curriculum-related activities.",
+    "Contributed to research seminars, workshops, student technical projects and review of academic reports."
+  ],
+  "publicationSectionTitle": "Selected Peer-Reviewed Publications",
+  "projectSectionTitle": "Selected Computing Research and Student-Accessible Projects",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.7,
+  "verticalMarginInches": 0.47,
+  "minPages": 4,
+  "maxPages": 6,
+  "minPageTextChars": 680,
+  "minLastPageChars": 580,
+  "pageBreakBefore": [],
+  "headerDegree": "Electrical and Computer Engineering"
+}
