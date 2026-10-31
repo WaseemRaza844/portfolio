@@ -1,34 +1,35 @@
 # Princeton University — Lecturer, Electrical and Computer Engineering
 
-**Role:** Lecturer (occasional curricular needs); focus on Computing & Networking and Data & Information Science.  
-**Opening:** July 27, 2026. **Deadline:** July 27, 2027, 11:59 p.m. Eastern.  
-**Instructional appointments:** Fall 2026 and/or Spring 2027, depending on enrollments and curricular needs.  
-**Workplace:** In person, Princeton, New Jersey.
+**Position:** ECE Lecturer, occasional curricular needs. **Interest areas:** Computing & Networking; Data & Information Science.  
+**Deadline:** July 27, 2027, 11:59 PM Eastern. **Work location:** On campus, Princeton, NJ.
 
-This tailored application is independent of the generic faculty CV and Lafayette application.
+This application folder is independent of the generic faculty CV and Lafayette materials.
 
-## Required submission materials (PDF)
+## Upload to Interfolio: two PDF documents
 
-1. **Curriculum vitae:** Generated from `variant.json` using `academic_cv` as the base; PDF output in this folder.
-2. **Cover letter:** `01_Princeton_Cover_Letter.md`; render to PDF for submission.
-3. **Three references:** `02_Princeton_Professional_References.md`; confirm details and render to PDF.
+1. **C.V.** — `Waseem_Raza_FACULTY_PRINCETON_UNIVERSITY_LECTURER_ECE.pdf`, built from `variant.json` based on the generic full academic CV.
+2. **Cover Letter** — `Waseem_Raza_PRINCETON_LECTURER_COVER_LETTER.pdf`, rendered from `01_Princeton_Cover_Letter.md` (editable Word document also generated from `application-documents.json`).
 
-No teaching or research statement is requested in the supplied advertisement. Do not upload extras unless Princeton asks.
+**References:** Interfolio's separate **Reference Contact Form (3 required)** collects contact details. The applicant has prepared an updated reference document separately and changed the third referee; **do not reuse a previously drafted placeholder reference list or an outdated third contact.** No reference PDF is requested in the screenshot.
 
 ## Build
 
-From the repository root:
+From repository root:
 
 ```bash
 python resume/build.py --variant faculty_princeton_university_lecturer_ece
+python resume/build_application_documents.py
+python resume/job-applications/faculty/princeton-university-lecturer-ece/build_cover_letter.py
+python resume/validate_pdf_layout.py
 ```
 
-The repository's existing `resume/build_application_documents.py` only generates DOCX from entries in an `application-documents.json`. For this application, Markdown sources are authoritative until PDF generation is configured and verified.
+GitHub Actions generates both PDFs and the editable cover-letter DOCX for the draft PR as workflow artifacts. Generated PDFs are published as browseable files to `develop` by the existing workflow **after the PR is merged and the `develop` push workflow succeeds**.
 
-## Review before submitting
+## Submission checklist
 
-- [ ] Confirm all three references' current affiliations and email addresses, and obtain permission.
-- [ ] Confirm accuracy of degree, teaching dates and academic appointments against the master source.
-- [ ] Ensure CV is focused on the advertised teaching areas and is readable without sparse or clipped pages.
-- [ ] Render CV, cover letter and references to PDFs and inspect each.
-- [ ] Submit via Princeton's official application portal before the deadline.
+- [ ] Open both PDFs; ensure names, degree, dates and current employment information are correct.
+- [ ] Confirm the CV emphasizes genuine undergraduate instruction, computing and networking, and data science.
+- [ ] Cover letter has one clean page and is signed with current contact information.
+- [ ] Complete the three-reference form using the updated referee contacts.
+- [ ] Complete Attestation, Work Eligibility, Areas of Interest and other requested Interfolio forms.
+- [ ] Review and submit application; retain confirmation.
