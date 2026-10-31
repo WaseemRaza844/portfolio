@@ -25,7 +25,7 @@ DOCUMENTS = [
     ("01_Rutgers_Teaching_Philosophy.md", "Waseem_Raza_RUTGERS_Teaching_Philosophy.pdf", 3),
     ("02_Rutgers_List_of_Courses_Taught.md", "Waseem_Raza_RUTGERS_Courses_Taught.pdf", 2),
     ("03_Rutgers_Professional_References.md", "Waseem_Raza_RUTGERS_References_INCOMPLETE.pdf", 2),
-    ("04_Rutgers_Optional_Cover_Letter.md", "Waseem_Raza_RUTGERS_Optional_Cover_Letter.pdf", 2),
+    ("04_Rutgers_Optional_Cover_Letter.md", "Waseem_Raza_RUTGERS_Optional_Cover_Letter.pdf", 1),
 ]
 
 def fonts():
@@ -67,6 +67,17 @@ def render_doc(source: Path, dest: Path, max_pages: int):
     styles=section_styles(regular,bold)
     text=source.read_text(encoding="utf-8")
     is_reference="References" in source.name
+    is_cover="Optional_Cover_Letter" in source.name
+    if is_cover:
+        styles["title"].fontSize=14
+        styles["title"].leading=17
+        styles["title"].spaceAfter=8
+        styles["body"].fontSize=9.7
+        styles["body"].leading=12.25
+        styles["body"].spaceAfter=6.3
+        styles["note"].fontSize=8.3
+        styles["note"].leading=10.5
+        styles["note"].spaceAfter=4
     flow=[]
     for block in re.split(r"\n\s*\n",text.strip()):
         raw=block.strip()
