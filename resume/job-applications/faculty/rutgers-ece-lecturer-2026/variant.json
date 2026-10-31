@@ -63,14 +63,12 @@
   "projectSectionTitle": "Selected Wireless Networking Research and Testbeds",
   "latexFontSize": 9,
   "horizontalMarginInches": 0.71,
-  "verticalMarginInches": 0.49,
+  "verticalMarginInches": 0.47,
   "minPages": 3,
   "maxPages": 4,
   "minPageTextChars": 620,
-  "minLastPageChars": 650,
-  "pageBreakBefore": [
-    "projects"
-  ],
+  "minLastPageChars": 700,
+  "pageBreakBefore": [],
   "identity": {
     "email": "waseem.placements@outlook.com",
     "secondaryEmail": "waseemraza844@gmail.com",
