@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {
+      "source": "01_Rutgers_Teaching_Philosophy.md",
+      "output": "01_Rutgers_Teaching_Philosophy.docx",
+      "title": "Rutgers ECE Lecturer Teaching Philosophy"
+    },
+    {
+      "source": "02_Rutgers_List_of_Courses_Taught.md",
+      "output": "02_Rutgers_List_of_Courses_Taught.docx",
+      "title": "Rutgers ECE List of Courses Taught"
+    },
+    {
+      "source": "03_Rutgers_Professional_References.md",
+      "output": "03_Rutgers_Professional_References.docx",
+      "title": "Rutgers ECE Professional References - INCOMPLETE"
+    },
+    {
+      "source": "04_Rutgers_Optional_Cover_Letter.md",
+      "output": "04_Rutgers_Optional_Cover_Letter.docx",
+      "title": "Rutgers ECE Optional Cover Letter"
+    }
+  ]
+}
