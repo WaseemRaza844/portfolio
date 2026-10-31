@@ -18,7 +18,7 @@ from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,6 +38,7 @@ class PostingHTMLParser(HTMLParser):
         self.meta: dict[str, str] = {}
         self.title_parts: list[str] = []
         self.jsonld_parts: list[str] = []
+        self.jsonld_scripts: list[str] = []
         self._in_title = False
         self._in_jsonld = False
         self.canonical = ""
@@ -61,6 +62,7 @@ class PostingHTMLParser(HTMLParser):
         if tag.lower() == "title":
             self._in_title = False
         elif tag.lower() == "script" and self._in_jsonld:
+            self.jsonld_scripts.append("".join(self.jsonld_parts))
             self._in_jsonld = False
 
     def handle_data(self, data):
@@ -95,7 +97,7 @@ def _walk_json(value):
 
 
 def _job_postings(parser: PostingHTMLParser):
-    for raw in parser.jsonld_parts:
+    for raw in parser.jsonld_scripts:
         try:
             payload = json.loads(raw)
         except (json.JSONDecodeError, TypeError):
@@ -162,7 +164,7 @@ def extract_posting_metadata(html: str, source_url: str = "") -> dict:
         "deadline": None,
         "datePosted": None,
         "description": "",
-        "canonicalUrl": parser.canonical or source_url,
+        "canonicalUrl": urljoin(source_url, parser.canonical) if parser.canonical else source_url,
         "pageTitle": clean_text(" ".join(parser.title_parts), 300),
         "pageDescription": clean_text(parser.meta.get("description") or parser.meta.get("og:description"), 1000),
         "siteName": clean_text(parser.meta.get("og:site_name"), 160),
@@ -256,7 +258,20 @@ def enrich_job(job: dict, fetcher=fetch_posting_page, today: str | None = None) 
         return job, False
     updated = dict(job)
     try:
-        html, final_url = fetcher(job["postingUrl"])
+        last_error = None
+        candidates = list(dict.fromkeys([job.get("postingUrl"), job.get("officialUrl")]))
+        html = ""
+        final_url = ""
+        for candidate in candidates:
+            if not candidate:
+                continue
+            try:
+                html, final_url = fetcher(candidate)
+                break
+            except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
+                last_error = exc
+        if not html:
+            raise last_error or ValueError("No public posting URL was available.")
         metadata = extract_posting_metadata(html, final_url)
         if _placeholder(updated.get("title", ""), "Posting to research") or updated.get("title", "").startswith("Posting to research ("):
             if metadata["title"] and metadata["title"].lower() not in {"jobs", "careers", "job search"}:
