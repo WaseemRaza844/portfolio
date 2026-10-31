@@ -39,7 +39,7 @@ def main():
     raw = SOURCE.read_text(encoding="utf-8")
     if "\\[" in raw:
         raise ValueError("Unfilled template brackets remain in cover letter")
-    paragraphs = [p.strip() for p in re.split(r"\\n\\s*\\n", raw) if p.strip()]
+    paragraphs = [p.strip() for p in re.split(r"\n\s*\n", raw) if p.strip()]
     if not paragraphs or paragraphs[0] != "# Letter of Application":
         raise ValueError("Unrecognized letter source")
     body = paragraphs[1:]
@@ -63,7 +63,7 @@ def main():
     )
     elements = []
     for i, block in enumerate(body):
-        clean = escape(block).replace("\\n", "<br/>")
+        clean = escape(block).replace("\n", "<br/>")
         if i == 0:
             elements.append(Paragraph(clean, compact))
         elif block.startswith("Members of the"):
