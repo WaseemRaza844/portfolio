@@ -24,7 +24,21 @@ This is a lightweight, version-controlled job application pipeline inside the po
 | `offer` | Offer stage |
 | `closed` | Withdrawn, rejected, expired or no longer pursuing |
 
-The dashboard crosses out submitted/finished applications and excludes them from the next-five queue. A prepared PDF or merged PR is **not** evidence of submission.
+The dashboard uses strong green APPLIED/gray CLOSED labels, a thicker crossed-out title, and excludes submitted/closed applications from the numbered priority queue. A prepared PDF or merged PR is **not** evidence of submission.
+
+## Managing applications directly from the dashboard
+
+Open https://waseemraza844.github.io/portfolio/develop/applications/ .
+
+- **Add applications:** Click **+ Add applications** and paste one or several public job posting URLs, one per line. Institution, title, location, priority, target date, and queue rank are optional. A URL alone creates a Saved entry for research.
+- **Submit / close:** Choose **✓ Mark applied** on a pending job card, or **Close** if no longer pursuing it. Submitted and closed jobs are distinctly marked and crossed out. Use **↶ Reopen** to undo a completed stage, and **Edit details** to correct fields.
+- **Prioritize:** Pending cards show an ordinal number. A chosen **Queue rank** takes precedence; otherwise priority and target date determine ordering. Click **Show all pending** when more than five remain.
+- **Update details:** Change job title, institution, URL, priority, stage, application target date, employer deadline or next action in the same dashboard. Duplicate posting detection handles HigherEdJobs JobCode changes in the URL title.
+- **Sync across devices:** Clicking a button **always updates your current browser first**, with unsynced updates saved in local browser storage. A banner warns about unsynced changes. Use **Connect GitHub** to commit those changes to \`develop\`. The dashboard reads the latest GitHub JSON when opened, and weekday reminders read the same file. **Browser-only edits are NOT reflected in reminders.**
+- **GitHub authorization:** GitHub Pages has no server-side write access. Create a **fine-grained personal access token** for **only** \`WaseemRaza844/portfolio\` with **Contents: Read and write** permission at https://github.com/settings/personal-access-tokens/new . Paste it into the GitHub connection dialog **on the dashboard**, not in ChatGPT. It stays in the page's JavaScript memory for this tab only (not localStorage/sessionStorage); closing or refreshing the page disconnects it. You can revoke it from GitHub settings at any time. Use an expiration date and the minimum permissions. If you prefer not to use a token, browser-only edits remain local until you provide updates here or modify the GitHub JSON yourself.
+- **Connection safety:** This is a public GitHub Pages site, not an authenticated private application. Do not paste sensitive personal information or credentials other than the explicitly requested fine-grained token into the tracker. A dedicated private database and OAuth-based authentication would be required for a fully private multi-device application.
+
+When you have several postings, sending links in ChatGPT is still useful: I can research and fill the JD, documents, verified deadline and next action in bulk and merge the updates.
 
 ## Routine workflow with ChatGPT
 
@@ -62,7 +76,7 @@ To update manually, edit `dist/applications/jobs.json`, validate again and commi
 ## Initial import (October 30, 2026)
 
 - Lafayette: **submitted** (user-confirmed; exact submission date not provided)
-- Princeton: **preparing** (documents ready; actual submission unconfirmed)
+- Princeton: **submitted** (user confirmed after preparing the documents; exact submission date not provided)
 - New York Tech ECET: **researching** (original posting may be unavailable)
 - Grove City: **researching** (important faith/pastoral requirements)
 - San Mateo telecom instructor: **researching** (deadline requires official verification)
