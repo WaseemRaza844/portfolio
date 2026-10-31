@@ -162,6 +162,7 @@ def extract_posting_metadata(html: str, source_url: str = "") -> dict:
         "location": "",
         "employmentType": "",
         "deadline": None,
+        "deadlineSource": None,
         "datePosted": None,
         "description": "",
         "canonicalUrl": urljoin(source_url, parser.canonical) if parser.canonical else source_url,
@@ -186,6 +187,8 @@ def extract_posting_metadata(html: str, source_url: str = "") -> dict:
             employment = ", ".join(str(x) for x in employment)
         result["employmentType"] = clean_text(employment, 120)
         result["deadline"] = _date_only(posting.get("validThrough"))
+        if result["deadline"]:
+            result["deadlineSource"] = "Schema.org JobPosting.validThrough"
         result["datePosted"] = _date_only(posting.get("datePosted"))
         result["description"] = clean_text(posting.get("description"), 1800)
 
@@ -196,10 +199,20 @@ def extract_posting_metadata(html: str, source_url: str = "") -> dict:
     if not result["title"]:
         candidate = clean_text(parser.meta.get("og:title") or " ".join(parser.title_parts), 240)
         candidate = re.sub(r"\s*[|·]\s*(HigherEdJobs|Indeed|LinkedIn|Glassdoor)\s*$", "", candidate, flags=re.I)
-        if candidate.lower() not in {"", "jobs", "careers", "job search", "home"}:
+        if candidate.lower() not in {"", "jobs", "careers", "job search", "home", "higheredjobs", "indeed", "linkedin", "glassdoor"}:
             result["title"] = candidate
     if not result["description"]:
         result["description"] = result["pageDescription"]
+    if is_job_board:
+        result["siteName"] = ""
+        generic = result["description"].lower()
+        if (
+            "jobs in higher education" in generic
+            and "faculty and administrative positions" in generic
+            and ("updated daily" in generic or "free to job seekers" in generic)
+        ):
+            result["description"] = ""
+            result["pageDescription"] = ""
     if not result["institution"] and result["siteName"] and not is_job_board:
         result["institution"] = result["siteName"]
     return result
@@ -301,6 +314,7 @@ def enrich_job(job: dict, fetcher=fetch_posting_page, today: str | None = None) 
         if metadata["deadline"] and (not updated.get("deadline") or not updated.get("deadlineVerified", False)):
             updated["deadline"] = metadata["deadline"]
             updated["deadlineVerified"] = True
+            updated["deadlineSource"] = metadata.get("deadlineSource") or "Schema.org JobPosting.validThrough"
         if metadata["datePosted"]:
             updated["datePosted"] = metadata["datePosted"]
         if metadata["description"]:
