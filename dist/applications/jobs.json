@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-30",
+  "asOf": "2026-10-31",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -48,7 +48,7 @@
       "location": "Princeton, NJ",
       "type": "Lecturer / occasional teaching pool",
       "area": "Computing & Networking; Data & Information Science",
-      "status": "preparing",
+      "status": "submitted",
       "priority": "high",
       "postingUrl": "https://www.higheredjobs.com/details.cfm?JobCode=179520943&Title=Lecturer",
       "officialUrl": null,
@@ -63,9 +63,9 @@
       "documentsReady": true,
       "applicationFolder": "resume/job-applications/faculty/princeton-university-lecturer-ece/",
       "submittedAt": null,
-      "lastReviewed": "2026-10-30",
-      "nextAction": "Upload CV and cover letter; complete eligibility, interests, and reference forms; confirm submission.",
-      "notes": "Documents prepared and merged. Application submission has not been confirmed. Spring 2027 is the relevant upcoming appointment period."
+      "lastReviewed": "2026-10-31",
+      "nextAction": "Application submitted; await Princeton response and record follow-up milestones.",
+      "notes": "Submission confirmed by applicant on October 31, 2026; exact submission date not separately specified."
     },
     {
       "id": "nyit-ecet-adjunct-179595929",
