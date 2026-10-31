@@ -81,6 +81,8 @@ jobs:
         run: python resume/job-applications/faculty/princeton-university-lecturer-ece/build_cover_letter.py
       - name: Generate Rutgers ECE Lecturer supporting PDFs
         run: python resume/job-applications/faculty/rutgers-ece-lecturer-2026/build_documents.py
+      - name: Package consistently named Rutgers application documents
+        run: python resume/job-applications/faculty/rutgers-ece-lecturer-2026/package_submission.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -127,6 +129,16 @@ jobs:
           assert (rutgers/'Waseem_Raza_FACULTY_RUTGERS_ECE_LECTURER_2026.pdf').is_file(), 'Missing Rutgers academic CV'
           assert (rutgers/'Waseem_Raza_RUTGERS_Teaching_Philosophy.pdf').is_file(), 'Missing Rutgers teaching philosophy'
           assert (rutgers/'Waseem_Raza_RUTGERS_Courses_Taught.pdf').is_file(), 'Missing Rutgers courses-taught file'
+          ready=rutgers/'submission-ready'
+          expected=[
+              'WRaza_FAC_RUTGERS_ECE_LECT_2026.pdf',
+              'WRaza_FAC_RUTGERS_ECE_LECT_2026_Teaching_Philosophy.pdf',
+              'WRaza_FAC_RUTGERS_ECE_LECT_2026_Courses_Taught.pdf',
+              'WRaza_FAC_RUTGERS_ECE_LECT_2026_Cover_Letter.pdf',
+              'WRaza_FAC_RUTGERS_ECE_LECT_2026_Cover_Letter.docx',
+          ]
+          for filename in expected:
+              assert (ready/filename).is_file(), f'Missing named Rutgers output: {filename}'
           print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and five Lafayette plus four Rutgers Word documents.')
           PY
 
