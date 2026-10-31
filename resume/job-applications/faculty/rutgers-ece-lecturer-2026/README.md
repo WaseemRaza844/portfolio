@@ -8,14 +8,14 @@ Personal apply-by target November 3, 2026 (preserved from application tracker).
 
 1. Resume/CV: generated from variant.json as Waseem_Raza_FACULTY_RUTGERS_ECE_LECTURER_2026.pdf.
 2. Teaching Philosophy: Waseem_Raza_RUTGERS_Teaching_Philosophy.pdf.
-3. List of Professional References with contact information: a private finalized reference sheet. The public-repository template 03_Rutgers_Professional_References.md and its INCOMPLETE PDF are NOT READY TO SUBMIT. The third reference had been replaced; its current private details were not available here. Do not upload the incomplete PDF.
+3. List of Professional References with contact information: a completed private Rutgers-specific reference PDF and editable DOCX were generated from the applicant's uploaded `04_Lafayette_Professional_References_Top3.docx`. The three confirmed names in the private document are Ali Imran, Nadeem Javaid, and Muhammad Sajid Riaz. **That completed document is delivered as a private conversation attachment, not committed to this public repo.** The public-repository reference source and automatically built `References_INCOMPLETE.pdf` are a contact-redacted overview only; **do not upload the public PDF**.
 4. List of Courses Taught: Waseem_Raza_RUTGERS_Courses_Taught.pdf.
 
 An optional cover letter is also prepared but is NOT among the four required uploads. No research statement required.
 
 ## Academic positioning
 
-Documented teaching: Computer Programming, Communication Systems, Wireless Communication at the University of Lahore. Communications laboratory/course support at UET Taxila and research/project mentoring at COMSATS are separate experiences, not courses independently taught. Potential Rutgers ECE matches based on preparation (not prior teaching claims): 14:332:423 Computer and Communication Networks; 14:332:443 Machine Learning for Engineers. See https://ece.rutgers.edu/ece-course-descriptions.
+Documented teaching: **Computer Programming, Communication Systems, and Wireless Communication** at the University of Lahore. UET Taxila's communications laboratory/course support and COMSATS's research mentoring are distinct from courses independently taught. Potential Rutgers ECE matches based on experience and technical preparation (not prior instructor-of-record claims) include 14:332:423 Computer and Communication Networks and 14:332:443 Machine Learning for Engineers, plus introductory data science and AI/ML for engineers. The optional cover letter briefly mentions interest in related courses without implying prior instruction. See https://ece.rutgers.edu/ece-course-descriptions.
 
 ## Local commands from repository root (PowerShell)
 
@@ -34,7 +34,7 @@ The GitHub Actions build generates the CV, editable Word documents and supportin
 ## Before submission
 
 - Verify CV and teaching documents, education, title, course history and email.
-- Use your privately finalized references list with three confirmed contacts.
+- Upload the private completed Rutgers references PDF from the current ChatGPT conversation, not the repository's redacted public summary.
 - Submit four required files using the Rutgers ROCS portal.
 - Mark tracker Submitted only after actual application submission.
 

@@ -1,26 +1,29 @@
-# Professional References
+# Professional References - Public Repository Copy
 
-> Waseem Raza, PhD | Rutgers University Lecturer Pool, Electrical and Computer Engineering
+> Waseem Raza, PhD | Rutgers University-New Brunswick | ECE Lecturer Pool
+
+> This is a **public-repository summary only**, without referee email addresses. Use the finalized Rutgers references PDF prepared privately from the applicant's completed Top 3 reference list for the actual Rutgers upload.
 
 ## Reference 1
 
 - **Name and title:** Professor Ali Imran, Professor of Intelligent Systems (Autonomous Systems & Connectivity)
 - **Institution / department:** James Watt School of Engineering, University of Glasgow, United Kingdom
 - **Professional relationship:** PhD dissertation supervisor, University of Oklahoma
-- **Email:** [Confirm preferred professional email from your private completed references document]
+- **Contact information:** Included in applicant's private upload copy
 
 ## Reference 2
 
 - **Name and title:** Professor Nadeem Javaid, Professor; Director, Communications over Sensors (ComSens) Research Lab
 - **Institution / department:** International Graduate School of Artificial Intelligence, National Yunlin University of Science and Technology (YunTech), Taiwan
 - **Professional relationship:** Master's research supervisor (2016)
-- **Email:** [Confirm preferred professional email from your private completed references document]
+- **Contact information:** Included in applicant's private upload copy
 
 ## Reference 3
 
-- **Name and title:** [Insert the replacement third reference from your finalized list]
-- **Institution / department:** [Current institution and department]
-- **Professional relationship:** [Confirmed professional relationship]
-- **Email:** [Confirmed preferred professional email]
+- **Name and title:** Dr. Muhammad Sajid Riaz, Assistant Professor of Software Development and Integration
+- **Institution / department:** OU Polytechnic Institute, Tulsa, Oklahoma, United States
+- **Professional relationship:** Former senior research colleague, mentor, and collaborator, AI4Networks Lab, University of Oklahoma
+- **Professional profile:** https://www.ou.edu/polytechnic/about/faculty/muhammad-sajid-riaz
+- **Contact information:** Included in applicant's private upload copy
 
-> IMPORTANT: This is an **incomplete reference-list template** and is not ready to upload. Your earlier instructions indicated that your third reference had been replaced; the private finalized replacement details are not present in the accessible repository. Copy the three confirmed contacts from that completed document here locally, verify each person's consent, and export the finalized version. Do not commit private reference email addresses to a public GitHub repository.
+> Do not submit this public-summary PDF as the required reference list because it intentionally omits contact information. Rutgers requests a list of professional references **with contact information**.
