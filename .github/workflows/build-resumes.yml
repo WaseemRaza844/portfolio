@@ -83,6 +83,10 @@ jobs:
         run: python resume/job-applications/faculty/rutgers-ece-lecturer-2026/build_documents.py
       - name: Package consistently named Rutgers application documents
         run: python resume/job-applications/faculty/rutgers-ece-lecturer-2026/package_submission.py
+      - name: Build Susquehanna CS tenure-track documents
+        run: python resume/job-applications/faculty/susquehanna-cs-assistant-professor-2027/build_documents.py
+      - name: Package Susquehanna submission-ready public documents
+        run: python resume/job-applications/faculty/susquehanna-cs-assistant-professor-2027/package_submission.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -139,7 +143,20 @@ jobs:
           ]
           for filename in expected:
               assert (ready/filename).is_file(), f'Missing named Rutgers output: {filename}'
-          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and five Lafayette plus four Rutgers Word documents.')
+          su=root/'job-applications/faculty/susquehanna-cs-assistant-professor-2027'
+          su_manifest=json.loads((su/'application-documents.json').read_text(encoding='utf-8'))['documents']
+          assert len(su_manifest)==4, 'Expected three statements plus redacted reference roster Word sources'
+          for doc in su_manifest:
+              assert (su/doc['source']).is_file(), f'Missing Susquehanna source {doc["source"]}'
+              assert (su/doc['output']).is_file(), f'Missing Susquehanna Word output {doc["output"]}'
+          assert (su/'Waseem_Raza_FACULTY_SUSQUEHANNA_CS_ASSISTANT_PROFESSOR_2027.pdf').is_file(), 'Missing Susquehanna CV'
+          for title in ['CV','Cover_Letter','Teaching_Philosophy','Research_Plan']:
+              filename=f'WRaza_FAC_SUSQUEHANNA_CS_2027_{title}.pdf'
+              assert (su/'submission-ready'/filename).is_file(), f'Missing final Susquehanna PDF: {filename}'
+          from pypdf import PdfReader
+          cover=su/'submission-ready/WRaza_FAC_SUSQUEHANNA_CS_2027_Cover_Letter.pdf'
+          assert len(PdfReader(str(cover)).pages)<=2, 'Susquehanna letter is too long'
+          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and 4 Susquehanna public submissions.')
           PY
 
       - name: Upload generated resumes and application documents
