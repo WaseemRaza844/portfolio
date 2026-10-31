@@ -612,6 +612,56 @@
         ]
       },
       "relativePath": "job-applications/faculty/princeton-university-lecturer-ece/Waseem_Raza_FACULTY_PRINCETON_UNIVERSITY_LECTURER_ECE.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FACULTY_RUTGERS_ECE_LECTURER_2026.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 620,
+      "minLastPageChars": 700,
+      "maxPages": 4,
+      "pageTextChars": [
+        4273,
+        3873,
+        3648
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-python-for-data-science-ai-development",
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-4g-network-fundamentals"
+        ],
+        "publications": [
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "mdt-zero-touch-2024",
+          "positioning-compensation-globecom-2023",
+          "lunarcomm-2022",
+          "positioning-ran-2022"
+        ]
+      },
+      "relativePath": "job-applications/faculty/rutgers-ece-lecturer-2026/Waseem_Raza_FACULTY_RUTGERS_ECE_LECTURER_2026.pdf"
     }
   ],
   "reviewNotes": [
