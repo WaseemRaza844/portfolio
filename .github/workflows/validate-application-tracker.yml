@@ -1,0 +1,41 @@
+name: Validate faculty application tracker
+on:
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'dist/applications/**'
+      - 'resume/job-applications/validate_tracker.py'
+      - '.github/workflows/validate-application-tracker.yml'
+  push:
+    branches: [develop]
+    paths:
+      - 'dist/applications/**'
+      - 'resume/job-applications/validate_tracker.py'
+      - '.github/workflows/validate-application-tracker.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate tracker data and privacy
+        run: python resume/job-applications/validate_tracker.py
+      - name: Check dashboard JavaScript syntax
+        run: node --check dist/applications/app.js
+      - name: Check HTML/JS/data files exist
+        run: |
+          test -s dist/applications/index.html
+          test -s dist/applications/styles.css
+          test -s dist/applications/app.js
+          test -s dist/applications/jobs.json
