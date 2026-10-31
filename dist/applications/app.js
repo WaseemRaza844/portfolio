@@ -286,6 +286,8 @@ function submitJobForm(e) {
       if (match) duplicates.push("Already tracked: " + match.institution + " — " + match.title);
     }
     if (duplicates.length) throw new Error("Duplicate posting detected. " + duplicates[0]);
+    if (urls.length>1 && (formInput("job-title")||formInput("job-institution")) &&
+        !window.confirm("You entered shared institution/title details for multiple links. Apply those same details to all postings?")) return;
     const st=formInput("job-status");
     const rankRaw=formInput("job-rank");
     const rank=rankRaw ? Number(rankRaw) : null;
@@ -459,9 +461,15 @@ async function init() {
     try {
       basePayload=(await githubRead("")).payload;
     } catch (_) {
-      const resp=await fetch("./jobs.json",{cache:"no-store"});
-      if (!resp.ok) throw new Error("Unable to download jobs.json");
-      basePayload=await resp.json();
+      try {
+        const raw=await fetch("https://raw.githubusercontent.com/WaseemRaza844/portfolio/develop/dist/applications/jobs.json?fresh="+Date.now(),{cache:"no-store"});
+        if (!raw.ok) throw new Error("Raw GitHub data unavailable");
+        basePayload=await raw.json();
+      } catch (_) {
+        const resp=await fetch("./jobs.json",{cache:"no-store"});
+        if (!resp.ok) throw new Error("Unable to download jobs.json");
+        basePayload=await resp.json();
+      }
     }
     if (!Array.isArray(basePayload.jobs)) throw new Error("Invalid tracker data");
     refreshLocal();
