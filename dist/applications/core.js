@@ -30,7 +30,8 @@
     const canonical = cleanUrl(url);
     if (!canonical) return "";
     const u = new URL(canonical);
-    const code = u.searchParams.get("JobCode") || u.searchParams.get("jobcode");
+    const codeEntry = [...u.searchParams.entries()].find(([key]) => key.toLowerCase() === "jobcode");
+    const code = codeEntry ? codeEntry[1] : null;
     if (u.hostname.endsWith("higheredjobs.com") && code) return "higheredjobs:" + code.toLowerCase();
     return canonical.replace(/^http:/, "https:");
   }
