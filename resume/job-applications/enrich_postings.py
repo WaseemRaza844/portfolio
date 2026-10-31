@@ -295,7 +295,7 @@ def enrich_job(job: dict, fetcher=fetch_posting_page, today: str | None = None) 
             updated["location"] = metadata["location"]
         if _placeholder(updated.get("type", ""), "Faculty / teaching (unverified)") and metadata["employmentType"]:
             updated["type"] = metadata["employmentType"]
-        if not updated.get("deadline") and metadata["deadline"]:
+        if metadata["deadline"] and (not updated.get("deadline") or not updated.get("deadlineVerified", False)):
             updated["deadline"] = metadata["deadline"]
             updated["deadlineVerified"] = True
         if metadata["datePosted"]:
