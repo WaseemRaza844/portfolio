@@ -72,7 +72,7 @@ def course_month_year(value):
     raise ValueError('Unsupported course completion date: ' + value)
 
 
-def build_pdf(key, variant, data, settings, output):
+def build_pdf(key, variant, data, settings, output, *, refresh_tex=False):
     from build import select, date_label, progress, certificate_links, web_url
     if not shutil.which('pdflatex'):
         raise ValueError('pdflatex missing. Run bash resume/setup.sh first.')
@@ -422,7 +422,10 @@ def build_pdf(key, variant, data, settings, output):
     output.mkdir(parents=True, exist_ok=True)
     filename = f'Waseem_Raza_{key.upper()}'
     tex_path = output / (filename + '.tex')
-    write_utf8_text(tex_path, source)
+    # The TeX file is a first-class editable source. Compile it unchanged
+    # by default; regenerate it only for new variants or --refresh-tex.
+    if refresh_tex or not tex_path.exists():
+        write_utf8_text(tex_path, source)
     for _ in range(2):
         proc = subprocess.run(['pdflatex', '-no-shell-escape', '-interaction=nonstopmode', '-halt-on-error', tex_path.name],
                               cwd=output, capture_output=True, text=True, encoding='utf-8',

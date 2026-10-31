@@ -43,7 +43,7 @@ resume/.venv/bin/python resume/preview.py --watch
 | Website styling | `dist/styles.css` |
 | Reusable resume profiles | `resume/resume-profiles/industry/variants.json`, `resume/resume-profiles/faculty/*.json` |
 | Job-specific applications | `resume/job-applications/` |
-| Generic generated PDFs | `resume/generic-resume/` |
+| Generic generated PDFs | `resume/resume-profiles/` |
 | Resume-specific content | `resume/content.json` |
 | Resume generator | `resume/build.py`, `resume/latex_renderer.py`, `resume/template.tex` |
 

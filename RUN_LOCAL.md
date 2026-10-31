@@ -72,7 +72,7 @@ resume/.venv/bin/python resume/build.py --variant finance
 resume/.venv/bin/python resume/build.py --variant faculty
 ```
 
-Generic profile PDFs are written to `resume/generic-resume/industry/` and `resume/generic-resume/faculty/`. The Lafayette faculty CV and industry-specific tailored PDFs are generated directly inside their respective `resume/job-applications/` folders. Supporting faculty Word documents are generated beside their Markdown sources.
+Generic profile PDFs are written to `resume/resume-profiles/industry/` and `resume/resume-profiles/faculty/`. The Lafayette faculty CV and industry-specific tailored PDFs are generated directly inside their respective `resume/job-applications/` folders. Supporting faculty Word documents are generated beside their Markdown sources.
 
 ## 5. Windows PowerShell setup
 
@@ -139,7 +139,7 @@ Browser-viewable PDFs are published at:
 https://waseemraza844.github.io/portfolio/develop/resumes/
 ```
 
-Each generic or job-specific PDF opens directly in a browser tab. Generic PDFs are under `resumes/generic-resume/`; tailored PDFs are under `resumes/job-applications/`, mirroring the repository layout. The generic build report is stored in `resume/generic-resume/build-report.json`.
+Each generic or job-specific PDF opens directly in a browser tab. Generic PDFs are under `resumes/resume-profiles/`; tailored PDFs are under `resumes/job-applications/`, mirroring the repository layout. The generic build report is stored in `resume/resume-profiles/build-report.json`.
 
 The **Build resume PDFs and application documents** workflow validates and publishes generated PDFs and Word files as repository outputs and keeps a downloadable GitHub Actions artifact for 30 days.
 
@@ -154,7 +154,7 @@ The **Build resume PDFs and application documents** workflow validates and publi
 | Industry resume variants | `resume/resume-profiles/industry/variants.json` |
 | Faculty resume variants | `resume/resume-profiles/faculty/*.json` |
 | Job-specific resume overlays and application materials | `resume/job-applications/` |
-| Generic generated profile PDFs | `resume/generic-resume/` |
+| Generic generated profile PDFs | `resume/resume-profiles/` |
 | Resume-specific overrides and contact data | `resume/content.json` |
 | Resume layout | `resume/template.tex` |
 | Resume rendering logic | `resume/latex_renderer.py` |

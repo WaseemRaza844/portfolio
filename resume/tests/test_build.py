@@ -114,7 +114,7 @@ class LatexEscapingTests(unittest.TestCase):
         for key in ('faculty', 'faculty_comprehensive', 'academic_cv'):
             self.assertTrue(variants[key].get('compactCertifications'))
 
-    def test_faculty_sources_and_outputs_are_separate(self):
+    def test_faculty_sources_and_outputs_are_organized(self):
         folder = Path(__file__).parents[1]
         industry = module.read_json(folder / 'resume-profiles' / 'industry' / 'variants.json')
         faculty = module.load_variants()
@@ -286,15 +286,15 @@ class LatexEscapingTests(unittest.TestCase):
         self.assertNotEqual(comprehensive.get('certificationIds'), 'all')
         self.assertNotEqual(comprehensive.get('publicationIds'), 'all')
 
-    def test_resume_folders_follow_the_profiles_applications_and_generic_outputs_model(self):
+    def test_resume_folders_keep_tex_and_pdf_beside_profiles(self):
         root = Path(__file__).parents[1]
         industry = module.read_json(root / 'resume-profiles' / 'industry' / 'variants.json')
         self.assertIn('generic', industry)
         self.assertTrue((root / 'resume-profiles' / 'faculty' / 'generic.json').is_file())
         self.assertTrue((root / 'job-applications' / 'faculty' /
                          'lafayette-college-assistant-professor-ece' / 'variant.json').is_file())
-        self.assertEqual(module.variant_output_dir(root, 'generic'), root / 'generic-resume' / 'industry')
-        self.assertEqual(module.variant_output_dir(root, 'faculty'), root / 'generic-resume' / 'faculty')
+        self.assertEqual(module.variant_output_dir(root, 'generic'), root / 'resume-profiles' / 'industry')
+        self.assertEqual(module.variant_output_dir(root, 'faculty'), root / 'resume-profiles' / 'faculty')
         self.assertEqual(
             module.variant_output_dir(root, 'faculty_lafayette_college_assistant_professor_ece'),
             root / 'job-applications' / 'faculty' / 'lafayette-college-assistant-professor-ece'

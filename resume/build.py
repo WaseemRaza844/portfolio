@@ -30,7 +30,7 @@ from pypdf import PdfReader
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-OUTPUT = HERE  # output root; generated profile PDFs live in generic-resume/
+OUTPUT = HERE  # resume root; profile PDFs and TeX are built in resume-profiles/
 COLLECTIONS = ('experience', 'projects', 'certifications', 'publications')
 
 
@@ -151,11 +151,11 @@ def variant_output_dir(output, key):
     """
     base_faculty = {'faculty', 'faculty_comprehensive', 'academic_cv'}
     if key in base_faculty:
-        return output / 'generic-resume' / 'faculty'
+        return output / 'resume-profiles' / 'faculty'
     if key.startswith('faculty_'):
         slug = key.removeprefix('faculty_').replace('_', '-')
         return output / 'job-applications' / 'faculty' / slug
-    return output / 'generic-resume' / 'industry'
+    return output / 'resume-profiles' / 'industry'
 
 
 def read_source(snapshot=None):
@@ -484,12 +484,12 @@ def build_pdf(key, variant, data, settings, output):
 
 
 def remove_stale_generated(output, active_keys):
-    """Remove generated resume artifacts for variants no longer configured."""
+    """Remove stale generated PDF/intermediate files; preserve editable TeX sources."""
     expected = {'Waseem_Raza_' + key.upper() for key in active_keys}
     if not output.exists():
         return
     for path in output.iterdir():
-        if path.suffix.lower() in {'.pdf', '.tex', '.aux', '.log', '.out'} and path.stem.startswith('Waseem_Raza_'):
+        if path.suffix.lower() in {'.pdf', '.aux', '.log', '.out'} and path.stem.startswith('Waseem_Raza_'):
             if path.stem not in expected:
                 path.unlink(missing_ok=True)
         elif path.suffix.lower() == '.txt' and path.stem not in active_keys:
@@ -503,7 +503,8 @@ def main():
     parser.add_argument('--all', action='store_true', help='Build all configured variants.')
     parser.add_argument('--variant', help='Variant ID; default genai.')
     parser.add_argument('--list', action='store_true', help='List available variants.')
-    parser.add_argument('--output', type=Path, default=OUTPUT, help='Resume root; outputs are routed into generic-resume/ and job-applications/.')
+    parser.add_argument('--output', type=Path, default=OUTPUT, help='Resume root; PDFs and TeX live with profiles or applications.')
+    parser.add_argument('--refresh-tex', action='store_true', help='Explicitly regenerate TeX from profile JSON and shared portfolio data; otherwise preserve and compile existing TeX.')
     parser.add_argument('--source-json', type=Path, help='Optional portfolio export; avoids Node.js.')
     parser.add_argument('--allow-overflow', action='store_true', help='Permit PDFs exceeding maxPages.')
     args = parser.parse_args()
@@ -520,8 +521,8 @@ def main():
     if args.all:
         industry_keys = [key for key in variants if key not in {'faculty', 'faculty_comprehensive', 'academic_cv'} and not key.startswith('faculty_')]
         faculty_keys = ['faculty', 'faculty_comprehensive', 'academic_cv']
-        remove_stale_generated(args.output / 'generic-resume' / 'industry', industry_keys)
-        remove_stale_generated(args.output / 'generic-resume' / 'faculty', faculty_keys)
+        remove_stale_generated(args.output / 'resume-profiles' / 'industry', industry_keys)
+        remove_stale_generated(args.output / 'resume-profiles' / 'faculty', faculty_keys)
     config = read_json(HERE / 'content.json')
     data = merge_source(read_source(args.source_json), config)
     notes = audit(data)
@@ -537,11 +538,11 @@ def main():
     results = []
     for key in keys:
         folder = variant_output_dir(args.output, key)
-        result = render(key, variants[key], data, settings, folder)
+        result = render(key, variants[key], data, settings, folder, refresh_tex=args.refresh_tex) if renderer == 'latex' else render(key, variants[key], data, settings, folder)
         result['relativePath'] = str(folder.relative_to(args.output) / result['file'])
         results.append(result)
     report = {'variants': results, 'reviewNotes': notes}
-    report_path = args.output / 'generic-resume' / 'build-report.json'
+    report_path = args.output / 'resume-profiles' / 'build-report.json'
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, indent=2), encoding='utf-8')
     for result in results:

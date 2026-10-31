@@ -2,7 +2,6 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
-# Generated source files and temporary LaTeX build products.
-# CI deliberately force-adds validated PDFs and a README to develop.
+# Deprecated local build folders, no longer written by resume builders.
 resume/output/
 resume/tailored/**/output/
