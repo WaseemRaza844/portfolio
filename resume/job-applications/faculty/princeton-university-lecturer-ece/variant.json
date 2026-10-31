@@ -58,7 +58,6 @@
   "minPageTextChars": 650,
   "minLastPageChars": 850,
   "publicationIds": [
-    "medication-adherence-2026",
     "ai-powered-resilience-2025",
     "multiparameter-reliability-2025",
     "resilient-propagation-2024",
@@ -66,7 +65,8 @@
     "mdt-zero-touch-2024",
     "positioning-compensation-globecom-2023",
     "lunarcomm-2022",
-    "positioning-ran-2022"
+    "positioning-ran-2022",
+    "medication-adherence-2026"
   ],
   "publicationSectionTitle": "Selected Research Publications",
   "honorLimit": 4,
