@@ -11,6 +11,8 @@ on:
     branches: [main, develop]
     paths:
       - 'dist/**'
+      # Tracker data is read live from GitHub; a status click should not reinstall LaTeX.
+      - '!dist/applications/jobs.json'
       - 'resume/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
