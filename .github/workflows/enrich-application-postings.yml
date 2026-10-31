@@ -1,0 +1,54 @@
+name: Enrich new faculty job postings
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'dist/applications/jobs.json'
+      - 'resume/job-applications/enrich_postings.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enrich-faculty-job-postings
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out develop
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test metadata extraction
+        run: python -m unittest discover -s resume/job-applications/tests -p 'test_*.py'
+
+      - name: Extract public posting metadata
+        run: python resume/job-applications/enrich_postings.py
+
+      - name: Validate tracker
+        run: python resume/job-applications/validate_tracker.py
+
+      - name: Save enriched metadata to develop
+        shell: bash
+        run: |
+          if git diff --quiet -- dist/applications/jobs.json; then
+            echo "No pending posting metadata required changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/applications/jobs.json
+          git commit -m "chore(applications): enrich public job posting metadata"
+          git push origin HEAD:develop
