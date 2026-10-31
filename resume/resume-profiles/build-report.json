@@ -1,0 +1,622 @@
+{
+  "variants": [
+    {
+      "file": "Waseem_Raza_GENERIC.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        5073,
+        4917,
+        4724
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "agentic-ai-rag",
+          "lakehouse-pipeline",
+          "syntheticnet",
+          "wearable-intelligence",
+          "system-design-portfolio",
+          "propagation-digital-twins"
+        ],
+        "certifications": [
+          "coursera-generative-ai-applications-with-amazon-bedrock",
+          "coursera-agentic-ai-with-langchain-and-langgraph",
+          "coursera-machine-learning",
+          "coursera-introduction-to-data-analytics-in-google-cloud",
+          "coursera-ai-foundations-industry-overview-for-telecommunication"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_GENERIC.pdf"
+    },
+    {
+      "file": "Waseem_Raza_COMPREHENSIVE.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        5454,
+        4882,
+        5120
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "agentic-ai-rag",
+          "lakehouse-pipeline",
+          "financial-ml",
+          "wearable-intelligence",
+          "propagation-digital-twins",
+          "syntheticnet",
+          "system-design-portfolio"
+        ],
+        "certifications": [
+          "coursera-generative-ai-applications-with-amazon-bedrock",
+          "coursera-agentic-ai-with-langchain-and-langgraph",
+          "coursera-machine-learning",
+          "coursera-introduction-to-data-analytics-in-google-cloud",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_COMPREHENSIVE.pdf"
+    },
+    {
+      "file": "Waseem_Raza_GENAI.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        5375,
+        4887,
+        5125
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "agentic-ai-rag",
+          "multi-agent-orchestration",
+          "rag-vector-retrieval-stack",
+          "aws-bedrock-applied-genai",
+          "unstructured-document-extraction",
+          "meeting-minutes-llm",
+          "system-design-portfolio"
+        ],
+        "certifications": [
+          "coursera-generative-ai-applications-with-amazon-bedrock",
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-agentic-ai-with-langchain-and-langgraph",
+          "coursera-generative-ai-foundation-models-and-platforms",
+          "coursera-advanced-rag-with-vector-databases-and-retrievers",
+          "coursera-build-ai-agents-using-mcp"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_GENAI.pdf"
+    },
+    {
+      "file": "Waseem_Raza_AIML.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        5322,
+        4901,
+        4904
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "financial-ml",
+          "wearable-intelligence",
+          "cloud-computer-vision",
+          "lakehouse-pipeline",
+          "propagation-digital-twins",
+          "unstructured-document-extraction",
+          "agentic-ai-rag"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-introduction-to-data-analytics-in-google-cloud",
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-python-for-data-science-ai-development"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "positioning-ran-2022"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_AIML.pdf"
+    },
+    {
+      "file": "Waseem_Raza_WIRELESS.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        4863,
+        4931,
+        3986
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins",
+          "ai-telecom-optimization",
+          "4g-cellular-analysis",
+          "5g-edge-iot-ai-analysis"
+        ],
+        "certifications": [
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-customer-experience-in-telecommunication",
+          "coursera-4g-network-fundamentals",
+          "coursera-business-considerations-for-5g-with-edge-iot-and-ai",
+          "coursera-machine-learning"
+        ],
+        "publications": [
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_WIRELESS.pdf"
+    },
+    {
+      "file": "Waseem_Raza_HEALTHCARE.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        4700,
+        5094,
+        4476
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "wearable-intelligence",
+          "cloud-computer-vision",
+          "unstructured-document-extraction",
+          "agentic-ai-rag",
+          "aws-bedrock-applied-genai",
+          "lakehouse-pipeline"
+        ],
+        "certifications": [
+          "coursera-health-data-science-foundation",
+          "coursera-generative-ai-for-healthcare",
+          "coursera-detecting-covid-19-with-chest-x-ray-using-pytorch",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-machine-learning",
+          "coursera-introduction-to-healthcare-management",
+          "coursera-python-for-data-science-ai-development"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_HEALTHCARE.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FINANCE.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 3000,
+      "minLastPageChars": 3000,
+      "maxPages": 3,
+      "pageTextChars": [
+        4768,
+        5093,
+        4187
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "ou-research"
+        ],
+        "projects": [
+          "financial-ml",
+          "lakehouse-pipeline",
+          "system-design-portfolio",
+          "agentic-ai-rag",
+          "unstructured-document-extraction",
+          "aws-bedrock-applied-genai"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-tesla-stock-price-prediction-using-facebook-prophet",
+          "coursera-introduction-to-data-analytics-in-google-cloud",
+          "coursera-python-for-data-science-ai-development",
+          "coursera-exploratory-vs-confirmatory-data-analysis-using-python",
+          "coursera-ai-fundamentals-in-financial-services",
+          "coursera-fundamentals-of-machine-learning-in-finance"
+        ],
+        "publications": [
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "outage-management-2024"
+        ]
+      },
+      "relativePath": "resume-profiles/industry/Waseem_Raza_FINANCE.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FACULTY.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 800,
+      "minLastPageChars": 1000,
+      "maxPages": 4,
+      "pageTextChars": [
+        3897,
+        4337,
+        2606
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins",
+          "wearable-intelligence"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-4g-network-fundamentals",
+          "coursera-5g-network-fundamentals"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "mdt-zero-touch-2024",
+          "positioning-compensation-globecom-2023",
+          "lunarcomm-2022"
+        ]
+      },
+      "relativePath": "resume-profiles/faculty/Waseem_Raza_FACULTY.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FACULTY_COMPREHENSIVE.pdf",
+      "pages": 4,
+      "minPages": 4,
+      "minPageTextChars": 800,
+      "minLastPageChars": 900,
+      "maxPages": 5,
+      "pageTextChars": [
+        4122,
+        3506,
+        4677,
+        1792
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins",
+          "wearable-intelligence",
+          "ai-telecom-optimization"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-introduction-to-computer-vision-with-tensorflow",
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-4g-network-fundamentals",
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-5g-network-fundamentals"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "outage-management-2024",
+          "mdt-zero-touch-2024",
+          "positioning-compensation-globecom-2023",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      },
+      "relativePath": "resume-profiles/faculty/Waseem_Raza_FACULTY_COMPREHENSIVE.pdf"
+    },
+    {
+      "file": "Waseem_Raza_ACADEMIC_CV.pdf",
+      "pages": 4,
+      "minPages": 4,
+      "minPageTextChars": 700,
+      "minLastPageChars": 500,
+      "maxPages": 7,
+      "pageTextChars": [
+        3651,
+        3385,
+        4675,
+        3279
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins",
+          "wearable-intelligence",
+          "ai-telecom-optimization",
+          "genai-prompt-foundations"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-introduction-to-computer-vision-with-tensorflow",
+          "coursera-python-for-data-science-ai-development",
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-4g-network-fundamentals",
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-generative-ai-foundation-models-and-platforms",
+          "coursera-5g-network-fundamentals"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "outage-management-2024",
+          "mdt-zero-touch-2024",
+          "positioning-compensation-globecom-2023",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      },
+      "relativePath": "resume-profiles/faculty/Waseem_Raza_ACADEMIC_CV.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FACULTY_LAFAYETTE_COLLEGE_ASSISTANT_PROFESSOR_ECE.pdf",
+      "pages": 4,
+      "minPages": 4,
+      "minPageTextChars": 800,
+      "minLastPageChars": 600,
+      "maxPages": 6,
+      "pageTextChars": [
+        3613,
+        3385,
+        4531,
+        1847
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "wearable-intelligence",
+          "syntheticnet",
+          "turboran",
+          "propagation-digital-twins",
+          "ai-telecom-optimization"
+        ],
+        "certifications": [
+          "coursera-machine-learning",
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-introduction-to-computer-vision-with-tensorflow",
+          "coursera-python-for-data-science-ai-development",
+          "coursera-4g-network-fundamentals",
+          "coursera-5g-network-fundamentals"
+        ],
+        "publications": [
+          "medication-adherence-2026",
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "outage-management-2024",
+          "mdt-zero-touch-2024",
+          "positioning-compensation-globecom-2023",
+          "lunarcomm-2022",
+          "positioning-ran-2022",
+          "rf-energy-harvesting-2020"
+        ]
+      },
+      "relativePath": "job-applications/faculty/lafayette-college-assistant-professor-ece/Waseem_Raza_FACULTY_LAFAYETTE_COLLEGE_ASSISTANT_PROFESSOR_ECE.pdf"
+    }
+  ],
+  "reviewNotes": [
+    "Academic resume variants use the shared portfolio education and appointment data plus resume-specific verified detail overrides.",
+    "Hidden from every PDF: experience/industry-research.",
+    "No confirmed date printed for certification coursera-chatgpt-prompt-engineering-for-developers.",
+    "No confirmed date printed for certification coursera-function-calling-and-data-extraction-with-llms.",
+    "No confirmed date printed for certification coursera-improving-accuracy-of-llm-applications.",
+    "No confirmed date printed for certification coursera-langchain-for-llm-application-development.",
+    "No confirmed date printed for certification coursera-introduction-to-containers-w-docker-kubernetes-openshift.",
+    "No confirmed date printed for certification coursera-getting-started-with-git-and-github.",
+    "No confirmed date printed for certification coursera-applied-data-science-capstone.",
+    "No confirmed date printed for certification coursera-prepare-clean-transform-and-load-data-using-power-bi.",
+    "No confirmed date printed for certification coursera-introduction-to-healthcare.",
+    "No confirmed date printed for certification coursera-system-design-masterclass.",
+    "No confirmed date printed for certification coursera-getting-started-with-generative-ai-in-azure.",
+    "No confirmed date printed for certification coursera-healthcare-financial-management-fundamentals.",
+    "No confirmed date printed for certification coursera-data-management-with-azure-implement-compliance-controls.",
+    "No confirmed date printed for certification coursera-fundamental-neuroscience-for-neuroimaging.",
+    "No confirmed date printed for certification coursera-guided-tour-of-machine-learning-in-finance.",
+    "No confirmed date printed for certification coursera-fundamentals-of-data-science-in-healthcare.",
+    "No confirmed date printed for certification coursera-project-generative-ai-applications-with-rag-and-langchain.",
+    "No confirmed date printed for certification coursera-azure-ai-and-healthcare-cloud-fundamentals.",
+    "No confirmed date printed for certification coursera-deep-learning-methods-for-healthcare.",
+    "No confirmed date printed for certification coursera-ai-fundamentals-in-financial-services.",
+    "No confirmed date printed for certification coursera-application-development-using-microservices-and-serverless.",
+    "No confirmed date printed for certification coursera-data-analysis-with-python.",
+    "No confirmed date printed for certification coursera-machine-learning-with-python.",
+    "No confirmed date printed for certification coursera-advanced-deep-learning-methods-for-healthcare.",
+    "No confirmed date printed for certification coursera-fundamentals-of-machine-learning-in-finance.",
+    "No confirmed date printed for certification coursera-gen-ai-beyond-the-chatbot.",
+    "No confirmed date printed for certification coursera-introduction-to-generative-ai-in-healthcare.",
+    "No confirmed date printed for certification coursera-5g-network-fundamentals.",
+    "No confirmed date printed for certification coursera-generative-ai-essentials-for-finance-and-accounting.",
+    "No confirmed date printed for certification coursera-introduction-to-systems-architecture.",
+    "No confirmed date printed for certification coursera-machine-learning-for-healthcare-applications.",
+    "No confirmed date printed for certification coursera-reinforcement-learning-in-finance.",
+    "No confirmed date printed for certification coursera-advanced-healthcare-analytics.",
+    "No confirmed date printed for certification coursera-introduction-to-clinical-data.",
+    "No confirmed date printed for certification coursera-generative-ai-for-healthcare-students-and-professionals.",
+    "No confirmed date printed for certification coursera-introduction-to-software-development.",
+    "No confirmed date printed for certification coursera-langchain-masterclass-build-15-llm-apps-with-python.",
+    "No confirmed date printed for certification coursera-overview-of-important-protocols.",
+    "No confirmed date printed for certification coursera-foundations-of-neuroscience.",
+    "No confirmed date printed for certification coursera-introduction-to-neural-networks.",
+    "No confirmed date printed for certification coursera-5g-for-everyone.",
+    "No confirmed date printed for certification coursera-foundations-of-business-analysis.",
+    "No confirmed date printed for certification coursera-network-architecture-fundamentals.",
+    "No confirmed date printed for certification coursera-machine-learning-and-ai-applications-in-healthcare.",
+    "No confirmed date printed for certification coursera-introduction-to-generative-ai-concepts-and-techniques.",
+    "No confirmed date printed for certification coursera-neural-networks-and-deep-learning.",
+    "No confirmed date printed for certification coursera-principles-of-fmri-1.",
+    "No confirmed date printed for certification coursera-generative-ai-elevate-your-software-development-career.",
+    "No confirmed date printed for certification coursera-introduction-to-neurohacking-in-r.",
+    "No confirmed date printed for certification coursera-principles-of-fmri-2.",
+    "No confirmed date printed for certification coursera-learning-how-to-learn-powerful-mental-tools-to-help-you-master-tough-subjects.",
+    "Some publication entries lack authors, DOI, or full venue details. Printed supplied title/venue/year only; no bibliographic details invented."
+  ]
+}

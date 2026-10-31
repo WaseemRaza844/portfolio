@@ -1,0 +1,20 @@
+{
+  "job": "micro1-ml-engineer",
+  "file": "Waseem_Raza_MICRO1_ML_ENGINEER.pdf",
+  "pages": 3,
+  "pageTextChars": [
+    4623,
+    4488,
+    4497
+  ],
+  "pageLowestTextY": [
+    36.1,
+    31.5,
+    67.2
+  ],
+  "target": {
+    "company": "micro1",
+    "role": "ML Engineer",
+    "jobId": "micro1-ml-engineer"
+  }
+}

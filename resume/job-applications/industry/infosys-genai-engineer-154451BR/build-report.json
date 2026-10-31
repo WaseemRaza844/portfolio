@@ -1,0 +1,20 @@
+{
+  "job": "infosys-genai-engineer-154451BR",
+  "file": "Waseem_Raza_INFOSYS_GENAI_154451BR.pdf",
+  "pages": 3,
+  "pageTextChars": [
+    5348,
+    5585,
+    3690
+  ],
+  "pageLowestTextY": [
+    49.9,
+    74.5,
+    290.8
+  ],
+  "target": {
+    "company": "Infosys",
+    "role": "Gen AI Engineer",
+    "jobId": "154451BR"
+  }
+}
