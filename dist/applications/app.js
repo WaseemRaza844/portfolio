@@ -218,6 +218,7 @@ function newOp(type, extras) {
   return Object.assign({type:type, opId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10)},extras);
 }
 function recordChange(operation) {
+  duplicateNotice="";
   pendingOps.push(operation);
   persistPending();
   lastMessage="";
@@ -463,6 +464,36 @@ async function syncGitHub() {
     showSyncStatus();
   }
 }
+async function refreshFromGitHub() {
+  const refreshButton=el("refresh-data");
+  refreshButton.disabled=true;
+  const oldLabel=refreshButton.textContent;
+  refreshButton.textContent="Refreshing...";
+  try {
+    let latest;
+    if (token) {
+      latest=(await githubRead(token)).payload;
+    } else {
+      const response=await fetchWithTimeout(
+        "https://raw.githubusercontent.com/WaseemRaza844/portfolio/develop/dist/applications/jobs.json?v="+Date.now(),5000);
+      if (!response.ok) throw new Error("GitHub returned HTTP "+response.status);
+      latest=await response.json();
+    }
+    if (!latest || !Array.isArray(latest.jobs)) throw new Error("GitHub returned invalid tracker data.");
+    basePayload=latest;
+    records=C.applyOperations(basePayload,pendingOps).jobs;
+    lastMessage="Loaded the latest GitHub tracker, including any extracted posting details.";
+    render();
+    showSyncStatus();
+  } catch (err) {
+    lastMessage="Could not refresh GitHub data: "+err.message;
+    showSyncStatus();
+  } finally {
+    refreshButton.disabled=false;
+    refreshButton.textContent=oldLabel;
+  }
+}
+
 async function connectGithub(e) {
   e.preventDefault();
   const value=formInput("github-token");
@@ -523,6 +554,7 @@ async function init() {
       }
     });
     el("sync-now").addEventListener("click",()=>void syncGitHub());
+    el("refresh-data").addEventListener("click",()=>void refreshFromGitHub());
     el("export-csv").addEventListener("click",exportCSV);
     for (const b of document.querySelectorAll("[data-close]")) {
       b.addEventListener("click",()=>closeDialog(b.dataset.close));
