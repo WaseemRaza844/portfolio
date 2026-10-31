@@ -39,8 +39,22 @@ class PostingEnrichmentTests(unittest.TestCase):
         self.assertEqual(data["institution"], "Example University")
         self.assertEqual(data["location"], "Princeton, NJ, US")
         self.assertEqual(data["deadline"], "2027-07-27")
+        self.assertEqual(data["deadlineSource"], "Schema.org JobPosting.validThrough")
         self.assertEqual(data["datePosted"], "2026-10-01")
         self.assertIn("computer networking", data["description"].lower())
+
+
+    def test_ignores_generic_higheredjobs_site_description(self):
+        html = """<html><head>
+        <title>HigherEdJobs | Jobs</title>
+        <meta property="og:site_name" content="HigherEdJobs">
+        <meta property="og:title" content="HigherEdJobs">
+        <meta name="description" content="Jobs in higher education. Faculty and administrative positions at colleges and universities. Updated daily. Free to job seekers.">
+        </head><body>Generic job board</body></html>"""
+        data = extract_posting_metadata(html, "https://www.higheredjobs.com/details.cfm?JobCode=123")
+        self.assertEqual(data["description"], "")
+        self.assertEqual(data["siteName"], "")
+        self.assertEqual(data["title"], "")
 
     def test_enriches_only_placeholder_fields_and_preserves_researched_values(self):
         job = {
