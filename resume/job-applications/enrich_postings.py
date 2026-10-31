@@ -194,7 +194,7 @@ def extract_posting_metadata(html: str, source_url: str = "") -> dict:
     host = (urlparse(source_url).hostname or "").lower().removeprefix("www.")
     is_job_board = any(host == domain or host.endswith("." + domain) for domain in JOB_BOARD_HOSTS)
     if not result["title"]:
-        candidate = clean_text(parser.meta.get("og:title") or parser.title_parts and " ".join(parser.title_parts), 240)
+        candidate = clean_text(parser.meta.get("og:title") or " ".join(parser.title_parts), 240)
         candidate = re.sub(r"\s*[|·]\s*(HigherEdJobs|Indeed|LinkedIn|Glassdoor)\s*$", "", candidate, flags=re.I)
         if candidate.lower() not in {"", "jobs", "careers", "job search", "home"}:
             result["title"] = candidate
