@@ -21,8 +21,6 @@ My industry work with AT&T Labs, Futurewei, and AT&T has required software-orien
 
 I appreciate the department's emphasis on undergraduate education, student engagement, and industry-relevant computing. I would contribute with structured assignments, accessible prerequisite support, office hours and assessments that value design, testing, and explanation rather than just a successful demonstration. A modest, reproducible research program on reliable ML and intelligent networks could also provide students with capstone and independent-study opportunities.
 
-I recognize that the publicly accessible description still names **Fall 2026** as the anticipated start. I remain interested in the opportunity if the search continues for a current or future appointment and would appreciate consideration according to the department's actual staffing timeline.
-
 Thank you for reviewing my application. I would be glad to discuss how my teaching and engineering software experience could support Behrend's Computer Science and Software Engineering students.
 
 Sincerely,
