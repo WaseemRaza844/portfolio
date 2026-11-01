@@ -474,6 +474,38 @@
       "enrichmentStatus": "complete",
       "enrichmentSource": "https://apply.interfolio.com/190824",
       "enrichmentMessage": "Official employer listing verified."
+    },
+    {
+      "id": "scranton-ece-ap-f00625p",
+      "institution": "University of Scranton",
+      "title": "Assistant Professor of Electrical/Computer Engineering",
+      "location": "Scranton, PA",
+      "postingUrl": "https://www.higheredjobs.com/details.cfm?JobCode=179592085",
+      "officialUrl": "https://universityofscrantonjobs.com/postings/9126",
+      "status": "preparing",
+      "priority": "high",
+      "type": "Tenure-track; nine-month full-time; starts August 2027",
+      "area": "Engineering applications of AI and ML, communications, signal processing, sensing, EE/CE undergraduate labs",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": "2026-11-20",
+      "documents": [
+        "Cover letter",
+        "Curriculum vitae",
+        "Teaching statement (no more than two pages)",
+        "Research statement (no more than two pages)",
+        "Academic transcripts (private upload)",
+        "Names and email addresses of three professional references (private entry)"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/scranton-ece-assistant-professor-2027/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-01",
+      "nextAction": "Review Scranton-specific statements and CV, supply private academic transcripts and 3 verified referee emails; confirm employer's 'authorized to work for any employer' requirement and no sponsorship for Aug 2027 before submitting. Full consideration Dec 11, 2026.",
+      "notes": "Official posting F00625P. Full consideration for applications completed by Dec 11, 2026; open until filled. 9-12 teaching credits per semester. Jesuit mission, program/ABET assessment, undergraduate mentorship emphasized. Non-sponsoring employer explicitly requires authorization to work FOR ANY U.S. employer; do not assume OPT/STEM OPT satisfies this. Strong engineering AI/ML match, but no demonstrated power/architecture instructor-of-record experience. One shared ECE 2027 CV is reused unchanged; teaching and research statements are new Scranton-specific two-page-limited drafts.",
+      "enrichmentStatus": "complete",
+      "enrichmentSource": "https://universityofscrantonjobs.com/postings/9128/print_preview",
+      "enrichmentMessage": "Official University of Scranton job text verified Nov 1, 2026; Dec 11 full-consideration date, not hard closing deadline."
     }
   ]
 }
