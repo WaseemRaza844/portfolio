@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_FAC_SCR27_CL.docx",
+      "title": "University of Scranton — Assistant Professor of Electrical/Computer Engineering — Cover Letter"
+    },
+    {
+      "source": "Teaching_Statement.md",
+      "output": "WRaza_FAC_SCR27_Teaching.docx",
+      "title": "University of Scranton — Teaching Statement"
+    },
+    {
+      "source": "Research_Statement.md",
+      "output": "WRaza_FAC_SCR27_Research.docx",
+      "title": "University of Scranton — Research Statement"
+    }
+  ]
+}
