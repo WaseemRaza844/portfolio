@@ -10,11 +10,19 @@ These are **distinct applications** in the same Engineering Technology departmen
 
 ## Required uploads
 
-1. **Resume/CV:** `submission-ready/WRaza_ADJ_UCNJ_ENGTECH_SPR27_CV.pdf`
-2. **Cover letter:** Select the schedule-matched one from `submission-ready/WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.pdf` or `..._EVENING.pdf`.
+1. **Resume/CV:** `submission-ready/WRaza_FAC_UCNJ_ET27_CV.pdf`
+2. **Cover letter:** Select the schedule-matched one from `submission-ready/WRaza_FAC_UCNJ_ET27_CL_Day.pdf` or `WRaza_FAC_UCNJ_ET27_CL_Eve.pdf`.
 3. **Unofficial college transcripts:** Upload the genuine academic transcripts from your private records in the employer portal. **No transcript has been generated or publicly committed.** The posting says unofficial college transcripts must be submitted before interview and lists them as required application attachments; official copies are due on hiring.
 
 No separate teaching or research statement is listed as a required upload. Other optional material should be provided only if the application portal requests it.
+
+## Shared CV and prominent technical skills
+
+Both applications use **the same three-page CV** (`WRaza_FAC_UCNJ_ET27_CV.pdf`). The only schedule-specific documents are the short day and evening cover letters.
+
+The CV places **Technical Skills & Engineering Tools** immediately after the undergraduate teaching and mentoring sections, ahead of research and publication details. It includes programming languages (Python, C/C++, MATLAB, SQL), engineering computing and simulation (Jupyter, NumPy, SciPy, Pandas, Matplotlib, Plotly), wireless systems, ML frameworks, Git, Linux, VS Code, software tools and communications laboratory instruction. These are selected from the existing faculty and industry skill inventories rather than newly claimed credentials.
+
+The `submission-ready/` folder uses the short `WRaza_FAC_UCNJ_ET27_*` convention. The longer filenames inside the working application folder are internal build inputs, not intended for submission.
 
 ## Main teaching argument
 
