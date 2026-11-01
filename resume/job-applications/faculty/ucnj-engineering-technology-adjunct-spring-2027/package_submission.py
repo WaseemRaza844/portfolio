@@ -7,7 +7,7 @@ from pypdf import PdfReader
 HERE=Path(__file__).resolve().parent
 DEST=HERE/"submission-ready"
 SOURCES={
-  "Waseem_Raza_FACULTY_UCNJ_ENGTECH_ADJUNCT_SPRING_2027.pdf":"WRaza_ADJ_UCNJ_ENGTECH_SPR27_CV.pdf",
+  "Waseem_Raza_FACULTY_UCNJ_ENGINEERING_TECHNOLOGY_ADJUNCT_SPRING_2027.pdf":"WRaza_ADJ_UCNJ_ENGTECH_SPR27_CV.pdf",
   "WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.pdf":"WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.pdf",
   "WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_EVENING.pdf":"WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_EVENING.pdf",
   "WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.docx":"WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.docx",
