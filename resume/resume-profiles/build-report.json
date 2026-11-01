@@ -719,14 +719,14 @@
     {
       "file": "Waseem_Raza_FACULTY_UCNJ_ENGINEERING_TECHNOLOGY_ADJUNCT_SPRING_2027.pdf",
       "pages": 3,
-      "minPages": 2,
+      "minPages": 3,
       "minPageTextChars": 600,
-      "minLastPageChars": 550,
-      "maxPages": 4,
+      "minLastPageChars": 700,
+      "maxPages": 3,
       "pageTextChars": [
-        4313,
-        3932,
-        3092
+        4439,
+        4425,
+        1774
       ],
       "renderer": "latex",
       "selectedIds": {
