@@ -19,13 +19,14 @@
     "Engineering Computing and Data Analysis (technical preparation)",
     "Related Electrical Engineering Technology Laboratories (subject to assignment)"
   ],
-  "skillsSectionTitle": "Engineering Technology Teaching & Laboratory Skills",
+  "skillsSectionTitle": "Technical Skills & Engineering Tools",
   "skills": {
-    "Undergraduate Technology Teaching": "Computer Programming, Communication Systems and Wireless Communication taught within the University of Lahore Department of Technology; assignments, assessment and student-project guidance",
-    "Engineering Labs & Instruction": "Communications laboratory support, experiment preparation, simulation-based demonstrations, student guidance, lab reports, instructional material and evaluation",
-    "Applied Electrical & Wireless Systems": "Analog/digital communication concepts, RF/wireless fundamentals, signal measurements, LTE/4G and 5G systems, propagation, performance, systems testing",
-    "Programming & Engineering Tools": "Python, C/C++, MATLAB, NumPy, Pandas, data visualization, simulation, Git, Linux and technical documentation",
-    "Instructional Practice": "Clear learning objectives, worked examples, competency-based exercises, outcome evaluation, accessible feedback, attendance/assessment practices and student support"
+    "Programming Languages": "Python, C/C++, MATLAB, SQL; programming fundamentals, scripting, debugging, computational problem-solving, and numerical computing",
+    "Engineering Simulation & Data Tools": "MATLAB, Jupyter Notebook, NumPy, SciPy, Pandas, Matplotlib, and Plotly; simulation, signal and network measurement analysis, data visualization, and reproducible experiments",
+    "Electrical & Wireless Technology": "Analog and digital communication systems, RF and wireless fundamentals, LTE/4G, 5G-NR, signal propagation, system performance, and network measurements",
+    "AI/ML Software": "scikit-learn, PyTorch, TensorFlow, Keras, and XGBoost; classification, regression, anomaly detection, and engineering data analysis",
+    "Software Development & Cloud": "Git/GitHub, Linux, VS Code, REST APIs, Docker, GitHub Actions and CI/CD; experience with cloud-based data analytics and Python workflows",
+    "Teaching, Laboratories & Assessment": "Undergraduate Electrical Engineering Technology instruction; communications experiments, lab reports, worked examples, programming exercises, student project mentoring, and learning-outcome assessment"
   },
   "experienceText": "faculty",
   "projectIds": [
@@ -60,9 +61,87 @@
   "latexFontSize": 9,
   "horizontalMarginInches": 0.7,
   "verticalMarginInches": 0.47,
-  "minPages": 2,
-  "maxPages": 4,
+  "minPages": 3,
+  "maxPages": 3,
   "minPageTextChars": 600,
-  "minLastPageChars": 550,
-  "pageBreakBefore": []
+  "minLastPageChars": 700,
+  "pageBreakBefore": [],
+  "pages": [
+    [
+      {
+        "title": "Professional Profile",
+        "items": [
+          "summary"
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education"
+        ]
+      },
+      {
+        "title": "Teaching & Applied Instruction",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "University Teaching in Engineering Technology"
+          },
+          "teaching_areas",
+          "mentoring"
+        ]
+      },
+      {
+        "title": "Technical Skills & Engineering Tools",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "University and Industry Engineering Experience",
+        "items": [
+          {
+            "id": "academic_experience",
+            "title": "Research and Laboratory Support"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industry Research and Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Selected Applied Engineering Projects",
+        "items": [
+          "projects"
+        ]
+      },
+      {
+        "title": "Selected Research Publications",
+        "items": [
+          "publications"
+        ]
+      },
+      {
+        "title": "Academic Service and Recognition",
+        "items": [
+          {
+            "id": "service",
+            "title": "Academic Contributions"
+          },
+          {
+            "id": "honors",
+            "title": "Selected Awards"
+          }
+        ]
+      },
+      {
+        "title": "Relevant Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
+    ]
+  ],
+  "honorLimit": 4
 }
