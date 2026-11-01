@@ -97,6 +97,8 @@ jobs:
         run: python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/package_submission.py
       - name: Build four faculty application packages from shared academic CV
         run: python resume/job-applications/faculty/ece-shared-2027/build_packages.py
+      - name: Build University of Scranton ECE faculty package
+        run: python resume/job-applications/faculty/scranton-ece-assistant-professor-2027/build_documents.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -211,6 +213,25 @@ jobs:
                   pages=PdfReader(str(pdf)).pages
                   assert 1<=len(pages)<=5, f'{slug}: bad {section} page count'
           print('Four faculty applications verified; all use the identical shared CV PDF.')
+          # Scranton uses the same ECE academic CV but enforces 2-page teaching/research limits.
+          scr=root/'job-applications/faculty/scranton-ece-assistant-professor-2027'
+          srcrdy=scr/'submission-ready'
+          manifest=json.loads((scr/'application-documents.json').read_text(encoding='utf-8'))['documents']
+          assert len(manifest)==3, 'Scranton cover + teaching + research expected'
+          from hashlib import sha256
+          canonical=root/'job-applications/faculty/ece-shared-2027/Waseem_Raza_FACULTY_ECE_SHARED_2027.pdf'
+          copy=srcrdy/'WRaza_FAC_SCR27_CV.pdf'
+          assert copy.is_file() and sha256(copy.read_bytes()).digest()==sha256(canonical.read_bytes()).digest(), 'Scranton must reuse the identical canonical ECE CV'
+          for item in manifest:
+              assert (scr/item['source']).is_file(), 'Missing Scranton editable source'
+              assert (scr/item['output']).is_file(), 'Missing Scranton Word source output'
+          for section in ['CL','Teaching','Research']:
+              pdf=srcrdy/f'WRaza_FAC_SCR27_{section}.pdf'
+              word=srcrdy/f'WRaza_FAC_SCR27_{section}.docx'
+              assert pdf.is_file() and word.is_file(), f'Scranton missing {section}'
+              assert 1<=len(PdfReader(str(pdf)).pages)<=2, f'Scranton {section} exceeded two pages'
+          print('Scranton CV is identical to canonical ECE; cover and two-page-capped statements validated.')
+
           print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, Susquehanna and UCNJ letters.')
 
           PY
