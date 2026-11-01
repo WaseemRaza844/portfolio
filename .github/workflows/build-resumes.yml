@@ -87,6 +87,10 @@ jobs:
         run: python resume/job-applications/faculty/susquehanna-cs-assistant-professor-2027/build_documents.py
       - name: Package Susquehanna submission-ready public documents
         run: python resume/job-applications/faculty/susquehanna-cs-assistant-professor-2027/package_submission.py
+      - name: Build UCNJ Engineering Technology adjunct cover letters
+        run: python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/build_documents.py
+      - name: Package UCNJ Engineering Technology adjunct documents
+        run: python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/package_submission.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -156,7 +160,21 @@ jobs:
           from pypdf import PdfReader
           cover=su/'submission-ready/WRaza_FAC_SUSQUEHANNA_CS_2027_Cover_Letter.pdf'
           assert len(PdfReader(str(cover)).pages)<=2, 'Susquehanna letter is too long'
-          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, and 4 Susquehanna public submissions.')
+          ucnj=root/'job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027'
+          ucnj_docs=json.loads((ucnj/'application-documents.json').read_text(encoding='utf-8'))['documents']
+          assert len(ucnj_docs)==2, 'UCNJ day and evening letters are both required for this application folder'
+          for item in ucnj_docs:
+              assert (ucnj/item['source']).is_file(), f'Missing UCNJ source: {item["source"]}'
+              assert (ucnj/item['output']).is_file(), f'Missing UCNJ Word: {item["output"]}'
+          ready=ucnj/'submission-ready'
+          for name in ['CV','Cover_Letter_DAY','Cover_Letter_EVENING']:
+              filename=f'WRaza_ADJ_UCNJ_ENGTECH_SPR27_{name}.pdf'
+              assert (ready/filename).is_file(), f'Missing UCNJ application PDF: {filename}'
+          for shift in ['DAY','EVENING']:
+              pdf=ready/f'WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_{shift}.pdf'
+              assert len(PdfReader(str(pdf)).pages)==1, f'UCNJ {shift} letter should fit on one page'
+          print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, Susquehanna and UCNJ letters.')
+
           PY
 
       - name: Upload generated resumes and application documents
