@@ -268,7 +268,7 @@
       "location": "Selinsgrove, PA",
       "type": "Tenure-track Assistant Professor (full time)",
       "area": "Computer Science; AI/ML; programming; networking; undergraduate capstone mentoring",
-      "status": "preparing",
+      "status": "submitted",
       "priority": "high",
       "postingUrl": "https://www.schooljobs.com/careers/susqu/jobs/5527323/assistant-professor-of-computer-science",
       "officialUrl": "https://www.schooljobs.com/careers/susqu/jobs/5527323/assistant-professor-of-computer-science",
@@ -286,11 +286,70 @@
       "applicationFolder": "resume/job-applications/faculty/susquehanna-cs-assistant-professor-2027/",
       "submittedAt": null,
       "lastReviewed": "2026-10-31",
-      "nextAction": "Review Susquehanna-targeted CV, cover letter, teaching philosophy and research plan; verify a teaching-focused referee and upload the private three-reference contact sheet. Aim before Nov 30 review.",
-      "notes": "Tenure-track, 9-month, starts Aug 2027. Three courses/semester; research and undergraduate capstone advising required. Review starts 2026-11-30; this is not an application closing deadline. Source: official Susquehanna employer page. A reference letter must address teaching experience.\nDraft application package created for review in the portfolio repo. PDF/reference contact list must be reviewed; no application submitted.",
+      "nextAction": "Application submission confirmed by applicant; monitor reference letter requests and employer follow-up.",
+      "notes": "Tenure-track, 9-month, starts Aug 2027. Three courses/semester; research and undergraduate capstone advising required. Review starts 2026-11-30; this is not an application closing deadline. Source: official Susquehanna employer page. A reference letter must address teaching experience.\nDraft application package created for review in the portfolio repo. PDF/reference contact list must be reviewed; no application submitted.\nUser reported having applied to the previously discussed Assistant Professor of Computer Science opening, on October 31, 2026; exact submission timestamp not recorded.",
       "enrichmentStatus": "complete",
       "enrichmentMessage": "Official employer posting and required materials verified.",
       "enrichmentSource": "https://www.schooljobs.com/careers/susqu/jobs/5527323/assistant-professor-of-computer-science"
+    },
+    {
+      "institution": "UCNJ Union College of Union County, NJ",
+      "location": "Cranford / Elizabeth / Plainfield, NJ",
+      "type": "Part-time adjunct | Spring 2027",
+      "area": "Electrical Engineering Technology lectures and laboratories; Computer Programming; Communication Systems; Wireless Communication",
+      "status": "preparing",
+      "priority": "high",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": "2026-11-06",
+      "documents": [
+        "Resume/CV",
+        "Schedule-specific Cover Letter",
+        "Unofficial College Transcripts (private file; official upon hire)"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/",
+      "submittedAt": null,
+      "lastReviewed": "2026-10-31",
+      "notes": "Employer posting open until filled, no listed deadline. Application must use correct Day/Evening posting. Emphasize Electrical Engineering Technology experience at University of Lahore Department of Technology and communications lab instruction; do not claim mechanical tech or U.S. community-college teaching. Transcript upload must be private.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Verified official UCNJ PeopleAdmin job description and required three uploads.",
+      "id": "ucnj-engtech-day-12652",
+      "title": "Engineering Technology Lecture & Lab Adjunct Faculty (DAY COURSES - Electrical and Mechanical) - Spring 2027",
+      "postingUrl": "https://ucc.peopleadmin.com/postings/12652",
+      "officialUrl": "https://ucc.peopleadmin.com/postings/12652",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/details.cfm?JobCode=179568721"
+      ],
+      "nextAction": "Review UCNJ CV and day-specific cover letter, gather unofficial college transcripts privately, submit through official DAY posting 12652."
+    },
+    {
+      "institution": "UCNJ Union College of Union County, NJ",
+      "location": "Cranford / Elizabeth / Plainfield, NJ",
+      "type": "Part-time adjunct | Spring 2027",
+      "area": "Electrical Engineering Technology lectures and laboratories; Computer Programming; Communication Systems; Wireless Communication",
+      "status": "preparing",
+      "priority": "high",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": "2026-11-06",
+      "documents": [
+        "Resume/CV",
+        "Schedule-specific Cover Letter",
+        "Unofficial College Transcripts (private file; official upon hire)"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/",
+      "submittedAt": null,
+      "lastReviewed": "2026-10-31",
+      "notes": "Employer posting open until filled, no listed deadline. Application must use correct Day/Evening posting. Emphasize Electrical Engineering Technology experience at University of Lahore Department of Technology and communications lab instruction; do not claim mechanical tech or U.S. community-college teaching. Transcript upload must be private.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Verified official UCNJ PeopleAdmin job description and required three uploads.",
+      "id": "ucnj-engtech-evening-12654",
+      "title": "Engineering Technology Lecture & Lab Adjunct Faculty (EVENING COURSES - Electrical and Mechanical) - Spring 2027",
+      "postingUrl": "https://ucc.peopleadmin.com/postings/12654",
+      "officialUrl": "https://ucc.peopleadmin.com/postings/12654",
+      "nextAction": "Review UCNJ CV and evening-specific cover letter, gather unofficial college transcripts privately, submit through official EVENING posting 12654."
     }
   ]
 }
