@@ -3,7 +3,7 @@
   "label": "Reusable Academic CV | ECE, Communications, Sensing and Applied AI | 2027",
   "headline": "Electrical and Computer Engineering | Research, Teaching & Applied AI",
   "tagline": "Wireless Systems • Signal Processing • Machine Learning • Intelligent Sensing",
-  "summary": "PhD in Electrical and Computer Engineering from the University of Oklahoma (2025), with university teaching experience in Computer Programming, Communication Systems, and Wireless Communication. Research addresses reliable AI/ML for wireless networks, sensing and networked systems, including data-efficient propagation modeling, transfer learning, generative augmentation, outage detection and self-healing. Additional projects in wearable sensing and time-series analysis; engineering R&D experience at AT&T Labs, Futurewei and AT&T. Experience supporting engineering laboratories, mentoring student projects and translating technical research into reproducible experiments.",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with undergraduate teaching in Computer Programming, Communication Systems and Wireless Communication. Research on reliable AI/ML for wireless networks includes propagation prediction, generative augmentation, transfer learning, outage detection and network self-healing. Related work in wearable sensing and time-series modeling. Engineering R&D at AT&T Labs, Futurewei and AT&T, alongside student mentoring and communications laboratory instruction.",
   "researchInterests": [
     "AI/ML for Wireless and Networked Systems",
     "Reliable and Data-Efficient Learning",
@@ -22,11 +22,11 @@
   ],
   "skillsSectionTitle": "Technical Skills, Engineering Methods & Research Tools",
   "skills": {
-    "Programming & Software Engineering": "Python, C/C++, MATLAB, SQL; algorithmic problem-solving, debugging, Git/GitHub, Linux, Jupyter and reproducible software workflows",
-    "ML & Data Analysis": "PyTorch, TensorFlow, Keras, scikit-learn, XGBoost; classification, regression, generative learning, transfer learning, reinforcement learning, model evaluation and time-series analysis",
-    "Signal Processing & Networking": "Communication systems, digital signal analysis, propagation models, RF and cellular-network measurements, LTE/4G, 5G-NR, resilience and network optimization",
-    "Engineering Simulation & Visualization": "NumPy, SciPy, Pandas, Matplotlib, simulation and experiment design, statistical validation, distribution-shift evaluation and technical reporting",
-    "Instruction & Mentorship": "Undergraduate technology teaching, programming exercises, communications labs, project mentoring, feedback, course assessment and technical presentations"
+    "Programming & Software": "Python, C/C++, MATLAB, SQL; debugging, Git/GitHub, Linux, Jupyter and reproducible workflows",
+    "Machine Learning & Analytics": "PyTorch, TensorFlow, Keras, scikit-learn and XGBoost; generative and transfer learning, reinforcement learning, classification and evaluation",
+    "Signal Processing & Networking": "Communication systems, signal analysis, propagation, RF and cellular-network measurements, LTE/4G, 5G-NR and network optimization",
+    "Simulation & Data": "NumPy, SciPy, Pandas, Matplotlib, simulation, statistical validation, distribution-shift testing and technical reporting",
+    "Teaching & Mentorship": "Undergraduate Technology instruction, programming exercises, communications labs, student projects, academic assessment and feedback"
   },
   "dissertationFocus": "Dissertation on AI/ML for wireless networks, covering robust propagation and digital-twin modeling, domain adaptation, generative data augmentation, and machine-learning-assisted outage detection and network self-healing.",
   "publicationIds": [
