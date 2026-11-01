@@ -1,0 +1,68 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "UCNJ Union College | Engineering Technology Lecture & Lab Adjunct | Spring 2027",
+  "headline": "Electrical Engineering Technology Educator | Lecture & Laboratory Instruction",
+  "tagline": "Computer Programming | Communication Systems | Wireless Technology | Applied Engineering",
+  "summary": "PhD in Electrical and Computer Engineering with university-level teaching experience in Electrical Engineering Technology at the University of Lahore, Pakistan. Previously taught Computer Programming, Communication Systems, and Wireless Communication in its Department of Technology; supported communications lectures, laboratory experiments, assignment preparation, and assessment at UET Taxila. Experience mentoring students, preparing applied instructional materials, and translating theory into reproducible simulations and practical engineering exercises. Industrial experience with AT&T Labs, Futurewei, and AT&T adds context for telecommunications and technology instruction.",
+  "researchInterests": [
+    "Applied Electrical Engineering Technology",
+    "Communication and Wireless Systems",
+    "Engineering Laboratory Instruction",
+    "Computer Programming and Measurement Analysis",
+    "Industry-Relevant Networked Systems"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previously taught)",
+    "Communication Systems (previously taught)",
+    "Wireless Communication (previously taught)",
+    "Communication Systems Laboratories (instructional support)",
+    "Engineering Computing and Data Analysis (technical preparation)",
+    "Related Electrical Engineering Technology Laboratories (subject to assignment)"
+  ],
+  "skillsSectionTitle": "Engineering Technology Teaching & Laboratory Skills",
+  "skills": {
+    "Undergraduate Technology Teaching": "Computer Programming, Communication Systems and Wireless Communication taught within the University of Lahore Department of Technology; assignments, assessment and student-project guidance",
+    "Engineering Labs & Instruction": "Communications laboratory support, experiment preparation, simulation-based demonstrations, student guidance, lab reports, instructional material and evaluation",
+    "Applied Electrical & Wireless Systems": "Analog/digital communication concepts, RF/wireless fundamentals, signal measurements, LTE/4G and 5G systems, propagation, performance, systems testing",
+    "Programming & Engineering Tools": "Python, C/C++, MATLAB, NumPy, Pandas, data visualization, simulation, Git, Linux and technical documentation",
+    "Instructional Practice": "Clear learning objectives, worked examples, competency-based exercises, outcome evaluation, accessible feedback, attendance/assessment practices and student support"
+  },
+  "experienceText": "faculty",
+  "projectIds": [
+    "syntheticnet",
+    "propagation-digital-twins",
+    "turboran"
+  ],
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024"
+  ],
+  "certificationIds": [
+    "coursera-4g-network-fundamentals",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-python-for-data-science-ai-development"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate technology student projects and guided programming and communications applications.",
+    "Supported student laboratory experiments, assessment, reports, and debugging of practical implementations.",
+    "Mentored undergraduate and graduate research students in simulations, experiment design, documentation and presentations."
+  ],
+  "academicServiceBullets": [
+    "Contributed to course material, examinations, curriculum alignment and student academic guidance.",
+    "Supported laboratory documentation, technical reviews and student-project assessment."
+  ],
+  "dissertationFocus": "PhD research in AI/ML for wireless networks, integrating network measurement, communication-system simulation, data-driven modeling and practical reliability analysis.",
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Applied Engineering Projects",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.7,
+  "verticalMarginInches": 0.47,
+  "minPages": 2,
+  "maxPages": 4,
+  "minPageTextChars": 600,
+  "minLastPageChars": 550,
+  "pageBreakBefore": []
+}
