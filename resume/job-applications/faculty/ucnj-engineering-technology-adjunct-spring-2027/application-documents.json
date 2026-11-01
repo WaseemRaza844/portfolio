@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "source": "01_UCNJ_Cover_Letter_DAY.md",
+      "output": "WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_DAY.docx",
+      "title": "UCNJ Union College Engineering Technology Adjunct - Day Courses Cover Letter"
+    },
+    {
+      "source": "02_UCNJ_Cover_Letter_EVENING.md",
+      "output": "WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_EVENING.docx",
+      "title": "UCNJ Union College Engineering Technology Adjunct - Evening Courses Cover Letter"
+    }
+  ]
+}
