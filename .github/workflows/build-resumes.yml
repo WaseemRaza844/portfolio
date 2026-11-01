@@ -167,12 +167,16 @@ jobs:
               assert (ucnj/item['source']).is_file(), f'Missing UCNJ source: {item["source"]}'
               assert (ucnj/item['output']).is_file(), f'Missing UCNJ Word: {item["output"]}'
           ready=ucnj/'submission-ready'
-          for name in ['CV','Cover_Letter_DAY','Cover_Letter_EVENING']:
-              filename=f'WRaza_ADJ_UCNJ_ENGTECH_SPR27_{name}.pdf'
-              assert (ready/filename).is_file(), f'Missing UCNJ application PDF: {filename}'
-          for shift in ['DAY','EVENING']:
-              pdf=ready/f'WRaza_ADJ_UCNJ_ENGTECH_SPR27_Cover_Letter_{shift}.pdf'
-              assert len(PdfReader(str(pdf)).pages)==1, f'UCNJ {shift} letter should fit on one page'
+          required=['WRaza_FAC_UCNJ_ET27_CV.pdf','WRaza_FAC_UCNJ_ET27_CL_Day.pdf','WRaza_FAC_UCNJ_ET27_CL_Eve.pdf']
+          assert all((ready/name).is_file() for name in required), 'Missing short-name UCNJ files'
+          assert len(PdfReader(str(ready/required[0])).pages)==3, 'UCNJ shared CV must have 3 pages'
+          for name in required[1:]:
+              assert len(PdfReader(str(ready/name)).pages)==1, f'UCNJ {name} should be one page'
+          assert not list(ready.glob('WRaza_ADJ_UCNJ_ENGTECH_SPR27_*')), 'Old long-name copies remain'
+          tex=(ucnj/'Waseem_Raza_FACULTY_UCNJ_ENGINEERING_TECHNOLOGY_ADJUNCT_SPRING_2027.tex').read_text(encoding='utf-8')
+          assert 'Technical Skills' in tex and 'Engineering Tools' in tex, 'UCNJ tools heading missing'
+          assert 'MATLAB' in tex and 'Python' in tex and 'SQL' in tex and 'PyTorch' in tex, 'UCNJ technical inventory missing'
+          assert tex.index('Technical Skills')<tex.index('Selected Applied Engineering Projects'), 'UCNJ tools are still buried after projects'
           print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, Susquehanna and UCNJ letters.')
 
           PY
