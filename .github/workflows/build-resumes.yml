@@ -73,6 +73,8 @@ jobs:
         run: python -m unittest discover -s resume/tests
       - name: Refresh UCNJ skills-focused CV LaTeX from updated profile
         run: python resume/build.py --variant faculty_ucnj_engineering_technology_adjunct_spring_2027 --refresh-tex
+      - name: Refresh canonical ECE faculty academic CV from shared source
+        run: python resume/build.py --variant faculty_ece_shared_2027 --refresh-tex
       - name: Generate reusable and faculty application CVs
         run: python resume/build.py --all
       - name: Generate standalone industry and faculty application resumes
@@ -93,6 +95,8 @@ jobs:
         run: python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/build_documents.py
       - name: Package UCNJ Engineering Technology adjunct documents
         run: python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/package_submission.py
+      - name: Build four faculty application packages from shared academic CV
+        run: python resume/job-applications/faculty/ece-shared-2027/build_packages.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -179,6 +183,34 @@ jobs:
           assert 'Technical Skills' in tex and 'Engineering Tools' in tex, 'UCNJ tools heading missing'
           assert 'MATLAB' in tex and 'Python' in tex and 'SQL' in tex and 'PyTorch' in tex, 'UCNJ technical inventory missing'
           assert tex.index('Technical Skills')<tex.index('Selected Applied Engineering Projects'), 'UCNJ tools are still buried after projects'
+          ece=root/'job-applications/faculty/ece-shared-2027'
+          from hashlib import sha256
+          cv=ece/'Waseem_Raza_FACULTY_ECE_SHARED_2027.pdf'
+          assert cv.is_file(), 'Missing canonical reusable academic CV'
+          cv_hash=sha256(cv.read_bytes()).hexdigest()
+          searches={
+              'penn-state-behrend-ece-teaching-2027':'PSU_ECE_TL27',
+              'penn-state-behrend-csse-teaching-2027':'PSU_CS_TL27',
+              'penn-state-behrend-ece-assistant-professor-2027':'PSU_ECE_TT27',
+              'princeton-ece-assistant-professor-2027':'PRI_ECE_TT27'
+          }
+          for slug,short in searches.items():
+              folder=root/'job-applications/faculty'/slug
+              ready=folder/'submission-ready'
+              manifest=json.loads((folder/'application-documents.json').read_text(encoding='utf-8'))['documents']
+              assert len(manifest)==3, f'{slug}: expected cover, teaching and research documents'
+              for spec in manifest:
+                  assert (folder/spec['source']).is_file(), f'{slug}: missing source {spec["source"]}'
+                  assert (folder/spec['output']).is_file(), f'{slug}: missing Word {spec["output"]}'
+              cvcopy=ready/f'WRaza_{short}_CV.pdf'
+              assert cvcopy.is_file() and sha256(cvcopy.read_bytes()).hexdigest()==cv_hash, f'{slug}: CV differs from common canonical document'
+              for section in ['CL','Teaching','Research']:
+                  pdf=ready/f'WRaza_{short}_{section}.pdf'
+                  word=ready/f'WRaza_{short}_{section}.docx'
+                  assert pdf.is_file() and word.is_file(), f'{slug}: missing {section} document'
+                  pages=PdfReader(str(pdf)).pages
+                  assert 1<=len(pages)<=5, f'{slug}: bad {section} page count'
+          print('Four faculty applications verified; all use the identical shared CV PDF.')
           print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, Susquehanna and UCNJ letters.')
 
           PY
