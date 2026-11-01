@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {
+      "source": "01_Susquehanna_Cover_Letter.md",
+      "output": "WRaza_FAC_SUSQUEHANNA_CS_2027_Cover_Letter.docx",
+      "title": "Susquehanna University Assistant Professor of Computer Science - Cover Letter"
+    },
+    {
+      "source": "02_Susquehanna_Teaching_Philosophy.md",
+      "output": "WRaza_FAC_SUSQUEHANNA_CS_2027_Teaching_Philosophy.docx",
+      "title": "Susquehanna University Assistant Professor of Computer Science - Teaching Philosophy"
+    },
+    {
+      "source": "03_Susquehanna_Research_Plan.md",
+      "output": "WRaza_FAC_SUSQUEHANNA_CS_2027_Research_Plan.docx",
+      "title": "Susquehanna University Assistant Professor of Computer Science - Research Plan"
+    },
+    {
+      "source": "04_Susquehanna_References_PUBLIC.md",
+      "output": "WRaza_FAC_SUSQUEHANNA_CS_2027_References_PUBLIC.docx",
+      "title": "Susquehanna University Reference Roster - Public Redacted Copy"
+    }
+  ]
+}
