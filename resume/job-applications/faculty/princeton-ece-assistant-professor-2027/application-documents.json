@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_PRI_ECE_TT27_CL.docx",
+      "title": "Tenure-Track Assistant Professor, Electrical and Computer Engineering | Cover Letter"
+    },
+    {
+      "source": "../ece-shared-2027/Teaching_ECE.md",
+      "output": "WRaza_PRI_ECE_TT27_Teaching.docx",
+      "title": "Tenure-Track Assistant Professor, Electrical and Computer Engineering | Teaching Statement"
+    },
+    {
+      "source": "../ece-shared-2027/Research_Princeton.md",
+      "output": "WRaza_PRI_ECE_TT27_Research.docx",
+      "title": "Tenure-Track Assistant Professor, Electrical and Computer Engineering | Research Statement"
+    }
+  ]
+}

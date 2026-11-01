@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_PSU_ECE_TL27_CL.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Electrical and Computer Engineering | Cover Letter"
+    },
+    {
+      "source": "../ece-shared-2027/Teaching_ECE.md",
+      "output": "WRaza_PSU_ECE_TL27_Teaching.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Electrical and Computer Engineering | Teaching Statement"
+    },
+    {
+      "source": "../ece-shared-2027/Research_ECE.md",
+      "output": "WRaza_PSU_ECE_TL27_Research.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Electrical and Computer Engineering | Research Statement"
+    }
+  ]
+}
