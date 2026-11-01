@@ -715,6 +715,51 @@
         ]
       },
       "relativePath": "job-applications/faculty/susquehanna-cs-assistant-professor-2027/Waseem_Raza_FACULTY_SUSQUEHANNA_CS_ASSISTANT_PROFESSOR_2027.pdf"
+    },
+    {
+      "file": "Waseem_Raza_FACULTY_UCNJ_ENGINEERING_TECHNOLOGY_ADJUNCT_SPRING_2027.pdf",
+      "pages": 3,
+      "minPages": 2,
+      "minPageTextChars": 600,
+      "minLastPageChars": 550,
+      "maxPages": 4,
+      "pageTextChars": [
+        4313,
+        3932,
+        3092
+      ],
+      "renderer": "latex",
+      "selectedIds": {
+        "experience": [
+          "ou-research",
+          "comsats-research-associate",
+          "uet-research-scholar",
+          "teaching",
+          "att-current",
+          "impac",
+          "att-labs-2024",
+          "futurewei-2022",
+          "att-labs-2022"
+        ],
+        "projects": [
+          "syntheticnet",
+          "propagation-digital-twins",
+          "turboran"
+        ],
+        "certifications": [
+          "coursera-4g-network-fundamentals",
+          "coursera-ai-foundations-industry-overview-for-telecommunication",
+          "coursera-network-and-security-optimization-in-telecommunication",
+          "coursera-python-for-data-science-ai-development"
+        ],
+        "publications": [
+          "ai-powered-resilience-2025",
+          "multiparameter-reliability-2025",
+          "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024"
+        ]
+      },
+      "relativePath": "job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/Waseem_Raza_FACULTY_UCNJ_ENGINEERING_TECHNOLOGY_ADJUNCT_SPRING_2027.pdf"
     }
   ],
   "reviewNotes": [
