@@ -39,7 +39,7 @@ No separate teaching or research statement is listed as a required upload. Other
 ```powershell
 git switch develop
 git pull --ff-only origin develop
-python resume/build.py --variant faculty_ucnj_engtech_adjunct_spring_2027
+python resume/build.py --variant faculty_ucnj_engineering_technology_adjunct_spring_2027
 python resume/build_application_documents.py
 python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/build_documents.py
 python resume/job-applications/faculty/ucnj-engineering-technology-adjunct-spring-2027/package_submission.py
