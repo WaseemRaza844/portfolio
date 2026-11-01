@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_PSU_CS_TL27_CL.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Computer Science and Software Engineering | Cover Letter"
+    },
+    {
+      "source": "../ece-shared-2027/Teaching_CS.md",
+      "output": "WRaza_PSU_CS_TL27_Teaching.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Computer Science and Software Engineering | Teaching Statement"
+    },
+    {
+      "source": "../ece-shared-2027/Research_CS.md",
+      "output": "WRaza_PSU_CS_TL27_Research.docx",
+      "title": "Lecturer / Assistant Teaching Professor, Computer Science and Software Engineering | Research Statement"
+    }
+  ]
+}
