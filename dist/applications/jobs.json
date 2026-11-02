@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-01",
+  "asOf": "2026-11-02",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -509,10 +509,10 @@
     },
     {
       "id": "job-mvydrddh-0-gqayhm",
-      "institution": "Not researched",
-      "title": "Posting to research (olemiss.wd12.myworkdayjobs.com)",
-      "location": "Not specified",
-      "type": "Faculty / teaching (unverified)",
+      "institution": "University of Mississippi",
+      "title": "Instructional Assistant Professor - Electrical and Computer Engineering",
+      "location": "Main Campus, United States of America",
+      "type": "FULL_TIME",
       "area": "",
       "postingUrl": "https://olemiss.wd12.myworkdayjobs.com/External__Faculty/job/University-MS/Instructional-Assistant-Professor---Electrical-and-Computer-Engineering_JR103471",
       "officialUrl": null,
@@ -522,15 +522,22 @@
       "applicationFolder": null,
       "nextAction": "Research job description, deadline, eligibility and required documents.",
       "notes": "Added directly from dashboard; job details have not yet been verified.",
-      "enrichmentStatus": "pending",
-      "enrichmentMessage": "Waiting for automatic extraction from the public posting page.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
       "priority": "medium",
       "status": "saved",
       "rank": null,
       "targetApplyBy": null,
       "deadline": null,
       "submittedAt": null,
-      "lastReviewed": "2026-11-01"
+      "lastReviewed": "2026-11-01",
+      "datePosted": "2026-10-23",
+      "postingDescription": "Department: Electrical and Computer Engineering Job Summary: Primarily performs a limited range of duties. And are usually assigned teaching or service roles. Not eligible for tenure. Job Description: The Department of Electrical and Computer Engineering at the University of Mississippi invites applications for a full-time, non-tenure track faculty position at the INSTRUCTIONAL ASSISTANT PROFESSOR level, beginning in August 2027. Primary responsibilities will include instruction of undergraduate courses in the general area of computer engineering such as Digital Logic Design, Advanced Digital Systems, Computer Architecture, and Embedded Systems, with specific assignments based on the departmental needs and the candidate’s expertise. Additional duties may include instruction of graduate courses, advising student teams, participating in recruiting and orientation events, and other departmental service activities. This is a permanent, non-tenure track position with opportunities for promotion through the instructional faculty ranks. Join the Ole Miss Family — Build Your Legacy Here! Job Responsibilities: Primary responsibilities will include instruction of undergraduate courses in the general area of computer engineering such as Digital Logic Design, Advanced Digital Systems, Computer Architecture, and Embedded Systems, with specific assignments based on the departmental needs and the candidate’s expertise. Additional duties may include instruction of graduate courses, advising student teams, participating in recruiting and orientation events, and other departmental service activities. This is a permanent, non-tenure track position with opportunities for promotion through the instructional faculty ranks. Minimum Qualifications All candidates are required to have earned a P",
+      "alternateUrls": [
+        "https://olemiss.wd12.myworkdayjobs.com/en-US/External__Faculty/job/Instructional-Assistant-Professor---Electrical-and-Computer-Engineering_JR103471"
+      ],
+      "enrichmentSource": "https://olemiss.wd12.myworkdayjobs.com/External__Faculty/job/University-MS/Instructional-Assistant-Professor---Electrical-and-Computer-Engineering_JR103471",
+      "enrichedAt": "2026-11-02"
     }
   ]
 }
