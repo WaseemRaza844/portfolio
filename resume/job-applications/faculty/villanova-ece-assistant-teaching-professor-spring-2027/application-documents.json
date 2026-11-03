@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_VIL_ECE_TP27_CL.docx",
+      "title": "Villanova University Assistant Teaching Professor ECE | Cover Letter"
+    },
+    {
+      "source": "Teaching_Philosophy.md",
+      "output": "WRaza_VIL_ECE_TP27_Teaching.docx",
+      "title": "Villanova University Assistant Teaching Professor ECE | Teaching Philosophy"
+    },
+    {
+      "source": "Mission_Statement_FINALIST_DRAFT.md",
+      "output": "WRaza_VIL_ECE_TP27_Mission_FINALIST.docx",
+      "title": "Villanova University | Finalist Mission Statement Draft"
+    }
+  ]
+}
