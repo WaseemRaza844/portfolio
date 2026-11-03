@@ -47,7 +47,7 @@ PhD-qualified educator and AI/ML researcher with undergraduate teaching experien
 1. **W. Raza**, M. U. Bin Farooq, A. Ijaz, M. Manalastas and A. Imran, “AI-Powered Resilience: A Dual-Approach for Outage Management in Dense Cellular Networks,” *Computer Communications*, 2025. DOI: 10.1016/j.comcom.2025.108129. [Scopus / Web of Science indexed journal]
 2. A. Ijaz, **W. Raza**, S. Riaz and A. Imran, “On Multi-Parameter Optimization and Proactive Reliability in 5G and Beyond Cellular Networks,” *Sensors*, 25(24), 7651, 2025. DOI: 10.3390/s25247651. [Scopus / SCIE indexed journal]
 3. A. Ijaz, **W. Raza**, H. Farooq, M. Manalastas and A. Imran, “An AI-Enabled Framework to Defend Ingenious MDT-Based Attacks on the Emerging Zero Touch Cellular Networks,” *IEEE Network*, 38(1), 228–237, 2024. DOI: 10.1109/MNET.006.2100377. [Indexing to be checked against individual article record]
-4. “Unification of RF Energy Harvesting Schemes under Mixed Rayleigh–Rician Fading Channels,” *AEÜ – International Journal of Electronics and Communications*, 2020. DOI: 10.1016/j.aeue.2020.153244. [Scopus / Web of Science indexed journal; verify final author order]
+4. **W. Raza**, H. Nasir and N. Javaid, “Unification of RF Energy Harvesting Schemes under Mixed Rayleigh–Rician Fading Channels,” *AEÜ – International Journal of Electronics and Communications*, vol. 123, article 153244, 2020. DOI: 10.1016/j.aeue.2020.153244. [Scopus / Web of Science indexed journal]
 
 ## Selected peer-reviewed conference and other scholarship
 
