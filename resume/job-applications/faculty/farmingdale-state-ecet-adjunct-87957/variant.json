@@ -1,0 +1,147 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Farmingdale State College | Electrical and Computer Engineering Technology Adjunct | Job 87957",
+  "headline": "Electrical & Computer Engineering Technology Educator | Applied Labs and Telecommunications",
+  "tagline": "Computer Programming | Communication Systems | Data Networking | Wireless Engineering",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025), with previous undergraduate Electrical Engineering Technology teaching at the University of Lahore in Computer Programming, Communication Systems, and Wireless Communication. Experienced supporting communications laboratories at UET Taxila, mentoring engineering students at COMSATS, and connecting theory with practical programming, signal and network analysis, and technical problem-solving. Industry research and engineering with AT&T Labs, Futurewei, and AT&T provide applied telecommunications context.",
+  "researchInterests": [
+    "Engineering Technology Education and Applied Laboratories",
+    "Computer Programming and Data Communications",
+    "Communication and Wireless Systems",
+    "Signal Processing and Engineering Simulation",
+    "Industry-Connected Student Projects"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previously taught)",
+    "Communication Systems (previously taught)",
+    "Wireless Communication (previously taught)",
+    "Communication Systems Laboratories (instructional support)",
+    "Computer Applications and Data Networking (technical preparation)",
+    "Signal Processing and Applied Experiments (technical preparation)"
+  ],
+  "skillsSectionTitle": "Technical Skills & Engineering Tools",
+  "skills": {
+    "Programming Languages": "Python, C/C++, MATLAB, SQL; programming fundamentals, scripting, debugging, computational problem-solving, and numerical computing",
+    "Engineering Simulation & Data Tools": "MATLAB, Jupyter Notebook, NumPy, SciPy, Pandas, Matplotlib, and Plotly; simulation, signal and network measurement analysis, data visualization, and reproducible experiments",
+    "Electrical & Wireless Technology": "Analog and digital communication fundamentals, RF and wireless systems, LTE/4G, 5G-NR, signal propagation, network measurements, data communications and performance analysis",
+    "AI/ML Software": "scikit-learn, PyTorch, TensorFlow, Keras, and XGBoost; classification, regression, anomaly detection, and engineering data analysis",
+    "Software Development & Cloud": "Git/GitHub, Linux, VS Code, REST APIs, Docker, GitHub Actions and CI/CD; experience with cloud-based data analytics and Python workflows",
+    "Teaching, Laboratories & Assessment": "Undergraduate Electrical Engineering Technology instruction; communications experiments, lab reports, worked examples, programming exercises, student project mentoring, and learning-outcome assessment"
+  },
+  "experienceText": "faculty",
+  "projectIds": [
+    "syntheticnet",
+    "propagation-digital-twins",
+    "turboran"
+  ],
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024"
+  ],
+  "certificationIds": [
+    "coursera-4g-network-fundamentals",
+    "coursera-ai-foundations-industry-overview-for-telecommunication",
+    "coursera-network-and-security-optimization-in-telecommunication",
+    "coursera-python-for-data-science-ai-development"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate Electrical Engineering Technology student projects, connecting programming and communications theory to applied problems.",
+    "Supported student communication-systems experiments, practical problem solving, technical reports and evaluation.",
+    "Mentored undergraduate and graduate research students in simulations, experiment design, documentation and presentations."
+  ],
+  "academicServiceBullets": [
+    "Contributed to course material, examinations, curriculum alignment and student academic guidance.",
+    "Supported laboratory documentation, technical reviews and student-project assessment."
+  ],
+  "dissertationFocus": "PhD research on AI/ML for wireless networks, including network measurement, communication-system simulation, data-efficient modeling and reliability under changing operating conditions.",
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Applied Engineering Projects",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.7,
+  "verticalMarginInches": 0.47,
+  "minPages": 3,
+  "maxPages": 3,
+  "minPageTextChars": 600,
+  "minLastPageChars": 700,
+  "pageBreakBefore": [],
+  "pages": [
+    [
+      {
+        "title": "Professional Profile",
+        "items": [
+          "summary"
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education"
+        ]
+      },
+      {
+        "title": "Teaching & Applied Instruction",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "University Teaching in Engineering Technology"
+          },
+          "teaching_areas",
+          "mentoring"
+        ]
+      },
+      {
+        "title": "Technical Skills & Engineering Tools",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "University and Industry Engineering Experience",
+        "items": [
+          {
+            "id": "academic_experience",
+            "title": "Research and Laboratory Support"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industry Research and Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Selected Applied Engineering Projects",
+        "items": [
+          "projects"
+        ]
+      },
+      {
+        "title": "Selected Research Publications",
+        "items": [
+          "publications"
+        ]
+      },
+      {
+        "title": "Academic Service and Recognition",
+        "items": [
+          {
+            "id": "service",
+            "title": "Academic Contributions"
+          },
+          {
+            "id": "honors",
+            "title": "Selected Awards"
+          }
+        ]
+      },
+      {
+        "title": "Relevant Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
+    ]
+  ],
+  "honorLimit": 4
+}
