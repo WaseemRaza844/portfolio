@@ -99,6 +99,8 @@ jobs:
         run: python resume/job-applications/faculty/ece-shared-2027/build_packages.py
       - name: Build University of Scranton ECE faculty package
         run: python resume/job-applications/faculty/scranton-ece-assistant-professor-2027/build_documents.py
+      - name: Build Farmingdale ECET adjunct application package
+        run: python resume/job-applications/faculty/farmingdale-state-ecet-adjunct-87957/build_documents.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
@@ -231,6 +233,18 @@ jobs:
               assert pdf.is_file() and word.is_file(), f'Scranton missing {section}'
               assert 1<=len(PdfReader(str(pdf)).pages)<=2, f'Scranton {section} exceeded two pages'
           print('Scranton CV is identical to canonical ECE; cover and two-page-capped statements validated.')
+
+          # Farmingdale adjunct pool requires only the CV and cover letter.
+          fsc=root/'job-applications/faculty/farmingdale-state-ecet-adjunct-87957'
+          fsc_manifest=json.loads((fsc/'application-documents.json').read_text(encoding='utf-8'))['documents']
+          assert len(fsc_manifest)==1, 'Farmingdale requires only the cover letter as a document source'
+          for item in fsc_manifest:
+              assert (fsc/item['source']).is_file() and (fsc/item['output']).is_file(), 'Farmingdale Word/Markdown source is missing'
+          fsc_ready=fsc/'submission-ready'
+          assert len(PdfReader(str(fsc_ready/'WRaza_FAC_FSC_ADJ87957_CL.pdf')).pages)==1, 'Farmingdale letter must be one page'
+          assert 2<=len(PdfReader(str(fsc_ready/'WRaza_FAC_FSC_ADJ87957_CV.pdf')).pages)<=4, 'Farmingdale CV page count unexpected'
+          assert (fsc_ready/'WRaza_FAC_FSC_ADJ87957_CL.docx').is_file(), 'Missing Farmingdale Word cover letter'
+          print('Farmingdale adjunct CV, PDF letter and editable Word letter validated.')
 
           print(f'Validated {len(generic)} generic PDFs, {len(applications)} application PDFs, Susquehanna and UCNJ letters.')
 
