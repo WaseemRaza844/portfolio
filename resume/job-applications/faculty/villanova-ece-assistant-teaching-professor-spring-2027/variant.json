@@ -1,0 +1,149 @@
+{
+  "baseVariant": "academic_cv",
+  "label": "Villanova University | Continuing Assistant Teaching Professor in Electrical Engineering | Spring 2027",
+  "headline": "Electrical and Computer Engineering Educator | Teaching, Laboratories and Mentorship",
+  "tagline": "Engineering Foundations | Communications and Signals | Programming | Systems Modeling",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with university-level undergraduate teaching in Computer Programming, Communication Systems and Wireless Communication; communications laboratory support at UET Taxila and engineering student mentoring at COMSATS. Emphasis on clear technical foundations, practical exercises, inclusive mentoring and learning-outcome assessment. Broad electrical engineering preparation and applied system modeling, optimization, signal analysis and simulation inform course-specific preparation for circuits and control systems. Industry engineering at AT&T Labs, Futurewei and AT&T connects student learning to real-world applications.",
+  "researchInterests": [
+    "Undergraduate Electrical Engineering Education",
+    "Communication Systems and Signal Processing",
+    "System Modeling and Feedback-Oriented Optimization",
+    "Engineering Computation and Laboratory Learning",
+    "Reliable AI for Networked Systems"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previously taught)",
+    "Communication Systems (previously taught)",
+    "Wireless Communication (previously taught)",
+    "Communications Laboratory Support (prior experience)",
+    "Signals and Systems / DSP (technical preparation)",
+    "Circuits and Control Systems (course-specific preparation; not previously taught)",
+    "Student Engineering Projects (prior mentoring)"
+  ],
+  "skillsSectionTitle": "Engineering Teaching, Laboratory and Technical Skills",
+  "skills": {
+    "Engineering Foundations": "Communication and signal-system analysis, numerical modeling, optimization, engineering simulations and system response; preparation to teach circuits and controls with relevant course materials and laboratory collaboration",
+    "Programming & Computation": "Python, C/C++, MATLAB, SQL, Jupyter, NumPy, SciPy, Pandas, Matplotlib, reproducible experiments and debugging",
+    "Communications & Signals": "Analog and digital communications, wireless/RF systems, propagation, cellular measurement analysis, LTE/4G and 5G-NR",
+    "Data-Driven Engineering": "PyTorch, TensorFlow/Keras, scikit-learn; time-series analysis, error analysis, model validation, reliability and engineering decision-making",
+    "Teaching, Mentoring & Assessment": "Undergraduate teaching in technology programs, laboratory assignments, instructional materials, student projects, technical reports, examination and feedback"
+  },
+  "experienceText": "faculty",
+  "projectIds": [
+    "propagation-digital-twins",
+    "syntheticnet",
+    "turboran"
+  ],
+  "publicationIds": [
+    "resilient-propagation-2024",
+    "multiparameter-reliability-2025",
+    "ai-powered-resilience-2025",
+    "domain-informed-gans-vtc-2024"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-4g-network-fundamentals"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate Electrical Engineering Technology student projects in programming and communications.",
+    "Supported laboratory experiments, assignments, grading and technical documentation for communication-systems instruction.",
+    "Mentored Bachelor’s and Master’s research/project students in simulations, experimental planning, reports and presentations.",
+    "Contributed to students’ academic development; prepared to collaborate on course-sequence advising and senior capstone mentorship."
+  ],
+  "academicServiceBullets": [
+    "Contributed to coursework, examinations, student evaluation and academic advising.",
+    "Supported laboratory documentation, technical reviews and academic student activities."
+  ],
+  "dissertationFocus": "PhD dissertation on AI/ML for wireless networks, including data-driven signal/system modeling, dynamic network optimization, resilience and measured engineering performance.",
+  "publicationSectionTitle": "Selected Engineering Scholarship",
+  "projectSectionTitle": "Selected Engineering Projects and Systems",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.7,
+  "verticalMarginInches": 0.47,
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 500,
+  "minLastPageChars": 480,
+  "pageBreakBefore": [],
+  "pages": [
+    [
+      {
+        "title": "Teaching and Engineering Profile",
+        "items": [
+          "summary"
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education"
+        ]
+      },
+      {
+        "title": "University Teaching, Laboratories and Mentoring",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "Undergraduate Teaching"
+          },
+          "teaching_areas",
+          "mentoring"
+        ]
+      },
+      {
+        "title": "Engineering Methods and Instructional Tools",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "Academic and Industry Engineering Experience",
+        "items": [
+          {
+            "id": "academic_experience",
+            "title": "Research and Laboratory Support"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industry Research and Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Selected Engineering Projects",
+        "items": [
+          "projects"
+        ]
+      },
+      {
+        "title": "Selected Engineering Scholarship",
+        "items": [
+          "publications"
+        ]
+      },
+      {
+        "title": "Academic Service and Honors",
+        "items": [
+          {
+            "id": "service",
+            "title": "Academic Contributions"
+          },
+          {
+            "id": "honors",
+            "title": "Selected Awards"
+          }
+        ]
+      },
+      {
+        "title": "Relevant Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
+    ]
+  ],
+  "honorLimit": 4,
+  "certificationSectionTitle": "Selected Professional Development"
+}
