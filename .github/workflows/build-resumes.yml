@@ -101,6 +101,8 @@ jobs:
         run: python resume/job-applications/faculty/scranton-ece-assistant-professor-2027/build_documents.py
       - name: Build Farmingdale ECET adjunct application package
         run: python resume/job-applications/faculty/farmingdale-state-ecet-adjunct-87957/build_documents.py
+      - name: Build BUiD AI Computer Science faculty application
+        run: python resume/job-applications/faculty/buid-computer-science-ai-january-2027/build_documents.py
       - name: Audit generic and tailored faculty PDF layouts
         run: python resume/validate_pdf_layout.py
       - name: Validate all generated outputs
