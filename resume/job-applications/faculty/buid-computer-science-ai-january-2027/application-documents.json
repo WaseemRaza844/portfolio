@@ -1,0 +1,24 @@
+{
+  "documents": [
+    {
+      "source": "Academic_CV_AI.md",
+      "output": "WRaza_BUID_AI27_CV.docx",
+      "title": "BUiD | Computer Science — AI | Academic Curriculum Vitae"
+    },
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_BUID_AI27_Cover_Letter.docx",
+      "title": "BUiD | Computer Science — AI | Cover Letter"
+    },
+    {
+      "source": "Teaching_Statement.md",
+      "output": "WRaza_BUID_AI27_Teaching_Statement.docx",
+      "title": "BUiD | Computer Science — AI | Teaching Statement"
+    },
+    {
+      "source": "Research_Statement.md",
+      "output": "WRaza_BUID_AI27_Research_Statement.docx",
+      "title": "BUiD | Computer Science — AI | Research Statement"
+    }
+  ]
+}
