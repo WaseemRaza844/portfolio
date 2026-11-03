@@ -33,8 +33,8 @@ DOCUMENTS = [
 
 def inline_md(value: str) -> str:
     value = escape(value.strip())
-    value = re.sub(r"\\*\\*(.+?)\\*\\*", r"<b>\\1</b>", value)
-    value = re.sub(r"(?<!\\*)\\*([^*]+)\\*(?!\\*)", r"<i>\\1</i>", value)
+    value = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", value)
+    value = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<i>\1</i>", value)
     return value
 
 
@@ -69,7 +69,7 @@ def render(source: Path, target: Path, kind: str):
     )
 
     story = []
-    for part in re.split(r"\\n\\s*\\n", source.read_text(encoding="utf-8").strip()):
+    for part in re.split(r"\n\s*\n", source.read_text(encoding="utf-8").strip()):
         lines = [x.rstrip() for x in part.strip().splitlines() if x.strip()]
         if not lines:
             continue
@@ -124,7 +124,7 @@ def main():
         if not word.is_file():
             raise FileNotFoundError("First run python resume/build_application_documents.py: " + str(word))
         copyfile(word, READY / word.name)
-        extracted = "\\n".join(page.extract_text() or "" for page in PdfReader(str(pdf)).pages)
+        extracted = "\n".join(page.extract_text() or "" for page in PdfReader(str(pdf)).pages)
         if len(extracted) < 400:
             raise RuntimeError("PDF text unexpectedly empty: " + str(pdf))
         if part == "CV":
