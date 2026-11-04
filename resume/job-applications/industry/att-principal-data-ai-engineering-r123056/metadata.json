@@ -5,16 +5,16 @@
   "location": "Middletown, NJ / Plano, TX",
   "officialPosting": "https://www.att.jobs/job/middletown/principal-data-ai-engineering/117/102607182112",
   "expectedPages": 3,
-  "minPageTextChars": 1700,
-  "minLastPageChars": 1300,
-  "baseResume": "Waseem_Raza_GENAI.tex",
+  "minPageTextChars": 3000,
+  "minLastPageChars": 3000,
+  "baseResume": "Waseem_Raza_COMPREHENSIVE.tex",
   "notes": [
-    "Tailored toward enterprise AI and data platforms, Azure data engineering, ETL/ELT, model validation, MLOps, GenAI workflows, operational reliability and cross-functional delivery.",
-    "The claimed 7+ years refer to combined engineering, research and analytics, not exclusively production AI platform administration.",
-    "AT&T work is a contractor assignment; do not imply direct W2 AT&T employment.",
-    "Current evidence supports production-oriented diagnostic integration, pipeline quality and model validation, but not sole ownership of enterprise streaming platforms or full-time SRE operations.",
-    "AWS Bedrock and other cloud/agent tools are portfolio/training contexts, not a falsely claimed large-scale production deployment.",
-    "Job is five days onsite with no relocation; employer explicitly rules out applicants requiring sponsorship now or in future.",
-    "Exact 3-page output required. Preserve prior industry resume variants unchanged."
+    "Direct, minimal derivative of resume/resume-profiles/industry/Waseem_Raza_COMPREHENSIVE.tex: same LaTeX layout, sections, chronology, work bullets, certificates and research evidence.",
+    "Edits limited to target-focused header, summary, skills priority and two skill descriptions; AI-Ready Lakehouse project moved ahead of Agentic AI project.",
+    "7+ years refers to combined engineering, applied research and analytics, not seven years of enterprise AI platform administration.",
+    "AT&T role is a contractor assignment via Innovatix per existing source; do not imply AT&T direct employment.",
+    "Work experience demonstrates operational ML diagnostics, cross-domain validation, and Azure data workflows; do not invent 24/7 platform/on-call ownership, streaming infrastructure, or deployment metrics.",
+    "Role is five days onsite; AT&T bars applicants who require sponsorship now or in the future. Confirm eligibility before applying.",
+    "Preserve this as a job-specific copy; do not overwrite the reusable Comprehensive / Generic / GenAI profile files."
   ]
 }
