@@ -1,0 +1,20 @@
+{
+  "jobId": "R-123056-1",
+  "company": "AT&T",
+  "role": "Principal Data/AI Engineering",
+  "location": "Middletown, NJ / Plano, TX",
+  "officialPosting": "https://www.att.jobs/job/middletown/principal-data-ai-engineering/117/102607182112",
+  "expectedPages": 3,
+  "minPageTextChars": 1700,
+  "minLastPageChars": 1300,
+  "baseResume": "Waseem_Raza_GENAI.tex",
+  "notes": [
+    "Tailored toward enterprise AI and data platforms, Azure data engineering, ETL/ELT, model validation, MLOps, GenAI workflows, operational reliability and cross-functional delivery.",
+    "The claimed 7+ years refer to combined engineering, research and analytics, not exclusively production AI platform administration.",
+    "AT&T work is a contractor assignment; do not imply direct W2 AT&T employment.",
+    "Current evidence supports production-oriented diagnostic integration, pipeline quality and model validation, but not sole ownership of enterprise streaming platforms or full-time SRE operations.",
+    "AWS Bedrock and other cloud/agent tools are portfolio/training contexts, not a falsely claimed large-scale production deployment.",
+    "Job is five days onsite with no relocation; employer explicitly rules out applicants requiring sponsorship now or in future.",
+    "Exact 3-page output required. Preserve prior industry resume variants unchanged."
+  ]
+}
