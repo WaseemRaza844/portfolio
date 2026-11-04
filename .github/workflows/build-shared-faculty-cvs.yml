@@ -1,0 +1,82 @@
+name: Build shared ECE and CS faculty CVs
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/resume-profiles/faculty/ece_ai_wireless.json'
+      - 'resume/resume-profiles/faculty/cs_ai_ml.json'
+      - 'resume/build.py'
+      - 'resume/latex_renderer.py'
+      - 'resume/content.json'
+      - 'dist/data/**'
+      - '.github/workflows/build-shared-faculty-cvs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shared-faculty-cvs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies and LaTeX
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build common ECE CV
+        run: python resume/build.py --variant faculty_ece_ai_wireless --refresh-tex
+      - name: Build common CS CV
+        run: python resume/build.py --variant faculty_cs_ai_ml --refresh-tex
+      - name: Validate both academic CV PDFs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          root=Path('resume/resume-profiles/faculty')
+          specs={
+            'Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf':['Computer Programming','Wireless','Machine Learning'],
+            'Waseem_Raza_FACULTY_CS_AI_ML.pdf':['Computer Programming','Machine Learning','Data Science'],
+          }
+          for filename, terms in specs.items():
+              p=root/filename
+              tex=p.with_suffix('.tex')
+              assert p.is_file() and tex.is_file(), f'Missing shared faculty CV: {p}'
+              reader=PdfReader(str(p))
+              count=len(reader.pages)
+              assert 4<=count<=5, f'{filename} has {count} pages, expected 4-5'
+              txt=' '.join(page.extract_text() or '' for page in reader.pages)
+              assert all(x.casefold() in txt.casefold() for x in terms), f'Missing expected academic CV content in {filename}'
+              assert len(txt)>6000, f'Shared CV unexpectedly sparse: {filename}'
+              print(f'{filename}: {count} pages; {len(txt)} text characters')
+          PY
+      - name: Commit reusable PDF and LaTeX files to develop
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f \
+            resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf \
+            resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.tex \
+            resume/resume-profiles/faculty/Waseem_Raza_FACULTY_CS_AI_ML.pdf \
+            resume/resume-profiles/faculty/Waseem_Raza_FACULTY_CS_AI_ML.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Build reusable ECE and CS academic CV PDFs"
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
