@@ -10,7 +10,7 @@
 
 > AT&T explicitly states that it will not hire applicants who require employer sponsorship **now or in the future**.
 
-The applicant has previously discussed OPT/STEM OPT and an ongoing permanent-residence process. Do not assume this role's requirement is satisfied. Independently confirm current/future unrestricted employment eligibility with HR or an immigration advisor before applying. **Do not add a work-authorization statement to the public resume unless verified.**
+Employment authorization has not been independently verified for this job. Do not assume this role's requirement is satisfied. Independently confirm current/future unrestricted employment eligibility with HR or an immigration advisor before applying. **Do not add a work-authorization statement to the public resume unless verified.**
 
 ## Submission file
 
@@ -19,25 +19,18 @@ The applicant has previously discussed OPT/STEM OPT and an ongoing permanent-res
 - Validation: `build-report.json` (must show exactly 3 pages)
 - Role-specific configuration: `metadata.json`
 
-This is a **standalone industry job application**, following the convention used for the Infosys and CyberCoders industry resumes. It does not modify reusable generic, AI/ML or GenAI profiles.
+This is a **standalone industry job application**, using the exact LaTeX design and almost all substantive content from `resume/resume-profiles/industry/Waseem_Raza_COMPREHENSIVE.tex`. The reusable Generic, GenAI, and Comprehensive sources are not modified.
 
-## Positioning
+## Minimal tailoring decisions
 
-Lead with job-aligned evidence rather than a research-first CV:
+1. **Base:** existing `Waseem_Raza_COMPREHENSIVE.tex` (3 pages, consistent profile look).
+2. **Preserved:** formatting, section structure, complete work history and numerical evidence, most technical skills, leadership bullets, existing projects, publications, and certification descriptions.
+3. **Changed:** title/subtitle and professional profile to prioritize enterprise AI/data platforms; put the existing Data Engineering and MLOps skill categories first; modestly clarify Azure Functions/Synapse, monitoring-oriented model evaluation and troubleshooting.
+4. **Reordered:** the existing AI-Ready Lakehouse project is placed before Agentic AI and RAG. Other projects, work history, metrics and certificates stay in their Comprehensive-profile wording.
+5. **No embellishment:** seven-plus years refers to combined research/engineering experience, not seven years of on-call platform ownership. No fabricated streaming data platform, production Kubernetes responsibility, SLO/SLI ownership, or employer-sponsorship eligibility claim.
+6. **Evidence already present:** current AT&T 20% to 80% E911 classification accuracy; Impac Azure ingestion, 40% data-preparation reduction and 20% analytical-output reliability; AT&T Labs 500K+ logs and 20% diagnostic-time reduction.
 
-1. **AT&T E911 diagnostics (2025–present):** applied AI, model-validation and operational integration; root-cause classification improvement from 20% to 80% (as documented in existing resume source).
-2. **Impac Azure pipelines (2024):** Databricks, Azure Functions, Synapse, ETL/ELT, validation; 40% less data preparation and 20% better analytical-output reliability.
-3. **AT&T Labs (2024):** 500K+ diagnostic logs and 20% shorter analysis time.
-4. **University of Oklahoma (2019–2025):** reusable Python data/experiment pipelines, rigorous tests and robustness evaluation.
-5. **Selected platform-oriented projects:** AI-ready lakehouse, document ingestion and RAG/agent prototypes — explicitly labelled as portfolio/guided when appropriate.
-
-### Claim boundaries
-
-- 7+ years means **combined** engineering, academic research and analytics experience; avoid claiming 7 years of dedicated cloud-platform operations.
-- Neither direct ownership of enterprise-scale streaming infrastructure nor 24/7 SRE/production pager rotation is documented.
-- AWS Bedrock, LangGraph and other agent tooling are training/portfolio evidence where appropriate; do not relabel them as enterprise deployment experience.
-- The current AT&T job is an **AT&T contract assignment** (via Innovatix per existing resume source), not direct AT&T headcount.
-- Role mentions on-call/production support and monitoring; resume emphasizes documented model performance and data-quality troubleshooting rather than inventing incidents, SLOs or SLAs.
+If the target role emphasizes on-call platform support, streaming systems, or security operations, we should confirm actual hands-on ownership before adding any new bullets.
 
 ## Local build (PowerShell, portfolio repository root)
 
