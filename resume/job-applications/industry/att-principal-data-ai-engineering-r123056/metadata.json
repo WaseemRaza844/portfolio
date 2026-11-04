@@ -15,6 +15,7 @@
     "AT&T role is a contractor assignment via Innovatix per existing source; do not imply AT&T direct employment.",
     "Work experience demonstrates operational ML diagnostics, cross-domain validation, and Azure data workflows; do not invent 24/7 platform/on-call ownership, streaming infrastructure, or deployment metrics.",
     "Role is five days onsite; AT&T bars applicants who require sponsorship now or in the future. Confirm eligibility before applying.",
-    "Preserve this as a job-specific copy; do not overwrite the reusable Comprehensive / Generic / GenAI profile files."
+    "Preserve this as a job-specific copy; do not overwrite the reusable Comprehensive / Generic / GenAI profile files.",
+    "User-confirmed: hands-on Azure-based production pipeline setup/deployment/execution, some GitHub Actions usage, limited Grafana monitoring, Prometheus understanding at conceptual level; exact Azure service not specified."
   ]
 }
