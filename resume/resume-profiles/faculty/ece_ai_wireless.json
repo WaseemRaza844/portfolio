@@ -1,0 +1,167 @@
+{
+  "label": "Reusable Faculty CV | ECE, Wireless Communications, Networks and AI/ML",
+  "headline": "Electrical and Computer Engineering | AI/ML for Wireless and Networked Systems",
+  "tagline": "Wireless Communications | Intelligent Networks | Reliable AI | Undergraduate Teaching",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025), with undergraduate teaching in Computer Programming, Communication Systems and Wireless Communication. Research in AI/ML for wireless networks, robust propagation prediction, digital twins, generative learning, domain adaptation and network self-healing. Experience in communications laboratory instruction, Bachelor’s/Master’s research-project mentoring and industrial engineering at AT&T Labs, Futurewei and AT&T. Well positioned for undergraduate ECE teaching, laboratories, capstone mentoring and applied research.",
+  "researchInterests": [
+    "AI/ML for Wireless Communications and 5G/6G Networks",
+    "Reliable and Data-Efficient Machine Learning",
+    "Propagation Modeling and Digital Twins",
+    "Network Optimization, Self-Healing and Reinforcement Learning",
+    "Signal Processing, Intelligent Sensing and Time-Series Analytics"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previously taught)",
+    "Communication Systems (previously taught)",
+    "Wireless Communication (previously taught)",
+    "Computer Networks, Signals and Applied ML (technical preparation)",
+    "Engineering Simulation and Communications Labs (prior support)",
+    "Student Projects, Capstones and Research Mentoring"
+  ],
+  "skillsSectionTitle": "Technical Skills, Engineering Methods & Research Tools",
+  "skills": {
+    "Programming & Engineering Tools": "Python, C/C++, MATLAB, SQL, PyTorch, TensorFlow, scikit-learn, Git/GitHub, Linux, Jupyter, network simulation, Wireshark and reproducible workflows",
+    "Wireless Networks & Signals": "LTE/4G, 5G-NR, RAN, mobility, RF propagation, signal analysis, network measurements, service assurance, outage management, optimization and digital twins",
+    "Machine Learning & Analytics": "Deep learning, transfer/domain adaptation, GANs, reinforcement learning, classification, time-series modeling, cross-validation, synthetic data, Python data pipelines and statistical evaluation",
+    "Research Methods": "3GPP-aligned simulation, controlled experiments, distribution-shift testing, robustness evaluation, quantitative analysis, technical reporting and peer-reviewed scholarship",
+    "Teaching & Mentoring": "Programming and communications instruction, lab experiments, engineering simulation, student research projects, academic assessment and constructive feedback"
+  },
+  "dissertationFocus": "Doctoral research on reliable AI/ML for wireless networks, with propagation learning, synthetic-data augmentation, data-driven optimization and network resilience under real-world variation.",
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "outage-management-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023",
+    "lunarcomm-2022",
+    "positioning-ran-2022",
+    "rf-energy-harvesting-2020"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "wearable-intelligence",
+    "ai-telecom-optimization"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-4g-network-fundamentals",
+    "coursera-ai-foundations-industry-overview-for-telecommunication"
+  ],
+  "mentoringBullets": [
+    "Advised undergraduate student projects and supported Bachelor's and Master's research/thesis projects in engineering software, simulations and communications systems.",
+    "Helped students scope experiments, analyze results and communicate limitations in project reports and technical presentations.",
+    "Supported hands-on communications laboratories, programming exercises, assignment preparation and assessment."
+  ],
+  "academicServiceBullets": [
+    "Contributed to engineering course material, student evaluation, examinations and curriculum-related activities.",
+    "Supported laboratory technical documentation, research seminars and student projects."
+  ],
+  "publicationSectionTitle": "Selected Peer-Reviewed Publications",
+  "projectSectionTitle": "Selected Research and Engineering Platforms",
+  "certificationSectionTitle": "Selected Professional Development",
+  "compactCertifications": true,
+  "detailedCertificationDescriptions": false,
+  "facultyLearningLayout": true,
+  "sortCertificationsByStatus": true,
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.69,
+  "verticalMarginInches": 0.45,
+  "minPages": 4,
+  "maxPages": 5,
+  "minPageTextChars": 630,
+  "minLastPageChars": 500,
+  "pageBreakBefore": [],
+  "headerDegree": "Electrical and Computer Engineering",
+  "pages": [
+    [
+      {
+        "title": "Academic Profile",
+        "items": [
+          "summary",
+          {
+            "id": "research_interests",
+            "title": "Research Areas"
+          }
+        ]
+      },
+      {
+        "title": "Education",
+        "items": [
+          "education",
+          {
+            "id": "dissertation",
+            "title": "Doctoral Research"
+          }
+        ]
+      },
+      {
+        "title": "Teaching and Mentoring",
+        "items": [
+          {
+            "id": "teaching_experience",
+            "title": "University-Level Teaching"
+          },
+          "teaching_areas",
+          "mentoring"
+        ]
+      },
+      {
+        "title": "Technical Skills, Engineering Methods & Research Tools",
+        "items": [
+          "skills"
+        ]
+      },
+      {
+        "title": "Academic and Industry Research Experience",
+        "items": [
+          {
+            "id": "academic_experience",
+            "title": "University Research Appointments"
+          },
+          {
+            "id": "industry_experience",
+            "title": "Industrial Research and Engineering"
+          }
+        ]
+      },
+      {
+        "title": "Selected Peer-Reviewed Publications",
+        "items": [
+          "publications"
+        ]
+      },
+      {
+        "title": "Selected Research and Engineering Platforms",
+        "items": [
+          "projects"
+        ]
+      },
+      {
+        "title": "Academic Service and Honors",
+        "items": [
+          {
+            "id": "service",
+            "title": "Selected Academic Service"
+          },
+          {
+            "id": "honors",
+            "title": "Selected Honors"
+          }
+        ]
+      },
+      {
+        "title": "Selected Professional Development",
+        "items": [
+          "certifications"
+        ]
+      }
+    ]
+  ]
+}
