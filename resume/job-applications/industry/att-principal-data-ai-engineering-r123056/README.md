@@ -30,7 +30,7 @@ This is a **standalone industry job application**, using the exact LaTeX design 
 5. **No embellishment:** seven-plus years refers to combined research/engineering experience, not seven years of on-call platform ownership. No fabricated streaming data platform, production Kubernetes responsibility, SLO/SLI ownership, or employer-sponsorship eligibility claim.
 6. **Evidence already present:** current AT&T 20% to 80% E911 classification accuracy; Impac Azure ingestion, 40% data-preparation reduction and 20% analytical-output reliability; AT&T Labs 500K+ logs and 20% diagnostic-time reduction.
 
-If the target role emphasizes on-call platform support, streaming systems, or security operations, we should confirm actual hands-on ownership before adding any new bullets.
+**Applicant-confirmed additions (4 November 2026):** hands-on setup/deployment/execution of Azure-based production pipelines; practical GitHub Actions use; some Grafana-based monitoring experience; conceptual familiarity with Prometheus. No claim of ownership of enterprise observability stacks, SRE/on-call duties, Prometheus administration, or streaming infrastructure. Clarify the exact Azure pipeline service in an interview or later revision.
 
 ## Local build (PowerShell, portfolio repository root)
 
