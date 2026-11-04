@@ -77,6 +77,9 @@ jobs:
             resume/resume-profiles/faculty/Waseem_Raza_FACULTY_CS_AI_ML.tex
           if ! git diff --cached --quiet; then
             git commit -m "Build reusable ECE and CS academic CV PDFs"
+            # build.py also refreshes an untracked/unstaged build-report.json; keep
+            # only the four explicitly staged CV assets before rebasing.
+            git reset --hard HEAD
             git pull --rebase origin develop
             git push origin HEAD:develop
           fi
