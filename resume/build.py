@@ -123,6 +123,9 @@ def load_variants():
         'faculty': read_json(faculty_dir / 'generic.json'),
         'faculty_comprehensive': read_json(faculty_dir / 'comprehensive.json'),
         'academic_cv': read_json(faculty_dir / 'academic_cv.json'),
+        # Shared CVs for multiple applications; do not store as college-specific overlays.
+        'faculty_ece_ai_wireless': read_json(faculty_dir / 'ece_ai_wireless.json'),
+        'faculty_cs_ai_ml': read_json(faculty_dir / 'cs_ai_ml.json'),
     }
     overlap = set(industry).intersection(faculty)
     if overlap:
@@ -149,7 +152,7 @@ def variant_output_dir(output, key):
     ``output`` is the resume root. Reusable profiles go to generic-resume/;
     faculty overlays are published directly inside their college application folder.
     """
-    base_faculty = {'faculty', 'faculty_comprehensive', 'academic_cv'}
+    base_faculty = {'faculty', 'faculty_comprehensive', 'academic_cv', 'faculty_ece_ai_wireless', 'faculty_cs_ai_ml'}
     if key in base_faculty:
         return output / 'resume-profiles' / 'faculty'
     if key.startswith('faculty_'):
@@ -519,8 +522,8 @@ def main():
     if any(key not in variants for key in keys):
         parser.error('Unknown variant; use --list.')
     if args.all:
-        industry_keys = [key for key in variants if key not in {'faculty', 'faculty_comprehensive', 'academic_cv'} and not key.startswith('faculty_')]
-        faculty_keys = ['faculty', 'faculty_comprehensive', 'academic_cv']
+        faculty_keys = ['faculty', 'faculty_comprehensive', 'academic_cv', 'faculty_ece_ai_wireless', 'faculty_cs_ai_ml']
+        industry_keys = [key for key in variants if key not in faculty_keys and not key.startswith('faculty_')]
         remove_stale_generated(args.output / 'resume-profiles' / 'industry', industry_keys)
         remove_stale_generated(args.output / 'resume-profiles' / 'faculty', faculty_keys)
     config = read_json(HERE / 'content.json')
