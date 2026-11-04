@@ -52,9 +52,8 @@
     "coursera-machine-learning",
     "coursera-python-for-data-science-ai-development",
     "coursera-introduction-to-deep-learning-neural-networks-with-keras",
-    "coursera-generative-ai-engineering-and-fine-tuning-transformers",
-    "coursera-generative-ai-applications-with-amazon-bedrock",
-    "coursera-agentic-ai-with-langchain-and-langgraph"
+    "coursera-introduction-to-computer-vision-with-tensorflow",
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers"
   ],
   "mentoringBullets": [
     "Mentored undergraduate and graduate research/project students in simulation, model design, software implementation and experimental evaluation.",
