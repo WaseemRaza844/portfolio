@@ -24,7 +24,7 @@ READY = HERE / "submission-ready"
 PREFIX = "WRaza_BUID_AI27"
 
 DOCUMENTS = [
-    ("Academic_CV_AI.md", "CV", "Academic curriculum vitae", 3, 7),
+    ("Academic_CV_AI.md", "CV", "Academic curriculum vitae", 2, 7),
     ("Cover_Letter.md", "Cover_Letter", "Cover letter", 1, 2),
     ("Teaching_Statement.md", "Teaching_Statement", "Teaching statement", 1, 4),
     ("Research_Statement.md", "Research_Statement", "Research statement", 1, 4),
