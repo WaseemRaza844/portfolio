@@ -123,9 +123,14 @@ def load_variants():
         'faculty': read_json(faculty_dir / 'generic.json'),
         'faculty_comprehensive': read_json(faculty_dir / 'comprehensive.json'),
         'academic_cv': read_json(faculty_dir / 'academic_cv.json'),
-        # Shared CVs for multiple applications; do not store as college-specific overlays.
-        'faculty_ece_ai_wireless': read_json(faculty_dir / 'ece_ai_wireless.json'),
-        'faculty_cs_ai_ml': read_json(faculty_dir / 'cs_ai_ml.json'),
+    }
+    # Both shared cross-application faculty profiles reuse the existing academic
+    # CV's verified appointment, publication and teaching data defaults.
+    faculty['faculty_ece_ai_wireless'] = {
+        **faculty['academic_cv'], **read_json(faculty_dir / 'ece_ai_wireless.json')
+    }
+    faculty['faculty_cs_ai_ml'] = {
+        **faculty['academic_cv'], **read_json(faculty_dir / 'cs_ai_ml.json')
     }
     overlap = set(industry).intersection(faculty)
     if overlap:
