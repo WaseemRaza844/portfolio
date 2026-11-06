@@ -49,9 +49,9 @@ jobs:
           assert all(p.is_file() for p in [cv,letter,docx])
           assert sha256(cv.read_bytes()).digest()==sha256(common.read_bytes()).digest(), 'CV differs from shared version'
           assert len(PdfReader(str(cv)).pages)==4, 'Shared CS CV should be four pages'
-          assert len(PdfReader(str(letter)).pages)==1, 'Saint Peter's letter must be one page'
+          assert len(PdfReader(str(letter)).pages)==1, "Saint Peter's letter must be one page"
           assert len(list(base.glob('*.pdf')))==2, 'Only one shared CV and cover letter should be packaged'
-          print('Saint Peter's adjunct: 4-page shared CS CV + 1-page cover letter + editable Word letter')
+          print("Saint Peter's adjunct: 4-page shared CS CV + 1-page cover letter + editable Word letter")
           PY
       - name: Publish three applicant documents to develop
         run: |
