@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-05",
+  "asOf": "2026-11-06",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -564,7 +564,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-05",
       "nextAction": "Review the one-page Caldwell cover letter; upload unofficial transcripts and confirmed reference contacts privately; submit to ADP, then mark as submitted.",
-      "notes": "Official Caldwell Req. 2428 open until filled; on-campus evening only, class starting 5:00 p.m. or later. Public CV and cover letter PDFs prepared and validated. Private transcripts and referee details not yet confirmed; adjunct pool enrollment is not a course assignment."
+      "notes": "Official Caldwell Req. 2428 open until filled; on-campus evening only, class starting 5:00 p.m. or later. Public CV and cover letter PDFs prepared and validated. Private transcripts and referee details not yet confirmed; adjunct pool enrollment is not a course assignment.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "Discover adjunct instructor positions at Caldwell University. Explore teaching opportunities and join our esteemed faculty team today!",
+      "enrichmentSource": "https://www.caldwell.edu/hr/employment-opportunities/faculty-adjunct/",
+      "enrichedAt": "2026-11-06"
     }
   ]
 }
