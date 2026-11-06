@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_MU_AI61589_Cover_Letter.docx",
+      "title": "University of Missouri Assistant Professor in AI, Job 61589 — Cover Letter"
+    },
+    {
+      "source": "Research_Vision.md",
+      "output": "WRaza_MU_AI61589_Research_Vision.docx",
+      "title": "University of Missouri Assistant Professor in AI, Job 61589 — Geospatial Research Vision"
+    }
+  ]
+}
