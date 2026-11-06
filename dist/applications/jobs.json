@@ -647,8 +647,8 @@
       "priority": "medium",
       "postingUrl": "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179605437",
       "officialUrl": null,
-      "deadline": null,
-      "deadlineVerified": false,
+      "deadline": "2028-04-25",
+      "deadlineVerified": true,
       "targetApplyBy": null,
       "documents": [],
       "documentsReady": false,
@@ -656,7 +656,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-06",
       "nextAction": "Obtain job description or screenshot from the applicant; identify institution, requirements, deadline, official employer application and academic field; then assess fit and prepare requested application documents.",
-      "notes": "HigherEdJobs 179605437 accessible only as security-check iframe on 2026-11-06. Broad web searches by exact job code did not reveal verifiable institution or requirements. Do not invent or prepare institution-specific documents before obtaining the advertisement."
+      "notes": "HigherEdJobs 179605437 accessible only as security-check iframe on 2026-11-06. Broad web searches by exact job code did not reveal verifiable institution or requirements. Do not invent or prepare institution-specific documents before obtaining the advertisement.",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "deadlineSource": "Schema.org JobPosting.validThrough",
+      "datePosted": "2026-11-02",
+      "postingDescription": "Classification Title: Faculty Position Number F00009 Position Class Type: Regular FLSA: Exempt Other Position Information About Kettering: Kettering University is a national leader in experiential STEM and business education, integrating an intense academic curriculum with applied professional experience. We inspire students to realize their potential and advance their ideas by combining theory and practice better than any institution in the world. Kettering University is dedicated to achieving the extraordinary through technological innovation, leadership, and service, built on values that foster respect, integrity, creativity, collaboration, and excellence in growth, global leadership, community outreach, and an engaged community of stakeholders. Benefits: include health, dental and vision coverage; retirement benefits with up to a 9% Kettering matching contribution; life and accident insurance; tuition assistance and waiver programs; vacation and holiday pay; sick and disability pay; home purchase assistance program; recreation center membership; and many other benefits. To learn more please view the Kettering University Profile. Position Status: Full-time Preferred Qualifications Demonstrated excellence in teaching and student learning at the undergraduate and graduate levels Record of developing courses, designing curriculum, and establishing laboratory activities. Record of sponsored scholarship Industrial / Professional experience outside of academia in one or more of the following application areas: electronic systems, battery and energy storage systems, vehicle electrification systems, robotic systems, mechatronic systems, communication and networking systems, electronic control systems; Experience working effectively in an interdisciplinary environment. Job Sp",
+      "enrichmentSource": "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179605437",
+      "enrichedAt": "2026-11-06"
     }
   ]
 }
