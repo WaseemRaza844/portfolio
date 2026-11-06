@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_KETTERING_FP00103_Cover_Letter.docx",
+      "title": "Kettering University FP00103 — Assistant Professor ECE — Cover Letter"
+    },
+    {
+      "source": "Teaching_Philosophy.md",
+      "output": "WRaza_KETTERING_FP00103_Teaching_Philosophy.docx",
+      "title": "Kettering University FP00103 — Teaching Philosophy"
+    },
+    {
+      "source": "Research_Philosophy.md",
+      "output": "WRaza_KETTERING_FP00103_Research_Philosophy.docx",
+      "title": "Kettering University FP00103 — Research Philosophy"
+    }
+  ]
+}
