@@ -628,7 +628,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-06",
       "nextAction": "Review cover and 2–4-page geospatial research vision; verify application Job 61589 in PeopleSoft and three private academic references; submit and record confirmation.",
-      "notes": "Rolling review until filled. Sponsorship may be available for qualifying US-based applicants, not guaranteed. Core AI/ML scholarship transfers to geospatial domains; no claimed prior remote-sensing or defense-funded awards. Separate Missouri MizzouForward CGI position 61368 has different materials. The applicant must confirm full-time relocation and specific project access restrictions."
+      "notes": "Rolling review until filled. Sponsorship may be available for qualifying US-based applicants, not guaranteed. Core AI/ML scholarship transfers to geospatial domains; no claimed prior remote-sensing or defense-funded awards. Separate Missouri MizzouForward CGI position 61368 has different materials. The applicant must confirm full-time relocation and specific project access restrictions.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "University of Missouri-Columbia now hiring Assistant Professor in Artificial Intelligence - Job at University of Missouri-Columbia in Columbia, MO - apply today!",
+      "enrichmentSource": "https://www.milwaukeejobs.com/job/detail/88786682/Assistant-Professor-in-Artificial-Intelligence",
+      "enrichedAt": "2026-11-06"
     }
   ]
 }
