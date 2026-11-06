@@ -1,0 +1,85 @@
+name: Build Kettering ECE FP00103 faculty application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/Cover_Letter.md'
+      - 'resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/Teaching_Philosophy.md'
+      - 'resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/Research_Philosophy.md'
+      - 'resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/application-documents.json'
+      - 'resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/build_documents.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/job-applications/faculty/ece-shared-2027/build_packages.py'
+      - 'resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf'
+      - '.github/workflows/build-kettering-ece-fp00103.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kettering-fp00103-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install document dependencies
+        run: python -m pip install -r resume/requirements.txt
+      - name: Generate CV and three employer-required narratives
+        run: python resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/build_documents.py
+      - name: Verify page counts and unchanged shared ECE CV
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          from pypdf import PdfReader
+
+          root=Path('resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready')
+          cv=root/'WRaza_KETTERING_FP00103_CV.pdf'
+          common=Path('resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf')
+          docs={
+              'Cover_Letter': (1,1),
+              'Teaching_Philosophy': (2,4),
+              'Research_Philosophy': (2,4),
+          }
+          assert cv.is_file() and common.is_file()
+          assert sha256(cv.read_bytes()).digest()==sha256(common.read_bytes()).digest(), 'CV changed'
+          assert len(PdfReader(str(cv)).pages)==4
+          for name,(lo,hi) in docs.items():
+              pdf=root/('WRaza_KETTERING_FP00103_'+name+'.pdf')
+              word=root/('WRaza_KETTERING_FP00103_'+name+'.docx')
+              assert pdf.is_file() and word.is_file(), f'Missing {name}'
+              count=len(PdfReader(str(pdf)).pages)
+              assert lo<=count<=hi, f'{name} has {count} pages, expected {lo}-{hi}'
+              print(f'{name}: {count} pages')
+          assert len(list(root.glob('*.pdf')))==4, 'Expected CV and three PDFs'
+          print('Kettering: shared ECE CV unchanged; all three narratives validated')
+          PY
+      - name: Publish public documents to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_CV.pdf \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Cover_Letter.pdf \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Cover_Letter.docx \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Teaching_Philosophy.pdf \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Teaching_Philosophy.docx \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Research_Philosophy.pdf \
+            resume/job-applications/faculty/kettering-ece-assistant-professor-fp00103/submission-ready/WRaza_KETTERING_FP00103_Research_Philosophy.docx
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Kettering ECE FP00103 faculty application files"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
