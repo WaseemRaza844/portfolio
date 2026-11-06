@@ -570,6 +570,32 @@
       "postingDescription": "Discover adjunct instructor positions at Caldwell University. Explore teaching opportunities and join our esteemed faculty team today!",
       "enrichmentSource": "https://www.caldwell.edu/hr/employment-opportunities/faculty-adjunct/",
       "enrichedAt": "2026-11-06"
+    },
+    {
+      "id": "saint-peters-data-science-adjunct-2026",
+      "institution": "Saint Peter's University",
+      "title": "Adjunct of Data Science",
+      "location": "Jersey City, NJ",
+      "type": "Part-time adjunct; graduate Data Science (in person/hybrid/online)",
+      "area": "Data Science; Python, Machine Learning, Data Mining, Big Data, Data Management, Data Visualization",
+      "status": "preparing",
+      "priority": "high",
+      "postingUrl": "https://www.paycomonline.net/v4/ats/web.php/portal/055E28882001FE667534B0880CFCD275/jobs/12720",
+      "officialUrl": "https://www.paycomonline.net/v4/ats/web.php/portal/055E28882001FE667534B0880CFCD275/jobs/12720",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": null,
+      "documents": [
+        "Shared four-page CS Faculty CV (PDF)",
+        "Saint Peter's Data Science adjunct cover letter (PDF; optional if portal accepts)",
+        "Other materials only if required by Paycom form"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/saint-peters-data-science-adjunct-2026/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-06",
+      "nextAction": "Review CV and tailored letter; confirm employer Paycom upload fields and evening opening; submit then update tracker.",
+      "notes": "Employer-derived description advertises $750–$1,000 per credit hour (estimated $2,250–$3,000 for a 3-credit class), despite ambiguous 'Commission' metadata. On-campus graduate courses meet Mon–Thu evenings; applicant available after 5 p.m. Public documents prepared, not submitted."
     }
   ]
 }
