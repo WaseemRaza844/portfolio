@@ -602,6 +602,33 @@
       "postingDescription": "Job Details: Job Location: Legal Address - Jersey City, NJ, Education Level: Graduate Degree, Salary Range: $750.00 - $1000.00Commission, Seeking Adjunct Professors to teach graduate courses in data science, analytics, machine learning, and related tools at Saint Peter’s. About Saint Peter’s University Saint Peter’s is one of 27 Jesuit colleges and universities in the United States. Established in 1872, the University blends a unique learning experience shaped by rigorous academics, internships that provide real-world experience, community service, and a genuine, caring community that supports alumni long after graduation. Saint Peter’s offers more than 50 undergraduate majors as well as master’s level and doctorate programs Saint Peter’s University is committed to helping students achieve success not only with their academics, but also in their professional fields. As a result, we actively seek faculty members who are scholar-practitioners: professionals who are actively and successfully engaged in their field who additionally wish to help the next generation of professionals grow in their knowledge and expertise through education. Duties: Teaching graduate students in a specific field of expertise on a part-time basis in the following areas: • Big Data and Data Management • Data Mining • Machine Learning • Data Visualization • SQL • Predictive Analytics and Financial Modeling • Knowledge of Python and SAS • Tableau, IBM Watson and Excel preferred • Supervision of Capstone Consulting Engagement Adjunct Rate: $750 – $1,000 per credit hourQualifications: Qualification Standards: Actively engage students through frequent interaction that motivates them to succeed, and conveys a genuine energy and enthusiasm for their learning Guide students in active collaboration and the",
       "enrichmentSource": "https://www.paycomonline.net/v4/ats/web.php/portal/055E28882001FE667534B0880CFCD275/jobs/12720",
       "enrichedAt": "2026-11-06"
+    },
+    {
+      "id": "missouri-ai-geospatial-national-security-61589",
+      "institution": "University of Missouri",
+      "title": "Assistant Professor in Artificial Intelligence — Geospatial and National Security Applications",
+      "location": "Columbia, MO",
+      "type": "Full-time tenure-track faculty (rank Assistant Professor)",
+      "area": "Artificial Intelligence; Geospatial Intelligence, Multisensor Fusion, Computer Vision, Reliable ML",
+      "status": "preparing",
+      "priority": "high",
+      "postingUrl": "https://www.milwaukeejobs.com/job/detail/88786682/Assistant-Professor-in-Artificial-Intelligence",
+      "officialUrl": "https://erecruit.umsystem.edu/",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": null,
+      "documents": [
+        "Cover letter with accomplishments (PDF)",
+        "Common four-page CS AI/ML faculty CV (PDF)",
+        "Vision for research area (PDF)",
+        "Three academic reference contacts entered privately"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/missouri-ai-geospatial-national-security-61589/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-06",
+      "nextAction": "Review cover and 2–4-page geospatial research vision; verify application Job 61589 in PeopleSoft and three private academic references; submit and record confirmation.",
+      "notes": "Rolling review until filled. Sponsorship may be available for qualifying US-based applicants, not guaranteed. Core AI/ML scholarship transfers to geospatial domains; no claimed prior remote-sensing or defense-funded awards. Separate Missouri MizzouForward CGI position 61368 has different materials. The applicant must confirm full-time relocation and specific project access restrictions."
     }
   ]
 }
