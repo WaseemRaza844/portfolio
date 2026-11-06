@@ -53,7 +53,7 @@ def main():
     renderer = import_module(HERE.parent / "ece-shared-2027/build_packages.py", "missouri_pdf_builder")
     documents = [
         ("Cover_Letter.md", "Cover_Letter", "CL", 1, 1,
-         ["Job ID 61589", "Center for Geospatial Intelligence", "Computer Communications"]),
+         ["Job ID 61589", "Center for Geospatial Intelligence", "machine-learning diagnostics"]),
         ("Research_Vision.md", "Research_Vision", "Research", 2, 4,
          ["Theme 1:", "Theme 2:", "Theme 3:", "Research roadmap", "Geospatial"]),
     ]
