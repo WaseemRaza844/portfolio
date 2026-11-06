@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-05",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -538,6 +538,33 @@
       ],
       "enrichmentSource": "https://olemiss.wd12.myworkdayjobs.com/External__Faculty/job/University-MS/Instructional-Assistant-Professor---Electrical-and-Computer-Engineering_JR103471",
       "enrichedAt": "2026-11-02"
+    },
+    {
+      "id": "caldwell-cs-adjunct-2428",
+      "institution": "Caldwell University",
+      "title": "Computer Science Adjuncts (Req. #2428)",
+      "location": "Caldwell, NJ",
+      "type": "Adjunct / part-time; on-campus evening",
+      "area": "Computer Science; Programming, AI/ML, Data Science, Computational Modeling, Networking",
+      "status": "preparing",
+      "priority": "high",
+      "postingUrl": "https://www.caldwell.edu/hr/employment-opportunities/faculty-adjunct/",
+      "officialUrl": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?ccId=19000101_000001&cid=7137837f-5f45-46c7-bb9e-ceb9eafaea50&jobId=571717&lang=en_US&source=CC2",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": null,
+      "documents": [
+        "Shared four-page CS academic CV (PDF)",
+        "Caldwell cover letter (PDF)",
+        "Unofficial academic transcripts (private)",
+        "Professional references (portal)"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/caldwell-computer-science-adjunct-2428/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-05",
+      "nextAction": "Review the one-page Caldwell cover letter; upload unofficial transcripts and confirmed reference contacts privately; submit to ADP, then mark as submitted.",
+      "notes": "Official Caldwell Req. 2428 open until filled; on-campus evening only, class starting 5:00 p.m. or later. Public CV and cover letter PDFs prepared and validated. Private transcripts and referee details not yet confirmed; adjunct pool enrollment is not a course assignment."
     }
   ]
 }
