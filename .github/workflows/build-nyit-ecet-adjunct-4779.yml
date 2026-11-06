@@ -1,0 +1,69 @@
+name: Build NYIT ECET adjunct Job 2026-4779 application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/Cover_Letter.md'
+      - 'resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/application-documents.json'
+      - 'resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/build_documents.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/job-applications/faculty/ece-shared-2027/build_packages.py'
+      - 'resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf'
+      - '.github/workflows/build-nyit-ecet-adjunct-4779.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nyit-ecet-4779-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install document dependencies
+        run: python -m pip install -r resume/requirements.txt
+      - name: Build NYIT cover letter and copy shared ECE faculty CV
+        run: python resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/build_documents.py
+      - name: Validate all three public application files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          from pypdf import PdfReader
+          root = Path('resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/submission-ready')
+          source = Path('resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf')
+          cv = root / 'WRaza_NYIT_ECET4779_CV.pdf'
+          letter = root / 'WRaza_NYIT_ECET4779_Cover_Letter.pdf'
+          word = root / 'WRaza_NYIT_ECET4779_Cover_Letter.docx'
+          assert all(p.exists() for p in (cv,letter,word)), 'NYIT submission file missing'
+          assert sha256(cv.read_bytes()).digest() == sha256(source.read_bytes()).digest(), 'Shared ECE CV was modified'
+          assert len(PdfReader(str(cv)).pages) == 4, 'Expected 4-page shared ECE CV'
+          assert len(PdfReader(str(letter)).pages) == 1, 'Expected 1-page NYIT cover letter'
+          assert len(list(root.glob('*.pdf'))) == 2, 'Expected one CV and one cover letter PDF'
+          print('NYIT ECET Job 2026-4779: verified 4-page shared ECE CV, 1-page letter, editable DOCX')
+          PY
+      - name: Publish prepared documents to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f \
+            resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/submission-ready/WRaza_NYIT_ECET4779_CV.pdf \
+            resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/submission-ready/WRaza_NYIT_ECET4779_Cover_Letter.pdf \
+            resume/job-applications/faculty/nyit-ecet-adjunct-2026-4779/submission-ready/WRaza_NYIT_ECET4779_Cover_Letter.docx
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish NYIT ECET 2026-4779 adjunct application"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
