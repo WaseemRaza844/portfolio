@@ -53,9 +53,9 @@ def main():
         HERE.parent / "ece-shared-2027/build_packages.py", "stevens_pdf_builder"
     )
     docs=[
-        ("Cover_Letter.md","Cover_Letter","CL",1,1,("RQ29408","EE 583","Wireless Communications","5:00 p.m.")),
-        ("Teaching_Philosophy.md","Teaching_Philosophy","Teaching",1,3,("EE 583","inclusive","graduate")),
-        ("Research_Statement_OPTIONAL.md","Research_Statement_OPTIONAL","Research",1,2,("wireless","reliability","AI")),
+        ("Cover_Letter.md","Cover_Letter","CL",1,1,("RQ29408","EE 583","4G Network Fundamentals","6G")),
+        ("Teaching_Philosophy.md","Teaching_Philosophy","Teaching",2,3,("EE 583","inclusive","graduate","6G")),
+        ("Research_Statement_OPTIONAL.md","Research_Statement_OPTIONAL","Research",1,2,("wireless","reliability","6G")),
     ]
     for name,stem,kind,min_pages,max_pages,tokens in docs:
         word=HERE / (PREFIX + "_" + stem + ".docx")
@@ -75,7 +75,7 @@ def main():
 
     assert len(list(READY.glob("*.pdf")))==4, "Expected CV and 3 narrative PDFs"
     print("Stevens RQ29408: shared ECE CV reused byte-for-byte.")
-    print("Submit reference contacts privately. Confirm upcoming term and after-5-p.m. course availability.")
+    print("Submit reference contacts privately. This package targets wireless, signals and communication systems.")
     print("Application not submitted.")
 
 
