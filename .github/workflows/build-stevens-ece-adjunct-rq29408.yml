@@ -1,0 +1,87 @@
+name: Build Stevens ECE Adjunct RQ29408 application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/stevens-ece-adjunct-rq29408/Cover_Letter.md'
+      - 'resume/job-applications/faculty/stevens-ece-adjunct-rq29408/Teaching_Philosophy.md'
+      - 'resume/job-applications/faculty/stevens-ece-adjunct-rq29408/Research_Statement_OPTIONAL.md'
+      - 'resume/job-applications/faculty/stevens-ece-adjunct-rq29408/application-documents.json'
+      - 'resume/job-applications/faculty/stevens-ece-adjunct-rq29408/build_documents.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/job-applications/faculty/ece-shared-2027/build_packages.py'
+      - 'resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf'
+      - '.github/workflows/build-stevens-ece-adjunct-rq29408.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stevens-ece-adjunct-rq29408-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install document dependencies
+        run: python -m pip install -r resume/requirements.txt
+      - name: Build Stevens adjunct package
+        run: python resume/job-applications/faculty/stevens-ece-adjunct-rq29408/build_documents.py
+      - name: Validate copies, document counts, and no confidential data
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          from pypdf import PdfReader
+
+          base=Path('resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready')
+          src=Path('resume/resume-profiles/faculty/Waseem_Raza_FACULTY_ECE_AI_WIRELESS.pdf')
+          cv=base/'WRaza_STEVENS_RQ29408_CV.pdf'
+          docs={
+            'Cover_Letter':(1,1),
+            'Teaching_Philosophy':(1,3),
+            'Research_Statement_OPTIONAL':(1,2),
+          }
+          assert cv.is_file() and src.is_file()
+          assert sha256(cv.read_bytes()).digest()==sha256(src.read_bytes()).digest(), 'Shared ECE CV was changed'
+          assert len(PdfReader(str(cv)).pages)==4, 'Expected a 4-page common ECE CV'
+          for key,(minimum,maximum) in docs.items():
+            name='WRaza_STEVENS_RQ29408_'+key
+            pdf=base/(name+'.pdf')
+            word=base/(name+'.docx')
+            assert pdf.is_file() and word.is_file(), f'Missing {name}'
+            count=len(PdfReader(str(pdf)).pages)
+            assert minimum<=count<=maximum, f'{name} is {count} pages (expected {minimum}-{maximum})'
+            print(f'{name}: {count} pages')
+          assert len(list(base.glob('*.pdf')))==4, 'Expected exactly four public PDFs'
+          assert not any('reference' in x.name.lower() for x in base.iterdir()), 'Never publish private referee contacts'
+          print('Stevens RQ29408: package validates, original CV unchanged, references private')
+          PY
+      - name: Publish public application files to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_CV.pdf \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Cover_Letter.pdf \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Cover_Letter.docx \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Teaching_Philosophy.pdf \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Teaching_Philosophy.docx \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Research_Statement_OPTIONAL.pdf \
+            resume/job-applications/faculty/stevens-ece-adjunct-rq29408/submission-ready/WRaza_STEVENS_RQ29408_Research_Statement_OPTIONAL.docx
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Stevens RQ29408 ECE adjunct public application documents"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
