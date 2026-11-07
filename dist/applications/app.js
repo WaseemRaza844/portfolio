@@ -6,13 +6,14 @@ const API_URL = "https://api.github.com/repos/WaseemRaza844/portfolio/contents/"
 const UPDATE_URL = "https://api.github.com/repos/WaseemRaza844/portfolio/contents/" + REPO_FILE;
 const STORE = "waseem-faculty-tracker-pending-v2";
 const STATUS = { saved:"Saved", researching:"Researching", preparing:"Preparing", ready:"Ready to submit",
-  submitted:"Applied", interview:"Interview", offer:"Offer", closed:"Closed" };
+  submitted:"Submitted", interview:"Interview", offer:"Offer", closed:"Archived" };
 let basePayload = null;
 let records = [];
 let pendingOps = loadPending();
 let token = ""; // NEVER save a token in localStorage, sessionStorage or repository.
 let syncing = false;
-let showAllQueue = false;
+let currentView = "planning";
+let visibleLimit = 8;
 let lastMessage = "";
 let duplicateNotice = "";
 
@@ -117,7 +118,7 @@ function card(job, position) {
   const done = C.done(job);
   const item=make("article", "job" + (done ? " done " + job.status : ""));
   item.dataset.jobId=job.id;
-  if (done) item.append(make("div", "completion-mark", job.status==="closed"?"✕ CLOSED":"✓ APPLIED"));
+  // The stage is conveyed by the status badge; avoid large completion banners.
   const titleRow=make("div", "job-top");
   const title=make("div", "job-title");
   if (position != null) title.append(make("span", "queue-number", String(position)));
@@ -128,10 +129,10 @@ function card(job, position) {
   titleRow.append(title);
   const pills=make("div", "job-badges");
   pills.append(badge(STATUS[job.status] || job.status,"stage-"+job.status));
-  pills.append(badge((job.priority || "medium").toUpperCase()+" PRIORITY","priority-"+job.priority));
+  if (job.priority==="high") pills.append(badge("High priority","priority-high"));
   if (job.enrichmentStatus==="pending") pills.append(badge("Metadata pending","research-pending"));
   else if (job.enrichmentStatus==="partial" || job.enrichmentStatus==="failed") pills.append(badge("Needs research","research-needed"));
-  else if (job.enrichmentStatus==="complete") pills.append(badge("Page details extracted","research-done"));
+  // Successful background enrichment is not a user-facing priority badge.
   titleRow.append(pills);
   item.append(titleRow);
 
@@ -153,14 +154,14 @@ function card(job, position) {
 
   const actions=make("div","job-actions");
   if (C.pending(job)) {
-    actions.append(button("✓ Mark applied", () => setStatus(job,"submitted"), "small-btn applied-action"));
-    actions.append(button("Close", () => setStatus(job,"closed")));
-  } else if (job.status==="closed" || job.status==="submitted") {
-    actions.append(button("↶ Reopen", () => setStatus(job,"saved")));
-  } else {
-    actions.append(button("Update stage",()=>openEdit(job)));
+    actions.append(button("Mark submitted", () => setStatus(job,"submitted"), "small-btn applied-action"));
+    actions.append(button("Archive", () => setStatus(job,"closed")));
+  } else if (job.status==="closed") {
+    actions.append(button("Restore", () => setStatus(job,job.previousStatus || "saved")));
+  } else if (C.submitted(job)) {
+    actions.append(button("Archive", () => setStatus(job,"closed")));
   }
-  actions.append(button("Edit details",()=>openEdit(job),"small-btn edit-action"));
+  actions.append(button("Edit",()=>openEdit(job),"small-btn edit-action"));
   item.append(actions);
   const footer=make("div","job-bottom");
   footer.append(detailsSection(job));
@@ -168,51 +169,86 @@ function card(job, position) {
   item.append(footer);
   return item;
 }
+function viewMatch(job) {
+  if (currentView==="planning") return ["saved","researching"].includes(job.status);
+  if (currentView==="in-progress") return ["preparing","ready"].includes(job.status);
+  if (currentView==="submitted") return C.submitted(job);
+  if (currentView==="closed") return job.status==="closed";
+  return true;
+}
+function nearby(job) {
+  return /\\b(NJ|NY|PA|CT|DE)\\b|New Jersey|New York|Pennsylvania|Connecticut|Delaware/i.test(job.location || "");
+}
+function chooseView(view) {
+  currentView=view;
+  visibleLimit=8;
+  el("search").value="";
+  el("filter-priority").value="all";
+  el("filter-region").value="all";
+  el("filter-stage").value="all";
+  render();
+}
 function render() {
   if (!basePayload) return;
-  const active=records.filter(C.pending).sort(C.prioritySort);
+  const planning=records.filter(j=>["saved","researching"].includes(j.status));
+  const progress=records.filter(j=>["preparing","ready"].includes(j.status));
+  const submitted=records.filter(C.submitted);
+  const closed=records.filter(j=>j.status==="closed");
+  el("stat-planning").textContent=planning.length;
+  el("stat-active").textContent=progress.length;
+  el("stat-submitted").textContent=submitted.length;
+  el("stat-closed").textContent=closed.length;
   el("stat-total").textContent=records.length;
-  el("stat-active").textContent=active.length;
-  el("stat-submitted").textContent=records.filter(C.submitted).length;
-  el("stat-closed").textContent=records.filter(j=>j.status==="closed").length;
-  el("queue-count").textContent=active.length+" pending";
-  const queue=el("next-five");queue.replaceChildren();
-  const visible=showAllQueue?active:active.slice(0,5);
-  if (!visible.length) queue.append(make("p","empty","All caught up! Add new job links to continue."));
-  visible.forEach((j,i)=>queue.append(card(j,i+1)));
-  const toggle=el("toggle-queue");
-  toggle.hidden=active.length<=5;
-  toggle.textContent=showAllQueue?"Show top five only":"Show all "+active.length+" pending applications";
-
-  const submitted=records.filter(C.submitted).sort(C.prioritySort);
-  el("submitted-count").textContent=submitted.length+" applications";
-  const submittedList=el("submitted-jobs");submittedList.replaceChildren();
-  if (!submitted.length) submittedList.append(make("p","empty","No submitted applications yet."));
-  submitted.forEach(j=>submittedList.append(card(j,null)));
+  const counts={planning:planning.length,"in-progress":progress.length,submitted:submitted.length,closed:closed.length};
+  for (const name of Object.keys(counts)) el("tab-"+name).textContent=counts[name];
+  for (const tab of document.querySelectorAll("[data-view]")) {
+    const active=tab.dataset.view===currentView;
+    tab.setAttribute("aria-pressed",String(active));
+    tab.classList.toggle("active",active);
+  }
+  const views={
+    planning:["RESEARCH & SHORTLIST","Planning","Saved roles and new openings to review before committing time to an application."],
+    "in-progress":["APPLICATION WORKBENCH","In progress","Finish materials, confirm deadlines and submit when each package is ready."],
+    submitted:["AWAITING RESPONSE","Submitted","Applications still awaiting decisions, interviews or other follow-up."],
+    closed:["APPLICATION HISTORY","Archived","Previous applications are preserved here; archived does not mean rejected or withdrawn."],
+    all:["COMPLETE RECORD","All opportunities","Search or filter everything without losing the stage history."]
+  };
+  const config=views[currentView]||views.planning;
+  el("view-eyebrow").textContent=config[0];
+  el("view-title").textContent=config[1];
+  el("view-description").textContent=config[2];
+  el("stage-filter-label").hidden=currentView!=="all";
 
   const q=el("search").value.trim().toLowerCase();
-  const status=el("filter-stage").value, priority=el("filter-priority").value;
-  const list=records.filter(j=>{
-    if (status==="pending" && !C.pending(j)) return false;
-    if (status==="submitted-group" && !C.submitted(j)) return false;
-    if (!["all","pending","submitted-group"].includes(status) && j.status!==status) return false;
-    if (priority!=="all" && j.priority!==priority) return false;
-    return [j.institution,j.title,j.location,j.area,j.notes,j.postingUrl,j.officialUrl,j.postingDescription].join(" ").toLowerCase().includes(q);
+  const priority=el("filter-priority").value, region=el("filter-region").value;
+  const stage=el("filter-stage").value;
+  const list=records.filter(job=>{
+    if (!viewMatch(job)) return false;
+    if (currentView==="all") {
+      if (stage==="pending" && !C.pending(job)) return false;
+      if (stage==="submitted-group" && !C.submitted(job)) return false;
+      if (!["all","pending","submitted-group"].includes(stage) && job.status!==stage) return false;
+    }
+    if (priority!=="all" && job.priority!==priority) return false;
+    if (region==="nearby" && !nearby(job)) return false;
+    if (region==="elsewhere" && nearby(job)) return false;
+    return [job.institution,job.title,job.location,job.area,job.notes,job.postingUrl,job.officialUrl,job.postingDescription].join(" ").toLowerCase().includes(q);
   });
   const ordering=el("sort-by").value;
   if (ordering==="institution") list.sort((a,b)=>a.institution.localeCompare(b.institution));
   else if (ordering==="status") list.sort((a,b)=>a.status.localeCompare(b.status)||C.prioritySort(a,b));
   else if (ordering==="deadline") list.sort((a,b)=>
-    (a.targetApplyBy||a.deadline||"9999").localeCompare(b.targetApplyBy||b.deadline||"9999")||C.prioritySort(a,b));
-  else list.sort((a,b)=>{
-    const x=C.pending(a)?0:C.submitted(a)?1:2, y=C.pending(b)?0:C.submitted(b)?1:2;
-    return x-y||C.prioritySort(a,b);
-  });
-  el("result-count").textContent=list.length+" positions";
+      (a.targetApplyBy||a.deadline||"9999").localeCompare(b.targetApplyBy||b.deadline||"9999")||C.prioritySort(a,b));
+  else if (ordering==="recent") list.sort((a,b)=>
+      (b.dateAdded||b.lastReviewed||"").localeCompare(a.dateAdded||a.lastReviewed||"")||C.prioritySort(a,b));
+  else list.sort(C.prioritySort);
+  el("result-count").textContent=list.length+" of "+records.length+" positions";
   const all=el("all-jobs");all.replaceChildren();
-  if (!list.length) all.append(make("p","empty","No positions match this filter."));
-  const indices=new Map(active.map((j,i)=>[j.id,i+1]));
-  list.forEach(j=>all.append(card(j,indices.has(j.id)?indices.get(j.id):null)));
+  if (!list.length) all.append(make("p","empty","No positions in this view match your filters."));
+  list.slice(0,visibleLimit).forEach(job=>all.append(card(job,null)));
+  const more=el("more-results");
+  more.hidden=list.length<=visibleLimit;
+  more.textContent="Show more ("+(list.length-visibleLimit)+" remaining)";
 }
 function newOp(type, extras) {
   return Object.assign({type:type, opId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10)},extras);
@@ -227,16 +263,25 @@ function recordChange(operation) {
 }
 function setStatus(job, status) {
   if (job.status===status) return;
-  const patch={status:status, lastReviewed:todayISO()};
-  if (status==="submitted") {
-    patch.submittedAt=todayISO();
-    patch.nextAction="Application submitted. Monitor responses and next steps.";
-  } else if (status==="closed") {
-    patch.submittedAt=null;
-    patch.nextAction="Closed or no longer pursuing this opportunity.";
+  const patch={status:status,lastReviewed:todayISO()};
+  if (status==="closed") {
+    patch.previousStatus=job.status;
+    patch.archivedAt=todayISO();
+    patch.submittedAt=job.submittedAt||null;
+    patch.nextAction=C.submitted(job)
+      ? "Archived after submission; no outcome recorded. Restore if follow-up is needed."
+      : "Archived from the active queue; restore if you want to pursue it later.";
+  } else if (status==="submitted") {
+    patch.submittedAt=job.submittedAt||todayISO();
+    patch.archivedAt=null;
+    patch.previousStatus=null;
+    patch.nextAction="Application submitted. Monitor employer responses and next steps.";
   } else {
-    patch.submittedAt=null;
-    patch.nextAction="Review posting and plan the next application step.";
+    patch.submittedAt=job.submittedAt && job.status==="closed" && job.previousStatus==="submitted"
+      ? job.submittedAt : null;
+    patch.archivedAt=null;
+    patch.previousStatus=null;
+    patch.nextAction=status==="ready" ? "Review the submission package and apply." : "Review the posting and plan the next step.";
   }
   recordChange(newOp("update",{jobId:job.id,patch:patch}));
 }
@@ -247,12 +292,12 @@ function showFormError(message, existingJob) {
   if (existingJob) {
     error.append(button("View existing application",()=>{
       closeDialog("job-dialog");
-      el("search").value="";
+      currentView="all";
+      visibleLimit=records.length;
+      el("search").value=existingJob.institution;
       el("filter-stage").value="all";
+      el("filter-region").value="all";
       el("filter-priority").value="all";
-      if (C.submitted(existingJob)) el("submitted-section").open=true;
-      else if (C.pending(existingJob)) showAllQueue=true;
-      else el("all-section").open=true;
       render();
       const match=[...document.querySelectorAll(".job[data-job-id]")].find(n=>n.dataset.jobId===existingJob.id);
       if (match) { match.scrollIntoView({behavior:"smooth",block:"center"}); match.classList.add("duplicate-highlight"); }
@@ -345,7 +390,7 @@ function submitJobForm(e) {
     const submittedAt=formInput("job-submitted") || (st==="submitted"&&!editId?todayISO():null);
     const fields={
       priority:formInput("job-priority"), status:st, rank:rank, targetApplyBy:target,
-      deadline:deadline, submittedAt:["submitted","interview","offer"].includes(st)?submittedAt:null,
+      deadline:deadline, submittedAt:["submitted","interview","offer","closed"].includes(st)?submittedAt:null,
       lastReviewed:todayISO()
     };
     const institution=formInput("job-institution"), title=formInput("job-title"), location=formInput("job-location");
@@ -395,7 +440,8 @@ function submitJobForm(e) {
       if (token) void syncGitHub();
     }
     closeDialog("job-dialog");
-    el("filter-stage").value="all";el("search").value="";render();
+    if (!editId) currentView="planning";
+    visibleLimit=8;el("filter-stage").value="all";el("search").value="";render();
   } catch (err) {showFormError(err.message);}
 }
 async function githubRead(authToken) {
@@ -541,9 +587,11 @@ async function fetchWithTimeout(url, milliseconds) {
 }
 async function init() {
   try {
-    ["search","filter-stage","filter-priority","sort-by"].forEach(name=>
-      el(name).addEventListener(name==="search"?"input":"change",render));
-    el("toggle-queue").addEventListener("click",()=>{showAllQueue=!showAllQueue;render();});
+    ["search","filter-stage","filter-priority","filter-region","sort-by"].forEach(name=>
+      el(name).addEventListener(name==="search"?"input":"change",()=>{visibleLimit=8;render();}));
+    document.querySelectorAll("[data-view]").forEach(tab=>
+      tab.addEventListener("click",()=>chooseView(tab.dataset.view)));
+    el("more-results").addEventListener("click",()=>{visibleLimit+=8;render();});
     el("add-job").addEventListener("click",openAdd);
     el("job-form").addEventListener("submit",submitJobForm);
     el("github-form").addEventListener("submit",connectGithub);
