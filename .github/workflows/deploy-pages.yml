@@ -4,8 +4,8 @@ name: Deploy portfolio to GitHub Pages
 #   main    -> /portfolio/
 #   develop -> /portfolio/develop/
 #
-# The develop deployment also builds the resume LaTeX sources and publishes
-# browser-viewable PDFs under /portfolio/develop/resumes/.
+# The develop deployment publishes already-built LaTeX PDFs from develop
+# under /portfolio/develop/resumes/. Independent workflows validate PDF builds.
 on:
   push:
     branches: [main, develop]
@@ -47,41 +47,9 @@ jobs:
           ref: develop
           path: source-develop
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-          cache-dependency-path: source-develop/resume/requirements.txt
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Install resume dependencies
-        run: python -m pip install -r source-develop/resume/requirements.txt
-
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
-
-      - name: Validate resume sources
-        working-directory: source-develop
-        run: python -m unittest discover -s resume/tests
-
-      - name: Generate develop resume PDFs
-        working-directory: source-develop
-        run: python resume/build.py --all
-
-      - name: Generate tailored develop resumes
-        working-directory: source-develop
-        run: python resume/build_tailored.py --all
-
-      - name: Audit faculty PDF line breaks and pagination
-        working-directory: source-develop
-        run: python resume/validate_pdf_layout.py
+      # PDFs are built and validated in independent resume / application workflows.
+      # Pages only publishes committed assets so a failed unrelated LaTeX
+      # resume cannot block faculty dashboard or website deployments.
 
       - name: Assemble production, development, and resume previews
         shell: bash
@@ -137,7 +105,7 @@ jobs:
           <body>
             <a class="back" href="../">← Develop portfolio</a>
             <h1>Develop Resume PDFs</h1>
-            <p>Generated automatically from the current <code>develop</code> branch after tests and LaTeX compilation succeed.</p>
+            <p>Published from the validated PDF files committed on the current <code>develop</code> branch.</p>
           HTML
 
             for group in faculty industry; do
