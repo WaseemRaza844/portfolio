@@ -197,3 +197,75 @@ dialog input:focus-visible,dialog textarea:focus-visible,dialog select:focus-vis
 }
 
 .form-error[hidden]{display:none}
+
+
+/* Workspace redesign | November 2026: one list, five focused views */
+[hidden]{display:none!important}
+.heading{padding-top:32px}
+.heading-actions{align-items:center;gap:9px}
+.stats{margin-top:18px;margin-bottom:18px;gap:10px}
+.stat{padding:15px 18px;box-shadow:none}
+.stat div{font-size:12px}
+.stat strong{font-size:30px;line-height:1.3}
+.stat small{font-size:11px}
+.tools-menu{position:relative}
+.tools-menu summary{list-style:none;cursor:pointer;border:1px solid #c8d5e7;border-radius:9px;background:#fff;font-size:13px;font-weight:650;padding:11px 14px}
+.tools-menu summary::-webkit-details-marker{display:none}
+.tools-menu summary::after{content:" ▾"}
+.tools-menu[open] summary::after{content:" ▴"}
+.tools-content{position:absolute;z-index:10;right:0;top:calc(100% + 6px);min-width:170px;padding:8px;display:grid;gap:6px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 28px rgba(24,47,77,.13);border-radius:11px}
+.tools-content button{text-align:left;width:100%}
+.pipeline-tabs{display:flex;align-items:center;gap:5px;padding:6px;background:#eaf0f7;border-radius:14px;overflow-x:auto;scrollbar-width:thin}
+.pipeline-tab{border:0;background:transparent;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:9px;white-space:nowrap;font-weight:720;color:#50647c;justify-content:center;min-width:max-content;flex:1;box-shadow:none}
+.pipeline-tab:hover{background:#f7fbff}
+.pipeline-tab.active,.pipeline-tab[aria-pressed="true"]{background:#fff;color:#173f63;box-shadow:0 1px 6px rgba(33,70,110,.12)}
+.tab-count{font-size:11px;min-width:24px;text-align:center;padding:2px 6px;border-radius:7px;background:#d8e4f2;color:#3b5a7b}
+.pipeline-tab.active .tab-count{background:#e6efff;color:#194e99}
+.workspace-panel{margin:16px 0 22px;padding:21px 24px;box-shadow:none}
+.workspace-panel .section-title{margin-bottom:15px}
+.workspace-panel .section-title h2{font-size:22px}
+.workspace-panel .filters{grid-template-columns:minmax(200px,2fr) repeat(3,minmax(130px,1fr));gap:10px;margin-bottom:17px}
+.workspace-panel .filters label{gap:5px}
+.workspace-panel .filters input,.workspace-panel .filters select{padding:10px;border-radius:9px}
+.workspace-panel .jobs{gap:10px}
+.workspace-panel .job{padding:15px 17px;border-radius:11px;box-shadow:none;background:#fff;border:1px solid #e0e7ef}
+.workspace-panel .job:hover{border-color:#b4c8e1}
+.workspace-panel .job.done{background:#fff;border:1px solid #e0e7ef;padding-left:17px}
+.workspace-panel .job.done h3,.workspace-panel .job.done.closed h3{text-decoration:none;color:var(--ink)}
+.workspace-panel .job.done .job-name>p{color:var(--muted)}
+.workspace-panel .job-top{align-items:flex-start}
+.workspace-panel .job-name h3{font-size:15px;line-height:1.4}
+.workspace-panel .job-name p{font-size:12px}
+.workspace-panel .job-badges{max-width:210px}
+.workspace-panel .pill{font-size:10px}
+.workspace-panel .job-meta{margin:8px 0 7px;gap:7px 12px}
+.workspace-panel .next-action{background:transparent;border:0;border-left:2px solid #d5e2f1;border-radius:0;padding:0 0 0 10px;color:#56697e;font-size:12px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;max-width:100%}
+.workspace-panel .job-actions{margin-top:10px;gap:7px}
+.workspace-panel .job-actions button{font-size:11px;padding:6px 9px}
+.workspace-panel .job-bottom{margin-top:9px}
+.workspace-panel .job-details summary{font-size:12px}
+.workspace-panel .job-links a{padding:6px 9px;font-size:11px}
+.workspace-panel .empty{padding:30px;background:#f7faff}
+.workspace-panel #more-results{margin-top:14px}
+.workspace-panel .job .completion-mark{display:none}
+.sync-panel{background:#fff;padding:11px 15px;margin-bottom:14px;border-radius:11px}
+.sync-panel button{padding:7px 10px}
+footer{border-top:1px solid var(--line);margin-top:14px}
+@media (max-width:920px){
+ .pipeline-tab{flex:0 0 auto;padding:10px 12px}
+ .workspace-panel .filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px){
+ .workspace-panel{padding:16px 12px}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .stat{padding:12px 14px}
+ .stat strong{font-size:26px}
+ .workspace-panel .filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .workspace-panel .filters label:first-child{grid-column:1 / -1}
+ .workspace-panel .job{padding:14px}
+ .workspace-panel .job.done{padding-left:14px}
+ .workspace-panel .job-top{gap:8px}
+ .workspace-panel .job-badges{margin-top:0}
+ .heading-actions{width:100%;justify-content:space-between}
+ .heading-actions .tools-menu{flex:0 0 auto}
+}
