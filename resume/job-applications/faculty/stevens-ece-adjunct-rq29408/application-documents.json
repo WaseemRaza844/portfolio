@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_STEVENS_RQ29408_Cover_Letter.docx",
+      "title": "Stevens ECE Adjunct RQ29408 — Wireless Communications Cover Letter"
+    },
+    {
+      "source": "Teaching_Philosophy.md",
+      "output": "WRaza_STEVENS_RQ29408_Teaching_Philosophy.docx",
+      "title": "Stevens ECE Adjunct RQ29408 — Teaching Philosophy and Inclusive Learning"
+    },
+    {
+      "source": "Research_Statement_OPTIONAL.md",
+      "output": "WRaza_STEVENS_RQ29408_Research_Statement_OPTIONAL.docx",
+      "title": "Stevens ECE Adjunct RQ29408 — Research Statement (Optional)"
+    }
+  ]
+}
