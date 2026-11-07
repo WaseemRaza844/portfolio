@@ -49,7 +49,7 @@ jobs:
           cv=base/'WRaza_STEVENS_RQ29408_CV.pdf'
           docs={
             'Cover_Letter':(1,1),
-            'Teaching_Philosophy':(1,3),
+            'Teaching_Philosophy':(2,3),
             'Research_Statement_OPTIONAL':(1,2),
           }
           assert cv.is_file() and src.is_file()
