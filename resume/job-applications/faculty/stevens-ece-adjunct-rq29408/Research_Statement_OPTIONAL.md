@@ -1,0 +1,13 @@
+# Research Statement — Reliable Learning and Intelligent Wireless Systems
+
+**Waseem Raza, PhD | Stevens Institute of Technology | ECE Adjunct RQ29408**
+
+My research investigates how data-driven models can improve the reliability, performance, and adaptability of wireless and networked systems under real-world constraints. I earned a PhD in Electrical and Computer Engineering from the University of Oklahoma in 2025, with doctoral work focused on AI/ML for wireless networks, particularly data scarcity, domain shift, propagation modeling, network resilience, and intelligent optimization.
+
+My research program has three interconnected themes. First, I develop **data-efficient and transferable learning methods** for propagation and network modeling, including domain-informed generative augmentation and adaptation across operating conditions. Second, I study **self-healing and resilient wireless systems**, including outage detection, anomaly analysis, and learning-based network optimization. Third, I investigate **intelligent sensing and time-series analytics**, using robust evaluation protocols to understand variability, noisy measurements, and model generalization. These themes have supported peer-reviewed publications in journals and IEEE conferences as well as applied research and engineering work with AT&T, AT&T Labs, and Futurewei.
+
+My forward-looking interests include trustworthy learning for 5G/6G networks, measurement-informed digital twins, reliable and efficient AI at network edges, and reproducible validation of intelligent communications systems. Key technical questions are how models can adapt with limited labels, recognize uncertainty, retain reliable performance as conditions change, and support decisions without obscuring engineering constraints.
+
+These interests can directly enrich **EE 583 Wireless Communications** through selected examples and graduate project mentoring. Students might compare propagation models across environments, assess wireless-link performance under variability, or critically evaluate ML-assisted network prediction against physically meaningful baselines. I believe the strongest connection between research and adjunct teaching is to use authentic, appropriately scoped engineering questions that strengthen students' foundational understanding, rather than expecting them to reproduce a full research project during a course.
+
+I would welcome opportunities to collaborate with Stevens faculty and students on communications and data-driven engineering topics while meeting the instructional responsibilities of the adjunct appointment. My overarching goal is to help make intelligent wireless systems more **reliable, interpretable, and useful in practice**.
