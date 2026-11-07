@@ -6,14 +6,16 @@
 **Requisition:** RQ29408  
 **Courses named in posting:** EE 583 Wireless Communications; CPE 810 GPU & Multicore Programming  
 **Search chair:** Prof. Min Song, msong6@stevens.edu  
-**User availability:** In-person classes starting at or after **5:00 p.m.**; actual course schedule unverified.  
-**Status:** Documents prepared; not submitted.
+**Applicant course preference:** EE 583 Wireless Communications; related communication systems, signals and systems, signal processing, and wireless-network courses. GPU/multicore programming is **not** a teaching interest.  
+**Status:** Revised academic documents prepared, not submitted.
 
-## IMPORTANT: verify intended teaching semester
+## Academic positioning and scope
 
-Workday continues to display the position as available in **November 2026**, but the job description specifically says **Spring 2026** and **potentially Fall 2026**. Spring 2026 is past and Fall 2026 is already underway. Do **not** assert that Stevens is currently hiring for Spring 2027 without confirmation.
+The cover letter and supporting statements focus exclusively on the applicant's qualifications, teaching, and research interests; they **do not mention scheduling availability or the academic semester**. The employer vacancy lists two distinct topics, but the application expressly targets wireless communications and related ECE disciplines. The previous inquiry-email draft is not part of the applicant package.
 
-The concise `Email_to_Search_Chair.txt` asks the search chair whether the posting is intended for future semesters and whether the EE 583 section will start after 5 p.m. It is ready to copy into email, but no email has been sent.
+The applicant holds a PhD in ECE and bachelor's and master's degrees in Telecommunication Engineering. Previous university teaching in Wireless Communication, Communication Systems, and Computer Programming; research in resilient propagation modeling, generative learning, network optimization, and digital twins; and professional experience with AT&T, AT&T Labs, and Futurewei provide the main evidence.
+
+Continuing education is verified against `dist/data/certifications.js`: **4G Network Fundamentals** and **Business Considerations for 5G with Edge, IoT, and AI** are *completed*; **5G Network Fundamentals** remains *in progress*. Additional completed Coursera coursework relates to telecom AI and network/security optimization. References to 6G are explicitly future interests rather than claims of completed 6G research.
 
 ## Application requirements and conflicting boilerplate
 
@@ -44,9 +46,7 @@ Editable DOCX copies of the three narratives are also generated in `submission-r
 
 **EE 583:** excellent alignment with PhD ECE dissertation on reliable AI for wireless networks, prior instructor-of-record work teaching Wireless Communication and Communication Systems, communications labs, and AT&T/Futurewei 5G/wireless systems research. Curriculum reference: https://stevens.catalog.prod.coursedog.com/programs/1c00f8a04b1f01d9da3d29484432a173/requirements-and-concentrations-n90Np
 
-**CPE 810:** Python/C/C++, numerical computing, ML/AI workloads; specific CUDA/GPU/multicore programming expertise and teaching experience are **not evidenced** in existing academic materials. Discuss the detailed syllabus before indicating a commitment to teach CPE 810. A Stevens ECE handbook lists CPE 810A as special topics GPU & Multicore Programming, which may use more specialized software/hardware than general C++.
-
-**Hours:** The employer does not guarantee evening sections. Do not state "flexible anytime" when the user is available after 5 p.m. only.
+**CPE 810:** Listed in the employer advertisement, but **not targeted by the applicant**. Do not claim GPU/CUDA or multicore programming course preparation or offer to teach this subject in applicant-facing documents.
 
 **Compensation:** Workday lists $8,600–$9,400, and $1,120 per student when enrollment is below eight. The unit and contractual details are not explicit; verify with HR.
 
@@ -68,12 +68,11 @@ python resume/job-applications/faculty/stevens-ece-adjunct-rq29408/build_documen
 explorer "resume\job-applications\faculty\stevens-ece-adjunct-rq29408\submission-ready"
 ```
 
-The dedicated GitHub workflow validates the unchanged shared CV, one-page cover letter, teaching philosophy, and optional research statement, and publishes only public PDF/DOCX application files.
+The dedicated GitHub workflow validates the unchanged shared CV, full one-page cover letter, teaching philosophy of at least two pages, and an approximately one-page optional research statement, and publishes only public PDF/DOCX application files.
 
 ## Submission checklist
 
-- [ ] Confirm whether RQ29408 is genuinely hiring for a future term; send the saved note to the search chair if needed.
-- [ ] Verify EE 583 evening section starts at/after 5:00 p.m. and travel time to Hoboken fits the daytime job.
+- [ ] Review the employer portal's current requisition and available EE 583 teaching assignment; handle logistical details separately from the application narratives.
 - [ ] Review cover letter and teaching philosophy against shared ECE CV.
 - [ ] Verify all three private referees and consent; upload **private** list in Workday.
 - [ ] Upload cover letter, teaching philosophy, CV, and private references. Add optional research statement only if the portal requests it or accepts additional materials.
