@@ -53,7 +53,7 @@ def main():
         HERE.parent / "ece-shared-2027/build_packages.py", "stevens_pdf_builder"
     )
     docs=[
-        ("Cover_Letter.md","Cover_Letter","CL",1,1,("RQ29408","EE 583","4G Network Fundamentals","6G")),
+        ("Cover_Letter.md","Cover_Letter","CL",1,1,("RQ29408","EE 583","4G","6G")),
         ("Teaching_Philosophy.md","Teaching_Philosophy","Teaching",2,3,("EE 583","inclusive","graduate","6G")),
         ("Research_Statement_OPTIONAL.md","Research_Statement_OPTIONAL","Research",1,2,("wireless","reliability","6G")),
     ]
