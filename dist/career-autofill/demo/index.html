@@ -1,0 +1,41 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Career Autofill — Fictional test application</title>
+<style>
+body{font:16px/1.5 system-ui,"Segoe UI",sans-serif;background:#f5f8fc;color:#16304e;margin:0;padding:2rem}
+main{max-width:750px;margin:auto;background:white;border:1px solid #d9e4f2;border-radius:15px;padding:1.5rem 2rem}
+label{display:block;margin:1rem 0 .25rem;font-weight:600}
+input,textarea{width:100%;max-width:610px;border:1px solid #a9bcd1;border-radius:7px;font:inherit;padding:.7rem;box-sizing:border-box}
+textarea{min-height:90px}fieldset{margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid #d9e4f2;border-radius:10px}
+legend{font-weight:700}.note{background:#eaf4ff;border-radius:8px;padding:.8rem}
+a{color:#135b9b}
+</style></head><body>
+<main><h1>Fictional job application — Career Autofill demo</h1>
+<p class="note">This page is a <strong>demonstration only</strong>, not a real job application. No information is submitted or stored by this page. Use the fictional profile from the link below, not your own personal data, when testing.</p>
+<p><a href="fictional-profile.json" download>Download fictional test profile</a>. Import it into Career Autofill's Backup tab, open the extension on this page, and try Contact, Employment and Education.</p>
+<form autocomplete="off" onsubmit="event.preventDefault();alert('Demo only: nothing submitted');">
+<fieldset><legend>Contact information</legend>
+<label for="first">First Name</label><input id="first" name="firstName" type="text">
+<label for="last">Last Name</label><input id="last" name="lastName" type="text">
+<label for="email">Email</label><input id="email" name="email" type="email">
+<label for="phone">Phone Number</label><input id="phone" name="phone" type="tel">
+</fieldset>
+<fieldset><legend>Work Experience 1</legend>
+<label for="job">Job Title</label><input id="job" name="jobTitle" type="text" value="Incorrect Existing Title">
+<label for="company">Company</label><input id="company" name="company" type="text" value="Incorrect Existing Company">
+<label for="location">Location</label><input id="location" name="location" type="text">
+<label for="current">I currently work here</label><input id="current" name="currentlyEmployed" type="checkbox" style="width:auto">
+<label for="from">From</label><input id="from" name="startDate" type="month">
+<label for="to">To</label><input id="to" name="endDate" type="month">
+<label for="desc">Role Description</label><textarea id="desc" name="duties">Existing description to replace</textarea>
+</fieldset>
+<fieldset><legend>Education 1</legend>
+<label for="school">School</label><input id="school" name="school" type="text">
+<label for="degree">Degree</label><select id="degree" name="degree"><option value="">Choose degree</option><option>PhD</option><option>Master of Science</option><option>Bachelor of Science</option></select>
+<label for="major">Field of Study</label><input id="major" name="fieldOfStudy" type="text">
+<label for="grad">Graduation Year</label><input id="grad" name="graduationYear" type="text">
+</fieldset>
+<button type="submit">Demo Submit (no data sent)</button>
+</form></main>
+</body></html>
