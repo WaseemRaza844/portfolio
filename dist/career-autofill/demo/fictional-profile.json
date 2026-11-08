@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "contact": {
+    "firstName": "Ada",
+    "lastName": "Sample",
+    "email": "ada@example.test",
+    "phone": "555-0109",
+    "city": "Test City",
+    "state": "NJ",
+    "country": "United States"
+  },
+  "employment": [
+    {
+      "title": "Machine Learning Engineer",
+      "company": "Example Telecom",
+      "location": "Bedminster, New Jersey",
+      "start": "2025-02",
+      "current": true,
+      "description": "Built ML applications for networks.",
+      "reasonForLeaving": "Current role"
+    },
+    {
+      "title": "Data Engineer",
+      "company": "Example Data",
+      "location": "Test City",
+      "start": "2024-09",
+      "end": "2024-12",
+      "current": false,
+      "description": "Worked with test pipelines."
+    },
+    {
+      "title": "Research Intern",
+      "company": "Example Research",
+      "location": "Example City",
+      "start": "2024-06",
+      "end": "2024-08",
+      "current": false,
+      "description": "Researched test systems."
+    },
+    {
+      "title": "Example Position 4",
+      "company": "Example Employer 4",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    },
+    {
+      "title": "Example Position 5",
+      "company": "Example Employer 5",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    },
+    {
+      "title": "Example Position 6",
+      "company": "Example Employer 6",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    },
+    {
+      "title": "Example Position 7",
+      "company": "Example Employer 7",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    },
+    {
+      "title": "Example Position 8",
+      "company": "Example Employer 8",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    },
+    {
+      "title": "Example Position 9",
+      "company": "Example Employer 9",
+      "location": "Test City",
+      "start": "2020-01",
+      "end": "2020-06",
+      "current": false,
+      "description": "Sample duties."
+    }
+  ],
+  "education": [
+    {
+      "school": "Example University",
+      "degree": "PhD",
+      "field": "Electrical Engineering",
+      "start": "2019-09",
+      "end": "2025-05",
+      "graduationYear": "2025"
+    },
+    {
+      "school": "Example Institute",
+      "degree": "MSc",
+      "field": "Telecom Engineering",
+      "graduationYear": "2016"
+    },
+    {
+      "school": "Example Institute",
+      "degree": "BSc",
+      "field": "Telecom Engineering",
+      "graduationYear": "2014"
+    }
+  ],
+  "references": [
+    {
+      "name": "Alex Advisor",
+      "email": "alex@example.test",
+      "title": "Professor",
+      "institution": "Example University",
+      "relationship": "Advisor",
+      "phone": "555-0110"
+    },
+    {
+      "name": "Blair Colleague",
+      "email": "blair@example.test"
+    },
+    {
+      "name": "Casey Mentor",
+      "email": "casey@example.test"
+    }
+  ],
+  "disclosures": {
+    "veteranStatus": "not a protected veteran",
+    "raceEthnicity": "Asian",
+    "ancestry": "South Asian",
+    "origin": "Pakistan",
+    "authorizedToWork": "",
+    "sponsorshipNow": "",
+    "futureSponsorship": ""
+  },
+  "answers": [
+    {
+      "title": "Example answer 0",
+      "body": "Test answer 0."
+    },
+    {
+      "title": "Example answer 1",
+      "body": "Test answer 1."
+    },
+    {
+      "title": "Example answer 2",
+      "body": "Test answer 2."
+    },
+    {
+      "title": "Example answer 3",
+      "body": "Test answer 3."
+    }
+  ]
+}
