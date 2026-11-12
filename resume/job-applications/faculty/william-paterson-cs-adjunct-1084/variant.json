@@ -1,0 +1,65 @@
+{
+  "baseVariant": "faculty_cs_ai_ml",
+  "label": "William Paterson University | Computer Science Adjunct | Job 1084",
+  "headline": "Computer Science & Information Technology Educator | Networked Systems and Applied Computing",
+  "tagline": "Computer and Information Technology | Computer Networking | Programming | Applied AI",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with university-level teaching in Computer Programming, Communication Systems, and Wireless Communication. Supported communications laboratories, guided student projects and mentored undergraduate and graduate researchers. Professional experience at AT&T, AT&T Labs, Futurewei, and Impac combines telecommunications networks, operational service assurance, Python software engineering and cloud data platforms. Prepared to teach Computer and Information Technology and Fundamentals of Computer Networking through applied, student-centered instruction, with Discrete Structures as an additional assignment following course-specific preparation.",
+  "researchInterests": [
+    "Computer and Wireless Networking",
+    "Information Technology and Networked Systems",
+    "Applied Programming and Systems Analysis",
+    "Network Reliability, Optimization and AI",
+    "Data-Driven Computing and Student Projects"
+  ],
+  "teachingAreas": [
+    "Computer and Information Technology (primary interest; professional and technical preparation)",
+    "Fundamentals of Computer Networking (primary interest; research and industry expertise)",
+    "Computer Programming (previously taught)",
+    "Communication Systems and Wireless Communication (previously taught)",
+    "Discrete Structures (additional interest; subject to syllabus preparation)",
+    "Applied Networking and Computing Laboratories (technical preparation)"
+  ],
+  "skillsSectionTitle": "Technical Skills & Applied Computing",
+  "skills": {
+    "Networking & Telecommunications": "Computer network fundamentals, packet-switched communication concepts, IP networking, network architectures, wireless and cellular systems (4G/LTE and 5G), network measurement, performance evaluation, fault diagnosis and network assurance",
+    "Programming & Computing": "Python, C/C++, SQL, MATLAB, Linux, Git/GitHub, Jupyter; programming fundamentals, problem solving, debugging, algorithms and reproducible computational exercises",
+    "Cloud & IT Systems": "Azure Databricks, Azure Data Factory, Azure Synapse, Azure Functions, Azure DevOps CI/CD, data pipelines, version control and software-development workflows",
+    "AI/ML & Analytics": "scikit-learn, PyTorch, pandas, NumPy; classification, anomaly detection, data analysis, network troubleshooting and model validation",
+    "Teaching & Student Support": "Undergraduate Computer Programming, Communication Systems and Wireless Communication instruction; practical exercises, communications labs, formative assessment and student project mentoring"
+  },
+  "dissertationFocus": "Doctoral research applied AI/ML to reliable wireless networks, network modeling, simulation, optimization and network resilience, linking network fundamentals with reproducible engineering experiments.",
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "mdt-zero-touch-2024",
+    "domain-informed-gans-vtc-2024"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "turboran",
+    "propagation-digital-twins",
+    "ai-telecom-optimization"
+  ],
+  "certificationIds": [
+    "coursera-python-for-data-science-ai-development",
+    "coursera-machine-learning"
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate research/project students in programming, simulations, networked-system experiments and technical documentation.",
+    "Guided student technical problem solving, experimental validation and project presentations."
+  ],
+  "academicServiceBullets": [
+    "Contributed to undergraduate course materials, laboratory documentation and student assessment.",
+    "Supported student advising and technical research mentoring."
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Networking and Computing Projects",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.69,
+  "verticalMarginInches": 0.45,
+  "minPages": 3,
+  "maxPages": 5,
+  "minPageTextChars": 500,
+  "minLastPageChars": 500
+}
