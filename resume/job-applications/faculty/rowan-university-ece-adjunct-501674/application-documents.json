@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_ROWAN_ECE501674_Cover_Letter.docx",
+      "title": "Rowan University ECE Adjunct — Cover Letter"
+    },
+    {
+      "source": "Teaching_Interests_and_Philosophy.md",
+      "output": "WRaza_ROWAN_ECE501674_Teaching_Interests_and_Philosophy.docx",
+      "title": "Rowan University ECE Adjunct — Teaching Interests and Philosophy"
+    }
+  ]
+}
