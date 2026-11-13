@@ -40,7 +40,7 @@ def main():
     pages = PdfReader(str(letter_pdf)).pages
     if len(pages) != 1:
         raise RuntimeError(f"Cover letter must fit one page; found {len(pages)}")
-    extracted = pages[0].extract_text() or ""
+    extracted = " ".join((pages[0].extract_text() or "").split())
     for phrase in ("Computer and Information Technology", "Fundamentals of Computer Networking", "Discrete Structures", "AT&T"):
         if phrase not in extracted:
             raise RuntimeError(f"Missing expected cover-letter detail: {phrase}")
