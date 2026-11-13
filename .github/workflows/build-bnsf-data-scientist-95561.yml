@@ -1,0 +1,73 @@
+name: Build BNSF Data Scientist I II 95561 industry application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/industry/bnsf-data-scientist-i-ii-95561/**'
+      - 'resume/build_tailored.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/job-applications/faculty/ece-shared-2027/build_packages.py'
+      - '.github/workflows/build-bnsf-data-scientist-95561.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bnsf-ds95561-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install resume and document requirements
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build and package tailored resume and cover letter
+        run: python resume/job-applications/industry/bnsf-data-scientist-i-ii-95561/build_documents.py
+      - name: Verify ATS-friendly content and package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          import json
+          d=Path('resume/job-applications/industry/bnsf-data-scientist-i-ii-95561')
+          ready=d/'submission-ready'
+          report=json.loads((d/'build-report.json').read_text())
+          resume=ready/'WRaza_BNSF_DS95561_Resume.pdf'
+          cover=ready/'WRaza_BNSF_DS95561_Cover_Letter.pdf'
+          word=ready/'WRaza_BNSF_DS95561_Cover_Letter.docx'
+          assert all(p.is_file() for p in (resume,cover,word))
+          assert report['pages']==3 and len(PdfReader(str(resume)).pages)==3
+          assert len(PdfReader(str(cover)).pages)==1
+          body=' '.join(p.extract_text() or '' for p in PdfReader(str(resume)).pages)
+          for term in ('Azure Databricks','Python','SQL','Impac Exploration','AT&T','Root'):
+              assert term.lower() in body.lower(),f'Missing important role alignment: {term}'
+          assert len(Document(word).paragraphs)>8
+          print('BNSF: three-page resume, one-page letter, editable Word version, and validated ATS terms')
+          PY
+      - name: Publish submission-ready industry files to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f             resume/job-applications/industry/bnsf-data-scientist-i-ii-95561/Waseem_Raza_BNSF_DATA_SCIENTIST_I_II_95561.pdf             resume/job-applications/industry/bnsf-data-scientist-i-ii-95561/build-report.json             resume/job-applications/industry/bnsf-data-scientist-i-ii-95561/submission-ready/WRaza_BNSF_DS95561_*
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish BNSF Data Scientist 95561 validated application package"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          else
+            echo "BNSF application outputs unchanged."
+          fi
