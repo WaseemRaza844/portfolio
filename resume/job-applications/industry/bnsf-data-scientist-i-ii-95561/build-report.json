@@ -1,0 +1,20 @@
+{
+  "job": "bnsf-data-scientist-i-ii-95561",
+  "file": "Waseem_Raza_BNSF_DATA_SCIENTIST_I_II_95561.pdf",
+  "pages": 3,
+  "pageTextChars": [
+    5182,
+    4790,
+    5198
+  ],
+  "pageLowestTextY": [
+    72.1,
+    35.5,
+    34.8
+  ],
+  "target": {
+    "company": "BNSF Railway",
+    "role": "Data Scientist I/II",
+    "jobId": "95561"
+  }
+}
