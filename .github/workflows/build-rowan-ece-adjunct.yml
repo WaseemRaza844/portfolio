@@ -1,0 +1,84 @@
+name: Build Rowan ECE adjunct submission package
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/rowan-university-ece-adjunct-501674/**'
+      - 'resume/build.py'
+      - 'resume/latex_renderer.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/resume-profiles/faculty/ece_ai_wireless.json'
+      - 'resume/content.json'
+      - 'dist/data/**'
+      - '.github/workflows/build-rowan-ece-adjunct.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rowan-ece-adjunct-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install application and LaTeX dependencies
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build Rowan tailored CV, cover letter and teaching statement
+        run: python resume/job-applications/faculty/rowan-university-ece-adjunct-501674/build_documents.py
+      - name: Verify complete submission package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          d=Path('resume/job-applications/faculty/rowan-university-ece-adjunct-501674/submission-ready')
+          prefix='WRaza_ROWAN_ECE501674'
+          required=[
+            prefix+'_CV.pdf',
+            prefix+'_Cover_Letter.pdf',
+            prefix+'_Cover_Letter.docx',
+            prefix+'_Teaching_Interests_and_Philosophy.pdf',
+            prefix+'_Teaching_Interests_and_Philosophy.docx',
+          ]
+          assert all((d/name).is_file() for name in required), 'One or more submission documents missing'
+          cv=PdfReader(str(d/(prefix+'_CV.pdf')))
+          letter=PdfReader(str(d/(prefix+'_Cover_Letter.pdf')))
+          teaching=PdfReader(str(d/(prefix+'_Teaching_Interests_and_Philosophy.pdf')))
+          assert 3<=len(cv.pages)<=5, 'CV page count mismatch'
+          assert len(letter.pages)==1, 'Cover letter must remain one page'
+          assert 1<=len(teaching.pages)<=3, 'Teaching statement page count mismatch'
+          assert all(len((p.extract_text() or '').strip())>300 for p in cv.pages), 'Sparse CV page'
+          assert len(Document(d/(prefix+'_Cover_Letter.docx')).paragraphs)>5
+          print('VALIDATED Rowan: CV',len(cv.pages),'pages; letter',len(letter.pages),'page; teaching',len(teaching.pages),'pages.')
+          PY
+      - name: Publish submission-ready files to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f resume/job-applications/faculty/rowan-university-ece-adjunct-501674/submission-ready/WRaza_ROWAN_ECE501674_*
+          git add -f resume/job-applications/faculty/rowan-university-ece-adjunct-501674/Waseem_Raza_FACULTY_ROWAN_UNIVERSITY_ECE_ADJUNCT_501674.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Rowan ECE adjunct submission-ready documents"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          else
+            echo "Rowan package already up to date; nothing new to commit."
+          fi
