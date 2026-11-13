@@ -1,0 +1,61 @@
+{
+  "baseVariant": "faculty_ece_ai_wireless",
+  "label": "Rowan University | Adjunct Faculty Electrical and Computer Engineering | Job 501674",
+  "headline": "Electrical & Computer Engineering Educator | Communications, Signal Processing and AI",
+  "tagline": "Communication Systems | Signal & Image Processing | Machine Learning | Engineering Education",
+  "summary": "PhD in Electrical and Computer Engineering from the University of Oklahoma (2025), specializing in AI/ML for resilient wireless networks. Previously taught undergraduate Computer Programming, Communication Systems, and Wireless Communication; provided communication-system laboratory support and mentored undergraduate and graduate student projects. Current Machine Learning Engineer at AT&T (contract), with prior R&D at AT&T Labs and Futurewei and applied cloud engineering at Impac. Prepared for project-based instruction in communication systems, signals and systems, signal/image processing, and AI/ML, with selected digital systems, controls and RF/microwave offerings subject to course- and laboratory-specific preparation.",
+  "researchInterests": [
+    "Wireless and Digital Communication Systems",
+    "Digital Signal and Image Processing",
+    "Machine Learning and Neural Networks for ECE",
+    "Network Optimization, Reliability and Resilience",
+    "Applied Simulation, Engineering Clinics and Student Projects"
+  ],
+  "teachingAreas": [
+    "Communication Systems and Wireless Communication (previously taught)",
+    "Signals and Systems; Digital Signal Processing (technical and research preparation)",
+    "Digital Image Processing (research and software preparation)",
+    "Machine Learning, Neural Networks and AI (research and industry expertise)",
+    "Computer Programming (previously taught)",
+    "Introductory Digital Systems (additional interest; lab and syllabus review)",
+    "Control Systems (additional interest; course refresher and lab preparation)",
+    "RF/Microwave and Antenna Systems (additional interest; foundational coursework and substantial refresher)"
+  ],
+  "skillsSectionTitle": "Technical Skills, Laboratory Methods & Research Tools",
+  "skills": {
+    "Communications & Signal Processing": "Analog and digital communications, wireless propagation, 4G/LTE and 5G, network reliability, signal analysis, Fourier-domain methods, MATLAB, numerical simulation, network measurements and performance evaluation",
+    "AI/ML & Computer Vision": "Python, PyTorch, TensorFlow/Keras, scikit-learn, neural networks, classification, deep learning, time-series sensing, image and signal analysis, transfer learning, reinforcement learning and model evaluation",
+    "Software and Cloud Engineering": "Python, C/C++, SQL, Git/GitHub, Linux, Jupyter, MATLAB, Azure Databricks, Azure Data Factory, Synapse, Azure DevOps and CI/CD",
+    "Teaching & Applied Projects": "Undergraduate programming, communications and wireless instruction; lab demonstrations, simulation-based experiments, reproducible exercises, project mentoring and outcome-based assessment",
+    "Additional Course Foundations": "Undergraduate/graduate foundations in digital systems, classical control, electromagnetics and RF/microwave systems; advanced or equipment-specific sections require updated preparation"
+  },
+  "dissertationFocus": "AI/ML methods for resilient wireless communications, including cellular-network simulation, propagation modeling, optimization, outage management and reliable adaptation to changing network conditions.",
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "mdt-zero-touch-2024",
+    "domain-informed-gans-vtc-2024"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "propagation-digital-twins",
+    "turboran",
+    "wearable-intelligence",
+    "ai-telecom-optimization"
+  ],
+  "mentoringBullets": [
+    "Guided undergraduate and graduate projects in wireless-network simulations, machine-learning experiments, technical reporting and presentations.",
+    "Supported laboratory-oriented learning through reproducible computational examples, performance comparisons and clear assessment criteria."
+  ],
+  "academicServiceBullets": [
+    "Prepared undergraduate instructional exercises, assessments, laboratory documentation and student-project guidance.",
+    "Supported academic mentorship, technical communication and interdisciplinary research collaboration."
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Project-Based Teaching and Research Platforms",
+  "minPages": 4,
+  "maxPages": 5,
+  "minPageTextChars": 550,
+  "minLastPageChars": 500
+}
