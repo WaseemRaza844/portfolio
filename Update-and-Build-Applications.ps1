@@ -1,85 +1,125 @@
-# Double-click Update-and-Build-Applications.cmd to start this safe updater.
-# Works from the root of WaseemRaza844/portfolio on Windows.
+# Portfolio application updater; launch via Update-and-Build-Applications.cmd
 [CmdletBinding()]
 param([string]$Application = "")
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot
-$faculty = Join-Path $repo "resume\job-applications\faculty"
-$default = "rowan-university-ece-adjunct-501674"
+$faculty = Join-Path $repo 'resume\job-applications\faculty'
+$default = 'rowan-university-ece-adjunct-501674'
+$started = Get-Date
 
-function Fail([string]$message) { throw $message }
-function Git([string[]]$Arguments) {
-    & git -C $repo @Arguments
-    if ($LASTEXITCODE -ne 0) { Fail "Git failed: git $($Arguments -join ' ')" }
+function Say([string]$Message) {
+    Write-Host ("[{0}] {1}" -f (Get-Date -Format 'HH:mm:ss'), $Message)
 }
+function Git([string[]]$Args) {
+    Say ("git " + ($Args -join ' '))
+    & git -C $repo @Args
+    if ($LASTEXITCODE -ne 0) { throw ("Git command failed: " + ($Args -join ' ')) }
+}
+function FindPython {
+    $python = Get-Command python -ErrorAction SilentlyContinue
+    if ($python) { return $python.Source }
+    throw 'Python was not found on PATH. Install Python 3.12 and reopen the launcher.'
+}
+
 try {
-    if (-not (Test-Path (Join-Path $repo ".git"))) { Fail "This launcher must be placed in the ROOT of the cloned portfolio repository." }
-    if (-not (Get-Command git -ErrorAction SilentlyContinue)) { Fail "Git is not installed or not on PATH." }
+    Write-Host '=========================================================' -ForegroundColor Cyan
+    Write-Host ' PORTFOLIO | UPDATE AND BUILD FACULTY APPLICATIONS' -ForegroundColor Cyan
+    Write-Host '=========================================================' -ForegroundColor Cyan
+    Say ("Repository: " + $repo)
 
-    Write-Host "Portfolio application updater" -ForegroundColor Cyan
-    $dirty = & git -C $repo status --porcelain
-    if ($LASTEXITCODE -ne 0) { Fail "Cannot inspect Git status." }
-    if ($dirty) {
-        Write-Warning "You have local uncommitted changes. This launcher will NOT discard, reset or stash them."
-        $answer = Read-Host "Continue with a safe fast-forward pull? [y/N]"
-        if ($answer -notmatch '^(y|yes)$') { Write-Host "Stopped safely."; exit 0 }
-    }
+    if (-not (Test-Path (Join-Path $repo '.git'))) { throw 'Launcher must be in the root of your cloned portfolio repository.' }
+    if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'Git not found. Install Git for Windows.' }
 
+    Say '1/5 Checking current branch and local edits...'
     $branch = (& git -C $repo branch --show-current).Trim()
-    if ($branch -ne "develop") {
-        if ($dirty) { Fail "Please commit or stash local work before switching from '$branch' to develop." }
-        Git -Arguments @("switch","develop")
+    if ($LASTEXITCODE -ne 0) { throw 'Failed to read the current Git branch.' }
+    Say ("Current branch: " + $branch)
+    $changes = @(& git -C $repo status --porcelain)
+    if ($LASTEXITCODE -ne 0) { throw 'Could not inspect local edits.' }
+    if ($changes.Count -gt 0 -and ($changes -join '').Trim()) {
+        Write-Warning 'Local edits are present. No edits will be reset, deleted or stashed.'
+        $changes | Select-Object -First 8 | ForEach-Object { Write-Host ("  " + $_) }
+    } else {
+        Say 'Local worktree is clean.'
     }
-    Write-Host "Fetching the latest develop branch..." -ForegroundColor Cyan
-    Git -Arguments @("pull","--ff-only","origin","develop")
 
-    if (-not (Get-Command python -ErrorAction SilentlyContinue)) { Fail "Install Python and add it to PATH." }
-    if (-not (Get-Command pdflatex -ErrorAction SilentlyContinue)) { Fail "Install MiKTeX or TeX Live (pdflatex) before building faculty CV PDFs." }
+    if ($branch -ne 'develop') {
+        if ($changes.Count -gt 0 -and ($changes -join '').Trim()) {
+            throw 'Local changes prevent automatic branch switching. Please commit/stash edits, then run again.'
+        }
+        Git -Args @('switch','develop')
+    }
 
+    Say '2/5 Checking GitHub for latest changes...'
+    # Fast-forward ONLY. Never overwrite local edits, reset, or force pull.
+    Git -Args @('fetch','origin','develop')
+    $before = (& git -C $repo rev-parse HEAD).Trim()
+    $remote = (& git -C $repo rev-parse origin/develop).Trim()
+    if ($before -eq $remote) {
+        Say 'Repository is ALREADY UP TO DATE. No pull needed.'
+    } else {
+        Say 'Updates found. Applying safe fast-forward pull...'
+        Git -Args @('merge','--ff-only','origin/develop')
+        Say 'Repository updated successfully.'
+    }
+
+    Say '3/5 Selecting an application...'
     $available = @(Get-ChildItem -Path $faculty -Directory | Where-Object {
-        Test-Path (Join-Path $_.FullName "build_documents.py")
+        Test-Path (Join-Path $_.FullName 'build_documents.py')
     } | Sort-Object Name)
-    if (-not $available) { Fail "No faculty application build scripts were found." }
+    if ($available.Count -eq 0) { throw 'No buildable faculty application folders found.' }
 
     if ([string]::IsNullOrWhiteSpace($Application)) {
-        Write-Host ""
-        Write-Host "Choose an application to build (press Enter for Rowan):"
+        Write-Host ''
+        Say 'Press ENTER to build Rowan, or type a number:'
         for ($i=0; $i -lt $available.Count; $i++) {
-            Write-Host ("[{0}] {1}" -f ($i+1), $available[$i].Name)
+            $tag = if ($available[$i].Name -eq $default) { ' [DEFAULT]' } else { '' }
+            Write-Host ('  [{0}] {1}{2}' -f ($i+1), $available[$i].Name, $tag)
         }
-        $selected = Read-Host "Number or folder name [Rowan default]"
-        if ([string]::IsNullOrWhiteSpace($selected)) {
+        $choice = Read-Host 'Choose application (Enter = Rowan)'
+        if ([string]::IsNullOrWhiteSpace($choice)) {
             $Application = $default
-        } elseif ($selected -match '^\d+$' -and [int]$selected -ge 1 -and [int]$selected -le $available.Count) {
-            $Application = $available[[int]$selected-1].Name
+        } elseif ($choice -match '^\d+$' -and [int]$choice -ge 1 -and [int]$choice -le $available.Count) {
+            $Application = $available[[int]$choice-1].Name
         } else {
-            $Application = $selected.Trim()
+            $Application = $choice.Trim()
         }
     }
-    if ($Application -notmatch '^[a-z0-9-]+$') { Fail "Invalid application name." }
+    if ($Application -notmatch '^[a-z0-9-]+$') { throw 'Invalid application name.' }
     $folder = Join-Path $faculty $Application
-    $script = Join-Path $folder "build_documents.py"
-    if (-not (Test-Path $script)) { Fail "No build_documents.py in '$Application'." }
+    $script = Join-Path $folder 'build_documents.py'
+    if (-not (Test-Path $script)) { throw ("No build script in " + $Application) }
+    Say ("Selected: " + $Application)
 
-    & python -c "import docx, reportlab, pypdf"
+    Say '4/5 Checking build tools...'
+    $python = FindPython
+    Say ("Using Python: " + $python)
+    $check = & $python -c 'import docx, reportlab, pypdf'
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Installing missing PDF/Word dependencies..." -ForegroundColor Yellow
-        & python -m pip install -r (Join-Path $repo "resume\requirements.txt")
-        if ($LASTEXITCODE -ne 0) { Fail "Python dependency installation failed." }
+        Say 'Installing missing Python packages from resume/requirements.txt...'
+        & $python -m pip install -r (Join-Path $repo 'resume\requirements.txt')
+        if ($LASTEXITCODE -ne 0) { throw 'Python dependency installation failed.' }
     }
+    if (-not (Get-Command node -ErrorAction SilentlyContinue)) { throw 'Node.js is required to load shared portfolio data. Install Node.js and try again.' }
+    if (-not (Get-Command pdflatex -ErrorAction SilentlyContinue)) { throw 'pdflatex is required for CV builds. Install MiKTeX or TeX Live.' }
 
-    Write-Host "Building $Application using existing repository templates..." -ForegroundColor Cyan
-    & python $script
-    if ($LASTEXITCODE -ne 0) { Fail "Document build failed. See the error above. Files are NOT confirmed ready." }
-    $ready = Join-Path $folder "submission-ready"
-    if (Test-Path $ready) {
-        Write-Host "Finished: $ready" -ForegroundColor Green
-        Start-Process explorer.exe -ArgumentList ('"' + $ready + '"')
-    } else {
-        Write-Warning "Build completed but no submission-ready folder was found."
-    }
+    Say '5/5 Building documents...'
+    & $python $script
+    if ($LASTEXITCODE -ne 0) { throw 'The application build failed. Review the error above.' }
+
+    $ready = Join-Path $folder 'submission-ready'
+    $outputs = @(Get-ChildItem $ready -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in @('.pdf','.docx') })
+    if ($outputs.Count -eq 0) { throw 'No PDF or Word output was created.' }
+    Write-Host ''
+    Write-Host 'SUCCESS: APPLICATION DOCUMENTS BUILT' -ForegroundColor Green
+    $outputs | ForEach-Object { Write-Host ('  ' + $_.Name) }
+    Say ("Output: " + $ready)
+    Start-Process explorer.exe -ArgumentList ('"' + $ready + '"')
 } catch {
-    Write-Host ""
-    Write-Host ("ERROR: " + $_.Exception.Message) -ForegroundColor Red
+    Write-Host ''
+    Write-Host ('ERROR: ' + $_.Exception.Message) -ForegroundColor Red
+    Write-Host 'Your local changes were NOT intentionally discarded.' -ForegroundColor Yellow
     exit 1
+} finally {
+    Say ('Finished at ' + (Get-Date -Format 'HH:mm:ss'))
 }
