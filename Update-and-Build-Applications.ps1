@@ -10,10 +10,10 @@ $started = Get-Date
 function Say([string]$Message) {
     Write-Host ("[{0}] {1}" -f (Get-Date -Format 'HH:mm:ss'), $Message)
 }
-function Git([string[]]$Args) {
-    Say ("git " + ($Args -join ' '))
-    & git -C $repo @Args
-    if ($LASTEXITCODE -ne 0) { throw ("Git command failed: " + ($Args -join ' ')) }
+function Git([string[]]$GitArguments) {
+    Say ("git " + ($GitArguments -join ' '))
+    & git -C $repo @GitArguments
+    if ($LASTEXITCODE -ne 0) { throw ("Git command failed: " + ($GitArguments -join ' ')) }
 }
 function FindPython {
     $python = Get-Command python -ErrorAction SilentlyContinue
@@ -47,7 +47,7 @@ try {
         if ($changes.Count -gt 0 -and ($changes -join '').Trim()) {
             throw 'Local changes prevent automatic branch switching. Please commit/stash edits, then run again.'
         }
-        Git -Args @('switch','develop')
+        Git -GitArguments @('switch','develop')
     }
 
     Say '2/5 Checking GitHub for latest changes...'
