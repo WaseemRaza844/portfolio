@@ -28,10 +28,10 @@ try {
     $branch = (& git -C $repo branch --show-current).Trim()
     if ($branch -ne "develop") {
         if ($dirty) { Fail "Please commit or stash local work before switching from '$branch' to develop." }
-        Git @("switch","develop")
+        Git -Arguments @("switch","develop")
     }
     Write-Host "Fetching the latest develop branch..." -ForegroundColor Cyan
-    Git @("pull","--ff-only","origin","develop")
+    Git -Arguments @("pull","--ff-only","origin","develop")
 
     if (-not (Get-Command python -ErrorAction SilentlyContinue)) { Fail "Install Python and add it to PATH." }
     if (-not (Get-Command pdflatex -ErrorAction SilentlyContinue)) { Fail "Install MiKTeX or TeX Live (pdflatex) before building faculty CV PDFs." }
