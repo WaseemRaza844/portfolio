@@ -23,7 +23,12 @@ def load(path,name):
 
 def main():
     READY.mkdir(parents=True,exist_ok=True)
-    subprocess.run([sys.executable,str(RESUME/"build.py"),"--variant",VARIANT],check=True)
+    tex=HERE/f"Waseem_Raza_{VARIANT.upper()}.tex"
+    args=[sys.executable,str(RESUME/"build.py"),"--variant",VARIANT]
+    if not tex.is_file():
+        args.append("--refresh-tex")
+        print("First build: generating Rowan LaTeX source from the existing CV profile.", flush=True)
+    subprocess.run(args,check=True)
     src=HERE/f"Waseem_Raza_{VARIANT.upper()}.pdf"
     if not src.exists():
         raise FileNotFoundError(f"Expected CV not found: {src}")
