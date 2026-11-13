@@ -5,7 +5,10 @@ param([string]$Application = "")
 $ErrorActionPreference = "Stop"
 $repo = $PSScriptRoot
 $default = "rowan-university-ece-adjunct-501674"
-$faculty = Join-Path $repo "resume\job-applications\faculty"
+$applicationRoots = @(
+    (Join-Path $repo "resume\job-applications\faculty"),
+    (Join-Path $repo "resume\job-applications\industry")
+)
 
 function Write-Step([string]$Message) {
     Write-Host ("[{0}] {1}" -f (Get-Date -Format 'HH:mm:ss'), $Message)
@@ -97,8 +100,8 @@ try {
         Write-Step "Remote-tracking metadata may not reflect the completed push until the next fetch."
     }
 
-    Write-Step "3/5 Selecting faculty application..."
-    $available = @(Get-ChildItem -Path $faculty -Directory | Where-Object {
+    Write-Step "3/5 Selecting faculty or industry application..."
+    $available = @($applicationRoots | ForEach-Object { Get-ChildItem -Path $_ -Directory -ErrorAction SilentlyContinue } | Where-Object {
         Test-Path (Join-Path $_.FullName "build_documents.py")
     } | Sort-Object Name)
     if ($available.Count -eq 0) { throw "No application build scripts found." }
@@ -118,7 +121,9 @@ try {
         }
     }
     if ($Application -notmatch '^[a-z0-9-]+$') { throw "Invalid application folder name." }
-    $folder = Join-Path $faculty $Application
+    $matching = @($available | Where-Object { $_.Name -eq $Application })
+    if ($matching.Count -ne 1) { throw ("Application folder missing or ambiguous: " + $Application) }
+    $folder = $matching[0].FullName
     $builder = Join-Path $folder "build_documents.py"
     if (-not (Test-Path $builder)) { throw ("No build script for " + $Application) }
     Write-Step ("Selected: " + $Application)
