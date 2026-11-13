@@ -1,0 +1,76 @@
+name: Test Windows portfolio develop updater
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'Update-and-Build-Applications.ps1'
+      - 'Update-and-Build-Applications.cmd'
+      - '.github/workflows/test-application-updater-windows.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-updater-smoke:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse updater and inspect command dispatch
+        run: |
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path 'Update-and-Build-Applications.ps1'),[ref]$tokens,[ref]$errors) | Out-Null
+          if ($errors.Count -ne 0) { throw ("PowerShell syntax errors: " + ($errors | Out-String)) }
+          $script=Get-Content 'Update-and-Build-Applications.ps1' -Raw
+          if ($script -notmatch 'function Invoke-GitCommand' -or $script -match '(?im)^function\s+Git\s*\(') {
+            throw 'Unsafe Git command helper naming detected.'
+          }
+          Write-Host 'PowerShell syntax and Git dispatch checks passed.'
+      - name: Exercise real local develop pull and push in isolated temporary repos
+        run: |
+          $ErrorActionPreference='Stop'
+          $root=Join-Path $env:RUNNER_TEMP 'portfolio-updater-test'
+          New-Item -ItemType Directory -Force -Path $root | Out-Null
+          $origin=Join-Path $root 'origin.git'
+          $seed=Join-Path $root 'seed'
+          $local=Join-Path $root 'local'
+          & git init --bare $origin | Out-Null
+          & git init -b develop $seed | Out-Null
+          & git -C $seed config user.name 'Test'
+          & git -C $seed config user.email 'test@example.invalid'
+          New-Item -ItemType Directory -Force -Path (Join-Path $seed 'resume/job-applications/faculty/test-app/submission-ready') | Out-Null
+          Set-Content (Join-Path $seed 'resume/job-applications/faculty/test-app/build_documents.py') 'print("test")'
+          Set-Content (Join-Path $seed 'README.md') 'seed'
+          Copy-Item 'Update-and-Build-Applications.ps1' (Join-Path $seed 'Update-and-Build-Applications.ps1')
+          & git -C $seed add .
+          & git -C $seed commit -m 'initial develop' | Out-Null
+          & git -C $seed remote add origin $origin
+          & git -C $seed push -u origin develop | Out-Null
+          & git clone --branch develop $origin $local | Out-Null
+          & git -C $local config user.name 'Test'
+          & git -C $local config user.email 'test@example.invalid'
+
+          # Advance remote and confirm the launcher pulls develop without recursion.
+          Set-Content (Join-Path $seed 'remote.txt') 'remote change'
+          & git -C $seed add remote.txt
+          & git -C $seed commit -m 'remote update' | Out-Null
+          & git -C $seed push origin develop | Out-Null
+          & (Join-Path $local 'Update-and-Build-Applications.ps1') -Application 'test-app'
+          if ($LASTEXITCODE -ne 0) { throw 'Launcher exited with an error.' }
+          if (-not (Test-Path (Join-Path $local 'remote.txt'))) { throw 'Develop pull failed.' }
+
+          # Advance local with an already committed change; launcher must push it.
+          Set-Content (Join-Path $local 'local.txt') 'local change'
+          & git -C $local add local.txt
+          & git -C $local commit -m 'local update' | Out-Null
+          & (Join-Path $local 'Update-and-Build-Applications.ps1') -Application 'test-app'
+          if ($LASTEXITCODE -ne 0) { throw 'Second launcher call failed.' }
+          & git -C $seed pull --ff-only origin develop | Out-Null
+          if (-not (Test-Path (Join-Path $seed 'local.txt'))) { throw 'Develop push failed.' }
+          Write-Host 'Updater pulled and pushed the develop branch in an isolated repository.'
