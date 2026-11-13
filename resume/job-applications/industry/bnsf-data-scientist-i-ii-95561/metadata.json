@@ -1,0 +1,19 @@
+{
+  "jobId": "95561",
+  "company": "BNSF Railway",
+  "role": "Data Scientist I/II",
+  "location": "Remote, contiguous US (up to 20% travel to Fort Worth, TX)",
+  "officialPosting": "https://jobs.bnsf.com/us/en/job/95561/Data-Scientist-I-II-Remote-US",
+  "postingStatus": "Filled when checked November 13, 2026",
+  "expectedPages": 3,
+  "minPageTextChars": 2500,
+  "minLastPageChars": 2100,
+  "baseResume": "Waseem_Raza_COMPREHENSIVE.tex",
+  "notes": [
+    "Tailored from the pre-existing three-page comprehensive LaTeX template; preserved chronology and quantified accomplishments.",
+    "Highlights Python, SQL, statistical modeling, PyTorch/scikit-learn, Azure Databricks/Data Factory/Synapse, data validation, and communications of operational model findings.",
+    "AT&T assignment is through contractor Innovatix, not claimed as direct employment.",
+    "No invented rail/logistics experience, advanced geospatial library experience, R or Scala proficiency, 24/7 on-call rotation, production SRE ownership or unrestricted work authorization.",
+    "The official BNSF posting currently says this job is filled; keep package for reuse, not submission to a closed requisition."
+  ]
+}
