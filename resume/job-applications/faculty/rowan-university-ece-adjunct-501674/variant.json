@@ -54,8 +54,11 @@
   ],
   "publicationSectionTitle": "Selected Research Publications",
   "projectSectionTitle": "Selected Project-Based Teaching and Research Platforms",
-  "minPages": 4,
-  "maxPages": 5,
-  "minPageTextChars": 550,
-  "minLastPageChars": 500
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 500,
+  "minLastPageChars": 500,
+  "latexFontSize": 8.7,
+  "verticalMarginInches": 0.38,
+  "horizontalMarginInches": 0.65
 }
