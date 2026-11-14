@@ -1,0 +1,70 @@
+name: Build Norwich ECE faculty application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092/**'
+      - '.github/workflows/build-norwich-ece-f00092.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: norwich-ece-f00092-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build Norwich documents
+        run: python resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092/build_documents.py
+      - name: Verify package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          d=Path('resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092')
+          p='WRaza_NU_ECEF00092'
+          r=d/'submission-ready'
+          cv=PdfReader(str(r/f'{p}_CV.pdf'))
+          cl=PdfReader(str(r/f'{p}_Cover_Letter.pdf'))
+          assert 3<=len(cv.pages)<=4
+          assert len(cl.pages)==1
+          assert all(len((x.extract_text() or '').strip())>300 for x in cv.pages)
+          assert 'Norwich' in (cl.pages[0].extract_text() or '')
+          assert len(Document(r/f'{p}_Cover_Letter.docx').paragraphs)>5
+          assert (d/f'{p}_References_PRIVATE_TEMPLATE.docx').is_file()
+          print('VALIDATED Norwich: CV',len(cv.pages),'pages; cover letter 1 page; private reference template.')
+          PY
+      - name: Publish validated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092/submission-ready/WRaza_NU_ECEF00092_*
+          git add -f resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092/WRaza_NU_ECEF00092_References_PRIVATE_TEMPLATE.docx
+          git add -f resume/job-applications/faculty/norwich-university-ece-assistant-professor-f00092/Waseem_Raza_FACULTY_NORWICH_UNIVERSITY_ECE_ASSISTANT_PROFESSOR_F00092.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Norwich ECE application package"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
