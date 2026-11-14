@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_PURDUE_ECE31383_Cover_Letter.docx",
+      "title": "Purdue Indianapolis ECE Lecturer — Cover Letter"
+    },
+    {
+      "source": "Teaching_Statement.md",
+      "output": "WRaza_PURDUE_ECE31383_Teaching_Statement.docx",
+      "title": "Purdue Indianapolis ECE Lecturer — Teaching Statement"
+    }
+  ]
+}
