@@ -1,17 +1,16 @@
 {
   "variants": [
     {
-      "file": "Waseem_Raza_FACULTY_SETON_HALL_DATA_SCIENCE_ASSISTANT_PROFESSOR_497507.pdf",
-      "pages": 4,
-      "minPages": 4,
-      "minPageTextChars": 600,
+      "file": "Waseem_Raza_FACULTY_NORWICH_UNIVERSITY_ECE_ASSISTANT_PROFESSOR_F00092.pdf",
+      "pages": 3,
+      "minPages": 3,
+      "minPageTextChars": 500,
       "minLastPageChars": 500,
-      "maxPages": 5,
+      "maxPages": 4,
       "pageTextChars": [
-        4586,
-        3816,
-        4166,
-        921
+        5235,
+        5125,
+        2543
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -27,18 +26,18 @@
           "att-labs-2022"
         ],
         "projects": [
-          "wearable-intelligence",
-          "propagation-digital-twins",
           "syntheticnet",
+          "propagation-digital-twins",
           "turboran",
+          "wearable-intelligence",
           "ai-telecom-optimization"
         ],
         "certifications": [
           "coursera-machine-learning",
           "coursera-python-for-data-science-ai-development",
           "coursera-introduction-to-deep-learning-neural-networks-with-keras",
-          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
-          "coursera-introduction-to-computer-vision-with-tensorflow"
+          "coursera-4g-network-fundamentals",
+          "coursera-ai-foundations-industry-overview-for-telecommunication"
         ],
         "publications": [
           "medication-adherence-2026",
@@ -46,12 +45,10 @@
           "multiparameter-reliability-2025",
           "resilient-propagation-2024",
           "domain-informed-gans-vtc-2024",
-          "outage-management-2024",
-          "mdt-zero-touch-2024",
-          "positioning-compensation-globecom-2023"
+          "mdt-zero-touch-2024"
         ]
       },
-      "relativePath": "job-applications\\faculty\\seton-hall-data-science-assistant-professor-497507\\Waseem_Raza_FACULTY_SETON_HALL_DATA_SCIENCE_ASSISTANT_PROFESSOR_497507.pdf"
+      "relativePath": "job-applications\\faculty\\norwich-university-ece-assistant-professor-f00092\\Waseem_Raza_FACULTY_NORWICH_UNIVERSITY_ECE_ASSISTANT_PROFESSOR_F00092.pdf"
     }
   ],
   "reviewNotes": [
