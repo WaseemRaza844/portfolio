@@ -1,0 +1,65 @@
+{
+  "baseVariant": "faculty_ece_ai_wireless",
+  "label": "Norwich University | Tenure-track Assistant Professor of Electrical and Computer Engineering | F00092",
+  "headline": "Electrical & Computer Engineering Educator-Scholar | AI and Resilient Networked Systems",
+  "tagline": "Undergraduate ECE Education | Intelligent Sensing | Reliable AI | Applied Research",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025), focused on AI/ML for resilient wireless networks. University-level teaching in Computer Programming, Communication Systems and Wireless Communication, with laboratory support, assessment and student research mentoring. Current Machine Learning Engineer supporting AT&T, with research and applied engineering in network reliability, data-efficient learning, sensor analytics and reproducible computational experiments. Interested in hands-on undergraduate instruction, senior design, interdisciplinary research, curriculum assessment and secure, resilient intelligent technologies.",
+  "researchInterests": [
+    "Reliable AI/ML and Data-Efficient Learning",
+    "Networked and Cyber-Physical Systems: Reliability and Resilience",
+    "Intelligent Sensing and Time-Series Analytics",
+    "Wireless Communications and Network Optimization",
+    "Undergraduate Applied Research and Reproducible Engineering"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previous university instruction)",
+    "Communication Systems and Wireless Communication (previous university instruction)",
+    "Signals and Systems; Digital Signal Processing",
+    "Applied AI/ML and Data Science for ECE",
+    "Computer Networking and Intelligent Networked Systems",
+    "Engineering Computation and Project-Based Laboratories",
+    "Introductory Digital Systems and Control Systems (course-specific refresher and laboratory preparation)",
+    "Senior Design and Undergraduate Research"
+  ],
+  "skillsSectionTitle": "Teaching, Intelligent Systems & Engineering Tools",
+  "skills": {
+    "Teaching and Mentoring": "Undergraduate programming and communications instruction, laboratory support, course materials, assessment, student projects, research mentoring, technical communication",
+    "AI/ML and Intelligent Sensing": "Python, PyTorch, TensorFlow/Keras, scikit-learn, time-series analysis, classification, deep learning, transfer learning, anomaly detection, robust evaluation",
+    "Networked Systems and Resilience": "Wireless communications, LTE/5G, network analytics, propagation modeling, outage detection, optimization, simulation, reliability and performance evaluation",
+    "Computing and Experimental Tools": "Python, C/C++, MATLAB, SQL, Git/GitHub, Linux, Jupyter, Azure Databricks, Synapse, Data Factory and CI/CD",
+    "Additional ECE Foundations": "Digital systems, classical controls and RF/microwave coursework; specialized hardware, microcontroller and security laboratory assignments require course-specific preparation"
+  },
+  "dissertationFocus": "AI/ML methods for resilient wireless communications, including cellular-network simulation, propagation modeling, optimization, outage management and reliable adaptation to changing network conditions.",
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "mdt-zero-touch-2024",
+    "medication-adherence-2026"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "propagation-digital-twins",
+    "turboran",
+    "wearable-intelligence",
+    "ai-telecom-optimization"
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate student projects in simulation, ML implementation, experimental evaluation, technical reporting and presentations.",
+    "Supported laboratory learning and student projects through computational exercises, reproducible comparisons and feedback."
+  ],
+  "academicServiceBullets": [
+    "Contributed to undergraduate instructional materials, assessments, laboratory support and student-project guidance.",
+    "Interested in supporting program assessment, curriculum improvement, advising and undergraduate career readiness."
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Project-Based Teaching and Research Platforms",
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 500,
+  "minLastPageChars": 500,
+  "latexFontSize": 8.7,
+  "verticalMarginInches": 0.38,
+  "horizontalMarginInches": 0.65
+}
