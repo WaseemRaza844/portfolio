@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_NU_ECEF00092_Cover_Letter.docx",
+      "title": "Norwich University ECE — Cover Letter"
+    },
+    {
+      "source": "References_PRIVATE_TEMPLATE.md",
+      "output": "WRaza_NU_ECEF00092_References_PRIVATE_TEMPLATE.docx",
+      "title": "Norwich ECE — Private Reference List Template"
+    }
+  ]
+}
