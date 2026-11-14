@@ -1,0 +1,29 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_SHU_DS497507_Cover_Letter.docx",
+      "title": "Seton Hall Data Science Assistant Professor — Cover Letter"
+    },
+    {
+      "source": "Teaching_Statement.md",
+      "output": "WRaza_SHU_DS497507_Teaching_Statement.docx",
+      "title": "Seton Hall Data Science Assistant Professor — Teaching Statement"
+    },
+    {
+      "source": "Research_Statement.md",
+      "output": "WRaza_SHU_DS497507_Research_Statement.docx",
+      "title": "Seton Hall Data Science Assistant Professor — Research Statement"
+    },
+    {
+      "source": "Diversity_Statement.md",
+      "output": "WRaza_SHU_DS497507_Diversity_Statement.docx",
+      "title": "Seton Hall Data Science Assistant Professor — Diversity Statement"
+    },
+    {
+      "source": "Reference_Letter_Waiver_UNSIGNED.md",
+      "output": "WRaza_SHU_DS497507_Reference_Waiver_UNSIGNED.docx",
+      "title": "Seton Hall Reference Letter Waiver — Unsigned"
+    }
+  ]
+}
