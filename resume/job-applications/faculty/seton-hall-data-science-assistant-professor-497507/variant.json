@@ -1,0 +1,76 @@
+{
+  "baseVariant": "faculty_cs_ai_ml",
+  "label": "Seton Hall University | Tenure-track Assistant Professor in Data Science | Job 497507",
+  "headline": "Data Science & Machine Learning Scholar | Computer Science Educator",
+  "tagline": "Reliable ML | Data-Efficient Learning | Time-Series Analytics | Applied Research & Student Mentoring",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025), specializing in AI/ML for reliable wireless systems, with peer-reviewed research in robust learning, transfer/generative modeling, network analytics and wearable-sensor recognition. Previously taught undergraduate Computer Programming, Communication Systems and Wireless Communication; supported laboratory instruction and undergraduate/graduate research mentoring. Current industry ML engineer supporting AT&T service-assurance diagnostics, with earlier applied data science and cloud engineering work. Research and teaching interests span data science, machine learning, statistical computing, Python, software fundamentals, data engineering and trustworthy AI.",
+  "researchInterests": [
+    "Trustworthy and Data-Efficient Machine Learning",
+    "Statistical Learning, Domain Shift and Model Reliability",
+    "Time-Series Data Science and Wearable Sensing",
+    "Anomaly Detection and Intelligent Network Analytics",
+    "Reproducible Data Science and Student-Centered Applied Research"
+  ],
+  "dissertationFocus": "AI/ML for reliable wireless networks: transfer and generative propagation modeling, anomaly and outage detection, data-efficient learning, self-healing network optimization, and cross-domain robustness evaluation.",
+  "teachingAreas": [
+    "Computer Programming and Computational Problem Solving (previous instructor experience)",
+    "Introduction to Data Science and Python Data Analytics",
+    "Applied Machine Learning, Neural Networks and AI",
+    "Data Mining, Classification, Clustering and Statistical Modeling",
+    "Data Engineering and Cloud Analytics",
+    "Computer Networks and Communication Systems",
+    "Algorithms and Data Structures (with course-specific preparation)",
+    "Capstone, Independent Research and Graduate Data Science Topics"
+  ],
+  "skillsSectionTitle": "Data Science, Computing and Research Tools",
+  "skills": {
+    "Machine Learning & Data Science": "Python, NumPy, pandas, scikit-learn, PyTorch, TensorFlow, LightGBM, statistical inference, classification, regression, clustering, time series, transfer learning, domain adaptation, anomaly detection and reproducible evaluation",
+    "Programming & Computer Science": "Python, C/C++, SQL, programming instruction, Git/GitHub, Linux, data structures and algorithms foundations, testing, data visualization and computational problem-solving",
+    "Cloud & Data Engineering": "Azure Databricks, Apache Spark/PySpark, Azure Data Factory, Azure Synapse, Azure Functions, ETL/ELT, data quality, Azure DevOps CI/CD and cloud analytical pipelines",
+    "Research & Mentorship": "Experimental design, simulations, published scholarship, technical writing, student-project supervision, cross-validation, open/synthetic datasets, research ethics and interdisciplinary collaboration",
+    "Domain Applications": "Wireless and network data, service assurance, generative data modeling, sensor signals, healthcare time series and engineering reliability"
+  },
+  "projectIds": [
+    "wearable-intelligence",
+    "propagation-digital-twins",
+    "syntheticnet",
+    "turboran",
+    "ai-telecom-optimization"
+  ],
+  "publicationIds": [
+    "medication-adherence-2026",
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "outage-management-2024",
+    "mdt-zero-touch-2024",
+    "positioning-compensation-globecom-2023"
+  ],
+  "certificationIds": [
+    "coursera-machine-learning",
+    "coursera-python-for-data-science-ai-development",
+    "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+    "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+    "coursera-introduction-to-computer-vision-with-tensorflow"
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate projects involving machine-learning implementation, simulation, experimental design, statistical comparisons and technical presentations.",
+    "Helped students establish reproducible baselines, scope realistic research questions and report model limitations alongside quantitative results.",
+    "Supported hands-on learning with computational exercises, debugging, structured feedback and technical writing guidance."
+  ],
+  "academicServiceBullets": [
+    "Contributed to undergraduate teaching, assessment and instructional/laboratory materials.",
+    "Supported collaborative research, student mentoring, technical seminars and peer-reviewed research dissemination."
+  ],
+  "publicationSectionTitle": "Selected Peer-Reviewed Publications",
+  "projectSectionTitle": "Selected Data Science and Intelligent Systems Projects",
+  "latexFontSize": 9,
+  "horizontalMarginInches": 0.68,
+  "verticalMarginInches": 0.42,
+  "minPages": 4,
+  "maxPages": 5,
+  "minPageTextChars": 600,
+  "minLastPageChars": 500,
+  "headerDegree": "Electrical and Computer Engineering"
+}
