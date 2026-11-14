@@ -1,0 +1,66 @@
+{
+  "baseVariant": "faculty_ece_ai_wireless",
+  "label": "Purdue University Indianapolis | Lecturer, Electrical and Computer Engineering | Req 31383",
+  "headline": "Electrical & Computer Engineering Lecturer | Undergraduate Instruction & Applied AI",
+  "tagline": "Engineering Programming | Communications | Signals and Systems | Laboratory Instruction",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, 2025) with university-level teaching in Computer Programming, Communication Systems and Wireless Communication; communications laboratory support, assessment and student research mentoring. Current ML engineer supporting AT&T service assurance, with doctoral and industry research in trustworthy AI, wireless networks and data-driven engineering. Interested in undergraduate lecture and laboratory courses, curriculum development, coordinated assessment, teaching-assistant mentoring and responsible use of AI tools in engineering education.",
+  "researchInterests": [
+    "Wireless and Digital Communication Systems",
+    "Digital Signal and Image Processing",
+    "Machine Learning and Neural Networks for ECE",
+    "Network Optimization, Reliability and Resilience",
+    "Applied Simulation, Engineering Clinics and Student Projects"
+  ],
+  "teachingAreas": [
+    "Computer Programming (previous university teaching)",
+    "Communication Systems and Wireless Communication (previous university teaching)",
+    "Signals and Systems; Digital Signal Processing (technical preparation)",
+    "Engineering Computation, Python and MATLAB",
+    "Applied Machine Learning, AI and Data Science for ECE",
+    "Computer Networks and Networked Systems",
+    "Digital Image Processing (technical preparation)",
+    "Introductory Digital Systems and Control Systems (course-specific refresher and lab preparation)",
+    "Undergraduate Laboratories and Capstone Project Mentoring"
+  ],
+  "skillsSectionTitle": "Teaching, Engineering & Instructional Technology",
+  "skills": {
+    "Teaching and Course Development": "Undergraduate programming and communications instruction, laboratory support, course materials, assessments, grading, student feedback, project and research mentoring",
+    "Engineering Computation & Signals": "Python, C/C++, MATLAB, NumPy, signal analysis, Fourier-domain methods, communications simulation, wireless systems and performance measurement",
+    "Applied AI and Instructional Tools": "PyTorch, TensorFlow/Keras, scikit-learn, neural networks, generative AI, RAG and agentic AI workflows; opportunities for responsible AI-assisted coding and verification in instruction",
+    "Software & Data Systems": "SQL, Git/GitHub, Linux, Jupyter, Azure Databricks, Synapse, Data Factory and CI/CD",
+    "Academic and Project Coordination": "Microsoft Word, Excel, PowerPoint and Teams; technical communication, project planning, milestone reviews, documentation and collaborative research"
+  },
+  "dissertationFocus": "AI/ML methods for resilient wireless communications, including cellular-network simulation, propagation modeling, optimization, outage management and reliable adaptation to changing network conditions.",
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "domain-informed-gans-vtc-2024",
+    "mdt-zero-touch-2024",
+    "medication-adherence-2026"
+  ],
+  "projectIds": [
+    "syntheticnet",
+    "propagation-digital-twins",
+    "turboran",
+    "wearable-intelligence",
+    "ai-telecom-optimization"
+  ],
+  "mentoringBullets": [
+    "Mentored undergraduate and graduate student projects in programming, engineering simulations, machine learning, experimental evaluation and technical writing.",
+    "Supported laboratory exercises and student feedback; prepared to coordinate TAs through shared rubrics, calibration meetings and laboratory preparation."
+  ],
+  "academicServiceBullets": [
+    "Contributed to course materials, assessments, laboratory support and undergraduate engineering education.",
+    "Collaborated on research and technical projects using documented milestones, reproducible workflows and clear communication."
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Project-Based Teaching and Research Platforms",
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 550,
+  "minLastPageChars": 500,
+  "latexFontSize": 8.7,
+  "verticalMarginInches": 0.38,
+  "horizontalMarginInches": 0.65
+}
