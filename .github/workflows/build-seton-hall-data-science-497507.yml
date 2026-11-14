@@ -1,0 +1,91 @@
+name: Build Seton Hall Data Science TT faculty application
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/seton-hall-data-science-assistant-professor-497507/**'
+      - 'resume/build.py'
+      - 'resume/latex_renderer.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/resume-profiles/faculty/cs_ai_ml.json'
+      - 'resume/content.json'
+      - 'dist/data/**'
+      - '.github/workflows/build-seton-hall-data-science-497507.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seton-hall-ds-497507-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install document and LaTeX requirements
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Generate Seton Hall CV and all supplemental documents
+        run: python resume/job-applications/faculty/seton-hall-data-science-assistant-professor-497507/build_documents.py
+      - name: Validate submission-ready file set, layouts, and unsigned waiver
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          d=Path('resume/job-applications/faculty/seton-hall-data-science-assistant-professor-497507/submission-ready')
+          p='WRaza_SHU_DS497507'
+          required_pdf={
+              'CV':(4,5),'Cover_Letter':(1,2),
+              'Teaching_Statement':(1,3),'Research_Statement':(1,3),
+              'Diversity_Statement':(1,3),'Reference_Waiver_UNSIGNED':(1,1)}
+          for suffix,(lo,hi) in required_pdf.items():
+              path=d/f'{p}_{suffix}.pdf'
+              assert path.is_file(),f'Missing {path}'
+              pages=PdfReader(str(path)).pages
+              assert lo<=len(pages)<=hi,f'{suffix} pages={len(pages)}'
+              text=' '.join(x.extract_text() or '' for x in pages)
+              assert 'Waseem Raza' in text,f'{suffix}: missing applicant'
+              assert len(text)>400,f'{suffix}: insufficient content'
+              print(suffix,len(pages),'page(s)')
+          for suffix in ('Cover_Letter','Teaching_Statement','Research_Statement','Diversity_Statement','Reference_Waiver_UNSIGNED'):
+              path=d/f'{p}_{suffix}.docx'
+              assert path.is_file(),f'Missing Word file: {suffix}'
+              doc=Document(path)
+              assert len(doc.paragraphs)>4,f'Invalid Word file: {suffix}'
+          waiver=(d/f'{p}_Reference_Waiver_UNSIGNED.pdf')
+          body=' '.join(x.extract_text() or '' for x in PdfReader(str(waiver)).pages)
+          assert 'Unsigned draft' in body
+          assert 'Applicant signature' in body
+          assert not (d/'references.pdf').exists()
+          print('Seton Hall academic application: 11 documents, validated.')
+          PY
+      - name: Publish Seton Hall submission-ready outputs to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f resume/job-applications/faculty/seton-hall-data-science-assistant-professor-497507/submission-ready/WRaza_SHU_DS497507_*
+          git add -f resume/job-applications/faculty/seton-hall-data-science-assistant-professor-497507/Waseem_Raza_FACULTY_SETON_HALL_DATA_SCIENCE_ASSISTANT_PROFESSOR_497507.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Seton Hall Data Science faculty application files"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          else
+            echo "Seton Hall document outputs already up to date."
+          fi
