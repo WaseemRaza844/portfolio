@@ -1,16 +1,17 @@
 {
   "variants": [
     {
-      "file": "Waseem_Raza_FACULTY_WILLIAM_PATERSON_CS_ADJUNCT_1084.pdf",
-      "pages": 3,
-      "minPages": 3,
-      "minPageTextChars": 500,
+      "file": "Waseem_Raza_FACULTY_SETON_HALL_DATA_SCIENCE_ASSISTANT_PROFESSOR_497507.pdf",
+      "pages": 4,
+      "minPages": 4,
+      "minPageTextChars": 600,
       "minLastPageChars": 500,
       "maxPages": 5,
       "pageTextChars": [
-        4279,
-        3929,
-        3413
+        4586,
+        3816,
+        4166,
+        921
       ],
       "renderer": "latex",
       "selectedIds": {
@@ -26,24 +27,31 @@
           "att-labs-2022"
         ],
         "projects": [
+          "wearable-intelligence",
+          "propagation-digital-twins",
           "syntheticnet",
           "turboran",
-          "propagation-digital-twins",
           "ai-telecom-optimization"
         ],
         "certifications": [
+          "coursera-machine-learning",
           "coursera-python-for-data-science-ai-development",
-          "coursera-machine-learning"
+          "coursera-introduction-to-deep-learning-neural-networks-with-keras",
+          "coursera-generative-ai-engineering-and-fine-tuning-transformers",
+          "coursera-introduction-to-computer-vision-with-tensorflow"
         ],
         "publications": [
+          "medication-adherence-2026",
           "ai-powered-resilience-2025",
           "multiparameter-reliability-2025",
           "resilient-propagation-2024",
+          "domain-informed-gans-vtc-2024",
+          "outage-management-2024",
           "mdt-zero-touch-2024",
-          "domain-informed-gans-vtc-2024"
+          "positioning-compensation-globecom-2023"
         ]
       },
-      "relativePath": "job-applications\\faculty\\william-paterson-cs-adjunct-1084\\Waseem_Raza_FACULTY_WILLIAM_PATERSON_CS_ADJUNCT_1084.pdf"
+      "relativePath": "job-applications\\faculty\\seton-hall-data-science-assistant-professor-497507\\Waseem_Raza_FACULTY_SETON_HALL_DATA_SCIENCE_ASSISTANT_PROFESSOR_497507.pdf"
     }
   ],
   "reviewNotes": [
