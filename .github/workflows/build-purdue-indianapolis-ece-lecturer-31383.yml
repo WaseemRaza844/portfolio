@@ -1,0 +1,84 @@
+name: Build Purdue Indianapolis ECE lecturer submission package
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/purdue-indianapolis-ece-lecturer-31383/**'
+      - 'resume/build.py'
+      - 'resume/latex_renderer.py'
+      - 'resume/build_application_documents.py'
+      - 'resume/resume-profiles/faculty/ece_ai_wireless.json'
+      - 'resume/content.json'
+      - 'dist/data/**'
+      - '.github/workflows/build-purdue-indianapolis-ece-lecturer-31383.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: purdue-ece-lecturer-31383-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install application and LaTeX dependencies
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build Purdue tailored CV, cover letter and teaching statement
+        run: python resume/job-applications/faculty/purdue-indianapolis-ece-lecturer-31383/build_documents.py
+      - name: Verify complete submission package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          d=Path('resume/job-applications/faculty/purdue-indianapolis-ece-lecturer-31383/submission-ready')
+          prefix='WRaza_PURDUE_ECE31383'
+          required=[
+            prefix+'_CV.pdf',
+            prefix+'_Cover_Letter.pdf',
+            prefix+'_Cover_Letter.docx',
+            prefix+'_Teaching_Statement.pdf',
+            prefix+'_Teaching_Statement.docx',
+          ]
+          assert all((d/name).is_file() for name in required), 'One or more submission documents missing'
+          cv=PdfReader(str(d/(prefix+'_CV.pdf')))
+          letter=PdfReader(str(d/(prefix+'_Cover_Letter.pdf')))
+          teaching=PdfReader(str(d/(prefix+'_Teaching_Statement.pdf')))
+          assert 3<=len(cv.pages)<=5, 'CV page count mismatch'
+          assert len(letter.pages)==1, 'Cover letter must remain one page'
+          assert 1<=len(teaching.pages)<=3, 'Teaching statement page count mismatch'
+          assert all(len((p.extract_text() or '').strip())>300 for p in cv.pages), 'Sparse CV page'
+          assert len(Document(d/(prefix+'_Cover_Letter.docx')).paragraphs)>5
+          print('VALIDATED Purdue: CV',len(cv.pages),'pages; letter',len(letter.pages),'page; teaching',len(teaching.pages),'pages.')
+          PY
+      - name: Publish submission-ready files to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f resume/job-applications/faculty/purdue-indianapolis-ece-lecturer-31383/submission-ready/WRaza_PURDUE_ECE31383_*
+          git add -f resume/job-applications/faculty/purdue-indianapolis-ece-lecturer-31383/Waseem_Raza_FACULTY_PURDUE_INDIANAPOLIS_ECE_LECTURER_31383.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Purdue Indianapolis ECE lecturer submission-ready documents"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          else
+            echo "Purdue package already up to date; nothing new to commit."
+          fi
