@@ -1,0 +1,19 @@
+{
+  "company": "InterDigital",
+  "role": "Wireless and RAN Research Engineer / Scientist",
+  "jobId": "REQ26-1099 / REQ26-1145",
+  "expectedPages": 3,
+  "minPageTextChars": 2500,
+  "minLastPageChars": 2300,
+  "maxBottomWhitespaceInches": 1.55,
+  "baseResume": "interdigital-6g-ai-testbeds-req26-1144/Waseem_Raza_INTERDIGITAL_6G_AI_TESTBEDS.tex",
+  "locations": [
+    "Conshohocken, PA",
+    "Melville, NY"
+  ],
+  "notes": [
+    "One shared resume, two individually tailored cover letters.",
+    "5G core and PHY/MAC knowledge distinguished from deployment experience.",
+    "No unsupported claims of patents, standards contributions, SDRs, OAI, Sionna, Open5GS or advanced transport protocols."
+  ]
+}
