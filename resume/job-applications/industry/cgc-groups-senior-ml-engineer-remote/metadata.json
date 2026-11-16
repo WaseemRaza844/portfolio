@@ -1,0 +1,15 @@
+{
+  "company": "CGC Groups",
+  "role": "Senior Machine Learning Engineer (Remote)",
+  "jobId": "CGC-SENIOR-ML-REMOTE",
+  "expectedPages": 3,
+  "minPageTextChars": 2300,
+  "minLastPageChars": 2000,
+  "maxBottomWhitespaceInches": 1.6,
+  "baseResume": "Waseem_Raza_AIML.tex",
+  "notes": [
+    "Retain established AI/ML layout and six appointments.",
+    "Forecasting and financial predictive modeling are portfolio projects, not travel pricing experience.",
+    "Azure cloud, SQL, Python, CI/CD and ML validation emphasized; no Snowflake, Snowpark, causal inference, production monitoring ownership or travel-industry claims."
+  ]
+}
