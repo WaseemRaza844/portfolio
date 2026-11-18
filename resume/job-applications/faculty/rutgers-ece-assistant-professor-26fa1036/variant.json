@@ -1,0 +1,67 @@
+{
+  "baseVariant": "faculty_ece_ai_wireless",
+  "label": "Rutgers University–New Brunswick | Tenure-Track Assistant Professor ECE | Posting 26FA1036",
+  "headline": "ECE Faculty Candidate | Trustworthy AI for Wireless Networks and Intelligent Sensing",
+  "tagline": "Next-Generation Networking | Resilient AI/ML | Wireless Digital Twins | Healthcare Sensing",
+  "summary": "PhD in Electrical and Computer Engineering (University of Oklahoma, July 2025), with research on data-efficient and trustworthy AI for resilient wireless networks. Peer-reviewed work in cellular reliability, propagation digital twins and learning-based network optimization, complemented by smartwatch sensing and sequential activity recognition. University-level instructor of Computer Programming, Communication Systems and Wireless Communication; experience in laboratory support, student mentoring and industry research at AT&T Labs and Futurewei. Proposes an independent research program connecting AI for next-generation networks and healthcare technology through robust, measurable intelligent systems.",
+  "researchInterests": [
+    "AI for Next-Generation Wireless Networks and 5G/6G RAN Reliability",
+    "Data-Efficient and Trustworthy Machine Learning",
+    "Propagation Digital Twins, Domain Adaptation and Generative Models",
+    "Intelligent Wearable Sensing and Healthcare Technology",
+    "Reproducible Systems Research and Undergraduate/Graduate Mentorship"
+  ],
+  "teachingAreas": [
+    "Communication Systems and Wireless Communication (previously taught)",
+    "Computer Programming (previously taught)",
+    "Signals and Systems; Digital Signal Processing",
+    "Computer Networks and Wireless Systems",
+    "AI/ML for ECE and Data-Driven Network Intelligence",
+    "Statistical Signal Processing and Intelligent Sensing",
+    "Graduate Topics in Trustworthy AI and 5G/6G Systems",
+    "Capstone Design, Undergraduate Research and Graduate Mentoring"
+  ],
+  "skillsSectionTitle": "Wireless AI Research, Computing and Teaching Tools",
+  "skills": {
+    "Wireless & Networked Systems": "LTE, 5G NR, NR-NTN, RAN, propagation, mobility, cellular-network reliability, outage management, optimization, 3GPP-aligned simulation, wireless measurements and digital twins",
+    "AI/ML & Sensing": "PyTorch, TensorFlow, scikit-learn, LightGBM, transfer learning, GANs, domain adaptation, reinforcement learning, anomaly detection, time-series sensing, CNN/LSTM, experimental design and quantitative evaluation",
+    "Programming & Platforms": "Python, C/C++, MATLAB, SQL, Linux, Git/GitHub, Jupyter, Azure Databricks, Azure Data Factory, Synapse and Azure DevOps CI/CD",
+    "Scholarly Practice": "Peer-reviewed publications, controlled wireless experiments, replication, reproducible code, research mentoring, cross-disciplinary collaboration and technical communication",
+    "Teaching & Laboratories": "Undergraduate computer programming and communications, communication laboratories, assessment, computational learning exercises, senior-design and research-project mentoring"
+  },
+  "dissertationFocus": "AI/ML for reliable and resilient wireless networks, including transfer/generative propagation modeling, network outage management, learning-based optimization and resilience under distribution shifts.",
+  "publicationIds": [
+    "ai-powered-resilience-2025",
+    "multiparameter-reliability-2025",
+    "resilient-propagation-2024",
+    "mdt-zero-touch-2024",
+    "domain-informed-gans-vtc-2024",
+    "medication-adherence-2026",
+    "outage-management-2024",
+    "positioning-compensation-globecom-2023"
+  ],
+  "projectIds": [
+    "propagation-digital-twins",
+    "syntheticnet",
+    "turboran",
+    "wearable-intelligence",
+    "ai-telecom-optimization"
+  ],
+  "mentoringBullets": [
+    "Mentored student research projects involving Python simulation, ML evaluation, engineering experiments, results interpretation, technical writing and presentations.",
+    "Supported communication laboratory work and course-related computational exercises with reproducibility and quantitative validation."
+  ],
+  "academicServiceBullets": [
+    "Prepared undergraduate course materials, instructional assessments and laboratory support in programming and communications.",
+    "Contributed to interdisciplinary engineering research and scholarly dissemination; interested in curriculum and professional service."
+  ],
+  "publicationSectionTitle": "Selected Research Publications",
+  "projectSectionTitle": "Selected Project-Based Teaching and Research Platforms",
+  "minPages": 3,
+  "maxPages": 4,
+  "minPageTextChars": 600,
+  "minLastPageChars": 500,
+  "latexFontSize": 8.8,
+  "verticalMarginInches": 0.41,
+  "horizontalMarginInches": 0.66
+}
