@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "source": "Cover_Letter.md",
+      "output": "WRaza_RU_ECE26FA1036_Cover_Letter.docx",
+      "title": "Rutgers ECE Assistant Professor Cover Letter"
+    },
+    {
+      "source": "Research_Statement.md",
+      "output": "WRaza_RU_ECE26FA1036_Research_Statement.docx",
+      "title": "Rutgers ECE Research Statement"
+    },
+    {
+      "source": "Teaching_Statement.md",
+      "output": "WRaza_RU_ECE26FA1036_Teaching_Statement.docx",
+      "title": "Rutgers ECE Teaching Statement"
+    }
+  ]
+}
