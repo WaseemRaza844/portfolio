@@ -1,0 +1,71 @@
+name: Build Rutgers ECE Assistant Professor 26FA1036
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/job-applications/faculty/rutgers-ece-assistant-professor-26fa1036/**'
+      - '.github/workflows/build-rutgers-ece-26fa1036.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rutgers-ece-26fa1036-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install requirements and LaTeX
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Build Rutgers faculty application
+        run: python resume/job-applications/faculty/rutgers-ece-assistant-professor-26fa1036/build_documents.py
+      - name: Verify required materials
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          from docx import Document
+          d=Path('resume/job-applications/faculty/rutgers-ece-assistant-professor-26fa1036/submission-ready')
+          prefix='WRaza_RU_ECE26FA1036'
+          expected=[prefix+'_CV.pdf']
+          for suff in ('Cover_Letter','Research_Statement','Teaching_Statement'):
+              expected += [prefix+'_'+suff+'.pdf', prefix+'_'+suff+'.docx']
+          assert all((d/name).is_file() for name in expected), 'Missing application document'
+          cv=PdfReader(str(d/(prefix+'_CV.pdf')))
+          assert 3<=len(cv.pages)<=4
+          assert all(len((p.extract_text() or '').strip())>500 for p in cv.pages)
+          for suff in ('Cover_Letter','Research_Statement','Teaching_Statement'):
+              pdf=PdfReader(str(d/(prefix+'_'+suff+'.pdf')))
+              assert 1<=len(pdf.pages)<=3
+              assert len(Document(d/(prefix+'_'+suff+'.docx')).paragraphs)>5
+          print('RUTGERS READY:',len(cv.pages),'CV pages; cover, teaching, research in Word and PDF')
+          PY
+      - name: Publish generated documents to develop
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f resume/job-applications/faculty/rutgers-ece-assistant-professor-26fa1036/submission-ready/WRaza_RU_ECE26FA1036_*
+          git add -f resume/job-applications/faculty/rutgers-ece-assistant-professor-26fa1036/Waseem_Raza_FACULTY_RUTGERS_ECE_ASSISTANT_PROFESSOR_26FA1036.tex
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Rutgers ECE Assistant Professor submission-ready application"
+            git reset --hard HEAD
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
