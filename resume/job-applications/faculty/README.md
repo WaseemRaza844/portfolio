@@ -8,3 +8,9 @@ Current applications:
 - [The Ohio State University — Optimization for Machine Learning](ohio-state-optimization-ml-r160519/README.md): standalone LaTeX application resume, compiled by `build_tailored.py`.
 
 For new faculty applications, prefer a `variant.json` overlay based on `faculty`, `faculty_comprehensive`, or `academic_cv`; `build.py` generates the resulting PDF directly into that college's folder. Existing standalone LaTeX applications with `metadata.json` are also supported by `build_tailored.py --all`, which writes their PDFs directly into the same folder.
+
+## Recent application archive (November 2026)
+
+- [22 recently prepared positions — PDF/LaTeX backfill and status index](RECENT_APPLICATIONS_2026.md).
+- The live dashboard is backed by `dist/applications/jobs.json`; the 22 job records are tracked there.
+- Binary PDFs are preserved in a local ZIP prepared for a one-step Windows Git push; do not assume they exist in `develop` until that push succeeds.
