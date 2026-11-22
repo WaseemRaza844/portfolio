@@ -881,7 +881,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "Design and deliver AI curriculum tailored to both technical and non-technical audiencesTeach topics ranging from AI fundamentals and generative AI to applied use cases and more advanced conceptsIntroduce learners to real-world AI system applications, including basic concepts of AI-enabled workflows, automation, and agent-based toolsIncorporate practical considerations such as reliability, limitations, and responsible use of AI systemsCreate hands-on learning experiences that reflect real-world applications",
+      "enrichmentSource": "https://jobs.ccm.edu/postings/2388",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-county-college-morris-data-analytics-instructor-f204p",
@@ -906,7 +911,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "Instruct continuing professional education non-credit courses in one or more of the following topics ranging from statistics, Excel, R and/or Python coding, Tableau, data analysis, machine learning, Microsoft Power BI, deep learning, big data, etc.Responsibilities include creating and teaching courses in your area of subject matter expertise. Class schedules may include day, evening or weekends.",
+      "enrichmentSource": "https://jobs.ccm.edu/postings/1968",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-county-college-morris-computer-science-adjunct-f215p",
@@ -931,7 +941,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "All faculty positions have as their primary objective to create a dynamic teaching/learning environment for our students. Faculty responsibilities include teaching assigned courses and following the course description and course outline established by the department.Teaching schedules may include day/evening courses and online/hybrid instruction and other instructional modalities. In accordance with the Adjunct Faculty collective bargaining agreement (CBA), additional activities may include participation in departmental initiatives, evidence of academic achievements, recognition by professional and community organizations, and other duties.Specific teaching duties may include but are not limited to:Programming and related courses -Object Oriented programming (Java or Python)Data structures and AlgorithmsComputer Architecture & Assembly LanguageSoftware Engineering",
+      "enrichmentSource": "https://jobs.ccm.edu/postings/2079",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-mississippi-state-cse-instructor-511191",
@@ -944,8 +959,8 @@
       "priority": "high",
       "postingUrl": "https://explore.msujobs.msstate.edu/jobs/instructor-i-ii-or-iii-main-campus-starkville-ms-mississippi-united-states-98228e8d-a74c-4619-80fc-8085a9612f25",
       "officialUrl": null,
-      "deadline": null,
-      "deadlineVerified": false,
+      "deadline": "2027-02-18",
+      "deadlineVerified": true,
       "targetApplyBy": null,
       "documents": [
         "Waseem_Raza_MSU_CSE_Shared_Faculty_CV.pdf",
@@ -957,7 +972,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "deadlineSource": "Schema.org JobPosting.validThrough",
+      "datePosted": "2026-09-10",
+      "postingDescription": "Position Function: The Instructor in Computer Science and Engineering is under the administrative supervision of the Computer Science and Engineering Department Head. Responsibilities include teaching undergraduate, and possibly split-level courses, as well as advising undergraduate students. Instructor will also serve on Undergraduate Studies Committee and aid in Undergraduate Curriculum development. Salary Grade : UC For salary grade UC, these positions are \"Unclassified\" and salary ranges are determined by the hiring department. Department Profile: The Department of Computer Science and Engineering (http://www.cse.msstate.edu), part of the Bagley College of Engineering, at Mississippi State University is a vibrant and growing academic unit with a strong focus on education, research, and service. Mississippi State University is designated as both an R1 – Very High Research Activity Doctoral University under the Carnegie Classification and as a National Center of Academic Excellence in Cyber Operations, Cyber Defense Research, and Cyber Defense Education by the National Security Agency. The Department of Computer Science and Engineering is home to 28 faculty members and serves approximately 1,000 undergraduate and graduate students. The department offers undergraduate degrees in Computer Science, Software Engineering, Cybersecurity, and Artificial Intelligence, and jointly administers a Computer Engineering program with the Department of Electrical and Computer Engineering. The Computer Science program includes concentrations in Artificial Intelligence, Systems, Human and Visual Computing, Computational Science, and General Computer Science. In addition, the department offers a Bachelor of Applied Science (B.A.S.) in Cybersecurity and three undergraduate minors: Comput",
+      "enrichmentSource": "https://explore.msujobs.msstate.edu/jobs/instructor-i-ii-or-iii-main-campus-starkville-ms-mississippi-united-states-98228e8d-a74c-4619-80fc-8085a9612f25",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-mississippi-state-cse-assistant-teaching-professor-511312",
@@ -970,8 +992,8 @@
       "priority": "high",
       "postingUrl": "https://explore.msujobs.msstate.edu/jobs/assistant-associate-or-full-teaching-professor-main-campus-starkville-ms-mississippi-united-states",
       "officialUrl": null,
-      "deadline": null,
-      "deadlineVerified": false,
+      "deadline": "2027-02-19",
+      "deadlineVerified": true,
       "targetApplyBy": null,
       "documents": [
         "Waseem_Raza_MSU_CSE_Shared_Faculty_CV.pdf",
@@ -983,7 +1005,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "deadlineSource": "Schema.org JobPosting.validThrough",
+      "datePosted": "2026-11-03",
+      "postingDescription": "Position Function: The Assistant Teaching Professor, Associate Teaching Professor, or Teaching Professor is under the administrative supervision of the Head of the Department of Computer Science and Engineering. Specific activities include teaching courses at the graduate and undergraduate levels, contributing to the development of degree programs, and mentoring graduate and undergraduate students. Salary Grade : UC Please see Staff Compensation Structure or Skilled Crafts and Service Maintenance Compensation Schedule for salary ranges. For salary grade UC, these positions are \"Unclassified\" and salary ranges are determined by the hiring department. Department Profile: The Department of Computer Science and Engineering (http://www.cse.msstate.edu) is seeking new faculty members at the rank of Assistant Teaching Professor, Associate Teaching Professor, or Teaching Professor. For candidates at the Assistant Teaching Professor level, evidence of strong potential for excellence in teaching at the undergraduate and graduate levels is required. For candidates at the Associate Teaching Professor and Teaching Professor levels, evidence of demonstrated excellence in teaching at the undergraduate and graduate levels is expected. Mississippi State University is designated as both an R1-Very High Research Activity Doctoral University under the Carnegie Classification and as a National Center of Academic Excellence in Cyber Operations, Cyber Defense Research and Cyber Defense Education by the National Security Agency. The Department of Computer Science and Engineering has 25 faculty members and approximately 1000 undergraduate and graduate students. The department offers B.S. programs in Computer Science, Software Engineering, Artificial Intelligence, Cybersecurity, and Cyber Operat",
+      "enrichmentSource": "https://explore.msujobs.msstate.edu/jobs/assistant-associate-or-full-teaching-professor-main-campus-starkville-ms-mississippi-united-states",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-mississippi-state-cse-assistant-professor-511338",
@@ -996,8 +1025,8 @@
       "priority": "high",
       "postingUrl": "https://explore.msujobs.msstate.edu/jobs/assistant-associate-or-full-professor-main-campus-starkville-ms-mississippi-united-states-173246f2-d20e-483a-bc24-21c10031ea10",
       "officialUrl": null,
-      "deadline": null,
-      "deadlineVerified": false,
+      "deadline": "2027-02-18",
+      "deadlineVerified": true,
       "targetApplyBy": null,
       "documents": [
         "Waseem_Raza_MSU_CSE_Shared_Faculty_CV.pdf",
@@ -1009,7 +1038,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "deadlineSource": "Schema.org JobPosting.validThrough",
+      "datePosted": "2026-11-03",
+      "postingDescription": "Position Function: The Assistant Professor, Associate Professor, or Professor in Computer Science and Engineering is under the administrative supervision of the Head of the Department of Computer Science and Engineering. Specific activities include conducting research in the professor's principal fields of interest, contributing toward the strengthening of our research environment, teaching courses at the graduate and undergraduate levels, and mentoring graduate and undergraduate students. Salary Grade : UC Please see Staff Compensation Structure or Skilled Crafts and Service Maintenance Compensation Schedule for salary ranges. For salary grade UC, these positions are \"Unclassified\" and salary ranges are determined by the hiring department. Department Profile: The Department of Computer Science and Engineering (http://www.cse.msstate.edu) is seeking multiple new tenure-track faculty members at the rank of Assistant Professor, Associate Professor, or Professor. For candidates at the Assistant Professor level, evidence of strong potential for excellence in research and teaching at the graduate and undergraduate levels is required. For candidates at the Associate Professor and Professor levels, evidence of demonstrated excellence in research and teaching at the graduate and undergraduate levels is expected. Exceptional candidates in all areas will be considered. We have specific needs in Software Engineering and Cyber Security but are seeking more than two positions, so exceptional candidates in all areas will be considered. Mississippi State University is designated as both an R1-Very High Research Activity Doctoral University under the Carnegie Classification and as a National Center of Academic Excellence in Cyber Operations, Cyber Defense Research and Cyber Defense Edu",
+      "enrichmentSource": "https://explore.msujobs.msstate.edu/jobs/assistant-associate-or-full-professor-main-campus-starkville-ms-mississippi-united-states-173246f2-d20e-483a-bc24-21c10031ea10",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-sacred-heart-cse-adjunct-instructor-178610014",
@@ -1036,7 +1072,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=178610014"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=178610014",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-sacred-heart-cs-assistant-professor-179570912",
@@ -1063,7 +1106,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179570912"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179570912",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-monmouth-university-data-science-adjunct-001333",
@@ -1163,7 +1213,16 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "datePosted": "2021-04-13",
+      "postingDescription": "&nbsp; The Business and Computer Science Department at Middlesex College invites applications for part-time instructors to teach the following subjects: Business Information Systems Computer Organization and Architecture (Assembly Language) Database concepts Help Desk Customer Service/Operation Information Systems Security Java Programming, C++ Programming, Python Programming Linux/Unix and shell Programming and Web Server Administration PC Service and Support System Analysis and Design Telecommunications and Networks&nbsp; Web Programming Web technologies Windows System Administration (Client/Server) &nbsp; MINIMUM QUALIFICATIONS : Master&rsquo;s Degree in the subject or a related discipline&nbsp; Subject matter expertise &nbsp; PREFERRED QUALIFICATIONS: Experience teaching in a remote environment Experience teaching adult learners Familiarity with Learning Management System (Canvas) Experience teaching in higher education &nbsp; &nbsp; SUPPLEMENTAL INFORMATION Please include day, evening, and /or Saturday availability in your application.&nbsp; Please be aware that this is an instructor pool position. &nbsp; Your completed application will enable hiring official to contact you at some point in the future if and when a hiring need arises for future semesters.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=177456513"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=177456513",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-middlesex-college-engineering-adjunct-178357264",
@@ -1188,7 +1247,16 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "complete",
+      "enrichmentMessage": "Structured JobPosting data extracted from the public posting page. Review the details and verify required documents before applying.",
+      "datePosted": "2023-04-13",
+      "postingDescription": "&nbsp; The Engineering Technology Department at Middlesex College invites applications for part-time adjunct instructors to teach Mechanical, Civil and Electrical Engineering courses. The applicant should be prepared to teach class subjects such as: &bull;&nbsp; &nbsp;&nbsp;Graphical Science (AutoCAD, SolidWorks) &bull;&nbsp; &nbsp;&nbsp;Engineering Mechanics (Statics &amp; Dynamics) &bull;&nbsp; &nbsp;&nbsp;Robotics &bull;&nbsp; &nbsp;&nbsp;Electric Circuits &bull;&nbsp; &nbsp;&nbsp;Land Surveying &bull;&nbsp; &nbsp;&nbsp;Automotive Technology MINIMUM QUALIFICATIONS : &bull;&nbsp; &nbsp;&nbsp;Master&rsquo;s degree in Engineering or related field PREFERRED QUALIFICATIONS: &bull;&nbsp; &nbsp;&nbsp;Knowledge and experience with Canvas or similar program &bull;&nbsp; &nbsp;&nbsp;Community College teaching experience, both in person and online &bull;&nbsp; &nbsp;&nbsp;Preference will be given to those with related industrial experience SUPPLEMENTAL INFORMATION : Please indicate day, evening, and/or Saturday availability in your application. Please note that this is an instructor pool position. Your completed application will enable a hiring official to contact you at some point in the future if and when a hiring need arises for future semesters.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=178357264"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/institution/details.cfm?JobCode=178357264",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-rize-ai-literacy-applied-ai-instructor-179610806",
@@ -1214,7 +1282,14 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Review live portal requirements and submit; afterwards confirm application status.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "alternateUrls": [
+        "https://www.higheredjobs.com/faculty/details.cfm?JobCode=179610806"
+      ],
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179610806",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-east-stroudsburg-cs-adjunct-pool-178216459",
@@ -1240,7 +1315,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. Employer identification needs confirmation."
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. Employer identification needs confirmation.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=178216459",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-villanova-ai-adjunct-179295945",
@@ -1266,7 +1345,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. Employer identification needs confirmation."
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. Employer identification needs confirmation.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179295945",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-cs-adjunct-179612375",
@@ -1292,7 +1375,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179612375",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-computing-sciences-177044012",
@@ -1318,7 +1405,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=177044012",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-cs-adjunct-179575423",
@@ -1344,7 +1435,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179575423",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-cs-adjunct-179491865",
@@ -1370,7 +1465,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179491865",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-cs-adjunct-179173580",
@@ -1396,7 +1495,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=179173580",
+      "enrichedAt": "2026-11-22"
     },
     {
       "id": "faculty-backfill-unverified-data-science-adjunct-178535765",
@@ -1422,7 +1525,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-22",
       "nextAction": "Verify exact employer and required application documents, then submit as appropriate.",
-      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. "
+      "notes": "PDFs and LaTeX sources were prepared and verified in chat. Binary PDFs are in the GitHub sync ZIP, not yet committed to the public repository. ",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "The page opened, but it did not expose usable job details. Manual research is still needed.",
+      "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=178535765",
+      "enrichedAt": "2026-11-22"
     }
   ]
 }
