@@ -1530,6 +1530,31 @@
       "enrichmentMessage": "The page opened, but it did not expose usable job details. Manual research is still needed.",
       "enrichmentSource": "https://www.higheredjobs.com/search/details.cfm?JobCode=178535765",
       "enrichedAt": "2026-11-22"
+    },
+    {
+      "id": "drew-university-adjunct-math-cs-spring-2027",
+      "institution": "Drew University",
+      "title": "Adjunct Instructor — Mathematics & Computer Science (CSCI150 Python)",
+      "location": "Madison, NJ",
+      "type": "Part-time, in-person instructor pool (Spring 2027)",
+      "area": "Introductory Computer Science; Python Programming; Statistics (secondary)",
+      "status": "ready",
+      "priority": "high",
+      "postingUrl": "https://www.indeed.com/viewjob?jk=7062d9f657f0f198",
+      "officialUrl": null,
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": null,
+      "documents": [
+        "Tailored three-page faculty CV (PDF) with prior courses taught",
+        "One-page Drew CSCI150 cover letter (PDF)"
+      ],
+      "documentsReady": true,
+      "applicationFolder": "resume/job-applications/faculty/drew-university-adjunct-math-cs-spring-2027/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-22",
+      "nextAction": "Apply for CSCI150 Spring 2027 (Tue/Thu 7:05–8:20 PM), uploading tailored CV and cover letter if requested; confirm portal requirements and report submission before marking applied.",
+      "notes": "Documents compiled and verified in ChatGPT; PDFs and TeX sources in Drew_University_Adjunct_CS_Python_Spring_2027_Application_Package.zip for local Git sync, not yet committed as binaries. Posting includes CSCI150 (primary), STAT117 (secondary, 4:25 PM), and MATH100 (not prioritized). $4,500 per 4-credit course, not per month. Prior teaching: Computer Programming, Communication Systems, Wireless Communication. A cover letter is optional in the listing text; CV must list previously taught courses. Immigration/authorization details remain private. No submission confirmed."
     }
   ]
 }

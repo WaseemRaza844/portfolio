@@ -14,3 +14,5 @@ For new faculty applications, prefer a `variant.json` overlay based on `faculty`
 - [22 recently prepared positions — PDF/LaTeX backfill and status index](RECENT_APPLICATIONS_2026.md).
 - The live dashboard is backed by `dist/applications/jobs.json`; the 22 job records are tracked there.
 - Binary PDFs are preserved in a local ZIP prepared for a one-step Windows Git push; do not assume they exist in `develop` until that push succeeds.
+
+- [Drew University — Spring 2027 Adjunct Mathematics & Computer Science / CSCI150](drew-university-adjunct-math-cs-spring-2027/README.md): three-page Python-focused CV and one-page letter prepared; PDFs require ZIP sync; application unsubmitted.
