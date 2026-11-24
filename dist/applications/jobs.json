@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-23",
+  "asOf": "2026-11-24",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -1558,6 +1558,34 @@
       "enrichmentStatus": "failed",
       "enrichmentMessage": "Automatic page extraction could not access this posting (HTTP Error 401: Unauthorized). Research the link manually.",
       "enrichedAt": "2026-11-23"
+    },
+    {
+      "id": "sultan-qaboos-university-information-systems-assistant-professor-2026",
+      "institution": "Sultan Qaboos University",
+      "title": "Assistant Professor — Information Systems (AI, ML and Business Analytics)",
+      "location": "Muscat, Oman",
+      "type": "Full-time academic; renewable contract",
+      "area": "Information Systems; Applied AI/ML; Data Science; Business Analytics",
+      "status": "preparing",
+      "priority": "high",
+      "postingUrl": "https://careers.squ.edu.om/JobPositionDetails.aspx?jpid=1445",
+      "officialUrl": "https://careers.squ.edu.om/JobPositionDetails.aspx?jpid=1445",
+      "deadline": "2026-12-19",
+      "deadlineVerified": true,
+      "targetApplyBy": null,
+      "documents": [
+        "One-page cover letter (PDF)",
+        "Combined CV/research interests/teaching philosophy (single PDF)",
+        "Three original recommendation letters (pending)",
+        "Degree and experience certificates (pending)",
+        "Teaching evaluations, if available"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/sultan-qaboos-university-information-systems-assistant-professor-2026/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-24",
+      "nextAction": "Obtain and verify three original referee letters, degree and experience certificates, and English-language/qualification documentation; attach actual evaluations if available, then submit.",
+      "notes": "One-page cover letter and 7-page combined academic portfolio were prepared/compiled in chat; PDF/TeX archive supplied separately for applicant-controlled GitHub sync. No invented recommendation letters or credential copies. Candidate prepared at Assistant Professor rank only. No application submission confirmed."
     }
   ]
 }
