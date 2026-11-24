@@ -1585,7 +1585,11 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-24",
       "nextAction": "Obtain and verify three original referee letters, degree and experience certificates, and English-language/qualification documentation; attach actual evaluations if available, then submit.",
-      "notes": "One-page cover letter and 7-page combined academic portfolio were prepared/compiled in chat; PDF/TeX archive supplied separately for applicant-controlled GitHub sync. No invented recommendation letters or credential copies. Candidate prepared at Assistant Professor rank only. No application submission confirmed."
+      "notes": "One-page cover letter and 7-page combined academic portfolio were prepared/compiled in chat; PDF/TeX archive supplied separately for applicant-controlled GitHub sync. No invented recommendation letters or credential copies. Candidate prepared at Assistant Professor rank only. No application submission confirmed.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "enrichmentSource": "https://careers.squ.edu.om/JobPositionDetails.aspx?jpid=1445",
+      "enrichedAt": "2026-11-24"
     }
   ]
 }
