@@ -73,6 +73,9 @@ jobs:
             echo "Industry PDF files are already current."
           else
             git commit -m "docs(resume): publish industry work authorization PDFs [skip ci]"
+            # Other generated build reports may be modified but are not part of this publish.
+            # This checkout is ephemeral; keep only the committed seven PDF changes.
+            git reset --hard HEAD
             git pull --rebase origin develop
             git push origin HEAD:develop
           fi
