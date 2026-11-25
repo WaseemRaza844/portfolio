@@ -16,3 +16,5 @@ For new faculty applications, prefer a `variant.json` overlay based on `faculty`
 - Binary PDFs are preserved in a local ZIP prepared for a one-step Windows Git push; do not assume they exist in `develop` until that push succeeds.
 
 - [Drew University — Spring 2027 Adjunct Mathematics & Computer Science / CSCI150](drew-university-adjunct-math-cs-spring-2027/README.md): three-page Python-focused CV and one-page letter prepared; PDFs require ZIP sync; application unsubmitted.
+
+- [Excelsior University — Part-Time Online Faculty, Computer Science](excelsior-university-online-computer-science-adjunct-2026/README.md): CV and one-page letter verified; three private references pending; status preparing.

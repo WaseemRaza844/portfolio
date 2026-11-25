@@ -1590,6 +1590,32 @@
       "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
       "enrichmentSource": "https://careers.squ.edu.om/JobPositionDetails.aspx?jpid=1445",
       "enrichedAt": "2026-11-24"
+    },
+    {
+      "id": "excelsior-university-online-computer-science-adjunct-2026",
+      "institution": "Excelsior University",
+      "title": "Part-Time Online Faculty — Computer Science",
+      "location": "Remote, United States",
+      "type": "Part-time; remote faculty recruiting pool",
+      "area": "Computer Science; AI/ML; Data Science; Networking; Software Development",
+      "status": "preparing",
+      "priority": "high",
+      "postingUrl": "https://www.excelsior.edu/job/part-time-online-faculty-computer-science/",
+      "officialUrl": "https://recruiting.ultipro.com/EXC1011/JobBoard/eb378fdd-1d75-0520-8078-55ee35061807/OpportunityDetail?opportunityId=806e08a0-1e70-411f-b760-37f8179911c2",
+      "deadline": null,
+      "deadlineVerified": false,
+      "targetApplyBy": null,
+      "documents": [
+        "Tailored three-page faculty CV (PDF)",
+        "One-page letter of application (PDF)",
+        "Three professional reference names (private entry; details to verify)"
+      ],
+      "documentsReady": false,
+      "applicationFolder": "resume/job-applications/faculty/excelsior-university-online-computer-science-adjunct-2026/",
+      "submittedAt": null,
+      "lastReviewed": "2026-11-24",
+      "nextAction": "Review CV and letter; confirm the names and current details of three professional references; complete employer form and notify when submitted.",
+      "notes": "Official Excelsior evergreen remote part-time faculty listing verified 2026-11-24. Role-specific PDF/LaTeX application package compiled/visually checked in ChatGPT; binary files are in local sync ZIP, not yet on GitHub. Normal 3-credit section pays $3,000; low enrollment per-student rate applies. No prior online/Canvas instructor-of-record experience claimed. No applicant-confirmed submission."
     }
   ]
 }
