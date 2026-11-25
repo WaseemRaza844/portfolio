@@ -247,12 +247,23 @@ class LatexEscapingTests(unittest.TestCase):
             self.assertTrue(internships[role]['bulletsByVariant']['faculty'])
         self.assertIn('20%', ' '.join(internships['att-labs-2022']['bulletsByVariant']['faculty']))
 
-    def test_faculty_pdf_layout_audit_is_in_both_workflows(self):
+    def test_faculty_pdf_layout_audit_runs_in_resume_build(self):
         root = Path(__file__).parents[2]
-        for file in ('.github/workflows/build-resumes.yml',
-                     '.github/workflows/deploy-pages.yml'):
-            text = (root / file).read_text(encoding='utf-8')
-            self.assertIn('python resume/validate_pdf_layout.py', text)
+        build = (root / '.github/workflows/build-resumes.yml').read_text(encoding='utf-8')
+        pages = (root / '.github/workflows/deploy-pages.yml').read_text(encoding='utf-8')
+        self.assertIn('python resume/validate_pdf_layout.py', build)
+        # The Pages workflow now publishes prebuilt PDFs instead of running TeX.
+        self.assertIn('PDFs are built and validated in independent resume', pages)
+
+    def test_generic_industry_work_authorization_is_current(self):
+        variants = module.load_variants()
+        for key in ('generic', 'comprehensive', 'aiml', 'genai', 'wireless', 'healthcare', 'finance'):
+            variant = variants[key]
+            self.assertEqual(variant['identity']['location'], 'Three Bridges, NJ, USA')
+            status = variant['workAuthorization']
+            self.assertIn('STEM OPT EAD valid through 02/2028', status)
+            self.assertIn('EB-2 NIW I-140 approved', status)
+            self.assertIn('I-485 filed', status)
 
     def test_lafayette_cv_is_separate_and_teaching_centered(self):
         variants = module.load_variants()
