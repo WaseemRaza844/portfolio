@@ -1,0 +1,78 @@
+name: Build reusable industry resume PDFs
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'resume/resume-profiles/industry/*.tex'
+      - 'resume/resume-profiles/industry/variants.json'
+      - 'resume/build.py'
+      - 'resume/latex_renderer.py'
+      - '.github/workflows/build-industry-resumes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: industry-resumes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  industry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r resume/requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Compile reusable industry PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          for variant in generic comprehensive aiml genai wireless healthcare finance; do
+            python resume/build.py --variant "$variant"
+          done
+      - name: Verify pages and work authorization text
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          folder = Path('resume/resume-profiles/industry')
+          for name in ('GENERIC', 'COMPREHENSIVE', 'AIML', 'GENAI', 'WIRELESS', 'HEALTHCARE', 'FINANCE'):
+              path = folder / f'Waseem_Raza_{name}.pdf'
+              reader = PdfReader(str(path))
+              text = '\n'.join(page.extract_text() or '' for page in reader.pages)
+              assert len(reader.pages) == 3, f'{name}: expected 3 pages, got {len(reader.pages)}'
+              for item in ('Three Bridges, NJ, USA', 'STEM OPT EAD valid through 02/2028',
+                           'EB-2 NIW I-140 approved', 'I-485 filed'):
+                  assert item in text, f'{name}: missing {item}'
+              print(f'{name}: 3 pages, work authorization verified')
+          PY
+      - name: Publish updated PDFs to develop
+        if: github.ref_name == 'develop'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for name in GENERIC COMPREHENSIVE AIML GENAI WIRELESS HEALTHCARE FINANCE; do
+            git add -f "resume/resume-profiles/industry/Waseem_Raza_${name}.pdf"
+          done
+          if git diff --cached --quiet; then
+            echo "Industry PDF files are already current."
+          else
+            git commit -m "docs(resume): publish industry work authorization PDFs [skip ci]"
+            git pull --rebase origin develop
+            git push origin HEAD:develop
+          fi
