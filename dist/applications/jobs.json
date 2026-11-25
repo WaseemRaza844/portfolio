@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-24",
+  "asOf": "2026-11-25",
   "description": "Public, non-sensitive faculty job application tracker; submission statuses only when user-confirmed.",
   "statuses": [
     "saved",
@@ -1615,7 +1615,12 @@
       "submittedAt": null,
       "lastReviewed": "2026-11-24",
       "nextAction": "Review CV and letter; confirm the names and current details of three professional references; complete employer form and notify when submitted.",
-      "notes": "Official Excelsior evergreen remote part-time faculty listing verified 2026-11-24. Role-specific PDF/LaTeX application package compiled/visually checked in ChatGPT; binary files are in local sync ZIP, not yet on GitHub. Normal 3-credit section pays $3,000; low enrollment per-student rate applies. No prior online/Canvas instructor-of-record experience claimed. No applicant-confirmed submission."
+      "notes": "Official Excelsior evergreen remote part-time faculty listing verified 2026-11-24. Role-specific PDF/LaTeX application package compiled/visually checked in ChatGPT; binary files are in local sync ZIP, not yet on GitHub. Normal 3-credit section pays $3,000; low enrollment per-student rate applies. No prior online/Canvas instructor-of-record experience claimed. No applicant-confirmed submission.",
+      "enrichmentStatus": "partial",
+      "enrichmentMessage": "Basic page metadata extracted. Institution, deadline, eligibility, and required documents may still need manual verification.",
+      "postingDescription": "Excelsior University has a new job opportunity as a part-time online computer science faculty. Fill out your application here!",
+      "enrichmentSource": "https://www.excelsior.edu/job/part-time-online-faculty-computer-science/",
+      "enrichedAt": "2026-11-25"
     }
   ]
 }
