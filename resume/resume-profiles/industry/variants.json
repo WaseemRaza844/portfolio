@@ -101,7 +101,11 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "comprehensive": {
     "label": "Comprehensive 3-Page Resume",
@@ -209,7 +213,11 @@
     "detailedCertificationDescriptions": true,
     "minPages": 3,
     "minPageTextChars": 3000,
-    "minLastPageChars": 3000
+    "minLastPageChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "genai": {
     "label": "Generative & Agentic AI",
@@ -315,7 +323,11 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "aiml": {
     "label": "AI / ML & Data Science",
@@ -422,7 +434,11 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "wireless": {
     "label": "AI/ML for Wireless Networks",
@@ -527,7 +543,11 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "healthcare": {
     "label": "Healthcare AI & Wearable Intelligence",
@@ -631,7 +651,11 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   },
   "finance": {
     "label": "Financial AI/ML & Data Science",
@@ -734,6 +758,10 @@
     "minPages": 3,
     "minLastPageChars": 3000,
     "detailedCertificationDescriptions": true,
-    "minPageTextChars": 3000
+    "minPageTextChars": 3000,
+    "identity": {
+      "location": "Three Bridges, NJ, USA"
+    },
+    "workAuthorization": "Work authorization: STEM OPT EAD valid through 02/2028 | Immigration: EB-2 NIW I-140 approved; I-485 filed"
   }
 }
